@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Home B - Fiducia per prima | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Home, variante B: "fiducia per prima".</strong> Hero editoriale (titolo e CTA sopra, fascia foto al vivo sotto), blocco fiducia (clienti, certificazioni, numeri) e Massimo subito, progetti come righe editoriali alternate, form breve in chiusura. Differenza dalla <a href="home-a.html">Home A</a>: ordine dei blocchi e impianto, non solo stile. <span class="tag t-PROPOSTA">PROPOSTA</span></p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+
+<section class="hero hero-b" aria-labelledby="h1">
+  <div data-noratio data-ph="HERO: progetto reale, foto da fotografo (al vivo a tutto schermo; crop desktop ~16:9 con respiro in alto, tablet ~4:5, mobile ~9:16)|16/9"></div>
+  <div class="hero-in">
+  <div class="hb-title">
+    <h1 id="h1">Impresa di costruzioni a Lentate sul Seveso</h1>
+    <p class="hero-since">Impresa edile <span>dal <b>[1987]</b></span></p>
+  </div>
+  <div class="hb-side">
+    <p class="hero-sub">Nuove costruzioni, ristrutturazioni e manutenzioni per qualsiasi tipologia, dalla progettazione alla consegna.</p>
+    <div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="cantieri.html">Guarda i cantieri</a></div>
+  </div>
+  <div class="hero-notes">
+    <i data-note="DEV|HOME B (solo se scelta al posto di A). MEDIUM, 6-9 h per la home specifica. Hero v3 (PROPOSTA) = stessa tecnica della hero A (container Full width 100svh meno header, Background Image con 3 crop per device ~16:9 / ~4:5 / ~9:16 e focal point, Background Overlay gradiente Pro), ma con overlay doppio (alto ~70% e basso ~80%, centro quasi trasparente) e impianto diverso: container interno boxed a 3 righe (H1 in alto a sinistra con la dicitura Impresa edile dal 1987 in verticale a destra del titolo, spazio libero al centro per la foto, binario in basso con bordo superiore bianco 40% che contiene sottotitolo a sinistra e CTA a destra). Tablet: binario su 2 righe; mobile: H1 in alto, sottotitolo e CTA in basso, hero sopra la barra sticky. Stima hero 3-4 h come A (non si sommano: si costruisce una sola home). Rischio: la dicitura verticale va verificata con lettori di schermo (testo normale ruotato con CSS) e su foto chiare in alto. Header, footer, sticky bar, Loop Item, form, FAQ, template statistiche/loghi/CTA sono gli stessi componenti condivisi di A (non ricontati). Costi extra rispetto ad A: righe editoriali alternate (container con order inverso, 2-3 h), FAQ in home (accordion condiviso, 0.5-1 h), form breve in home (clone del Form condiviso, 1-1.5 h). Costruirle ENTRAMBE come pagine = +6-9 h."></i>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Impianto B con foto al vivo a tutto schermo, diverso da A: in A il testo sta in basso a sinistra e il 1987 è una misura grande a destra; in B il titolo apre in alto, il centro resta alla foto e in basso un binario separato da un filetto raccoglie sottotitolo e CTA. Il dato dal 1987 è una dicitura verticale accanto al titolo, segnata dal filetto bordeaux. Leggibilità: velatura a gradiente in alto e in basso, contrasto AA da verificare sulla foto reale (VERIFY). Stessi vincoli di A: progetto reale da fotografo, no immagini astratte; foto scelta dopo wireframe; la foto deve avere respiro nella parte alta per il titolo."></i>
+  </div>
+  </div>
+</section>
+
+<section class="sec lg" aria-labelledby="h-logo">
+  <div class="in lg-head"><h2 id="h-logo">Quarant'anni di cantieri, verificabili</h2><p class="lg-lead">Chi ci affida i propri spazi, chi controlla come lavoriamo.</p></div>
+  <div data-c="logos" data-notes></div>
+</section>
+
+<section class="sec alt" aria-labelledby="h-mas"><div class="in grid split rev">
+  <div>
+    <h2 id="h-mas">Dietro ogni cantiere c'è una squadra che conosciamo per nome</h2>
+    <p class="lead">Lavoriamo con personale nostro, formato e strutturato: 40 dipendenti diretti, non una catena di subappalti. È il modo in cui garantiamo tempi certi e finiture all'altezza dei progetti degli architetti.</p>
+    <p class="meta"><strong>Massimo Conti</strong>, amministratore unico</p>
+    <i data-note="CLIENTE|Massimo come volto aziendale (call). In B compare subito sotto l'hero per spostare la fiducia prima dei progetti. Nessuna citazione virgolettata inventata; copy provvisorio con punti di forza del brief. INFERENZA da validare: mettere la persona prima dei lavori funziona per un'impresa che vende fiducia."></i>
+    <div data-c="cert" data-notes></div>
+    <a class="btn sec2" href="chi-siamo.html">Conosci l'impresa</a>
+  </div>
+  <div data-ph="Ritratto di Massimo|3/2"></div>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-feat"><div class="in">
+  <p class="eyebrow">Progetti in evidenza</p>
+  <h2 id="h-feat">Tre cantieri che raccontano come lavoriamo</h2>
+  <div class="grid split" style="margin-bottom:40px"><div data-ph="Casa MJO, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; Milano</span><h3 style="font-size:28px">Casa MJO</h3><p>Un intervento di pregio a Milano, seguito in ogni dettaglio insieme al progettista. [Abstract da concordare: lavorazioni, tempi, superficie.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <div class="grid split rev" style="margin-bottom:40px"><div data-ph="Ceresio 7, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Ceresio 7</h3><p>Piscina e palestra: uno dei progetti più visitati del sito e il punto di partenza per nuovi cantieri dello stesso tipo. [Abstract da concordare.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <div class="grid split"><div data-ph="Villa Lodovic, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Villa Lodovic</h3><p>Una villa realizzata dal progetto alla consegna. [Abstract da concordare: luogo, finiture, tempi.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <i data-note="CLIENTE|Stessi 3 progetti in evidenza della A (casa MJO, Ceresio 7, Villa Lodovic) ma come righe editoriali che raccontano il lavoro. Su mobile: immagine sopra, testo sotto, ordine invariato (non si inverte). VERIFY NDA sui nomi."></i>
+</div></section>
+
+<section class="sec cxd" aria-labelledby="h-cat"><div class="in">
+  <h2 id="h-cat">Dalla casa privata al capannone, un solo interlocutore</h2>
+  <div data-c="cats" data-notes></div>
+</div></section>
+
+<section class="sec imm" aria-labelledby="h-imm"><div class="in">
+  <p class="eyebrow">Immobili in vendita</p>
+  <h2 id="h-imm">Acquista direttamente da chi costruisce</h2>
+  <p class="lead" style="margin-bottom:24px">Nuove residenze in Brianza, senza agenzie di mezzo: parli con l'impresa che le realizza.</p>
+  <div data-c="imm:3"></div>
+  <p style="margin-top:24px"><a class="btn sec2" href="in-vendita.html">Tutti gli immobili</a></p>
+  <i data-note="PROPOSTA|In B il blocco immobili è un banner commerciale con 3 schede e CTA 'Tutti gli immobili'. Dati placeholder."></i>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-rev"><div class="in">
+  <h2 id="h-rev">Cosa dicono i clienti</h2>
+  <div data-c="reviews"></div>
+</div></section>
+
+<section class="sec" aria-labelledby="h-faq"><div class="in grid split top">
+  <div><h2 id="h-faq">Domande frequenti</h2><p class="lead">Le risposte alle domande che ci fanno più spesso prima di cominciare. <a href="faq.html">Tutte le FAQ</a></p>
+    <h3>Dove operiamo</h3><div data-c="zone"></div></div>
+  <div>
+    <details open><summary>Vi occupate anche di lavori piccoli?</summary><p>Sì. Realizziamo dalle grandi opere alle ristrutturazioni più contenute: l'unica eccezione è il restauro conservativo.</p></details>
+    <details><summary>Lavorate con gli architetti?</summary><p>Sì, spesso su finiture complesse e non standard, partendo dal loro progetto e coordinando la realizzazione.</p></details>
+    <details><summary>Come funziona il preventivo?</summary><p>Analizziamo le esigenze e la documentazione di progetto, poi prepariamo un preventivo dettagliato. [Tempi e modalità da confermare.]</p></details>
+  </div>
+  <i data-note="PROPOSTA|Solo in B: 3 FAQ in home (anche per ricerca AI, dal brief) con rimando alla pagina FAQ. Accordion nativo details/summary, tastiera e screen reader senza JS. Le domande reali vanno scelte con SEO/cliente."></i>
+    <i data-note="DEV|FAQ ACCORDION (componente condiviso). LOW, 1.5-2.5 h una tantum. Elementor: widget Accordion annidato (Nested Accordion, core: contenitori dentro ogni voce; VERIFY che il markup sia details/summary e che supporti tastiera ed aria-expanded) con stile globale (icona +/-, bordo, padding minimo 56px mobile). Prima voce aperta = impostazione del widget. Le FAQ sono riusate in Home B, pagina FAQ, categoria, area (stesso stile salvato nel Kit/global style). Schema FAQPage: opzione del widget (VERIFY) oppure plugin SEO: evitare doppio schema (VERIFY). Valore dei rich result limitato (nota RICERCA già in FAQ)."></i>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-blog"><div class="in">
+  <h2 id="h-blog">Dal blog</h2>
+  <div data-c="blog"></div>
+</div></section>
+
+<section class="sec" aria-labelledby="h-form"><div class="in grid split top">
+  <div><h2 id="h-form">Parliamone</h2><p class="lead">Lasciaci nome e telefono e dicci di cosa hai bisogno: ti richiamiamo noi.</p><p>Oppure chiama <a href="tel:+390362557972">0362 557972</a>.</p></div>
+  <form onsubmit="return false" novalidate aria-labelledby="h-form">
+    <div class="f"><label for="b-n">Nome e cognome</label><input id="b-n" autocomplete="name" required></div>
+    <div class="f"><label for="b-t">Telefono</label><input id="b-t" type="tel" autocomplete="tel" required></div>
+    <div class="f"><label for="b-m">Di cosa hai bisogno?</label><textarea id="b-m"></textarea></div>
+    <div class="f chk"><input type="checkbox" id="b-c" required><label for="b-c">Ho letto l'informativa privacy. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+    <button class="btn" type="submit">Invia la richiesta</button>
+    <i data-note="PROPOSTA|Form breve (3 campi) in home solo in B per abbassare la barriera; il form completo resta in Contatti. Obiettivo contatti qualificati: valutare se il form breve li peggiora (INFERENZA, da misurare). Consenso privacy non preselezionato. Errori sotto il campo + riepilogo (vedi Contatti). DEV: invio via CMS/email, anti-spam senza CAPTCHA invasivo, destinazione email da definire."></i>
+    <i data-note="DEV|FORM CONDIVISO (Form widget, Pro). MEDIUM, 4-6 h una tantum + 1-1.5 h per ogni variante. Campi: Text, Email, Tel, Textarea, Select, Acceptance (consenso non preselezionato, link privacy), Hidden (immobile / pagina di provenienza), Honeypot. Azioni dopo invio: Email (destinatari per modulo, Reply-To = email del campo) + messaggio di successo; Redirect a pagina grazie solo se serve il tracciamento (VERIFY). Anti-spam: Honeypot di Elementor + reCAPTCHA v3 o Cloudflare Turnstile se disponibili nella versione installata (VERIFY versione e chiavi account: DA VERIFICARE, non fornite). Limiti Elementor: gli errori sono per campo (testo sotto il campo, attributi required/aria-invalid gestiti dal widget, da testare), NON c'è un riepilogo errori con focus come nel wireframe: richiede ~1-2 h di JS custom (opzionale, WCAG) o si accetta il comportamento nativo (WAITING_FOR_APPROVAL se cambia l'UX approvata). Recapito email: SMTP dedicato (plugin) per evitare spam, VERIFY hosting. Salvataggio invii: Elementor Submissions (Pro) per backup lead. CRM/newsletter: nessuna integrazione nota (non incluso)."></i>
+  </form>
+</div></section>
+
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Home B)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

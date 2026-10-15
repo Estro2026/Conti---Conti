@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Struttura del nuovo sito | Conti &amp; Conti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css">
+<style>
+body{background:#fff}
+.pr{max-width:1120px;margin:0 auto;padding:0 clamp(16px,5vw,48px)}
+.pr-cover{padding:clamp(40px,8vw,96px) 0 clamp(32px,5vw,56px);border-bottom:1px solid var(--line)}
+.pr-cover img{height:56px;width:auto;display:block;margin-bottom:clamp(40px,7vw,80px)}
+.pr-cover h1{max-width:18ch}
+.pr-sec{padding:clamp(36px,6vw,72px) 0;border-bottom:1px solid var(--line)}
+.pr-homes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;list-style:none;margin:0;padding:0}
+.pr-homes a{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
+.pr-homes .ph{aspect-ratio:16/10;position:relative}
+.pr-homes h3{margin:.3em 0 0;transition:color .2s}
+.pr-homes a:hover h3{color:var(--acc)}
+.pr-list{list-style:none;margin:0;padding:0;counter-reset:p}
+.pr-list li{counter-increment:p;border-top:1px solid var(--line)}
+.pr-list li:last-child{border-bottom:1px solid var(--line)}
+.pr-list a{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;min-height:64px;padding:12px 0;text-decoration:none;color:var(--ink)}
+.pr-list a::before{content:counter(p,decimal-leading-zero);font:600 13px/1 var(--fh);color:var(--acc);letter-spacing:.06em}
+.pr-list b{font:600 19px/1.25 var(--fh)}
+.pr-list span{color:var(--mut);font-size:15px}
+.pr-list a::after{content:"\2192";color:var(--acc);font-size:20px;transition:transform .2s}
+.pr-list a:hover b{color:var(--acc)}
+.pr-list a:hover::after{transform:translateX(4px)}
+.pr-ft{padding:28px 0 40px;font-size:13px;color:var(--mut)}
+@media (max-width:640px){.pr-homes{grid-template-columns:1fr}.pr-list a{grid-template-columns:36px 1fr auto}.pr-list span{display:block}}
+@media (prefers-reduced-motion:reduce){.pr-list a::after,.pr-homes h3{transition:none}}
+</style></head>
+<body>
+<main id="main" class="pr">
+<header class="pr-cover">
+  <picture><source srcset="logo.webp" type="image/webp"><img src="logo.png" width="320" height="84" alt="Conti e Conti, il valore dell'edilizia"></picture>
+  <p class="eyebrow">Nuovo sito web &middot; wireframe</p>
+  <h1>La struttura del nuovo sito, pagina per pagina</h1>
+  <p class="lead">Qui trovate l'organizzazione dei contenuti e il percorso di chi visita il sito. Le immagini sono segnaposto: le fotografie reali dei cantieri si scelgono insieme nel prossimo passaggio.</p>
+</header>
+
+<section class="pr-sec" aria-labelledby="h-home">
+  <p class="eyebrow">Homepage</p>
+  <h2 id="h-home">Due proposte di impianto</h2>
+  <p style="margin-bottom:28px">Stessi contenuti, ordine e racconto diversi. Vi chiediamo di indicarci quale sentite più vicina all'impresa.</p>
+  <ul class="pr-homes">
+    <li><a href="home-a.html"><div class="ph" data-tone="1" role="img" aria-label="Anteprima proposta A"><span>Proposta A</span></div><h3>A &middot; Il progetto per primo</h3><span class="meta">Foto di un cantiere a tutta pagina, poi numeri, progetti in evidenza e categorie.</span></a></li>
+    <li><a href="home-b.html"><div class="ph" data-tone="0" role="img" aria-label="Anteprima proposta B"><span>Proposta B</span></div><h3>B &middot; La fiducia per prima</h3><span class="meta">Testo e foto affiancati, subito Massimo Conti e i numeri, progetti raccontati in righe editoriali.</span></a></li>
+  </ul>
+</section>
+
+<section class="pr-sec" aria-labelledby="h-pag">
+  <p class="eyebrow">Pagine interne</p>
+  <h2 id="h-pag">Le altre pagine del sito</h2>
+  <ol class="pr-list">
+    <li><a href="chi-siamo.html"><div><b>Impresa</b> <span>Chi siamo, filosofia, squadra</span></div></a></li>
+    <li><a href="cantieri.html"><div><b>Cantieri</b> <span>Tutti i progetti realizzati</span></div></a></li>
+    <li><a href="categoria.html"><div><b>Categoria di cantiere</b> <span>Esempio: Palestre</span></div></a></li>
+    <li><a href="progetto.html"><div><b>Scheda progetto</b> <span>Il racconto di un singolo cantiere</span></div></a></li>
+    <li><a href="in-vendita.html"><div><b>In vendita</b> <span>Le residenze disponibili</span></div></a></li>
+    <li><a href="residenza.html"><div><b>Scheda residenza</b> <span>Con richiesta informazioni dedicata</span></div></a></li>
+    <li><a href="blog.html"><div><b>Blog</b> <span>Elenco degli articoli</span></div></a></li>
+    <li><a href="articolo.html"><div><b>Articolo</b> <span>Pagina del singolo articolo</span></div></a></li>
+    <li><a href="faq.html"><div><b>Domande frequenti</b></div></a></li>
+    <li><a href="contatti.html"><div><b>Contatti</b> <span>Richiesta di preventivo</span></div></a></li>
+    <li><a href="lavora-con-noi.html"><div><b>Lavora con noi</b> <span>Mestieri e candidatura</span></div></a></li>
+  </ol>
+</section>
+<p class="pr-ft">Conti e Conti Srl &middot; documento di lavoro riservato</p>
+</main>
+</body></html>

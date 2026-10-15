@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Immobili in vendita | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="vendita" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Residenze / immobili in vendita (elenco).</strong> Scheda singola con form: <a href="residenza.html">residenza.html</a>. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">In vendita</li></ol></nav>
+
+<section class="sec pg-op" aria-labelledby="h1"><div class="in">
+  <div class="hrow">
+    <h1 id="h1">Immobili in vendita</h1>
+    <div class="hrow-t">
+      <p class="lead">Acquisti direttamente da chi costruisce: nessuna agenzia di mezzo, una trattativa diretta e un'impresa che ti accompagna fino alla consegna e al rogito.</p>
+      <p>Ogni immobile ha la sua scheda con render, dati e documenti, e un modulo per scrivere direttamente a Conti e Conti.</p>
+    </div>
+  </div>
+  <i data-note="CLIENTE|Obiettivo: contatto diretto col costruttore bypassando le agenzie (call). RICERCA: la formulazione riprende il servizio Vendita del sito attuale (vendita diretta, nessuna agenzia esterna, accompagnamento a consegna e rogito). Testo provvisorio."></i>
+  <i data-note="PROPOSTA|Copy provvisorio: titoli, introduzioni e argomenti commerciali sono bozze realistiche per mostrare gerarchia e ingombri, costruite solo su fatti noti. Da validare con cliente e SEO."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: tolto l'occhiello 'Vendita diretta dal costruttore' (ripeteva la prima frase). H1 a sinistra, introduzione e frase di servizio a destra sulla stessa base. Fondi: bianco, sabbia (elenco, come il blocco immobili della Home), nero (argomenti), bordeaux (CTA)."></i>
+  <i data-note="DEV|Delta alta fedeltà In vendita: argomenti come righe a filetti su fondo nero invece di 3 box (container 2 colonne + 3 righe Heading/Text) 0 h; apertura a due colonne 0 h. Delta pagina 0 h (resta 2-3 h)."></i>
+</div></section>
+
+<section class="sec imm" aria-labelledby="h-list"><div class="in">
+  <h2 id="h-list" class="sr">Elenco immobili</h2>
+  <div data-c="imm:6" data-notes></div>
+  <div class="box" style="margin-top:24px"><span class="tag t-VERIFY">VERIFY</span> Monza: immobile da valutare. Se confermato, diventa una settima scheda. Non inserito nell'elenco.</div>
+  <i data-note="DEV|IN VENDITA = Pagina con Loop Grid (CPT Immobili) + Loop Item Card immobile (componente condiviso). LOW, 2-3 h per la pagina. Nessun filtro (6-7 voci). Ordine manuale da campo ACF. Blocco 'Perché dal costruttore' = 3 container statici. Se gli immobili venduti restano online serve solo una variante del badge (già prevista)."></i>
+  <i data-note="PROPOSTA|Con 6-7 immobili non servono filtri (INFERENZA): ordine per 'in costruzione / disponibile / venduto' se il cliente conferma gli stati. Immobili venduti: tenere o togliere? Da chiedere (SEO/credibilità vs confusione)."></i>
+  <i data-note="RICERCA|Il sito attuale ha già le pagine 'In vendita' con Residenza Solarium e Residenza Paradiso: URL da mappare con redirect 301 (vedi SEO)."></i>
+</div></section>
+
+<section class="sec dk" aria-labelledby="h-why"><div class="in pg-side">
+  <h2 id="h-why">Comprare da chi costruisce cambia il modo di comprare</h2>
+  <ul class="pg-rows">
+    <li><h3>Nessun intermediario</h3><p>Parli con chi segue il cantiere ogni giorno, senza agenzie in mezzo e senza passaggi di informazioni da una parte all'altra.</p></li>
+    <li><h3>Dalla trattativa al rogito</h3><p>Lo stesso interlocutore ti accompagna dalla scelta dell'unità fino alla consegna e alla firma dal notaio.</p></li>
+    <li><h3>Un'impresa certificata</h3><p>Conti e Conti lavora con un sistema qualità certificato UNI EN ISO 9001:2015 e con attestazione SOA.</p></li>
+  </ul>
+  <i data-note="PROPOSTA|Blocco opzionale di argomenti commerciali, ricavati dal servizio Vendita e dalle certificazioni del sito attuale (RICERCA, da verificare con il cliente). Nessun vantaggio economico o garanzia aggiunti. Alta fedeltà: niente terna di box uguali; titolo a sinistra e tre argomenti come righe a filetti (titolo/testo) su fondo nero."></i>
+</div></section>
+<section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (In vendita)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

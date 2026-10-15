@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Lavora con noi | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="">
+<div id="tb"></div>
+<p class="legend"><strong>Lavora con noi.</strong> Pagina dedicata alle candidature, raggiungibile da Contatti e dal footer. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="contatti.html">Contatti</a></li><li aria-current="page">Lavora con noi</li></ol></nav>
+<section class="sec pg-op" aria-labelledby="h1"><div class="in">
+  <div class="hrow">
+    <h1 id="h1">Lavora con noi</h1>
+    <div class="hrow-t">
+      <p class="lead">In cantiere lavorano persone dell'impresa. Cerchiamo chi vuole entrare nella squadra, anche senza esperienza: formiamo le persone. <i data-note="RICERCA|'Anche senza esperienza: formiamo le persone' riprende l'invito del blocco Lavora con noi del sito attuale. Da confermare col cliente."></i></p>
+      <p>Muratori, carpentieri, tecnici di cantiere e personale d'ufficio sono dipendenti dell'impresa, nella sede di Lentate sul Seveso e sui cantieri tra Milano, Como, Varese e Monza Brianza.</p>
+    </div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina nuova nata dal feedback su Contatti ('non mi piace che ci siano due form'): il modulo candidatura esce da Contatti e vive qui. Stesso linguaggio di Contatti e Impresa: apertura titolo/frase sulla stessa base, mestieri a colonne con filetti (componente della pagina Impresa), modulo su grigio chiaro accanto al riquadro nero dei contatti diretti. Fondi: bianco, grigio chiaro, bianco, footer nero. Voce nel footer; nel menu principale no (VERIFY: il sito attuale ha una voce di menu dedicata)."></i>
+  <i data-note="PROPOSTA|Copy provvisorio costruito solo su fatti noti (mestieri e sede dalla pagina Impresa e dal sito attuale). Nessuna posizione aperta inventata: se il cliente ha ricerche attive, si elencano come righe nella sezione mestieri."></i>
+  <i data-note="DEV|LAVORA CON NOI = Pagina Elementor statica: apertura (container 2 colonne, riuso), mestieri (stesso blocco della pagina Impresa salvato come template o copiato), colonna contatti diretti (riuso da Contatti). 2-3 h per la pagina + form candidatura 2-3 h (stima spostata da Contatti, vedi nota nel modulo). Totale 4-6 h, PRELIMINARE, fuori dalla stima base finché la pagina non è approvata."></i>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-mst"><div class="in">
+  <div class="hrow">
+    <h2 id="h-mst">I mestieri della squadra</h2>
+    <p>Puoi candidarti per uno di questi ruoli o mandarci il tuo nome se vuoi imparare il mestiere.</p>
+  </div>
+  <ul class="imp-job">
+    <li><h3>Muratori e carpentieri</h3><p>Strutture, murature e casseri: la parte più grande della squadra lavora in cantiere ogni giorno.</p></li>
+    <li><h3>Tecnici di cantiere</h3><p>Seguono i lavori sul posto e tengono il filo con architetti, designer e fornitori.</p></li>
+    <li><h3>Ufficio</h3><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso.</p></li>
+  </ul>
+  <i data-note="VERIFY|Mestieri ripresi dalla pagina Impresa (sito attuale: tecnici di cantiere, muratori e carpentieri, impiegati). Mansioni descritte da noi: da confermare. Numeri del team non ripetuti qui (già in Impresa, forse non aggiornati)."></i>
+</div></section>
+
+<section class="sec" aria-label="Modulo di candidatura e contatti"><div class="in pg-ct">
+  <div class="pg-form" id="candidatura">
+    <form onsubmit="return false" novalidate aria-labelledby="h-cv">
+      <h2 id="h-cv">Invia la tua candidatura</h2>
+      <p class="hint top">I campi con * sono obbligatori.</p>
+      <div class="pg-fg">
+        <div class="f"><label for="cv-n">Nome e cognome *</label><input id="cv-n" autocomplete="name" required></div>
+        <div class="f"><label for="cv-e">Email *</label><input id="cv-e" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="cv-t">Telefono *</label><input id="cv-t" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="cv-r">Ruolo di interesse</label><select id="cv-r"><option>Seleziona</option><option>Muratore</option><option>Carpentiere</option><option>Tecnico di cantiere</option><option>Ufficio</option><option>Altro / senza esperienza</option></select></div>
+        <div class="f full"><label for="cv-f">Curriculum (PDF o Word, max 5 MB)</label><input id="cv-f" type="file" accept=".pdf,.doc,.docx" aria-describedby="cv-f-h"><span class="hint" id="cv-f-h">Facoltativo, anche se è la tua prima esperienza.</span></div>
+        <div class="f chk full"><input type="checkbox" id="cv-c" required><label for="cv-c">Ho letto l'informativa privacy per i candidati *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+      </div>
+      <button class="btn" type="submit">Invia la candidatura</button>
+    </form>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Modulo spostato da Contatti senza cambiare i campi. Ruoli derivati dai mestieri della pagina Impresa: VERIFY col cliente. CV facoltativo, coerente con 'anche senza esperienza': VERIFY. Il sito attuale ha un modulo candidature separato (RICERCA)."></i>
+    <i data-note="DEV|Form candidatura: Form widget Pro (Text, Email, Tel, Select, File Upload, Acceptance) + stile condiviso del modulo preventivi. 2-3 h (stima spostata da Contatti, dove non resta alcun form candidatura). VERIFY: File Upload salva in wp-content/uploads (allegati accessibili pubblicamente: proteggere la cartella o inviare solo come allegato email), limiti dimensione/estensioni lato server, informativa privacy specifica per candidati su Iubenda (testo da far generare al cliente), destinatario email."></i>
+  </div>
+  <aside class="pg-ca" aria-labelledby="h-cd">
+    <div class="pg-cd">
+      <h2 id="h-cd">Preferisci parlarne a voce?</h2>
+      <p>Chiamaci o scrivici: ti diciamo a chi rivolgerti.</p>
+      <dl>
+        <div><dt>Telefono</dt><dd class="big"><a href="tel:+390362557972">0362 557972</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div>
+        <div><dt>Sede</dt><dd>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>
+      </dl>
+      <i data-note="RICERCA|Contatti dal sito attuale, da verificare. VERIFY se esiste un indirizzo email dedicato alle candidature."></i>
+    </div>
+  </aside>
+</div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Lavora con noi)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

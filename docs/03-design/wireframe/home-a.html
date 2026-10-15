@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Home A - Progetto per primo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Home, variante A: "progetto per primo".</strong> Hero a tutta larghezza con un progetto reale (stessa composizione di Home B, anno di fondazione orizzontale in evidenza accanto al titolo); clienti, certificazioni e numeri in un unico blocco subito sotto la hero, poi progetti in righe editoriali alternate e Massimo. Stato: bozza wireframe, <span class="tag t-PROPOSTA">PROPOSTA</span> in attesa di approvazione. Variante alternativa: <a href="home-b.html">Home B</a>.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+
+<section class="hero hero-b hb-y" aria-labelledby="h1">
+  <div data-noratio data-ph="HERO: progetto reale, foto da fotografo (al vivo a tutto schermo; crop desktop ~16:9 con respiro in alto, tablet ~4:5, mobile ~9:16)|16/9"></div>
+  <div class="hero-in">
+  <div class="hb-title">
+    <h1 id="h1">Impresa di costruzioni a Lentate sul Seveso</h1>
+  </div>
+  <p class="hero-since">Impresa edile <span>dal <b>[1987]</b></span></p>
+  <div class="hb-side">
+    <p class="hero-sub">Nuove costruzioni, ristrutturazioni e manutenzioni per qualsiasi tipologia: dal residenziale al lusso, dalle palestre all'industriale. <i data-note="RICERCA|H1 e sottotitolo ripresi dal sito attuale (H1 'Impresa di costruzioni a Lentate sul Seveso'; 'nuove costruzioni, ristrutturazioni, manutenzioni per qualsiasi tipologia'). Testo provvisorio: il brief chiede di aprire alla zona Milano/Como/Varese/Monza Brianza, quindi H1 definitivo da concordare con SEO."></i></p>
+    <div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="cantieri.html">Guarda i cantieri</a></div>
+  </div>
+    <div class="hero-notes">
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Hero A = stessa composizione della hero di Home B: H1 in alto a sinistra, foto al vivo a tutta altezza con il centro libero, binario in basso separato da un filetto con sottotitolo a sinistra e CTA a destra. Unica differenza: in A l'anno di fondazione è orizzontale e in evidenza, come misura grande (1987 in Archivo, peso 500) in alto a destra, allineata alla base dell'H1 e segnata da un filetto bordeaux: dato architettonico, non decorazione. Non compete con l'H1 (colonna separata, peso minore) né con le CTA (in basso). Mobile: anno sotto l'H1 in riga. Leggibilità: velatura a gradiente in alto (~72%) e in basso (~82%) come B; testo bianco AA da verificare sulla foto reale (VERIFY), la foto deve avere respiro nella parte alta. Header solido sopra la foto."></i>
+    <i data-note="CLIENTE|Hero = progetto reale di alta qualità fatto da fotografo, niente immagini astratte/stock (dalla call). Foto precisa scelta solo dopo l'approvazione del wireframe. Crop: vedi nota DEV della hero (circa 16:9 desktop, 4:5 tablet, 9:16 mobile), focal point da definire."></i>
+    <i data-note="PROPOSTA|H1 con parola chiave principale (tipo di impresa + zona) da concordare con SEO: nessun testo definitivo scritto qui. Una sola H1 per pagina. CTA primaria = preventivo, secondaria = cantieri. Anno di fondazione 1987 (brief) vs 1988 (sito attuale): VERIFY."></i>
+    <i data-note="DEV|HERO (PROPOSTA). Riuso del componente hero di Home B (stesso template Elementor): container Full width, altezza 100svh meno header (Custom CSS calc; VERIFY svh), Background Image con 3 crop per device (~16:9 / ~4:5 / ~9:16, focal point) o Image assoluta object-fit:cover per LCP (preload + fetchpriority high, niente lazy-load), Background Overlay gradiente Pro alto/basso, container interno a 3 righe (titolo, spazio foto, binario con bordo superiore bianco 40% per sottotitolo e 2 Button). Delta rispetto a B: nella riga titolo Grid 2 colonne 1fr/auto allineate in basso; a destra testo Impresa edile dal + Heading 1987 orizzontale (clamp() con vh) con bordo superiore bordeaux 2 px, nessuna rotazione CSS. Mobile: anno sotto l'H1 in riga, CTA affiancate, hero sopra la barra sticky (altezza meno 66 px). Ore: hero 3-4 h come template (B) + delta anno 0.5 h; si costruisce una sola home, quindi non si sommano. Niente Parallax/Motion Effects. Rischi: contrasto dipende dalla foto in alto, focal point per device, peso immagine LCP."></i>
+    <i data-note="DEV|HEADER E MENU (Theme Builder > Header, globale). MEDIUM, 5-8 h con Mega Menu Pro o 3-5 h con Nav Menu nativo + sottomenu. Il wireframe richiede solo un dropdown con 8 voci: basta il widget Nav Menu (Pro) con sottomenu, hover/focus desktop e hamburger a pannello mobile con accordion. Il widget Mega Menu (Pro) serve solo se si decide un pannello con immagini/colonne (non nel wireframe): non incluso. Scelta consigliata: Nav Menu = risparmio 2-3 h senza cambiare layout. CTA Preventivo come Button nell'header; sticky header: Motion Effects Sticky (Pro) solo se approvato nel mockup. Rischi: focus visibile sul sottomenu e tastiera (Esc chiude) da testare; header trasparente sopra l'hero richiede override CSS. Una sola template, tutte le pagine."></i>
+    <i data-note="DEV|BARRA STICKY MOBILE (Chiama + Preventivo). LOW, 1.5-2.5 h. Elementor: container posizione Fixed bottom (Position > Fixed, o Motion Effects Sticky Bottom, Pro) con due Button; visibilità solo mobile (Responsive > Hide on Desktop/Tablet). Aggiungere padding-bottom al footer per non coprire il contenuto e verificare safe-area iPhone (CSS env). Una template (Theme Builder > Footer o sezione globale), variante etichetta 'Richiedi informazioni' con ancora #form nelle schede residenza = condizione per tipo di pagina (Display Conditions Pro) o secondo template. Da non mostrare con tastiera aperta nei form: test su dispositivi."></i>
+    <i data-note="DEV|SEZIONI HOME (specifiche della pagina, escluse le componenti già stimate). LOW-MEDIUM, 5-8 h per la Home (una sola variante) per assemblaggio di: tessere categoria, blocco Massimo, immobili, recensioni, zone, blog, CTA, con le template condivise. Tutto statico tranne le card (Loop Grid su CPT). Ordine e comportamento responsive come da wireframe; le due proposte A/B non raddoppiano il lavoro di sviluppo finale (si costruisce una sola home): costruire entrambe in Elementor = +6-9 h non necessarie."></i>
+    <i data-note="DEV|FOOTER (Theme Builder > Footer, globale). LOW, 2-3 h. 3 colonne desktop, 2 tablet, 1 mobile (container flex wrap). Menu footer = Nav Menu secondario; contatti statici; nessun logo certificazioni (spostati in Home, blocco squadra). Link Privacy/Cookie: pagine legali fornite dal cliente (VERIFY) e link per riaprire le preferenze cookie solo se il cookie banner lo prevede (VERIFY plugin)."></i>
+    </div>
+  </div>
+</section>
+
+<section class="sec lg" aria-labelledby="h-logo">
+  <div class="in lg-head"><h2 id="h-logo">Quarant'anni di cantieri, verificabili</h2><p class="lg-lead">Chi ci affida i propri spazi, chi controlla come lavoriamo.</p></div>
+  <div data-c="logos" data-notes></div>
+</section>
+
+<section class="sec alt" aria-labelledby="h-feat"><div class="in">
+  <p class="eyebrow">Progetti in evidenza</p>
+  <h2 id="h-feat">Tre cantieri che raccontano come lavoriamo</h2>
+  <div class="grid split" style="margin-bottom:40px"><div data-ph="Casa MJO, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; Milano</span><h3 style="font-size:28px">Casa MJO</h3><p>Un intervento di pregio a Milano, seguito in ogni dettaglio insieme al progettista. [Abstract da concordare: lavorazioni, tempi, superficie.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <div class="grid split rev" style="margin-bottom:40px"><div data-ph="Ceresio 7, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Ceresio 7</h3><p>Piscina e palestra: uno dei progetti più visitati del sito e il punto di partenza per nuovi cantieri dello stesso tipo. [Abstract da concordare.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <div class="grid split"><div data-ph="Villa Lodovic, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Villa Lodovic</h3><p>Una villa realizzata dal progetto alla consegna. [Abstract da concordare: luogo, finiture, tempi.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
+  <i data-note="CLIENTE|3 progetti in evidenza (casa MJO, Ceresio 7, Villa Lodovic; Ceresio 7 = 2a pagina più visitata del sito attuale). Righe editoriali alternate immagine/testo, stessa composizione e copy di Home B. Su mobile: immagine sopra, testo sotto, ordine invariato. VERIFY NDA sui nomi. Foto: solo placeholder, selezione dopo approvazione wireframe."></i>
+  <i data-note="DEV|Righe editoriali alternate (stesso componente di Home B): 3 container 2 colonne con order inverso sulla riga centrale, statici o Loop Grid sul CPT Progetti con campo ACF in evidenza (VERIFY). 2-3 h; sostituisce le card in evidenza nella Home (il Loop Item Card progetto resta per Cantieri/Categoria/Progetti simili)."></i>
+  <p style="margin-top:24px"><a class="btn sec2" href="cantieri.html">Tutti i cantieri</a></p>
+</div></section>
+
+<section class="sec cxd" aria-labelledby="h-cat"><div class="in">
+  <h2 id="h-cat">Dalla casa privata al capannone, un solo interlocutore</h2>
+  <div data-c="cats" data-notes></div>
+  <div class="open" style="margin-top:24px"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> <strong>Settori vs Categorie.</strong> Il brief cita anche una voce "Settori" nel menu (industriale, civile, ristrutturazione, lusso; 4-5 da confermare). Qui è mostrato solo l'elenco delle 8 categorie approvate. Vedi nota su <a href="cantieri.html">Cantieri</a>.</div>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-mas"><div class="in grid split">
+  <div data-ph="Ritratto di Massimo, ambientato in cantiere|4/5"></div>
+  <div>
+    <h2 id="h-mas">Dietro ogni cantiere c'è una squadra che conosciamo per nome</h2>
+    <p class="lead">Lavoriamo con personale nostro, formato e strutturato: 40 dipendenti diretti, non una catena di subappalti. È il modo in cui garantiamo tempi certi e finiture all'altezza dei progetti degli architetti.</p>
+    <p class="meta"><strong>Massimo Conti</strong>, amministratore unico</p>
+    <i data-note="CLIENTE|Massimo come volto aziendale della home (dalla call). Nessuna citazione virgolettata: non è stata fornita e non va inventata. Il testo usa solo punti di forza del brief (40 dipendenti diretti contro subappalti, tempi, finiture complesse con architetti). Copy provvisorio. Foto da shooting dedicato; alt descrittivo."></i>
+    <div data-c="cert" data-notes></div>
+    <a class="btn sec2" href="chi-siamo.html">Conosci l'impresa</a>
+  </div>
+</div></section>
+
+<section class="sec imm" aria-labelledby="h-imm"><div class="in">
+  <p class="eyebrow">Immobili in vendita</p>
+  <h2 id="h-imm">Acquista direttamente da chi costruisce</h2>
+  <p class="lead" style="margin-bottom:24px">Nuove residenze in Brianza, senza agenzie di mezzo: parli con l'impresa che le realizza.</p>
+  <div data-c="imm:3" data-notes></div>
+  <p style="margin-top:24px"><a class="btn sec2" href="in-vendita.html">Tutti gli immobili</a></p>
+</div></section>
+
+<section class="sec" aria-labelledby="h-rev"><div class="in">
+  <h2 id="h-rev">Cosa dicono i clienti</h2>
+  <div data-c="reviews" data-notes></div>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-zone"><div class="in">
+  <h2 id="h-zone">Dove operiamo</h2>
+  <p class="lead" style="margin-bottom:20px">Milano, Como, Varese e Monza Brianza: dalle ville sul lago agli interventi di pregio in città, fino alle nuove costruzioni in Brianza.</p>
+  <div data-c="zone" data-notes></div>
+</div></section>
+
+<section class="sec" aria-labelledby="h-blog"><div class="in">
+  <h2 id="h-blog">Dal blog</h2>
+  <div data-c="blog"></div>
+  <i data-note="DEV|LOW. Loop Grid (Pro) sui 3 ultimi articoli (post standard) con Loop Item 'Card articolo' (immagine, data, tempo di lettura da campo ACF o calcolato, titolo, link). 1-1.5 h per il Loop Item una tantum, riusato in Blog, Articolo (correlati) e Home. Tempo di lettura non è un dato nativo: campo ACF a mano o plugin SEO (VERIFY), oppure rimosso."></i>
+  <i data-note="PROPOSTA|3 articoli SEO dal brief (titoli da definire con SEO Agent). Le riviste che pubblicano i progetti senza citare l'impresa vanno nel blog, non sulle schede progetto (dalla call)."></i>
+</div></section>
+
+<section class="sec" style="background:#e2e2e2"><div data-c="cta" data-notes></div></section>
+
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Home A)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

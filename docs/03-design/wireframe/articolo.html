@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Articolo blog | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="blog" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Articolo del blog</strong> (template).</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">Ristrutturare casa: da dove cominciare</li></ol></nav>
+<article class="sec" style="border-top:0" aria-labelledby="h1"><div class="in rd">
+  <i data-note="PROPOSTA|Allineamento (feedback): titolo, meta, corpo, immagine, CTA e correlati partono dal bordo sinistro del container del sito, come header e breadcrumb. La colonna di lettura resta ~760px (65-75 caratteri) ma non è più centrata su un asse diverso. DEV: in Elementor container boxed 1120px con widget a max-width 760px allineati a sinistra, delta 0 h."></i>
+  <p class="meta">[Data] &middot; Guide &middot; [x min di lettura]</p>
+  <h1 id="h1">Ristrutturare casa: da dove cominciare e a chi affidarsi</h1>
+  <p class="lead">Prima dei materiali e delle finiture ci sono tre decisioni che pesano più di tutte: cosa serve davvero, chi coordina i lavori e come si arriva a un preventivo che si possa confrontare.</p>
+  <div data-ph="Immagine articolo|3/2"></div>
+  <i data-note="DEV|ARTICOLO = Theme Builder > Single Post, unico template. MEDIUM, 4-6 h. Titolo, data, immagine = Dynamic Tags; corpo = widget Post Content (stile tipografico globale per h2/h3/blockquote/liste, colonna ~760px). Sommario: widget Table of Contents (Pro) con ancore automatiche da H2, collassabile su mobile (VERIFY resa accessibile); si nasconde dove non serve (Display Conditions). Box CTA = template Fascia CTA variante breve. Articoli correlati = Loop Grid con query 'Related' (stessa categoria). Autore: campo da definire (VERIFY chi firma). Rassegna stampa = post con link esterno (ACF URL) e rel noopener: richiede un campo, +0.5 h."></i>
+  <i data-note="PROPOSTA|Colonna testo a 65-75 caratteri per riga (max-width ~760px), interlinea ampia. Sommario con ancore solo se l'articolo supera ~4 sezioni; su mobile collassabile. H1 unica, H2 per sezioni, H3 solo se sotto un H2."></i>
+  <i data-note="PROPOSTA|Copy provvisorio: titolo, incipit e paragrafi sono una bozza di modello, scritta come testo generale di consulenza senza dati, prezzi, tempi o riferimenti normativi specifici. Titolo e keyword da validare con SEO; testo definitivo scritto dal team (brief)."></i>
+  <nav class="box" aria-label="Sommario" style="margin:24px 0"><strong>In questo articolo</strong><ol><li><a href="#s1">Parti da cosa deve cambiare, non da cosa vuoi comprare</a></li><li><a href="#s2">Un solo referente o tanti fornitori?</a></li><li><a href="#s3">Come leggere un preventivo</a></li><li><a href="#s4">Prima di firmare</a></li></ol></nav>
+  <h2 id="s1">Parti da cosa deve cambiare, non da cosa vuoi comprare</h2>
+  <p>Una ristrutturazione nasce quasi sempre da un disagio concreto: gli spazi non funzionano più, gli impianti sono vecchi, la casa è cambiata insieme a chi la abita. Scrivere in poche righe che cosa non va, e cosa dovrebbe fare la casa dopo i lavori, vale più di una cartella di immagini raccolte online.</p>
+  <p>Questo elenco diventa la base di ogni conversazione: con l'architetto, con l'impresa, con te stesso quando bisognerà scegliere dove tagliare.</p>
+  <blockquote class="box" style="margin:24px 0">Un buon preventivo comincia da un buon racconto del progetto, non da una cifra.</blockquote>
+  <h2 id="s2">Un solo referente o tanti fornitori?</h2>
+  <p>Gestire in prima persona muratore, impiantisti, serramentista e posatore significa coordinare date, responsabilità e ordine delle lavorazioni. Alcune persone lo fanno volentieri, altre no. In alternativa si può affidare il cantiere a un'impresa che lo coordina per intero, come general contractor.</p>
+  <h3>Cosa cambia nella pratica</h3>
+  <p>Con un unico referente le domande hanno un solo destinatario e le decisioni seguono un ordine. Con più fornitori hai più controllo sulle singole scelte, ma anche più tempo da dedicare al cantiere.</p>
+  <h2 id="s3">Come leggere un preventivo</h2>
+  <p>Due preventivi si confrontano solo se descrivono le stesse lavorazioni. Prima di guardare il totale, controlla che siano indicati cosa è compreso, cosa è escluso e cosa viene lasciato a scelte successive. Le voci generiche sono quelle che, a cantiere avviato, diventano discussioni.</p>
+  <i data-note="RICERCA|Se l'articolo è una rassegna stampa (rivista che non cita l'impresa), mostrare il link alla testata con 'si apre in nuova scheda' e un breve commento, non una copia dell'articolo (diritti d'autore: VERIFY)."></i>
+  <h2 id="s4">Prima di firmare</h2>
+  <p>Chiedi di vedere un cantiere simile al tuo, o un lavoro concluso, e parla con chi ci ha vissuto. Verifica chi sarà il tuo interlocutore durante i lavori e come ti verranno comunicati gli aggiornamenti. Sono domande semplici, e le risposte dicono molto su come andrà il resto.</p>
+</div></article>
+<section class="sec alt" aria-labelledby="h-cta"><div class="in rd">
+  <div class="box" style="background:#fff"><h2 id="h-cta" style="font-size:22px">Hai una ristrutturazione in mente?</h2><p>Raccontaci cosa vuoi cambiare: partiamo da lì per costruire un preventivo sul tuo caso.</p><a class="btn" href="contatti.html">Richiedi un preventivo</a></div>
+  <i data-note="PROPOSTA|CTA a fine articolo (e opzionale a metà per articoli lunghi). Autore: non assumere Massimo né altri: VERIFY chi firma gli articoli (segnali di competenza per SEO)."></i>
+</div></section>
+<section class="sec" aria-labelledby="h-rel"><div class="in"><h2 id="h-rel">Articoli correlati</h2>
+  <ul class="grid g3" style="list-style:none;padding:0;margin:0">
+    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Costruire casa in Brianza: dal terreno alla consegna</h3></a></li>
+    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Ville sul Lago di Como: cosa cambia costruendo in un contesto di pregio</h3></a></li>
+    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Ristrutturare casa: da dove cominciare e a chi affidarsi</h3></a></li>
+  </ul></div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Articolo)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

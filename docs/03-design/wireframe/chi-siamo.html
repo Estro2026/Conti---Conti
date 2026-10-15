@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Impresa: storia, persone, metodo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="impresa" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Impresa, versione 2.</strong> Pagina unica in quattro capitoli ancorati: storia e quarantennale, persone per mestieri, metodo come cartello di cantiere, garanzie. Struttura e copy: <span class="tag t-PROPOSTA">PROPOSTA</span>, in attesa di approvazione. La versione precedente aveva 9 sezioni a schede; qui team, valori, servizi e numeri sono assorbiti nei capitoli Persone e Metodo, senza blocchi ripetuti dalla Home.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Impresa</li></ol></nav>
+
+<section class="sec imp-hero hr" aria-labelledby="h1"><div class="in grid split">
+  <div>
+    <p class="eyebrow">Impresa edile a Lentate sul Seveso, dal [1987]</p>
+    <h1 id="h1">Costruiamo con persone nostre</h1>
+    <p class="lead">Case, ville, locali commerciali ed edifici industriali tra Milano, Como, Varese e la Brianza. Lavoriamo con squadre assunte dall'impresa e, quando la commessa lo richiede, come General Contractor: un solo interlocutore per tutto il cantiere.</p>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Nuova IA della pagina (v2, dopo feedback utente): hero con indice dei 4 capitoli > Storia (fondo nero, quarantennale, timeline) > Persone (per mestieri, Massimo in una riga firmata) > Metodo (cartello di cantiere) > Garanzie (certificazioni) > CTA. Fondi: bianco, nero, bianco, grigio chiaro, bianco, bordeaux. Nessun blocco identico alla Home (niente quote numeri, banda loghi, sezione Massimo, categorie): i numeri utili stanno nel cartello. Rimossi rispetto alla v1: 4 ritratti [Nome]/[Ruolo], 3 box valori, 4 box servizi, fascia stats. H1 sul differenziante (personale diretto vs subappalti, dal brief)."></i>
+    <i data-note="PROPOSTA|Copy provvisorio di tutta la pagina, scritto da noi. VERIFICATO (brief, call, sito attuale): sede Lentate sul Seveso, zone operative, diretto o General Contractor, personale diretto (circa 40), ~180 cantieri e ~300 preventivi l'anno, 13-14 M€, villa a Milano in 5 mesi per la Design Week (NDA), versatilità tranne restauro conservativo, certificazioni, vendita diretta. NON VERIFICATO: anno di fondazione, ripartizione del personale, mansioni dei mestieri, voci del cartello. Nessuna frase attribuita a Massimo Conti."></i>
+    <i data-note="DEV|Stima Impresa v2 (Elementor Pro, pagina statica, nessun CPT). Hero split + indice ancore (Icon List orizzontale con link #) 1-1.5 h; Storia (container nero, cifra 40 = Heading, timeline = container flex 6 colonne con bordo e tacche in Custom CSS) 1.5-2.5 h; Persone (Image 21:9 + riga titolo 7/12 / testo 5/12 + 3 colonne di testo con bordi verticali) 1-1.5 h; Massimo (container 2 colonne: Image 4/5 + Heading e Text, filetto) 0.5-1 h; Metodo (intestazione 2 colonne; griglia 2x2 Heading+Text con filetti interni in Custom CSS; riga finale sulle stesse 2 colonne) 1.5-2 h; Garanzie (4 badge + testo, stili del blocco certificazioni Home) 0.5-1 h; CTA template 0 h; responsive e QA 1-1.5 h. TOTALE 7-11 h (v3: +0.5-1 h per il blocco Massimo esteso; Metodo rifatto a parità di ore; v4 Persone e Metodo ricomposti: Persone a parità, Metodo senza foto ma con filetti a griglia da gestire nei breakpoint, delta 0 h). Rispetto alla prima stima (8-12 h) resta la rimozione di 4 card team, 3 box valori, 4 box servizi e stats. Opzionale non incluso: mini-nav sticky delle ancore +1 h; 3 pagine separate invece di 1 +3-5 h; LOSI in pagina (opz. B/C) +1-1.5 h."></i>
+    <i data-note="CLIENTE|Anno: il brief dice impresa dal 1987 e quarantennale nel 2027; il sito attuale riporta 1987 (Impresa) e 1988 / '30 anni' (home): VERIFY prima di scrivere date."></i>
+  </div>
+  <div data-ph="Foto reale: squadra al lavoro in un cantiere in corso|1/1"></div>
+</div></section>
+
+<section class="sec imp-ink" aria-labelledby="h-sto"><div class="in">
+  <div class="imp-st">
+    <p class="imp-40" aria-hidden="true">40<small>anni di cantieri nel <b>2027</b></small></p>
+    <div>
+      <h2 id="h-sto">Quarant'anni scritti in cantiere</h2>
+      <p>L'impresa nasce nel [1987] a Lentate sul Seveso, in Brianza, dove ha ancora sede. Da lì segue cantieri tra Milano, Como, Varese e Monza e Brianza, sempre più spesso per studi di architettura e designer.</p>
+      <p>Il lavoro è cambiato: finiture su misura, tempi più stretti, più regole da rispettare. Le certificazioni sono i punti in cui l'impresa ha messo per iscritto il proprio modo di lavorare. [Tappe della storia aziendale da raccogliere con Massimo Conti.]</p>
+    </div>
+  </div>
+  <ol class="imp-tl">
+    <li><b>[1987]</b><span>Nasce l'impresa a Lentate sul Seveso</span></li>
+    <li><b>2008</b><span>Prima certificazione UNI EN ISO 9001</span></li>
+    <li><b>2020</b><span>ISO 9001:2015, ente TÜV Italia</span></li>
+    <li><b>2023</b><span>Attestazione SOA, classifica [IV bis]</span></li>
+    <li><b>2024</b><span>Cassa Edile Awards</span></li>
+    <li class="is-next"><b>2027</b><span>Quarantennale. [Iniziativa da definire]</span></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Storia su fondo nero (stacco tra due sezioni chiare): cifra 40 come segno grafico (aria-hidden, il testo dice già tutto), timeline orizzontale che riprende il linguaggio delle 'quote' (linea con tacche), 3 colonne su tablet e verticale su mobile. Nessuna animazione: la timeline è statica. 2027 in tinta più chiara perché futura. Quarantennale: spazio per un contenuto o evento dedicato, da decidere con il cliente."></i>
+  <i data-note="RICERCA|Tappe 2008, 2020, 2023, 2024 dalle pagine Impresa e Certificazioni del sito attuale. Mancano tappe aziendali (primi cantieri, sedi, passaggi generazionali): da chiedere. SOA IV bis: VERIFY categorie e scadenza."></i>
+</div></section>
+
+<section class="sec" aria-labelledby="h-per"><div class="in">
+  <div class="imp-ph-img" data-ph="Foto reale di squadra al vivo: muratori, carpentieri e tecnici su un cantiere dell'impresa|21/9"></div>
+  <div class="imp-ph-h">
+    <h2 id="h-per">In cantiere trovi persone nostre, non una catena di subappalti</h2>
+    <p class="lead">Tecnici, muratori, carpentieri e ufficio sono dipendenti dell'impresa. Sappiamo chi lavora su ogni cantiere e rispondiamo di quello che fa.</p>
+  </div>
+  <ul class="imp-job">
+    <li><h3>Muratori e carpentieri <span class="imp-job-n">[26]</span></h3><p>La parte più grande della squadra: strutture, murature e casseri fatti da mani dell'impresa, non affidati a ditte esterne.</p></li>
+    <li><h3>Tecnici di cantiere <span class="imp-job-n">[8]</span></h3><p>Seguono ogni cantiere ogni giorno e parlano con architetti e designer, anche quando la finitura è fuori standard.</p></li>
+    <li><h3>Ufficio <span class="imp-job-n">[9]</span></h3><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso.</p></li>
+  </ul>
+  <div class="imp-boss">
+    <div data-ph="Ritratto di Massimo Conti in cantiere, luce naturale|4/5"></div>
+    <div class="imp-boss-t">
+      <p class="imp-boss-k">Chi guida l'impresa</p>
+      <h3 class="imp-boss-n">Massimo Conti</h3>
+      <p class="imp-boss-r">Amministratore unico</p>
+      <p class="imp-boss-p">[Percorso: da dove arriva, quando è entrato in impresa, cosa ha costruito in questi anni. Da raccogliere con lui.]</p>
+      <p class="imp-boss-p">[Come segue i cantieri: quanto è presente, con chi parla, cosa controlla di persona. Da raccogliere con lui, nessuna citazione scritta al suo posto.]</p>
+    </div>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback utente: blocco Massimo troppo piccolo. Ora ritratto 4/5 grande (5/12), nome in evidenza e 2 paragrafi tra [ ] da raccogliere con lui. Diverso dalla Home: composizione editoriale ritratto a sinistra / testo allineato in basso a destra, nessuna citazione. Stesso fondo della sezione Persone, di cui è la chiusura."></i>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback utente: composizione Persone rifatta. Una sola foto di squadra al vivo a larghezza container (21:9, tablet 16:9, mobile 4:3); sotto, titolo 7/12 e testo 5/12 allineati alla base; poi i tre mestieri in riga a 3 colonne uguali, solo testo, separati da filetti verticali (mobile: filetti orizzontali). Numero per mestiere tra [ ], nessun nome inventato, niente foto piccole né box. Massimo: vedi nota del blocco dedicato."></i>
+  <i data-note="VERIFY|Mestieri dalla pagina Impresa del sito attuale (tecnici di cantiere, muratori e carpentieri, impiegati); 'ufficio' raggruppa gli impiegati. Numeri 26/8/9 dal sito attuale, forse non aggiornati: VERIFY. Mansioni descritte da noi: da confermare. Le foto richiedono shooting con consenso delle persone."></i>
+</div></section>
+
+<section class="sec imp-dk" aria-labelledby="h-met"><div class="in imp-m">
+  <div class="imp-m-h">
+    <h2 id="h-met">Quattro impegni, ognuno con la sua prova</h2>
+    <p class="lead">Case, ville, locali commerciali, palestre, edifici industriali: tutto tranne il restauro conservativo. Su ogni lavoro valgono le stesse regole.</p>
+  </div>
+  <div class="imp-tw">
+  <ol class="imp-cl">
+    <li><p class="imp-cl-a">Le lavorazioni principali le fanno persone dell'impresa.</p><div class="imp-cl-p"><p class="imp-cl-n" aria-hidden="true"><span data-n="180">180</span><small>cantieri l'anno</small></p><p><b>Circa 180 cantieri l'anno</b> tra Milano, Como, Varese e Monza e Brianza, seguiti dai nostri tecnici.</p></div></li>
+    <li><p class="imp-cl-a">Hai un solo interlocutore, dal progetto alla consegna.</p><div class="imp-cl-p"><p class="imp-cl-n" aria-hidden="true"><span data-n="1">1</span><small>interlocutore</small></p><p><b>General Contractor:</b> coordiniamo noi progettisti, fornitori e lavorazioni.</p></div></li>
+    <li><p class="imp-cl-a">Il preventivo si legge voce per voce.</p><div class="imp-cl-p"><p class="imp-cl-n" aria-hidden="true"><span data-n="300">300</span><small>preventivi l'anno</small></p><p><b>Circa 300 preventivi l'anno</b>, costruiti sul progetto, anche per finiture non standard.</p></div></li>
+    <li><p class="imp-cl-a">La data di fine lavori si fissa prima di iniziare.</p><div class="imp-cl-p"><p class="imp-cl-n" aria-hidden="true"><span data-n="5">5</span><small>mesi</small></p><p><b>5 mesi</b> per costruire una villa a Milano, consegnata in tempo per la Design Week.</p></div></li>
+  </ol>
+  </div>
+  <dl class="imp-cl-x">
+    <div><dt>Qualità e sicurezza</dt><dd>Procedure scritte, certificate UNI EN ISO 9001:2015 da TÜV Italia.</dd></div>
+    <div><dt>Vendita diretta</dt><dd>Gli immobili che costruiamo si comprano dall'impresa, senza agenzie.</dd></div>
+  </dl>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback utente: griglia 2x2 statica poco dinamica. Fondo nero (alternanza: nero storia / chiaro persone / NERO impegni / chiaro garanzie / CTA scura). Container da 860px: a sinistra 4 impegni come tab verticali (ARIA tabs: frecce, Home/End, attivazione su focus e click; hover-intent 120 ms solo puntatore fine); a destra prova con dato grande (180 / 1 / 300 / 5), tendina clip-path dal basso 600 ms ease-out e conteggio del numero (solo 180 e 300). Nessun autoplay. Sotto 860px: lista con dato e prova sempre visibili, niente hover. Senza JS o reduced motion: contenuto completo, statico. Etichette del dato derivate dal copy, aria-hidden. Qualità e sicurezza / Vendita diretta allineate alle due colonne. Copy invariato. 13-14 M€ non usato: VERIFY."></i>
+  <i data-note="DEV|Elementor Pro: Nested Tabs verticale (contenuti in container) + CSS custom; sotto 1024px layout lista (o accordion responsive nativo) + JS custom ~50 righe (count-up, hover-intent, reduced motion). 3-5 h, delta sulla pagina 7-11 h → 10-16 h. Rischi: markup ARIA di Nested Tabs dipende dalla versione; titoli duplicati tab/accordion nel DOM; clip-path da testare su Safari iOS; dato editabile da tenere a max 3 cifre."></i>
+  <i data-note="CLIENTE|Caso Design Week: villa a Milano in 5 mesi, committente sotto NDA (call), nessun nome. 'Tutto tranne restauro conservativo' (call). ~300 preventivi e ~180 cantieri l'anno (call)."></i>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-sv"><div class="in">
+  <div class="imp-sv-h">
+    <h2 id="h-sv">Gli uffici dietro ogni cantiere</h2>
+    <p class="lead">Dal preventivo alla consegna, ogni fase ha un ufficio interno che la segue.</p>
+  </div>
+  <ol class="imp-sv">
+    <li><span class="imp-sv-n" aria-hidden="true">01</span><h3>Qualità e sicurezza</h3><p>Sistema qualità certificato UNI EN ISO 9001:2015 e personale formato sulla sicurezza in cantiere.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">02</span><h3>General Contractor</h3><p>Traduce il progetto di architetti e designer in un'opera finita, nei tempi e nei costi concordati.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">03</span><h3>Preventivazione</h3><p>Verifica che la documentazione di progetto sia completa e la trasforma in un preventivo dettagliato.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">04</span><h3>Tecnico</h3><p>Pianifica uomini e mezzi e segue ogni fase dei lavori con una presenza costante in cantiere.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">05</span><h3>Acquisti</h3><p>Sceglie materiali e servizi per ogni cantiere e gestisce il rapporto con i fornitori.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">06</span><h3>Logistica</h3><p>Gestisce mezzi e attrezzature e porta i materiali in cantiere quando servono.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">07</span><h3>Amministrazione</h3><p>Segue la parte fiscale e assiste i clienti nelle agevolazioni per ristrutturazioni e risparmio energetico.</p></li>
+    <li><span class="imp-sv-n" aria-hidden="true">08</span><h3>Vendita</h3><p>Vende direttamente gli immobili che costruisce, senza agenzie, fino al rogito.</p></li>
+  </ol>
+  <i data-note="RICERCA|Gli 8 servizi e le descrizioni vengono dalla pagina Servizi del sito attuale (contieconti.it/servizi/), riformulate in una riga. Ordine riorganizzato per fasi del lavoro (qualità, contratto, preventivo, cantiere, acquisti, logistica, amministrazione, vendita): PROPOSTA."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback utente: servizi mancanti. Nuova sezione dopo Metodo e prima di Garanzie, fondo grigio chiaro (alternanza: nero metodo / grigio servizi / bianco garanzie). Tavola a filetti 2x4 (1 colonna sotto 560px), nome + una riga, nessuna icona e nessun box. I 4 impegni del Metodo non sono ripetuti: qui si dice CHI fa cosa, lì COME e con quali prove. Indice dell'apertura invariato (4 capitoli): VERIFY se aggiungere 'Servizi' come quinto. Pagina Servizi autonoma: decisione aperta, NON creata. Pro: URL /servizi/ esistente (traffico/backlink da verificare in Search Console) e possibile intento 'general contractor Milano'. Contro: 8 voci da una riga non reggono una pagina senza contenuti nuovi (thin content). Proposta: sezione qui + redirect 301 /servizi/ -> /impresa/#servizi; pagina autonoma solo se il cliente fornisce contenuti per General Contractor e agevolazioni fiscali (+3-4 h)."></i>
+  <i data-note="DEV|Servizi: container 2 colonne (intestazione) + container grid 2x4 con 8 coppie Heading + Text Editor, filetti in Custom CSS condiviso, 1 colonna su mobile. LOW, 1-1.5 h. Delta pagina Impresa: +1-1.5 h (10-16 h -> 11-17.5 h). Redirect 301 /servizi/: 0.25 h (plugin redirect già previsto)."></i>
+</div></section>
+
+<section class="sec imp-g" aria-labelledby="h-gar"><div class="in">
+  <h2 id="h-gar">Garanzie messe per iscritto</h2>
+  <p class="lead">Certificazioni e riconoscimenti verificati da enti esterni, non dichiarazioni nostre.</p>
+  <ul class="ct-l">
+    <li class="ct-i"><span class="ct-b" aria-hidden="true">ISO 9001</span><span class="ct-t"><b>UNI EN ISO 9001:2015</b><span>Sistema qualità certificato da ente indipendente (gruppo TÜV SÜD)</span><span class="ct-by">Ente: TÜV Italia</span></span></li>
+    <li class="ct-i"><span class="ct-b" aria-hidden="true">SOA</span><span class="ct-t"><b>Attestazione SOA</b><span>Classifica [IV bis]</span></span></li>
+    <li class="ct-i"><span class="ct-b" aria-hidden="true">Cassa Edile</span><span class="ct-t"><b>Cassa Edile Awards</b><span>Edizioni 2024 e 2025-2026</span></span></li>
+    <li class="ct-i"><span class="ct-b" aria-hidden="true">Cassa dei Laghi</span><span class="ct-t"><b>Cassa dei Laghi</b><span>Impresa iscritta</span></span></li>
+  </ul>
+  <i data-note="RICERCA|ISO 9001:2015 (TÜV Italia, 2020), SOA classifica IV bis (2023), Cassa Edile Awards 2024 dal sito attuale; loghi Cassa Edile 2025/2026 e Cassa dei Laghi dalla call (MATERIALE). Stesso stile del blocco certificazioni della Home; nel mockup loghi ufficiali monocromatici. SOA IV bis = lavori fino a 3.500.000 € per categoria: VERIFY prima di scriverlo. Decisione aperta: tenere o assorbire qui la pagina Certificazioni del sito attuale (redirect 301)."></i>
+  <div class="open"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> Progetto sociale con la cooperativa LOSI (Barlassina): collocazione da decidere (call). A. articolo nel blog/news (datato, facile da aggiornare, ma scivola in archivio); B. capitolo in questa pagina dopo Garanzie (permanente, legato ai valori, pagina più lunga); C. entrambe, blocco breve qui con link all'articolo. Contenuti e foto non ricevuti: nessuno spazio costruito finché non si decide. DEV: B o C +1-1.5 h (split testo + foto), A rientra nel blog.</div>
+</div></section>
+
+<section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Impresa)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

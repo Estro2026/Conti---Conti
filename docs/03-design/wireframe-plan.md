@@ -49,14 +49,16 @@ Non deve ancora essere usato per decidere tutti i dettagli estetici finali.
 
 ## 4. Pagine da wireframare
 
+Wireframe v1 (PROPOSTA, WAITING_FOR_APPROVAL): `docs/03-design/wireframe/index.html`, sintesi e decisioni aperte in `docs/03-design/wireframe/README.md`.
+
 ### Priorità alta
--
+- Home (2 varianti), Cantieri, categoria, scheda progetto, In vendita, scheda residenza con form, Contatti
 
 ### Priorità media
--
+- Impresa (chi siamo/filosofia/team), Blog + articolo, FAQ
 
 ### Priorità bassa
--
+- Pagina area geografica (opzionale, da approvare)
 
 ## 5. Template di pagina
 

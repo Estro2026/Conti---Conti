@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="vendita" data-sticky="info">
+<div id="tb"></div>
+<p class="legend"><strong>Scheda residenza in vendita</strong> (template per Domus 54, via Diaz, Montesolaro, Seregno, Solarium, Paradiso). Ogni scheda ha il proprio modulo di contatto. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="in-vendita.html">In vendita</a></li><li aria-current="page">Residenza Solarium</li></ol></nav>
+
+<section class="sec dk pg-op" aria-labelledby="h1"><div class="in">
+  <p class="pg-st"><span class="badge">In costruzione</span> <span class="meta">Montesolaro, Carimate (MB)</span></p>
+  <div class="hrow">
+    <h1 id="h1">Residenza Solarium</h1>
+    <p class="lead">Quattro unità in un unico corpo a Montesolaro: una nuova costruzione, venduta direttamente dall'impresa che la realizza.</p>
+  </div>
+  <div data-ph="Render principale|21/9"></div>
+  <i data-note="PROPOSTA|Copy provvisorio: sottotitolo e paragrafi sono bozze costruite solo su fatti noti della pagina attuale (Montesolaro, 4 unità, piani, consegna, progettista). Da validare con il cliente."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: apertura su fondo nero (stacco dalle pagine portfolio, il render chiaro risalta), stato e località in testa, nome a sinistra e frase a destra sulla stessa base, render principale 21:9 a larghezza container. Fondi: nero (apertura), bianco (scheda con form), sabbia (altri immobili), nero footer."></i>
+  <i data-note="DEV|Delta alta fedeltà Scheda residenza: apertura scura con riga titolo 0 h (stile del template); scheda dati a filetti 0 h; mosaico render + planimetria (stesso CSS della galleria progetto) +0.5 h; card form con filetto bordeaux e campi in griglia 0.5 h; documenti come righe con formato e peso 0 h. Delta template +1 h (6-9 h > 7-10 h)."></i>
+</div></section>
+
+<div class="sec"><div class="in pg-rs">
+  <div class="pg-rs-c">
+    <section aria-labelledby="h-desc"><h2 id="h-desc">La residenza</h2>
+      <p>Nuova costruzione in via Privata alle Scuole 3, a Montesolaro, dopo la completa demolizione dei fabbricati esistenti. Un piano interrato e due piani fuori terra, in un unico corpo con quattro unità residenziali. Al piano interrato box, locali tecnici e cantine.</p>
+      <p>Il progetto è dell'Arch. Caronni Flavio e la realizzazione è di Conti e Conti: la stessa impresa dal cantiere alla consegna, prevista entro fine dicembre 2026. Per vedere come sono distribuite le unità o chiedere una planimetria, scrivici dal modulo: ti risponde chi segue il cantiere.</p>
+      <i data-note="RICERCA|Scheda d'esempio costruita sui dati reali della pagina Residenza Solarium del sito attuale (testo riformulato). Template valido per tutte le residenze: gli altri immobili non hanno ancora dati. Da aggiornare con i nuovi render, planimetrie, brochure e testi (brief). VERIFY: URL attuale dice Carimate, il testo dice Montesolaro."></i>
+    </section>
+    <section aria-labelledby="h-fact"><h2 id="h-fact">In sintesi</h2>
+      <dl class="pg-ds">
+        <div><dt>Unità</dt><dd>4 residenziali</dd></div>
+        <div><dt>Tipologie e superfici</dt><dd>[tipologie e mq]</dd></div>
+        <div><dt>Classe energetica</dt><dd>[classe]</dd></div>
+        <div><dt>Prezzo</dt><dd>[prezzo o su richiesta]</dd></div>
+        <div><dt>Consegna</dt><dd>Entro fine dicembre 2026</dd></div>
+        <div><dt>Progettista</dt><dd>Arch. Caronni Flavio</dd></div>
+        <div><dt>Impresa costruttrice</dt><dd>Conti e Conti srl</dd></div>
+      </dl>
+      <i data-note="PROPOSTA|Dati scheda come modello: nessun dato (prezzo, mq, classe) è stato fornito. Il prezzo è da decidere se pubblico o 'su richiesta'."></i>
+    </section>
+    <section aria-labelledby="h-doc"><h2 id="h-doc">Documenti</h2>
+      <p>Scarica planimetrie, capitolato e brochure per valutare la residenza con calma.</p>
+      <ul class="pg-dl dn">
+        <li><a href="#"><span>Planimetrie delle unità</span><small>PDF &middot; [peso]</small></a></li>
+        <li><a href="#"><span>Capitolato dei lavori</span><small>PDF &middot; [peso]</small></a></li>
+        <li><a href="#"><span>Brochure della residenza</span><small>PDF &middot; [peso]</small></a></li>
+      </ul>
+      <i data-note="PROPOSTA|Download: nome chiaro, formato e peso visibili. VERIFY: documenti liberi o dietro compilazione del form? (lead vs attrito): da decidere con il cliente. DEV: PDF ottimizzati (peso), nessuna dipendenza da servizi esterni."></i>
+    </section>
+  </div>
+
+  <aside id="form" class="sticky-form" aria-labelledby="h-form">
+    <form class="pg-form" onsubmit="return false" novalidate>
+      <h2 id="h-form">Richiedi informazioni su Residenza Solarium</h2>
+      <p class="hint top">Ti risponde direttamente l'impresa. I campi con * sono obbligatori.</p>
+      <input type="hidden" name="immobile" value="Residenza Solarium">
+      <div class="pg-fg">
+        <div class="f full"><label for="r-n">Nome *</label><input id="r-n" autocomplete="name" required></div>
+        <div class="f"><label for="r-e">Email *</label><input id="r-e" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="r-t">Telefono *</label><input id="r-t" type="tel" autocomplete="tel" required></div>
+        <div class="f full"><label for="r-m">Messaggio</label><textarea id="r-m" aria-describedby="r-m-h"></textarea><span class="hint" id="r-m-h">Per esempio: vuoi una planimetria o fissare un appuntamento.</span></div>
+        <div class="f chk full"><input type="checkbox" id="r-c" required><label for="r-c">Ho letto l'informativa privacy *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+      </div>
+      <button class="btn" type="submit">Invia la richiesta</button>
+      <p class="pg-tel">Oppure chiama <a href="tel:+390362557972">0362 557972</a></p>
+    </form>
+    <i data-note="CLIENTE|Modulo dedicato per scheda con nome, email, telefono, messaggio (call). Campo nascosto con nome immobile così la richiesta arriva già etichettata. Il telefono è obbligatorio? VERIFY col cliente (più lead vs più abbandoni)."></i>
+    <i data-note="DEV|SCHEDA RESIDENZA = Theme Builder > Single (CPT Immobili). MEDIUM-HIGH, 6-9 h per il template. Titolo, stato, località, scheda dati (dl), render e testo = Dynamic Tags/ACF; righe vuote nascoste con Display Conditions (Pro) perché i dati ora sono placeholder. Layout 2 colonne con colonna form sticky: container destra con Motion Effects > Sticky Top (Pro) solo desktop; per funzionare il contenitore genitore deve avere altezza e non 'overflow:hidden' (rischio noto, +1 h). Sotto 1025px il form scende in fondo e compare la sticky bar 'Richiedi informazioni' con ancora #form. Documenti: Icon List/Button con Dynamic Tag 'ACF File', nome/formato/peso scritti nel campo (il peso non è automatico: campo testo)."></i>
+    <i data-note="DEV|FORM RESIDENZA: Form widget condiviso (vedi Home B) con campo Hidden 'immobile' valorizzato dal titolo del post: shortcode dinamico [field id=...] di Elementor Form o Dynamic Tag 'Post Title' nel valore predefinito (VERIFY che il Dynamic Tag sia accettato dal campo Hidden nella versione installata; in alternativa 5 righe JS). Oggetto email = nome immobile. Destinatari per immobile: campo ACF email nel CPT non è nativo del Form: o una sola casella (default) o routing con JS/plugin (+2-3 h, non incluso). Anti-spam e conferma role=status: vedi Form condiviso. Telefono obbligatorio = impostazione del campo, nessun costo."></i>
+    <i data-note="PROPOSTA|Desktop: colonna destra sticky accanto al contenuto. Tablet/mobile: il form scende in fondo alla scheda e una barra sticky 'Chiama + Richiedi informazioni' porta all'ancora #form. Form con label visibili, errori in testo sotto il campo e riepilogo con focus (vedi Contatti), consenso non preselezionato. DEV: destinazione email per immobile, anti-spam senza CAPTCHA invasivo, conferma di invio accessibile (role=status). Alta fedeltà: card grigio chiaro con filetto bordeaux in alto, email e telefono affiancati, pulsante a tutta larghezza."></i>
+  </aside>
+</div></div>
+
+<section class="sec dk pg-gal" aria-labelledby="h-gal"><div class="in">
+    <h2 id="h-gal">Render e immagini</h2>
+      <div class="pg-mo r5"><div data-ph="Render 1|4/3"></div><div data-ph="Render 2|4/3"></div><div data-ph="Render 3|4/3"></div><div data-ph="Render 4|4/3"></div><div data-ph="Planimetria unità [tipo] (immagine zoomabile + descrizione testuale)|4/3"></div></div>
+      <i data-note="CLIENTE|Materiali per ogni scheda: render, planimetrie, capitolati, brochure (call). Planimetrie come immagini zoomabili con descrizione testuale (alt/testo) del contenuto."></i>
+      <i data-note="PROPOSTA|Mosaico: render principale grande, due render, poi render e planimetria affiancati (la planimetria è un segnaposto, file non ricevuti). Apertura in lightbox come la galleria progetto."></i>
+</div></section>
+<section class="sec imm" aria-labelledby="h-oth"><div class="in">
+  <h2 id="h-oth">Altri immobili</h2>
+  <div data-c="imm:3"></div>
+</div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Scheda residenza)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

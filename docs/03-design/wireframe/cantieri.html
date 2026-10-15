@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<body data-active="cantieri" data-sticky="preventivo">
+<div id="tb"></div>
+<p class="legend"><strong>Cantieri / portfolio.</strong> Indice di tutti i progetti, filtrabili per categoria. Template collegati: <a href="categoria.html">categoria</a>, <a href="progetto.html">scheda progetto</a>. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Cantieri</li></ol></nav>
+
+<section class="sec pg-op" aria-labelledby="h1"><div class="in">
+  <div class="hrow">
+    <h1 id="h1">Cantieri</h1>
+    <p class="lead">Da [30/40] anni realizziamo progetti per i più importanti studi di architettura e designer di Milano. Case, ville, palestre, allestimenti, attività commerciali, edifici industriali: nuove costruzioni, ristrutturazioni e manutenzioni.</p>
+  </div>
+  <i data-note="PROPOSTA|Filtri per categoria e sezione In evidenza rimossi su richiesta (piano ore 83). L'accesso alle 8 categorie resta dalle tessere categoria della Home e dal menu. Da verificare in mockup come si raggiungono le categorie da questa pagina."></i>
+  <i data-note="RICERCA|Intro ripresa dal sito attuale ('Da 30 anni realizziamo progetti per i più importanti studi di architettura e designer di Milano'): coerente con il brief (clienti da architetti). Il portfolio attuale ha 10 filtri in inglese: Bank, Exhibition, GDO, Gym & Spa, Houses, Industrial, Lounge, Medical, Nautical, Retail; ogni scheda mostra immagine, titolo e categoria. Le 8 categorie nuove (approvate) vanno mappate sulle vecchie: serve una tabella di corrispondenza per i redirect."></i>
+  <i data-note="DEV|CANTIERI (Theme Builder > Archive, o pagina con Loop Grid). MEDIUM, 4-6 h per la pagina (Loop Item e CPT contati a parte). Chip filtro = link a 8 archivi della tassonomia (nessun filtro JS, coerente con la nota PROPOSTA): Icon List/Button in riga, scroll orizzontale mobile con overflow-x e target 44px, stato corrente con classe attiva da Dynamic Tag o condizione sulla pagina (1-2 h di CSS/logica; senza tassonomia attiva si imposta a mano per template). Un widget Taxonomy Filter di Elementor (filtro dinamico senza ricarica) può esistere nelle versioni recenti: NON incluso, cambierebbe URL/SEO (VERIFY). Intro con Dynamic Tag dal campo descrizione del termine."></i>
+</div></section>
+
+<section class="sec alt" aria-labelledby="h-all"><div class="in">
+  <h2 id="h-all">Tutti i progetti</h2>
+  <ul class="pg-pl">
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Ceresio 7|4/3"></div><span class="meta">Palestre &middot; [Località] &middot; [Anno]</span><h3>Ceresio 7</h3></a></li>
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Casa MJO|4/3"></div><span class="meta">Case &middot; Milano &middot; [Anno]</span><h3>Casa MJO</h3></a></li>
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Villa Lodovic|4/3"></div><span class="meta">Ville &middot; [Località] &middot; [Anno]</span><h3>Villa Lodovic</h3></a></li>
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>Casa [nome in NDA]</h3></a></li>
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>Casa [nome in NDA]</h3></a></li>
+    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>[Nome progetto]</h3></a></li>
+  </ul>
+  <nav class="pg-pag" aria-label="Paginazione"><ul><li><a href="#" aria-current="page">1</a></li><li><a href="#">2</a></li><li><a href="#">Successiva <span aria-hidden="true">&rarr;</span></a></li></ul></nav>
+  <i data-note="PROPOSTA|Copy provvisorio (tutta la pagina). VERIFICATO: intro dal sito attuale, 8 categorie, i tre progetti in evidenza, Ceresio 7 = piscina e palestra. NON VERIFICATO: la categoria di Casa MJO (Case) e Villa Lodovic (Ville) è INFERENZA dal nome; località, anni, le ultime tre schede e quali progetti siano sotto NDA. Le prime tre card ripetono i progetti in evidenza solo per mostrare la griglia."></i>
+  <i data-note="CLIENTE|NDA: i progetti sotto NDA usano nomi generici 'Casa ...' (call). Quali progetti e quanti sono pubblicabili non è noto: 6 card sono solo un esempio di griglia."></i>
+  <i data-note="PROPOSTA|Paginazione con link reali (non scroll infinito) per SEO, tastiera e tornare indietro senza perdere posizione. Card interamente cliccabile con un solo link (nome progetto) e focus visibile. Alta fedeltà: card progetto con nome e freccia sulla stessa riga, meta sotto un filetto; al passaggio la foto si schiarisce e la freccia avanza di 4 px (statica con riduci movimento). Paginazione a filetto, pagina corrente in bordeaux."></i>
+  <i data-note="DEV|LOOP GRID PROGETTI + PAGINAZIONE. MEDIUM. Loop Grid (Pro) con Loop Item Card progetto (vedi componente condiviso), 3 colonne desktop / 2 tablet / 1-2 mobile, paginazione 'Numeri e Precedente/Successivo' (link reali, nativa del Loop Grid; opzione 'Load more'/infinite scroll NON usata). Query: CPT Progetti ordinato per data o campo ACF 'ordine'. Rischio: in Elementor la paginazione del Loop Grid in archivi/Theme Builder richiede impostazioni specifiche (query ereditata da archivio): da testare, 1 h incluso. Dipende da CPT + tassonomia + ACF (VERIFY: non confermati). Nessun caricamento contenuti incluso."></i>
+  <div class="open"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> Decisione aperta: relazione tra "Settori" e "Categorie". CLIENTE: dalla call le 8 categorie di cantiere sono approvate (menu Cantieri/portfolio). CLIENTE: il brief cita anche una nuova voce di menu "Settori" (industriale, civile, ristrutturazione, lusso; 4-5 da confermare). Le due tassonomie si sovrappongono (lusso, industriale). PROPOSTA, opzioni senza scelta: A. "Settori" = raggruppamento di livello superiore, le 8 categorie sono figlie (es. Civile: Case, Residenze, Ville; Industriale; Lusso...), due livelli di menu. B. "Settori" = pagine servizio/commerciali (per cercare competenza), "Categorie" = solo filtro del portfolio; voci di menu separate, contenuti diversi. C. Una sola tassonomia: restano le 8 categorie, "Settori" non si crea; i 4-5 settori diventano contenuti SEO dentro le categorie. Impatto: menu, URL, SEO (cannibalizzazione tra pagine settore e categoria), tag CMS. In questo wireframe il menu mostra solo le categorie più una voce tratteggiata "Settori: da decidere". (Prima era una sezione a sé: ora è una nota, per non lasciare una fascia vuota.)</div>
+</div></section>
+
+<section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Cantieri)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js"></script>
+</body></html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe v1 - indice | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css">
+<style>.idx{max-width:1000px;margin:0 auto;padding:24px 16px 64px}.idx li{margin:6px 0}.idx a{display:inline-flex;min-height:32px;align-items:center}.idx table{border-collapse:collapse;width:100%;background:#fff}.idx th,.idx td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top;font-size:15px}</style></head>
+<body>
+<main class="idx" id="main">
+<h1 style="max-width:none">Conti &amp; Conti - Wireframe v1 (bassa fedeltà)</h1>
+<p><span class="tag t-PROPOSTA">PROPOSTA</span> Bozza in attesa di approvazione (Gate A architettura, Gate B wireframe). Nessuna immagine, testo o dato definitivo. Il bordeaux compare solo nei marker di annotazione. Scegli larghezza (Fluida, Desktop, Tablet, Mobile) e mostra/nascondi note dalla barra in alto in ogni pagina. Richiede JavaScript per assemblare header, footer e note (solo per il wireframe). Documento di sintesi: <a href="README.md">README.md</a>.</p>
+
+<h2>Home, due varianti di impianto</h2>
+<ul><li><a href="home-a.html">Home A - progetto per primo</a> (hero a tutta larghezza, tessere categoria)</li><li><a href="home-b.html">Home B - fiducia per prima</a> (hero 2 colonne, Massimo e numeri subito, righe editoriali, FAQ e form breve)</li></ul>
+<h2>Pagine principali</h2>
+<ul>
+<li><a href="cantieri.html">Cantieri (portfolio)</a> - include la decisione aperta Settori vs Categorie</li>
+<li><a href="categoria.html">Pagina categoria</a> (esempio Palestre / Ceresio 7)</li>
+<li><a href="progetto.html">Scheda progetto</a></li>
+<li><a href="in-vendita.html">Immobili in vendita (elenco)</a></li>
+<li><a href="residenza.html">Scheda residenza con form dedicato</a></li>
+<li><a href="chi-siamo.html">Impresa: chi siamo, filosofia, team</a> - include la decisione aperta LOSI</li>
+<li><a href="blog.html">Blog (elenco)</a> e <a href="articolo.html">articolo</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contatti.html">Contatti e preventivo</a></li>
+<li><a href="lavora-con-noi.html">Lavora con noi</a> (pagina dedicata con modulo candidatura, in attesa di approvazione)</li>
+</ul>
+
+<h2>Legenda etichette</h2>
+<p><span class="tag t-CLIENTE">CLIENTE</span> dalla call/brief &middot; <span class="tag t-MATERIALE">MATERIALE</span> file ricevuti &middot; <span class="tag t-RICERCA">RICERCA</span> sito attuale / esterno &middot; <span class="tag t-INFERENZA">INFERENZA</span> deduzione nostra &middot; <span class="tag t-PROPOSTA">PROPOSTA</span> nostra proposta &middot; <span class="tag t-APPROVATO">APPROVATO</span> approvato dal cliente &middot; <span class="tag t-WAITING">WAITING FOR APPROVAL</span> decisione aperta &middot; <span class="tag t-VERIFY">VERIFY</span> da verificare &middot; <span class="tag t-DEV">DEV</span> nota sviluppo Elementor Pro (ore min-max in tabella sotto, stima <strong>PRELIMINARE</strong>)</p>
+
+<h2>Stima ore Elementor Pro vs budget 85 h</h2>
+<p><span class="tag t-CLIENTE">CLIENTE</span> Sito in Elementor Pro, budget 85 ore totali. <span class="tag t-PROPOSTA">PROPOSTA</span> Stime min-max PRELIMINARI, non garantite; dettaglio e assunzioni in <code>docs/03-design/development-estimation-85h.md</code>. Le note <span class="tag t-DEV">DEV</span> di ogni pagina spiegano come si realizza in Elementor.</p>
+<p><strong>Totale scope del wireframe: 135-214,5 h (incluso Lavora con noi, +4-6 h) contro 85 h disponibili. Non rientra.</strong> Con tutte le riduzioni proposte (non applicate): 107-167 h.</p>
+<table><caption style="text-align:left;font-weight:700;padding:4px 0">Pagine e template (parte specifica, senza componenti condivisi)</caption><thead><tr><th>Template</th><th>Ore min</th><th>Ore max</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="home-a.html">Home</a> (una variante; A e B entrambe: +6-9 h)</td><td>5</td><td>8</td><td>Assemblaggio componenti</td></tr>
+<tr><td><a href="cantieri.html">Cantieri</a></td><td>4</td><td>6</td><td>Archivio + Loop Grid</td></tr>
+<tr><td><a href="categoria.html">Categoria</a> (1 template, 8 pagine)</td><td>5</td><td>8</td><td>Campi termine ACF (VERIFY)</td></tr>
+<tr><td><a href="progetto.html">Scheda progetto</a></td><td>6</td><td>9</td><td>Single CPT</td></tr>
+<tr><td><a href="in-vendita.html">In vendita</a></td><td>2</td><td>3</td><td></td></tr>
+<tr><td><a href="residenza.html">Scheda residenza</a> + form</td><td>6</td><td>9</td><td>Sticky, Hidden dinamico</td></tr>
+<tr><td><a href="chi-siamo.html">Impresa</a></td><td>8</td><td>12</td><td>Pagina più lunga</td></tr>
+<tr><td><a href="blog.html">Blog</a></td><td>3</td><td>4,5</td><td></td></tr>
+<tr><td><a href="articolo.html">Articolo</a></td><td>4</td><td>6</td><td>TOC, correlati</td></tr>
+<tr><td><a href="faq.html">FAQ</a></td><td>2,5</td><td>4</td><td></td></tr>
+<tr><td><a href="contatti.html">Contatti</a></td><td>4</td><td>6</td><td>Form condiviso</td></tr>
+<tr><td><a href="lavora-con-noi.html">Lavora con noi</a> (pagina + form candidatura)</td><td>4</td><td>6</td><td>Pagina 2-3 h + form candidatura 2-3 h spostato da Contatti; WAITING FOR APPROVAL</td></tr>
+<tr><th>Subtotale pagine</th><th>53,5</th><th>81,5</th><th></th></tr>
+</tbody></table>
+<table style="margin-top:16px"><caption style="text-align:left;font-weight:700;padding:4px 0">Componenti condivisi, setup e riserve</caption><thead><tr><th>Blocco</th><th>Ore min</th><th>Ore max</th><th>Note</th></tr></thead><tbody>
+<tr><td>Setup, design system, CPT/ACF</td><td>11,5</td><td>18</td><td>CPT/ACF da VERIFY</td></tr>
+<tr><td>Header + Nav Menu (no Mega Menu)</td><td>3</td><td>5</td><td>Mega Menu: +2-3 h</td></tr>
+<tr><td>Footer, Fascia CTA, Hero, Statistiche</td><td>6,5</td><td>10</td><td></td></tr>
+<tr><td>Banda loghi (CSS + pausa)</td><td>3</td><td>5</td><td>Carousel nativo: 2-3,5 h, cambia motion</td></tr>
+<tr><td>Card progetto, immobile, articolo (Loop Item)</td><td>6</td><td>8,5</td><td></td></tr>
+<tr><td>Form condiviso</td><td>4</td><td>6</td><td>Anti-spam e SMTP a parte</td></tr>
+<tr><td>FAQ accordion, sticky bar mobile, galleria/lightbox, recensioni, chip, breadcrumb/404/legali, scheda dati</td><td>11</td><td>17,5</td><td></td></tr>
+<tr><td>Riserve: responsive, accessibilità, SEO, redirect, performance, cookie/tracking, anti-spam, contenuti pilota, QA browser, correzioni, go-live</td><td>36,5</td><td>63</td><td></td></tr>
+<tr><th>Totale scenario A (pagine + tutto)</th><th>135</th><th>214,5</th><th>Budget 85 h</th></tr>
+</tbody></table>
+
+<h2>Decisioni di scope per rientrare nel budget</h2>
+<p><span class="tag t-WAITING">WAITING FOR APPROVAL</span> Nessun taglio è applicato al wireframe. Ordinati per risparmio (ore min-max); ogni voce cambia scope, IA o layout proposto.</p>
+<table><thead><tr><th>Opzione</th><th>Risparmio</th><th>Impatto</th></tr></thead><tbody>
+<tr><td>Blog + Articolo in Fase 2</td><td>8-12 h</td><td>Il brief prevede 3 articoli SEO</td></tr>
+<tr><td>Cookie, tracking, anti-spam/SMTP a carico di altri</td><td>3,5-7 h</td><td>Rischio privacy/spam resta da gestire</td></tr>
+<tr><td>Contenuti pilota esclusi</td><td>4-6 h</td><td>Problemi dei template scoperti tardi</td></tr>
+<tr><td>Impresa semplificata (no timeline, team ridotto)</td><td>3-5 h</td><td>Cambia il layout della pagina</td></tr>
+<tr><td>FAQ in Fase 2</td><td>2,5-4 h</td><td>FAQ richiesta dal brief</td></tr>
+<tr><td>Home snella (senza recensioni, zone, blog)</td><td>2-4 h</td><td>Cambia la composizione home</td></tr>
+<tr><td>Redirect a carico di altri</td><td>2-4 h</td><td>Rischio SEO</td></tr>
+<tr><td>Niente progetti simili, stampa, FAQ locali</td><td>2-3,5 h</td><td>Meno contenuti nei template</td></tr>
+<tr><td>Banda loghi con Carousel nativo</td><td>1-2 h</td><td>Cambia il motion</td></tr>
+<tr><td>Oltre il perimetro: niente pagine categoria / immobili statici / residenza senza sticky</td><td>9,5-15,5 h</td><td>Impatta IA approvata, SEO, conversione (sconsigliato)</td></tr>
+</tbody></table>
+<p>Risultato: anche applicandole tutte il minimo resta 93,5-103 h, sopra 85. Serve un accordo su budget o su fasi (<code>development-estimation-85h.md</code>, §6).</p>
+<p><span class="tag t-PROPOSTA">PROPOSTA</span> Già applicate, senza cambiare scope: Nav Menu nativo con dropdown (il wireframe mostra solo un dropdown), lightbox nativa, una sola home sviluppata, un template per categoria/progetto/immobile/articolo, componenti condivisi stimati una volta.</p>
+
+<h2>Da verificare (VERIFY)</h2>
+<p><span class="tag t-VERIFY">VERIFY</span> Tema; CPT e ACF (free/Pro); hosting; anti-spam (chiavi reCAPTCHA/Turnstile); SMTP; cookie banner; tracking GA4/GTM; plugin SEO, redirect, cache; widget recensioni; versione di Elementor Pro (svh, Marquee, Taxonomy Filter, Dynamic Tags su termini).</p>
+
+<h2>Decisioni aperte</h2>
+<table><thead><tr><th>Tema</th><th>Dove</th></tr></thead><tbody>
+<tr><td>Settori (menu) vs 8 categorie approvate</td><td><a href="cantieri.html">Cantieri</a></td></tr>
+<tr><td>Ottava categoria e accorpamenti ("Case" vs "Residenze")</td><td><a href="cantieri.html">Cantieri</a></td></tr>
+<tr><td>Collocazione progetto LOSI</td><td><a href="chi-siamo.html">Impresa</a></td></tr>
+<tr><td>Home A o B</td><td><a href="home-a.html">A</a> / <a href="home-b.html">B</a></td></tr>
+<tr><td>Pagine area geografica, struttura Impresa (1 o 3 pagine), pagina Certificazioni, Lavora con noi, nome "Blog"/"Notizie"</td><td><a href="README.md">README.md</a></td></tr>
+<tr><td>NDA loghi e nomi progetto; anno di fondazione 1987 vs 1988; dato "13-14 M€"</td><td><a href="README.md">README.md</a></td></tr>
+</tbody></table>
+</main>
+</body></html>
