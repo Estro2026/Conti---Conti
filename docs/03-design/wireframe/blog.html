@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="blog" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Blog (elenco).</strong> Articolo singolo: <a href="articolo.html">articolo.html</a>.</p>
@@ -11,6 +11,7 @@
 <section class="sec" style="border-top:0" aria-labelledby="h1"><div class="in">
   <span class="eyebrow">Blog</span>
   <h1 id="h1">Guide e racconti dal cantiere</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Archivio post con Loop Grid + card articolo + paginazione nativa; senza filtri per argomento. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
   <p class="lead">Ristrutturare, costruire, scegliere a chi affidarsi: le risposte che servono prima di iniziare, scritte da chi i cantieri li segue.</p>
   <i data-note="DEV|BLOG = Theme Builder > Archive (post). LOW-MEDIUM, 3-4.5 h. Articolo in evidenza = Loop Grid a 1 elemento (ultimo post o flag ACF) con Loop Item orizzontale (+0.5-1 h) oppure container statico; elenco = Loop Grid con Loop Item 'Card articolo' (condiviso) e paginazione nativa. Chip argomento = link agli archivi categoria del blog (nessun filtro JS): con 3 articoli si rimandano (nota PROPOSTA), si risparmiano 1-1.5 h. Un solo template per tutti i post e per le categorie."></i>
   <i data-note="PROPOSTA|Copy provvisorio: titolo pagina, introduzione, titoli e incipit degli articoli sono bozze realistiche per mostrare gerarchia e ingombri. I titoli seguono i temi del brief (ristrutturazione, costruire in Brianza, ville sul Lago di Como) e vanno validati con SEO."></i>
@@ -34,5 +35,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Blog)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

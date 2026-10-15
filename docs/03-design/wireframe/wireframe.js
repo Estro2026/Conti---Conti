@@ -377,7 +377,7 @@
       var z = t ? t.dataset.z : null;
       zm.querySelectorAll('[data-z]').forEach(function (x) { x.classList.toggle('is-on', x.dataset.z === z); });
     }
-    zm.addEventListener('mouseover', hl); zm.addEventListener('focusin', hl);
+    /* accensione sincronizzata pin/elenco rimossa (piano 83 h) */
     zm.addEventListener('mouseleave', function () { zm.querySelectorAll('.is-on').forEach(function (x) { x.classList.remove('is-on'); }); });
   });
   document.querySelectorAll('button.chip').forEach(function (c) {
@@ -387,6 +387,7 @@
   });
   /* Impresa, impegni: tab verticali da container 860px; sotto, lista statica */
   document.querySelectorAll('.imp-m').forEach(function (m, mi) {
+    if (m.classList.contains('imp-static')) return;
     var tw = m.querySelector('.imp-tw'), ol = m.querySelector('.imp-cl');
     if (!tw || !ol) return;
     var lis = [].slice.call(ol.children), on = false, cur = 0, pn, tabs = [], pns = [], hov;

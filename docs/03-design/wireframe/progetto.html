@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda progetto</strong> (template, esempio: un progetto in evidenza). <span class="tag t-PROPOSTA">PROPOSTA</span></p>
@@ -13,6 +13,7 @@
   <p class="pg-st"><span class="badge">Palestre</span> <span class="meta">[Località] &middot; [Anno]</span></p>
   <div class="hrow">
     <h1 id="h1">Ceresio 7</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2,5 h. Single CPT con scheda dati a tavola (righe vuote nascoste), galleria nativa a griglia, fascia CTA; senza stampa ne progetti simili. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Piscina e palestra, con soletta molleggiata nelle sale fitness. Un cantiere in cui la tecnica deve restare invisibile a chi lo usa.</p>
   </div>
   <div data-ph="Immagine principale del progetto, foto reale|21/9"></div>
@@ -48,6 +49,7 @@
 
 <section class="sec dk" aria-labelledby="h-gal"><div class="in">
   <h2 id="h-gal">Galleria</h2>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Galleria: griglia uniforme del widget Gallery/Basic Gallery (3 colonne 4:3 desktop, 2 mobile), stesse 6 foto e stessa lightbox. Il mosaico con prima foto grande non viene piu costruito: risparmio 1-1.5 h."></i>
   <div class="pg-mo">
     <div data-ph="Foto 1|4/3"></div><div data-ph="Foto 2|4/3"></div><div data-ph="Foto 3|4/3"></div>
     <div data-ph="Foto 4|4/3"></div><div data-ph="Foto 5|4/3"></div><div data-ph="Foto 6|4/3"></div>
@@ -83,5 +85,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda progetto)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

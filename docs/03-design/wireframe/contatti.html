@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="contatti">
 <div id="tb"></div>
 <p class="legend"><strong>Contatti e richiesta preventivo.</strong> Pagina di conversione principale. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -11,6 +11,7 @@
 <section class="sec pg-op" aria-labelledby="h1"><div class="in">
   <div class="hrow">
     <h1 id="h1">Richiedi un preventivo</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1 h. Form condiviso + contatti diretti + mappa statica della sede + 4 card zona non cliccabili; senza recensioni. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <div class="hrow-t">
       <p class="lead">Raccontaci cosa vuoi costruire o ristrutturare: ti rispondiamo entro 24 ore. <i data-note="RICERCA|'Risposta entro 24 ore' è la promessa scritta nella pagina Contatti del sito attuale: da confermare col cliente prima di riproporla."></i></p>
       <p>Più dettagli ci dai, più il primo confronto sarà concreto: dove si trova l'immobile, che intervento hai in mente, se c'è già un progetto o un architetto.</p>
@@ -67,8 +68,9 @@
     <h2 id="h-zone">Dove operiamo</h2>
     <p>Lavoriamo a Milano, Como, Varese e in Monza Brianza. Se il tuo progetto &egrave; in una di queste zone, scrivici dal modulo: ti rispondiamo noi.</p>
   </div>
-  <ul class="pg-zt"><li>Milano</li><li>Lago di Como</li><li>Varese</li><li>Monza, Seregno e Brianza</li></ul>
-  <i data-note="PROPOSTA|Zone come quattro voci in riga a filetti (titolo e frase sulla stessa base sopra). Nessuna pagina per zona (decisione utente): le voci non sono link. Nomi delle zone come nella mappa della Home."></i>
+  <ul class="pg-zc"><li><b>Milano</b><span>Interventi di pregio in città</span></li><li><b>Lago di Como</b><span>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</span></li><li><b>Monza, Seregno e Brianza</b><span>Nuove costruzioni e residenze in vendita</span></li><li><b>Varese</b><span>Zona operativa</span></li></ul>
+  <i data-note="DEV|Dove operiamo: 4 card statiche (container grid 4 colonne, 2 tablet, 1 mobile) con nome zona e una riga, stesso stile card di Impresa in versione chiara; testi ripresi dalla mappa della Home. Nessun link, nessuna mappa, nessun JS. 0,5 h. Sezione Recensioni rimossa dalla pagina (resta in Home): -0,5 h di assemblaggio."></i>
+  <i data-note="PROPOSTA|Zone come quattro card (titolo e frase sopra), tutte con lo stesso peso. Nessuna pagina per zona (decisione utente): le voci non sono link. Nomi delle zone come nella mappa della Home."></i>
 </div></section>
 <section class="sec dk pg-job" aria-labelledby="h-job"><div class="in">
   <div class="hrow">
@@ -79,11 +81,10 @@
   <i data-note="RICERCA|La pagina Contatti del sito attuale ha un blocco 'Lavora con noi' (invito a candidarsi per figure da formare o con esperienza, con modulo separato) e una voce di menu dedicata. Non è nel brief: VERIFY se mantenerlo. Testo qui riformulato e provvisorio."></i>
 </div></section>
 
-<section class="sec alt" aria-labelledby="h-rev"><div class="in"><h2 id="h-rev">Recensioni</h2><div data-c="reviews"></div></div></section>
 </main>
 <div id="ftr"></div>
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Contatti)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

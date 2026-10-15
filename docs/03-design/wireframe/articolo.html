@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Articolo blog | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Articolo blog | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="blog" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Articolo del blog</strong> (template).</p>
@@ -12,6 +12,7 @@
   <i data-note="PROPOSTA|Allineamento (feedback): titolo, meta, corpo, immagine, CTA e correlati partono dal bordo sinistro del container del sito, come header e breadcrumb. La colonna di lettura resta ~760px (65-75 caratteri) ma non è più centrata su un asse diverso. DEV: in Elementor container boxed 1120px con widget a max-width 760px allineati a sinistra, delta 0 h."></i>
   <p class="meta">[Data] &middot; Guide &middot; [x min di lettura]</p>
   <h1 id="h1">Ristrutturare casa: da dove cominciare e a chi affidarsi</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2 h. Single Post con Post Content, sommario (TOC) e articoli correlati. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
   <p class="lead">Prima dei materiali e delle finiture ci sono tre decisioni che pesano più di tutte: cosa serve davvero, chi coordina i lavori e come si arriva a un preventivo che si possa confrontare.</p>
   <div data-ph="Immagine articolo|3/2"></div>
   <i data-note="DEV|ARTICOLO = Theme Builder > Single Post, unico template. MEDIUM, 4-6 h. Titolo, data, immagine = Dynamic Tags; corpo = widget Post Content (stile tipografico globale per h2/h3/blockquote/liste, colonna ~760px). Sommario: widget Table of Contents (Pro) con ancore automatiche da H2, collassabile su mobile (VERIFY resa accessibile); si nasconde dove non serve (Display Conditions). Box CTA = template Fascia CTA variante breve. Articoli correlati = Loop Grid con query 'Related' (stessa categoria). Autore: campo da definire (VERIFY chi firma). Rassegna stampa = post con link esterno (ACF URL) e rel noopener: richiede un campo, +0.5 h."></i>
@@ -47,5 +48,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Articolo)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

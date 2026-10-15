@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Pagina categoria (esempio Palestre) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Pagina categoria (esempio Palestre) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Template pagina categoria</strong> (esempio: Palestre). Stesso template per tutte le 8 categorie: le altre categorie (es. <a href="categoria.html#ville">#ville</a>) mostrano lo stesso impianto senza i blocchi Competenza e FAQ. <span class="tag t-PROPOSTA">PROPOSTA</span></p>
@@ -12,6 +12,7 @@
 <section class="sec pg-op hr" aria-labelledby="h1"><div class="in imp-hero"><div class="grid split">
   <div>
     <h1 id="h1">Palestre</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2 h. Un solo template archivio per le 8 categorie, campi del termine da ACF, accordion FAQ con 2 voci scritte a mano. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Una palestra mette alla prova la struttura: carichi che cadono, vibrazioni, rumore verso i piani sotto. La costruiamo insieme a progettisti e architetti, con le soluzioni tecniche che servono.</p>
     <p class="btns" style="margin:28px 0 0"><a class="btn" href="contatti.html">Richiedi un preventivo per una palestra</a></p>
     <i data-note="DEV|CATEGORIA = unico template Theme Builder > Archive (condizione: tassonomia Categoria progetto), stesso per tutte le 8 categorie. MEDIUM, 5-8 h. Contenuti variabili per categoria (H1, intro, foto, blocco competenza 'soletta molleggiata', FAQ locali) = campi ACF sul termine con Dynamic Tags (Pro + ACF: VERIFY che i tag leggano i campi dei termini nella versione installata). Se il blocco competenza o le FAQ esistono solo per alcune categorie: Display Conditions (Pro) sul campo non vuoto. Alternativa più semplice e prevedibile: 8 Pagine normali costruite da una template + Loop Grid con query per termine (+3-5 h di inserimento, meno elegante, nessun rischio sui campi termine). CTA 'Richiedi un preventivo per [categoria]' precompila il Select del Form via parametro URL: Hidden/Select default da query string (Form Pro supporta valore da URL tramite shortcode dynamic 'Request parameter'; VERIFY) ~1 h. Sostituisce il template 'Categorie' (non creare pagine statiche)."></i>
@@ -51,6 +52,7 @@
 
 <section class="sec" aria-labelledby="h-faq"><div class="in pg-side">
   <h2 id="h-faq">Domande sulle palestre</h2>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). FAQ locali scritte a mano nel template della categoria (2 voci) invece di ACF Repeater: stesse domande e risposte, aggiornamento da editor di pagina. Risparmio 0.5-1 h."></i>
   <div class="acc">
     <details><summary>Che cos'è una soletta molleggiata e quando serve?</summary><p>È una soletta appoggiata su elementi elastici, staccata dalla struttura. Serve quando la palestra sta sopra altri locali o dentro un edificio abitato, e rumore e vibrazioni vanno tenuti sotto controllo.</p></details>
     <details><summary>Lavorate con il progettista che abbiamo già incaricato?</summary><p>Sì. Collaboriamo spesso con studi di architettura, in particolare quando le finiture sono complesse o fuori standard.</p></details>
@@ -65,5 +67,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Categoria)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

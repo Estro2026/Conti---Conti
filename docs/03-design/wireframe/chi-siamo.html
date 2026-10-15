@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Impresa: storia, persone, metodo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Impresa: storia, persone, metodo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="impresa" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Impresa, versione 2.</strong> Pagina unica in quattro capitoli ancorati: storia e quarantennale, persone per mestieri, metodo come cartello di cantiere, garanzie. Struttura e copy: <span class="tag t-PROPOSTA">PROPOSTA</span>, in attesa di approvazione. La versione precedente aveva 9 sezioni a schede; qui team, valori, servizi e numeri sono assorbiti nei capitoli Persone e Metodo, senza blocchi ripetuti dalla Home.</p>
@@ -13,6 +13,7 @@
   <div>
     <p class="eyebrow">Impresa edile a Lentate sul Seveso, dal [1987]</p>
     <h1 id="h1">Costruiamo con persone nostre</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 3,5 h. Hero, storia con timeline a lista, persone, Massimo, 4 card di dato grande, servizi a tavola, garanzie. Nessun indice ancore, nessuna tab, nessun JS. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Case, ville, locali commerciali ed edifici industriali tra Milano, Como, Varese e la Brianza. Lavoriamo con squadre assunte dall'impresa e, quando la commessa lo richiede, come General Contractor: un solo interlocutore per tutto il cantiere.</p>
     <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Nuova IA della pagina (v2, dopo feedback utente): hero con indice dei 4 capitoli > Storia (fondo nero, quarantennale, timeline) > Persone (per mestieri, Massimo in una riga firmata) > Metodo (cartello di cantiere) > Garanzie (certificazioni) > CTA. Fondi: bianco, nero, bianco, grigio chiaro, bianco, bordeaux. Nessun blocco identico alla Home (niente quote numeri, banda loghi, sezione Massimo, categorie): i numeri utili stanno nel cartello. Rimossi rispetto alla v1: 4 ritratti [Nome]/[Ruolo], 3 box valori, 4 box servizi, fascia stats. H1 sul differenziante (personale diretto vs subappalti, dal brief)."></i>
     <i data-note="PROPOSTA|Copy provvisorio di tutta la pagina, scritto da noi. VERIFICATO (brief, call, sito attuale): sede Lentate sul Seveso, zone operative, diretto o General Contractor, personale diretto (circa 40), ~180 cantieri e ~300 preventivi l'anno, 13-14 M€, villa a Milano in 5 mesi per la Design Week (NDA), versatilità tranne restauro conservativo, certificazioni, vendita diretta. NON VERIFICATO: anno di fondazione, ripartizione del personale, mansioni dei mestieri, voci del cartello. Nessuna frase attribuita a Massimo Conti."></i>
@@ -39,6 +40,7 @@
     <li><b>2024</b><span>Cassa Edile Awards</span></li>
     <li class="is-next"><b>2027</b><span>Quarantennale. [Iniziativa da definire]</span></li>
   </ol>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Timeline: stessi 6 anni e testi in 6 colonne; linea continua con marcatore quadrato bordeaux per ogni anno, anno grande, tratto futuro (2027) tratteggiato; su tablet e mobile linea verticale. Solo CSS globale (bordi e pseudo-elementi), nessun JS. 1-1.5 h."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Storia su fondo nero (stacco tra due sezioni chiare): cifra 40 come segno grafico (aria-hidden, il testo dice già tutto), timeline orizzontale che riprende il linguaggio delle 'quote' (linea con tacche), 3 colonne su tablet e verticale su mobile. Nessuna animazione: la timeline è statica. 2027 in tinta più chiara perché futura. Quarantennale: spazio per un contenuto o evento dedicato, da decidere con il cliente."></i>
   <i data-note="RICERCA|Tappe 2008, 2020, 2023, 2024 dalle pagine Impresa e Certificazioni del sito attuale. Mancano tappe aziendali (primi cantieri, sedi, passaggi generazionali): da chiedere. SOA IV bis: VERIFY categorie e scadenza."></i>
 </div></section>
@@ -69,7 +71,7 @@
   <i data-note="VERIFY|Mestieri dalla pagina Impresa del sito attuale (tecnici di cantiere, muratori e carpentieri, impiegati); 'ufficio' raggruppa gli impiegati. Numeri 26/8/9 dal sito attuale, forse non aggiornati: VERIFY. Mansioni descritte da noi: da confermare. Le foto richiedono shooting con consenso delle persone."></i>
 </div></section>
 
-<section class="sec imp-dk" aria-labelledby="h-met"><div class="in imp-m">
+<section class="sec imp-dk" aria-labelledby="h-met"><div class="in imp-m imp-static">
   <div class="imp-m-h">
     <h2 id="h-met">Quattro impegni, ognuno con la sua prova</h2>
     <p class="lead">Case, ville, locali commerciali, palestre, edifici industriali: tutto tranne il restauro conservativo. Su ogni lavoro valgono le stesse regole.</p>
@@ -86,8 +88,8 @@
     <div><dt>Qualità e sicurezza</dt><dd>Procedure scritte, certificate UNI EN ISO 9001:2015 da TÜV Italia.</dd></div>
     <div><dt>Vendita diretta</dt><dd>Gli immobili che costruiamo si comprano dall'impresa, senza agenzie.</dd></div>
   </dl>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback utente: griglia 2x2 statica poco dinamica. Fondo nero (alternanza: nero storia / chiaro persone / NERO impegni / chiaro garanzie / CTA scura). Container da 860px: a sinistra 4 impegni come tab verticali (ARIA tabs: frecce, Home/End, attivazione su focus e click; hover-intent 120 ms solo puntatore fine); a destra prova con dato grande (180 / 1 / 300 / 5), tendina clip-path dal basso 600 ms ease-out e conteggio del numero (solo 180 e 300). Nessun autoplay. Sotto 860px: lista con dato e prova sempre visibili, niente hover. Senza JS o reduced motion: contenuto completo, statico. Etichette del dato derivate dal copy, aria-hidden. Qualità e sicurezza / Vendita diretta allineate alle due colonne. Copy invariato. 13-14 M€ non usato: VERIFY."></i>
-  <i data-note="DEV|Elementor Pro: Nested Tabs verticale (contenuti in container) + CSS custom; sotto 1024px layout lista (o accordion responsive nativo) + JS custom ~50 righe (count-up, hover-intent, reduced motion). 3-5 h, delta sulla pagina 7-11 h → 10-16 h. Rischi: markup ARIA di Nested Tabs dipende dalla versione; titoli duplicati tab/accordion nel DOM; clip-path da testare su Safari iOS; dato editabile da tenere a max 3 cifre."></i>
+  <i data-note="PROPOSTA|Metodo STATICO a card (decisione utente, piano ore 83). Quattro card uguali sul fondo nero, con filetto bordeaux in alto: dato grande (180 / 1 / 300 / 5) con etichetta, impegno in grassetto, prova in due-tre righe. Si legge a colpo d&apos;occhio, niente paragrafi lunghi affiancati. Poi le due righe Qualit&agrave; e sicurezza / Vendita diretta in coda. Stessi contenuti, nessuna tab, nessun JS. Desktop 4 colonne, tablet 2x2, mobile una colonna."></i>
+  <i data-note="DEV|Metodo a card piene: container grid 4 colonne (2 tablet, 1 mobile) con 4 card grigio scuro arrotondate senza linee; numero grande (180 / 1 / 300 / 5), etichetta in maiuscoletto accento, spazio, impegno in grassetto a righe corte, prova in grigio (Heading + Heading + Text, CSS globale), 2 righe Heading/Text in coda. LOW, 1-1.5 h. Le card sono riusabili come stile del blocco Garanzie/Home. Nessun Nested Tabs, nessun JS."></i>
   <i data-note="CLIENTE|Caso Design Week: villa a Milano in 5 mesi, committente sotto NDA (call), nessun nome. 'Tutto tranne restauro conservativo' (call). ~300 preventivi e ~180 cantieri l'anno (call)."></i>
 </div></section>
 
@@ -130,5 +132,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Impresa)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

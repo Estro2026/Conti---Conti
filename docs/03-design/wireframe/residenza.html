@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="vendita" data-sticky="info">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda residenza in vendita</strong> (template per Domus 54, via Diaz, Montesolaro, Seregno, Solarium, Paradiso). Ogni scheda ha il proprio modulo di contatto. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -13,6 +13,7 @@
   <p class="pg-st"><span class="badge">In costruzione</span> <span class="meta">Montesolaro, Carimate (MB)</span></p>
   <div class="hrow">
     <h1 id="h1">Residenza Solarium</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Single CPT con colonna form a destra senza sticky (il form resta accanto ai contenuti; su mobile scende in fondo con ancora e barra sticky), campo nascosto immobile, scheda dati, galleria nativa e documenti. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Quattro unità in un unico corpo a Montesolaro: una nuova costruzione, venduta direttamente dall'impresa che la realizza.</p>
   </div>
   <div data-ph="Render principale|21/9"></div>
@@ -75,6 +76,7 @@
 
 <section class="sec dk pg-gal" aria-labelledby="h-gal"><div class="in">
     <h2 id="h-gal">Render e immagini</h2>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Render e planimetria: griglia uniforme del widget Gallery, stesse immagini e stessa lightbox. Nessun mosaico con render principale grande: risparmio incluso nella voce galleria condivisa (1-1.5 h)."></i>
       <div class="pg-mo r5"><div data-ph="Render 1|4/3"></div><div data-ph="Render 2|4/3"></div><div data-ph="Render 3|4/3"></div><div data-ph="Render 4|4/3"></div><div data-ph="Planimetria unità [tipo] (immagine zoomabile + descrizione testuale)|4/3"></div></div>
       <i data-note="CLIENTE|Materiali per ogni scheda: render, planimetrie, capitolati, brochure (call). Planimetrie come immagini zoomabili con descrizione testuale (alt/testo) del contenuto."></i>
       <i data-note="PROPOSTA|Mosaico: render principale grande, due render, poi render e planimetria affiancati (la planimetria è un segnaposto, file non ricevuti). Apertura in lightbox come la galleria progetto."></i>
@@ -88,5 +90,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda residenza)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>

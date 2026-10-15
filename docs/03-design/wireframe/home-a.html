@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Home A - Progetto per primo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css"></head>
+<title>Wireframe Home A - Progetto per primo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
 <body data-active="" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Home, variante A: "progetto per primo".</strong> Hero a tutta larghezza con un progetto reale (stessa composizione di Home B, anno di fondazione orizzontale in evidenza accanto al titolo); clienti, certificazioni e numeri in un unico blocco subito sotto la hero, poi progetti in righe editoriali alternate e Massimo. Stato: bozza wireframe, <span class="tag t-PROPOSTA">PROPOSTA</span> in attesa di approvazione. Variante alternativa: <a href="home-b.html">Home B</a>.</p>
@@ -13,6 +13,7 @@
   <div class="hero-in">
   <div class="hb-title">
     <h1 id="h1">Impresa di costruzioni a Lentate sul Seveso</h1>
+  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2 h di assemblaggio. Hero, banda loghi (carosello nativo), categorie come 8 tessere verticali con foto a tutta tessera e scalino alternato (solo CSS, nessuna anteprima dinamica), blocco Massimo + certificazioni, immobili, recensioni, mappa zone fissa, CTA. Una sola home da sviluppare (A o B). I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
   </div>
   <p class="hero-since">Impresa edile <span>dal <b>[1987]</b></span></p>
   <div class="hb-side">
@@ -20,6 +21,7 @@
     <div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="cantieri.html">Guarda i cantieri</a></div>
   </div>
     <div class="hero-notes">
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Hero: un solo crop in Background Image con punto focale per device (object-position) invece di 3 crop dedicati; stessa foto e stessi testi. Risparmio 0.5-1 h, rischio inquadratura meno controllata su tablet/mobile. CSS di card, filetti e griglie come classi globali riusate in tutte le pagine (Custom CSS del sito), non per widget: risparmio 2-3 h sul totale."></i>
     <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Hero A = stessa composizione della hero di Home B: H1 in alto a sinistra, foto al vivo a tutta altezza con il centro libero, binario in basso separato da un filetto con sottotitolo a sinistra e CTA a destra. Unica differenza: in A l'anno di fondazione è orizzontale e in evidenza, come misura grande (1987 in Archivo, peso 500) in alto a destra, allineata alla base dell'H1 e segnata da un filetto bordeaux: dato architettonico, non decorazione. Non compete con l'H1 (colonna separata, peso minore) né con le CTA (in basso). Mobile: anno sotto l'H1 in riga. Leggibilità: velatura a gradiente in alto (~72%) e in basso (~82%) come B; testo bianco AA da verificare sulla foto reale (VERIFY), la foto deve avere respiro nella parte alta. Header solido sopra la foto."></i>
     <i data-note="CLIENTE|Hero = progetto reale di alta qualità fatto da fotografo, niente immagini astratte/stock (dalla call). Foto precisa scelta solo dopo l'approvazione del wireframe. Crop: vedi nota DEV della hero (circa 16:9 desktop, 4:5 tablet, 9:16 mobile), focal point da definire."></i>
     <i data-note="PROPOSTA|H1 con parola chiave principale (tipo di impresa + zona) da concordare con SEO: nessun testo definitivo scritto qui. Una sola H1 per pagina. CTA primaria = preventivo, secondaria = cantieri. Anno di fondazione 1987 (brief) vs 1988 (sito attuale): VERIFY."></i>
@@ -35,6 +37,7 @@
 <section class="sec lg" aria-labelledby="h-logo">
   <div class="in lg-head"><h2 id="h-logo">Quarant'anni di cantieri, verificabili</h2><p class="lg-lead">Chi ci affida i propri spazi, chi controlla come lavoriamo.</p></div>
   <div data-c="logos" data-notes></div>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Banda loghi: widget Carousel nativo (Image Carousel Pro o Carousel) con autoplay lento e pulsante Pausa, stessi 13 loghi. Movimento a scatti invece che continuo; reduced motion = nessun autoplay. Stima 2-3 h invece di 3-4.5 h."></i>
 </section>
 
 <section class="sec alt" aria-labelledby="h-feat"><div class="in">
@@ -51,6 +54,8 @@
 <section class="sec cxd" aria-labelledby="h-cat"><div class="in">
   <h2 id="h-cat">Dalla casa privata al capannone, un solo interlocutore</h2>
   <div data-c="cats" data-notes></div>
+  <i data-note="DEV|PIANO 83 H (AGGIORNAMENTO, APPROVATO). Categorie: 8 tessere verticali (3:4) in 4 colonne, con foto a tutta tessera, nome e [N progetti] in sovrimpressione su velatura scura; le colonne pari sono sfalsate verso il basso per un ritmo a scalini. Nessuna anteprima dinamica, nessun contatore, nessun JS. Tablet e mobile: 2 colonne con lo stesso scalino. Stesse 8 voci e stessi link. Stima 1.5-2 h (prima 3-5 h): 8 container con Image + Heading + Text, link al container."></i>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Categorie: stesso elenco numerato, stessa anteprima grande e stesso numero attivo. Anteprima con semplice dissolvenza (opacity, CSS), senza tendina clip-path, senza zoom, senza contatore a rullo, senza sticky. Stima 3-5 h (prima 6-9 h). Cambio immagine su hover/focus con poche righe di JS o :has(); mobile invariato."></i>
   <div class="open" style="margin-top:24px"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> <strong>Settori vs Categorie.</strong> Il brief cita anche una voce "Settori" nel menu (industriale, civile, ristrutturazione, lusso; 4-5 da confermare). Qui è mostrato solo l'elenco delle 8 categorie approvate. Vedi nota su <a href="cantieri.html">Cantieri</a>.</div>
 </div></section>
 
@@ -83,6 +88,7 @@
   <h2 id="h-zone">Dove operiamo</h2>
   <p class="lead" style="margin-bottom:20px">Milano, Como, Varese e Monza Brianza: dalle ville sul lago agli interventi di pregio in città, fino alle nuove costruzioni in Brianza.</p>
   <div data-c="zone" data-notes></div>
+  <i data-note="DEV|PIANO 83 H (APPROVATO). Mappa zone: SVG inline fisso con 4 pin e elenco accanto, stessi testi e stessi nomi. Nessuna accensione sincronizzata pin/elenco e nessuna pulsazione, nessun link a pagine per zona. Stima 1.5-2.5 h invece di 3-5 h."></i>
 </div></section>
 
 <section class="sec" aria-labelledby="h-blog"><div class="in">
@@ -99,5 +105,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Home A)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js"></script>
+<script src="wireframe.js?v=20261015"></script>
 </body></html>
