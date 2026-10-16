@@ -442,3 +442,31 @@ body.b{background:var(--plaster);color:var(--ink)}
 .b .statement{padding-top:0}
 .b .statement>.wrap{margin-top:-44px}
 .b .draft{top:14%}
+
+/* ---- revisione 11 ---- */
+/* hero: il motivo ad anelli sparisce quando il video occupa tutto lo schermo (non sbuca sotto la barra) */
+.b .hero .relief-art{opacity:calc(1 - var(--o,0) * 1.6)}
+/* hero e dichiarazione: intonaco ancorato alla viewport, nessuno stacco tra le due sezioni */
+.b .hero-pin,.b .hero-end,.b .statement{background-attachment:fixed}
+/* dichiarazione: testo piu contenuto e tutto dentro la sezione; disegno abbassato e intero */
+.b .statement>.wrap{margin-top:0}
+/* social nel footer: sporgenti a riposo, affossati in hover come i pulsanti */
+.b .social a{border:0;background:#2c2b29;box-shadow:var(--up-d);transition:box-shadow .35s var(--ease),background-color .35s var(--ease)}
+.b .social a:hover,.b .social a:focus-visible,.b .social a:active{transform:none;background:#232322;color:#fff;box-shadow:var(--down-d)}
+
+/* ---- revisione 12 ---- */
+/* dichiarazione: testo e disegno su due colonne, centrati in verticale tra loro; disegno piu grande */
+@media (min-width:901px){
+  .b .statement .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:auto auto;column-gap:clamp(32px,5vw,90px);align-items:center}
+  .b .statement .kicker{grid-column:1;grid-row:1;align-self:end}
+  .b .statement h2{grid-column:1;grid-row:2;align-self:start}
+  .b .draft{position:relative;grid-column:2;grid-row:1 / span 2;top:auto;right:auto;width:100%;max-width:720px;justify-self:end;transform:translateY(-6%)}
+}
+/* progetti: testi e freccia direttamente sull'immagine, leggibilita affidata a una sfumatura scura dal basso */
+.b .work-t{background:none!important;border:0;box-shadow:none!important;border-radius:0;margin:0;padding:clamp(20px,2.2vw,36px);height:auto;-webkit-backdrop-filter:none;backdrop-filter:none}
+.b .work:hover .work-t,.b .work:focus-visible .work-t{box-shadow:none!important}
+.b .work::after{background:linear-gradient(to top,rgba(14,13,12,.88) 0%,rgba(14,13,12,.55) 30%,rgba(14,13,12,0) 62%)}
+.b .work-t span,.b .work-t h3,.b .work-t p{color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.b .work-t span{color:rgba(255,255,255,.9)}
+.b .work .arrow{right:clamp(20px,2.2vw,36px);bottom:clamp(20px,2.2vw,36px);background:rgba(14,13,12,.35);border-color:rgba(255,255,255,.85)}
+.b .work:hover .arrow,.b .work:focus-visible .arrow{background:var(--acc);border-color:var(--acc)}
