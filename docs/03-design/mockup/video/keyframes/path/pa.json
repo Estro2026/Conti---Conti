@@ -1,0 +1,40 @@
+[
+  {
+    "created_at": "2026-10-16T14:37:01.892234Z",
+    "display_name": "GPT Image 2.5",
+    "id": "bf0c8e65-1e86-4eb7-b7e5-8102e510224d",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143701_bf0c8e65-1e86-4eb7-b7e5-8102e510224d_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "a69c8e47-2269-40ac-b1f0-fb82b4b02bb9",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/a69c8e47-2269-40ac-b1f0-fb82b4b02bb9.jpg"
+          },
+          "role": "image"
+        },
+        {
+          "data": {
+            "id": "01f922e3-b9f9-4919-a065-0181f816f466",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/01f922e3-b9f9-4919-a065-0181f816f466.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey board-formed concrete, brushed brass doors, frames and volumes, dark olive upholstery, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. OPENING FRAME. Wide exterior view of the whole house, perfectly centered and symmetrical: the tall brass-framed open front door exactly in the center of the frame, the long low concrete facade extending on both sides with large windows, a stone paved path leading straight to the door, low olive-green and rosemary plantings and planters along the path, a mature tree on each side casting dappled shadows, an exterior wall lamp, visible paving joints and garden details, cloudless warm morning light, camera 9 meters from the door. This is the very same house and the same door as in the references (seen there from closer).",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143701_bf0c8e65-1e86-4eb7-b7e5-8102e510224d.png",
+    "status": "completed"
+  }
+]

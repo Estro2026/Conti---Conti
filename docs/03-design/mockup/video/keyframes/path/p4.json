@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T13:58:15.272139Z",
+    "display_name": "GPT Image 2.5",
+    "id": "0af61689-a899-4089-92af-f16759659ddc",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_135815_0af61689-a899-4089-92af-f16759659ddc_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "d59ff6b0-e16c-481d-b9bd-73daeec006d6",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/d59ff6b0-e16c-481d-b9bd-73daeec006d6.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey concrete walls and floors, brushed brass doors and volumes, dark olive upholstered built-in seating, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera has now entered the next room, a dining and kitchen area of the same house: a long concrete dining table, brass details, a large floor-to-ceiling window with garden light, same materials and warm daylight as the reference.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_135815_0af61689-a899-4089-92af-f16759659ddc.png",
+    "status": "completed"
+  }
+]

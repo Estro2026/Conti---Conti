@@ -1,0 +1,40 @@
+[
+  {
+    "created_at": "2026-10-16T14:14:33.157818Z",
+    "display_name": "GPT Image 2.5",
+    "id": "c9fccd1a-3dfb-4b4c-8b7a-11c10fbf4395",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141433_c9fccd1a-3dfb-4b4c-8b7a-11c10fbf4395_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "1a68c553-3d39-4eea-9c8c-a313e1bbb299",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/1a68c553-3d39-4eea-9c8c-a313e1bbb299.jpg"
+          },
+          "role": "image"
+        },
+        {
+          "data": {
+            "id": "918beb6a-36c6-4942-b1bc-7cf0667d32da",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/918beb6a-36c6-4942-b1bc-7cf0667d32da.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey concrete walls and floors, brushed brass doors and volumes, dark olive upholstered built-in seating, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera is passing through the tall brass door frame between the living room and the dining area, the frame edges close on both sides, the dining table visible ahead. Intermediate frame between the two references.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141433_c9fccd1a-3dfb-4b4c-8b7a-11c10fbf4395.png",
+    "status": "completed"
+  }
+]

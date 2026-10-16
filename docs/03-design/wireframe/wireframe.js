@@ -36,8 +36,19 @@
       var sub = n[0] === 'cantieri' ? '<ul>' + CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('') + '</ul>' : '';
       return '<li><a href="' + n[2] + '">' + n[1] + '</a>' + sub + '</li>';
     }).join('');
-    hdr.outerHTML = '<a class="skip" href="#main">Vai al contenuto</a><header class="hd"><a class="logo-w" href="home-a.html" aria-label="Conti &amp; Conti, home">' + LOGO.replace(/alt="[^"]*"/, 'alt=""') + '</a>' +
-      '<nav aria-label="Principale"><ul>' + li + '</ul></nav><a class="btn hcta" href="contatti.html">Richiedi un preventivo</a>' +
+    var L = ['impresa', 'cantieri', 'vendita', 'blog'], R = ['faq', 'contatti'];
+    function lis(keys) {
+      return NAV.filter(function (n) { return keys.indexOf(n[0]) > -1; }).map(function (n) {
+        var cur = n[0] === act ? ' aria-current="page"' : '';
+        var sub = '';
+        if (n[0] === 'cantieri') sub = '<ul class="dd" aria-label="Categorie cantieri">' + CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('') + '</ul>';
+        return '<li><a href="' + n[2] + '"' + cur + '>' + n[1] + '</a>' + sub + '</li>';
+      }).join('');
+    }
+    hdr.outerHTML = '<a class="skip" href="#main">Vai al contenuto</a><header class="hd">' +
+      '<nav class="hd-l" aria-label="Principale"><ul>' + lis(L) + '</ul></nav>' +
+      '<a class="logo-w" href="home-a.html" aria-label="Conti &amp; Conti, home">' + LOGO.replace(/alt="[^"]*"/, 'alt=""') + '</a>' +
+      '<div class="hd-r"><nav aria-label="Pagine di servizio"><ul>' + lis(R) + '</ul></nav><a class="btn hcta" href="contatti.html">Richiedi un preventivo</a></div>' +
       '<button class="burger" aria-expanded="false" aria-controls="mnav"><span class="sr">Menu</span><span aria-hidden="true">&#9776;</span></button></header>' +
       '<nav class="mnav" id="mnav" aria-label="Principale mobile"><ul>' + ml + '</ul><a class="btn" href="contatti.html" style="margin-top:12px">Richiedi un preventivo</a></nav>';
   }
@@ -490,4 +501,18 @@
   }
   apply();
   window.addEventListener('hashchange', function () { location.reload(); });
+})();
+
+/* Navbar trasparente sulla hero, piena allo scroll */
+(function () {
+  var H = document.querySelector('.hd');
+  if (!H) return;
+  var hasHero = !!document.querySelector('#main > .hero, #main > .crumb + .hero');
+  if (hasHero) document.body.classList.add('has-hero');
+  function size() { document.documentElement.style.setProperty('--hdh', H.offsetHeight + 'px'); }
+  function sc() { H.classList.toggle('is-solid', !hasHero || window.scrollY > 40); }
+  size(); sc();
+  window.addEventListener('scroll', sc, { passive: true });
+  window.addEventListener('resize', size);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
 })();

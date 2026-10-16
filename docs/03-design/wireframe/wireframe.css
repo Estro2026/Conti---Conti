@@ -1309,3 +1309,119 @@ body.nonotes .n-wrap{display:none}
 .pg-ty-k{margin:0 0 14px;font:600 12px/1.3 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
 .pg-ty h1{margin:0 0 18px;max-width:18ch}
 .pg-ty .lead{margin:0 0 28px;max-width:46ch}
+
+/* =========================================================
+   Revisione UI/UX 2026-10-16: navbar centrata, CTA arrotondate, hero full-bleed,
+   griglia fotografica in Home, scroll overlay, pattern Conti & Conti
+   ========================================================= */
+
+/* --- CTA: angoli arrotondati al 20% su tutto il sito, stessi stati --- */
+.btn,.hcta{border-radius:20%;transition:background-color .25s ease,border-color .25s ease,color .25s ease,transform .25s ease}
+.btn:active{transform:translateY(1px)}
+
+/* --- Navbar: logo al centro assoluto, menu a sinistra e a destra --- */
+.hd{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;position:sticky;top:var(--tbh,0px);z-index:40;background:#fff;border-bottom:1px solid var(--line);transition:background-color .35s ease,border-color .35s ease,box-shadow .35s ease}
+.hd nav{flex:none}
+.hd-l>ul{justify-content:flex-start}
+.hd-r{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:0}
+.hd-r nav>ul{justify-content:flex-end}
+.hd .logo-w{justify-self:center;grid-column:2}
+.hd .hcta{margin-left:8px;min-height:44px;padding:0 20px;white-space:nowrap}
+.hd .burger{grid-column:3;justify-self:end}
+.hd .logo-w img{transition:filter .35s ease}
+.hd.is-solid{box-shadow:0 8px 24px rgba(0,0,0,.06)}
+@container (max-width:1180px){.hd nav a{padding:0 9px;font-size:14px}.hd .hcta{padding:0 14px}}
+@container (max-width:1040px){.hd .hcta{display:none}}
+@container (max-width:860px){.hd .hd-l,.hd .hd-r{display:none}.hd .logo-w{grid-column:2}}
+/* trasparente sulla hero, sovrapposta */
+body.has-hero .hd{margin-bottom:calc(var(--hdh,76px) * -1)}
+body.has-hero .hd:not(.is-solid){background:transparent;border-bottom-color:transparent;box-shadow:none}
+body.has-hero .hd:not(.is-solid) nav a,body.has-hero .hd:not(.is-solid) .burger{color:#fff}
+body.has-hero .hd:not(.is-solid) nav a::after{background:#fff}
+body.has-hero .hd:not(.is-solid) nav a[aria-current=page]{color:#fff}
+body.has-hero .hd:not(.is-solid) .logo-w img{filter:brightness(0) invert(1)}
+body.has-hero .hd:not(.is-solid) .hcta{background:transparent;border-color:rgba(255,255,255,.85);color:#fff}
+body.has-hero .hd:not(.is-solid) .hcta:hover{background:#fff;color:var(--ink)}
+body.has-hero .crumb{position:absolute;top:var(--hdh,76px);left:0;right:0;z-index:5;background:none;border:0;padding-top:6px}
+body.has-hero .crumb,body.has-hero .crumb a,body.has-hero .crumb li,body.has-hero .crumb [aria-current]{color:rgba(255,255,255,.9)}
+body.has-hero #main{position:relative}
+body.has-hero .hero-a,body.has-hero .hero-b{--hero-h:calc(100svh - var(--tbh) - (var(--hh) - var(--hdh,76px)) - var(--stb))}
+body.has-hero .hero-b .hero-in,body.has-hero .hero-a .hero-in{padding-top:calc(var(--hdh,76px) + clamp(16px,3vh,32px))}
+
+/* --- Hero full-bleed per Impresa, Categoria, Progetto, Residenza --- */
+.hero-p{--hero-h:clamp(540px,86svh,880px)}
+.hero-p::before{background:linear-gradient(to bottom,rgba(12,12,14,.62) 0%,rgba(12,12,14,0) 24%),linear-gradient(to top,rgba(12,12,14,.84) 0%,rgba(12,12,14,.5) 38%,rgba(12,12,14,.12) 70%)}
+.hero-p .hero-in{align-content:end;padding-top:calc(var(--hdh,76px) + 24px);padding-bottom:clamp(28px,6vh,72px)}
+.hero-p .hp-txt{max-width:min(780px,100%);display:flex;flex-direction:column;gap:clamp(12px,1.8vh,18px)}
+.hero-p h1{font-size:clamp(38px,5cqi + 8px,84px);max-width:16ch;text-wrap:balance}
+.hero-p .eyebrow,.hero-p .meta,.hero-p .pg-st{color:rgba(255,255,255,.88);margin:0}
+.hero-p .pg-st{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.hero-p .pg-st .badge{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(4px)}
+.hero-p .hrow{display:block}
+.hero-p .lead{color:rgba(255,255,255,.92);max-width:54ch;margin:0}
+.hero-p .btns{margin:6px 0 0!important}
+.hero-p .btn{background:#fff;border-color:#fff;color:var(--ink)}
+.hero-p .btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.hero-p :focus-visible,.hero-band :focus-visible{outline-color:#fff}
+/* Impresa, Persone: banda fotografica immersiva con testo sopra */
+.hero-band{--hero-h:clamp(520px,80svh,820px)}
+.hero-band::before{background:linear-gradient(to top,rgba(12,12,14,.86) 0%,rgba(12,12,14,.5) 45%,rgba(12,12,14,.22) 100%)}
+.hero-band .hero-in{align-content:end;padding-bottom:clamp(28px,6vh,72px)}
+.hero-band .hp-txt{max-width:min(1040px,100%);display:flex;flex-direction:column;gap:clamp(14px,2vh,22px)}
+.hero-band h2{color:#fff;margin:0;font-size:clamp(30px,3.6cqi + 6px,60px);line-height:1.05;letter-spacing:-.025em;max-width:20ch;text-wrap:balance}
+.hero-band .imp-ph-h{display:flex;flex-direction:column;gap:14px}
+.hero-band .lead{color:rgba(255,255,255,.92);max-width:56ch;margin:0}
+.hero-band .imp-job{list-style:none;margin:clamp(8px,1.4vh,16px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4cqi,36px)}
+.hero-band .imp-job li{border:0;border-top:1px solid rgba(255,255,255,.4);padding:14px 0 0}
+.hero-band .imp-job h3{color:#fff;font-size:18px;margin:0 0 6px}
+.hero-band .imp-job p{color:rgba(255,255,255,.85);font-size:15px;line-height:1.5;margin:0;max-width:34ch}
+.hero-band .imp-job-n{color:#e7b9c1}
+@container (max-width:860px){.hero-band .imp-job{grid-template-columns:1fr}.hero-band{--hero-h:auto}.hero-band .hero-in{padding-top:120px}}
+
+/* --- Home: progetti in evidenza, griglia fotografica full-bleed --- */
+.feat{background:var(--ink);color:#fff}
+.feat-head{padding-top:clamp(44px,7cqi,92px);padding-bottom:clamp(24px,3cqi,40px);box-sizing:content-box;padding-inline:clamp(16px,5cqi,48px)}
+.feat-head h2{color:#fff;margin:0;max-width:22ch}
+.feat-head .eyebrow{color:#e7b9c1}
+.feat-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(2,clamp(300px,34cqi,520px));gap:6px}
+.pf{position:relative;display:block;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;min-width:0}
+.pf-1{grid-column:1/8;grid-row:1/3}
+.pf-2{grid-column:8/13;grid-row:1}
+.pf-3{grid-column:8/13;grid-row:2}
+.pf>.ph{position:absolute;inset:0;height:100%;min-height:0;aspect-ratio:auto!important;border-radius:0;z-index:-2;transition:transform .9s cubic-bezier(.2,.6,.2,1)}
+.pf>.ph>span{right:16px;left:auto;top:16px;bottom:auto;color:rgba(255,255,255,.7)}
+.pf::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(12,12,14,.82) 0%,rgba(12,12,14,.4) 38%,rgba(12,12,14,0) 66%)}
+.pf:hover>.ph,.pf:focus-visible>.ph{transform:scale(1.04)}
+.pf-t{position:absolute;left:0;right:0;bottom:0;padding:clamp(20px,2.6cqi,40px);display:flex;flex-direction:column;gap:8px}
+.pf-t .meta{color:rgba(255,255,255,.85);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.pf-t h3{color:#fff;margin:0;font-size:clamp(24px,2.2cqi + 8px,44px);line-height:1.05;letter-spacing:-.02em}
+.pf-t p{margin:0;max-width:44ch;color:rgba(255,255,255,.9);font-size:15px;line-height:1.5}
+.pf-2 .pf-t p,.pf-3 .pf-t p{display:none}
+.pf-go{align-self:flex-start;margin-top:8px;background:transparent;color:#fff;border-color:rgba(255,255,255,.7);min-height:44px;padding:0 20px;opacity:.9;transform:translateY(6px);transition:transform .35s ease,opacity .35s ease,background-color .25s ease,color .25s ease}
+.pf:hover .pf-go,.pf:focus-visible .pf-go{opacity:1;transform:none;background:#fff;color:var(--ink);border-color:#fff}
+.pf:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+@container (max-width:860px){
+ .feat-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:clamp(240px,46cqi,400px)}
+ .pf-1{grid-column:1/-1;grid-row:span 2}.pf-2,.pf-3{grid-column:auto;grid-row:auto}
+}
+@container (max-width:560px){
+ .feat-grid{grid-template-columns:1fr;grid-auto-rows:clamp(260px,72cqi,380px)}
+ .pf-1{grid-row:span 1}.pf-go{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){.pf>.ph,.pf-go{transition:none}.pf:hover>.ph{transform:none}}
+
+/* --- Scroll: sfondo fisso e sezioni successive che scorrono sopra (solo desktop) --- */
+.fx-pin{position:sticky;top:var(--tbh,0px);z-index:0}
+.fx-over{position:relative;z-index:2;background:#fff}
+.sec.imp-dk.fx-over{background:var(--ink)}
+@container (max-width:860px){.fx-pin{position:relative;top:auto}}
+@media (prefers-reduced-motion:reduce){.fx-pin{position:relative;top:auto}}
+
+/* --- Pattern Conti & Conti: le due C del marchio in tessera ripetibile (pattern-cc.png, pattern-cc-w.png) --- */
+.pt-cc,.imp-ink,.sec.dk.pg-job,.sec[style*="e2e2e2"]{position:relative;isolation:isolate}
+.imp-ink::before,.sec.dk.pg-job::before,.sec[style*="e2e2e2"]::before,.pt-cc::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(pattern-cc-w.png) 0 0/416px auto repeat;opacity:.05}
+.pt-cc.pt-cc-dark::before{background-image:url(pattern-cc.png);opacity:.06}
+.pt-sep{height:clamp(56px,8cqi,96px);background:url(pattern-cc.png) 0 0/208px auto repeat;opacity:.1}
+@container (max-width:560px){.imp-ink::before,.sec.dk.pg-job::before,.sec[style*="e2e2e2"]::before,.pt-cc::before{background-size:312px auto}}
+.pf .pf-go.btn{color:#fff;border-color:rgba(255,255,255,.7);background:transparent}
+.pf:hover .pf-go.btn,.pf:focus-visible .pf-go.btn{background:#fff;color:var(--ink);border-color:#fff}

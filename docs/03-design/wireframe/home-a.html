@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Home A - Progetto per primo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
+<title>Wireframe Home A - Progetto per primo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;700&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@500&family=Roboto+Slab:wght@400;700&family=Dancing+Script:wght@600&family=Josefin+Sans:wght@300;600&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
 <body data-active="" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Home, variante A: "progetto per primo".</strong> Hero a tutta larghezza con un progetto reale (stessa composizione di Home B, anno di fondazione orizzontale in evidenza accanto al titolo); clienti, certificazioni e numeri in un unico blocco subito sotto la hero, poi progetti in righe editoriali alternate e Massimo. Stato: bozza wireframe, <span class="tag t-PROPOSTA">PROPOSTA</span> in attesa di approvazione. Variante alternativa: <a href="home-b.html">Home B</a>.</p>
@@ -8,7 +8,7 @@
 <div id="hdr"></div>
 <main id="main">
 
-<section class="hero hero-b hb-y" aria-labelledby="h1">
+<section class="hero hero-b hb-y fx-pin" aria-labelledby="h1">
   <div data-noratio data-ph="HERO: progetto reale, foto da fotografo (al vivo a tutto schermo; crop desktop ~16:9 con respiro in alto, tablet ~4:5, mobile ~9:16)|16/9"></div>
   <div class="hero-in">
   <div class="hb-title">
@@ -34,22 +34,32 @@
   </div>
 </section>
 
-<section class="sec lg" aria-labelledby="h-logo">
+<section class="sec lg fx-over" aria-labelledby="h-logo">
   <div class="in lg-head"><h2 id="h-logo">Quarant'anni di cantieri, verificabili</h2><p class="lg-lead">Chi ci affida i propri spazi, chi controlla come lavoriamo.</p></div>
   <div data-c="logos" data-notes></div>
   <i data-note="DEV|PIANO 83 H (APPROVATO). Banda loghi: widget Carousel nativo (Image Carousel Pro o Carousel) con autoplay lento e pulsante Pausa, stessi 13 loghi. Movimento a scatti invece che continuo; reduced motion = nessun autoplay. Stima 2-3 h invece di 3-4.5 h."></i>
 </section>
 
-<section class="sec alt" aria-labelledby="h-feat"><div class="in">
-  <p class="eyebrow">Progetti in evidenza</p>
-  <h2 id="h-feat">Tre cantieri che raccontano come lavoriamo</h2>
-  <div class="grid split" style="margin-bottom:40px"><div data-ph="Casa MJO, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; Milano</span><h3 style="font-size:28px">Casa MJO</h3><p>Un intervento di pregio a Milano, seguito in ogni dettaglio insieme al progettista. [Abstract da concordare: lavorazioni, tempi, superficie.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
-  <div class="grid split rev" style="margin-bottom:40px"><div data-ph="Ceresio 7, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Ceresio 7</h3><p>Piscina e palestra: uno dei progetti più visitati del sito e il punto di partenza per nuovi cantieri dello stesso tipo. [Abstract da concordare.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
-  <div class="grid split"><div data-ph="Villa Lodovic, foto reale|3/2"></div><div><span class="meta">[Categoria] &middot; [località]</span><h3 style="font-size:28px">Villa Lodovic</h3><p>Una villa realizzata dal progetto alla consegna. [Abstract da concordare: luogo, finiture, tempi.]</p><a class="btn sec2" href="progetto.html">Scopri il progetto</a></div></div>
-  <i data-note="CLIENTE|3 progetti in evidenza (casa MJO, Ceresio 7, Villa Lodovic; Ceresio 7 = 2a pagina più visitata del sito attuale). Righe editoriali alternate immagine/testo, stessa composizione e copy di Home B. Su mobile: immagine sopra, testo sotto, ordine invariato. VERIFY NDA sui nomi. Foto: solo placeholder, selezione dopo approvazione wireframe."></i>
-  <i data-note="DEV|Righe editoriali alternate (stesso componente di Home B): 3 container 2 colonne con order inverso sulla riga centrale, statici o Loop Grid sul CPT Progetti con campo ACF in evidenza (VERIFY). 2-3 h; sostituisce le card in evidenza nella Home (il Loop Item Card progetto resta per Cantieri/Categoria/Progetti simili)."></i>
-  <p style="margin-top:24px"><a class="btn sec2" href="cantieri.html">Tutti i cantieri</a></p>
-</div></section>
+<section class="feat" aria-labelledby="h-feat">
+  <div class="in feat-head"><p class="eyebrow">Progetti in evidenza</p><h2 id="h-feat">Tre cantieri che raccontano come lavoriamo</h2></div>
+  <div class="feat-grid">
+    <a class="pf pf-1" href="progetto.html">
+      <div data-noratio data-ph="Casa MJO, foto reale|3/2"></div>
+      <div class="pf-t"><span class="meta">[Categoria] &middot; Milano</span><h3>Casa MJO</h3><p>Un intervento di pregio a Milano, seguito in ogni dettaglio insieme al progettista. [Abstract da concordare: lavorazioni, tempi, superficie.]</p><span class="pf-go btn sec2">Scopri il progetto</span></div>
+    </a>
+    <a class="pf pf-2" href="progetto.html">
+      <div data-noratio data-ph="Ceresio 7, foto reale|3/2"></div>
+      <div class="pf-t"><span class="meta">[Categoria] &middot; [località]</span><h3>Ceresio 7</h3><p>Piscina e palestra: uno dei progetti più visitati del sito e il punto di partenza per nuovi cantieri dello stesso tipo. [Abstract da concordare.]</p><span class="pf-go btn sec2">Scopri il progetto</span></div>
+    </a>
+    <a class="pf pf-3" href="progetto.html">
+      <div data-noratio data-ph="Villa Lodovic, foto reale|3/2"></div>
+      <div class="pf-t"><span class="meta">[Categoria] &middot; [località]</span><h3>Villa Lodovic</h3><p>Una villa realizzata dal progetto alla consegna. [Abstract da concordare: luogo, finiture, tempi.]</p><span class="pf-go btn sec2">Scopri il progetto</span></div>
+    </a>
+  </div>
+  <i data-note="PROPOSTA|Composizione fotografica a griglia asimmetrica, immagini a tutta superficie (full-bleed, senza margini laterali): Casa MJO grande e alta a sinistra (7/12 su due righe), Ceresio 7 e Villa Lodovic a destra in due righe di proporzione diversa. Testo sovrapposto direttamente alla foto con velatura a gradiente solo nella parte bassa; nessuna card. Hover: zoom lento della foto (1.04) e freccia/pulsante che si accende; su mobile una colonna, testo sempre visibile. Tessere intere cliccabili."></i>
+  <i data-note="CLIENTE|3 progetti in evidenza (casa MJO, Ceresio 7, Villa Lodovic; Ceresio 7 = 2a pagina più visitata del sito attuale). VERIFY NDA sui nomi. Foto: solo placeholder, selezione dopo approvazione wireframe."></i>
+  <i data-note="DEV|Griglia di 3 container link con Image di sfondo (object-fit: cover), overlay a gradiente e testi sovrapposti; hover in CSS (transform scale + opacity), nessun JS. Stesso componente riusabile per Cantieri/Categoria in futuro."></i>
+</section>
 
 <section class="sec cxd" aria-labelledby="h-cat"><div class="in">
   <h2 id="h-cat">Dalla casa privata al capannone, un solo interlocutore</h2>
@@ -105,5 +115,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Home A)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261015"></script>
+<script src="wireframe.js?v=20261016"></script>
 </body></html>

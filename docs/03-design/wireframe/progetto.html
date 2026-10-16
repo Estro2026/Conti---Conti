@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
+<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda progetto</strong> (template, esempio: un progetto in evidenza). <span class="tag t-PROPOSTA">PROPOSTA</span></p>
@@ -9,20 +9,22 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="categoria.html">Palestre</a></li><li aria-current="page">Ceresio 7</li></ol></nav>
 
-<section class="sec pg-op" aria-labelledby="h1"><div class="in">
+<section class="hero hero-p" aria-labelledby="h1">
+  <div data-noratio data-ph="Immagine principale del progetto, foto reale|16/9"></div>
+  <div class="hero-in"><div class="hp-txt">
   <p class="pg-st"><span class="badge">Palestre</span> <span class="meta">[Località] &middot; [Anno]</span></p>
   <div class="hrow">
     <h1 id="h1">Ceresio 7</h1>
   <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2,5 h. Single CPT con scheda dati a tavola (righe vuote nascoste), galleria nativa a griglia, fascia CTA; senza stampa ne progetti simili. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Piscina e palestra, con soletta molleggiata nelle sale fitness. Un cantiere in cui la tecnica deve restare invisibile a chi lo usa.</p>
-  </div>
-  <div data-ph="Immagine principale del progetto, foto reale|21/9"></div>
+  </div></div></div>
   <i data-note="DEV|SCHEDA PROGETTO = Theme Builder > Single (CPT Progetti). MEDIUM-HIGH sul totale, 6-9 h per il template (Loop Item/galleria/form CTA stimati a parte). Titolo, immagine principale, testo e scheda dati = Dynamic Tags (campi ACF: località, anno, mq, lavorazioni, progettista). Scheda dati: Icon List o tabella con Display Conditions (Pro) per nascondere le righe vuote (obbligatorio: i dati arriveranno incompleti). Sezione 'Se ne è parlato' (link stampa, ACF Repeater o campo URL) visibile solo se compilata. 'Progetti simili' = Loop Grid con query 'Related' per stessa categoria, esclusione del corrente. Esempio unico: lo stesso template vale per tutti i progetti."></i>
   <i data-note="CLIENTE|Se il progetto è coperto da NDA: nome generico 'Casa ...' e nessun dato identificativo (call). VERIFY caso per caso."></i>
   <i data-note="PROPOSTA|Copy provvisorio (tutta la pagina). Esempio compilato su Ceresio 7. VERIFICATO: piscina e palestra, 3 palestre con soletta molleggiata (call). NON VERIFICATO: località, anno, superficie, lavorazioni, progettista, articoli di stampa, ruolo dell'impresa (diretto o General Contractor), descrizione del cantiere. Queste informazioni restano tra parentesi finché il cliente non le fornisce."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: categoria come etichetta + località e anno, nome del progetto grande a sinistra e frase a destra sulla stessa base, foto principale 21:9 a larghezza container (tablet 16:9 di fatto per altezza minima, mobile crop dedicato). Fondi: bianco, grigio chiaro (progetto e scheda dati), nero (galleria), bianco (stampa), grigio chiaro (simili), bordeaux (CTA)."></i>
   <i data-note="DEV|Delta alta fedeltà Scheda progetto: galleria a mosaico (1 grande su due righe + 5 a 4/3) con Basic Gallery/Gallery Pro + Custom CSS grid oppure 6 Image in container griglia (la lightbox Elementor funziona su entrambi) +1-1.5 h; scheda dati a filetti (dl, righe nascoste se vuote) 0 h rispetto alla tabella; stampa come righe link 0 h; card simili condivise 0 h. Delta template +1-1.5 h (6-9 h > 7-10.5 h)."></i>
-</div></section>
+
+</section>
 
 <section class="sec alt" aria-labelledby="h-sch"><div class="in">
   <div class="hrow">
@@ -85,5 +87,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda progetto)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261015"></script>
+<script src="wireframe.js?v=20261016"></script>
 </body></html>

@@ -1,0 +1,40 @@
+[
+  {
+    "created_at": "2026-10-16T14:11:48.330758Z",
+    "display_name": "GPT Image 2.5",
+    "id": "57bbb2f0-2454-4d44-89b9-5a50a1f67e0e",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141148_57bbb2f0-2454-4d44-89b9-5a50a1f67e0e_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "2345265e-5923-440c-a1c7-f3995c3856b2",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/2345265e-5923-440c-a1c7-f3995c3856b2.jpg"
+          },
+          "role": "image"
+        },
+        {
+          "data": {
+            "id": "f2275046-4a67-4b82-b29a-f0a6e03b58d7",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/f2275046-4a67-4b82-b29a-f0a6e03b58d7.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey concrete walls and floors, brushed brass doors and volumes, dark olive upholstered built-in seating, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera is now only 1.5 meters from the open entrance door, the brass-framed door leaf and the concrete facade fill more of the frame, the hall and living room visible inside. Intermediate frame between the two references.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141148_57bbb2f0-2454-4d44-89b9-5a50a1f67e0e.png",
+    "status": "completed"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "created_at": "2026-10-16T14:39:25.292328Z",
+    "display_name": "GPT Image 2.5",
+    "id": "6a8d334e-1b5d-4df2-95b8-58a260427112",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143925_6a8d334e-1b5d-4df2-95b8-58a260427112_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "8a05576a-92d0-44e8-913e-64f87acefe86",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/8a05576a-92d0-44e8-913e-64f87acefe86.jpg"
+          },
+          "role": "image"
+        },
+        {
+          "data": {
+            "id": "ea5f3976-c203-4323-96df-7840072a8866",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/ea5f3976-c203-4323-96df-7840072a8866.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey board-formed concrete, brushed brass doors, frames and volumes, dark olive upholstery, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera has passed through the open window and now stands on the concrete terrace outside the house, looking out over a garden with tall green trees, sunlit concrete floor, the house wall with the brass window frame at the side.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143925_6a8d334e-1b5d-4df2-95b8-58a260427112.png",
+    "status": "completed"
+  }
+]

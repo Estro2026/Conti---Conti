@@ -1,0 +1,40 @@
+[
+  {
+    "created_at": "2026-10-16T14:37:48.206032Z",
+    "display_name": "GPT Image 2.5",
+    "id": "74c29c6e-21ed-4018-8f78-adc56d40735f",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143748_74c29c6e-21ed-4018-8f78-adc56d40735f_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "765feba7-5c70-4596-9b46-4baa791e2d8a",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/765feba7-5c70-4596-9b46-4baa791e2d8a.jpg"
+          },
+          "role": "image"
+        },
+        {
+          "data": {
+            "id": "953a44bd-ff2f-485b-95c4-24344139cf6b",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/953a44bd-ff2f-485b-95c4-24344139cf6b.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey board-formed concrete, brushed brass doors, frames and volumes, dark olive upholstery, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera has moved forward to about 5.5 meters from the open front door, door still exactly centered, the facade, path, planters and trees still visible around it. Intermediate frame between the references.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143748_74c29c6e-21ed-4018-8f78-adc56d40735f.png",
+    "status": "completed"
+  }
+]

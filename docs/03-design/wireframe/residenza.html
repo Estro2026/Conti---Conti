@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261015"></head>
+<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
 <body data-active="vendita" data-sticky="info">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda residenza in vendita</strong> (template per Domus 54, via Diaz, Montesolaro, Seregno, Solarium, Paradiso). Ogni scheda ha il proprio modulo di contatto. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -9,18 +9,20 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="in-vendita.html">In vendita</a></li><li aria-current="page">Residenza Solarium</li></ol></nav>
 
-<section class="sec dk pg-op" aria-labelledby="h1"><div class="in">
+<section class="hero hero-p" aria-labelledby="h1">
+  <div data-noratio data-ph="Render principale|16/9"></div>
+  <div class="hero-in"><div class="hp-txt">
   <p class="pg-st"><span class="badge">In costruzione</span> <span class="meta">Montesolaro, Carimate (MB)</span></p>
   <div class="hrow">
     <h1 id="h1">Residenza Solarium</h1>
   <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Single CPT con colonna form a destra senza sticky (il form resta accanto ai contenuti; su mobile scende in fondo con ancora e barra sticky), campo nascosto immobile, scheda dati, galleria nativa e documenti. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Quattro unità in un unico corpo a Montesolaro: una nuova costruzione, venduta direttamente dall'impresa che la realizza.</p>
-  </div>
-  <div data-ph="Render principale|21/9"></div>
+  </div></div></div>
   <i data-note="PROPOSTA|Copy provvisorio: sottotitolo e paragrafi sono bozze costruite solo su fatti noti della pagina attuale (Montesolaro, 4 unità, piani, consegna, progettista). Da validare con il cliente."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: apertura su fondo nero (stacco dalle pagine portfolio, il render chiaro risalta), stato e località in testa, nome a sinistra e frase a destra sulla stessa base, render principale 21:9 a larghezza container. Fondi: nero (apertura), bianco (scheda con form), sabbia (altri immobili), nero footer."></i>
   <i data-note="DEV|Delta alta fedeltà Scheda residenza: apertura scura con riga titolo 0 h (stile del template); scheda dati a filetti 0 h; mosaico render + planimetria (stesso CSS della galleria progetto) +0.5 h; card form con filetto bordeaux e campi in griglia 0.5 h; documenti come righe con formato e peso 0 h. Delta template +1 h (6-9 h > 7-10 h)."></i>
-</div></section>
+
+</section>
 
 <div class="sec"><div class="in pg-rs">
   <div class="pg-rs-c">
@@ -90,5 +92,5 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda residenza)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261015"></script>
+<script src="wireframe.js?v=20261016"></script>
 </body></html>

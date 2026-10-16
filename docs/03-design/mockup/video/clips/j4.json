@@ -1,0 +1,1 @@
+Error: {"actions":[{"type":"upgrade_plan"}],"billing_period":"monthly","concurrent_jobs_limit":2,"error_type":"rate_limit_reached","job_set_type":"seedance_2_0_mini","plan_type":"starter","use_unlim":false,"workspace":{"role":"owner","type":"private"}}

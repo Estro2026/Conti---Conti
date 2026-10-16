@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T13:54:23.47372Z",
+    "display_name": "GPT Image 2.5",
+    "id": "e728a681-5d05-4c8e-96a4-359cb96ab9ac",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_135423_e728a681-5d05-4c8e-96a4-359cb96ab9ac_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "4ee44da8-ada6-49c9-a5a0-b6be3949a562",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/4ee44da8-ada6-49c9-a5a0-b6be3949a562.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey concrete walls and floors, brushed brass doors and volumes, dark olive upholstered built-in seating, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. This is the SAME house seen from OUTSIDE: camera stands 3 meters in front of the open front entrance door at eye level, the concrete facade and a tall brass-framed open door lead into the bright hall; the interior hall is visible through the door, same as the reference image seen from the threshold.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_135423_e728a681-5d05-4c8e-96a4-359cb96ab9ac.png",
+    "status": "completed"
+  }
+]

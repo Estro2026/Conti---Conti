@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T14:38:46.403868Z",
+    "display_name": "GPT Image 2.5",
+    "id": "c03a8583-e25c-447f-984b-ab1e600db527",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143846_c03a8583-e25c-447f-984b-ab1e600db527_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "60e5d3ad-74d6-4db6-983c-353b88d5b40a",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/60e5d3ad-74d6-4db6-983c-353b88d5b40a.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey board-formed concrete, brushed brass doors, frames and volumes, dark olive upholstery, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera approaches the floor-to-ceiling sliding glass window of the bedroom, standing 1.5 meters from it: the glass panel is partly slid open, the terrace with tall trees is visible beyond, brass window frame at the side, the bed at the left edge of the frame.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_143846_c03a8583-e25c-447f-984b-ab1e600db527.png",
+    "status": "completed"
+  }
+]

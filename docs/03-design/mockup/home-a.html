@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mockup Home A | Conti &amp; Conti</title>
+<meta name="description" content="Mockup ad alta fedeltà della Homepage A di Conti e Conti: le persone dietro ogni progetto.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="preload" as="image" href="img/hero-poster.jpg">
+<link rel="stylesheet" href="mockup.css?v=1">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="bg-pattern" aria-hidden="true"></div>
+
+<!-- NAVBAR: logo centrato rispetto alla viewport, menu ai lati, trasparente sulla hero e piena allo scroll -->
+<header class="nav" id="nav">
+  <nav class="nav-l" aria-label="Principale">
+    <ul>
+      <li><a href="../wireframe/chi-siamo.html">Impresa</a></li>
+      <li class="has-dd"><a href="../wireframe/cantieri.html" aria-haspopup="true" aria-expanded="false">Cantieri</a>
+        <ul class="dd" aria-label="Categorie di cantiere">
+          <li><a href="../wireframe/cantieri.html">Tutti i cantieri</a></li>
+          <li><a href="../wireframe/categoria.html">Case</a></li>
+          <li><a href="../wireframe/categoria.html">Residenze</a></li>
+          <li><a href="../wireframe/categoria.html">Lusso</a></li>
+          <li><a href="../wireframe/categoria.html">Palestre</a></li>
+          <li><a href="../wireframe/categoria.html">Allestimenti</a></li>
+          <li><a href="../wireframe/categoria.html">Ville</a></li>
+          <li><a href="../wireframe/categoria.html">Attivit&agrave; commerciali</a></li>
+          <li><a href="../wireframe/categoria.html">Industriale</a></li>
+        </ul>
+      </li>
+      <li><a href="../wireframe/in-vendita.html">In vendita</a></li>
+      <li><a href="../wireframe/blog.html">Blog</a></li>
+    </ul>
+  </nav>
+  <a class="nav-logo" href="home-a.html" aria-label="Conti &amp; Conti, home">
+    <img class="logo-w" src="img/logo-bianco.png" width="190" height="49" alt="">
+    <img class="logo-c" src="img/logo.png" width="190" height="49" alt="">
+  </a>
+  <div class="nav-r">
+    <nav aria-label="Servizio">
+      <ul>
+        <li><a href="../wireframe/faq.html">FAQ</a></li>
+        <li><a href="../wireframe/contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-nav" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+  </div>
+  <button class="nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span><i aria-hidden="true"></i><i aria-hidden="true"></i></button>
+</header>
+<div class="menu" id="menu" hidden>
+  <ul>
+    <li><a href="../wireframe/chi-siamo.html">Impresa</a></li>
+    <li><a href="../wireframe/cantieri.html">Cantieri</a></li>
+    <li><a href="../wireframe/in-vendita.html">In vendita</a></li>
+    <li><a href="../wireframe/blog.html">Blog</a></li>
+    <li><a href="../wireframe/faq.html">FAQ</a></li>
+    <li><a href="../wireframe/contatti.html">Contatti</a></li>
+  </ul>
+  <a class="btn" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+</div>
+
+<main id="main">
+
+<!-- 1. HERO IMMERSIVA: ingresso nella casa. Video definitivo da sostituire (vedi hero-video-higgsfield.md): ora poster con movimento di camera simulato -->
+<section class="hero" id="hero" aria-labelledby="h-hero" data-scene="hero">
+  <div class="hero-pin">
+    <div class="hero-media" aria-hidden="true">
+      <img class="hero-poster" src="img/hero-poster.jpg" width="2200" height="1244" alt="" fetchpriority="high" decoding="async">
+      <video class="hero-video" muted playsinline preload="auto" tabindex="-1"
+        data-src-desktop="video/hero-scrub.mp4" data-src-mobile="video/hero-scrub-m.mp4" poster="img/hero-poster.jpg"></video>
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-in">
+      <p class="eyebrow">Impresa di costruzioni a Lentate sul Seveso</p>
+      <h1 id="h-hero">Dietro ogni casa ci sono le persone che la costruiscono.</h1>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+        <a class="btn btn-ghost" href="../wireframe/cantieri.html">Scopri i cantieri</a>
+      </div>
+    </div>
+    <div class="hero-hud" aria-hidden="true"><span>Entra in casa</span><i><b></b></i></div>
+    <a class="hero-scroll" href="#statement" aria-label="Salta il video e vai alla sezione successiva"><span>Scorri</span><i aria-hidden="true"></i></a>
+    <div class="hero-end" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- 2. DICHIARAZIONE: il pattern CC si scopre sotto la hero; le parole si accendono con lo scroll -->
+<section class="statement panel-clear" id="statement" aria-labelledby="h-statement">
+  <div class="wrap">
+    <p class="kicker" data-reveal>Maestri del proprio mestiere</p>
+    <h2 id="h-statement" class="scrub" data-scrub>Dietro ogni progetto ci sono persone, competenze e responsabilità. Ognuno risponde di quello che fa, dal primo preventivo alla consegna delle chiavi.</h2>
+  </div>
+</section>
+
+<!-- 3. LA SQUADRA: scena fissa, lo scroll attraversa le competenze (su tablet e mobile diventa interattiva a tocco) -->
+<section class="team" id="team" aria-labelledby="h-team" data-steps="4" style="--steps:4">
+  <div class="team-sticky">
+    <div class="team-stage">
+      <div class="team-media">
+        <!-- 1. squadra: foto di gruppo, pin sui gruppi -->
+        <figure class="scene is-on" data-i="0" data-label="Una squadra, tante competenze">
+          <img src="img/team.jpg" width="1920" height="1080" alt="Il personale di Conti e Conti riunito nel piazzale della sede di Lentate sul Seveso, tra i mezzi dell'impresa." loading="lazy" decoding="async">
+          <div class="pin" style="--x:47%;--y:60%">
+            <button class="pin-dot" type="button" aria-label="Squadra di cantiere" aria-expanded="false"><i></i><em>Squadra</em></button>
+            <div class="pin-card" role="group" aria-label="Squadra di cantiere"><strong>Squadra di cantiere</strong><span>Esecuzione e qualità costruttiva: strutture, murature e casseri fatti da mani nostre.</span><button class="pc-go" type="button" data-go="2">Guarda al lavoro</button></div>
+          </div>
+          <div class="pin" style="--x:58%;--y:34%">
+            <button class="pin-dot" type="button" aria-label="Tecnici e mezzi" aria-expanded="false"><i></i><em>Tecnici e mezzi</em></button>
+            <div class="pin-card" role="group" aria-label="Tecnici e mezzi"><strong>Tecnici e mezzi</strong><span>Coordinamento di cantiere, mezzi e attrezzature dell'impresa, materiali portati in cantiere quando servono.</span><button class="pc-go" type="button" data-go="1">Conosci i tecnici</button></div>
+          </div>
+          <div class="pin pin-left" style="--x:76%;--y:20%">
+            <button class="pin-dot" type="button" aria-label="Sede e ufficio" aria-expanded="false"><i></i><em>Sede e ufficio</em></button>
+            <div class="pin-card" role="group" aria-label="Sede e ufficio"><strong>Sede e ufficio</strong><span>Preventivi, acquisti e amministrazione, nella sede di Lentate sul Seveso.</span><button class="pc-go" type="button" data-go="3">Conosci l'ufficio</button></div>
+          </div>
+        </figure>
+
+        <!-- 2. tecnici e mezzi: pin su ogni persona (nomi e ruoli di esempio, da sostituire con i dati reali) -->
+        <figure class="scene" data-i="1" data-label="Tecnici e mezzi">
+          <img src="img/tecnici.jpg" width="1920" height="1080" alt="Tre tecnici di cantiere con il giubbotto Conti e Conti leggono insieme una pianta." loading="lazy" decoding="async">
+          <div class="pin" style="--x:28%;--y:27%">
+            <button class="pin-dot" type="button" aria-label="Marco Bianchi, capocantiere" aria-expanded="false"><i></i><em>Marco Bianchi</em></button>
+            <div class="pin-card" role="group"><strong>Marco Bianchi</strong><span>Capocantiere · coordina squadre, mezzi e tempi del cantiere</span></div>
+          </div>
+          <div class="pin" style="--x:50%;--y:28%">
+            <button class="pin-dot" type="button" aria-label="Luca Ferrari, responsabile tecnico" aria-expanded="false"><i></i><em>Luca Ferrari</em></button>
+            <div class="pin-card" role="group"><strong>Luca Ferrari</strong><span>Responsabile tecnico · controlla il progetto e parla con architetti e designer</span></div>
+          </div>
+          <div class="pin" style="--x:72%;--y:28%">
+            <button class="pin-dot" type="button" aria-label="Davide Colombo, assistente di cantiere" aria-expanded="false"><i></i><em>Davide Colombo</em></button>
+            <div class="pin-card" role="group"><strong>Davide Colombo</strong><span>Assistente di cantiere · segue le lavorazioni e la logistica dei materiali</span></div>
+          </div>
+        </figure>
+
+        <!-- 3. squadra di cantiere: foto dell'impresa, pin sugli strumenti del mestiere -->
+        <figure class="scene" data-i="2" data-label="Squadra di cantiere">
+          <img src="img/cantiere.jpg" width="1920" height="1080" alt="Particolare di un operaio al lavoro con il metro e la matita Conti e Conti nella cintura degli attrezzi." loading="lazy" decoding="async">
+          <div class="pin" style="--x:44%;--y:36%">
+            <button class="pin-dot" type="button" aria-label="Esecuzione" aria-expanded="false"><i></i><em>Esecuzione</em></button>
+            <div class="pin-card" role="group"><strong>Esecuzione</strong><span>Strutture, murature e casseri fatti da mani nostre, non affidati a ditte esterne.</span></div>
+          </div>
+          <div class="pin" style="--x:78%;--y:30%">
+            <button class="pin-dot" type="button" aria-label="Precisione" aria-expanded="false"><i></i><em>Precisione</em></button>
+            <div class="pin-card" role="group"><strong>Precisione</strong><span>Ogni misura viene presa in cantiere e ricontrollata prima di costruire.</span></div>
+          </div>
+          <div class="pin" style="--x:66%;--y:80%">
+            <button class="pin-dot" type="button" aria-label="Controllo" aria-expanded="false"><i></i><em>Controllo</em></button>
+            <div class="pin-card" role="group"><strong>Controllo</strong><span>Livelle e verifiche costanti: la qualità costruttiva si misura mentre si lavora.</span></div>
+          </div>
+        </figure>
+
+        <!-- 4. ufficio: composizione unica su tutta la sezione, ritratto con pin -->
+        <figure class="scene scene-office" data-i="3" data-label="Ufficio e direzione">
+          <div class="office">
+            <div class="office-fig">
+              <img class="office-photo" src="img/ritrattoprofessionalesupoltronamoderna.webp" width="1086" height="1448" alt="Massimo Conti, amministratore unico, seduto su una poltrona moderna." loading="lazy" decoding="async">
+              <div class="pin pin-out" style="--x:25%;--y:34%">
+                <button class="pin-dot" type="button" aria-label="Massimo Conti, amministratore unico" aria-expanded="false"><i></i><em>Direzione</em></button>
+                <div class="pin-card" role="group"><strong>Massimo Conti</strong><span>Amministratore unico</span></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+        <p class="scene-hint" data-for="0" aria-hidden="true">Passa sui punti per scoprire i gruppi</p>
+        <div class="team-count" aria-hidden="true"><span id="team-n">01</span><i></i><span>04</span></div>
+      </div>
+
+      <div class="team-panel">
+        <p class="kicker">Le persone di Conti &amp; Conti</p>
+        <h2 id="h-team" class="sr">La squadra e le sue competenze</h2>
+        <div class="panel-live" aria-live="polite">
+          <article class="step is-on" data-i="0">
+            <h3>Una squadra, tante competenze</h3>
+            <p>Tecnici, muratori, carpentieri e ufficio sono dipendenti dell'impresa. Sappiamo chi lavora su ogni cantiere e rispondiamo di quello che fa.</p>
+            <p class="step-chip">43 persone in totale <em>[da verificare con il cliente]</em></p>
+            <a class="more" href="../wireframe/chi-siamo.html">Conosci l'impresa</a>
+          </article>
+          <article class="step" data-i="1">
+            <h3>Tecnici e mezzi</h3>
+            <p>I tecnici seguono ogni cantiere ogni giorno e parlano con architetti e designer, anche quando la finitura è fuori standard. Pianificano uomini e mezzi, e fanno arrivare in cantiere attrezzature e materiali quando servono.</p>
+            <p class="step-chip"><span>Coordinamento</span><span>Controllo</span><span>Mezzi</span><span>Logistica</span></p>
+            <a class="more" href="../wireframe/chi-siamo.html#h-sv">I servizi interni</a>
+          </article>
+          <article class="step" data-i="2">
+            <h3>Squadra di cantiere</h3>
+            <p>La parte più grande dell'impresa: strutture, murature e casseri fatti da mani nostre, non affidati a ditte esterne.</p>
+            <p class="step-chip"><span>Esecuzione</span><span>Qualità costruttiva</span><span>Sicurezza</span></p>
+            <a class="more" href="../wireframe/cantieri.html">Guarda i cantieri</a>
+          </article>
+          <article class="step" data-i="3">
+            <h3>Ufficio e direzione</h3>
+            <p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso. Chi ti risponde conosce il tuo cantiere.</p>
+            <p class="step-chip"><span>Preventivi</span><span>Acquisti</span><span>Amministrazione</span></p>
+            <a class="more" href="../wireframe/contatti.html">Parla con noi</a>
+          </article>
+        </div>
+        <div class="team-tabs" role="group" aria-label="Scegli una competenza">
+          <button type="button" data-i="0" class="is-on" aria-pressed="true">Squadra</button>
+          <button type="button" data-i="1" aria-pressed="false">Tecnici e mezzi</button>
+          <button type="button" data-i="2" aria-pressed="false">Cantiere</button>
+          <button type="button" data-i="3" aria-pressed="false">Ufficio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. VALORI: spazio essenziale sul pattern, tipografia come immagine -->
+<section class="values panel-clear" id="valori" aria-labelledby="h-values">
+  <div class="deep" aria-hidden="true"><i class="d-photo"></i><i class="d-cc"></i><i class="d-glow"></i></div>
+  <div class="wrap">
+    <p class="kicker light" data-reveal>Come lavoriamo</p>
+    <h2 id="h-values" data-reveal>Quattro impegni, ognuno con la sua prova.</h2>
+    <ul class="vx">
+      <li class="vx-i is-on" tabindex="0" data-reveal><img class="vx-img" src="img/team.jpg" alt="" loading="lazy" decoding="async"><span class="vn">01</span><h3>Rispetto dei tempi</h3><p>La data di fine lavori si fissa prima di iniziare.</p></li>
+      <li class="vx-i" tabindex="0" data-reveal><img class="vx-img" src="img/tecnici.jpg" alt="" loading="lazy" decoding="async"><span class="vn">02</span><h3>Certezza dei prezzi</h3><p>Il preventivo si legge voce per voce.</p></li>
+      <li class="vx-i" tabindex="0" data-reveal><img class="vx-img" src="img/vendita.jpg" alt="" loading="lazy" decoding="async"><span class="vn">03</span><h3>Professionalit&agrave; e affidabilit&agrave;</h3><p>Un solo interlocutore, dal progetto alla consegna. <em>[testo da concordare]</em></p></li>
+      <li class="vx-i" tabindex="0" data-reveal><img class="vx-img" src="img/cantiere.jpg" alt="" loading="lazy" decoding="async"><span class="vn">04</span><h3>Formazione specialistica</h3><p>Persone formate per lavorazioni fuori standard. <em>[testo da concordare]</em></p></li>
+    </ul>  </div>
+</section>
+
+<!-- 5. PROGETTI: immagini full-bleed, griglia asimmetrica, testo sulla foto -->
+<section class="works" id="progetti" aria-labelledby="h-works">
+  <div class="works-head wrap"><div><p class="kicker light" data-reveal>Cosa nasce dal loro lavoro</p><h2 id="h-works" data-reveal>Progetti che raccontano come lavoriamo.</h2></div><a class="btn btn-light" href="../wireframe/cantieri.html">Tutti i cantieri</a></div>
+  <div class="works-grid">
+    <a class="work w1" href="../wireframe/progetto.html">
+      <img src="img/ceresio-spa.jpg" width="1080" height="1080" alt="Area relax con colonne in pietra e chaise longue, progetto Ceresio 7 a Milano." loading="lazy" decoding="async">
+      <div class="work-t"><span>Palestre · Milano</span><h3>Ceresio 7</h3><p>Piscina, palestra e aree relax: la tecnica resta invisibile a chi usa gli spazi.</p><i class="arrow" aria-hidden="true"></i></div>
+    </a>
+    <a class="work w2" href="../wireframe/progetto.html">
+      <img src="img/villa.jpg" width="1080" height="1080" alt="Villa contemporanea bianca con giardino a Meda." loading="lazy" decoding="async">
+      <div class="work-t"><span>Residenze · [località]</span><h3>Villa a Meda</h3><p>Una villa realizzata dal progetto alla consegna.</p><i class="arrow" aria-hidden="true"></i></div>
+    </a>
+    <a class="work w3" href="../wireframe/progetto.html">
+      <img src="img/ceresio-piscina.jpg" width="1000" height="1000" alt="Terrazza con piscina a sfioro e vetrata, vista sulla città." loading="lazy" decoding="async">
+      <div class="work-t"><span>Ceresio 7 · Milano</span><h3>La piscina sul tetto</h3><i class="arrow" aria-hidden="true"></i></div>
+    </a>
+    <a class="work w4" href="../wireframe/progetto.html">
+      <img src="img/therise.jpg" width="1400" height="1400" alt="Palestra con luci al neon e attrezzature, The Rise." loading="lazy" decoding="async">
+      <div class="work-t"><span>Palestre · [località]</span><h3>The Rise</h3><i class="arrow" aria-hidden="true"></i></div>
+    </a>
+  </div>
+</section>
+
+<!-- 6. VENDITA DIRETTA -->
+<section class="sale" id="vendita" aria-labelledby="h-sale">
+  <div class="wrap sale-head">
+    <div class="sale-intro">
+      <p class="kicker" data-reveal>In vendita</p>
+      <h2 id="h-sale" data-reveal>Acquista direttamente da chi costruisce.</h2>
+      <p class="sale-lead" data-reveal>Tratti con l'impresa, senza agenzie di mezzo, e hai lo stesso interlocutore dalla trattativa fino alla consegna e al rogito.</p>
+    </div>
+    <div class="sale-ctrl" data-reveal>
+      <button class="sale-btn" type="button" id="sale-prev" aria-label="Immobili precedenti"><i aria-hidden="true"></i></button>
+      <button class="sale-btn next" type="button" id="sale-next" aria-label="Immobili successivi"><i aria-hidden="true"></i></button>
+      <a class="btn" href="../wireframe/in-vendita.html">Tutti gli immobili</a>
+    </div>
+  </div>
+  <ul class="imm-track" id="imm-track" tabindex="0" aria-label="Immobili in vendita, scorri di lato">
+    <li><a class="imm tone-1" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm1.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">In costruzione</span>
+      <span class="imm-body"><strong>Residenza Solarium</strong><span>Montesolaro, Carimate (MB) · 4 unità · consegna entro dicembre 2026 <em>[da verificare]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+    <li><a class="imm tone-2" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm2.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">[Stato]</span>
+      <span class="imm-body"><strong>Residenza Paradiso</strong><span>Lentate sul Seveso (MB) · <em>[dati da definire]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+    <li><a class="imm tone-3" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm3.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">In costruzione</span>
+      <span class="imm-body"><strong>Via Diaz</strong><span>Lentate sul Seveso (MB) · <em>[tipologia] · [mq]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+    <li><a class="imm tone-4" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm4.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">[Stato]</span>
+      <span class="imm-body"><strong>Domus 54</strong><span><em>[località e dati da definire]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+    <li><a class="imm tone-1" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm5.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">[Stato]</span>
+      <span class="imm-body"><strong>Palazzina Montesolaro</strong><span><em>[da verificare: potrebbe coincidere con Residenza Solarium]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+    <li><a class="imm tone-2" href="../wireframe/residenza.html">
+      <span class="imm-cover"><img src="img/imm6.jpg" alt="" loading="lazy" decoding="async"></span>
+      <span class="imm-badge">[Stato]</span>
+      <span class="imm-body"><strong>Seregno</strong><span>Seregno (MB) · <em>[indirizzo e dati da definire]</em></span><u>Vedi la scheda</u></span>
+    </a></li>
+  </ul>
+  <p class="imm-note wrap">Immagini illustrative: gli scatti reali degli immobili saranno forniti dal cliente.</p>
+</section>
+
+<!-- 6b. DOVE OPERIAMO: mappa Google con sede e zone, pin interattivi -->
+<section class="map" id="dove" aria-labelledby="h-map">
+  <div class="wrap map-grid">
+    <div class="map-side">
+      <p class="kicker" data-reveal>Dove operiamo</p>
+      <h2 id="h-map" data-reveal>Dalla Brianza a Milano, fino al lago.</h2>
+      <p class="map-lead" data-reveal>Lavoriamo tra Milano, Como, Varese e Monza e Brianza. La sede operativa è a Lentate sul Seveso.</p>
+      <ul class="pins" data-reveal>
+        <li><button class="pl" type="button" data-key="sede" data-lat="45.6578" data-lon="9.1307" data-q="Via Nazionale dei Giovi 169, 20823 Lentate sul Seveso" data-z="15" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Sede operativa</strong><em>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</em></button></li>
+        <li><button class="pl" type="button" data-key="mi" data-lat="45.4642" data-lon="9.19" data-q="Milano" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Milano</strong><em>Interventi di pregio in città</em></button></li>
+        <li><button class="pl" type="button" data-key="co" data-lat="45.95" data-lon="9.26" data-q="Lago di Como" data-z="10" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Lago di Como</strong><em>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</em></button></li>
+        <li><button class="pl" type="button" data-key="va" data-lat="45.8206" data-lon="8.8251" data-q="Varese" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Varese</strong><em>Zona operativa</em></button></li>
+        <li><button class="pl" type="button" data-key="mb" data-lat="45.62" data-lon="9.24" data-q="Seregno" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Monza, Seregno e Brianza</strong><em>Nuove costruzioni e residenze in vendita</em></button></li>
+      </ul>
+      <a class="btn" href="../wireframe/contatti.html" data-reveal>Vai ai contatti</a>
+    </div>
+    <div class="map-frame" id="map-frame" data-reveal>
+      <iframe id="gmap" title="Mappa Google delle zone operative di Conti e Conti" tabindex="-1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        data-src="https://www.google.com/maps?output=embed&amp;hl=it&amp;z=9&amp;ll=45.75,9.10"></iframe>
+      <div class="map-pins" id="map-pins" aria-label="Pin delle zone operative"></div>
+      <button class="map-reset" id="map-reset" type="button" hidden>Torna alla vista completa</button>
+      <p class="map-note">Mappa Google. In produzione si carica dopo il consenso ai cookie di terze parti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6c. BLOG: anteprima articoli -->
+<section class="blog" id="blog" aria-labelledby="h-blog">
+  <div class="wrap">
+    <div class="blog-head">
+      <div><p class="kicker" data-reveal>Dal blog</p><h2 id="h-blog" data-reveal>Guide e racconti dal cantiere.</h2></div>
+      <a class="btn" href="../wireframe/blog.html" data-reveal>Tutti gli articoli</a>
+    </div>
+    <div class="blog-grid">
+      <a class="post post-lead" href="../wireframe/articolo.html" data-reveal>
+        <div class="post-img"><img src="img/tecnici.jpg" width="1920" height="1080" alt="Tecnici di cantiere leggono una pianta" loading="lazy" decoding="async"></div>
+        <div class="post-t"><span>[Data] &middot; [x min di lettura]</span><h3>Ristrutturare casa: da dove cominciare e a chi affidarsi</h3><p>[Anteprima da scrivere con il cliente]</p></div>
+      </a>
+      <a class="post" href="../wireframe/articolo.html" data-reveal>
+        <div class="post-img"><img src="img/villa.jpg" width="1080" height="1080" alt="Villa contemporanea con giardino in Brianza" loading="lazy" decoding="async"></div>
+        <div class="post-t"><span>[Data] &middot; [x min di lettura]</span><h3>Costruire casa in Brianza: dal terreno alla consegna</h3></div>
+      </a>
+      <a class="post" href="../wireframe/articolo.html" data-reveal>
+        <div class="post-img"><img src="img/ceresio-spa.jpg" width="1080" height="1080" alt="Interno di pregio con colonne in pietra" loading="lazy" decoding="async"></div>
+        <div class="post-t"><span>[Data] &middot; [x min di lettura]</span><h3>Ville sul Lago di Como: cosa cambia costruendo in un contesto di pregio</h3></div>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- 7. GARANZIE -->
+<section class="trust panel-clear" id="garanzie" aria-labelledby="h-trust">
+  <div class="deep" aria-hidden="true"><i class="d-photo"></i><i class="d-cc"></i><i class="d-glow"></i></div>
+  <div class="wrap">
+    <p class="kicker light" data-reveal>Garanzie messe per iscritto</p>
+    <h2 id="h-trust" data-reveal>Verificate da enti esterni, non dichiarazioni nostre.</h2>
+    <ul class="tlist">
+      <li data-reveal><span class="t-tag">Certificazione</span><span class="tlogos"><img src="img/logo-iso.png" width="600" height="601" alt="ISO 9001:2015"><img src="img/logo-tuv.png" width="495" height="496" alt="T&Uuml;V S&Uuml;D ISO 9001"></span><strong>UNI EN ISO 9001:2015</strong><span>Sistema qualit&agrave; certificato da T&Uuml;V Italia</span></li>
+      <li data-reveal><span class="t-tag">Attestazione</span><span class="tlogos"><img class="wide" src="img/logo-soa.png" width="1417" height="453" alt="SOA Laghi, organismo di attestazione"></span><strong>Attestazione SOA</strong><span>Classifica IV bis <em>[da verificare]</em></span></li>
+      <li data-reveal><span class="t-tag">Riconoscimento</span><span class="tlogos"><img src="img/logo-cassaedile.jpg" width="600" height="592" alt="Cassa Edile Awards 2024"></span><strong>Cassa Edile Awards</strong><span>Riconoscimento 2024</span></li>
+    </ul>  </div>
+</section>
+
+<!-- 8. CHIUSURA -->
+<section class="close" id="contatto" aria-labelledby="h-close">
+  <div class="wrap close-in">
+    <div class="close-t"><h2 id="h-close" data-reveal>Parliamo del tuo progetto.</h2><p data-reveal>Raccontaci cosa vuoi costruire o ristrutturare: ti risponde chi segue il cantiere.</p></div>
+    <div class="close-cta" data-reveal>
+      <a class="btn btn-light" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+      <a class="btn btn-ghost" href="tel:+390362557972">Chiama 0362 557972</a>
+    </div>
+  </div>
+</section></main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><img src="img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell'edilizia"><p>Conti e Conti Srl · P.IVA 00934370966</p>
+      <ul class="social" aria-label="Seguici sui social">
+        <li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener" aria-label="LinkedIn di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener" aria-label="Facebook di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/></svg></a></li>
+      </ul></div>
+    <div>
+      <h2>Contatti</h2>
+      <p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p>
+      <p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>
+      <p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2>Sito</h2>
+      <ul>
+        <li><a href="../wireframe/chi-siamo.html">Impresa</a></li>
+        <li><a href="../wireframe/cantieri.html">Cantieri</a></li>
+        <li><a href="../wireframe/in-vendita.html">In vendita</a></li>
+        <li><a href="../wireframe/lavora-con-noi.html">Lavora con noi</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>&copy; 2026 Conti e Conti Srl &middot; Tutti i diritti riservati</p>
+    <ul aria-label="Informazioni legali">
+      <li><a href="#">Privacy policy</a></li>
+      <li><a href="#">Cookie policy</a></li>
+      <li><a href="#" data-cookie-prefs>Gestisci i cookie</a></li>
+      <li><a href="#">Note legali</a></li>
+      <li><a href="#">Accessibilit&agrave;</a></li>
+      <li><a href="#">Mappa del sito</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="mockup.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-10-16T14:55:49.005739Z",
+  "display_name": "Seedance 2.0 Mini",
+  "id": "48001bf2-34d4-4023-b8f6-95e7e32d73cb",
+  "job_type": "seedance_2_0_mini",
+  "min_result_url": null,
+  "params": {
+    "aspect_ratio": "16:9",
+    "duration": 5,
+    "generate_audio": true,
+    "genre": "auto",
+    "height": 720,
+    "medias": [
+      {
+        "data": {
+          "id": "395abb18-d84c-4a3c-bcce-20f405556706",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/395abb18-d84c-4a3c-bcce-20f405556706.jpg"
+        },
+        "role": "start_image"
+      },
+      {
+        "data": {
+          "id": "2ecb5bdd-3201-4309-ba3d-59818775147c",
+          "type": "media_input",
+          "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/2ecb5bdd-3201-4309-ba3d-59818775147c.jpg"
+        },
+        "role": "end_image"
+      }
+    ],
+    "multi_prompt": [],
+    "multi_shot_mode": "custom",
+    "multi_shots": false,
+    "prompt": "Smooth continuous first-person architectural walkthrough film, the camera glides forward at a slow steady walking pace at eye level, no cuts, no shake, perfectly straight vertical lines, realistic natural daylight, calm and elegant, no people, architecture stays rigid and unchanged, the shot ends exactly on the end image. Walking through the open front door, the door leaf passing on the right, ending just inside on the threshold.",
+    "prompt_language": "en",
+    "reference_elements": [],
+    "resolution": "720p",
+    "speedramp": "auto",
+    "width": 1280
+  },
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_145549_48001bf2-34d4-4023-b8f6-95e7e32d73cb.mp4",
+  "status": "completed",
+  "thumbnail_url": "https://cdn.higgsfield.ai/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_145549_48001bf2-34d4-4023-b8f6-95e7e32d73cb_thumbnail.webp"
+}

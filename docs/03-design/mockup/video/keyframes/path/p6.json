@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T14:15:54.079296Z",
+    "display_name": "GPT Image 2.5",
+    "id": "9a7f6883-ef7d-4ba7-8b23-cec1df7ceae7",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141554_9a7f6883-ef7d-4ba7-8b23-cec1df7ceae7_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "454dfc5b-5f2e-4c48-b4c9-23588d95973f",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/454dfc5b-5f2e-4c48-b4c9-23588d95973f.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural photograph, same contemporary house throughout: raw light-grey concrete walls and floors, brushed brass doors and volumes, dark olive upholstered built-in seating, warm natural daylight, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial photography, no people, no text, 16:9. The camera has entered a bedroom of the same house: a low concrete platform bed with olive linen, brass wardrobe volume, a floor-to-ceiling window opening onto a terrace with trees, soft morning light, same materials as the references.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_141554_9a7f6883-ef7d-4ba7-8b23-cec1df7ceae7.png",
+    "status": "completed"
+  }
+]

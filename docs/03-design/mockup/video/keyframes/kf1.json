@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T10:34:09.032167Z",
+    "display_name": "GPT Image 2.5",
+    "id": "0e9618db-0976-4a68-81be-fbcaef4b35e4",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_103409_0e9618db-0976-4a68-81be-fbcaef4b35e4_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "809c0fe1-fdb3-44c4-8b84-4cf3be4193ff",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/809c0fe1-fdb3-44c4-8b84-4cf3be4193ff.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural interior photograph of a contemporary house, raw light-grey concrete walls and floor, brushed brass volumes, warm natural daylight from the side, soft shadows, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial architecture photography, no people, no text, 16:9. Shot 1, entrance: view from the open front door threshold looking into the hall, bright daylight entering, concrete floor leading inwards, a brass panel on the right wall, free space on the left and bottom of the frame.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_103409_0e9618db-0976-4a68-81be-fbcaef4b35e4.png",
+    "status": "completed"
+  }
+]

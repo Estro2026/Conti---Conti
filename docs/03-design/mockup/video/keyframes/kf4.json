@@ -1,0 +1,32 @@
+[
+  {
+    "created_at": "2026-10-16T10:35:54.305985Z",
+    "display_name": "GPT Image 2.5",
+    "id": "8f378de1-4966-4cae-9cc6-30e24bd141b0",
+    "job_type": "gpt_image_2_5",
+    "min_result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_103554_8f378de1-4966-4cae-9cc6-30e24bd141b0_min.webp",
+    "params": {
+      "aspect_ratio": "16:9",
+      "height": 1520,
+      "medias": [
+        {
+          "data": {
+            "id": "18f6565b-7e4f-42a8-8d57-e7b9b050c795",
+            "type": "media_input",
+            "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/18f6565b-7e4f-42a8-8d57-e7b9b050c795.jpg"
+          },
+          "role": "image"
+        }
+      ],
+      "model": "flare",
+      "prompt": "Photorealistic architectural interior photograph of a contemporary house, raw light-grey concrete walls and floor, brushed brass volumes, warm natural daylight from the side, soft shadows, eye-level camera at 1.5 m, 24 mm lens, perfectly straight vertical lines, calm editorial architecture photography, no people, no text, 16:9. Shot 4, window detail: close view of a tall window with sheer light falling on a textured concrete wall, brass window frame detail, soft glow, shallow depth, calm and warm.",
+      "quality": "high",
+      "reference_elements": [],
+      "remove_bg": false,
+      "resolution": "2k",
+      "width": 2688
+    },
+    "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3GzWOpnIlql1kZm1Pe0TH0ZEQjm/hf_20261016_103554_8f378de1-4966-4cae-9cc6-30e24bd141b0.png",
+    "status": "completed"
+  }
+]
