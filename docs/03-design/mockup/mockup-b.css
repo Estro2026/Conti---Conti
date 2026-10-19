@@ -470,3 +470,11 @@ body.b{background:var(--plaster);color:var(--ink)}
 .b .work-t span{color:rgba(255,255,255,.9)}
 .b .work .arrow{right:clamp(20px,2.2vw,36px);bottom:clamp(20px,2.2vw,36px);background:rgba(14,13,12,.35);border-color:rgba(255,255,255,.85)}
 .b .work:hover .arrow,.b .work:focus-visible .arrow{background:var(--acc);border-color:var(--acc)}
+
+/* ---- revisione 13 ---- */
+/* hero: all'atterraggio la finestra inquadra il portale d'ingresso; aprendosi torna all'inquadratura piena */
+@media (min-width:901px){.b .hero .hero-poster,.b .hero .hero-video{transform:translateX(calc(22.75% * (1 - var(--o,0))))}}
+/* dropdown: voci staccate dal bordo, selezione affossata e intera */
+.b .dd{padding:10px}
+.b .nav .dd a:not(.btn){border-radius:2px;transition:background-color .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease)}
+.b .nav .dd a:not(.btn):hover,.b .nav .dd a:not(.btn):focus-visible{background:#e9e5dd;box-shadow:inset 2px 3px 6px rgba(30,28,24,.18),inset -1px -1px 0 rgba(255,255,255,.8)}

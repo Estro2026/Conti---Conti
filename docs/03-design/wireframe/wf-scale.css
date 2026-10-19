@@ -1,0 +1,131 @@
+/* Wireframe Conti & Conti - REGOLE DI SCALA PER ZOOM E SCHERMI PICCOLI (2026-10-20). Va caricato per ultimo.
+   Perché: con lo zoom del browser la larghezza CSS si restringe (200% su 1440 px = 720 px) e le misure pensate per lo
+   schermo grande (titoli da 90 px, card da 400 px, foto 4:5) diventano troppo grandi. Qui sono raccolte le regole.
+
+   COME FUNZIONA
+   - wf-zoom.js imposta html[data-zoom] = 1 | 1.5 | 2 | 3 | 4 (solo desktop; su touch resta 1).
+   - --sk è il fattore di riduzione: 1 → 1,  1.5 → .92,  2 → .84,  3 → .74,  4 → .66.
+   - I valori sotto sono "misura base × --sk": per cambiare una regola per tutte le pagine si modifica un solo punto.
+   TOKEN
+   --sk          fattore di scala di titoli, card e spazi
+   --sy / --sh  spazio tra sezioni / tra intestazione e contenuto (definiti in wf-dyn.css, ridotti qui)
+   --card-r     proporzione delle foto delle card (cambia per zoom: 4/5 → 1/1 → 4/3)
+   --hero-min   altezza minima delle aperture su foto */
+
+:root{--sk:1;--card-r:4/5;--hero-min:clamp(520px,72vh,720px)}
+html[data-zoom="1.5"]{--sk:.92}
+html[data-zoom="2"]{--sk:.84;--card-r:1/1;--hero-min:clamp(420px,64vh,620px)}
+html[data-zoom="3"]{--sk:.74;--card-r:4/3;--hero-min:clamp(360px,60vh,520px)}
+html[data-zoom="4"]{--sk:.66;--card-r:4/3;--hero-min:clamp(320px,56vh,440px)}
+
+/* SPAZI tra sezioni */
+html[data-zoom="1.5"] .frame{--sy:clamp(56px,7cqi,104px);--sh:clamp(28px,3.4cqi,48px)}
+html[data-zoom="2"] .frame{--sy:clamp(44px,6cqi,84px);--sh:clamp(24px,3cqi,40px);--sy0:clamp(28px,4cqi,52px)}
+html[data-zoom="3"] .frame,html[data-zoom="4"] .frame{--sy:clamp(36px,5cqi,60px);--sh:clamp(20px,2.6cqi,32px);--sy0:clamp(24px,3.4cqi,40px)}
+
+/* TITOLI di pagina e di sezione: misura base × --sk */
+html[data-zoom] .frame main h1:not(.ix-h1):not(.cn-h1):not(.iv-h1){font-size:calc(clamp(44px,6.4cqi,96px) * var(--sk))!important}
+html[data-zoom] .ix-h1{font-size:calc(clamp(52px,8.6cqi,132px) * var(--sk))!important}
+html[data-zoom] .cn-h1,html[data-zoom] .iv-h1{font-size:calc(clamp(64px,13cqi,190px) * var(--sk))!important}
+html[data-zoom] .pj-hero-t h1{font-size:calc(clamp(56px,10cqi,150px) * var(--sk))!important}
+html[data-zoom] .dx-h{font-size:calc(clamp(30px,4.2cqi,56px) * var(--sk))}
+html[data-zoom] .ix-40{font-size:calc(clamp(130px,17cqi,260px) * var(--sk))}
+html[data-zoom] .ix-boss-n{font-size:calc(clamp(48px,6.4cqi,96px) * var(--sk))}
+html[data-zoom] .ix-stk-a{font-size:calc(clamp(28px,3.4cqi,52px) * var(--sk))}
+html[data-zoom] .ix-stk-n span{font-size:calc(clamp(56px,6cqi,96px) * var(--sk))}
+html[data-zoom] .ix-flow-n{font-size:calc(clamp(56px,6.4cqi,96px) * var(--sk))}
+html[data-zoom] .pj-next-in b{font-size:calc(clamp(44px,8cqi,120px) * var(--sk))}
+/* testo corrente: sotto il 200% resta leggibile, non scende mai sotto 15 px */
+html[data-zoom="3"] .lead,html[data-zoom="4"] .lead{font-size:max(15px,calc(1em * .94))}
+
+/* CARD e FOTO */
+html[data-zoom] .cn-grid:not(.is-list) .cn-ph .ph,html[data-zoom] .iv-it .card-imm>.ph{aspect-ratio:var(--card-r)!important}
+html[data-zoom] .ct-pin{--ch:calc(clamp(260px,calc(100vh - var(--stick) - 2 * var(--sy) - 210px),480px) * var(--sk))}
+html[data-zoom="3"] .ct-pc-ph .ph,html[data-zoom="4"] .ct-pc-ph .ph{height:calc(var(--ch) * .9)}
+html[data-zoom="2"] .ix-flow li,html[data-zoom="3"] .ix-flow li,html[data-zoom="4"] .ix-flow li{aspect-ratio:auto;min-height:0}
+html[data-zoom="3"] .cn-grid:not(.is-list),html[data-zoom="4"] .cn-grid:not(.is-list){grid-template-columns:1fr}
+/* aperture su foto: altezza minima ridotta, mai tutto lo schermo */
+html[data-zoom] .ct-hero{min-height:var(--hero-min)}
+
+/* BARRE di filtro: con zoom alto e altezza bassa non restano ferme (occuperebbero metà schermo) */
+@media (max-height:620px){.cn-bar,.iv-bar,.fq-nav.sv-sticky{position:static!important}}
+
+/* ==== APERTURE DELLE CATEGORIE su schermi bassi/zoomati: tutto il testo e la CTA visibili subito, senza scorrere ====
+   altezza finestra ≤ 700 px (zoom da ~150% in su su un portatile): titolo ridotto in base all'altezza, testo compatto,
+   due colonne anche sotto i 1040 px (se la larghezza lo permette), niente barra mobile fissa che copre la CTA se lo schermo è molto basso */
+@media (max-height:700px){
+  html[data-zoom] .ct-hero,.ct-hero{min-height:0}
+  .ct-hero-t{gap:14px;padding-bottom:20px;padding-top:calc(var(--ovl,125px) + 16px)}
+  html[data-zoom] .frame main .ct-hero-h h1:not(.ix-h1):not(.cn-h1):not(.iv-h1){font-size:min(calc(clamp(44px,6.4cqi,96px) * var(--sk)),11vh)!important;line-height:.95}
+  .ct-hero-s{gap:12px;padding-bottom:0}
+  .ct-hero-s .lead{font-size:15px;line-height:1.4}
+  .ct-hero-s .ct-fact b{font-size:32px}
+}
+@media (max-height:700px) and (min-width:540px){
+  .ct-hero-t{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+}
+@media (max-height:480px){.sticky-m{display:none!important}}
+
+/* ==== APERTURA DEL PROGETTO su schermi bassi/zoomati: titolo, categoria e località visibili subito ====
+   la cornice sticky parte sotto il breadcrumb: la sua altezza tiene conto del breadcrumb (--crumb), altrimenti il testo in basso finisce oltre lo schermo */
+.pj-hero-s{height:calc(100svh - var(--stick) - var(--crumb,52px))}
+@media (max-height:700px){
+  html[data-zoom] .pj-hero-t h1{font-size:min(calc(clamp(56px,10cqi,150px) * var(--sk)),12vh)!important}
+  .pj-hero-t{bottom:18px}
+  .pj-scroll{display:none}
+}
+
+/* APERTURA DEL PROGETTO, prima visualizzazione: la cornice occupa esattamente lo spazio visibile (--vis, calcolato in wf-dyn.js:
+   altezza finestra − toolbar − header − breadcrumb − barra mobile fissa). Titolo, categoria e località sono sempre dentro, come su desktop. */
+.pj-hero-s{height:var(--vis,calc(100svh - var(--stick) - var(--crumb,52px)))!important}
+@media (max-height:560px){.pj-hero-s{height:var(--vis,70vh)!important}}
+
+/* ==== APERTURE DI TUTTE LE PAGINE su schermi bassi/zoomati (altezza ≤ 700 px) ====
+   Regola: alla prima visualizzazione titolo, descrizioni e CTA dell'apertura sono tutti visibili, come su desktop.
+   Come: titoli ridotti in base all'ALTEZZA (vh), testo corrente 15 px, spazi dimezzati, e dove la larghezza lo permette (≥ 540 px)
+   titolo e testo affiancati su due colonne invece che in colonna. Nessun contenuto viene tolto. */
+@media (max-height:700px){
+  /* titoli */
+  html[data-zoom] .ix-h1{font-size:min(calc(clamp(52px,8.6cqi,132px) * var(--sk)),10.5vh)!important;max-width:none}
+  html[data-zoom] .lv-h1{font-size:min(calc(clamp(48px,8.5cqi,120px) * var(--sk)),10.5vh)!important}
+  html[data-zoom] .frame main .ar-hd h1:not(.ix-h1):not(.cn-h1):not(.iv-h1){font-size:min(calc(clamp(44px,6.4cqi,96px) * var(--sk)),8vh)!important}
+  html[data-zoom] .gz-hero h1{font-size:min(calc(clamp(40px,7cqi,104px) * var(--sk)),9vh)!important;margin:8px 0 12px;max-width:none}
+  html[data-zoom] .bl-hero h1,html[data-zoom] .sv-h1{font-size:min(calc(clamp(44px,6.4cqi,96px) * var(--sk)),10.5vh)!important}
+  html[data-zoom] .hero-p h1{font-size:min(calc(clamp(38px,5cqi + 8px,84px) * var(--sk)),9vh)!important}
+  /* testo corrente delle aperture */
+  .ix-lead,.lv-op .lead,.ar-hd .lead,.gz-hero .lead,.hero-p .lead,.bl-hero .lead{font-size:15px;line-height:1.4;margin-top:8px}
+  .lv-op .hrow-t{gap:8px}.lv-op .hrow-t p{font-size:14px;line-height:1.35}
+  /* spazi */
+  .gz-hero{padding-top:var(--sy0,28px)}
+  .gz-ok{width:44px;height:44px;margin-bottom:8px}
+  .ix-hero-t{padding-bottom:20px}
+  .ix-ey{margin-bottom:8px}
+  .ar-hd,.bl-hero,.lv-op{padding-top:var(--sy0,28px)!important}
+  .hero-p .hero-in{padding-bottom:16px}
+  .hero-p .hp-txt{gap:8px}
+  .rs-key .in{padding-block:8px;gap:12px}
+  .rs-key dt{margin-bottom:2px}
+  .rs-key dd{font-size:16px}
+  .rs-key .btn{min-height:44px;padding:0 16px}
+  .rs-hero{height:auto!important;min-height:0!important}
+}
+/* titolo e testo affiancati dove la larghezza lo permette */
+@media (max-height:700px) and (min-width:540px){
+  .ix-hero-t{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,4cqi,64px);align-items:end}
+  .ix-hero-t .ix-ey{grid-column:1/-1}
+  .ix-hero-t .ix-lead{margin:0}
+  .ix-hero-t>*{max-width:none}
+}
+@media (max-height:700px){
+  .gz-hero .lead{margin:0 0 12px}
+  .gz-tl li{padding-top:24px}
+  .gz-ok{width:36px;height:36px;margin-bottom:4px}
+  html[data-zoom] .gz-hero h1{font-size:min(calc(clamp(40px,7cqi,104px) * var(--sk)),8vh)!important}
+  .gz-hero{padding-top:20px}
+}
+@media (max-height:700px) and (min-width:540px){
+  .lv-op .hrow{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+  .lv-op .lead,.lv-op .hrow-t p{max-width:none}
+}
+/* NOTA: il fattore di scala si chiama --sk (non --k): --k è già usato da Progetto per l'avanzamento dello scroll dell'apertura
+   (clip-path e dissolvenza). Con lo stesso nome il titolo veniva moltiplicato per 0 e spariva. */

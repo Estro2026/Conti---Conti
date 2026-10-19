@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Pagina categoria (esempio Palestre) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
-<body data-active="cantieri" data-sticky="preventivo">
+<title>Wireframe Pagina categoria (esempio Palestre) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><script>(function(){var s=location.hash.slice(1);if(!s||s==="palestre")document.documentElement.classList.add("cat-palestre")})()</script><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<body data-active="cantieri" data-sticky="preventivo" data-overlay>
 <div id="tb"></div>
 <p class="legend"><strong>Template pagina categoria</strong> (esempio: Palestre). Stesso template per tutte le 8 categorie: le altre categorie (es. <a href="categoria.html#ville">#ville</a>) mostrano lo stesso impianto senza i blocchi Competenza e FAQ. <span class="tag t-PROPOSTA">PROPOSTA</span></p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
@@ -9,57 +9,81 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="cantieri.html">Cantieri</a></li><li aria-current="page">Palestre</li></ol></nav>
 
-<section class="hero hero-p" aria-labelledby="h1">
-  <div data-noratio data-ph="Foto di categoria, progetto reale|16/9"></div>
-  <div class="hero-in"><div class="hp-txt">
-    <h1 id="h1">Palestre</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2 h. Un solo template archivio per le 8 categorie, campi del termine da ACF, accordion FAQ con 2 voci scritte a mano. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-    <p class="lead">Una palestra mette alla prova la struttura: carichi che cadono, vibrazioni, rumore verso i piani sotto. La costruiamo insieme a progettisti e architetti, con le soluzioni tecniche che servono.</p>
-    <p class="btns" style="margin:28px 0 0"><a class="btn" href="contatti.html">Richiedi un preventivo per una palestra</a></p>
-    <i data-note="DEV|CATEGORIA = unico template Theme Builder > Archive (condizione: tassonomia Categoria progetto), stesso per tutte le 8 categorie. MEDIUM, 5-8 h. Contenuti variabili per categoria (H1, intro, foto, blocco competenza 'soletta molleggiata', FAQ locali) = campi ACF sul termine con Dynamic Tags (Pro + ACF: VERIFY che i tag leggano i campi dei termini nella versione installata). Se il blocco competenza o le FAQ esistono solo per alcune categorie: Display Conditions (Pro) sul campo non vuoto. Alternativa più semplice e prevedibile: 8 Pagine normali costruite da una template + Loop Grid con query per termine (+3-5 h di inserimento, meno elegante, nessun rischio sui campi termine). CTA 'Richiedi un preventivo per [categoria]' precompila il Select del Form via parametro URL: Hidden/Select default da query string (Form Pro supporta valore da URL tramite shortcode dynamic 'Request parameter'; VERIFY) ~1 h. Sostituisce il template 'Categorie' (non creare pagine statiche)."></i>
-    <i data-note="PROPOSTA|H1 = nome categoria + parola chiave da concordare con SEO. CTA contestuale alla categoria (precompila il campo 'tipo di intervento' nel form contatti)."></i>
-    <i data-note="PROPOSTA|Copy provvisorio (tutta la pagina). VERIFICATO: 3 palestre con soletta molleggiata, Ceresio 7 con piscina e palestra, collaborazione con architetti su soluzioni non standard. NON VERIFICATO: la descrizione generale della soletta molleggiata e dei motivi per cui si usa è conoscenza tecnica generica, da far validare al cliente (come l'ha realizzata, in quali edifici, con quali prestazioni). Località, nomi degli altri due progetti, risposte FAQ oltre ai fatti citati."></i>
-    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: apertura con lo stesso impianto della pagina Impresa (testo a sinistra allineato alla base della foto, foto a destra), senza occhiello 'Cantieri' (già nel breadcrumb). Fondi del template completo: bianco, nero (competenza), grigio chiaro (progetti), bianco (FAQ), nero (altre categorie), bordeaux (CTA). Per le categorie senza competenza e FAQ restano bianco, grigio, nero, bordeaux: alternanza garantita in entrambi i casi."></i>
-    <i data-note="DEV|Delta alta fedeltà Categoria: competenza su fondo nero con riga titolo/testo e immagine + elenco a filetti 0.5-1 h; FAQ in due colonne con accordion condiviso (stile da FAQ) 0 h; altre categorie come tavola 4x2 a filetti con la categoria corrente esclusa (Loop Grid su termini con esclusione del termine corrente, o 8 link statici + Display Conditions) +0.5-1 h. Delta template +1-2 h (5-8 h > 6-10 h)."></i>
-  </div></div>
-</section>
-
-<section class="sec dk" aria-labelledby="h-comp"><div class="in">
-  <div class="hrow">
-    <h2 id="h-comp">Soletta molleggiata: il pavimento che non disturba chi sta sotto</h2>
-    <p class="lead">Una soletta molleggiata separa il piano di calpestio dalla struttura con appoggi elastici. Impatti e vibrazioni di pesi, salti e macchinari vengono assorbiti prima di arrivare ai locali sottostanti e agli edifici vicini.</p>
-  </div>
-  <div class="pg-tec">
-    <div data-ph="Dettaglio tecnico soletta (foto o schema)|16/10"></div>
-    <div class="pg-tec-t">
-      <ul class="pg-tk"><li>Meno rumore da impatto verso i piani sotto</li><li>Vibrazioni contenute anche con carichi dinamici</li><li>Superficie di gioco più confortevole per chi si allena</li></ul>
-      <p>Abbiamo realizzato tre palestre con questa tecnica. [Dati tecnici, prestazioni e riferimenti: da fornire dal cliente.]</p>
+<!-- 1. APERTURA: testo e dato tecnico a sinistra, foto in parallasse a destra -->
+<section class="ct-hero" aria-labelledby="h1">
+  <div class="ct-hero-t">
+    <div class="ct-hero-h">
+      <p class="dx-k" data-rv>Categoria 04 / 08</p>
+      <h1 id="h1" data-rv style="--d:1">Palestre</h1>
+    </div>
+    <div class="ct-hero-s" data-rv style="--d:2">
+      <p class="ct-fact"><b>3</b><span>palestre realizzate con soletta molleggiata</span></p>
+      <p class="lead">Una palestra mette alla prova la struttura: carichi che cadono, vibrazioni, rumore verso i piani sotto. La costruiamo insieme a progettisti e architetti, con le soluzioni tecniche che servono.</p>
+      <p class="ct-cta"><a class="btn" href="contatti.html">Richiedi un preventivo per una palestra</a></p>
     </div>
   </div>
-  <i data-note="CLIENTE|3 palestre realizzate con soletta molleggiata (call): elemento tecnico distintivo, da trasformare in blocco di contenuto. Dettagli tecnici, nomi e dati non forniti: richiesta contenuti al cliente. Esempio di blocco riusabile per altre categorie (es. allestimenti)."></i>
-  <i data-note="PROPOSTA|Occhiello 'Competenza tecnica' rimosso (ridondante con il titolo). Fondo nero per staccare il blocco tecnico; titolo a sinistra e definizione a destra sulla stessa base, sotto foto o schema 16:10 e i tre effetti come elenco a filetti allineato alla base dell'immagine."></i>
+  <div class="ct-hero-m"><div data-noratio data-ph="Foto di categoria, progetto reale|4/5"></div></div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina ripensata senza il vincolo del piano 83 h. Apertura divisa: a sinistra numero della categoria (04/08), nome molto grande, testo e un dato tecnico verificato in bordeaux; a destra foto a tutta altezza che scorre più lenta della pagina (parallasse leggera, 12%). Mobile: foto sopra, testo sotto, nessuna parallasse. Riduci movimento: foto ferma. AGGIORNAMENTO 2026-10-20: foto al vivo come sfondo, altezza ridotta (non tutto lo schermo). Composizione su due colonne in basso: a sinistra occhiello (numero categoria) e nome molto grande; a destra, in ordine di lettura, il dato verificato (solo se esiste), il testo e una sola azione: pulsante "Richiedi un preventivo". Mobile: tutto in colonna, pulsante a tutta larghezza."></i>
+  <i data-note="PROPOSTA|Template unico per le 8 categorie: il dato in bordeaux, il blocco tecnico e le FAQ sono campi opzionali. Se una categoria non ha un dato verificato o un contenuto tecnico, il blocco non compare (nessun riempitivo)."></i>
+  <i data-note="CLIENTE|3 palestre realizzate con soletta molleggiata (call). Copy provvisorio: VERIFICATO Ceresio 7 con piscina e palestra e collaborazione con architetti; il resto è PROPOSTA."></i>
+</section>
+
+<!-- 2. PROGETTI: binario orizzontale guidato dallo scroll -->
+<section class="ct-pin" aria-labelledby="h-prj">
+  <div class="ct-pin-s">
+    <div class="ct-pin-h">
+      <div><p class="dx-k">I lavori</p><h2 id="h-prj" class="dx-h">Palestre che abbiamo costruito</h2></div>
+      <p class="ct-cnt" aria-hidden="true"><b>01</b> / 03</p>
+    </div>
+    <div class="ct-rail">
+      <a class="ct-pc" href="progetto.html"><div class="ct-pc-ph"><div data-ph="Ceresio 7, piscina e palestra|4/5"></div></div><h3>Ceresio 7</h3><span>Milano &middot; piscina e palestra</span></a>
+      <a class="ct-pc" href="progetto.html"><div class="ct-pc-ph"><div data-ph="Foto progetto|4/5"></div></div><h3>[Nome progetto]</h3><span>[Località] &middot; [lavorazione]</span></a>
+      <a class="ct-pc" href="progetto.html"><div class="ct-pc-ph"><div data-ph="Foto progetto|4/5"></div></div><h3>[Nome progetto]</h3><span>[Località] &middot; [lavorazione]</span></a>
+      <a class="ct-pc end" href="cantieri.html#palestre"><span class="dx-k" style="color:#e9c9cf;margin:0">Portfolio</span><b style="font:700 26px/1.15 var(--fh)">Vedi tutte le palestre nel portfolio</b><i class="dx-arr" aria-hidden="true"></i></a>
+    </div>
+    <div class="ct-bar" aria-hidden="true"><i></i></div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. I progetti arrivano subito dopo l'apertura (la prova prima della spiegazione). Su desktop la sezione resta ferma e lo scroll verticale fa scorrere in orizzontale le card verticali 4:5, con contatore 01/03 e barra di avanzamento; ultima card = link al portfolio filtrato su questa categoria. Tablet piccolo e mobile: niente blocco dello scroll, si scorre a dito con aggancio. Riduci movimento: riga scorrevole normale. La lunghezza dello scorrimento si adatta al numero di progetti."></i>
+  <i data-note="CLIENTE|Ceresio 7 è la seconda pagina più visitata e ha generato 10-12 preventivi: sempre primo nella sua categoria. Gli altri due progetti di palestra non sono nominati."></i>
+  <i data-note="DEV|Da ristimare. MEDIUM-HIGH: sezione pinnata con traslazione orizzontale (sticky + JS di scroll ~30 righe, oppure GSAP ScrollTrigger se approvato come dipendenza), misura dinamica della lunghezza, fallback mobile a scroll-snap. In Elementor: Loop Carousel/Loop Grid dentro container sticky con Custom CSS + JS. Rischio: con 1 solo progetto il binario non ha senso, serve una variante statica (condizione sul numero di risultati)."></i>
+</section>
+
+<!-- 3. COMPETENZA: sezione esplosa della soletta + confronto -->
+<section class="sec" aria-labelledby="h-comp"><div class="in ct-tech">
+  <div>
+    <p class="dx-k" data-rv>Competenza tecnica</p>
+    <h2 id="h-comp" class="dx-h" data-rv style="--d:1">Soletta molleggiata: il pavimento che non disturba chi sta sotto</h2>
+    <p class="lead" data-rv style="--d:2;margin-top:20px">Una soletta molleggiata separa il piano di calpestio dalla struttura con appoggi elastici. Impatti e vibrazioni di pesi, salti e macchinari vengono assorbiti prima di arrivare ai locali sottostanti e agli edifici vicini.</p>
+    <div class="ct-sim" data-rv style="--d:3">
+      <div class="ct-sim-tg" role="group" aria-label="Confronto vibrazioni al piano sotto">
+        <button type="button" aria-pressed="false" data-amp="1" data-note="Senza soletta: l'impatto passa alla struttura (schema indicativo, non un dato misurato).">Senza soletta</button>
+        <button type="button" aria-pressed="true" data-amp=".28" data-note="Con soletta molleggiata: l'impatto viene assorbito prima della struttura (schema indicativo, non un dato misurato).">Con soletta</button>
+      </div>
+      <div class="ct-wave" aria-hidden="true" style="--amp:.28"><i style="--h:40;--k:0"></i><i style="--h:72;--k:1"></i><i style="--h:55;--k:2"></i><i style="--h:90;--k:3"></i><i style="--h:64;--k:4"></i><i style="--h:100;--k:5"></i><i style="--h:70;--k:6"></i><i style="--h:84;--k:7"></i><i style="--h:50;--k:8"></i><i style="--h:76;--k:9"></i><i style="--h:44;--k:10"></i><i style="--h:66;--k:11"></i><i style="--h:92;--k:12"></i><i style="--h:58;--k:13"></i><i style="--h:80;--k:14"></i><i style="--h:48;--k:15"></i></div>
+      <p aria-live="polite">Con soletta molleggiata: l'impatto viene assorbito prima della struttura (schema indicativo, non un dato misurato).</p>
+    </div>
+  </div>
+  <div class="ct-stack" role="img" aria-label="Sezione di una soletta molleggiata: pavimento sportivo, massetto, strato elastico, solaio esistente">
+    <div class="ct-ly l1">Pavimento sportivo<i>[Finitura, spessore]</i></div>
+    <div class="ct-ly l2">Massetto / soletta galleggiante<i>[Spessore, armatura]</i></div>
+    <div class="ct-ly l3">Appoggi elastici<i>[Tipo, prestazione]</i></div>
+    <div class="ct-ly l4">Solaio esistente<i>Struttura dell'edificio</i></div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Il blocco tecnico diventa uno schema: gli strati della soletta si separano mentre la sezione entra nello schermo (sezione esplosa) e compaiono le etichette. Sotto il testo, interruttore Senza/Con soletta: le barre rappresentano la vibrazione al piano sotto e si abbassano con la soletta. È uno schema indicativo, dichiarato come tale: nessun valore numerico finché il cliente non fornisce dati misurati. Riduci movimento: strati già separati, barre ferme."></i>
+  <i data-note="VERIFY|Strati, spessori e prestazioni sono segnaposto: da validare con l'ufficio tecnico prima del mockup. Lo schema non deve promettere prestazioni non documentate."></i>
+  <i data-note="DEV|Da ristimare. MEDIUM: schema in HTML/CSS (o SVG) con variabile di avanzamento allo scroll, interruttore con aria-pressed e regione live. Solo per le categorie con contenuto tecnico (campo opzionale)."></i>
 </div></section>
 
-<section class="sec alt" aria-labelledby="h-prj"><div class="in">
-  <h2 id="h-prj">Progetti in questa categoria</h2>
-  <ul class="pg-pl">
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Ceresio 7, piscina e palestra|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>Ceresio 7</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>[Nome progetto]</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>[Nome progetto]</h3></a></li>
-  </ul>
-  <i data-note="CLIENTE|Ceresio 7 (piscina + palestra) è la seconda pagina più visitata e ha generato 10-12 preventivi: in cima alla lista della categoria. Gli altri due sono placeholder."></i>
-</div></section>
-
-<section class="sec" aria-labelledby="h-faq"><div class="in pg-side">
+<!-- 4. FAQ di categoria -->
+<section class="sec alt" aria-labelledby="h-faq"><div class="in pg-side">
   <h2 id="h-faq">Domande sulle palestre</h2>
-  <i data-note="DEV|PIANO 83 H (APPROVATO). FAQ locali scritte a mano nel template della categoria (2 voci) invece di ACF Repeater: stesse domande e risposte, aggiornamento da editor di pagina. Risparmio 0.5-1 h."></i>
   <div class="acc">
     <details><summary>Che cos'è una soletta molleggiata e quando serve?</summary><p>È una soletta appoggiata su elementi elastici, staccata dalla struttura. Serve quando la palestra sta sopra altri locali o dentro un edificio abitato, e rumore e vibrazioni vanno tenuti sotto controllo.</p></details>
     <details><summary>Lavorate con il progettista che abbiamo già incaricato?</summary><p>Sì. Collaboriamo spesso con studi di architettura, in particolare quando le finiture sono complesse o fuori standard.</p></details>
   </div>
-  <i data-note="DEV|FAQ locali = accordion condiviso con voci da campo ACF Repeater (ACF Pro e Dynamic Tags per repeater limitati: VERIFY) oppure 2 voci scritte a mano nel template per categoria. Stima inclusa in Categoria. Risparmio possibile eliminandole (WAITING_FOR_APPROVAL, contenuto): 1-1.5 h."></i>
-  <i data-note="PROPOSTA|FAQ locali di categoria (opzionale, solo se i contenuti sono reali e non duplicati dalla pagina FAQ generale). Seconda risposta basata su un fatto di brief (collaborazione con architetti); prima risposta da validare tecnicamente. Alta fedeltà: titolo a sinistra (5/12), accordion a destra (7/12), stesso stile della pagina FAQ."></i>
+  <i data-note="PROPOSTA|FAQ locali di categoria, opzionali: compaiono solo con contenuti reali e non duplicati dalla pagina FAQ generale."></i>
 </div></section>
+
 
 <section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
 </main>
@@ -67,5 +91,6 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Categoria)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
 </body></html>

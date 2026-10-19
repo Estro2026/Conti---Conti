@@ -771,3 +771,88 @@ body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-c{opacity:0}
 .foot-legal ul{display:flex;flex-wrap:wrap;gap:8px 24px}
 .foot-legal li{margin:0}
 .foot-legal a{color:rgba(255,255,255,.72)}
+
+
+/* interruttore di revisione A/B (solo mockup, non fa parte del sito) */
+.ab-switch{position:fixed;left:16px;bottom:16px;z-index:9999;display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:rgba(21,21,23,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.3);font:600 12px/1 var(--fh,system-ui);letter-spacing:.04em}
+.ab-switch span{padding:0 8px 0 10px;color:rgba(255,255,255,.6);text-transform:uppercase}
+.ab-switch a{display:grid;place-items:center;min-width:38px;height:32px;padding:0 10px;border-radius:999px;color:#fff;text-decoration:none}
+.ab-switch a:hover{background:rgba(255,255,255,.14)}
+.ab-switch a[aria-current="page"]{background:#fff;color:#151517}
+.ab-switch a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* dropdown della nav: nessun alone scuro dietro le voci (l'ombra del testo della barra sulla hero non va ereditata) */
+.nav .dd,.nav .dd a,.nav .dd a::before{text-shadow:none!important}
+
+/* bersagli touch: link "Conosci l'impresa" alto almeno 44 px */
+.more{display:inline-flex;align-items:center;min-height:44px;padding-bottom:0}
+
+/* iOS e touch: background-attachment:fixed non è supportato in modo affidabile, si ricade sullo scorrimento normale */
+@media (hover:none),(max-width:1040px){.b .hero-pin,.b .hero-end,.b .statement{background-attachment:scroll}}
+
+/* ==== sezione "Le persone di Conti & Conti": zoom e schermi bassi (2026-10-20) ==== */
+/* sotto i 1040 px il pannello va sotto l'immagine (le regole di posizionamento dell'ufficio lo tenevano nella colonna 2 e schiacciavano l'immagine) */
+@media (max-width:1040px){
+  .team-stage>.team-media{grid-row:1;grid-column:1}
+  .team-stage>.team-panel{grid-row:2;grid-column:1}
+  .team.is-office .team-stage>.team-media{grid-column:1}
+}
+/* sopra i 1040 px il riquadro cresce con il contenuto: immagine e pannello hanno sempre la stessa altezza */
+@media (min-width:1041px){
+  .team-stage{height:auto;min-height:clamp(580px,min(88svh,820px),820px)}
+}
+/* tag e pulsanti su un'unica fila: se non c'è spazio scorrono in orizzontale, non vanno a capo */
+.step-chip{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.step-chip::-webkit-scrollbar,.team-tabs::-webkit-scrollbar{display:none}
+.step-chip span{flex:none;white-space:nowrap;padding:6px clamp(10px,1vw,14px);font-size:clamp(11px,.95vw,13px)}
+.team-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:6px}
+.team-tabs button{flex:none;white-space:nowrap;padding:0 clamp(10px,1vw,14px);font-size:clamp(12px,1vw,14px)}
+/* zoom alto: sezioni meno alte */
+html[data-zoom="2"]{--sec:clamp(56px,9vh,96px)}
+html[data-zoom="3"],html[data-zoom="4"]{--sec:clamp(40px,7vh,64px)}
+/* le righe di tag e pulsanti non allargano più la colonna (altrimenti a 320 px la sezione sporge di 35 px) */
+.team-stage{grid-template-columns:minmax(0,8fr) minmax(340px,4fr)}
+.team-stage>*,.panel-live,.step{min-width:0}
+@media (max-width:1040px){.team-stage{grid-template-columns:minmax(0,1fr)}}
+
+/* ==== sezione squadra: l'immagine non supera mai lo schermo (zoom e altezze basse), così la scena "Ufficio" non viene tagliata ==== */
+@media (max-width:1040px){
+  .team-media{aspect-ratio:auto;height:clamp(300px,min(75vw,calc(100svh - var(--nav-h) - 24px)),760px)}
+}
+@media (min-width:1041px){
+  .team-stage{min-height:clamp(460px,min(88svh,820px),820px)}
+}
+@media (max-height:560px){
+  .office-fig{height:96%}
+}
+/* schermi larghi ma bassi (zoom): pannello più compatto, così non diventa più alto dell'immagine e dello schermo */
+@media (min-width:1041px) and (max-height:700px){
+  .team-panel{padding-top:calc(var(--nav-h) + 4px);padding-bottom:16px}
+  .team-panel .step h3{font-size:clamp(20px,3.4vh,28px);margin-bottom:8px}
+  .team-panel .step p{font-size:14px;line-height:1.45;margin-bottom:8px}
+  .step-chip{margin-top:10px}
+  .step .more{margin-top:12px}
+  .team-tabs{margin-top:14px}
+}
+@media (max-width:1040px) and (max-height:420px){
+  .team-media{height:max(200px,calc(100svh - var(--nav-h) - 16px))}
+}
+
+/* "I servizi interni" e le altre CTA del passo non toccano mai i pulsanti sotto: distanza minima garantita */
+.team-panel .panel-live{margin-bottom:22px}
+.team-tabs{margin-top:0}
+@media (min-width:1041px) and (max-height:700px){
+  .step-chip{margin-top:8px}
+  .step .more{margin-top:8px}
+  .team-panel{padding-bottom:12px}
+  .team-panel .step p{margin-bottom:6px}
+}
+
+/* ==== sezione squadra: schede e tag sempre interi su una fila (nessun taglio, nessuno scorrimento nascosto) ====
+   il pannello è un contenitore: font e spazi dei pulsanti si adattano alla sua larghezza, il testo può andare a capo dentro il pulsante */
+.team-panel{container-type:inline-size}
+.team-tabs{flex-wrap:nowrap;overflow:visible;gap:clamp(3px,1.4cqi,6px)}
+.team-tabs button{flex:1 1 0;min-width:0;white-space:normal;line-height:1.1;padding:6px clamp(3px,1.8cqi,12px);font-size:clamp(10.5px,3.3cqi,14px);text-align:center}
+.step-chip{flex-wrap:nowrap;overflow:visible;gap:clamp(3px,1.6cqi,8px)}
+.step-chip span{flex:1 1 auto;min-width:0;white-space:normal;text-align:center;line-height:1.15;padding:5px clamp(4px,1.8cqi,12px);font-size:clamp(9.5px,3cqi,13px)}
+.step-chip:has(> span:only-child) span{flex:0 1 auto}

@@ -1,0 +1,30 @@
+/* Wireframe a media fedeltà (richiesta in chat 2026-10-19): solo scala di grigi, nessun pattern decorativo,
+   pulsanti rettangolari. Caricato per ultimo: annulla colore e texture dei fogli precedenti senza toccarli.
+   Colore, immagini reali e pattern arriveranno con il mockup. */
+
+/* accenti del brand portati in grigio */
+:root,.frame{--acc:#3a3a3a;--acc-d:#1f1f1f;--acc-l:#ececec;--focus:#1f1f1f}
+
+/* tutto il resto (tinte calde, rosa su nero, logo) in scala di grigi: il filtro sta sulle sezioni e non su .frame,
+   per non rompere gli elementi fissi; la sezione con l'anteprima a puntatore di Cantieri resta fuori (usa già --acc) */
+.frame .hd,.frame .mnav,.frame .crumb,.frame .ft,.frame .sticky-m{filter:grayscale(1)}
+/* regola separata: nei browser senza :has() viene ignorata da sola e non invalida le altre */
+.frame main>:not(:has(.cn-peek)){filter:grayscale(1)}
+.cn-peek,.pj-lb{filter:grayscale(1)}
+
+/* segnaposto immagine: grigio piatto, nessuna sfumatura, nessuna diagonale */
+.ph,.ph[data-tone]{background:#cfcfcf!important;background-image:none!important;border:1px solid #b5b5b5}
+.ph[data-tone="1"]{background:#bdbdbd!important}
+.ph[data-tone="2"]{background:#c6c6c6!important}
+.ph[data-tone="3"]{background:#b3b3b3!important}
+.sec.dk .ph,.pj-hero .ph,.pj-next .ph,.ct-hero .ph,.ix-hero .ph,.hero-p>.ph{background:#5a5a5a!important;border-color:#6a6a6a}
+.ph>span{background:#fff;color:#333;border-color:#b5b5b5}
+
+/* nessun pattern: via la tessera CC, i separatori a pattern e le texture a righe */
+.imp-ink::before,.sec.dk.pg-job::before,.sec[style*="e2e2e2"]::before,.pt-cc::before{background-image:none!important;display:none}
+.pt-sep{background:none!important;height:0}
+.ct-ly.l2,.ct-ly.l4{background:#ececec}
+.ct-ly.l2{background:#f5f5f5}
+
+/* pulsanti: rettangolari con angoli appena smussati, come nei mockup (prima border-radius:20% li deformava) */
+.btn,.hcta,.frame .btn,.frame .hcta{border-radius:2px}

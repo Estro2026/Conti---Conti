@@ -1,57 +1,84 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Lavora con noi | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
-<body data-active="">
+<title>Wireframe Lavora con noi | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-impresa.css?v=5"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<body data-active="lavora">
 <div id="tb"></div>
-<p class="legend"><strong>Lavora con noi.</strong> Pagina dedicata alle candidature, raggiungibile da Contatti e dal footer. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<p class="legend"><strong>Lavora con noi.</strong> Pagina dedicata alle candidature, raggiungibile da Contatti e dal footer. Versione a sezioni dinamiche (mestieri filtrabili, percorso di selezione, modulo con preselezione del ruolo): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
 <div id="hdr"></div>
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="contatti.html">Contatti</a></li><li aria-current="page">Lavora con noi</li></ol></nav>
-<section class="sec pg-op" aria-labelledby="h1"><div class="in">
+<section class="sec pg-op lv-op" aria-labelledby="h1"><div class="in">
   <div class="hrow">
-    <h1 id="h1">Lavora con noi</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Hero, mestieri a tavola, form candidatura con upload CV (configurazione del form condiviso). I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-    <div class="hrow-t">
+    <div><p class="dx-k" data-rv>Lavora con noi</p><h1 id="h1" class="lv-h1" data-rv style="--d:1">Entra nella squadra</h1></div>
+    <div class="hrow-t" data-rv style="--d:2">
       <p class="lead">In cantiere lavorano persone dell'impresa. Cerchiamo chi vuole entrare nella squadra, anche senza esperienza: formiamo le persone. <i data-note="RICERCA|'Anche senza esperienza: formiamo le persone' riprende l'invito del blocco Lavora con noi del sito attuale. Da confermare col cliente."></i></p>
       <p>Muratori, carpentieri, tecnici di cantiere e personale d'ufficio sono dipendenti dell'impresa, nella sede di Lentate sul Seveso e sui cantieri tra Milano, Como, Varese e Monza Brianza.</p>
+      <p><a class="btn" href="#candidatura">Vai al modulo</a></p>
     </div>
   </div>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina nuova nata dal feedback su Contatti ('non mi piace che ci siano due form'): il modulo candidatura esce da Contatti e vive qui. Stesso linguaggio di Contatti e Impresa: apertura titolo/frase sulla stessa base, mestieri a colonne con filetti (componente della pagina Impresa), modulo su grigio chiaro accanto al riquadro nero dei contatti diretti. Fondi: bianco, grigio chiaro, bianco, footer nero. Voce nel footer; nel menu principale no (VERIFY: il sito attuale ha una voce di menu dedicata)."></i>
-  <i data-note="PROPOSTA|Copy provvisorio costruito solo su fatti noti (mestieri e sede dalla pagina Impresa e dal sito attuale). Nessuna posizione aperta inventata: se il cliente ha ricerche attive, si elencano come righe nella sezione mestieri."></i>
-  <i data-note="DEV|LAVORA CON NOI = Pagina Elementor statica: apertura (container 2 colonne, riuso), mestieri (stesso blocco della pagina Impresa salvato come template o copiato), colonna contatti diretti (riuso da Contatti). 2-3 h per la pagina + form candidatura 2-3 h (stima spostata da Contatti, vedi nota nel modulo). Totale 4-6 h, PRELIMINARE, fuori dalla stima base finché la pagina non è approvata."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina in versione 'creativa a sezioni dinamiche' (stessa direzione di Cantieri, vincolo 83 h tolto il 19/10). H1 'Entra nella squadra' con 'Lavora con noi' come occhiello (keyword resta nel title e nell'occhiello: VERIFY SEO). Ingresso a cascata 80 ms, Riduci movimento: tutto subito visibile. Struttura: apertura > mestieri filtrabili ed espandibili > percorso di selezione > modulo + contatti. Voce nel footer; nel menu principale no (VERIFY: il sito attuale ha una voce di menu dedicata)."></i>
+  <i data-note="PROPOSTA|Copy provvisorio costruito solo su fatti noti (mestieri e sede dalla pagina Impresa e dal sito attuale). Nessuna posizione aperta inventata: se il cliente ha ricerche attive, diventano righe della lista mestieri con etichetta 'Cerchiamo ora'."></i>
+  <i data-note="DEV|Da ristimare (vincolo 83 h tolto). Pagina Elementor statica + 2 componenti JS (lista mestieri, preselezione ruolo nel form). Stima complessiva PRELIMINARE da rifare dopo approvazione."></i>
 </div></section>
 
 <section class="sec alt" aria-labelledby="h-mst"><div class="in">
   <div class="hrow">
-    <h2 id="h-mst">I mestieri della squadra</h2>
+    <div><p class="dx-k">Ruoli</p><h2 id="h-mst">I mestieri della squadra</h2></div>
     <p>Puoi candidarti per uno di questi ruoli o mandarci il tuo nome se vuoi imparare il mestiere.</p>
   </div>
-  <ul class="imp-job">
-    <li><h3>Muratori e carpentieri</h3><p>Strutture, murature e casseri: la parte più grande della squadra lavora in cantiere ogni giorno.</p></li>
-    <li><h3>Tecnici di cantiere</h3><p>Seguono i lavori sul posto e tengono il filo con architetti, designer e fornitori.</p></li>
-    <li><h3>Ufficio</h3><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso.</p></li>
+  <div class="lv-f" role="group" aria-label="Filtra per luogo di lavoro" hidden>
+    <button type="button" data-lv-f="tutti" aria-pressed="true">Tutti</button>
+    <button type="button" data-lv-f="cantiere" aria-pressed="false">In cantiere</button>
+    <button type="button" data-lv-f="ufficio" aria-pressed="false">In ufficio</button>
+    <p class="lv-cnt" aria-live="polite"></p>
+  </div>
+  <ul class="lv-r">
+    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r1"><span class="lv-r-t">Muratori e carpentieri</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+      <div class="lv-r-d" id="lv-r1"><p>Strutture, murature e casseri: la parte più grande della squadra lavora in cantiere ogni giorno.</p><p class="lv-r-m">[Requisiti, patentini, orari: da confermare col cliente.]</p><a class="lv-go" href="#candidatura" data-lv-role="Muratore">Candidati come muratore o carpentiere</a></div></li>
+    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r2"><span class="lv-r-t">Tecnici di cantiere</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+      <div class="lv-r-d" id="lv-r2"><p>Seguono i lavori sul posto e tengono il filo con architetti, designer e fornitori.</p><p class="lv-r-m">[Titolo di studio ed esperienza richiesti: da confermare.]</p><a class="lv-go" href="#candidatura" data-lv-role="Tecnico di cantiere">Candidati come tecnico di cantiere</a></div></li>
+    <li data-lv="ufficio"><h3><button type="button" aria-expanded="true" aria-controls="lv-r3"><span class="lv-r-t">Ufficio</span><span class="lv-r-w">Sede di Lentate</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+      <div class="lv-r-d" id="lv-r3"><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso.</p><p class="lv-r-m">[Profili ricercati: da confermare.]</p><a class="lv-go" href="#candidatura" data-lv-role="Ufficio">Candidati per l'ufficio</a></div></li>
+    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r4"><span class="lv-r-t">Senza esperienza</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+      <div class="lv-r-d" id="lv-r4"><p>Vuoi imparare il mestiere? Mandaci il tuo nome: ti formiamo in squadra.</p><a class="lv-go" href="#candidatura" data-lv-role="Altro / senza esperienza">Candidati senza esperienza</a></div></li>
   </ul>
-  <i data-note="VERIFY|Mestieri ripresi dalla pagina Impresa (sito attuale: tecnici di cantiere, muratori e carpentieri, impiegati). Mansioni descritte da noi: da confermare. Numeri del team non ripetuti qui (già in Impresa, forse non aggiornati)."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Mestieri come lista filtrabile ed espandibile: filtri Tutti / In cantiere / In ufficio (aria-pressed, conteggio annunciato in aria-live), righe a filetti con nome grande che si aprono al clic (aria-expanded, una alla volta, apertura 300 ms). Ogni riga aperta ha il link 'Candidati come…' che porta al modulo e preseleziona il ruolo. Mobile/touch: filtri a pillole a tutta riga, l'intera riga è toccabile (≥ 56px). Senza JS: filtri nascosti, righe tutte aperte. Riduci movimento: nessuna animazione. Riga 'Senza esperienza' aggiunta da noi, coerente con l'invito del sito attuale."></i>
+  <i data-note="DEV|Da ristimare. Complessità LOW-MEDIUM: righe statiche (o CPT 'Posizioni' se il cliente vuole pubblicare ricerche attive: +MEDIUM), JS ~50 righe per filtro, accordion e preselezione del Select del form (VERIFY: in Elementor Form via parametro URL o JS sul campo)."></i>
+  <i data-note="VERIFY|Mestieri ripresi dalla pagina Impresa (sito attuale: tecnici di cantiere, muratori e carpentieri, impiegati). Mansioni descritte da noi: da confermare. Numeri del team non ripetuti qui."></i>
 </div></section>
 
-<section class="sec" aria-label="Modulo di candidatura e contatti"><div class="in pg-ct">
+<section class="sec lv-st" aria-labelledby="h-step"><div class="in">
+  <p class="dx-k">Dopo l'invio</p>
+  <h2 id="h-step">Cosa succede quando ti candidi</h2>
+  <ol class="lv-s" data-lv-steps>
+    <li><span class="lv-s-n" aria-hidden="true">01</span><h3>Ci mandi il modulo</h3><p>Bastano nome, contatti e ruolo. Il curriculum è facoltativo.</p></li>
+    <li><span class="lv-s-n" aria-hidden="true">02</span><h3>Ti richiamiamo</h3><p>[Entro quanto e chi chiama: da confermare col cliente.]</p></li>
+    <li><span class="lv-s-n" aria-hidden="true">03</span><h3>Ci conosciamo</h3><p>[Colloquio in sede o in cantiere: da confermare.]</p></li>
+    <li><span class="lv-s-n" aria-hidden="true">04</span><h3>Entri in squadra</h3><p>[Inserimento e formazione: da confermare.]</p></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Percorso di selezione in 4 passi su una linea che si riempie di bordeaux mentre la sezione scorre; il passo raggiunto passa da grigio a nero. Desktop 4 colonne, tablet 2x2, mobile verticale con linea a sinistra. Nessun blocco dello scorrimento. Riduci movimento o senza JS: linea piena, passi tutti attivi. Contenuti dei passi 2-4 sconosciuti: tra [ ], la sezione si pubblica solo se il cliente li conferma."></i>
+  <i data-note="DEV|Da ristimare. Complessità LOW: stesso script della timeline Impresa (wf-impresa.js, componente condiviso), CSS dedicato."></i>
+</div></section>
+
+<section class="sec alt" aria-label="Modulo di candidatura e contatti"><div class="in pg-ct">
   <div class="pg-form" id="candidatura">
-    <form onsubmit="return false" novalidate aria-labelledby="h-cv">
+    <form onsubmit="return false" novalidate aria-labelledby="h-cv" data-lv-form>
       <h2 id="h-cv">Invia la tua candidatura</h2>
       <p class="hint top">I campi con * sono obbligatori.</p>
+      <div class="lv-err" role="alert" tabindex="-1" hidden></div>
       <div class="pg-fg">
-        <div class="f"><label for="cv-n">Nome e cognome *</label><input id="cv-n" autocomplete="name" required></div>
+        <div class="f"><label for="cv-n">Nome *</label><input id="cv-n" autocomplete="name" required></div>
         <div class="f"><label for="cv-e">Email *</label><input id="cv-e" type="email" autocomplete="email" required></div>
-        <div class="f"><label for="cv-t">Telefono *</label><input id="cv-t" type="tel" autocomplete="tel" required></div>
-        <div class="f"><label for="cv-r">Ruolo di interesse</label><select id="cv-r"><option>Seleziona</option><option>Muratore</option><option>Carpentiere</option><option>Tecnico di cantiere</option><option>Ufficio</option><option>Altro / senza esperienza</option></select></div>
-        <div class="f full"><label for="cv-f">Curriculum (PDF o Word, max 5 MB)</label><input id="cv-f" type="file" accept=".pdf,.doc,.docx" aria-describedby="cv-f-h"><span class="hint" id="cv-f-h">Facoltativo, anche se è la tua prima esperienza.</span></div>
-        <div class="f chk full"><input type="checkbox" id="cv-c" required><label for="cv-c">Ho letto l'informativa privacy per i candidati *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+        <div class="f full"><label for="cv-r">Ruolo di interesse</label><select id="cv-r"><option>Seleziona</option><option>Muratore</option><option>Carpentiere</option><option>Tecnico di cantiere</option><option>Ufficio</option><option>Altro / senza esperienza</option></select></div>
+        <div class="f full"><label for="cv-f">Curriculum (PDF o Word, max 5 MB)</label><input id="cv-f" type="file" accept=".pdf,.doc,.docx" aria-describedby="cv-f-h"><span class="hint" id="cv-f-h">Facoltativo, anche se è la tua prima candidatura.</span></div>
+        <div class="f chk full"><input type="checkbox" id="cv-c" required><label for="cv-c">Ho letto e accetto la <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">privacy policy<span class="sr"> (si apre in nuova scheda)</span></a> *</label></div>
       </div>
-      <button class="btn" type="submit">Invia la candidatura</button>
+      <button class="btn" type="submit">Invia</button>
+      <p class="lv-ok" role="status"></p>
     </form>
-    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Modulo spostato da Contatti senza cambiare i campi. Ruoli derivati dai mestieri della pagina Impresa: VERIFY col cliente. CV facoltativo, coerente con 'anche senza esperienza': VERIFY. Il sito attuale ha un modulo candidature separato (RICERCA)."></i>
-    <i data-note="DEV|Form candidatura: Form widget Pro (Text, Email, Tel, Select, File Upload, Acceptance) + stile condiviso del modulo preventivi. 2-3 h (stima spostata da Contatti, dove non resta alcun form candidatura). VERIFY: File Upload salva in wp-content/uploads (allegati accessibili pubblicamente: proteggere la cartella o inviare solo come allegato email), limiti dimensione/estensioni lato server, informativa privacy specifica per candidati su Iubenda (testo da far generare al cliente), destinatario email."></i>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Modulo spostato da Contatti senza cambiare i campi. Aggiunte di comportamento: ruolo preselezionato dal link della lista mestieri (con breve evidenziazione del campo, assente con Riduci movimento); all'invio errori elencati in un riepilogo in cima (role=alert, link ai campi) e campo errato con aria-invalid; dimensione del file controllata (5 MB). Nel wireframe l'invio è simulato. Ruoli e CV facoltativo: VERIFY col cliente."></i>
+    <i data-note="DEV|Form candidatura: Form widget Pro (Text, Email, Tel, Select, File Upload, Acceptance) + stile condiviso del modulo preventivi. Da ristimare. VERIFY: File Upload salva in wp-content/uploads (allegati accessibili pubblicamente: proteggere la cartella o inviare solo come allegato email), limiti dimensione/estensioni lato server, informativa privacy specifica per candidati su Iubenda (testo da far generare al cliente), destinatario email."></i>
   </div>
   <aside class="pg-ca" aria-labelledby="h-cd">
     <div class="pg-cd">
@@ -71,5 +98,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Lavora con noi)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
+<script src="wf-impresa.js?v=3"></script>
 </body></html>

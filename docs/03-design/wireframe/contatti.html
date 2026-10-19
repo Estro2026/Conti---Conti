@@ -1,77 +1,115 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
+<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
 <body data-active="contatti">
 <div id="tb"></div>
-<p class="legend"><strong>Contatti e richiesta preventivo.</strong> Pagina di conversione principale. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<p class="legend"><strong>Contatti e richiesta preventivo.</strong> Pagina di conversione principale. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
 <div id="hdr"></div>
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Contatti</li></ol></nav>
-<section class="sec pg-op" aria-labelledby="h1"><div class="in">
-  <div class="hrow">
-    <h1 id="h1">Richiedi un preventivo</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1 h. Form condiviso + contatti diretti + mappa statica della sede + 4 card zona non cliccabili; senza recensioni. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-    <div class="hrow-t">
+
+<!-- 1. APERTURA -->
+<section class="sec" style="border-top:0" aria-labelledby="h1"><div class="in">
+  <div class="sv-top">
+    <h1 id="h1" class="sv-h1" data-rv>Richiedi un preventivo</h1>
+    <div data-rv style="--d:1">
       <p class="lead">Raccontaci cosa vuoi costruire o ristrutturare: ti rispondiamo entro 24 ore. <i data-note="RICERCA|'Risposta entro 24 ore' è la promessa scritta nella pagina Contatti del sito attuale: da confermare col cliente prima di riproporla."></i></p>
-      <p>Più dettagli ci dai, più il primo confronto sarà concreto: dove si trova l'immobile, che intervento hai in mente, se c'è già un progetto o un architetto.</p>
+      <p style="margin:12px 0 0;color:var(--mut);max-width:46ch">Più dettagli ci dai, più il primo confronto sarà concreto: dove si trova l'immobile, che intervento hai in mente, se c'è già un progetto o un architetto.</p>
     </div>
   </div>
   <i data-note="PROPOSTA|Copy provvisorio: introduzione, microcopy e testi di supporto sono bozze realistiche per mostrare gerarchia e ingombri, costruite solo su fatti noti. Da validare con il cliente."></i>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: tolto l'occhiello 'Contatti' (ripeteva breadcrumb e menu). Apertura breve con titolo e frase sulla stessa base; il modulo parte subito sotto, su grigio chiaro, accanto al riquadro nero dei contatti diretti. Poi sede e zone (bianco), Lavora con noi (nero), recensioni (grigio chiaro), footer nero."></i>
-  <i data-note="DEV|Delta alta fedeltà Contatti: form in card con campi su due colonne (larghezza colonna nativa del Form widget) 0 h; riquadro contatti scuro con telefono grande (container + Heading/Text) +0.5 h; sede come immagine statica con didascalia e link + elenco zone a righe 0.5 h (sostituisce la mappa stilizzata, che qui non viene ricostruita: -0 h perché era riusata dalla Home). Delta pagina +0.5-1 h (4-6 h > 4.5-7 h)."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Apertura tipografica come le altre pagine dinamiche (titolo grande a sinistra, frase a destra), ingresso a cascata. Il modulo parte subito sotto, su grigio chiaro, accanto al riquadro nero dei contatti diretti. Poi zone (bianco) e Lavora con noi (bordeaux). Riduci movimento: tutto subito visibile."></i>
 </div></section>
 
+<!-- 2. MODULO A PASSI + CONTATTI DIRETTI -->
 <section class="sec alt" aria-label="Modulo e contatti diretti"><div class="in pg-ct">
   <div class="pg-form">
-    <div class="demo-state" role="alert" aria-label="Esempio stato errore"><span class="tag t-PROPOSTA">STATO ERRORE (esempio)</span><strong>Controlla 2 campi:</strong><ul><li><a href="#c-e">Email: inserisci un indirizzo valido</a></li><li><a href="#c-c">Privacy: serve il consenso</a></li></ul></div>
-    <form onsubmit="return false" novalidate>
+    <h2 class="co-fh" id="h-form">Scrivici</h2>
+    <div class="demo-state co-err" role="alert" tabindex="-1" hidden><strong>Controlla i campi:</strong><ul></ul></div>
+    <form class="co-form" action="grazie.html" novalidate aria-labelledby="h-form">
       <p class="hint top">I campi con * sono obbligatori.</p>
       <div class="pg-fg">
-        <div class="f"><label for="c-n">Nome e cognome *</label><input id="c-n" autocomplete="name" required></div>
-        <div class="f"><label for="c-e">Email *</label><input id="c-e" type="email" autocomplete="email" required aria-invalid="true" aria-describedby="c-e-err"><span class="err" id="c-e-err">Inserisci un indirizzo email valido, per esempio nome@dominio.it</span></div>
-        <div class="f"><label for="c-t">Telefono</label><input id="c-t" type="tel" autocomplete="tel" aria-describedby="c-t-h"><span class="hint" id="c-t-h">Facoltativo, ma ci aiuta a richiamarti.</span></div>
-        <div class="f"><label for="c-z">Zona del cantiere (facoltativo)</label><input id="c-z" placeholder="Comune" autocomplete="address-level2"></div>
-        <div class="f full"><label for="c-k">Tipo di intervento (facoltativo)</label><select id="c-k"><option>Seleziona</option><option>Case</option><option>Residenze</option><option>Lusso</option><option>Palestre</option><option>Allestimenti</option><option>Ville</option><option>Attività commerciali</option><option>Industriale</option><option>Altro</option></select></div>
-        <div class="f full"><label for="c-m">Raccontaci il progetto *</label><textarea id="c-m" required aria-describedby="c-m-h"></textarea><span class="hint" id="c-m-h">Cosa vuoi fare, dove, e per quando ti servirebbe.</span></div>
-        <div class="f chk full"><input type="checkbox" id="c-c" required aria-invalid="true"><label for="c-c">Ho letto l'informativa privacy *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+        <div class="f"><label for="c-n">Nome *</label><input id="c-n" name="nome" autocomplete="name" required></div>
+        <div class="f"><label for="c-e">Email *</label><input id="c-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="c-t">Telefono *</label><input id="c-t" name="telefono" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="c-k">Oggetto</label><select id="c-k" name="oggetto"><option value="">Seleziona</option><option>Richiesta di preventivo</option><option>Informazioni su un immobile in vendita</option><option>Altro</option></select></div>
+        <div class="f full"><label for="c-m">Messaggio</label><textarea id="c-m" name="messaggio" placeholder="Scrivi..."></textarea></div>
+        <div class="f chk full"><input type="checkbox" id="c-c" name="privacy" required><label for="c-c">Ho letto e accetto la <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">privacy policy<span class="sr"> (si apre in nuova scheda)</span></a> *</label></div>
       </div>
-      <button class="btn" type="submit">Invia la richiesta</button>
+      <button class="btn" type="submit">Invia</button>
+      <p class="sr co-status" role="status" aria-live="polite"></p>
     </form>
-    <i data-note="CLIENTE|Il brief conferma i campi attuali: nome, email, telefono, messaggio. Obiettivo del sito: contatti qualificati."></i>
-    <i data-note="PROPOSTA|'Tipo di intervento' e 'Zona del cantiere' sono due campi AGGIUNTI rispetto a quelli confermati dal cliente, per qualificare i contatti (il tipo dipende dalla decisione sulle tassonomie). Facoltativi finché il cliente non approva: se non li vuole, il form torna ai 4 campi confermati. Obbligatorietà e destinazione email da confermare."></i>
-    <i data-note="DEV|CONTATTI = Pagina Elementor con Form widget condiviso (campi: Text, Email, Tel, Select tipo intervento con le 8 categorie, Text comune, Textarea, Acceptance). MEDIUM, 4-6 h per la pagina (form base stimato a parte). Stato errore del wireframe: Elementor mostra l'errore sotto il campo (stile personalizzabile) ma non genera il riepilogo con role=alert e focus: o si accetta la resa nativa (da testare con tastiera/screen reader) o si aggiunge JS custom 1-2 h (WAITING_FOR_APPROVAL se cambia l'UX proposta). Select precompilabile via parametro URL dalle CTA di categoria. Colonna contatti diretti = container statico; mappa = immagine + link esterno (nessun embed: nessun costo cookie). Blocco 'Lavora con noi': solo testo breve e link alla pagina dedicata (0 h); modulo candidatura e relative ore (+2-3 h) spostati in lavora-con-noi.html."></i>
-    <i data-note="PROPOSTA|Accessibilità form: label sempre visibili, * per i campi obbligatori spiegato, autocomplete, errori in testo + riepilogo con role alert che riceve il focus, aria-invalid e aria-describedby, non solo colore. Consenso non preselezionato. Mobile: campi 48px, tastiera giusta (type=email/tel). DEV: invio e notifica email, anti-spam senza CAPTCHA invasivo, conferma 'inviato' con role=status. Alta fedeltà: campi brevi a coppie su desktop e tablet (nome/email, telefono/zona), una colonna su mobile; la nota sui campi obbligatori sta in testa al modulo."></i>
+    <i data-note="CLIENTE|Modulo come quello del sito attuale (RICERCA, contieconti.it/contatti): Nome*, Email*, Telefono*, Messaggio, consenso privacy, pulsante 'Invia'. Richiesta del cliente (chat 2026-10-20): niente modulo a passi. Unica aggiunta: menu a tendina 'Oggetto'."></i>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Menu 'Oggetto' facoltativo con 3 voci (Richiesta di preventivo, Informazioni su un immobile in vendita, Altro): serve a smistare la richiesta. Voci da confermare. Un solo passo: errori sotto ogni campo e riepilogo in alto con link ai campi; invio simulato verso la pagina di conferma."></i>
+    <i data-note="DEV|Da ristimare. LOW: Contact Form 7 / Elementor Form con gli stessi campi del sito attuale (verificare quale plugin usa il sito: il markup è Contact Form 7). Oggetto = campo select inserito nell'email di notifica; Iubenda per il consenso (VERIFY)."></i>
   </div>
   <aside class="pg-ca" aria-labelledby="h-cd">
-    <div class="pg-cd">
+    <div class="pg-cd co-cd">
       <h2 id="h-cd">Contatti diretti</h2>
       <p>Preferisci parlarne a voce? Chiamaci o passa in sede.</p>
+      <p class="co-open" hidden><i aria-hidden="true"></i><span></span></p>
       <dl>
         <div><dt>Telefono</dt><dd class="big"><a href="tel:+390362557972">0362 557972</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a>
+          <div class="co-act"><button type="button" data-copy="info@contieconti.it" data-out="#co-cst" data-ok="Email copiata negli appunti">Copia email</button></div></dd></div>
         <div><dt>Sede</dt><dd>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>
-        <div><dt>Orari</dt><dd>Lun-Ven 8:30-12:00 / 14:00-18:30, Sab 8:30-12:00</dd></div>
+        <div><dt>Orari</dt><dd>
+          <table class="co-hrs"><caption class="sr">Orari di apertura</caption><tbody>
+            <tr data-days="1,2,3,4,5" data-slots="8:30-12:00 14:00-18:30"><th scope="row">Lun-Ven</th><td>8:30-12:00 / 14:00-18:30</td></tr>
+            <tr data-days="6" data-slots="8:30-12:00"><th scope="row">Sab</th><td>8:30-12:00</td></tr>
+            <tr data-days="0" data-slots=""><th scope="row">Dom</th><td>Chiuso</td></tr>
+          </tbody></table></dd></div>
       </dl>
-      <i data-note="RICERCA|Dati dal sito attuale, da verificare: telefono, email, indirizzo, orari."></i>
+      <span class="co-cst" id="co-cst" role="status" aria-live="polite"></span>
+      <i data-note="RICERCA|Dati dal sito attuale, da verificare: telefono, email, indirizzo, orari. VERIFY anche festività e chiusure estive (non note): l'indicatore non le conosce."></i>
+      <i data-note="INFERENZA|Domenica 'Chiuso': dedotto dall'assenza della domenica negli orari del sito attuale."></i>
+      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Telefono grande cliccabile (chiama da mobile), email cliccabile con 'Copia email' (conferma annunciata). Indicatore 'Aperto ora / Chiuso ora' con orario di chiusura o riapertura, calcolato all'apertura della pagina dagli orari della tabella, sempre sull'ora italiana; evidenziata la riga di oggi. Senza JS l'indicatore non compare e restano gli orari. Riduci movimento: il punto non pulsa."></i>
+      <i data-note="DEV|Da ristimare. Container statico + JS custom per l'indicatore (orari da campi ACF o Opzioni del tema, non scritti nel codice). LOW-MEDIUM."></i>
     </div>
-    <figure class="pg-mp">
-      <div data-ph="Mappa (immagine statica con link a mappa esterna)|16/10"></div>
-      <figcaption><span>Sede di Lentate sul Seveso</span><a href="#" target="_blank" rel="noopener">Apri in Google Maps<span class="sr"> (si apre in nuova scheda)</span></a></figcaption>
-      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Scelta tra le due mappe prima duplicate: resta la mappa STATICA della sede (immagine + link 'Apri in Google Maps', nessun embed: peso, cookie di terze parti e consenso), sotto i contatti diretti, perché in Contatti serve a trovare l'ufficio. Tolta la mappa stilizzata con pin: è il blocco 'Dove operiamo' della Home e qui lo ripeteva identico; le zone restano come riga di link alle pagine area. Alternativa embed con consenso: da decidere. Indirizzo della sede operativa: VERIFY."></i>
+    <figure class="co-mp">
+      <div class="co-map">
+        <div data-ph="Mappa della sede (immagine statica)|16/10"></div>
+        <div class="co-pin" aria-hidden="true"><b>Conti &amp; Conti</b><i></i></div>
+        <div class="co-zm" role="group" aria-label="Zoom mappa"><button type="button" data-zoom="in" aria-label="Avvicina">+</button><button type="button" data-zoom="out" aria-label="Allontana">&minus;</button></div>
+      </div>
+      <figcaption><span>Sede di Lentate sul Seveso</span><span><a href="#" target="_blank" rel="noopener">Apri in Google Maps<span class="sr"> (si apre in nuova scheda)</span></a> &middot; <button type="button" data-copy="Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)" data-out="#co-mst" data-ok="Indirizzo copiato negli appunti">Copia indirizzo</button></span></figcaption>
+      <span class="sr" id="co-mst" role="status" aria-live="polite"></span>
+      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Resta una sola mappa, quella della sede, perché qui serve a trovare l'ufficio: immagine statica con il punto della sede, pulsanti + e − per avvicinare l'immagine, 'Apri in Google Maps' e 'Copia indirizzo'. Nessun embed (peso, cookie di terze parti e consenso); alternativa mappa interattiva con consenso: da decidere. Mobile: stessa mappa a tutta larghezza, pulsanti 44px. Riduci movimento: zoom senza transizione. Indirizzo della sede operativa: VERIFY."></i>
+      <i data-note="DEV|Da ristimare. Immagine statica + link esterno + piccolo JS per zoom e copia. LOW. Embed con consenso cookie: MEDIUM, non incluso."></i>
     </figure>
   </aside>
 </div></section>
 
+<!-- 3. ZONE -->
 <section class="sec" aria-labelledby="h-zone"><div class="in">
-  <div class="hrow">
-    <h2 id="h-zone">Dove operiamo</h2>
-    <p>Lavoriamo a Milano, Como, Varese e in Monza Brianza. Se il tuo progetto &egrave; in una di queste zone, scrivici dal modulo: ti rispondiamo noi.</p>
+  <div class="co-zh">
+    <p class="dx-k" data-rv>Zone</p>
+    <h2 id="h-zone" class="dx-h" data-rv style="--d:1">Dove operiamo</h2>
+    <p data-rv style="--d:2">Lavoriamo a Milano, Como, Varese e in Monza Brianza. Se il tuo progetto è in una di queste zone, scrivici dal modulo: ti rispondiamo noi.</p>
   </div>
-  <ul class="pg-zc"><li><b>Milano</b><span>Interventi di pregio in città</span></li><li><b>Lago di Como</b><span>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</span></li><li><b>Monza, Seregno e Brianza</b><span>Nuove costruzioni e residenze in vendita</span></li><li><b>Varese</b><span>Zona operativa</span></li></ul>
-  <i data-note="DEV|Dove operiamo: 4 card statiche (container grid 4 colonne, 2 tablet, 1 mobile) con nome zona e una riga, stesso stile card di Impresa in versione chiara; testi ripresi dalla mappa della Home. Nessun link, nessuna mappa, nessun JS. 0,5 h. Sezione Recensioni rimossa dalla pagina (resta in Home): -0,5 h di assemblaggio."></i>
-  <i data-note="PROPOSTA|Zone come quattro card (titolo e frase sopra), tutte con lo stesso peso. Nessuna pagina per zona (decisione utente): le voci non sono link. Nomi delle zone come nella mappa della Home."></i>
+  <div class="co-zn" data-co-zn>
+    <ul class="co-zl">
+      <li><button type="button" data-z="mi" aria-pressed="true"><span class="co-zi" aria-hidden="true">01</span><span class="co-zt"><b>Milano</b><span>Interventi di pregio in città</span></span></button></li>
+      <li><button type="button" data-z="co" aria-pressed="false"><span class="co-zi" aria-hidden="true">02</span><span class="co-zt"><b>Lago di Como</b><span>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</span></span></button></li>
+      <li><button type="button" data-z="mb" aria-pressed="false"><span class="co-zi" aria-hidden="true">03</span><span class="co-zt"><b>Monza, Seregno e Brianza</b><span>Nuove costruzioni e residenze in vendita</span></span></button></li>
+      <li><button type="button" data-z="va" aria-pressed="false"><span class="co-zi" aria-hidden="true">04</span><span class="co-zt"><b>Varese</b><span>Zona operativa</span></span></button></li>
+    </ul>
+    <div class="co-zmap" role="img" aria-label="Mappa schematica delle zone operative attorno alla sede di Lentate sul Seveso">
+      <div data-noratio data-ph="Mappa schematica Lombardia nord-ovest (posizioni indicative)|4/3"></div>
+      <span class="co-zp" data-z="va" style="--x:22;--y:22"><i></i><b>Varese</b></span>
+      <span class="co-zp" data-z="co" style="--x:56;--y:12"><i></i><b>Lago di Como</b></span>
+      <span class="co-zp" data-z="mb" style="--x:78;--y:34"><i></i><b>Monza e Brianza</b></span>
+      <span class="co-zp" data-z="mi" style="--x:50;--y:82"><i></i><b>Milano</b></span>
+      <span class="co-zs" style="--x:46;--y:48"><i></i><b><span class="lg">Sede, Lentate sul Seveso</span><span class="sh">Sede</span></b></span>
+    </div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. 'Dove operiamo' ripensata (testi invariati): a sinistra le quattro zone come righe numerate, a destra una mappa schematica con un punto per zona e la sede. Passando o selezionando una zona si accende il suo punto sulla mappa (e viceversa); una zona è sempre attiva. Le zone non sono pagine né link (decisione: nessuna pagina per zona). Mobile: elenco sopra, mappa sotto. Riduci movimento: nessuna transizione."></i>
+  <i data-note="INFERENZA|Posizioni dei punti sulla mappa indicative (geografia approssimata); nella versione finale mappa disegnata dal grafico. L'etichetta 'Sede, Lentate sul Seveso' riprende l'indirizzo già in pagina."></i>
+  <i data-note="DEV|Da ristimare. LOW-MEDIUM: elenco a pulsanti con aria-pressed sincronizzato ai punti (JS ~20 righe), mappa come SVG o immagine con punti posizionati in percentuale."></i>
 </div></section>
+
+<!-- 4. LAVORA CON NOI -->
 <section class="sec dk pg-job" aria-labelledby="h-job"><div class="in">
   <div class="hrow">
     <h2 id="h-job">Lavora con noi</h2>
@@ -86,5 +124,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Contatti)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
+<script src="wf-servizio.js?v=3"></script>
 </body></html>

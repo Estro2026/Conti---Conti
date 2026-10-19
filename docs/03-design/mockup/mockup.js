@@ -220,6 +220,8 @@
   vid.addEventListener('loadeddata', function () { ready = true; vid.currentTime = 0.001; vid.classList.add('is-ready'); hero.classList.add('has-video'); });
   vid.addEventListener('error', function () { hero.classList.add('is-static'); });
   vid.load();
+  /* ritorno all'inizio: il video salta al primo fotogramma, mai riprodotto al contrario */
+  hero.addEventListener('hero:rewind', function () { cur = tgt = last = 0; if (ready) vid.currentTime = 0.001; });
   function progress() {
     var r = hero.getBoundingClientRect(), span = hero.offsetHeight - window.innerHeight;
     return span > 1 ? clamp(-r.top / span, 0, 1) : 0;
@@ -232,7 +234,7 @@
   function tick() {
     var p = progress();
     paint(p);
-    if (ready && vid.duration) {
+    if (ready && vid.duration && !hero.classList.contains('is-rewinding')) {
       tgt = clamp(p / (parseFloat(hero.dataset.vend) || .86), 0, 1) * (vid.duration - .05); /* il video arriva all'ultimo fotogramma luminoso, poi il velo lo porta alla sezione successiva */
       var now = performance.now(), dt = Math.min(500, now - (tick.t || now)); tick.t = now;
       cur += (tgt - cur) * (1 - Math.exp(-dt / 110));
@@ -270,14 +272,19 @@
   var lastY = window.scrollY, busy = false, acc = 0;
   function top() { return hero.getBoundingClientRect().top + window.scrollY; }
   function glide(to) {
-    var from = window.scrollY, t0 = performance.now(), dur = Math.min(1100, 450 + Math.abs(from - to) * .06);
-    busy = true;
+    var from = window.scrollY, t0 = performance.now(), dur = Math.min(520, 260 + Math.abs(from - to) * .02);
+    busy = true; hero.classList.add('is-rewinding'); hero.dispatchEvent(new Event('hero:rewind'));
     (function step(now) {
       var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      window.scrollTo(0, from + (to - from) * e);
-      if (k < 1) requestAnimationFrame(step); else { busy = false; lastY = window.scrollY; acc = 0; }
+      if (!busy) return;
+      window.scrollTo({ top: from + (to - from) * e, behavior: 'instant' });
+      if (k < 1) requestAnimationFrame(step); else stop();
     })(t0);
   }
+  /* fine del ritorno, o interruzione se l'utente riprende a scorrere verso il basso */
+  function stop() { busy = false; lastY = window.scrollY; acc = 0; hero.classList.remove('is-rewinding'); }
+  window.addEventListener('wheel', function (e) { if (busy && e.deltaY > 0) stop(); }, { passive: true });
+  window.addEventListener('touchstart', function () { if (busy) stop(); }, { passive: true });
   window.addEventListener('scroll', function () {
     if (busy || hero.classList.contains('is-static')) { lastY = window.scrollY; return; }
     var y = window.scrollY, t = top(), span = hero.offsetHeight - window.innerHeight;
@@ -285,8 +292,8 @@
     if (d < 0 && y >= t + span - 4 && y < t + span + window.innerHeight * .5) {
       /* si rientra nella hero dal basso: si riparte subito dall'inizio, con testo e CTA */
       hero.classList.remove('is-reenter'); void hero.offsetWidth; hero.classList.add('is-reenter');
-      window.scrollTo({ top: t, behavior: 'instant' }); lastY = window.scrollY; acc = 0;
-    } else if (d < 0 && y > t + 8 && y < t + span - 4) { acc += -d; if (acc > 36) glide(t); }
+      hero.dispatchEvent(new Event('hero:rewind')); window.scrollTo({ top: t, behavior: 'instant' }); lastY = window.scrollY; acc = 0;
+    } else if (d < 0 && y > t + 8 && y < t + span - 4) { acc += -d; if (acc > 12) glide(t); }
     else if (d > 0) acc = 0;
   }, { passive: true });
 })();

@@ -1,0 +1,439 @@
+/* Wireframe Conti & Conti - pagina Impresa, revisione UX/UI sezione per sezione (testi invariati).
+   PROPOSTA, WAITING_FOR_APPROVAL. Media fedeltà: i colori finali li uniforma wf-mid.css (scala di grigi). */
+
+.ix-hero a,.ix-sto a,.ix-met a,.ix-sv a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.ix-hero a:hover,.ix-sto a:hover,.ix-met a:hover,.ix-sv a:hover{text-decoration-thickness:2px}
+
+/* ---------- 1. apertura ---------- */
+.ix-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:min(86vh,820px);background:var(--paper)}
+.ix-hero-t{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(48px,6cqi,96px) clamp(24px,4cqi,72px) clamp(40px,5cqi,72px) var(--gut)}
+.ix-ey{margin:0 0 22px}
+.ix-h1{font:800 clamp(52px,8.6cqi,132px)/.88 var(--fh);letter-spacing:-.05em;margin:0;max-width:9ch}
+.ix-lead{margin:clamp(24px,3cqi,40px) 0 0;max-width:52ch}
+.ix-hero-m{position:relative;overflow:hidden}
+.ix-hero-m .ph{position:absolute;inset:0;height:100%;aspect-ratio:auto!important;border:0;transform:scale(calc(1 + var(--hz,0) * .08))}
+.js-dx .ix-hero-m{clip-path:inset(100% 0 0 0);transition:clip-path .9s cubic-bezier(.7,0,.2,1) .15s}
+.js-dx .ix-hero-m.is-in{clip-path:inset(0 0 0 0)}
+
+/* ---------- 2. indice capitoli sticky ---------- */
+.ix-nav{position:sticky;top:var(--stick);z-index:6;background:var(--paper);border-block:1px solid var(--line)}
+.ix-nav ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ix-nav a{position:relative;display:flex;align-items:center;gap:10px;min-height:56px;padding:0 4px;font:600 15px/1 var(--fh);color:var(--mut);text-decoration:none;transition:color .25s}
+.ix-nav a:hover,.ix-nav a[aria-current="true"]{color:var(--ink)}
+.ix-nav-n{font:600 11px/1 var(--fh);letter-spacing:.12em}
+.ix-nav a i{position:absolute;left:0;right:12px;bottom:-1px;height:2px;background:var(--line)}
+.ix-nav a i::after{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(var(--np,0))}
+
+/* ---------- 3. storia ---------- */
+.ix-sto{background:var(--ink);color:#fff;padding-bottom:0}
+.ix-sto .dx-k{color:#cfcfd2}
+.ix-sto h2{color:#fff}
+.ix-sto p{color:#d4d4d7}
+.ix-sto-h{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,6cqi,96px);align-items:start}
+.ix-sto-h>div{max-width:62ch}
+.ix-40{margin:0;font:800 clamp(130px,17cqi,260px)/.78 var(--fh);letter-spacing:-.06em;color:#fff;font-variant-numeric:tabular-nums}
+.ix-40 small{display:block;margin-top:20px;font:500 15px/1.35 var(--fb);letter-spacing:0;color:#a9a9ad;max-width:16ch}
+.ix-40 small b{color:#fff}
+/* binario degli anni */
+.ix-tl{position:relative;height:calc(100vh + var(--len,1000px));background:var(--ink);color:#fff}
+.ix-tl-s{position:sticky;top:calc(var(--stick) + 58px);height:calc(100vh - var(--stick) - 58px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-left:var(--gut)}
+.ix-tl-big{position:absolute;left:var(--gut);top:50%;margin:0;transform:translateY(-62%);font:800 clamp(140px,26cqi,400px)/1 var(--fh);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.22);pointer-events:none;white-space:nowrap}
+.ix-tl-big span{display:inline-block;transition:opacity .3s,transform .4s cubic-bezier(.2,.6,.2,1)}
+.ix-tl-big.is-swap span{animation:ixSwap .45s cubic-bezier(.2,.6,.2,1)}
+@keyframes ixSwap{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.ix-tl-r{position:relative;list-style:none;margin:0;padding:0 var(--gut) 0 0;display:flex;gap:clamp(24px,4cqi,64px);transform:translateX(calc(var(--x,0) * -1px));will-change:transform}
+.ix-tl-r li{flex:0 0 clamp(220px,24cqi,320px);padding-top:28px;border-top:1px solid rgba(255,255,255,.3);color:#8f8f93;transition:color .3s,border-color .3s}
+.ix-tl-r li.on{color:#fff;border-top-color:#fff}
+.ix-tl-r b{display:block;font:700 clamp(36px,4cqi,56px)/1 var(--fh);letter-spacing:-.03em;margin-bottom:12px}
+.ix-tl-r span{font-size:16px;line-height:1.4}
+.ix-tl-r li.is-next b{color:transparent;-webkit-text-stroke:1px currentColor}
+.ix-tl-bar{height:2px;margin:clamp(32px,4cqi,56px) var(--gut) 0 0;background:rgba(255,255,255,.18)}
+.ix-tl-bar i{display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(var(--p,0))}
+
+/* ---------- 4. persone ---------- */
+.ix-per-h{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4cqi,56px)}
+.ix-per-h .lead{margin:0}
+.ix-bar{display:flex;gap:4px;height:clamp(96px,10cqi,132px)}
+.ix-bar button{flex:var(--n,1) 1 0;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:14px 16px;border:1px solid var(--ink);border-radius:2px;background:var(--paper);color:var(--ink);text-align:left;cursor:pointer;font:inherit;transform-origin:left;transition:background-color .3s,color .3s}
+.js-dx .ix-bar button{transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.6,.2,1),background-color .3s,color .3s;transition-delay:calc(var(--k,0) * 120ms),0s,0s}
+.js-dx .ix-bar.is-in button{transform:none}
+.ix-bar button:hover{background:var(--alt)}
+.ix-bar button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ix-bar-n{font:800 clamp(32px,4cqi,56px)/1 var(--fh);letter-spacing:-.04em}
+.ix-bar-t{font:600 14px/1.2 var(--fh)}
+.ix-team-p{margin-top:clamp(24px,3cqi,40px)}
+.ix-team-p article{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4cqi,64px);align-items:end}
+.js-dx .ix-team-p article:not(.is-on){display:none}
+.ix-team-ph{overflow:hidden}
+.ix-team-p article.is-on .ix-team-ph{animation:ixWipe .8s cubic-bezier(.7,0,.2,1)}
+.ix-team-p article.is-on .ix-team-t{animation:ixFade .6s ease .2s both}
+@keyframes ixWipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes ixFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ix-team-t h3{margin:0 0 12px;font:700 clamp(26px,2.8cqi,40px)/1.1 var(--fh)}
+.ix-team-c{display:block;margin-top:8px;font:600 13px/1 var(--fh);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.ix-team-t p{margin:0;max-width:44ch}
+html:not(.js-dx) .ix-team-p article+article{margin-top:40px}
+
+/* ---------- 5. massimo ---------- */
+.ix-boss-s{padding-top:0}
+.ix-boss{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6cqi,96px);align-items:center}
+.ix-boss-m{overflow:hidden}
+.ix-boss-m .ph{transform:translateY(calc(var(--py,0) * 1px)) scale(1.08);border:0}
+.js-dx .ix-boss-m{clip-path:inset(100% 0 0 0);transition:clip-path 1s cubic-bezier(.7,0,.2,1)}
+.js-dx .ix-boss-m.is-in{clip-path:inset(0 0 0 0)}
+.ix-boss-n{margin:0;font:800 clamp(48px,6.4cqi,96px)/.92 var(--fh);letter-spacing:-.045em}
+.ix-boss-r{margin:14px 0 28px;font:500 18px/1.4 var(--fb);color:var(--mut)}
+.ix-boss-p{max-width:52ch;margin:0 0 16px}
+
+/* ---------- 6. metodo: carte impilate ---------- */
+.ix-met{background:var(--ink);color:#fff}
+.ix-met .dx-k{color:#cfcfd2}
+.ix-met h2{color:#fff}
+.ix-met .lead{color:#d4d4d7;max-width:56ch;margin:20px 0 0}
+.ix-met-h{margin-bottom:clamp(36px,5cqi,64px)}
+.ix-stk{list-style:none;margin:0;padding:0}
+.ix-stk li{position:sticky;top:calc(var(--stick) + 72px + var(--i) * 18px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px clamp(32px,5cqi,80px);align-items:end;min-height:min(56vh,440px);margin-bottom:clamp(20px,3cqi,40px);padding:clamp(28px,3.4cqi,52px);background:#26272a;border:1px solid #3a3b3f;transform-origin:center top;transform:scale(calc(1 - var(--sh,0) * .06));filter:brightness(calc(1 - var(--sh,0) * .35))}
+.ix-stk-k{position:absolute;left:clamp(28px,3.4cqi,52px);top:clamp(22px,2.6cqi,36px);font:600 12px/1 var(--fh);letter-spacing:.14em;color:#8f8f93}
+.ix-stk-a{margin:0;font:700 clamp(28px,3.4cqi,52px)/1.08 var(--fh);letter-spacing:-.025em;color:#fff;max-width:16ch}
+.ix-stk-p{border-left:1px solid #4a4b4f;padding-left:clamp(20px,2.4cqi,32px)}
+.ix-stk-p p{margin:0;color:#d4d4d7}
+.ix-stk-n{display:flex;align-items:baseline;gap:10px;margin-bottom:12px!important}
+.ix-stk-n span{font:800 clamp(56px,6cqi,96px)/1 var(--fh);letter-spacing:-.05em;color:#fff;font-variant-numeric:tabular-nums}
+.ix-stk-n small{font-size:14px;color:#a9a9ad}
+.ix-met-x{display:grid;grid-template-columns:1fr 1fr;gap:24px 48px;margin:clamp(24px,3cqi,40px) 0 0;padding-top:28px;border-top:1px solid #3a3b3f}
+.ix-met-x dt{font:700 18px/1.2 var(--fh);color:#fff;margin-bottom:6px}
+.ix-met-x dd{margin:0;color:#d4d4d7}
+
+/* ---------- 7. uffici: indice + anteprima ---------- */
+.ix-sv-s{background:var(--alt)}
+.ix-sv-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4cqi,56px)}
+.ix-sv-h .lead{margin:0}
+.ix-sv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6cqi,96px);align-items:start}
+.ix-sv-l{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.ix-sv-l li{display:grid;grid-template-columns:44px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.ix-sv-n{padding-top:22px;font:600 12px/1 var(--fh);letter-spacing:.1em;color:var(--mut)}
+.ix-sv-l h3{margin:0;font:inherit}
+.ix-sv-l button{display:flex;align-items:center;width:100%;min-height:60px;padding:0;border:0;background:none;color:var(--mut);font:700 clamp(20px,2.2cqi,30px)/1.1 var(--fh);letter-spacing:-.02em;text-align:left;cursor:pointer;transition:color .25s,transform .3s cubic-bezier(.2,.6,.2,1)}
+.ix-sv-l button::after{content:"";margin-left:auto;width:9px;height:9px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);opacity:0;transition:opacity .25s}
+.ix-sv-l button:hover,.ix-sv-l button[aria-expanded="true"]{color:var(--ink)}
+.ix-sv-l button[aria-expanded="true"]{transform:translateX(8px)}
+.ix-sv-l button[aria-expanded="true"]::after{opacity:1}
+.ix-sv-d{grid-column:2}
+.ix-sv-d p{margin:0 0 18px;max-width:48ch;color:var(--mut)}
+.ix-sv-v{position:sticky;top:calc(var(--stick) + 88px);padding:clamp(28px,3cqi,44px);background:var(--paper);border:1px solid var(--line);min-height:320px;display:grid;grid-template-columns:auto 1fr;align-content:space-between;gap:24px}
+.ix-sv-big{font:800 clamp(110px,13cqi,200px)/.8 var(--fh);letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.ix-sv-tot{align-self:end;font:600 18px/1 var(--fh);color:var(--mut)}
+.ix-sv-txt{grid-column:1/-1}
+.ix-sv-txt h4{margin:0 0 10px;font:700 26px/1.15 var(--fh)}
+.ix-sv-txt p{margin:0;max-width:44ch;color:var(--mut)}
+.ix-sv-v.is-swap .ix-sv-big,.ix-sv-v.is-swap .ix-sv-txt{animation:ixFade .45s cubic-bezier(.2,.6,.2,1)}
+/* desktop: la descrizione si legge nel pannello, nell'elenco resta per lettori di schermo e senza JS */
+.js-dx .ix-sv .ix-sv-d{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- 8. garanzie ---------- */
+.ix-gar-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:clamp(32px,4cqi,56px)}
+.ix-gar-h .lead{margin:0}
+.ix-ct{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2cqi,24px);align-items:start}
+.ix-ct li{border:1px solid var(--line);background:var(--paper);transition:transform .35s cubic-bezier(.2,.6,.2,1),box-shadow .35s,border-color .35s}
+.ix-ct li:hover{transform:translateY(-4px);box-shadow:0 18px 36px -18px rgba(0,0,0,.35);border-color:var(--ink)}
+.ix-ct h3{margin:0;font:inherit}
+.ix-ct button{display:grid;grid-template-columns:96px minmax(0,1fr) 32px;align-items:center;gap:20px;width:100%;min-height:128px;padding:20px 24px;border:0;background:none;text-align:left;cursor:pointer;font:inherit;color:var(--ink);perspective:600px}
+.ix-ct-b{display:grid;place-items:center;aspect-ratio:1;border:1px solid var(--ink);font:700 13px/1.15 var(--fh);text-align:center;padding:8px;transform:rotateX(calc(var(--ry,0) * 1deg)) rotateY(calc(var(--rx,0) * 1deg));transition:transform .2s ease}
+.ix-ct-t{font:700 clamp(20px,1.9cqi,26px)/1.15 var(--fh)}
+.ix-ct-t small{display:block;margin-top:6px;font:500 14px/1.3 var(--fb);color:var(--mut)}
+.ix-ct-i{position:relative;width:32px;height:32px;border:1px solid currentColor;border-radius:50%}
+.ix-ct-i::before,.ix-ct-i::after{content:"";position:absolute;left:9px;right:9px;top:15px;height:1.5px;background:currentColor;transition:transform .3s}
+.ix-ct-i::after{transform:rotate(90deg)}
+.ix-ct button[aria-expanded="true"] .ix-ct-i::after{transform:rotate(0)}
+.ix-ct-d{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s cubic-bezier(.2,.6,.2,1)}
+.ix-ct-d>div{overflow:hidden;padding:0 24px 24px 140px}
+.js-dx .ix-ct-d:not(.is-open){grid-template-rows:0fr}
+.js-dx .ix-ct-d:not(.is-open)>div{padding-bottom:0;visibility:hidden}
+.ix-ct-d p{margin:0 0 12px;color:var(--mut)}
+.ix-ct-d dl{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0}
+.ix-ct-d dt{font:600 11px/1 var(--fh);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.ix-ct-d dd{margin:4px 0 0;font-weight:600}
+
+/* ---------- responsive ---------- */
+@container (max-width:1040px){
+  .ix-hero{grid-template-columns:1fr;min-height:0}
+  .ix-hero-m{order:-1;aspect-ratio:4/3}
+  .ix-hero-t{padding:36px var(--gut) 48px}
+  .ix-per-h,.ix-sv-h,.ix-gar-h{grid-template-columns:1fr}
+  .ix-boss{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}
+  .ix-sv{grid-template-columns:1fr}
+  .ix-sv-v{display:none}
+  .js-dx .ix-sv .ix-sv-d{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
+  .js-dx .ix-sv-d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .js-dx .ix-sv-d>p{overflow:hidden;min-height:0}
+  .js-dx .ix-sv-d.is-open{grid-template-rows:1fr}
+  .ix-stk li{grid-template-columns:1fr;min-height:0;padding-top:64px}
+}
+@container (max-width:720px){
+  .ix-nav ol{grid-template-columns:repeat(4,auto);justify-content:space-between}
+  .ix-nav-n{display:none}
+  .ix-nav a{font-size:14px;padding:0}
+  .ix-nav a i{right:0}
+  .ix-sto-h{grid-template-columns:1fr}
+  /* binario: elenco verticale con linea */
+  .ix-tl{height:auto}
+  .ix-tl-s{position:static;height:auto;padding:48px var(--gut) 64px}
+  .ix-tl-big{display:none}
+  .ix-tl-r{transform:none!important;flex-direction:column;gap:0;padding:0 0 0 24px;border-left:1px solid rgba(255,255,255,.3)}
+  .ix-tl-r li{flex:none;border-top:0;padding:0 0 28px;color:#fff}
+  .ix-tl-bar{display:none}
+  .ix-bar{height:auto}
+  .ix-bar button{padding:12px 10px;min-height:96px}
+  .ix-bar-t{font-size:12px}
+  .ix-team-p article{grid-template-columns:1fr}
+  .ix-boss{grid-template-columns:1fr}
+  .ix-stk li{position:relative;top:0;transform:none;filter:none}
+  .ix-met-x{grid-template-columns:1fr}
+  .ix-ct{grid-template-columns:1fr}
+  .ix-ct button{grid-template-columns:72px minmax(0,1fr) 32px;gap:14px;padding:16px;min-height:104px}
+  .ix-ct-d>div{padding:0 16px 20px}
+}
+@media (hover:none){.ix-ct li:hover{transform:none;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){
+  .js-dx .ix-hero-m,.js-dx .ix-boss-m{clip-path:none;transition:none}
+  .ix-hero-m .ph,.ix-boss-m .ph{transform:none}
+  .ix-tl{height:auto}
+  .ix-tl-s{position:static;height:auto;padding:48px var(--gut) 64px}
+  .ix-tl-r{transform:none!important;flex-wrap:wrap}
+  .ix-tl-r li{color:#fff;border-top-color:#fff}
+  .ix-tl-big,.ix-tl-bar{display:none}
+  .js-dx .ix-bar button{transform:none;transition:none}
+  .ix-team-p article.is-on .ix-team-ph,.ix-team-p article.is-on .ix-team-t,.ix-sv-v.is-swap .ix-sv-big,.ix-sv-v.is-swap .ix-sv-txt,.ix-tl-big.is-swap span{animation:none}
+  .ix-stk li{position:relative;top:0;transform:none;filter:none}
+  .ix-ct li,.ix-ct-b,.ix-ct-d,.ix-sv-l button{transition:none}
+  .ix-ct li:hover{transform:none}
+}
+
+/* ==== revisione 2 (feedback 2026-10-19) ==== */
+/* ogni sezione occupa almeno lo schermo visibile sotto header e indice capitoli */
+.ix-vh{min-height:calc(100vh - var(--stick) - 58px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+.ix-vh>.in{width:100%}
+.ix-sto.ix-vh{justify-content:flex-start;padding-top:clamp(56px,8vh,96px)}
+
+/* apertura: foto al vivo in sfondo, testo sopra */
+.ix-hero{position:relative;display:flex;align-items:flex-end;min-height:calc(100vh - var(--stick));overflow:hidden;background:var(--ink);color:#fff}
+.ix-hero-m{position:absolute;inset:0;z-index:0;order:0;aspect-ratio:auto}
+.ix-hero-m::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.35) 45%,rgba(0,0,0,.1) 75%)}
+.ix-hero-m .ph{border:0}
+.ix-hero-m .ph>span{left:auto;right:16px;top:16px;bottom:auto}
+.ix-hero-t{position:relative;z-index:1;padding:clamp(48px,6cqi,96px) var(--gut) clamp(40px,6vh,72px);max-width:1100px}
+.ix-hero .ix-ey{color:#e4e4e6}
+.ix-hero .ix-h1{color:#fff;max-width:10ch}
+.ix-hero .ix-lead{color:#eee}
+.ix-hero a{color:#fff}
+
+/* timeline: anno di sfondo più leggero */
+.ix-tl-big{-webkit-text-stroke:1px rgba(255,255,255,.1);opacity:.7}
+
+/* persone: titolo e mestieri a sinistra, un solo pannello a destra */
+.ix-per-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto 1fr;column-gap:clamp(40px,6cqi,96px);row-gap:clamp(28px,3cqi,40px);align-items:start}
+.ix-per-g>.ix-per-h{grid-column:1;grid-row:1;display:block;margin:0}
+.ix-per-g>.ix-per-h .dx-h{font-size:clamp(28px,3.2cqi,44px)}
+.ix-per-g>.ix-per-h .lead{margin-top:18px;font-size:17px}
+.ix-per-g>.ix-team{display:contents}
+.ix-per-g>i[data-note],.ix-per-g>.n{grid-column:1/-1}
+.ix-tabs{grid-column:1;grid-row:2;border-top:1px solid var(--ink)}
+.ix-tabs button{display:grid;grid-template-columns:72px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;column-gap:16px;row-gap:10px;width:100%;padding:18px 0;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;cursor:pointer;font:inherit;color:var(--mut);transition:color .25s}
+.ix-tabs button:hover,.ix-tabs button[aria-pressed="true"]{color:var(--ink)}
+.ix-tab-n{grid-row:1/3;font:800 clamp(30px,3cqi,44px)/1 var(--fh);letter-spacing:-.04em}
+.ix-tab-t{font:700 19px/1.2 var(--fh)}
+.ix-tab-s{height:3px;background:var(--line);position:relative}
+.ix-tab-s i{position:absolute;inset:0 auto 0 0;width:calc(var(--n) / 43 * 100%);background:currentColor;transform-origin:left;transition:transform .9s cubic-bezier(.2,.6,.2,1)}
+.js-dx .ix-tabs:not(.is-in) .ix-tab-s i{transform:scaleX(0)}
+.ix-per-g .ix-team-p{grid-column:2;grid-row:1/3;margin:0}
+.ix-per-g .ix-team-p article{grid-template-columns:1fr;gap:20px;align-items:start}
+.ix-per-g .ix-team-t h3{font-size:clamp(22px,2.2cqi,30px)}
+
+/* uffici: sequenza del lavoro in 2 righe da 4 */
+.ix-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(36px,4cqi,56px) clamp(20px,2.4cqi,36px);counter-reset:f}
+.ix-flow li{position:relative;padding-top:34px}
+.ix-flow li::before{content:"";position:absolute;left:0;right:calc(clamp(20px,2.4cqi,36px) * -1);top:9px;height:1px;background:var(--line2)}
+.ix-flow li:nth-child(4n)::before{right:0}
+.ix-flow li::after{content:"";position:absolute;left:0;top:4px;width:11px;height:11px;border-radius:50%;background:var(--ink)}
+.ix-flow-n{display:block;font:600 12px/1 var(--fh);letter-spacing:.12em;color:var(--mut);margin-bottom:10px}
+.ix-flow h3{margin:0 0 8px;font:700 clamp(19px,1.7cqi,23px)/1.2 var(--fh)}
+.ix-flow p{margin:0;font-size:15px;color:var(--mut);max-width:32ch}
+.ix-flow a{color:inherit}
+
+/* garanzie: impianto della sezione garanzie delle homepage */
+.ix-gar{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff}
+.ix-gar-bg{position:absolute;inset:-12% 0;z-index:-1;opacity:.22;transform:translateY(calc(var(--gy,0) * 1px))}
+.ix-gar-bg .ph{height:100%;aspect-ratio:auto!important;border:0}
+.ix-gar-bg .ph>span{display:none}
+.ix-gar-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--ink) 0%,rgba(21,21,23,.55) 40%,var(--ink) 100%)}
+.ix-gar .dx-k{color:#cfcfd2}
+.ix-gar h2{color:#fff}
+.ix-gar .lead{color:#d4d4d7}
+.ix-tlist{list-style:none;margin:clamp(40px,6vh,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.6)}
+.ix-tlist li{display:flex;flex-direction:column;gap:10px;padding:28px 28px 8px 0}
+.ix-tlist li+li{padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
+.ix-t-tag{font:600 11px/1 var(--fh);letter-spacing:.14em;text-transform:uppercase;color:#a9a9ad}
+.ix-t-logo{display:grid;place-items:center;width:76px;height:76px;margin:6px 0 8px;border:1px solid rgba(255,255,255,.5);font:700 12px/1.15 var(--fh);text-align:center;padding:6px;color:#e4e4e6;transition:background-color .3s,color .3s}
+.ix-tlist li:hover .ix-t-logo{background:#fff;color:var(--ink)}
+.ix-tlist strong{font:700 clamp(20px,1.9cqi,28px)/1.15 var(--fh);letter-spacing:-.02em;color:#fff}
+.ix-t-sub{color:#cfcfd2}
+.ix-tlist p{margin:6px 0 0;font-size:15px;color:#a9a9ad}
+.ix-tlist dl{display:flex;flex-wrap:wrap;gap:6px 24px;margin:6px 0 0}
+.ix-tlist dt{font:600 11px/1 var(--fh);letter-spacing:.12em;text-transform:uppercase;color:#8f8f93}
+.ix-tlist dd{margin:4px 0 0;font-size:14px;color:#e4e4e6}
+
+@container (max-width:1040px){
+  .ix-per-g{grid-template-columns:1fr;grid-template-rows:none}
+  .ix-per-g>.ix-per-h,.ix-tabs,.ix-per-g .ix-team-p{grid-column:1;grid-row:auto}
+  .ix-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ix-flow li:nth-child(2n)::before{right:0}
+  .ix-tlist{grid-template-columns:1fr 1fr}
+  .ix-tlist li:nth-child(3){padding-left:0;border-left:0}
+  .ix-tlist li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
+}
+@container (max-width:720px){
+  .ix-vh{min-height:0}
+  .ix-hero{min-height:calc(88vh - var(--stick))}
+  .ix-flow{grid-template-columns:1fr;gap:0;padding-left:28px;border-left:1px solid var(--line2)}
+  .ix-flow li{padding:0 0 28px}
+  .ix-flow li::before{display:none}
+  .ix-flow li::after{left:-34px;top:2px}
+  .ix-tlist{grid-template-columns:1fr}
+  .ix-tlist li,.ix-tlist li+li{padding:24px 0 20px;border-left:0}
+  .ix-tlist li+li{border-top:1px solid rgba(255,255,255,.18)}
+}
+@media (prefers-reduced-motion:reduce){.ix-gar-bg{transform:none}.ix-tab-s i{transition:none}.js-dx .ix-tabs:not(.is-in) .ix-tab-s i{transform:none}}
+
+/* ==== revisione 3: uffici come griglia di tessere 4x2 ==== */
+.ix-flow{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4cqi,20px);padding:0;border:0}
+.ix-flow li{display:flex;flex-direction:column;aspect-ratio:1;padding:clamp(20px,2.2cqi,32px);background:var(--paper);border:1px solid var(--line);transition:border-color .3s,transform .35s cubic-bezier(.2,.6,.2,1),box-shadow .35s}
+.ix-flow li::before,.ix-flow li::after{display:none}
+.ix-flow li:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 18px 36px -20px rgba(0,0,0,.35)}
+.ix-flow-n{margin:0 0 auto;font:800 clamp(56px,6.4cqi,96px)/.85 var(--fh);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.ix-flow h3{margin:24px 0 8px;font:700 clamp(19px,1.7cqi,24px)/1.15 var(--fh)}
+.ix-flow p{font-size:14px;line-height:1.45;max-width:none}
+@container (max-width:1040px){.ix-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.ix-flow li{aspect-ratio:auto;min-height:260px}}
+@container (max-width:720px){.ix-flow{grid-template-columns:1fr;padding:0;border-left:0}.ix-flow li{min-height:0;padding:22px}.ix-flow-n{font-size:48px;margin-bottom:8px}.ix-flow li::after{display:none}}
+@media (hover:none){.ix-flow li:hover{transform:none;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){.ix-flow li{transition:none}.ix-flow li:hover{transform:none}}
+
+/* ==== revisione 4: garanzie senza filetti ==== */
+.ix-tlist,.ix-tlist li,.ix-tlist li+li,.ix-tlist li:nth-child(n+3){border:0!important}
+.ix-tlist{gap:clamp(24px,3cqi,48px)}
+.ix-tlist li,.ix-tlist li+li{padding:0}
+
+/* ==== revisione 5: senza indice capitoli sotto la hero ==== */
+.ix-vh{min-height:calc(100vh - var(--stick))}
+.ix-tl-s{top:var(--stick);height:calc(100vh - var(--stick))}
+
+/* ==== revisione 6: testo della hero allineato al contenitore della pagina (1280 px + gutter) ==== */
+.ix-hero-t{box-sizing:border-box;width:100%;max-width:none;padding-left:max(var(--gut),calc((100% - var(--wrap,1280px)) / 2));padding-right:max(var(--gut),calc((100% - var(--wrap,1280px)) / 2))}
+.ix-hero-t>*{max-width:1100px}
+
+/* ==== revisione 7: alternanza dei fondi ====
+   foto scura (hero) → bianco (Storia) → grigio chiaro (Persone) → bianco (Massimo) → nero (Metodo)
+   → bianco (Uffici) → grigio chiaro (Garanzie) → pre-footer scuro → footer nero.
+   Mai due fondi scuri vicini, il nero del Metodo fa da centro della pagina. */
+
+/* Storia + timeline: bianco */
+.ix-sto,.ix-tl{background:var(--paper);color:var(--ink)}
+.ix-sto .dx-k{color:var(--mut)}
+.ix-sto h2{color:var(--ink)}
+.ix-sto p{color:var(--ink)}
+.ix-40{color:var(--ink)}
+.ix-40 small{color:var(--mut)}
+.ix-40 small b{color:var(--ink)}
+.ix-tl-big{-webkit-text-stroke:1px rgba(21,21,23,.08);opacity:1}
+.ix-tl-r li{color:#9a9a9e;border-top-color:var(--line)}
+.ix-tl-r li.on{color:var(--ink);border-top-color:var(--ink)}
+.ix-tl-bar{background:var(--line)}
+.ix-tl-bar i{background:var(--ink)}
+@container (max-width:720px){.ix-tl-r{border-left-color:var(--line)}.ix-tl-r li{color:var(--ink)}}
+@media (prefers-reduced-motion:reduce){.ix-tl-r li{color:var(--ink);border-top-color:var(--ink)}}
+
+/* Persone: grigio chiaro */
+.ix-per{background:var(--alt)}
+.ix-tabs button{border-bottom-color:#d0d0d0}
+.ix-tab-s{background:#d0d0d0}
+
+/* Massimo: bianco */
+.ix-boss-s{background:var(--paper);padding-top:var(--sec-pt,clamp(44px,7cqi,92px))}
+
+/* Uffici: bianco, tessere grigio chiaro */
+.ix-sv-s{background:var(--paper)}
+.ix-flow li{background:var(--alt);border-color:transparent}
+.ix-flow li:hover{background:var(--paper);border-color:var(--ink)}
+
+/* Garanzie: grigio chiaro, foto appena accennata */
+.ix-gar{background:var(--alt);color:var(--ink)}
+.ix-gar-bg{opacity:.08}
+.ix-gar-bg::after{background:linear-gradient(to bottom,var(--alt) 0%,rgba(244,244,243,.4) 40%,var(--alt) 100%)}
+.ix-gar .dx-k{color:var(--mut)}
+.ix-gar h2{color:var(--ink)}
+.ix-gar .lead{color:var(--ink)}
+.ix-t-tag{color:var(--mut)}
+.ix-t-logo{border-color:var(--ink);color:var(--ink);background:var(--paper)}
+.ix-tlist li:hover .ix-t-logo{background:var(--ink);color:#fff}
+.ix-tlist strong{color:var(--ink)}
+.ix-t-sub{color:var(--mut)}
+.ix-tlist p{color:var(--mut)}
+.ix-tlist dt{color:var(--mut)}
+.ix-tlist dd{color:var(--ink)}
+
+/* ==== correzioni zoom (2026-10-20) ==== */
+/* anno di sfondo della timeline: dietro al contenuto, molto tenue, mai più alto dello schermo, nascosto se manca spazio */
+.ix-tl-big{z-index:0;font-size:min(26cqi,38vh,360px);-webkit-text-stroke:1px rgba(21,21,23,.06);opacity:.8}
+.ix-tl-r,.ix-tl-bar{position:relative;z-index:1}
+@container (max-width:900px){.ix-tl-big{display:none}}
+@media (max-height:640px){.ix-tl-big{display:none}}
+/* Quattro impegni: ogni carta resta visibile più a lungo (corsa di scroll proporzionale all'altezza dello schermo) */
+.ix-stk li{margin-bottom:max(42vh,260px)}
+.ix-stk li:last-child{margin-bottom:0}
+@container (max-width:720px){.ix-stk li{margin-bottom:clamp(20px,3cqi,40px)}}
+@media (max-height:560px){.ix-stk li{margin-bottom:clamp(20px,3cqi,40px)}}
+
+/* testo dell'apertura sempre sotto header + breadcrumb trasparenti (qui, perché la riga padding sopra riscriveva il valore) */
+.ix-hero-t{padding-top:calc(var(--ovl,125px) + clamp(24px,4vh,48px))}
+@media (max-height:560px){.ix-hero-t{padding-top:calc(var(--ovl,125px) + 24px)}}
+
+/* ==== anno di sfondo (revisione zoom 2): visibile ogni volta che la timeline è bloccata, a qualsiasi zoom ====
+   campitura trasparente invece del solo contorno: l'intensità non dipende dallo spessore del tratto, quindi resta tenue anche con lo zoom */
+.ix-tl-big{display:none;color:rgba(21,21,23,.05);-webkit-text-stroke:0;opacity:1;font-size:min(30cqi,40vh,380px)}
+.ix-tl.is-pinned .ix-tl-big{display:block}
+@container (max-width:900px){.ix-tl.is-pinned .ix-tl-big{display:block}}
+@media (max-height:640px){.ix-tl.is-pinned .ix-tl-big{display:block}}
+/* la timeline resta bloccata anche con schermi bassi (zoom 200%): sotto i 440 px di altezza torna normale */
+@media (max-height:560px) and (min-height:441px){
+  .ix-tl{height:calc(100vh + var(--len,1000px))!important}
+  .ix-tl-s{position:sticky!important;height:calc(100vh - var(--stick))!important;padding:0 0 0 var(--gut)!important}
+  .ix-tl-r{transform:translateX(calc(var(--x,0) * -1px))!important;flex-wrap:nowrap!important}
+  .ix-tl-r li{color:#9a9a9e!important;border-top-color:var(--line)!important}
+  .ix-tl-r li.on{color:var(--ink)!important;border-top-color:var(--ink)!important}
+  .ix-tl-bar{display:block!important}
+}
+
+/* l'anno di sfondo ereditava il colore pieno da ".ix-sto p": selettore più specifico, campitura molto trasparente */
+.ix-sto .ix-tl .ix-tl-big,.ix-tl .ix-tl-big{color:rgba(21,21,23,.05);-webkit-text-stroke:0}
+
+/* Quattro impegni: dopo l'ultima carta resta un tratto di scroll in cui la pila è completa (la quarta copre la terza)
+   prima che arrivi la sezione dopo */
+.ix-stk{padding-bottom:max(36vh,220px)}
+@container (max-width:720px){.ix-stk{padding-bottom:0}}
+@media (max-height:560px){.ix-stk{padding-bottom:0}}
+
+/* ==== Quattro impegni, correzione definitiva della corsa di scroll ====
+   Il margine sotto le carte accorciava la corsa: una carta "sticky" resta ferma solo finché il suo margine inferiore sta nel contenitore,
+   quindi le prime tre si staccavano prima che la quarta le coprisse. Ora il distacco sta SOPRA ogni carta (margin-top) e lo spazio finale
+   è il margine dell'ultima: la pila resta completa per un tratto di scroll prima della sezione dopo. */
+.ix-stk{padding-bottom:0}
+.ix-stk li,.ix-stk li:last-child{margin-bottom:0}
+.ix-stk li+li{margin-top:max(40vh,240px)}
+.ix-stk li:last-child{margin-bottom:max(34vh,200px)}
+@container (max-width:720px){.ix-stk li+li{margin-top:clamp(20px,3cqi,40px)}.ix-stk li:last-child{margin-bottom:0}}
+@media (max-height:560px){.ix-stk li+li{margin-top:clamp(20px,3cqi,40px)}.ix-stk li:last-child{margin-bottom:0}}
+.ix-stk{display:flow-root}
+/* spazio finale come blocco nel flusso (non come margine dell'ultima carta, che ne impedirebbe la sosta): la pila resta completa mentre si scorre questo tratto */
+.ix-stk li:last-child{margin-bottom:0}
+.ix-stk::after{content:"";display:block;height:max(34vh,200px)}
+@container (max-width:720px){.ix-stk::after{display:none}}
+@media (max-height:560px){.ix-stk::after{display:none}}

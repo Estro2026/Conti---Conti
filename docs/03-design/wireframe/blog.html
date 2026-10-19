@@ -1,39 +1,73 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
+<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=1"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
 <body data-active="blog" data-sticky="preventivo">
 <div id="tb"></div>
-<p class="legend"><strong>Blog (elenco).</strong> Articolo singolo: <a href="articolo.html">articolo.html</a>.</p>
+<p class="legend"><strong>Blog (elenco).</strong> Articolo singolo: <a href="articolo.html">articolo.html</a>. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
 <div id="hdr"></div>
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Blog</li></ol></nav>
-<section class="sec" style="border-top:0" aria-labelledby="h1"><div class="in">
-  <span class="eyebrow">Blog</span>
-  <h1 id="h1">Guide e racconti dal cantiere</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Archivio post con Loop Grid + card articolo + paginazione nativa; senza filtri per argomento. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-  <p class="lead">Ristrutturare, costruire, scegliere a chi affidarsi: le risposte che servono prima di iniziare, scritte da chi i cantieri li segue.</p>
-  <i data-note="DEV|BLOG = Theme Builder > Archive (post). LOW-MEDIUM, 3-4.5 h. Articolo in evidenza = Loop Grid a 1 elemento (ultimo post o flag ACF) con Loop Item orizzontale (+0.5-1 h) oppure container statico; elenco = Loop Grid con Loop Item 'Card articolo' (condiviso) e paginazione nativa. Chip argomento = link agli archivi categoria del blog (nessun filtro JS): con 3 articoli si rimandano (nota PROPOSTA), si risparmiano 1-1.5 h. Un solo template per tutti i post e per le categorie."></i>
+
+<!-- 1. APERTURA -->
+<section class="sec bl-hero" style="border-top:0" aria-labelledby="h1"><div class="in">
+  <p class="dx-k" data-rv>Blog</p>
+  <div class="sv-top">
+    <h1 id="h1" class="sv-h1" data-rv style="--d:1">Guide e racconti dal cantiere</h1>
+    <p class="lead" data-rv style="--d:2">Ristrutturare, costruire, scegliere a chi affidarsi: le risposte che servono prima di iniziare, scritte da chi i cantieri li segue.</p>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Apertura tipografica come Cantieri: occhiello, titolo molto grande, introduzione a destra. Ingresso a cascata (80 ms di scarto, 700 ms). Mobile: una colonna. Riduci movimento: tutto subito visibile."></i>
   <i data-note="PROPOSTA|Copy provvisorio: titolo pagina, introduzione, titoli e incipit degli articoli sono bozze realistiche per mostrare gerarchia e ingombri. I titoli seguono i temi del brief (ristrutturazione, costruire in Brianza, ville sul Lago di Como) e vanno validati con SEO."></i>
+  <i data-note="DEV|Da ristimare. BLOG = Theme Builder > Archive (post), un solo template per elenco e categorie. Apertura: container statico + reveal condiviso (wf-dyn). LOW."></i>
 </div></section>
-<section class="sec alt" aria-labelledby="h-ev"><div class="in grid split">
-  <div data-ph="Immagine articolo in evidenza|3/2"></div>
-  <div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h2 id="h-ev">Ristrutturare casa: da dove cominciare e a chi affidarsi</h2><p>Prima dei materiali e delle finiture ci sono tre decisioni che pesano più di tutte: cosa serve davvero, chi coordina i lavori e come si arriva a un preventivo confrontabile. Le abbiamo messe in ordine.</p><a class="btn sec2" href="articolo.html">Leggi l'articolo</a></div>
+
+<!-- 2. IN EVIDENZA -->
+<section class="sec alt" aria-labelledby="h-ev"><div class="in">
+  <p class="dx-k">In evidenza</p>
+  <a class="bl-ev" href="articolo.html" data-rv>
+    <div class="bl-ev-m"><div data-ph="Immagine articolo in evidenza|3/2"></div></div>
+    <div class="bl-ev-t">
+      <div><span class="meta">[Data] &middot; Ristrutturare &middot; [x min]</span><h2 id="h-ev">Ristrutturare casa: da dove cominciare e a chi affidarsi</h2><p>Prima dei materiali e delle finiture ci sono tre decisioni che pesano più di tutte: cosa serve davvero, chi coordina i lavori e come si arriva a un preventivo confrontabile. Le abbiamo messe in ordine.</p></div>
+      <span class="sv-link">Leggi l'articolo <span class="dx-arr" aria-hidden="true"></span></span>
+    </div>
+  </a>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Articolo in evidenza come grande card orizzontale cliccabile per intero: al passaggio la foto si avvicina (800 ms) e il titolo diventa bordeaux. Scelto dall'ultimo articolo o da un flag 'in evidenza'. Tablet e mobile: foto sopra, testo sotto. Riduci movimento: nessuno zoom."></i>
+  <i data-note="DEV|Da ristimare. Loop Grid a 1 elemento (ultimo post o flag ACF) con Loop Item orizzontale + hover in Custom CSS. LOW-MEDIUM."></i>
 </div></section>
+
+<!-- 3. ARCHIVIO FILTRABILE -->
 <section class="sec" aria-labelledby="h-all"><div class="in">
-  <h2 id="h-all">Ultimi articoli</h2>
-  <ul class="grid g3" style="list-style:none;padding:0;margin:0">
-    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Ristrutturare casa: da dove cominciare e a chi affidarsi</h3><p>Le tre decisioni che pesano di più, prima ancora di scegliere i materiali.</p></a></li>
-    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Costruire casa in Brianza: dal terreno alla consegna</h3><p>Le fasi di una nuova costruzione, in ordine, e i punti in cui conviene decidere con calma.</p></a></li>
-    <li><a class="card" href="articolo.html"><div data-ph="Immagine articolo|3/2"></div><span class="meta">[Data] &middot; Guide &middot; [x min]</span><h3>Ville sul Lago di Como: cosa cambia costruendo in un contesto di pregio</h3><p>Paesaggio, accessi, progettisti: cosa tenere presente quando il luogo detta le regole.</p></a></li>
+  <h2 id="h-all" class="dx-h">Tutti gli articoli</h2>
+  <div class="sv-sticky bl-bar" style="margin-top:20px">
+    <div class="sv-pills" role="group" aria-label="Filtra per argomento">
+      <button type="button" class="sv-pill bl-f" data-f="tutti" data-name="Tutti" aria-pressed="true">Tutti <small></small></button>
+      <button type="button" class="sv-pill bl-f" data-f="ristrutturare" data-name="Ristrutturare" aria-pressed="false">Ristrutturare <small></small></button>
+      <button type="button" class="sv-pill bl-f" data-f="costruire" data-name="Costruire" aria-pressed="false">Costruire <small></small></button>
+      <button type="button" class="sv-pill bl-f" data-f="lago" data-name="Lago di Como" aria-pressed="false">Lago di Como <small></small></button>
+      <button type="button" class="sv-pill bl-f" data-f="stampa" data-name="Rassegna stampa" aria-pressed="false">Rassegna stampa <small></small></button>
+    </div>
+    <p class="sv-live bl-live" role="status" aria-live="polite"></p>
+  </div>
+  <ul class="bl-grid" data-page="6">
+    <li class="bl-it" data-tp="ristrutturare"><a class="bl-c" href="articolo.html"><div class="bl-ph"><div data-ph="Immagine articolo|3/2"></div></div><span class="bl-tp">Ristrutturare</span><span class="meta">[Data] &middot; [x min]</span><h3>Ristrutturare casa: da dove cominciare e a chi affidarsi</h3><p>Le tre decisioni che pesano di più, prima ancora di scegliere i materiali.</p></a></li>
+    <li class="bl-it" data-tp="costruire"><a class="bl-c" href="articolo.html"><div class="bl-ph"><div data-ph="Immagine articolo|3/2"></div></div><span class="bl-tp">Costruire</span><span class="meta">[Data] &middot; [x min]</span><h3>Costruire casa in Brianza: dal terreno alla consegna</h3><p>Le fasi di una nuova costruzione, in ordine, e i punti in cui conviene decidere con calma.</p></a></li>
+    <li class="bl-it" data-tp="lago costruire"><a class="bl-c" href="articolo.html"><div class="bl-ph"><div data-ph="Immagine articolo|3/2"></div></div><span class="bl-tp">Lago di Como</span><span class="meta">[Data] &middot; [x min]</span><h3>Ville sul Lago di Como: cosa cambia costruendo in un contesto di pregio</h3><p>Paesaggio, accessi, progettisti: cosa tenere presente quando il luogo detta le regole.</p></a></li>
   </ul>
+  <div class="sv-empty bl-empty" hidden><h3>Ancora nessun articolo in questo argomento</h3><p>Qui finiranno le pubblicazioni delle riviste che raccontano i nostri cantieri. Nel frattempo puoi guardare i progetti realizzati.</p><a class="sv-link" href="cantieri.html">Vai ai cantieri <span class="dx-arr" aria-hidden="true"></span></a></div>
+  <div class="bl-more" hidden><button type="button" class="btn sec2">Mostra altri articoli</button></div>
   <i data-note="CLIENTE|Brief: blog con 3 articoli SEO iniziali (titoli e keyword da definire con SEO). Aggiunta dalla call: le riviste che pubblicano i progetti senza citare l'impresa vanno nel blog (come articolo con link alla testata)."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pillole per argomento con numero di articoli, in una barra che resta sotto l'header mentre si scorre (su mobile scorre in orizzontale). Il clic filtra senza ricaricare: le card escono e rientrano con dissolvenza e leggera scala (350-450 ms), l'indirizzo si aggiorna (#costruire, condivisibile) e un'area live annuncia il numero di risultati. Argomenti (Ristrutturare, Costruire, Lago di Como, Rassegna stampa) = PROPOSTA dai temi del brief e dalla call: da validare con SEO. 'Rassegna stampa' oggi è vuota e mostra uno stato vuoto con rimando ai cantieri. 'Mostra altri articoli' appare solo oltre 6 articoli, carica i successivi senza perdere il filtro e porta il focus sul primo nuovo. Riduci movimento: il filtro cambia la griglia senza animazioni."></i>
+  <i data-note="INFERENZA|Argomento assegnato a ciascun articolo dedotto dal titolo; 'Ville sul Lago di Como' è in due argomenti."></i>
+  <i data-note="DEV|Da ristimare. MEDIUM. Pillole: Taxonomy Filter di Elementor (Loop Grid) o JS custom con URL #argomento; senza JS le pillole diventano link agli archivi di categoria (fallback SEO). 'Mostra altri' = paginazione Load More nativa del Loop Grid. Barra sticky + stato vuoto in Custom CSS."></i>
 </div></section>
+
 <section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
 </main>
 <div id="ftr"></div>
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Blog)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
+<script src="wf-servizio.js?v=1"></script>
 </body></html>

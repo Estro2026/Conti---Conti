@@ -1,0 +1,167 @@
+/* Wireframe Conti & Conti - sezioni dinamiche In vendita (iv-) e Scheda residenza (rs-). PROPOSTA.
+   Solo variabili di wireframe.css; componenti condivisi in wf-dyn.css. */
+
+/* ================= IN VENDITA ================= */
+.iv-hero{padding-bottom:clamp(32px,4cqi,56px)}
+.iv-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:8px}
+.iv-h1{font:700 clamp(40px,7.4cqi,96px)/.95 var(--fh);letter-spacing:-.02em;margin:0;max-width:11ch}
+.iv-count{display:flex;align-items:flex-end;gap:12px;margin:0;flex:none}
+.iv-count b{font:700 clamp(56px,10cqi,132px)/.8 var(--fh);color:var(--acc);letter-spacing:-.04em}
+.iv-count span{font:500 14px/1.25 var(--fh);color:var(--mut);padding-bottom:6px}
+.iv-intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4cqi,56px);margin-top:clamp(28px,4cqi,48px);padding-top:24px;border-top:1px solid var(--line)}
+.iv-intro p{margin:0}
+.iv-sum{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px 28px;font:500 15px/1.3 var(--fh);color:var(--mut)}
+.iv-sum b{color:var(--ink);font-weight:700;margin-right:4px}
+
+.iv-bar{display:flex;align-items:center;gap:16px;margin-bottom:clamp(20px,3cqi,32px);position:sticky;top:var(--stick,0px);z-index:5;background:#e4e1dd;padding:10px 0;border-bottom:1px solid #d1ccc5}
+.iv-fs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
+.iv-fs::-webkit-scrollbar{display:none}
+.iv-f{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid transparent;border-radius:999px;background:none;font:500 15px/1 var(--fh);color:var(--ink);cursor:pointer;transition:background-color .25s,color .25s,border-color .25s}
+.iv-f sup{font:600 11px/1 var(--fb);color:var(--mut)}
+.iv-f:hover{border-color:var(--line2)}
+.iv-f[aria-pressed=true]{background:var(--ink);color:#fff}
+.iv-f[aria-pressed=true] sup{color:#c9c9cc}
+.iv-view{display:flex;gap:4px;flex:none}
+.iv-view button{min-height:44px;min-width:72px;padding:0 14px;border:1px solid var(--line);background:#fff;font:500 14px/1 var(--fh);cursor:pointer;border-radius:var(--r)}
+.iv-view button[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}
+
+.iv-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.iv-it{display:flex;transition:opacity .35s cubic-bezier(.2,.6,.2,1),transform .35s cubic-bezier(.2,.6,.2,1)}
+.iv-it.is-out{opacity:0;transform:scale(.96)}
+.iv-it[hidden]{display:none}
+.iv-it .card-imm .ph{transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.iv-it .card-imm{overflow:hidden}
+.iv-it .card-imm:hover .ph{transform:scale(1.03)}
+.iv-empty{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px;background:#fff;border:1px solid #d9d5cf;border-left:3px solid var(--acc)}
+.iv-empty[hidden]{display:none}
+.iv-empty p{margin:0;max-width:60ch}
+
+.iv-map[hidden]{display:none}
+.iv-map-c{position:relative;background:#fff;border:1px solid #d9d5cf}
+.iv-map-bg .ph{aspect-ratio:16/9;border:0;border-radius:0}
+.iv-pins{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+.iv-pin>button{position:absolute;left:calc(var(--x) * 1%);top:calc(var(--y) * 1%);transform:translate(-22px,-22px);display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px 0 0;border:0;background:none;cursor:pointer;font:600 14px/1 var(--fh);color:var(--ink)}
+.iv-dot{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--acc);color:#fff;font:700 15px/1 var(--fh);box-shadow:0 0 0 4px #fff;transition:transform .2s}
+.iv-pl{background:#fff;padding:6px 8px;border:1px solid #d9d5cf}
+.iv-pin>button:hover .iv-dot,.iv-pin>button[aria-expanded=true] .iv-dot{transform:scale(1.08)}
+.iv-pin>button[aria-expanded=true] .iv-dot{background:var(--ink)}
+.iv-pin.is-dim{opacity:.35}
+.iv-pop{position:absolute;left:min(calc(var(--x) * 1% - 22px),calc(100% - 272px));top:calc(var(--y) * 1% + 30px);z-index:3;width:max-content;max-width:260px;background:#fff;border:1px solid var(--ink);padding:14px 16px;display:grid;gap:4px;font-size:14px}
+.iv-pop[hidden]{display:none}
+.iv-pop b{font:700 15px/1.3 var(--fh);margin-bottom:4px}
+.iv-pop a{display:flex;align-items:center;min-height:44px;color:var(--ink);border-top:1px solid var(--line)}
+.iv-pop a:hover{color:var(--acc)}
+.iv-pop a[hidden]{display:none}
+.iv-map-n{margin-top:12px}
+
+/* ================= SCHEDA RESIDENZA ================= */
+.rs-key{background:var(--ink);color:#fff;border-top:1px solid rgba(255,255,255,.18)}
+.rs-key .in{display:flex;align-items:center;gap:24px;padding-block:18px;box-sizing:content-box;padding-inline:clamp(16px,5cqi,48px)}
+.rs-key dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;flex:1}
+.rs-key dt{font:600 11px/1 var(--fh);letter-spacing:.12em;text-transform:uppercase;color:#b9b9bd;margin-bottom:6px}
+.rs-key dd{margin:0;font:700 clamp(18px,2cqi,24px)/1.1 var(--fh)}
+.rs-key .btn{flex:none}
+.rs-key :focus-visible{outline-color:#fff;box-shadow:none}
+
+.rs-main .sticky-form{top:calc(var(--stick,0px) + 24px);align-self:start}
+.rs-units{margin-block:clamp(32px,4cqi,56px)}
+.rs-ut{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:20px 0 16px}
+.rs-u{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:56px;padding:10px 14px;border:1px solid var(--line2);background:#fff;border-radius:var(--r);cursor:pointer;text-align:left;font-family:var(--fh);color:var(--ink);transition:border-color .2s,background-color .2s,color .2s}
+.rs-u b{font-size:16px}
+.rs-u small{font:500 12px/1 var(--fb);color:var(--mut)}
+.rs-u:hover{border-color:var(--ink)}
+.rs-u[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.rs-u[aria-pressed=true] small{color:#c9c9cc}
+.rs-up{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;padding:20px;background:var(--alt);border-top:2px solid var(--acc);transition:opacity .2s}
+.rs-up.is-swap{opacity:0}
+.rs-up h3{margin:0 0 8px}
+.rs-up .pg-ds{margin:0 0 18px}
+.rs-up-pl .ph{margin:0}
+
+.rs-chip{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;padding:4px 4px 4px 12px;background:#fff;border:1px solid var(--acc);font-size:14px}
+.rs-chip[hidden]{display:none}
+.rs-chip button{min-width:44px;min-height:44px;border:0;background:none;font-size:22px;cursor:pointer;color:var(--ink)}
+.rs-err{margin:0 0 14px;padding:12px 14px;border-left:3px solid var(--acc);background:#fff;font-size:14px}
+.rs-err[hidden]{display:none}
+.rs-err ul{margin:6px 0 0;padding-left:18px}
+.rs-err a{color:var(--acc)}
+.rs-fe{display:block;font-size:13px;color:var(--acc);font-weight:600;min-height:0}
+.rs-fe:empty{display:none}
+.rs-form [aria-invalid=true]{border-color:var(--acc);border-width:2px}
+.rs-ok{margin:12px 0 0;font-weight:600}
+.rs-ok:empty{display:none}
+
+.rs-now{margin:8px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+
+/* ================= RESPONSIVE ================= */
+@container (max-width:1040px){
+  .iv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rs-key dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rs-main .sticky-form{position:static}
+  .rs-up{grid-template-columns:1fr}
+}
+@container (max-width:720px){
+  .iv-top{align-items:flex-start}
+  .iv-count b{font-size:56px}
+  .iv-count span{display:none}
+  .iv-intro{grid-template-columns:1fr}
+  .iv-bar{flex-wrap:wrap;gap:8px}
+  .iv-fs{flex-basis:100%;margin-inline:-4px}
+  .iv-view{width:100%}
+  .iv-view button{flex:1}
+  .iv-grid{grid-template-columns:1fr;gap:16px}
+  .iv-map-bg .ph{aspect-ratio:4/5}
+  .iv-pl{display:none}
+  .iv-pin>button{padding:0}
+  .iv-pop{left:12px;right:12px;top:auto;bottom:12px;max-width:none;width:auto}
+  .rs-key .in{flex-direction:column;align-items:stretch}
+  .rs-key .btn{width:100%}
+  .rs-ut{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rs-up{padding:16px}
+}
+@media (hover:none){.iv-it .card-imm:hover .ph{transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .iv-it,.iv-it .card-imm .ph,.iv-f,.iv-dot,.rs-u,.rs-up{transition:none}
+  .iv-it .card-imm:hover .ph{transform:none}
+}
+
+/* ==== In vendita, allineata alle altre pagine interne (2026-10-20) ==== */
+/* spazi: stesso ritmo delle pagine Cantieri/Categoria/Progetto */
+body[data-active="vendita"] main>.sec{padding-top:var(--sy);padding-bottom:var(--sy)}
+.iv-hero.sec{padding-top:var(--sy0)!important;padding-bottom:0!important}
+.iv-hero .dx-k{margin:0 0 14px}
+.iv-top{margin-top:0;align-items:flex-end}
+.iv-h1{font:800 clamp(64px,13cqi,190px)/.86 var(--fh)!important;letter-spacing:-.05em;max-width:none}
+.iv-count b{color:var(--ink)}
+.iv-intro{margin-top:var(--sh);padding-top:0;border-top:0;align-items:start}
+.iv-intro .lead{font-size:clamp(17px,1.4cqi,20px)}
+/* elenco: fondo bianco continuo con l'apertura, barra filtri come in Cantieri */
+.iv-list.sec{background:var(--paper)!important;padding-top:0!important}
+.iv-bar{margin-top:var(--sh);margin-bottom:var(--sh);background:var(--paper);border-block:1px solid var(--line);padding:10px 0}
+.iv-grid{gap:clamp(20px,2.4cqi,36px)}
+/* card: foto con testo e CTA sopra, come in Cantieri */
+.iv-it .card-imm{position:relative;display:block;border:0;background:var(--ink);color:#fff;isolation:isolate}
+.iv-it .card-imm>.ph{aspect-ratio:4/5!important;border:0;width:100%}
+.iv-it .card-imm::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to top,rgba(0,0,0,.84) 0%,rgba(0,0,0,.46) 40%,rgba(0,0,0,0) 68%);pointer-events:none}
+.iv-it .card-imm .ci-b{position:absolute;inset:0;z-index:2;padding:clamp(18px,2cqi,28px);display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.iv-it .card-imm .badge{background:#fff;color:var(--ink);border:0;margin-bottom:auto;z-index:3}
+.iv-it .card-imm h3{color:#fff;font-size:clamp(22px,2cqi,28px);margin:0}
+.iv-it .card-imm .meta{color:rgba(255,255,255,.85)}
+.iv-it .card-imm u{margin:10px 0 0;padding:0;color:#fff;font:600 14px/1 var(--fh);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.iv-it .card-imm u::after{content:"\2192";transition:transform .3s}
+.iv-it .card-imm:hover u::after{transform:translateX(4px)}
+@media (hover:hover){.iv-it .card-imm u{opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s cubic-bezier(.2,.6,.2,1)}.iv-it .card-imm:hover u,.iv-it .card-imm:focus-visible u{opacity:1;transform:none}}
+/* mappa e messaggi: stesso bordo delle altre superfici */
+.iv-map-c,.iv-empty{border-color:var(--line)}
+/* perché dal costruttore: grigio chiaro tra il bianco dell'elenco e il pre-footer scuro */
+.iv-hero~.sec.alt .pg-rows h3{color:var(--ink)}
+@container (max-width:1040px){.iv-it .card-imm>.ph{aspect-ratio:4/5!important}}
+@container (max-width:720px){.iv-h1{font-size:clamp(48px,16cqi,80px)!important}.iv-it .card-imm>.ph{aspect-ratio:4/3!important}}
+@media (prefers-reduced-motion:reduce){.iv-it .card-imm u{opacity:1!important;transform:none!important;transition:none}}
+
+/* vista Mappa: l'attributo hidden deve vincere sul display della griglia (prima la griglia restava visibile sopra la mappa) */
+.iv-grid[hidden],.iv-map[hidden],.iv-empty[hidden]{display:none!important}
+.iv-map-c{min-height:min(70vh,640px)}
+.iv-map-bg .ph{aspect-ratio:auto!important;height:min(70vh,640px)}
+/* "Perché dal costruttore": senza filetto sopra l'elenco */
+.iv-hero~.sec .pg-rows{border-top:0}

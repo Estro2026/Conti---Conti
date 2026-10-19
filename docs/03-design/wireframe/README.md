@@ -39,3 +39,13 @@ Funnel: home / progetto / categoria / articolo -> contatti (preventivo); in vend
 ## Alta fedeltà e modalità
 - Alta fedeltà del wireframe = base/proposta di direzione, non sostituisce le 2 proposte grafiche concordate: WAITING_FOR_APPROVAL
 - `mode.js` imposta la modalità: `interno` (note, ore, decisioni) o `cliente` (copia di `mode-cliente.js`). Indice cliente: `presentazione.html`; indice interno: `index.html`.
+
+## Regole di scala per zoom e schermi piccoli (2026-10-20)
+Con lo zoom del browser la larghezza CSS si restringe (200% su 1440 px = 720 px). Le regole sono in `wf-scale.css` (caricato per ultimo) e usano `wf-zoom.js`, che imposta `html[data-zoom]` = 1 | 1.5 | 2 | 3 | 4 (solo desktop; su touch resta 1).
+- `--sk` riduce titoli, card e spazi: 1 → 1, 1.5 → .92, 2 → .84, 3 → .74, 4 → .66.
+- `--card-r` cambia la proporzione delle foto delle card: 4/5 (normale) → 1/1 (200%) → 4/3 (300% e oltre).
+- `--hero-min` abbassa l'altezza minima delle aperture su foto.
+- `--sy` / `--sh` riducono lo spazio tra sezioni.
+- Sotto i 560 px di altezza (zoom alto, telefono in orizzontale) le sezioni bloccate durante lo scroll tornano normali.
+Per cambiare una regola per tutte le pagine si modifica un solo punto di `wf-scale.css`.
+Verifica automatica: `audit-responsive.js` (larghezze, altezze, bersagli touch, errori JS).

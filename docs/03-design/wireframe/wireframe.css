@@ -1425,3 +1425,104 @@ body.has-hero .hero-b .hero-in,body.has-hero .hero-a .hero-in{padding-top:calc(v
 @container (max-width:560px){.imp-ink::before,.sec.dk.pg-job::before,.sec[style*="e2e2e2"]::before,.pt-cc::before{background-size:312px auto}}
 .pf .pf-go.btn{color:#fff;border-color:rgba(255,255,255,.7);background:transparent}
 .pf:hover .pf-go.btn,.pf:focus-visible .pf-go.btn{background:#fff;color:var(--ink);border-color:#fff}
+
+
+/* ==== BASE COMUNE CON I MOCKUP HOME A/B (2026-10-19) ====
+   Allineati ai mockup solo gli elementi condivisi: header (struttura, misure, posizione), gutter laterale,
+   contenitore dei contenuti, breadcrumb e footer. Lo stile resta wireframe. */
+.frame{--gut:clamp(20px,5cqi,72px);--wrap:1280px;--nav-h:72px}
+/* header: menu a sinistra a filo del gutter, logo centrato sulla pagina, servizio + CTA a destra */
+.hd{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px;min-height:var(--nav-h);height:var(--nav-h);padding:0 var(--gut)}
+.hd .hd-l{grid-column:1;justify-self:start}
+.hd .hd-l>ul{justify-content:flex-start}
+.hd>.logo-w{grid-column:2;justify-self:center}
+.hd .logo-w img{width:190px;height:auto}
+.hd .hd-r{grid-column:3;justify-self:end;display:flex;align-items:center;gap:8px}
+.hd .hd-r nav>ul{justify-content:flex-end}
+.hd nav a{font-size:15px;font-weight:500;padding:0 13px}
+.hd .hcta{min-height:52px;padding:0 28px;font-size:14px;font-weight:600}
+/* dropdown Cantieri: stessa organizzazione dei mockup (voce "tutti" + categorie su due colonne) */
+.hd .dd{left:0;top:100%;min-width:0;width:min(480px,90cqi);padding:10px;grid-template-columns:1fr 1fr;gap:2px 10px}
+.hd li:hover>.dd,.hd li:focus-within>.dd{display:grid}
+.hd .dd a{min-height:44px;align-items:center;padding:0 14px}
+/* contenitore e gutter uguali ai mockup */
+.in{max-width:var(--wrap)}
+.sec{padding-left:var(--gut);padding-right:var(--gut)}
+.crumb{padding-left:var(--gut);padding-right:var(--gut)}
+.crumb ol{max-width:var(--wrap);margin:0 auto}
+.ft{padding-left:var(--gut);padding-right:var(--gut)}
+/* sotto i 1180 px il menu si compatta, sotto i 1040 px diventa hamburger: stesse soglie dei mockup */
+@container (max-width:1180px){.hd nav a{padding:0 9px;font-size:14px}.hd .logo-w img{width:160px}.hd .hcta{padding:0 14px}}
+@container (max-width:1040px){
+  .hd .hd-l,.hd .hd-r{display:none}
+  .hd>.logo-w{grid-column:2}
+  .hd .burger{display:inline-flex;align-items:center;justify-content:center;grid-column:3;justify-self:end;margin:0}
+}
+@container (max-width:560px){.hd{--nav-h:64px}.hd .logo-w img{width:140px}}
+
+
+/* ==== FOOTER come i mockup Home A/B (2026-10-19) ==== */
+.ft.ft-m{background:#0e0e0f;color:rgba(255,255,255,.8);padding:clamp(56px,9vh,96px) var(--gut,48px) 48px;font-size:15px}
+.ft-m .ft-grid{display:grid;grid-template-columns:1.2fr 1fr .7fr;gap:clamp(24px,5cqi,80px)}
+.ft-m .ft-logo{display:block;width:190px;height:auto;margin-bottom:18px}
+.ft-m h2{font:600 12px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 16px}
+.ft-m p{margin:0 0 12px}
+.ft-m ul{list-style:none;margin:0;padding:0}
+.ft-m li{margin:0 0 8px}
+.ft-m li a{display:inline;min-height:0}
+.ft-m a{color:rgba(255,255,255,.85);text-decoration:none}
+.ft-m a:hover{color:#fff;text-decoration:underline}
+.ft-m .ft-soc{display:flex;gap:10px;margin-top:18px}
+.ft-m .ft-soc li{margin:0}
+.ft-m .ft-soc a{display:grid;place-items:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.28);border-radius:2px;color:#fff;transition:background-color .25s,color .25s}
+.ft-m .ft-soc a:hover{background:#fff;color:#0e0e0f;text-decoration:none}
+.ft-m .ft-soc svg{width:19px;height:19px;fill:currentColor}
+.ft-m .ft-legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px;margin-top:clamp(36px,6vh,64px);padding-top:24px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.6)}
+.ft-m .ft-legal p{margin:0}
+.ft-m .ft-legal ul{display:flex;flex-wrap:wrap;gap:8px 24px}
+.ft-m .ft-legal li{margin:0}
+.ft-m .ft-legal a,.ft-m .ft-cookie{color:rgba(255,255,255,.72);font:inherit;background:none;border:0;padding:0;cursor:pointer}
+.ft-m .ft-cookie:hover{color:#fff;text-decoration:underline}
+@container (max-width:860px){.ft-m .ft-grid{grid-template-columns:1fr 1fr}}
+@container (max-width:560px){.ft-m .ft-grid{grid-template-columns:1fr}}
+
+/* ==== NAV E BREADCRUMB TRASPARENTI SOPRA LA HERO (pagine con body[data-overlay], 2026-10-20) ====
+   Sopra la foto: fondo trasparente, testi e logo bianchi. Dopo pochi px di scroll la barra diventa bianca. */
+body[data-overlay] .hd{background:transparent;border-bottom-color:transparent;transition:background-color .35s ease,border-color .35s ease,box-shadow .35s ease}
+body[data-overlay] .hd:not(.is-solid) nav a:not(.btn),body[data-overlay] .hd:not(.is-solid) .burger{color:#fff;border-color:rgba(255,255,255,.6);background:transparent}
+body[data-overlay] .hd:not(.is-solid) nav a[aria-current=page]{color:#fff}
+body[data-overlay] .hd:not(.is-solid) nav a::after{background:#fff}
+body[data-overlay] .hd:not(.is-solid) .logo-w img{filter:brightness(0) invert(1);transition:filter .35s}
+body[data-overlay] .hd:not(.is-solid) .dd a{color:var(--ink)}
+body[data-overlay] .hd.is-solid{background:#fff;border-bottom-color:var(--line)}
+body[data-overlay] .crumb{position:relative;z-index:3;background:transparent;border-bottom-color:rgba(255,255,255,.2);color:rgba(255,255,255,.75)}
+body[data-overlay] .crumb a{color:#fff}
+/* la hero sale sotto header e breadcrumb (altezza misurata in JS: --ovl) */
+body[data-overlay] main>.crumb+*{margin-top:calc(var(--ovl,125px) * -1)}
+body[data-overlay] .ix-hero{min-height:calc(100vh - var(--tbh,0px))}
+
+/* ==== PRE-FOOTER come la chiusura delle homepage (2026-10-20) ==== */
+.sec[style*="e2e2e2"]{background:#1c1c1e!important;color:#fff;padding-top:clamp(48px,7vh,72px);padding-bottom:clamp(48px,7vh,72px)}
+.sec[style*="e2e2e2"]::before{display:none}
+.sec[style*="e2e2e2"]>.in,.sec[style*="e2e2e2"]>[data-c]>.in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px 48px;padding:clamp(22px,3cqi,40px);border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.06);border-radius:2px}
+.sec[style*="e2e2e2"] h2{margin:0;font:700 clamp(28px,3.4cqi,54px)/1.02 var(--fh);letter-spacing:-.04em;max-width:16ch;color:#fff}
+.sec[style*="e2e2e2"] .lead{margin:12px 0 0;max-width:44ch;font-size:clamp(15px,1.2cqi,17px);color:rgba(255,255,255,.88)}
+.sec[style*="e2e2e2"] .btns{display:flex;flex-wrap:wrap;gap:14px;margin:0}
+.sec[style*="e2e2e2"] .btn{background:#fff;border-color:#fff;color:#151517}
+.sec[style*="e2e2e2"] .btn:hover{background:rgba(255,255,255,.86);border-color:transparent;color:#151517}
+.sec[style*="e2e2e2"] .btn.sec2{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.sec[style*="e2e2e2"] .btn.sec2:hover{background:#fff;color:#151517}
+
+/* breadcrumb senza divisorio */
+.crumb,body[data-overlay] .crumb{border-bottom:0}
+
+/* dropdown Cantieri leggibile anche con header trasparente sopra la foto (testo scuro su fondo chiaro) */
+body .hd:not(.is-solid) nav .dd a:not(.btn),body .hd:not(.is-solid) nav .dd a[aria-current=page],body[data-overlay] .hd:not(.is-solid) nav .dd a:not(.btn),body.has-hero .hd:not(.is-solid) nav .dd a:not(.btn){color:var(--ink)}
+body .hd:not(.is-solid) nav .dd a:not(.btn):hover,body .hd:not(.is-solid) nav .dd a:not(.btn):focus-visible{color:var(--acc)}
+body .hd:not(.is-solid) nav .dd a::after{background:var(--acc)}
+
+/* ==== OTTIMIZZAZIONE RESPONSIVE (2026-10-20) ==== */
+/* bersagli touch: caselle e radio almeno 24x24 (WCAG 2.2 AA), area cliccabile estesa all'etichetta */
+.chk input,input[type=checkbox],input[type=radio]{width:24px;height:24px;min-height:24px;flex:none}
+.chk label{padding:2px 0}
+.chk label a{display:inline-block;min-height:24px;padding:2px 0;box-sizing:border-box}

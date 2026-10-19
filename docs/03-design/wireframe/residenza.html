@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
+<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-vendita.css?v=3"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
 <body data-active="vendita" data-sticky="info">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda residenza in vendita</strong> (template per Domus 54, via Diaz, Montesolaro, Seregno, Solarium, Paradiso). Ogni scheda ha il proprio modulo di contatto. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -9,28 +9,66 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="in-vendita.html">In vendita</a></li><li aria-current="page">Residenza Solarium</li></ol></nav>
 
-<section class="hero hero-p" aria-labelledby="h1">
+<!-- 1. APERTURA: render a tutta larghezza + barra dati chiave -->
+<section class="hero hero-p rs-hero" aria-labelledby="h1">
   <div data-noratio data-ph="Render principale|16/9"></div>
   <div class="hero-in"><div class="hp-txt">
   <p class="pg-st"><span class="badge">In costruzione</span> <span class="meta">Montesolaro, Carimate (MB)</span></p>
   <div class="hrow">
     <h1 id="h1">Residenza Solarium</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Single CPT con colonna form a destra senza sticky (il form resta accanto ai contenuti; su mobile scende in fondo con ancora e barra sticky), campo nascosto immobile, scheda dati, galleria nativa e documenti. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
     <p class="lead">Quattro unità in un unico corpo a Montesolaro: una nuova costruzione, venduta direttamente dall'impresa che la realizza.</p>
   </div></div></div>
+  <div class="rs-key"><div class="in">
+    <dl>
+      <div><dt>Unità</dt><dd>4</dd></div>
+      <div><dt>Piani</dt><dd>2 + interrato</dd></div>
+      <div><dt>Consegna</dt><dd>Dic. 2026</dd></div>
+      <div><dt>Prezzo</dt><dd>[su richiesta]</dd></div>
+    </dl>
+    <a class="btn" href="#form">Richiedi informazioni</a>
+  </div></div>
   <i data-note="PROPOSTA|Copy provvisorio: sottotitolo e paragrafi sono bozze costruite solo su fatti noti della pagina attuale (Montesolaro, 4 unità, piani, consegna, progettista). Da validare con il cliente."></i>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: apertura su fondo nero (stacco dalle pagine portfolio, il render chiaro risalta), stato e località in testa, nome a sinistra e frase a destra sulla stessa base, render principale 21:9 a larghezza container. Fondi: nero (apertura), bianco (scheda con form), sabbia (altri immobili), nero footer."></i>
-  <i data-note="DEV|Delta alta fedeltà Scheda residenza: apertura scura con riga titolo 0 h (stile del template); scheda dati a filetti 0 h; mosaico render + planimetria (stesso CSS della galleria progetto) +0.5 h; card form con filetto bordeaux e campi in griglia 0.5 h; documenti come righe con formato e peso 0 h. Delta template +1 h (6-9 h > 7-10 h)."></i>
-
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Apertura su fondo nero (stacco dalle pagine portfolio, il render chiaro risalta), stato e località in testa, nome a sinistra e frase a destra sulla stessa base, render principale a larghezza container. Nuovo: barra dei dati chiave sotto il render (unità, piani, consegna, prezzo) con la CTA principale a destra, così il contatto è visibile prima di scorrere. Mobile: dati in griglia 2x2, CTA a tutta larghezza. Nessuna animazione."></i>
+  <i data-note="VERIFY|Dati della barra: 4 unità, interrato + 2 piani fuori terra, consegna entro fine dicembre 2026 = RICERCA (pagina attuale). Prezzo: pubblico o 'su richiesta' da decidere."></i>
 </section>
 
-<div class="sec"><div class="in pg-rs">
+<div class="sec"><div class="in pg-rs rs-main">
   <div class="pg-rs-c">
-    <section aria-labelledby="h-desc"><h2 id="h-desc">La residenza</h2>
-      <p>Nuova costruzione in via Privata alle Scuole 3, a Montesolaro, dopo la completa demolizione dei fabbricati esistenti. Un piano interrato e due piani fuori terra, in un unico corpo con quattro unità residenziali. Al piano interrato box, locali tecnici e cantine.</p>
-      <p>Il progetto è dell'Arch. Caronni Flavio e la realizzazione è di Conti e Conti: la stessa impresa dal cantiere alla consegna, prevista entro fine dicembre 2026. Per vedere come sono distribuite le unità o chiedere una planimetria, scrivici dal modulo: ti risponde chi segue il cantiere.</p>
+    <section aria-labelledby="h-desc"><p class="dx-k" data-rv>La residenza</p><h2 id="h-desc" class="sr">La residenza</h2>
+      <p class="lead" data-rv style="--d:1">Nuova costruzione in via Privata alle Scuole 3, a Montesolaro, dopo la completa demolizione dei fabbricati esistenti. Un piano interrato e due piani fuori terra, in un unico corpo con quattro unità residenziali. Al piano interrato box, locali tecnici e cantine.</p>
+      <p data-rv style="--d:2">Il progetto è dell'Arch. Caronni Flavio e la realizzazione è di Conti e Conti: la stessa impresa dal cantiere alla consegna, prevista entro fine dicembre 2026. Per vedere come sono distribuite le unità o chiedere una planimetria, scrivici dal modulo: ti risponde chi segue il cantiere.</p>
       <i data-note="RICERCA|Scheda d'esempio costruita sui dati reali della pagina Residenza Solarium del sito attuale (testo riformulato). Template valido per tutte le residenze: gli altri immobili non hanno ancora dati. Da aggiornare con i nuovi render, planimetrie, brochure e testi (brief). VERIFY: URL attuale dice Carimate, il testo dice Montesolaro."></i>
     </section>
+
+    <!-- 2. SELETTORE UNITÀ -->
+    <section class="rs-units" aria-labelledby="h-un">
+      <h2 id="h-un">Le quattro unità</h2>
+      <p>Scegli un'unità per vedere piano, superficie e planimetria. Puoi chiedere informazioni proprio su quella.</p>
+      <div class="rs-ut" role="group" aria-label="Scegli l'unità">
+        <button type="button" class="rs-u" data-u="1" aria-pressed="true" aria-controls="rs-up"><b>Unità 1</b><small>[piano]</small></button>
+        <button type="button" class="rs-u" data-u="2" aria-pressed="false" aria-controls="rs-up"><b>Unità 2</b><small>[piano]</small></button>
+        <button type="button" class="rs-u" data-u="3" aria-pressed="false" aria-controls="rs-up"><b>Unità 3</b><small>[piano]</small></button>
+        <button type="button" class="rs-u" data-u="4" aria-pressed="false" aria-controls="rs-up"><b>Unità 4</b><small>[piano]</small></button>
+      </div>
+      <div class="rs-up" id="rs-up" aria-live="polite">
+        <div class="rs-up-pl"><div data-ph="Planimetria Unità 1 (immagine zoomabile + descrizione testuale)|4/3"></div></div>
+        <div class="rs-up-d">
+          <h3 data-rs-name>Unità 1</h3>
+          <dl class="pg-ds">
+            <div><dt>Piano</dt><dd>[piano]</dd></div>
+            <div><dt>Tipologia</dt><dd>[locali]</dd></div>
+            <div><dt>Superficie</dt><dd>[mq]</dd></div>
+            <div><dt>Spazi esterni</dt><dd>[giardino / terrazzo]</dd></div>
+            <div><dt>Disponibilità</dt><dd>[disponibile / riservata / venduta]</dd></div>
+          </dl>
+          <a class="btn sec2 rs-ask" href="#form" data-rs-ask>Chiedi di questa unità</a>
+        </div>
+      </div>
+      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Selettore delle unità: quattro pulsanti (stato premuto) cambiano planimetria e dati senza ricaricare, con dissolvenza breve (200 ms). 'Chiedi di questa unità' porta al modulo e precompila il campo nascosto e il messaggio con il nome dell'unità (modificabile): la richiesta arriva già etichettata. Mobile: pulsanti in griglia 2x2 da 56 px, planimetria sopra i dati. Riduci movimento: cambio istantaneo. Il cambio viene annunciato ai lettori di schermo."></i>
+      <i data-note="RICERCA|4 unità residenziali (pagina attuale). Piano, tipologia, mq, spazi esterni e disponibilità di ogni unità NON forniti: tutti segnaposto. Se il cliente non vuole mostrare la disponibilità per unità, la riga si toglie. Il blocco compare solo se ci sono planimetrie per unità (CLIENTE: materiali per scheda includono planimetrie)."></i>
+      <i data-note="DEV|Da ristimare. MEDIUM: repeater ACF 'unità' (nome, piano, tipologia, mq, esterni, stato, planimetria); pulsanti e pannello generati dal template (widget HTML/shortcode o Loop su repeater, VERIFY), JS ~30 righe per cambio pannello e precompilazione del form (campo hidden 'unità' nel Form Elementor)."></i>
+    </section>
+
     <section aria-labelledby="h-fact"><h2 id="h-fact">In sintesi</h2>
       <dl class="pg-ds">
         <div><dt>Unità</dt><dd>4 residenziali</dd></div>
@@ -54,34 +92,64 @@
     </section>
   </div>
 
-  <aside id="form" class="sticky-form" aria-labelledby="h-form">
-    <form class="pg-form" onsubmit="return false" novalidate>
+  <!-- 3. PANNELLO CONTATTO FISSO (desktop) -->
+  <aside id="form" class="sticky-form rs-aside" aria-labelledby="h-form">
+    <form class="pg-form rs-form" action="#" novalidate>
       <h2 id="h-form">Richiedi informazioni su Residenza Solarium</h2>
       <p class="hint top">Ti risponde direttamente l'impresa. I campi con * sono obbligatori.</p>
+      <div class="rs-err" role="alert" tabindex="-1" hidden></div>
       <input type="hidden" name="immobile" value="Residenza Solarium">
+      <input type="hidden" name="unita" value="">
+      <p class="rs-chip" hidden><span>Unità scelta: <b data-rs-chip></b></span><button type="button" data-rs-clear aria-label="Togli l'unità scelta">&times;</button></p>
       <div class="pg-fg">
-        <div class="f full"><label for="r-n">Nome *</label><input id="r-n" autocomplete="name" required></div>
-        <div class="f"><label for="r-e">Email *</label><input id="r-e" type="email" autocomplete="email" required></div>
-        <div class="f"><label for="r-t">Telefono *</label><input id="r-t" type="tel" autocomplete="tel" required></div>
-        <div class="f full"><label for="r-m">Messaggio</label><textarea id="r-m" aria-describedby="r-m-h"></textarea><span class="hint" id="r-m-h">Per esempio: vuoi una planimetria o fissare un appuntamento.</span></div>
-        <div class="f chk full"><input type="checkbox" id="r-c" required><label for="r-c">Ho letto l'informativa privacy *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label></div>
+        <div class="f full"><label for="r-n">Nome *</label><input id="r-n" name="nome" autocomplete="name" required aria-describedby="r-n-e"><span class="rs-fe" id="r-n-e"></span></div>
+        <div class="f"><label for="r-e">Email *</label><input id="r-e" name="email" type="email" autocomplete="email" required aria-describedby="r-e-e"><span class="rs-fe" id="r-e-e"></span></div>
+        <div class="f"><label for="r-t">Telefono *</label><input id="r-t" name="telefono" type="tel" autocomplete="tel" required aria-describedby="r-t-e"><span class="rs-fe" id="r-t-e"></span></div>
+        <div class="f full"><label for="r-m">Messaggio</label><textarea id="r-m" name="messaggio" aria-describedby="r-m-h"></textarea><span class="hint" id="r-m-h">Per esempio: vuoi una planimetria o fissare un appuntamento.</span></div>
+        <div class="f chk full"><input type="checkbox" id="r-c" name="privacy" required aria-describedby="r-c-e"><label for="r-c">Ho letto l'informativa privacy *. <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Leggi la privacy policy<span class="sr"> (si apre in nuova scheda)</span></a></label><span class="rs-fe" id="r-c-e"></span></div>
       </div>
       <button class="btn" type="submit">Invia la richiesta</button>
+      <p class="rs-ok" role="status"></p>
       <p class="pg-tel">Oppure chiama <a href="tel:+390362557972">0362 557972</a></p>
     </form>
     <i data-note="CLIENTE|Modulo dedicato per scheda con nome, email, telefono, messaggio (call). Campo nascosto con nome immobile così la richiesta arriva già etichettata. Il telefono è obbligatorio? VERIFY col cliente (più lead vs più abbandoni)."></i>
-    <i data-note="DEV|SCHEDA RESIDENZA = Theme Builder > Single (CPT Immobili). MEDIUM-HIGH, 6-9 h per il template. Titolo, stato, località, scheda dati (dl), render e testo = Dynamic Tags/ACF; righe vuote nascoste con Display Conditions (Pro) perché i dati ora sono placeholder. Layout 2 colonne con colonna form sticky: container destra con Motion Effects > Sticky Top (Pro) solo desktop; per funzionare il contenitore genitore deve avere altezza e non 'overflow:hidden' (rischio noto, +1 h). Sotto 1025px il form scende in fondo e compare la sticky bar 'Richiedi informazioni' con ancora #form. Documenti: Icon List/Button con Dynamic Tag 'ACF File', nome/formato/peso scritti nel campo (il peso non è automatico: campo testo)."></i>
-    <i data-note="DEV|FORM RESIDENZA: Form widget condiviso (vedi Home B) con campo Hidden 'immobile' valorizzato dal titolo del post: shortcode dinamico [field id=...] di Elementor Form o Dynamic Tag 'Post Title' nel valore predefinito (VERIFY che il Dynamic Tag sia accettato dal campo Hidden nella versione installata; in alternativa 5 righe JS). Oggetto email = nome immobile. Destinatari per immobile: campo ACF email nel CPT non è nativo del Form: o una sola casella (default) o routing con JS/plugin (+2-3 h, non incluso). Anti-spam e conferma role=status: vedi Form condiviso. Telefono obbligatorio = impostazione del campo, nessun costo."></i>
-    <i data-note="PROPOSTA|Desktop: colonna destra sticky accanto al contenuto. Tablet/mobile: il form scende in fondo alla scheda e una barra sticky 'Chiama + Richiedi informazioni' porta all'ancora #form. Form con label visibili, errori in testo sotto il campo e riepilogo con focus (vedi Contatti), consenso non preselezionato. DEV: destinazione email per immobile, anti-spam senza CAPTCHA invasivo, conferma di invio accessibile (role=status). Alta fedeltà: card grigio chiaro con filetto bordeaux in alto, email e telefono affiancati, pulsante a tutta larghezza."></i>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Desktop: pannello contatto fisso a destra mentre si scorre la descrizione, il selettore unità e i documenti (smette di seguire a fine colonna). Se arriva da 'Chiedi di questa unità' mostra l'unità scelta in un'etichetta rimovibile. Tablet/mobile: il form scende in fondo alla scheda e la barra sticky 'Chiama + Richiedi informazioni' porta all'ancora #form. Label visibili, errori in testo sotto il campo, riepilogo errori con focus, consenso non preselezionato, conferma di invio annunciata (role=status). Riduci movimento: nessun effetto, solo posizione fissa. Card grigio chiaro con filetto bordeaux in alto."></i>
+    <i data-note="DEV|Da ristimare. SCHEDA RESIDENZA = Theme Builder > Single (CPT Immobili), MEDIUM-HIGH. Titolo, stato, località, scheda dati (dl), render e testo = Dynamic Tags/ACF; righe vuote nascoste con Display Conditions (Pro). Colonna form sticky: Motion Effects > Sticky Top (Pro) solo desktop; il contenitore genitore deve avere altezza e non 'overflow:hidden' (rischio noto). Sotto 1025px il form scende in fondo e compare la sticky bar con ancora #form. Documenti: Icon List/Button con Dynamic Tag 'ACF File', nome/formato/peso scritti nel campo (il peso non è automatico)."></i>
+    <i data-note="DEV|FORM RESIDENZA: Form widget condiviso (vedi Home B) con campo Hidden 'immobile' valorizzato dal titolo del post (Dynamic Tag 'Post Title' nel valore predefinito, VERIFY che il campo Hidden lo accetti nella versione installata; in alternativa 5 righe JS) + campo Hidden 'unità' valorizzato dal selettore. Oggetto email = nome immobile. Destinatari per immobile: campo ACF email nel CPT non è nativo del Form: una sola casella (default) o routing con JS/plugin (+2-3 h). Anti-spam senza CAPTCHA invasivo e conferma role=status: vedi Form condiviso. Telefono obbligatorio = impostazione del campo, nessun costo. La validazione del wireframe è dimostrativa: in Elementor va riallineata al comportamento del Form nativo (VERIFY)."></i>
   </aside>
 </div></div>
 
+<!-- 4. AVANZAMENTO DEL CANTIERE -->
+<section class="sec alt rs-prog" aria-labelledby="h-tl"><div class="in">
+  <div class="hrow"><div><p class="dx-k">A che punto siamo</p><h2 id="h-tl" class="dx-h">Avanzamento del cantiere</h2></div><p class="lead">Dalla demolizione dei fabbricati esistenti alla consegna delle chiavi, prevista entro fine dicembre 2026.</p></div>
+  <ol class="pj-tl">
+    <li><small>[Mese anno]</small><b>Demolizione</b><span>Completa demolizione dei fabbricati esistenti.</span></li>
+    <li><small>[Mese anno]</small><b>Scavi e interrato</b><span>Box, locali tecnici e cantine.</span></li>
+    <li><small>[Mese anno]</small><b>Strutture</b><span>Due piani fuori terra, un unico corpo.</span></li>
+    <li><small>[Mese anno]</small><b>Impianti e finiture</b><span>[Una riga.]</span></li>
+    <li><small>Dic. 2026</small><b>Consegna</b><span>Entro fine dicembre 2026.</span></li>
+  </ol>
+  <p class="rs-now"><span class="badge">Fase attuale</span> [da confermare con il cliente] &middot; <span class="meta">aggiornato al [data]</span></p>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Avanzamento del cantiere con la linea del tempo condivisa (stessa del progetto): la linea bordeaux si riempie mentre la sezione attraversa lo schermo. Per chi compra una casa in costruzione è l'informazione più cercata dopo il prezzo. Sotto, la fase attuale e la data di aggiornamento, scritte dall'impresa. Desktop orizzontale, mobile verticale. Riduci movimento: linea già piena. Blocco solo per immobili in costruzione."></i>
+  <i data-note="RICERCA|Fasi ricavate dalla descrizione (demolizione, interrato con box e cantine, due piani fuori terra) e consegna entro fine dicembre 2026 (pagina attuale). Date delle fasi e fase attuale NON fornite: VERIFY col cliente, non inventare. Possibile aggiunta: foto di cantiere per fase (CLIENTE da chiedere)."></i>
+  <i data-note="DEV|Da ristimare. LOW-MEDIUM: repeater ACF 'fasi' (data, titolo, riga) + campo 'fase attuale' e 'data aggiornamento'; riempimento della linea fino alla fase attuale invece che allo scroll = +0.5 h. Componente .pj-tl condiviso con la scheda progetto."></i>
+</div></section>
+
+<!-- 5. GALLERIA a mosaico + visore -->
 <section class="sec dk pg-gal" aria-labelledby="h-gal"><div class="in">
-    <h2 id="h-gal">Render e immagini</h2>
-  <i data-note="DEV|PIANO 83 H (APPROVATO). Render e planimetria: griglia uniforme del widget Gallery, stesse immagini e stessa lightbox. Nessun mosaico con render principale grande: risparmio incluso nella voce galleria condivisa (1-1.5 h)."></i>
-      <div class="pg-mo r5"><div data-ph="Render 1|4/3"></div><div data-ph="Render 2|4/3"></div><div data-ph="Render 3|4/3"></div><div data-ph="Render 4|4/3"></div><div data-ph="Planimetria unità [tipo] (immagine zoomabile + descrizione testuale)|4/3"></div></div>
-      <i data-note="CLIENTE|Materiali per ogni scheda: render, planimetrie, capitolati, brochure (call). Planimetrie come immagini zoomabili con descrizione testuale (alt/testo) del contenuto."></i>
-      <i data-note="PROPOSTA|Mosaico: render principale grande, due render, poi render e planimetria affiancati (la planimetria è un segnaposto, file non ricevuti). Apertura in lightbox come la galleria progetto."></i>
+  <h2 id="h-gal" class="dx-h" style="color:#fff;margin-bottom:32px">Render e immagini</h2>
+  <div class="pj-gal">
+    <button type="button" class="g1" aria-label="Apri render 1"><div data-ph="Render 1|4/3"></div></button>
+    <button type="button" class="g2" aria-label="Apri render 2"><div data-ph="Render 2|4/3"></div></button>
+    <button type="button" class="g3" aria-label="Apri render 3"><div data-ph="Render 3|4/3"></div></button>
+    <button type="button" class="g4" aria-label="Apri render 4"><div data-ph="Render 4|4/3"></div></button>
+    <button type="button" class="g5" aria-label="Apri planimetria unità [tipo]"><div data-ph="Planimetria unità [tipo] (immagine zoomabile + descrizione testuale)|4/3"></div></button>
+    <button type="button" class="g6" aria-label="Apri foto di cantiere"><div data-ph="Foto di cantiere [se disponibile]|4/3"></div></button>
+  </div>
+  <dialog class="pj-lb" aria-label="Render e immagini"><div class="pj-lb-in"><button type="button" class="dx-arr l" data-lb-prev aria-label="Immagine precedente"></button><figure class="pj-lb-f"></figure><button type="button" class="dx-arr" data-lb-next aria-label="Immagine successiva"></button><button type="button" class="pj-lb-x" aria-label="Chiudi galleria">&times;</button></div></dialog>
+  <i data-note="CLIENTE|Materiali per ogni scheda: render, planimetrie, capitolati, brochure (call). Planimetrie come immagini zoomabili con descrizione testuale (alt/testo) del contenuto."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Galleria a mosaico su fondo nero (render principale grande su due righe + 5), stesso componente della scheda progetto: ogni immagine apre il visore a tutto schermo con frecce, tastiera (sinistra/destra, Esc), contatore e didascalia; il focus torna all'immagine di partenza. Mobile: 2 colonne, prima immagine intera, scorrimento a dito nel visore. Riduci movimento: nessuno zoom al passaggio. La planimetria è un segnaposto (file non ricevuti); la foto di cantiere compare solo se esiste."></i>
+  <i data-note="DEV|Da ristimare. LOW-MEDIUM: galleria ACF + mosaico in Custom CSS (stesso CSS della galleria progetto) + visore con dialog nativo (componente condiviso) o lightbox nativa di Elementor (più semplice, meno controllo su tastiera e focus)."></i>
 </div></section>
 <section class="sec imm" aria-labelledby="h-oth"><div class="in">
   <h2 id="h-oth">Altri immobili</h2>
@@ -92,5 +160,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda residenza)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
+<script src="wf-vendita.js?v=1"></script>
 </body></html>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
+<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda progetto</strong> (template, esempio: un progetto in evidenza). <span class="tag t-PROPOSTA">PROPOSTA</span></p>
@@ -9,83 +9,112 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="categoria.html">Palestre</a></li><li aria-current="page">Ceresio 7</li></ol></nav>
 
-<section class="hero hero-p" aria-labelledby="h1">
-  <div data-noratio data-ph="Immagine principale del progetto, foto reale|16/9"></div>
-  <div class="hero-in"><div class="hp-txt">
-  <p class="pg-st"><span class="badge">Palestre</span> <span class="meta">[Località] &middot; [Anno]</span></p>
-  <div class="hrow">
-    <h1 id="h1">Ceresio 7</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 2,5 h. Single CPT con scheda dati a tavola (righe vuote nascoste), galleria nativa a griglia, fascia CTA; senza stampa ne progetti simili. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-    <p class="lead">Piscina e palestra, con soletta molleggiata nelle sale fitness. Un cantiere in cui la tecnica deve restare invisibile a chi lo usa.</p>
-  </div></div></div>
-  <i data-note="DEV|SCHEDA PROGETTO = Theme Builder > Single (CPT Progetti). MEDIUM-HIGH sul totale, 6-9 h per il template (Loop Item/galleria/form CTA stimati a parte). Titolo, immagine principale, testo e scheda dati = Dynamic Tags (campi ACF: località, anno, mq, lavorazioni, progettista). Scheda dati: Icon List o tabella con Display Conditions (Pro) per nascondere le righe vuote (obbligatorio: i dati arriveranno incompleti). Sezione 'Se ne è parlato' (link stampa, ACF Repeater o campo URL) visibile solo se compilata. 'Progetti simili' = Loop Grid con query 'Related' per stessa categoria, esclusione del corrente. Esempio unico: lo stesso template vale per tutti i progetti."></i>
-  <i data-note="CLIENTE|Se il progetto è coperto da NDA: nome generico 'Casa ...' e nessun dato identificativo (call). VERIFY caso per caso."></i>
-  <i data-note="PROPOSTA|Copy provvisorio (tutta la pagina). Esempio compilato su Ceresio 7. VERIFICATO: piscina e palestra, 3 palestre con soletta molleggiata (call). NON VERIFICATO: località, anno, superficie, lavorazioni, progettista, articoli di stampa, ruolo dell'impresa (diretto o General Contractor), descrizione del cantiere. Queste informazioni restano tra parentesi finché il cliente non le fornisce."></i>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: categoria come etichetta + località e anno, nome del progetto grande a sinistra e frase a destra sulla stessa base, foto principale 21:9 a larghezza container (tablet 16:9 di fatto per altezza minima, mobile crop dedicato). Fondi: bianco, grigio chiaro (progetto e scheda dati), nero (galleria), bianco (stampa), grigio chiaro (simili), bordeaux (CTA)."></i>
-  <i data-note="DEV|Delta alta fedeltà Scheda progetto: galleria a mosaico (1 grande su due righe + 5 a 4/3) con Basic Gallery/Gallery Pro + Custom CSS grid oppure 6 Image in container griglia (la lightbox Elementor funziona su entrambi) +1-1.5 h; scheda dati a filetti (dl, righe nascoste se vuote) 0 h rispetto alla tabella; stampa come righe link 0 h; card simili condivise 0 h. Delta template +1-1.5 h (6-9 h > 7-10.5 h)."></i>
-
+<!-- 1. APERTURA: foto a tutta pagina che si incornicia con lo scroll -->
+<section class="pj-hero" aria-labelledby="h1">
+  <div class="pj-hero-s">
+    <div class="pj-hero-m"><div data-noratio data-ph="Immagine principale del progetto, foto reale|16/9"></div></div>
+    <div class="pj-hero-t">
+      <div>
+        <p class="pg-st"><span class="badge">Palestre</span> <span class="meta">Milano &middot; [Anno]</span></p>
+        <h1 id="h1">Ceresio 7</h1>
+      </div>
+      <span class="pj-scroll" aria-hidden="true">Scorri</span>
+    </div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina ripensata senza il vincolo del piano 83 h. Apertura a tutta pagina: foto del progetto con nome enorme in basso. Scorrendo la foto si stringe dentro una cornice (si ritira dai bordi e smette di essere ingrandita) e il titolo sfuma, mentre il racconto sale sopra. Mobile: foto alta 78% dello schermo, nessun effetto. Riduci movimento: foto ferma, titolo sempre visibile."></i>
+  <i data-note="CLIENTE|Se il progetto è coperto da NDA: nome generico 'Casa ...' e nessun dato identificativo (call). Località Milano per Ceresio 7: CLIENTE (Home, progetti in evidenza)."></i>
+<i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Al posto della griglia 'Progetti simili': un solo grande invito al progetto successivo della stessa categoria (foto velata che si schiarisce e si avvicina al passaggio, nome enorme). Si continua a navigare il portfolio come un racconto. Dopo l'ultimo progetto della categoria si passa al primo."></i><i data-note="DEV|Da ristimare (intera pagina). HIGH: apertura con clip-path guidato dallo scroll, scheda sticky, prima/dopo (input range + clip-path, ~15 righe JS), linea del tempo con avanzamento, galleria con dialog nativo, link al progetto successivo (query sul CPT per categoria e ordine). Campi ACF: foto prima/dopo, fasi (repeater), stampa (repeater), tutti opzionali con condizioni di visualizzazione. VERIFY: CPT/ACF non confermati."></i>
 </section>
 
-<section class="sec alt" aria-labelledby="h-sch"><div class="in">
-  <div class="hrow">
-    <h2 id="h-sch">Il progetto</h2>
-    <p class="lead">Ceresio 7 riunisce piscina e palestra. Per le sale fitness abbiamo realizzato una soletta molleggiata, la soluzione che separa il piano di allenamento dalla struttura.</p>
+<!-- 2. RACCONTO + SCHEDA DATI fissa -->
+<section class="sec pj-intro" aria-labelledby="h-sch"><div class="in pj-story">
+  <div class="pj-story-t">
+    <p class="dx-k" data-rv>Il progetto</p>
+    <h2 id="h-sch" class="sr">Il progetto</h2>
+    <p class="lead" data-rv style="--d:1">Piscina e palestra, con soletta molleggiata nelle sale fitness. Un cantiere in cui la tecnica deve restare invisibile a chi lo usa.</p>
+    <p data-rv style="--d:2;max-width:62ch">[Contesto e richiesta del committente, vincoli di cantiere, soluzione adottata: da raccogliere con il cliente. Tre o quattro righe, concrete.]</p>
+    <h3 style="margin:32px 0 14px">Cosa abbiamo fatto</h3>
+    <ul class="pg-tk"><li>Soletta molleggiata per le sale fitness</li><li>[Lavorazione]</li><li>[Lavorazione]</li><li>[Lavorazione]</li></ul>
   </div>
-  <div class="pg-side w7">
-    <div>
-      <p style="margin:0 0 28px;max-width:62ch">[Contesto e richiesta del committente, vincoli di cantiere, soluzione adottata: da raccogliere con il cliente. Tre o quattro righe, concrete.]</p>
-      <h3 style="margin:0 0 14px">Cosa abbiamo fatto</h3>
-      <ul class="pg-tk"><li>Soletta molleggiata per le sale fitness</li><li>[Lavorazione]</li><li>[Lavorazione]</li><li>[Lavorazione]</li></ul>
-    </div>
+  <aside class="pj-side" aria-label="Scheda del progetto">
     <dl class="pg-ds">
-      <div><dt>Località</dt><dd>[Località]</dd></div>
-      <div><dt>Categoria</dt><dd>Palestre</dd></div>
+      <div><dt>Località</dt><dd>Milano</dd></div>
+      <div><dt>Categoria</dt><dd><a href="categoria.html">Palestre</a></dd></div>
       <div><dt>Anno</dt><dd>[Anno]</dd></div>
       <div><dt>Superficie</dt><dd>[mq, se disponibile]</dd></div>
-      <div><dt>Lavorazioni</dt><dd>[Elenco sintetico]</dd></div>
       <div><dt>Progetto architettonico</dt><dd>[Studio, se citabile]</dd></div>
     </dl>
-  </div>
-  <i data-note="PROPOSTA|Scheda dati in lista di definizione (dl) a destra su desktop, sotto il testo su tablet e mobile. I campi sono un modello: nessun dato fornito dal cliente; mostrare solo quelli disponibili e autorizzati. Alta fedeltà: tabella a filetti (etichetta grigia, valore in Archivo), stessa resa della scheda residenza."></i>
+    <p style="margin:24px 0 0"><a class="btn" href="contatti.html" style="width:100%">Un progetto simile? Parliamone</a></p>
+  </aside>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Racconto a sinistra con frase d'apertura grande; scheda dati a destra che resta ferma mentre si legge, con una CTA contestuale sempre a portata. Tablet e mobile: scheda sotto il testo, non fissa. I campi senza dato non compaiono."></i>
 </div></section>
 
+<!-- 3. PRIMA / DOPO -->
+<section class="sec alt" aria-labelledby="h-ba"><div class="in">
+  <div class="hrow"><div><p class="dx-k">Prima e dopo</p><h2 id="h-ba" class="dx-h">Dal cantiere alla consegna</h2></div><p class="lead">Trascina il cursore per confrontare lo stesso punto durante i lavori e a lavori finiti.</p></div>
+  <div class="pj-ba" style="margin-top:32px">
+    <div data-ph="Stesso punto a lavori finiti|16/9"></div>
+    <div class="pj-ba-a"><div data-ph="Stesso punto durante il cantiere|16/9"></div></div>
+    <span class="pj-ba-l a" aria-hidden="true">Cantiere</span><span class="pj-ba-l b" aria-hidden="true">Consegna</span>
+    <input type="range" min="0" max="100" value="50" aria-label="Confronto cantiere e consegna: sposta per vedere più cantiere o più consegna">
+    <span class="pj-ba-h" aria-hidden="true"></span>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Confronto prima/dopo con cursore trascinabile (mouse, dito, frecce da tastiera: è un controllo range accessibile). Racconta il lavoro dell'impresa meglio di una foto finita. Blocco opzionale: compare solo se esistono due foto dallo stesso punto di vista."></i>
+  <i data-note="VERIFY|Foto di cantiere dallo stesso punto della foto finale: chiedere al cliente se esistono per i progetti principali. Senza, il blocco non si usa."></i>
+</div></section>
+
+<!-- 4. FASI DEL CANTIERE -->
+<section class="sec" aria-labelledby="h-tl"><div class="in">
+  <p class="dx-k">Come è andata</p>
+  <h2 id="h-tl" class="dx-h">Le fasi del cantiere</h2>
+  <ol class="pj-tl">
+    <li><small>[Mese anno]</small><b>Sopralluogo e preventivo</b><span>[Una riga sul punto di partenza.]</span></li>
+    <li><small>[Mese anno]</small><b>Demolizioni e strutture</b><span>[Una riga.]</span></li>
+    <li><small>[Mese anno]</small><b>Soletta molleggiata</b><span>[Una riga.]</span></li>
+    <li><small>[Mese anno]</small><b>Impianti e finiture</b><span>[Una riga.]</span></li>
+    <li><small>[Mese anno]</small><b>Consegna</b><span>[Una riga.]</span></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Linea del tempo del cantiere: la linea bordeaux si riempie mentre la sezione attraversa lo schermo e i punti si accendono uno dopo l'altro. Desktop orizzontale, mobile verticale. Fasi e date sono segnaposto: il numero di fasi è libero (3-6). Blocco opzionale. Riduci movimento: linea già piena."></i>
+  <i data-note="VERIFY|Durata e fasi reali di Ceresio 7 non fornite: non inventare date."></i>
+</div></section>
+
+<!-- 5. GALLERIA a mosaico + lightbox -->
 <section class="sec dk" aria-labelledby="h-gal"><div class="in">
-  <h2 id="h-gal">Galleria</h2>
-  <i data-note="DEV|PIANO 83 H (APPROVATO). Galleria: griglia uniforme del widget Gallery/Basic Gallery (3 colonne 4:3 desktop, 2 mobile), stesse 6 foto e stessa lightbox. Il mosaico con prima foto grande non viene piu costruito: risparmio 1-1.5 h."></i>
-  <div class="pg-mo">
-    <div data-ph="Foto 1|4/3"></div><div data-ph="Foto 2|4/3"></div><div data-ph="Foto 3|4/3"></div>
-    <div data-ph="Foto 4|4/3"></div><div data-ph="Foto 5|4/3"></div><div data-ph="Foto 6|4/3"></div>
+  <h2 id="h-gal" class="dx-h" style="color:#fff;margin-bottom:32px">Galleria</h2>
+  <div class="pj-gal">
+    <button type="button" class="g1" aria-label="Apri foto 1: vasca della piscina"><div data-ph="Foto 1, vasca della piscina|4/3"></div></button>
+    <button type="button" class="g2" aria-label="Apri foto 2: sala fitness"><div data-ph="Foto 2, sala fitness|4/3"></div></button>
+    <button type="button" class="g3" aria-label="Apri foto 3: dettaglio"><div data-ph="Foto 3, dettaglio|4/3"></div></button>
+    <button type="button" class="g4" aria-label="Apri foto 4"><div data-ph="Foto 4|4/3"></div></button>
+    <button type="button" class="g5" aria-label="Apri foto 5"><div data-ph="Foto 5|4/3"></div></button>
+    <button type="button" class="g6" aria-label="Apri foto 6"><div data-ph="Foto 6|4/3"></div></button>
   </div>
-  <i data-note="PROPOSTA|Griglia di immagini cliccabili con apertura in lightbox (modale con focus intrappolato, Esc per chiudere, frecce da tastiera, alt per ogni foto). Mobile: 1 colonna o 2 colonne, tap per ingrandire. DEV: lightbox accessibile da valutare (libreria vs custom). Immagini scelte dopo wireframe."></i>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Alta fedeltà: galleria su fondo nero a mosaico, prima foto grande (8/12 su due righe) e le altre 4:3; mobile 2 colonne con prima e ultima a tutta riga. Il mosaico richiede una foto orizzontale forte come prima: da tenere presente nella selezione."></i>
-  <i data-note="DEV|GALLERIA + LIGHTBOX. MEDIUM, 2-3 h una tantum (galleria condivisa con Residenza). Soluzione nativa: widget Gallery (Pro) o Basic Gallery (core) alimentato da un campo ACF Gallery tramite Dynamic Tag, con lightbox integrata di Elementor (Swiper: frecce, swipe touch, Esc, didascalia). Griglia 3 colonne desktop / 2 tablet / 2 mobile. Rischio accessibilità: il focus trap e il ritorno del focus alla miniatura nella lightbox Elementor vanno verificati (VERIFY); alt dalla libreria media, da compilare per ogni foto. Una lightbox custom (libreria esterna) costerebbe +4-6 h: NON proposta. Dipende dal campo galleria ACF (VERIFY ACF Gallery e supporto nel Dynamic Tag)."></i>
+  <dialog class="pj-lb" aria-label="Galleria fotografica"><div class="pj-lb-in"><button type="button" class="dx-arr l" data-lb-prev aria-label="Foto precedente"></button><figure class="pj-lb-f"></figure><button type="button" class="dx-arr" data-lb-next aria-label="Foto successiva"></button><button type="button" class="pj-lb-x" aria-label="Chiudi galleria">&times;</button></div></dialog>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Galleria a mosaico su fondo nero (una foto grande su due righe + 5), ogni foto apre il visore a tutto schermo: frecce, tastiera (sinistra/destra, Esc), contatore e didascalia, focus che torna alla foto da cui si è partiti. Mobile: 2 colonne, prima foto intera."></i>
 </div></section>
 
+<!-- 6. STAMPA (opzionale) -->
 <section class="sec" aria-labelledby="h-press"><div class="in pg-side">
   <h2 id="h-press">Se ne è parlato</h2>
   <ul class="pg-dl ex">
     <li><a href="#" target="_blank" rel="noopener"><span><small>[Testata]</small>[Titolo articolo]<span class="sr"> (si apre in nuova scheda)</span></span><small>Link esterno</small></a></li>
     <li><a href="#" target="_blank" rel="noopener"><span><small>[Testata]</small>[Titolo articolo]<span class="sr"> (si apre in nuova scheda)</span></span><small>Link esterno</small></a></li>
   </ul>
-  <i data-note="CLIENTE|Sulle schede progetto: link ad articoli online di stampa (NON scansioni cartacee). Le riviste che non citano l'impresa vanno nel blog, non qui (call). La sezione compare solo se esiste almeno un articolo che cita l'impresa. Link esterni con rel noopener e indicazione 'si apre in nuova scheda'."></i>
+  <i data-note="CLIENTE|Sulle schede progetto: link ad articoli online di stampa (NON scansioni cartacee). Blocco opzionale: senza articoli non compare."></i>
 </div></section>
 
-<section class="sec alt" aria-labelledby="h-rel"><div class="in">
-  <h2 id="h-rel">Progetti simili</h2>
-  <ul class="pg-pl">
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>[Nome progetto]</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>[Nome progetto]</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto|4/3"></div><span class="meta">Palestre &middot; [Località]</span><h3>[Nome progetto]</h3></a></li>
-  </ul>
-</div></section>
+<!-- 7. PROGETTO SUCCESSIVO -->
+<a class="pj-next" href="progetto.html">
+  <div data-noratio data-ph="Foto del progetto successivo|16/9"></div>
+  <span class="pj-next-in"><span><small>Progetto successivo &middot; Palestre</small><b>[Nome progetto]</b></span><i class="dx-arr" aria-hidden="true"></i></span>
+</a>
 
-<section class="sec" style="background:#e2e2e2"><div class="in grid split"><div><h2>Hai un progetto simile?</h2><p class="lead">Raccontaci di cosa si tratta: ti diciamo come lo affronteremmo e cosa serve per partire con un preventivo.</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama</a></div></div>
-  <i data-note="INFERENZA|Per Ceresio 7 (10-12 preventivi dalla pagina) la CTA contestuale è il punto di conversione più concreto: monitorare e testare il posizionamento (anche una CTA sticky laterale su desktop?). Da decidere nel mockup, non è richiesta del cliente."></i>
-</section>
+<section class="sec" style="background:#e2e2e2"><div class="in grid split"><div><h2>Hai un progetto simile?</h2><p class="lead">Raccontaci di cosa si tratta: ti diciamo come lo affronteremmo e cosa serve per partire con un preventivo.</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama</a></div></div></section>
 </main>
 <div id="ftr"></div>
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda progetto)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
 </body></html>

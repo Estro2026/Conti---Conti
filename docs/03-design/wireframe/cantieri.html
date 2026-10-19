@@ -1,42 +1,85 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261016"></head>
+<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
-<p class="legend"><strong>Cantieri / portfolio.</strong> Indice di tutti i progetti, filtrabili per categoria. Template collegati: <a href="categoria.html">categoria</a>, <a href="progetto.html">scheda progetto</a>. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
+<p class="legend"><strong>Cantieri / portfolio.</strong> Indice di tutti i progetti, filtrabili per categoria. Template collegati: <a href="categoria.html">categoria</a>, <a href="progetto.html">scheda progetto</a>. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
 <div id="hdr"></div>
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Cantieri</li></ol></nav>
 
-<section class="sec pg-op" aria-labelledby="h1"><div class="in">
-  <div class="hrow">
-    <h1 id="h1">Cantieri</h1>
-  <i data-note="DEV|ORE DI RIFERIMENTO (piano approvato 83 h, vale su questa pagina e sostituisce le stime precedenti nelle note DEV): 1,5 h. Hero + Loop Grid con card progetto + paginazione nativa; nessun filtro, nessuna sezione In evidenza. I blocchi usati (header, footer, hero, card, form, galleria, accordion, tavola a filetti, CTA) sono contati a parte nel piano e non si sommano. Dettaglio in docs/03-design/proposta-83h-sistema-a-blocchi.md."></i>
-    <p class="lead">Da [30/40] anni realizziamo progetti per i più importanti studi di architettura e designer di Milano. Case, ville, palestre, allestimenti, attività commerciali, edifici industriali: nuove costruzioni, ristrutturazioni e manutenzioni.</p>
+<!-- 1. APERTURA: titolo-manifesto, contatori, intro -->
+<section class="sec cn-hero" aria-labelledby="h1"><div class="in">
+  <div class="cn-top">
+    <div>
+      <p class="dx-k" data-rv>Portfolio</p>
+      <h1 id="h1" class="cn-h1" data-rv style="--d:1">Cantieri</h1>
+      <ul class="cn-sum" data-rv style="--d:2"><li><b>[N]</b><span>progetti pubblicati</span></li><li><b>8</b><span>categorie</span></li><li><b>~180</b><span>cantieri all'anno</span></li></ul>
+    </div>
+    <p class="cn-lead" data-rv style="--d:3">Da [30/40] anni realizziamo progetti per i più importanti studi di architettura e designer di Milano. Case, ville, palestre, allestimenti, attività commerciali, edifici industriali: nuove costruzioni, ristrutturazioni e manutenzioni.</p>
   </div>
-  <i data-note="PROPOSTA|Filtri per categoria e sezione In evidenza rimossi su richiesta (piano ore 83). L'accesso alle 8 categorie resta dalle tessere categoria della Home e dal menu. Da verificare in mockup come si raggiungono le categorie da questa pagina."></i>
-  <i data-note="RICERCA|Intro ripresa dal sito attuale ('Da 30 anni realizziamo progetti per i più importanti studi di architettura e designer di Milano'): coerente con il brief (clienti da architetti). Il portfolio attuale ha 10 filtri in inglese: Bank, Exhibition, GDO, Gym & Spa, Houses, Industrial, Lounge, Medical, Nautical, Retail; ogni scheda mostra immagine, titolo e categoria. Le 8 categorie nuove (approvate) vanno mappate sulle vecchie: serve una tabella di corrispondenza per i redirect."></i>
-  <i data-note="DEV|CANTIERI (Theme Builder > Archive, o pagina con Loop Grid). MEDIUM, 4-6 h per la pagina (Loop Item e CPT contati a parte). Chip filtro = link a 8 archivi della tassonomia (nessun filtro JS, coerente con la nota PROPOSTA): Icon List/Button in riga, scroll orizzontale mobile con overflow-x e target 44px, stato corrente con classe attiva da Dynamic Tag o condizione sulla pagina (1-2 h di CSS/logica; senza tassonomia attiva si imposta a mano per template). Un widget Taxonomy Filter di Elementor (filtro dinamico senza ricarica) può esistere nelle versioni recenti: NON incluso, cambierebbe URL/SEO (VERIFY). Intro con Dynamic Tag dal campo descrizione del termine."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina ripensata senza il vincolo del piano 83 h (richiesta in chat del 19/10): apertura tipografica con titolo molto grande, tre contatori e intro a destra. Ingresso a cascata (titolo, contatori, intro: 80 ms di scarto, 700 ms). Riduci movimento: tutto subito visibile."></i>
+  <i data-note="CLIENTE|~180 cantieri all'anno e 8 categorie dalla call. Numero di progetti pubblicati non noto: dipende da quanti progetti sono pubblicabili (NDA)."></i>
+  <i data-note="RICERCA|Intro ripresa dal sito attuale ('Da 30 anni realizziamo progetti per i più importanti studi di architettura e designer di Milano'). Il portfolio attuale ha 10 filtri in inglese (Bank, Exhibition, GDO, Gym & Spa, Houses, Industrial, Lounge, Medical, Nautical, Retail): serve una tabella di corrispondenza verso le 8 categorie per i redirect."></i>
 </div></section>
 
-<section class="sec alt" aria-labelledby="h-all"><div class="in">
-  <h2 id="h-all">Tutti i progetti</h2>
-  <ul class="pg-pl">
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Ceresio 7|4/3"></div><span class="meta">Palestre &middot; [Località] &middot; [Anno]</span><h3>Ceresio 7</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Casa MJO|4/3"></div><span class="meta">Case &middot; Milano &middot; [Anno]</span><h3>Casa MJO</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto Villa Lodovic|4/3"></div><span class="meta">Ville &middot; [Località] &middot; [Anno]</span><h3>Villa Lodovic</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>Casa [nome in NDA]</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>Casa [nome in NDA]</h3></a></li>
-    <li><a class="card pg-pc" href="progetto.html"><div data-ph="Foto progetto|4/3"></div><span class="meta">[Categoria] &middot; [Località] &middot; [Anno]</span><h3>[Nome progetto]</h3></a></li>
+<!-- 3. TUTTI I PROGETTI -->
+<section class="sec" aria-labelledby="h-all" style="padding-top:0">
+<!-- 2. FILTRO: barra categorie sticky -->
+<div class="cn-bar" role="group" aria-label="Filtra i progetti per categoria"><div class="in cn-bar-in">
+  <button type="button" class="cn-f" data-f="tutti" aria-pressed="true">Tutti <sup>[N]</sup></button>
+  <button type="button" class="cn-f" data-f="case" data-name="Case" data-href="categoria.html#case" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Case <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="residenze" data-name="Residenze" data-href="categoria.html#residenze" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Residenze <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="lusso" data-name="Lusso" data-href="categoria.html#lusso" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Lusso <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="palestre" data-name="Palestre" data-href="categoria.html#palestre" data-desc="Piscine, sale fitness e palestre con soletta molleggiata: la tecnica resta invisibile a chi usa gli spazi." aria-pressed="false">Palestre <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="allestimenti" data-name="Allestimenti" data-href="categoria.html#allestimenti" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Allestimenti <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="ville" data-name="Ville" data-href="categoria.html#ville" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Ville <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="commerciali" data-name="Attività commerciali" data-href="categoria.html#attivita-commerciali" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Attività commerciali <sup>[n]</sup></button>
+  <button type="button" class="cn-f" data-f="industriale" data-name="Industriale" data-href="categoria.html#industriale" data-desc="[Descrizione breve della categoria: una riga, da scrivere con il cliente.]" aria-pressed="false">Industriale <sup>[n]</sup></button>
+  <div class="cn-view" role="group" aria-label="Vista"><button type="button" data-v="grid" aria-pressed="true">Griglia</button><button type="button" data-v="list" aria-pressed="false">Elenco</button></div>
+</div></div>
+<div class="in">
+  <h2 id="h-all" class="sr">Tutti i progetti</h2>
+  <div class="cn-cat" hidden aria-live="polite"><span class="cn-cat-n"></span><p></p><a href="categoria.html"><span>Vai alla pagina</span><i class="dx-arr" aria-hidden="true"></i></a></div>
+  <p class="sr cn-live" aria-live="polite"></p>
+  <ul class="cn-grid">
+    <li class="cn-it" data-cat="palestre"><a class="cn-c" data-k="1" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Palestre</span><div data-ph="Foto Ceresio 7|4/3"></div></div><div class="cn-t"><div><h3>Ceresio 7</h3><span class="meta">Milano &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="case"><a class="cn-c" data-k="2" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Case</span><div data-ph="Foto Casa MJO|4/3"></div></div><div class="cn-t"><div><h3>Casa MJO</h3><span class="meta">Milano &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="ville"><a class="cn-c" data-k="3" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Ville</span><div data-ph="Foto Villa Lodovic|4/3"></div></div><div class="cn-t"><div><h3>Villa Lodovic</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="palestre"><a class="cn-c" data-k="4" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Palestre</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="commerciali"><a class="cn-c" data-k="5" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Attività commerciali</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="residenze"><a class="cn-c" data-k="6" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Residenze</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="lusso"><a class="cn-c" data-k="7" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Lusso</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>Casa [nome in NDA]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="industriale"><a class="cn-c" data-k="8" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Industriale</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="allestimenti"><a class="cn-c" data-k="9" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Allestimenti</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
+    <li class="cn-it" data-cat="case"><a class="cn-c" data-k="10" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Case</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>Casa [nome in NDA]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
   </ul>
-  <nav class="pg-pag" aria-label="Paginazione"><ul><li><a href="#" aria-current="page">1</a></li><li><a href="#">2</a></li><li><a href="#">Successiva <span aria-hidden="true">&rarr;</span></a></li></ul></nav>
-  <i data-note="PROPOSTA|Copy provvisorio (tutta la pagina). VERIFICATO: intro dal sito attuale, 8 categorie, i tre progetti in evidenza, Ceresio 7 = piscina e palestra. NON VERIFICATO: la categoria di Casa MJO (Case) e Villa Lodovic (Ville) è INFERENZA dal nome; località, anni, le ultime tre schede e quali progetti siano sotto NDA. Le prime tre card ripetono i progetti in evidenza solo per mostrare la griglia."></i>
-  <i data-note="CLIENTE|NDA: i progetti sotto NDA usano nomi generici 'Casa ...' (call). Quali progetti e quanti sono pubblicabili non è noto: 6 card sono solo un esempio di griglia."></i>
-  <i data-note="PROPOSTA|Paginazione con link reali (non scroll infinito) per SEO, tastiera e tornare indietro senza perdere posizione. Card interamente cliccabile con un solo link (nome progetto) e focus visibile. Alta fedeltà: card progetto con nome e freccia sulla stessa riga, meta sotto un filetto; al passaggio la foto si schiarisce e la freccia avanza di 4 px (statica con riduci movimento). Paginazione a filetto, pagina corrente in bordeaux."></i>
-  <i data-note="DEV|LOOP GRID PROGETTI + PAGINAZIONE. MEDIUM. Loop Grid (Pro) con Loop Item Card progetto (vedi componente condiviso), 3 colonne desktop / 2 tablet / 1-2 mobile, paginazione 'Numeri e Precedente/Successivo' (link reali, nativa del Loop Grid; opzione 'Load more'/infinite scroll NON usata). Query: CPT Progetti ordinato per data o campo ACF 'ordine'. Rischio: in Elementor la paginazione del Loop Grid in archivi/Theme Builder richiede impostazioni specifiche (query ereditata da archivio): da testare, 1 h incluso. Dipende da CPT + tassonomia + ACF (VERIFY: non confermati). Nessun caricamento contenuti incluso."></i>
-  <div class="open"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> Decisione aperta: relazione tra "Settori" e "Categorie". CLIENTE: dalla call le 8 categorie di cantiere sono approvate (menu Cantieri/portfolio). CLIENTE: il brief cita anche una nuova voce di menu "Settori" (industriale, civile, ristrutturazione, lusso; 4-5 da confermare). Le due tassonomie si sovrappongono (lusso, industriale). PROPOSTA, opzioni senza scelta: A. "Settori" = raggruppamento di livello superiore, le 8 categorie sono figlie (es. Civile: Case, Residenze, Ville; Industriale; Lusso...), due livelli di menu. B. "Settori" = pagine servizio/commerciali (per cercare competenza), "Categorie" = solo filtro del portfolio; voci di menu separate, contenuti diversi. C. Una sola tassonomia: restano le 8 categorie, "Settori" non si crea; i 4-5 settori diventano contenuti SEO dentro le categorie. Impatto: menu, URL, SEO (cannibalizzazione tra pagine settore e categoria), tag CMS. In questo wireframe il menu mostra solo le categorie più una voce tratteggiata "Settori: da decidere". (Prima era una sezione a sé: ora è una nota, per non lasciare una fascia vuota.)</div>
+  <p class="cn-empty" hidden>Nessun progetto pubblicato in questa categoria per ora. <a href="contatti.html">Raccontaci il tuo</a>.</p>
+  <div class="cn-peek" aria-hidden="true"></div>
+  <div class="cn-more"><a class="btn sec2" href="#">Mostra altri progetti</a></div>
+  <div class="open" style="margin-top:48px"><span class="tag t-WAITING">WAITING FOR APPROVAL</span> Decisione aperta: relazione tra "Settori" e "Categorie". CLIENTE: le 8 categorie di cantiere sono approvate (call). CLIENTE: il brief cita anche una voce "Settori" (industriale, civile, ristrutturazione, lusso; 4-5 da confermare). PROPOSTA, opzioni senza scelta: A. Settori = livello superiore, categorie figlie. B. Settori = pagine servizio, categorie = filtro del portfolio. C. Una sola tassonomia (8 categorie), i settori diventano contenuti SEO dentro le categorie. Impatto: menu, URL, SEO, filtro di questa pagina.</div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Filtro per categoria reintrodotto, in forma dinamica: barra di pillole che resta visibile sotto l'header mentre si scorre (scorre in orizzontale su mobile). Il clic filtra senza ricaricare (le card escono e rientrano con dissolvenza e leggera scala, 350-450 ms), aggiorna l'indirizzo (#palestre: link condivisibile, il tasto indietro non si rompe) e apre una fascia con nome grande della categoria, una riga di descrizione e il link alla pagina categoria: il filtro è un'anteprima, la pagina categoria resta la destinazione SEO. Lettori di schermo: pulsanti con stato premuto e annuncio del numero di risultati."></i>
+  <i data-note="PROPOSTA|Griglia regolare a 3 colonne (scelta in chat 2026-10-20, dopo aver scartato card di misura diversa e colonne sfalsate): card tutte uguali in 4:5, nessuna gerarchia tra progetti; testo e CTA sulla card (feedback 2026-10-20): etichetta categoria in alto, in basso nome, località e "Scopri il progetto" sopra una velatura scura; al passaggio la foto si avvicina e la CTA compare con la freccia che si riempie (su touch e con riduci movimento la CTA è sempre visibile). La card resta un unico link. "Scopri il progetto": microcopy PROPOSTA. Tablet 2 colonne, mobile 1. Interruttore Griglia/Elenco (solo da tablet in su): l'elenco è una tavola a filetti con nome grande, categoria e anno; l'anteprima della foto segue il puntatore (solo mouse, mai su touch, mai con riduci movimento). 'Mostra altri progetti' carica la pagina successiva senza perdere i filtri."></i>
+  <i data-note="CLIENTE|NDA: i progetti sotto NDA usano nomi generici 'Casa ...' (call). Quali e quanti progetti siano pubblicabili non è noto: 10 card sono un esempio. Categoria di Casa MJO e Villa Lodovic: INFERENZA dal nome."></i>
+  <i data-note="DEV|Da ristimare (vincolo 83 h tolto). Complessità MEDIUM-HIGH: filtro lato client sul Loop Grid (in Elementor: widget Taxonomy Filter se presente nella versione installata, altrimenti JS su attributi data della card; VERIFY), sincronizzazione con l'hash, fascia categoria da campi del termine (descrizione breve, link), barra sticky, vista elenco con anteprima al puntatore (JS ~40 righe), 'Mostra altri' (load more nativo del Loop Grid, da verificare insieme al filtro). Rischio: filtro client + paginazione = il filtro agisce solo sui progetti già caricati; soluzione da decidere in sviluppo."></i>
 </div></section>
+
+<!-- 4. IN EVIDENZA: carosello trascinabile -->
+<section class="sec dk cn-feat" aria-labelledby="h-feat" data-car><div class="in">
+  <div class="cn-fh">
+    <div><p class="dx-k">In evidenza</p><h2 id="h-feat" class="dx-h" style="color:#fff">Tre cantieri da cui partire</h2></div>
+    <div class="cn-ctrl"><span class="dx-prog" aria-hidden="true"><i></i></span><button type="button" class="dx-arr l" data-prev aria-label="Progetto precedente"></button><button type="button" class="dx-arr" data-next aria-label="Progetto successivo"></button></div>
+  </div>
+  <div class="dx-track" tabindex="0" aria-label="Progetti in evidenza, usa le frecce per scorrere">
+    <a class="cn-fc" href="progetto.html"><div data-ph="Ceresio 7, piscina e palestra|16/10"></div><span class="cn-fc-n" aria-hidden="true">01</span><span class="cn-fc-t"><div><span>Palestre &middot; Milano</span><h3>Ceresio 7</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
+    <a class="cn-fc" href="progetto.html"><div data-ph="Casa MJO|16/10"></div><span class="cn-fc-n" aria-hidden="true">02</span><span class="cn-fc-t"><div><span>Case &middot; Milano</span><h3>Casa MJO</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
+    <a class="cn-fc" href="progetto.html"><div data-ph="Villa Lodovic|16/10"></div><span class="cn-fc-n" aria-hidden="true">03</span><span class="cn-fc-t"><div><span>Ville &middot; [Località]</span><h3>Villa Lodovic</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. I tre progetti in evidenza tornano, dopo la griglia, su fondo nero: carosello che si trascina col mouse e scorre a dito, con frecce, barra di avanzamento e numero grande. Card larghe che escono dal bordo destro per suggerire che c'è altro. Tastiera: frecce sinistra/destra sul carosello. Nessuno scorrimento automatico."></i>
+  <i data-note="CLIENTE|3 progetti in evidenza: Casa MJO (Milano), Ceresio 7 (piscina + palestra, 10-12 preventivi), Villa Lodovic. VERIFY NDA sui nomi."></i>
+</div></section>
+
 
 <section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
 </main>
@@ -44,5 +87,6 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Cantieri)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261016"></script>
+<script src="wireframe.js?v=20261020f"></script>
+<script src="wf-dyn.js?v=13"></script>
 </body></html>

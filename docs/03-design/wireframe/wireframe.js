@@ -53,15 +53,25 @@
       '<nav class="mnav" id="mnav" aria-label="Principale mobile"><ul>' + ml + '</ul><a class="btn" href="contatti.html" style="margin-top:12px">Richiedi un preventivo</a></nav>';
   }
 
-  /* footer */
+  /* footer: stessa struttura del footer dei mockup Home A/B (logo, P.IVA, social | contatti | sito; riga legale) */
   var ftr = document.getElementById('ftr');
   if (ftr) {
-    ftr.outerHTML = '<footer class="ft"><div class="in grid g3">' +
-      '<div><div class="logo-w logo-ft">' + LOGO + '</div>' + (CL ? '' : '<p>[Payoff segnaposto]</p><p>[Social: da verificare]</p>') + '</div>' +
-      '<nav aria-label="Footer"><h2>Sito</h2><ul>' + NAV.map(function (n) { return '<li><a href="' + n[2] + '">' + n[1] + '</a></li>'; }).join('') + '<li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
-      '<div><h2>Contatti</h2><p><span class="tag">RICERCA</span>Dati dal sito attuale, da verificare:</p><ul><li>Via Nazionale dei Giovi 169, 20823 Lentate sul Seveso (MB)</li><li><a href="tel:+390362557972">0362 557972</a></li><li><a href="mailto:info@contieconti.it">info@contieconti.it</a></li><li>Lun-Ven 8:30-12:00 / 14:00-18:30; Sab 8:30-12:00</li></ul></div></div>' +
-      (CL ? '' : N('PROPOSTA', 'WAITING_FOR_APPROVAL. Certificazioni e riconoscimenti tolti dal footer (feedback: spostarli, ma non nel footer): ora in Home dentro il blocco squadra/Massimo come prova del metodo, e nella pagina Impresa. Tolta anche la colonna Riconoscimenti (loghi Cassa Edile/Cassa dei Laghi): footer a 3 colonne, nessun logo di terzi.')) +
-      '<div class="in ft-legal">Conti e Conti Srl, P.IVA 00934370966 <span class="tag">RICERCA</span> &middot; <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Privacy policy<span class="sr"> (si apre in nuova scheda)</span></a> &middot; <a href="https://www.iubenda.com/privacy-policy/57429672/cookie-policy" target="_blank" rel="noopener">Cookie policy<span class="sr"> (si apre in nuova scheda)</span></a> &middot; <button type="button" class="ft-cookie">Preferenze cookie</button>' + (CL ? '' : N('DEV', 'Preferenze cookie: sul sito attuale è un link senza destinazione gestito dal banner Iubenda (riapre il pannello consensi). Nel sito nuovo: pulsante con la classe/trigger previsto da Iubenda (es. iubenda-cs-preferences-link), nessun href. VERIFY configurazione e piano Iubenda. Link Privacy/Cookie policy = documenti Iubenda del sito attuale (RICERCA), si aprono in nuova scheda.') + N('VERIFY', 'Preferenze cookie gestite dal banner Iubenda: verificare che il banner resti attivo nel nuovo sito.')) + '</div></footer>';
+    var SOC = [['LinkedIn', 'https://it.linkedin.com/company/conti-e-conti-s.r.l.', '<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/>'], ['Facebook', 'https://www.facebook.com/ContieContiSrl/', '<path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/>']];
+    var IUB = 'https://www.iubenda.com/privacy-policy/57429672', NW = '<span class="sr"> (si apre in nuova scheda)</span>';
+    ftr.outerHTML = '<footer class="ft ft-m"><div class="in ft-grid">' +
+      '<div><img class="ft-logo" src="../mockup/img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell\'edilizia"><p>Conti e Conti Srl &middot; P.IVA 00934370966</p>' +
+      '<ul class="ft-soc" aria-label="Seguici sui social">' + SOC.map(function (s) { return '<li><a href="' + s[1] + '" target="_blank" rel="noopener" aria-label="' + s[0] + ' di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true">' + s[2] + '</svg></a></li>'; }).join('') + '</ul></div>' +
+      '<div><h2>Contatti</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
+      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
+      '</div>' +
+      (CL ? '' : N('PROPOSTA', 'Footer allineato ai mockup Home A/B (richiesta in chat 2026-10-19): tre colonne (logo bianco, ragione sociale e P.IVA, social | Contatti | Sito) e riga legale con copyright e link. In media fedeltà resta in scala di grigi (wf-mid.css). Nessun logo di terzi e nessuna certificazione nel footer.') + N('RICERCA', 'Indirizzo, telefono, email, orari, P.IVA e profili social dal sito attuale: da verificare con il cliente.')) +
+      '<div class="in ft-legal"><p>&copy; 2026 Conti e Conti Srl &middot; Tutti i diritti riservati</p><ul aria-label="Informazioni legali">' +
+      '<li><a href="' + IUB + '" target="_blank" rel="noopener">Privacy policy' + NW + '</a></li>' +
+      '<li><a href="' + IUB + '/cookie-policy" target="_blank" rel="noopener">Cookie policy' + NW + '</a></li>' +
+      '<li><button type="button" class="ft-cookie">Gestisci i cookie</button></li>' +
+      '<li><a href="#">Note legali</a></li><li><a href="#">Accessibilit&agrave;</a></li><li><a href="#">Mappa del sito</a></li></ul>' +
+      (CL ? '' : N('DEV', 'Privacy e Cookie policy = documenti Iubenda del sito attuale (RICERCA), in nuova scheda. "Gestisci i cookie": pulsante con il trigger previsto da Iubenda (es. classe iubenda-cs-preferences-link), nessun href. Note legali, Accessibilità (dichiarazione di accessibilità) e Mappa del sito: pagine da creare o link da definire, come nei mockup (VERIFY).') + N('VERIFY', 'Preferenze cookie gestite dal banner Iubenda: verificare che il banner resti attivo nel nuovo sito.')) +
+      '</div></footer>';
   }
 
   /* sticky mobile bar */
@@ -170,7 +180,7 @@
         (n ?N('CLIENTE', 'Zona operativa dichiarata: Milano, Como, Varese, Monza Brianza. Aree SEO citate nel brief: Lago di Como, Milano, Monza/Seregno/Brianza. Varese non ha area SEO nel brief: VERIFY. Le pagine per zona sono state eliminate (decisione utente).') + N('DEV', 'LOW. Chip = Button widget o Icon List in flex wrap (4 link): 0.5-1 h, incluso nelle card/home. Se le pagine area non sono approvate i link puntano a Cantieri filtrato o vengono rimossi: nessun costo aggiuntivo.') : '');
     },
     cta: function (n) {
-      return '<div class="in grid split"><div><h2>Hai un progetto in mente?</h2><p class="lead">Raccontaci cosa vuoi costruire o ristrutturare. Ti rispondiamo entro [24 ore].</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama 0362 557972</a></div></div>' +
+      return '<div class="in grid split"><div><h2>Parliamo del tuo progetto.</h2><p class="lead">Raccontaci cosa vuoi costruire o ristrutturare: ti risponde chi segue il cantiere.</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama 0362 557972</a></div></div>' + (n ? N('PROPOSTA', 'Pre-footer allineato alla chiusura delle homepage (richiesta in chat 2026-10-20): stesso titolo, testo e pulsanti; fascia scura con riquadro interno, titolo a sinistra e pulsanti a destra. In media fedeltà in scala di grigi. Tolta la promessa [24 ore] non confermata dal cliente.') : '') + +
         (n ? N('PROPOSTA', 'WAITING_FOR_APPROVAL. Fascia CTA in bordeaux pieno (colore brand già in palette, nessun colore nuovo) per staccarla dal footer nero. Contrasti: testo bianco su #7d1d2c ~10:1, sottotitolo #f3e4e7 ~8:1; pulsante primario invertito (fondo bianco, testo bordeaux), secondario con bordo bianco. Applicata ovunque compare la fascia (template condiviso). DEV: nessuna ora in più, solo colori del template.') : '') +
         (n ? N('PROPOSTA', 'CTA primaria unica e ripetuta (obiettivo: contatti qualificati). Il numero telefonico è quello del sito attuale (RICERCA, da verificare). Il tempo di risposta non è fornito dal cliente: non inventarlo.') + N('DEV', 'LOW. Template salvato "Fascia CTA" inserito con widget Template (Pro) in tutte le pagine: testo e pulsanti modificabili in un solo posto. Link tel: sul numero; tracciamento click su telefono/CTA solo se il tracking è definito (VERIFY GA4/GTM). Stima 1-1.5 h una tantum.') : '');
     }
@@ -488,10 +498,15 @@
     var h1 = document.getElementById('h1'); if (h1) h1.textContent = c;
     var cur = document.querySelector('.crumb [aria-current]'); if (cur) cur.textContent = c;
     document.title = 'Wireframe Pagina categoria (' + c + ') | Conti & Conti';
-    var lead = h1 && h1.parentNode.querySelector('.lead');
+    var sec = h1 && h1.closest('section');
+    var kk = sec && sec.querySelector('.dx-k'); if (kk) kk.textContent = 'Categoria 0' + (CATS.indexOf(c) + 1) + ' / 0' + CATS.length;
+    var fact = sec && sec.querySelector('.ct-fact'); if (fact) fact.hidden = true;
+    var lead = sec && sec.querySelector('.lead');
     if (lead) lead.innerHTML = '<span class="tbc">[Introduzione alla categoria ' + c + ': cosa realizziamo, per chi, con quali competenze. Testo da scrivere con il cliente e in ottica SEO.]</span>';
-    var btn = h1 && h1.parentNode.querySelector('.btn'); if (btn) btn.textContent = 'Richiedi un preventivo';
+    var btn = sec && sec.querySelector('.btn'); if (btn) btn.textContent = 'Richiedi un preventivo';
     ['h-comp', 'h-faq'].forEach(function (id) { var s = document.getElementById(id); if (s) { s = s.closest('section'); if (s) s.hidden = true; } });
+    var FK = { 'Attività commerciali': 'commerciali' }, endc = document.querySelector('.ct-pc.end');
+    if (endc) { endc.setAttribute('href', 'cantieri.html#' + (FK[c] || slug(c))); var eb = endc.querySelector('b'); if (eb) eb.textContent = 'Vedi tutti i progetti: ' + c; }
     document.querySelectorAll('#h-prj ~ ul .card').forEach(function (card) {
       var m = card.querySelector('.meta'); if (m) m.innerHTML = c + ' &middot; [Località]';
       var h = card.querySelector('h3'); if (h) h.textContent = '[Nome progetto]';
@@ -511,6 +526,34 @@
   if (hasHero) document.body.classList.add('has-hero');
   function size() { document.documentElement.style.setProperty('--hdh', H.offsetHeight + 'px'); }
   function sc() { H.classList.toggle('is-solid', !hasHero || window.scrollY > 40); }
+  size(); sc();
+  window.addEventListener('scroll', sc, { passive: true });
+  window.addEventListener('resize', size);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
+})();
+
+/* Navigazione mista mockup + wireframe: dalle pagine interne "Home" e logo portano alla homepage mockup
+   scelta per ultima con l'interruttore A/B (default A). Le home e l'indice del wireframe restano invariati. */
+(function () {
+  var page = location.pathname.split('/').pop();
+  if (/^(home-[ab]|index|presentazione)\.html$/.test(page) || page === '') return;
+  var v = 'a';
+  try { if (localStorage.getItem('cc-home') === 'b') v = 'b'; } catch (e) {}
+  function fix() {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href="home-a.html"],a[href="home-b.html"]'), function (a) {
+      a.setAttribute('href', '../mockup/home-' + v + '.html');
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fix); else fix();
+})();
+
+/* Header trasparente sopra la hero (body[data-overlay]): misura header + breadcrumb e rende la barra bianca dopo lo scroll */
+(function () {
+  if (!document.body.hasAttribute('data-overlay')) return;
+  var hd = document.querySelector('.hd'), cr = document.querySelector('main > .crumb'), fr = document.querySelector('.frame') || document.body;
+  if (!hd) return;
+  function size() { fr.style.setProperty('--ovl', (hd.offsetHeight + (cr ? cr.offsetHeight : 0)) + 'px'); }
+  function sc() { hd.classList.toggle('is-solid', window.scrollY > 24); }
   size(); sc();
   window.addEventListener('scroll', sc, { passive: true });
   window.addEventListener('resize', size);
