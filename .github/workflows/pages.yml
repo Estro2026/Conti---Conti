@@ -1,6 +1,6 @@
 # Pubblica su GitHub Pages solo mockup e wireframe (docs/03-design/mockup e docs/03-design/wireframe).
 # I materiali del cliente (docs/00-input e le altre analisi) NON vengono pubblicati.
-# Attivazione una tantum: Settings > Pages > Build and deployment > Source = "GitHub Actions".
+# Attivazione una tantum (fatta): Settings > Pages > Build and deployment > Source = "GitHub Actions".
 name: Pubblica mockup e wireframe
 
 on:
