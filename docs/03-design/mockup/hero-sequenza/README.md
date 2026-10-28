@@ -1,6 +1,7 @@
 # Hero Home A: sequenza "cantiere > casa > studio > schermo"
 
-Stato: **PROPOSTA, `WAITING_FOR_APPROVAL`**. Nessuna generazione Higgsfield avviata. Tavole di composizione: `storyboard.html` (stessa cartella).
+Stato: **PROPOSTA, `WAITING_FOR_APPROVAL`**. Nessuna generazione Higgsfield avviata.
+Prompt pronti da incollare: `higgsfield-prompt.md`. Tavole di composizione: `storyboard.html` (stessa cartella).
 
 Reference di movimento e impaginazione: priyal-khatri-theta.vercel.app (RICERCA: camera che avanza nello spazio a ogni scroll, passando attraverso aperture; titolo a sinistra, testo breve a destra). Differenza voluta: i testi stanno in **card trasparenti con angoli arrotondati** (vetro sfocato, come pillole e pannelli del sito).
 
@@ -43,19 +44,19 @@ Passaggi video: F1>F2 (avanzare fino al vano), F2>F3 (**trasformazione sul posto
 
 Controllati contro i testi della Home A e del wireframe: nessuna frase ripetuta. Già presenti e quindi **esclusi**: "Dietro ogni casa ci sono le persone che la costruiscono", "Maestri del proprio mestiere", "Dal 1988, un cantiere dopo l'altro", "Un solo interlocutore", "Tre modi di costruire…".
 
-| Frame | Card titolo: citazione | Card testo: chi parla | Fonte |
+| Frame | Card titolo: citazione + firma (dentro la card) | Card testo: componente umana | Fonte |
 |---|---|---|---|
-| F1 | «Il cantiere si lascia in ordine. Domattina si riparte da lì.» | Muratori e carpentieri · squadra di 26 | Team e numero: MATERIALE (sito attuale, Impresa) · frase: PROPOSTA |
-| F2 | «Quota e piombo: sempre due volte.» | Tecnici di cantiere · squadra di 8 | come sopra |
-| F3 | «Sotto la pietra non si vede. Va fatto bene lo stesso.» | Responsabili di cantiere | come sopra |
-| F4 | «Il collaudo vero è quando ci vive qualcuno.» | Direzione | come sopra |
-| F5 | «Tutto comincia da un disegno. E da una domanda.» | Ufficio · squadra di 9 | come sopra |
+| F1 | «Il cantiere si lascia in ordine. Domattina si riparte da lì.» — Squadra muratori e carpentieri | 26 muratori e carpentieri interni: le stesse mani dalle fondazioni alla consegna. | Team e numero: MATERIALE (sito attuale, Impresa) · frase: PROPOSTA |
+| F2 | «Quota e piombo: sempre due volte.» — Tecnico di cantiere | 8 tecnici di cantiere controllano ogni giorno tracciamenti, quote e sicurezza. | come sopra |
+| F3 | «Sotto la pietra non si vede. Va fatto bene lo stesso.» — Responsabile di cantiere | I responsabili di cantiere coordinano le opere e verificano qualità, tempi e costi. | come sopra |
+| F4 | «Il collaudo vero è quando ci vive qualcuno.» — Massimo Conti, amministratore unico | Dal 1987 un’impresa che risponde direttamente di tempi, prezzi e risultato. | come sopra |
+| F5 | «Tutto comincia da un disegno. E da una domanda.» — Ufficio tecnico | 9 persone in ufficio seguono progetto, preventivi, pratiche e rapporto con il cliente. | come sopra |
 | F6 | (nessuna card titolo) | Pillola: "Scorri ed entra" | PROPOSTA |
 | F7 | nessuna card: si apre il sito | | |
 
 Regole di impaginazione: una card titolo e una card testo per frame, mai più di 2 righe di titolo; le card entrano e escono con lo scroll (dissolvenza + 12 px), la successiva compare solo dopo che la precedente è uscita.
 
-**WAITING_FOR_APPROVAL, citazioni:** il sito attuale nomina i team (26 muratori e carpentieri, 8 tecnici di cantiere, 9 impiegati, responsabili di cantiere, amministratore unico Massimo Conti) ma non riporta nessuna loro frase. Le citazioni sono quindi bozze da far confermare o riscrivere dalle persone dei team; non vanno pubblicate come dichiarazioni reali senza il loro ok. Nessuna è attribuita a una persona con nome. I numeri delle squadre vanno riverificati prima della messa online.
+**WAITING_FOR_APPROVAL, citazioni:** il sito attuale nomina i team (26 muratori e carpentieri, 8 tecnici di cantiere, 9 impiegati, responsabili di cantiere, amministratore unico Massimo Conti) ma non riporta nessuna loro frase. Le citazioni sono quindi bozze da far confermare o riscrivere dalle persone dei team; non vanno pubblicate come dichiarazioni reali senza il loro ok. F4 è firmata Massimo Conti (APPROVATO dall'utente, 2026-10-28): il testo va comunque fatto approvare a lui. I numeri delle squadre vanno riverificati prima della messa online.
 
 **Da verificare col cliente:** anno di fondazione. Il sito attuale dice **1988**, la timeline del wireframe Impresa parte dal **1987**. Una delle due va corretta.
 
