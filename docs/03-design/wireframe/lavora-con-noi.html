@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Lavora con noi | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-impresa.css?v=5"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<title>Wireframe Lavora con noi | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-impresa.css?v=5"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
 <body data-active="lavora">
 <div id="tb"></div>
 <p class="legend"><strong>Lavora con noi.</strong> Pagina dedicata alle candidature, raggiungibile da Contatti e dal footer. Versione a sezioni dinamiche (mestieri filtrabili, percorso di selezione, modulo con preselezione del ruolo): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -8,7 +8,7 @@
 <div id="hdr"></div>
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li><a href="contatti.html">Contatti</a></li><li aria-current="page">Lavora con noi</li></ol></nav>
-<section class="sec pg-op lv-op" aria-labelledby="h1"><div class="in">
+<section class="sec pg-op lv-op lv-faces-s" aria-labelledby="h1"><div class="in">
   <div class="hrow">
     <div><p class="dx-k" data-rv>Lavora con noi</p><h1 id="h1" class="lv-h1" data-rv style="--d:1">Entra nella squadra</h1></div>
     <div class="hrow-t" data-rv style="--d:2">
@@ -17,6 +17,22 @@
       <p><a class="btn" href="#candidatura">Vai al modulo</a></p>
     </div>
   </div>
+  <ul class="lv-faces" aria-hidden="true">
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Muratore</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Carpentiere</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Tecnico di cantiere</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Ufficio tecnico</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Muratore</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Capocantiere</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Amministrazione</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Carpentiere</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Apprendista</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Tecnico di cantiere</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Muratore</span></li>
+    <li><div data-ph="Ritratto|1/1"></div><span>[Nome] &middot; Ufficio acquisti</span></li>
+  </ul>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Direzione scelta in chat 2026-10-27, 'Volti della squadra': apertura a tutto schermo con titolo grande a sinistra e, a destra, un mosaico sparso di ritratti delle persone dell'impresa (composizione diversa a ogni caricamento, come la sezione 40 persone della Home A). Al passaggio il ritratto si ingrandisce e mostra nome e mestiere. Poi mestieri e modulo a passo unico. Ritratti: shooting con consenso delle persone; nomi e mestieri tra [ ] da raccogliere."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Revisione (chat 2026-10-27): apertura a tutto schermo con foto reale della squadra al vivo e titolo grande in un riquadro; mestieri come schede affiancate con foto, luogo e invito a candidarsi; passi della selezione come schede numerate; modulo e contatti come blocchi affiancati."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Pagina in versione 'creativa a sezioni dinamiche' (stessa direzione di Cantieri, vincolo 83 h tolto il 19/10). H1 'Entra nella squadra' con 'Lavora con noi' come occhiello (keyword resta nel title e nell'occhiello: VERIFY SEO). Ingresso a cascata 80 ms, Riduci movimento: tutto subito visibile. Struttura: apertura > mestieri filtrabili ed espandibili > percorso di selezione > modulo + contatti. Voce nel footer; nel menu principale no (VERIFY: il sito attuale ha una voce di menu dedicata)."></i>
   <i data-note="PROPOSTA|Copy provvisorio costruito solo su fatti noti (mestieri e sede dalla pagina Impresa e dal sito attuale). Nessuna posizione aperta inventata: se il cliente ha ricerche attive, diventano righe della lista mestieri con etichetta 'Cerchiamo ora'."></i>
   <i data-note="DEV|Da ristimare (vincolo 83 h tolto). Pagina Elementor statica + 2 componenti JS (lista mestieri, preselezione ruolo nel form). Stima complessiva PRELIMINARE da rifare dopo approvazione."></i>
@@ -27,28 +43,29 @@
     <div><p class="dx-k">Ruoli</p><h2 id="h-mst">I mestieri della squadra</h2></div>
     <p>Puoi candidarti per uno di questi ruoli o mandarci il tuo nome se vuoi imparare il mestiere.</p>
   </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Mestieri come selettore, coerente con l'uso (scegliere per cosa candidarsi, chat 2026-10-27): a sinistra i ruoli come righe numerate grandi; passando o toccando una riga si apre la sua descrizione e la riga diventa un blocco scuro che sale dal basso (revisione: niente foto e niente filtri). 'Candidati' porta al modulo con il ruolo gia scelto. Mobile: righe richiudibili."></i>
   <div class="lv-f" role="group" aria-label="Filtra per luogo di lavoro" hidden>
     <button type="button" data-lv-f="tutti" aria-pressed="true">Tutti</button>
     <button type="button" data-lv-f="cantiere" aria-pressed="false">In cantiere</button>
     <button type="button" data-lv-f="ufficio" aria-pressed="false">In ufficio</button>
     <p class="lv-cnt" aria-live="polite"></p>
   </div>
-  <ul class="lv-r">
-    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r1"><span class="lv-r-t">Muratori e carpentieri</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+  <div class="lv-sel"><ul class="lv-r">
+    <li data-lv="cantiere"><div class="lv-r-ph"><div data-ph="Foto reale: muratori e carpentieri al lavoro|4/3"></div></div><h3><button type="button" aria-expanded="true" aria-controls="lv-r1"><span class="lv-r-t">Muratori e carpentieri</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
       <div class="lv-r-d" id="lv-r1"><p>Strutture, murature e casseri: la parte più grande della squadra lavora in cantiere ogni giorno.</p><p class="lv-r-m">[Requisiti, patentini, orari: da confermare col cliente.]</p><a class="lv-go" href="#candidatura" data-lv-role="Muratore">Candidati come muratore o carpentiere</a></div></li>
-    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r2"><span class="lv-r-t">Tecnici di cantiere</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+    <li data-lv="cantiere"><div class="lv-r-ph"><div data-ph="Foto reale: tecnico di cantiere con i disegni|4/3"></div></div><h3><button type="button" aria-expanded="true" aria-controls="lv-r2"><span class="lv-r-t">Tecnici di cantiere</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
       <div class="lv-r-d" id="lv-r2"><p>Seguono i lavori sul posto e tengono il filo con architetti, designer e fornitori.</p><p class="lv-r-m">[Titolo di studio ed esperienza richiesti: da confermare.]</p><a class="lv-go" href="#candidatura" data-lv-role="Tecnico di cantiere">Candidati come tecnico di cantiere</a></div></li>
-    <li data-lv="ufficio"><h3><button type="button" aria-expanded="true" aria-controls="lv-r3"><span class="lv-r-t">Ufficio</span><span class="lv-r-w">Sede di Lentate</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+    <li data-lv="ufficio"><div class="lv-r-ph"><div data-ph="Foto reale: ufficio della sede di Lentate|4/3"></div></div><h3><button type="button" aria-expanded="true" aria-controls="lv-r3"><span class="lv-r-t">Ufficio</span><span class="lv-r-w">Sede di Lentate</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
       <div class="lv-r-d" id="lv-r3"><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso.</p><p class="lv-r-m">[Profili ricercati: da confermare.]</p><a class="lv-go" href="#candidatura" data-lv-role="Ufficio">Candidati per l'ufficio</a></div></li>
-    <li data-lv="cantiere"><h3><button type="button" aria-expanded="true" aria-controls="lv-r4"><span class="lv-r-t">Senza esperienza</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
+    <li data-lv="cantiere"><div class="lv-r-ph"><div data-ph="Foto reale: apprendista affiancato da un collega|4/3"></div></div><h3><button type="button" aria-expanded="true" aria-controls="lv-r4"><span class="lv-r-t">Senza esperienza</span><span class="lv-r-w">Cantiere</span><span class="lv-r-i" aria-hidden="true"></span></button></h3>
       <div class="lv-r-d" id="lv-r4"><p>Vuoi imparare il mestiere? Mandaci il tuo nome: ti formiamo in squadra.</p><a class="lv-go" href="#candidatura" data-lv-role="Altro / senza esperienza">Candidati senza esperienza</a></div></li>
-  </ul>
+  </ul><div class="lv-pv" aria-hidden="true"></div></div>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Mestieri come lista filtrabile ed espandibile: filtri Tutti / In cantiere / In ufficio (aria-pressed, conteggio annunciato in aria-live), righe a filetti con nome grande che si aprono al clic (aria-expanded, una alla volta, apertura 300 ms). Ogni riga aperta ha il link 'Candidati come…' che porta al modulo e preseleziona il ruolo. Mobile/touch: filtri a pillole a tutta riga, l'intera riga è toccabile (≥ 56px). Senza JS: filtri nascosti, righe tutte aperte. Riduci movimento: nessuna animazione. Riga 'Senza esperienza' aggiunta da noi, coerente con l'invito del sito attuale."></i>
   <i data-note="DEV|Da ristimare. Complessità LOW-MEDIUM: righe statiche (o CPT 'Posizioni' se il cliente vuole pubblicare ricerche attive: +MEDIUM), JS ~50 righe per filtro, accordion e preselezione del Select del form (VERIFY: in Elementor Form via parametro URL o JS sul campo)."></i>
   <i data-note="VERIFY|Mestieri ripresi dalla pagina Impresa (sito attuale: tecnici di cantiere, muratori e carpentieri, impiegati). Mansioni descritte da noi: da confermare. Numeri del team non ripetuti qui."></i>
 </div></section>
 
-<section class="sec lv-st" aria-labelledby="h-step"><div class="in">
+<section class="sec lv-st lv-st2" aria-labelledby="h-step"><div class="in">
   <p class="dx-k">Dopo l'invio</p>
   <h2 id="h-step">Cosa succede quando ti candidi</h2>
   <ol class="lv-s" data-lv-steps>
@@ -98,7 +115,10 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Lavora con noi)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261020f"></script>
-<script src="wf-dyn.js?v=13"></script>
+<script src="wireframe.js?v=20f"></script>
+<script src="wf-dyn.js?v=14"></script>
 <script src="wf-impresa.js?v=3"></script>
+<script>/* Lavora con noi: ritratti sparsi senza sovrapposizioni, composizione diversa a ogni caricamento */(function(){var u=document.querySelector('.lv-faces');if(!u)return;var P=[].slice.call(u.children),mq=matchMedia('(min-width:901px)');function lay(){if(!mq.matches){P.forEach(function(p){p.style.cssText=''});return}var W=u.clientWidth,H=u.clientHeight,base=Math.min(W*.2,H*.26,200),B=[];P.forEach(function(p,i){var w=Math.round(base*(.7+Math.random()*.55)),best=null,bo=1e18;for(var t=0;t<400;t++){var x=Math.random()*(W-w),y=Math.random()*(H-w-24),o=0;B.forEach(function(b){var ix=Math.max(0,Math.min(x+w,b.x+b.w+12)-Math.max(x,b.x-12)),iy=Math.max(0,Math.min(y+w,b.y+b.w+12)-Math.max(y,b.y-12));o+=ix*iy});if(o<bo){bo=o;best={x:x,y:y,w:w}}if(o===0)break}B.push(best);p.style.left=best.x.toFixed(0)+'px';p.style.top=best.y.toFixed(0)+'px';p.style.width=best.w+'px';p.style.setProperty('--d',(i*70)+'ms')});u.classList.add('on')}var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(lay,150)});lay()})();</script>
+<script>/* Lavora con noi: selettore dei mestieri con anteprima */(function(){var s=document.querySelector('.lv-sel');if(!s)return;var L=[].slice.call(s.querySelectorAll('.lv-r > li')),pv=s.querySelector('.lv-pv');L.forEach(function(li,i){var ph=li.querySelector('.lv-r-ph');if(ph){var c=ph.cloneNode(true);c.className='lv-pv-i';c.dataset.i=i;pv.appendChild(c)}var n=document.createElement('span');n.className='lv-r-n';n.textContent='0'+(i+1);var h=li.querySelector('h3');h.insertBefore(n,h.firstChild);function on(){L.forEach(function(x,k){x.classList.toggle('on',k===i)});[].slice.call(pv.children).forEach(function(x){x.classList.toggle('on',+x.dataset.i===i)})}li.addEventListener('mouseenter',on);li.addEventListener('focusin',on);li.addEventListener('click',on)});if(L[0])L[0].dispatchEvent(new Event('mouseenter'));
+var r=document.getElementById('cv-r');[].slice.call(s.querySelectorAll('.lv-go')).forEach(function(a){a.addEventListener('click',function(){var v=a.dataset.lvRole||'';if(!r)return;[].slice.call(r.options).forEach(function(o){if(v.indexOf(o.text)===0||o.text.indexOf(v.split(' ')[0])===0)r.value=o.value||o.text})})})})();</script>
 </body></html>

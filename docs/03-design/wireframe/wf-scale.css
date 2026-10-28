@@ -129,3 +129,21 @@ html[data-zoom] .ct-hero{min-height:var(--hero-min)}
 }
 /* NOTA: il fattore di scala si chiama --sk (non --k): --k è già usato da Progetto per l'avanzamento dello scroll dell'apertura
    (clip-path e dissolvenza). Con lo stesso nome il titolo veniva moltiplicato per 0 e spariva. */
+
+/* ============ RAGGIO CARD ============
+   Un solo raggio per tutte le card / riquadri / tessere / immagini incorniciate (valore Home A mockup: 18-22px).
+   Immagini e sezioni a tutta larghezza restano a 0; pillole 999px e campi input invariati. */
+html .frame{--card-rad:20px}
+html .frame :is(.card,.card-imm,.box,.cx-a,.rs-u,.zm-map,
+  .bl-ev,.ct-pc,.ct-ly,.ix-stk>li,.ix-flow>li,.ix-t-logo,
+  .co-map,.co-cd,.pg-cd,.pg-form,.rs-up,.rs-form,.lv-r>li,.cnh-plate,.fq-cta-in){border-radius:var(--card-rad)}
+/* il contenuto interno (immagine) segue il raggio */
+html .frame :is(.card,.card-imm,.box,.cx-a,.bl-ev,.ct-pc,.ix-stk>li,.ix-flow>li,.co-map,.rs-up,.cnh-plate,.zm-map){overflow:clip}
+/* segnaposto immagine dentro card */
+html .frame .ph{border-radius:var(--card-rad)}
+html .frame .cx-th .ph,html .frame .cx-f .ph{border-radius:var(--card-rad)}
+/* eccezioni: immagini di sfondo / a bordo vivo */
+html .frame .hero .ph,html .frame .ct-dark .ph,html .frame .ph.full,html .frame .ct-bg.ph,
+html .frame :is(.ct-hero-m,.ix-hero-m,.ix-gar-bg,.pj-hero-m,.pj-next,.iv-map-bg)>.ph{border-radius:0}
+/* banda CTA a riquadro (fine pagina) */
+html .frame .sec[style*="e2e2e2"] > .in,html .frame .sec[style*="e2e2e2"] > [data-c] > .in{border-radius:var(--card-rad)}

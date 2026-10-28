@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
 <body data-active="cantieri" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Cantieri / portfolio.</strong> Indice di tutti i progetti, filtrabili per categoria. Template collegati: <a href="categoria.html">categoria</a>, <a href="progetto.html">scheda progetto</a>. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -9,12 +9,59 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Cantieri</li></ol></nav>
 
+<!-- 1. APERTURA: hero a scorrimento, due colonne di copertine e una targa centrale che cambia categoria (reference mersi-architecture.com, chat 2026-10-26) -->
+<section class="cnh" id="cnh" aria-label="Categorie di cantieri" style="--n:8">
+  <h1 class="sr" id="h1">Cantieri</h1>
+  <div class="cnh-pin">
+    <div class="cnh-col cnh-l" aria-hidden="true">
+      <div class="cnh-s" style="--k:0" data-t="Cover sinistra &middot; Case"></div>
+      <div class="cnh-s" style="--k:1" data-t="Cover sinistra &middot; Residenze"></div>
+      <div class="cnh-s" style="--k:2" data-t="Cover sinistra &middot; Lusso"></div>
+      <div class="cnh-s" style="--k:3" data-t="Cover sinistra &middot; Palestre"></div>
+      <div class="cnh-s" style="--k:4" data-t="Cover sinistra &middot; Allestimenti"></div>
+      <div class="cnh-s" style="--k:5" data-t="Cover sinistra &middot; Ville"></div>
+      <div class="cnh-s" style="--k:6" data-t="Cover sinistra &middot; Attivit&agrave; commerciali"></div>
+      <div class="cnh-s" style="--k:7" data-t="Cover sinistra &middot; Industriale"></div>
+    </div>
+    <div class="cnh-col cnh-r" aria-hidden="true">
+      <div class="cnh-s" style="--k:0" data-t="Cover destra &middot; Case"></div>
+      <div class="cnh-s" style="--k:1" data-t="Cover destra &middot; Residenze"></div>
+      <div class="cnh-s" style="--k:2" data-t="Cover destra &middot; Lusso"></div>
+      <div class="cnh-s" style="--k:3" data-t="Cover destra &middot; Palestre"></div>
+      <div class="cnh-s" style="--k:4" data-t="Cover destra &middot; Allestimenti"></div>
+      <div class="cnh-s" style="--k:5" data-t="Cover destra &middot; Ville"></div>
+      <div class="cnh-s" style="--k:6" data-t="Cover destra &middot; Attivit&agrave; commerciali"></div>
+      <div class="cnh-s" style="--k:7" data-t="Cover destra &middot; Industriale"></div>
+    </div>
+    <a class="cnh-plate" id="cnh-plate" href="categoria.html#case" aria-label="Vai alla categoria Case">
+      <span class="cnh-name">Case</span><span class="cnh-arr" aria-hidden="true">&nearr;</span>
+      <span class="cnh-count">[n] progetti</span><span class="cnh-num">01 / 08</span>
+      <span class="cnh-wm" aria-hidden="true"></span>
+    </a>
+    <p class="cnh-hint" aria-hidden="true">Scorri per scoprire le categorie</p>
+  </div>
+  <ol class="sr" aria-label="Categorie">
+      <li><a href="categoria.html#case" data-i="0">Case</a></li>
+      <li><a href="categoria.html#residenze" data-i="1">Residenze</a></li>
+      <li><a href="categoria.html#lusso" data-i="2">Lusso</a></li>
+      <li><a href="categoria.html#palestre" data-i="3">Palestre</a></li>
+      <li><a href="categoria.html#allestimenti" data-i="4">Allestimenti</a></li>
+      <li><a href="categoria.html#ville" data-i="5">Ville</a></li>
+      <li><a href="categoria.html#attivita-commerciali" data-i="6">Attivit&agrave; commerciali</a></li>
+      <li><a href="categoria.html#industriale" data-i="7">Industriale</a></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Hero con il comportamento di mersi-architecture.com (chat 2026-10-26): a schermo intero due colonne di copertine e, al centro, una targa con nome, quantita e numero. Scorrendo la pagina la sezione resta ferma e le copertine salgono dal basso, prima a sinistra e un attimo dopo a destra; la targa cambia categoria e tono. Le categorie sono quelle attuali: Case, Residenze, Lusso, Palestre, Allestimenti, Ville, Attivita commerciali, Industriale. Clic sulla targa: pagina della categoria."></i>
+  <i data-note="PROPOSTA|Ogni categoria ha due copertine (sinistra e destra): servono 16 scatti, uno o due per categoria, scelti dal cliente tra i progetti pubblicabili (NDA)."></i>
+  <i data-note="PROPOSTA|Senza JavaScript o con riduci movimento: resta la prima coppia con la targa e l'elenco delle categorie sotto forma di link (nascosto alla vista, letto dagli screen reader). Su touch lo scorrimento e lo stesso."></i>
+  <i data-note="DEV|Da ristimare. Sezione sticky + calcolo del progresso di scorrimento che sposta le copertine con translateY e aggiorna la targa. Nessuna libreria: LOW-MEDIUM. Performance: copertine in formato web, caricamento anticipato solo delle prime due."></i>
+</section>
+
 <!-- 1. APERTURA: titolo-manifesto, contatori, intro -->
-<section class="sec cn-hero" aria-labelledby="h1"><div class="in">
+<section class="sec cn-hero" aria-labelledby="h-intro"><div class="in">
   <div class="cn-top">
     <div>
       <p class="dx-k" data-rv>Portfolio</p>
-      <h1 id="h1" class="cn-h1" data-rv style="--d:1">Cantieri</h1>
+      <h2 id="h-intro" class="cn-h1" data-rv style="--d:1">Cantieri</h2>
       <ul class="cn-sum" data-rv style="--d:2"><li><b>[N]</b><span>progetti pubblicati</span></li><li><b>8</b><span>categorie</span></li><li><b>~180</b><span>cantieri all'anno</span></li></ul>
     </div>
     <p class="cn-lead" data-rv style="--d:3">Da [30/40] anni realizziamo progetti per i più importanti studi di architettura e designer di Milano. Case, ville, palestre, allestimenti, attività commerciali, edifici industriali: nuove costruzioni, ristrutturazioni e manutenzioni.</p>
@@ -43,6 +90,20 @@
   <h2 id="h-all" class="sr">Tutti i progetti</h2>
   <div class="cn-cat" hidden aria-live="polite"><span class="cn-cat-n"></span><p></p><a href="categoria.html"><span>Vai alla pagina</span><i class="dx-arr" aria-hidden="true"></i></a></div>
   <p class="sr cn-live" aria-live="polite"></p>
+  <ul class="cn-dk" data-cn-dk aria-label="Anteprima dei progetti">
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto Ceresio 7|3/4"></div><span class="cn-dk-t"><b>Ceresio 7</b><small>Palestre</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto Casa MJO|3/4"></div><span class="cn-dk-t"><b>Casa MJO</b><small>Case</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto Villa Lodovic|3/4"></div><span class="cn-dk-t"><b>Villa Lodovic</b><small>Ville</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>[Nome progetto]</b><small>Palestre</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>[Nome progetto]</b><small>Attività commerciali</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>[Nome progetto]</b><small>Residenze</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>Casa [nome in NDA]</b><small>Lusso</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>[Nome progetto]</b><small>Industriale</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>[Nome progetto]</b><small>Allestimenti</small></span></a></li>
+    <li><a class="cn-dk-c" href="progetto.html"><div data-noratio data-ph="Foto progetto|3/4"></div><span class="cn-dk-t"><b>Casa [nome in NDA]</b><small>Case</small></span></a></li>
+  </ul>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Reference mersi-architecture.com/projets (chat 2026-10-27): sotto titolo e contatori, una fila di copertine verticali a tutta larghezza. Passando il mouse le copertine vicine al cursore si ingrandiscono, di piu quella sotto il cursore e via via meno le vicine (effetto 'dock'); nome e categoria compaiono sulla copertina piu grande. Clic: pagina del progetto. Touch e schermi stretti: fila scorrevole in orizzontale, senza ingrandimento. Riduci movimento: nessun ingrandimento."></i>
+  <i data-note="DEV|Da ristimare. Lista di link + JS ~20 righe (distanza dal cursore -> scala, requestAnimationFrame). LOW."></i>
   <ul class="cn-grid">
     <li class="cn-it" data-cat="palestre"><a class="cn-c" data-k="1" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Palestre</span><div data-ph="Foto Ceresio 7|4/3"></div></div><div class="cn-t"><div><h3>Ceresio 7</h3><span class="meta">Milano &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
     <li class="cn-it" data-cat="case"><a class="cn-c" data-k="2" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Case</span><div data-ph="Foto Casa MJO|4/3"></div></div><div class="cn-t"><div><h3>Casa MJO</h3><span class="meta">Milano &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
@@ -55,6 +116,7 @@
     <li class="cn-it" data-cat="allestimenti"><a class="cn-c" data-k="9" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Allestimenti</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>[Nome progetto]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
     <li class="cn-it" data-cat="case"><a class="cn-c" data-k="10" href="progetto.html"><div class="cn-ph"><span class="cn-tag">Case</span><div data-ph="Foto progetto|4/3"></div></div><div class="cn-t"><div><h3>Casa [nome in NDA]</h3><span class="meta">[Località] &middot; [Anno]</span></div><span class="cn-go" aria-hidden="true">Scopri il progetto <i class="dx-arr"></i></span></div></a></li>
   </ul>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Animazione delle card analizzata su mersi-architecture.com/projets (chat 2026-10-27): 1) in alto la fila di copertine strette che si ingrandiscono vicino al cursore; 2) scorrendo, ogni copertina piccola della fila si stacca e vola al suo posto nella griglia sottostante, ingrandendosi, una dopo l'altra (movimento legato allo scorrimento: tornando su, le foto ritornano nella fila); 3) la griglia alterna righe da 3 e da 4 foto a tutta larghezza; 4) al passaggio del mouse sale dal basso un pannello pieno con nome grande, categoria e marchio, e la foto si sposta appena seguendo il cursore. Adattato con angoli arrotondati e grigi (Home A). Filtro: le card rientrano con la stessa animazione. Touch: niente pannello al passaggio, resta il pannello in vetro. Riduci movimento: tutto fermo."></i>
   <p class="cn-empty" hidden>Nessun progetto pubblicato in questa categoria per ora. <a href="contatti.html">Raccontaci il tuo</a>.</p>
   <div class="cn-peek" aria-hidden="true"></div>
   <div class="cn-more"><a class="btn sec2" href="#">Mostra altri progetti</a></div>
@@ -87,6 +149,28 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Cantieri)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261020f"></script>
-<script src="wf-dyn.js?v=13"></script>
+<script src="wireframe.js?v=20f"></script>
+<script src="wf-dyn.js?v=14"></script>
+<script>(function(){var s=document.getElementById('cnh');if(!s)return;var pin=s.querySelector('.cnh-pin'),L=[].slice.call(s.querySelectorAll('.cnh-l .cnh-s')),R=[].slice.call(s.querySelectorAll('.cnh-r .cnh-s')),pl=document.getElementById('cnh-plate'),nm=pl.querySelector('.cnh-name'),nu=pl.querySelector('.cnh-num'),links=[].slice.call(s.querySelectorAll('ol a')),N=L.length,cur=0,tick=0,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}function cl(n){return Math.max(0,Math.min(1,n))}function place(P,els,lag){els.forEach(function(e,k){if(k===0){e.style.transform='none';return}var y=cl(k-(P-lag));e.style.transform='translateY('+(ease(y)*100).toFixed(2)+'%)'})}function setPlate(i){if(i===cur)return;cur=i;nm.innerHTML=links[i].innerHTML;nu.textContent='0'+(i+1)+' / 0'+N;pl.href=links[i].getAttribute('href');pl.setAttribute('aria-label','Vai alla categoria '+links[i].textContent);pl.style.setProperty('--tone',['#d9d9d9','#c4c4c4','#e2e2e2','#b8b8b8'][i%4]);pl.classList.remove('sw');void pl.offsetWidth;pl.classList.add('sw')}function upd(){tick=0;if(rm){return}var r=s.getBoundingClientRect(),top=parseFloat(getComputedStyle(pin).top)||0,span=s.offsetHeight-pin.offsetHeight,p=span>1?cl((top-r.top)/span):0,P=p*(N-1);place(P,L,0);place(P,R,.22);setPlate(Math.min(N-1,Math.max(0,Math.round(P))))}function req(){if(!tick)tick=requestAnimationFrame(upd)}if(!rm){addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd()}})();</script>
+<script>(function(){var u=document.querySelector('[data-cn-dk]');if(!u)return;var C=[].slice.call(u.querySelectorAll('.cn-dk-c')),mq=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)'),x=null,raf=0;function draw(){raf=0;var best=null,bs=0;C.forEach(function(c){var s=1;if(x!==null&&mq.matches){var r=c.parentNode.getBoundingClientRect(),d=Math.abs(x-(r.left+r.width/2));s=1+.42*Math.max(0,1-d/(r.width*2.6))}c.style.setProperty('--s',s.toFixed(3));if(s>bs){bs=s;best=c}});C.forEach(function(c){c.classList.toggle('top',x!==null&&c===best&&bs>1.2)})}u.addEventListener('mousemove',function(e){x=e.clientX;if(!raf)raf=requestAnimationFrame(draw)});u.addEventListener('mouseleave',function(){x=null;if(!raf)raf=requestAnimationFrame(draw)});C.forEach(function(c){c.addEventListener('focus',function(){var r=c.getBoundingClientRect();x=r.left+r.width/2;draw()})})})();</script>
+<script>/* Cantieri: griglia alla mersi-architecture.com/projets (chat 2026-10-27). Le copertine piccole della fila volano al loro posto nella griglia, legate allo scorrimento; righe da 3 e 4; pannello che sale al passaggio */
+(function(){var g=document.querySelector('.cn-grid');if(!g)return;var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)'),its=[].slice.call(g.querySelectorAll('.cn-it'));
+its.forEach(function(it){var c=it.querySelector('.cn-c'),t=c.querySelector('h3'),k=c.querySelector('.cn-tag');var hv=document.createElement('span');hv.className='cn-hv';hv.setAttribute('aria-hidden','true');hv.innerHTML='<b>'+t.textContent+'</b><small>'+(k?k.textContent:'')+'</small>';c.appendChild(hv);
+if(!rm){c.addEventListener('mousemove',function(e){if(!fine.matches)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));c.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))});c.addEventListener('mouseleave',function(){c.style.setProperty('--mx',0);c.style.setProperty('--my',0)})}});
+function rows(){var v=its.filter(function(x){return !x.hidden}),i=0,row=0;while(i<v.length){var n=row%2?4:3;for(var j=0;j<n&&i<v.length;j++,i++){v[i].classList.toggle('r3',n===3);v[i].classList.toggle('r4',n===4)}row++}}
+rows();
+var strip=document.querySelector('[data-cn-dk]'),th=strip?[].slice.call(strip.querySelectorAll('.cn-dk-c')):[],L=[],S=[],y0=0,y1=1,tick=0,on=false,busy=false;
+function active(){return !rm&&strip&&!g.classList.contains('is-list')&&matchMedia('(min-width:761px)').matches&&its.every(function(x){return !x.hidden})}
+function reset(){its.forEach(function(x){x.style.transform='';x.style.clipPath='';x.style.zIndex='';x.style.removeProperty('--fp')});th.forEach(function(t){t.style.visibility=''})}
+function measure(){busy=true;reset();on=active();g.classList.toggle('fl-on',on);if(strip)strip.classList.toggle('fl-on',on);if(!on){busy=false;return}var Y=scrollY;L=its.map(function(x){var r=x.getBoundingClientRect();return{x:r.left,y:r.top+Y,w:r.width,h:r.height}});S=th.map(function(t){var r=t.parentNode.getBoundingClientRect();return{x:r.left,y:r.top+Y,w:r.width,h:r.width*4/3}});var st=strip.getBoundingClientRect().top+Y;y0=st-innerHeight*.62;y1=Math.max(y0+240,g.getBoundingClientRect().top+Y-innerHeight*.18);busy=false;upd()}
+function cl(v){return v<0?0:v>1?1:v}function ez(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function upd(){tick=0;if(!on||busy)return;var P=cl((scrollY-y0)/(y1-y0)),n=Math.min(its.length,S.length);
+its.forEach(function(x,i){if(i>=n)return;var p=ez(cl((P-i*.04)/.6)),a=L[i],s=S[i],k=Math.max(s.w/a.w,s.h/a.h),sc=k+(1-k)*p,q=1-p,cr=Math.max(0,(1-(s.w/k)/a.w)*100)*q,cb=Math.max(0,(1-(s.h/k)/a.h)*100)*q,cl0=cr/2,dx=(s.x-a.x-a.w*sc*cl0/100)*q,dy=(s.y-a.y)*q;x.style.transform='translate('+dx.toFixed(1)+'px,'+dy.toFixed(1)+'px) scale('+sc.toFixed(4)+')';x.style.clipPath='inset(0 '+(cr-cl0).toFixed(2)+'% '+cb.toFixed(2)+'% '+cl0.toFixed(2)+'% round '+(14/sc).toFixed(1)+'px)';x.style.zIndex=p<1?3:'';x.style.setProperty('--fp',p.toFixed(3))});
+var gone=P>0;th.forEach(function(t){t.style.visibility=gone?'hidden':''})}
+function req(){if(!tick)tick=requestAnimationFrame(upd)}
+if(!rm){addEventListener('scroll',req,{passive:true});var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(measure,150)});addEventListener('load',measure);if(document.fonts)document.fonts.ready.then(measure);
+new MutationObserver(function(){rows();clearTimeout(rt);rt=setTimeout(measure,420)}).observe(g,{subtree:true,attributes:true,attributeFilter:['hidden']});
+document.querySelectorAll('.cn-view button').forEach(function(b){b.addEventListener('click',function(){setTimeout(measure,60)})});measure()}else{new MutationObserver(rows).observe(g,{subtree:true,attributes:true,attributeFilter:['hidden']})}})();</script>
+<script>(function(){var b=document.querySelector('.cn-bar');if(!b)return;var t=0;function u(){t=0;var top=parseFloat(getComputedStyle(b).top)||0;b.classList.toggle('is-stuck',b.getBoundingClientRect().top<=top+1&&scrollY>50)}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
+<script>/* Cantieri: card senza testo quando il filtro e su Tutti */(function(){var g=document.querySelector('.cn-grid'),t=document.querySelector('.cn-f[data-f=tutti]');if(!g||!t)return;function u(){var a=t.getAttribute('aria-pressed')==='true';g.classList.toggle('cn-all',a);document.body.classList.toggle('cn-all-on',a)}u();new MutationObserver(u).observe(t,{attributes:true,attributeFilter:['aria-pressed']})})();</script>
 </body></html>

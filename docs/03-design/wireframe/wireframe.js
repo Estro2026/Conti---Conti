@@ -23,55 +23,75 @@
     '<button data-vw="auto" aria-pressed="true">Fluida</button><button data-vw="desktop" aria-pressed="false">Desktop</button><button data-vw="tablet" aria-pressed="false">Tablet</button><button data-vw="mobile" aria-pressed="false">Mobile</button></div>' +
     '<a href="#note-pagina" id="tl">Annotazioni &darr;</a><button id="tn" aria-pressed="true">Note</button></div>';
 
-  /* header */
+  /* header + menu a tutta pagina: stessa struttura, ordine DOM e comportamento della Home A (classi con prefisso ha-; stile in wf-a.css, in scala di grigi) */
   var hdr = document.getElementById('hdr');
   if (hdr) {
-    var li = NAV.map(function (n) {
-      var cur = n[0] === act ? ' aria-current="page"' : '';
-      var sub = '';
-      if (n[0] === 'cantieri') sub = '<ul class="dd" aria-label="Categorie cantieri">' + CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('') + (CL ? '' : '<li><a class="tbd" href="cantieri.html">[Settori: voce da decidere]</a></li>') + '</ul>';
-      return '<li><a href="' + n[2] + '"' + cur + '>' + n[1] + '</a>' + sub + '</li>';
-    }).join('');
-    var ml = NAV.map(function (n) {
-      var sub = n[0] === 'cantieri' ? '<ul>' + CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('') + '</ul>' : '';
-      return '<li><a href="' + n[2] + '">' + n[1] + '</a>' + sub + '</li>';
-    }).join('');
-    var L = ['impresa', 'cantieri', 'vendita', 'blog'], R = ['faq', 'contatti'];
-    function lis(keys) {
-      return NAV.filter(function (n) { return keys.indexOf(n[0]) > -1; }).map(function (n) {
-        var cur = n[0] === act ? ' aria-current="page"' : '';
-        var sub = '';
-        if (n[0] === 'cantieri') sub = '<ul class="dd" aria-label="Categorie cantieri">' + CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('') + '</ul>';
-        return '<li><a href="' + n[2] + '"' + cur + '>' + n[1] + '</a>' + sub + '</li>';
-      }).join('');
-    }
-    hdr.outerHTML = '<a class="skip" href="#main">Vai al contenuto</a><header class="hd">' +
-      '<nav class="hd-l" aria-label="Principale"><ul>' + lis(L) + '</ul></nav>' +
-      '<a class="logo-w" href="home-a.html" aria-label="Conti &amp; Conti, home">' + LOGO.replace(/alt="[^"]*"/, 'alt=""') + '</a>' +
-      '<div class="hd-r"><nav aria-label="Pagine di servizio"><ul>' + lis(R) + '</ul></nav><a class="btn hcta" href="contatti.html">Richiedi un preventivo</a></div>' +
-      '<button class="burger" aria-expanded="false" aria-controls="mnav"><span class="sr">Menu</span><span aria-hidden="true">&#9776;</span></button></header>' +
-      '<nav class="mnav" id="mnav" aria-label="Principale mobile"><ul>' + ml + '</ul><a class="btn" href="contatti.html" style="margin-top:12px">Richiedi un preventivo</a></nav>';
+    var cur = function (k) { return act === k ? ' aria-current="page"' : ''; };
+    var LIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/></svg>';
+    var FB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/></svg>';
+    var subs = CATS.map(function (c) { return '<li><a href="categoria.html">' + c + '</a></li>'; }).join('');
+    var chips = CATS.map(function (c, i) { return '<li><a class="ha-mx-chip' + (i ? '' : ' is-on') + '" data-img="' + i + '" href="categoria.html">' + c + '</a></li>'; }).join('');
+    var prevs = CATS.map(function (c, i) { return '<div class="ph-i' + (i ? '' : ' on') + '" aria-hidden="true"><span>Foto: ' + c + '</span></div>'; }).join('');
+    hdr.outerHTML = '<a class="skip" href="#main">Vai al contenuto</a>' +
+      '<div class="ha-hdw"><header class="ha-nav" id="nav">' +
+      '<a class="ha-nav-logo" href="home-a.html" aria-label="Conti &amp; Conti, home"><img class="ha-logo-w" src="../mockup/img/logo-bianco.png" width="190" height="49" alt=""><img class="ha-logo-c" src="../mockup/img/logo.png" width="190" height="49" alt=""></a>' +
+      '<div class="ha-nav-r"><a class="ha-btn ha-btn-nav" href="contatti.html">Richiedi un preventivo</a>' +
+      '<button class="ha-nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span class="ha-nm-label"><span class="ha-nm-o">Menu</span><span class="ha-nm-c" aria-hidden="true"><b></b><b></b></span></span></button></div></header>' +
+      '<div class="ha-menu" id="menu" hidden><div class="ha-mx-card">' +
+      '<nav class="ha-mx-main" aria-label="Principale"><ul>' +
+      '<li data-p="impresa"><a href="chi-siamo.html"' + cur('impresa') + '><small>01</small>Impresa</a></li>' +
+      '<li class="ha-has-sub" data-p="cantieri"><a href="cantieri.html"' + cur('cantieri') + '><small>02</small>Cantieri</a><button class="ha-menu-tg" type="button" aria-expanded="false" aria-label="Mostra le categorie di cantiere"><i></i><i></i></button><ul class="ha-menu-sub">' + subs + '</ul></li>' +
+      '<li data-p="vendita"><a href="in-vendita.html"' + cur('vendita') + '><small>03</small>In vendita</a></li>' +
+      '<li data-p="blog"><a href="blog.html"' + cur('blog') + '><small>04</small>Blog</a></li></ul>' +
+      '<ul class="ha-mx-sec"><li data-p="faq"><a href="faq.html"' + cur('faq') + '>FAQ</a></li><li data-p="contatti"><a href="contatti.html"' + cur('contatti') + '>Contatti</a></li></ul></nav>' +
+      '<div class="ha-mx-cats"><p class="ha-mx-lbl">Cantieri per categoria</p><ul class="ha-mx-chips" aria-label="Categorie di cantiere">' + chips + '</ul>' +
+      '<div class="ha-mx-prev">' + prevs + '<a class="ha-mx-all" href="cantieri.html"><span>Tutti i cantieri</span><i aria-hidden="true"></i></a></div></div>' +
+      '<dl class="ha-mx-side"><div><dt>Telefono</dt><dd><a href="tel:+390362557972">0362 557972</a></dd></div><div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div><div><dt>Sede</dt><dd class="sm">Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>' +
+      '<div><dt>Social</dt><dd><ul class="ha-menu-social"><li><a href="https://www.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener" aria-label="LinkedIn (si apre in nuova scheda)">' + LIN + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener" aria-label="Facebook (si apre in nuova scheda)">' + FB + '</a></li></ul></dd></div></dl>' +
+      '</div></div></div>';
+    (function () {
+      var d = document, burger = d.querySelector('.ha-nav-burger'), m = d.getElementById('menu');
+      var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function setMenu(open) { burger.setAttribute('aria-expanded', open); m.hidden = !open; d.body.classList.toggle('ha-menu-open', open); }
+      burger.addEventListener('click', function () { setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+      m.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { setMenu(false); burger.focus(); } });
+      /* voci: la voce sotto il cursore (o col focus) diventa bianca; su Cantieri si accendono le categorie */
+      var lis = [].slice.call(m.querySelectorAll('.ha-mx-main>ul>li'));
+      lis.forEach(function (li) { var f = function () { m.classList.add('is-hover'); m.classList.toggle('sub-hot', li.dataset.p === 'cantieri'); lis.forEach(function (x) { x.classList.toggle('cur', x === li); }); }; li.addEventListener('mouseenter', f); li.firstElementChild.addEventListener('focus', f); });
+      m.querySelector('.ha-mx-main').addEventListener('mouseleave', function () { m.classList.remove('is-hover'); });
+      var tg = m.querySelector('.ha-menu-tg'); if (tg) tg.addEventListener('click', function () { var o = tg.getAttribute('aria-expanded') !== 'true'; tg.setAttribute('aria-expanded', o); tg.parentNode.classList.toggle('open', o); });
+      new MutationObserver(function () { if (m.hidden) m.classList.remove('is-hover', 'sub-hot'); }).observe(m, { attributes: true, attributeFilter: ['hidden'] });
+      /* anteprima categorie: ruota da sola finche non si sceglie una categoria */
+      var ch = [].slice.call(m.querySelectorAll('.ha-mx-chip')), im = [].slice.call(m.querySelectorAll('.ha-mx-prev .ph-i')), k = 0, hov = false;
+      function sel(n) { k = n; ch.forEach(function (x, i) { x.classList.toggle('is-on', i == n); }); im.forEach(function (x, i) { x.classList.toggle('on', i == n); }); }
+      ch.forEach(function (c, i) { ['mouseenter', 'focus'].forEach(function (e) { c.addEventListener(e, function () { hov = true; sel(i); }); }); c.addEventListener('mouseleave', function () { hov = false; }); });
+      setInterval(function () { if (!m.hidden && !hov && !rm) sel((k + 1) % ch.length); }, 2800);
+    })();
   }
 
-  /* footer: stessa struttura del footer dei mockup Home A/B (logo, P.IVA, social | contatti | sito; riga legale) */
+  /* footer: stessa struttura del footer della Home A (riga Scrivici, marchio, Sede, Contatti+social, Sito, wordmark, riga legale) */
   var ftr = document.getElementById('ftr');
   if (ftr) {
-    var SOC = [['LinkedIn', 'https://it.linkedin.com/company/conti-e-conti-s.r.l.', '<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/>'], ['Facebook', 'https://www.facebook.com/ContieContiSrl/', '<path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/>']];
     var IUB = 'https://www.iubenda.com/privacy-policy/57429672', NW = '<span class="sr"> (si apre in nuova scheda)</span>';
-    ftr.outerHTML = '<footer class="ft ft-m"><div class="in ft-grid">' +
-      '<div><img class="ft-logo" src="../mockup/img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell\'edilizia"><p>Conti e Conti Srl &middot; P.IVA 00934370966</p>' +
-      '<ul class="ft-soc" aria-label="Seguici sui social">' + SOC.map(function (s) { return '<li><a href="' + s[1] + '" target="_blank" rel="noopener" aria-label="' + s[0] + ' di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true">' + s[2] + '</svg></a></li>'; }).join('') + '</ul></div>' +
-      '<div><h2>Contatti</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
-      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
+    var IUB3 = IUB + '/cookie-policy?an=no&s_ck=false&newmarkup=yes';
+    ftr.outerHTML = '<footer class="ha-foot"><div class="ha-wrap ha-ft">' +
+      '<a class="ha-ft-cta" href="mailto:info@contieconti.it"><small>Scrivici</small><span>info@contieconti.it</span><i aria-hidden="true"></i></a>' +
+      '<div class="ha-ft-top">' +
+      '<div class="ha-ft-brand"><img src="../mockup/img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell\'edilizia"><p>Impresa di costruzioni dal 1988.<br>Brianza, Milano e lago.</p></div>' +
+      '<div><h2>Sede</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
+      '<div><h2>Contatti</h2><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>' +
+      '<ul class="ha-ft-soc"><li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener">LinkedIn' + NW + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener">Facebook' + NW + '</a></li></ul></div>' +
+      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="blog.html">Blog</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
       '</div>' +
-      (CL ? '' : N('PROPOSTA', 'Footer allineato ai mockup Home A/B (richiesta in chat 2026-10-19): tre colonne (logo bianco, ragione sociale e P.IVA, social | Contatti | Sito) e riga legale con copyright e link. In media fedeltà resta in scala di grigi (wf-mid.css). Nessun logo di terzi e nessuna certificazione nel footer.') + N('RICERCA', 'Indirizzo, telefono, email, orari, P.IVA e profili social dal sito attuale: da verificare con il cliente.')) +
-      '<div class="in ft-legal"><p>&copy; 2026 Conti e Conti Srl &middot; Tutti i diritti riservati</p><ul aria-label="Informazioni legali">' +
-      '<li><a href="' + IUB + '" target="_blank" rel="noopener">Privacy policy' + NW + '</a></li>' +
-      '<li><a href="' + IUB + '/cookie-policy" target="_blank" rel="noopener">Cookie policy' + NW + '</a></li>' +
-      '<li><button type="button" class="ft-cookie">Gestisci i cookie</button></li>' +
-      '<li><a href="#">Note legali</a></li><li><a href="#">Accessibilit&agrave;</a></li><li><a href="#">Mappa del sito</a></li></ul>' +
-      (CL ? '' : N('DEV', 'Privacy e Cookie policy = documenti Iubenda del sito attuale (RICERCA), in nuova scheda. "Gestisci i cookie": pulsante con il trigger previsto da Iubenda (es. classe iubenda-cs-preferences-link), nessun href. Note legali, Accessibilità (dichiarazione di accessibilità) e Mappa del sito: pagine da creare o link da definire, come nei mockup (VERIFY).') + N('VERIFY', 'Preferenze cookie gestite dal banner Iubenda: verificare che il banner resti attivo nel nuovo sito.')) +
-      '</div></footer>';
+      (CL ? '' : N('PROPOSTA', 'Navbar, menu a tutta pagina e footer: copia della Home A del mockup (struttura, misure, stati, animazioni e comportamento), in sola scala di grigi (il bordeaux diventa grigio scuro) e con segnaposto grigi al posto delle foto delle categorie. Font Inter Tight/Inter solo in questi componenti. Qui cambia solo la veste: voci e contenuti come nella Home A.') + N('RICERCA', 'Indirizzo, telefono, email, orari, P.IVA e profili social dal sito attuale: da verificare con il cliente.')) +
+      '<p class="ha-ft-word" aria-hidden="true">Conti &amp; Conti</p>' +
+      '<div class="ha-ft-legal"><p>Copyright 2026 &copy; Conti e Conti Srl | P.IVA 00934370966</p><ul aria-label="Informazioni legali">' +
+      '<li><a href="' + IUB + '" target="_blank" rel="noopener">Privacy Policy' + NW + '</a></li>' +
+      '<li><a href="' + IUB + '/cookie-policy" target="_blank" rel="noopener">Cookie Policy' + NW + '</a></li>' +
+      '<li><a href="' + IUB3 + '" target="_blank" rel="noopener" data-cookie-prefs>Preferenze cookie' + NW + '</a></li></ul>' +
+      (CL ? '' : N('DEV', 'Privacy, Cookie Policy e Preferenze cookie = indirizzi Iubenda forniti dal cliente, in nuova scheda. Voci "Note legali", "Accessibilita" e "Mappa del sito" tolte: non presenti sul sito attuale. Header e footer sono globali (Theme Builder): un solo componente, nessuna variante per pagina.')) +
+      '</div></div></footer>';
   }
 
   /* sticky mobile bar */
@@ -262,7 +282,7 @@
     m.dataset.tag = tag; m.dataset.txt = txt;
     /* marker fuori flusso: raccolti nell'angolo alto a destra del blocco di riferimento (nessun ingombro) */
     var hn = el.parentElement && el.parentElement.classList.contains('hero-notes');
-    var anc = hn ? null : el.closest('.box, figure, li, .sec, section, .hero, header, .hd, footer, .ft');
+    var anc = hn ? null : el.closest('.box, figure, li, .sec, section, .hero, header, .ha-hdw, footer, .ft');
     if (anc && (anc.closest('.notes') || anc.tagName === 'A')) anc = null;
     if (anc) {
       if (getComputedStyle(anc).position === 'static') anc.style.position = 'relative';
@@ -369,7 +389,7 @@
   /* hero in viewport: misura barra strumenti e header reali (cambiano tra modalità e breakpoint) */
   function fit() {
     /* --hh = tutto ciò che sta sopra l'hero a scroll 0 (legenda, bordo cornice, header) oltre alla barra */
-    var t = document.querySelector('.tb'), h = document.querySelector('.hd'), rs = document.documentElement.style;
+    var t = document.querySelector('.tb'), h = document.querySelector('.ha-hdw'), rs = document.documentElement.style;
     var th = t ? t.offsetHeight : 0;
     rs.setProperty('--tbh', th + 'px');
     if (h) rs.setProperty('--hh', Math.ceil(h.getBoundingClientRect().bottom + window.scrollY) - th + 'px');
@@ -518,13 +538,13 @@
   window.addEventListener('hashchange', function () { location.reload(); });
 })();
 
-/* Navbar trasparente sulla hero, piena allo scroll */
+/* Navbar trasparente sulla hero, flottante in vetro allo scroll (is-solid come nella Home A) */
 (function () {
-  var H = document.querySelector('.hd');
-  if (!H) return;
-  var hasHero = !!document.querySelector('#main > .hero, #main > .crumb + .hero');
-  if (hasHero) document.body.classList.add('has-hero');
-  function size() { document.documentElement.style.setProperty('--hdh', H.offsetHeight + 'px'); }
+  var W = document.querySelector('.ha-hdw'), H = document.querySelector('.ha-nav');
+  if (!W || !H) return;
+  var hasHero = !!document.querySelector('#main > .hero, #main > .crumb + .hero') || document.body.hasAttribute('data-overlay');
+  if (document.querySelector('#main > .hero, #main > .crumb + .hero')) document.body.classList.add('has-hero');
+  function size() { document.documentElement.style.setProperty('--hdh', W.offsetHeight + 'px'); }
   function sc() { H.classList.toggle('is-solid', !hasHero || window.scrollY > 40); }
   size(); sc();
   window.addEventListener('scroll', sc, { passive: true });
@@ -550,12 +570,11 @@
 /* Header trasparente sopra la hero (body[data-overlay]): misura header + breadcrumb e rende la barra bianca dopo lo scroll */
 (function () {
   if (!document.body.hasAttribute('data-overlay')) return;
-  var hd = document.querySelector('.hd'), cr = document.querySelector('main > .crumb'), fr = document.querySelector('.frame') || document.body;
+  var hd = document.querySelector('.ha-hdw'), cr = document.querySelector('main > .crumb'), fr = document.querySelector('.frame') || document.body;
   if (!hd) return;
   function size() { fr.style.setProperty('--ovl', (hd.offsetHeight + (cr ? cr.offsetHeight : 0)) + 'px'); }
-  function sc() { hd.classList.toggle('is-solid', window.scrollY > 24); }
-  size(); sc();
-  window.addEventListener('scroll', sc, { passive: true });
+  function sc() {}
+  size();
   window.addEventListener('resize', size);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(size);
 })();

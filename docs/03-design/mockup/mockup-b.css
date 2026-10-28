@@ -478,3 +478,6 @@ body.b{background:var(--plaster);color:var(--ink)}
 .b .dd{padding:10px}
 .b .nav .dd a:not(.btn){border-radius:2px;transition:background-color .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease)}
 .b .nav .dd a:not(.btn):hover,.b .nav .dd a:not(.btn):focus-visible{background:#e9e5dd;box-shadow:inset 2px 3px 6px rgba(30,28,24,.18),inset -1px -1px 0 rgba(255,255,255,.8)}
+
+/* hero: la forma circolare svanisce mentre il video si apre, nessun pezzo sbuca da dietro */
+.b .hero .relief-art{opacity:calc(1 - var(--o,0) * 1.8)}

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Immobili in vendita | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-vendita.css?v=3"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<title>Wireframe Immobili in vendita | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-vendita.css?v=3"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
 <body data-active="vendita" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>Residenze / immobili in vendita (elenco).</strong> Scheda singola con form: <a href="residenza.html">residenza.html</a>. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -38,14 +38,14 @@
       <button type="button" class="iv-f" data-f="venduto" aria-pressed="false">Venduti <sup>0</sup></button>
     </div>
     <div class="iv-view" role="group" aria-label="Vista">
-      <button type="button" data-v="grid" aria-pressed="true">Elenco</button>
+      <button type="button" data-v="grid" aria-pressed="true">Skyline</button>
       <button type="button" data-v="map" aria-pressed="false">Mappa</button>
     </div>
   </div>
   <p class="sr" aria-live="polite" data-iv-live></p>
 
   <div class="iv-wrap">
-    <ul class="iv-grid">
+    <ul class="iv-grid iv-skyg">
       <li class="iv-it" data-st="" data-loc=""><a class="card card-imm" href="residenza.html"><div data-ph="Render Domus 54|4/3"></div><span class="ci-b"><span class="badge">[Stato]</span><h3>Domus 54</h3><span class="meta">[Località] &middot; [tipologia] &middot; [mq]</span><u>Scopri l'immobile</u></span></a></li>
       <li class="iv-it" data-st="costruzione" data-loc="len"><a class="card card-imm" href="residenza.html"><div data-ph="Render Via Diaz|4/3"></div><span class="ci-b"><span class="badge">In costruzione</span><h3>Via Diaz</h3><span class="meta">Lentate sul Seveso (MB) &middot; [tipologia] &middot; [mq]</span><u>Scopri l'immobile</u></span></a></li>
       <li class="iv-it" data-st="" data-loc="mon"><a class="card card-imm" href="residenza.html"><div data-ph="Render Palazzina Montesolaro|4/3"></div><span class="ci-b"><span class="badge">[Stato]</span><h3>Palazzina Montesolaro</h3><span class="meta">[Località] &middot; [tipologia] &middot; [mq]</span><u>Scopri l'immobile</u></span></a></li>
@@ -53,9 +53,18 @@
       <li class="iv-it" data-st="costruzione" data-loc="mon"><a class="card card-imm" href="residenza.html"><div data-ph="Render Residenza Solarium|4/3"></div><span class="ci-b"><span class="badge">In costruzione</span><h3>Residenza Solarium</h3><span class="meta">Montesolaro, Carimate (MB) &middot; 4 unità &middot; consegna dic. 2026</span><u>Scopri l'immobile</u></span></a></li>
       <li class="iv-it" data-st="" data-loc="len"><a class="card card-imm" href="residenza.html"><div data-ph="Render Residenza Paradiso|4/3"></div><span class="ci-b"><span class="badge">[Stato]</span><h3>Residenza Paradiso</h3><span class="meta">Lentate sul Seveso (MB) &middot; [tipologia] &middot; [mq]</span><u>Scopri l'immobile</u></span></a></li>
     </ul>
+    <div class="iv-sk-nav" hidden><p class="iv-sk-c" aria-live="polite"><b data-sk-c>1</b> / <span data-sk-t>6</span> immobili</p><span class="iv-sk-bar" aria-hidden="true"><i></i></span><span class="iv-sk-h">Scorri di lato</span><button type="button" class="dx-arr l" data-sk="-1" aria-label="Immobili precedenti"></button><button type="button" class="dx-arr" data-sk="1" aria-label="Immobili successivi"></button></div>
     <div class="iv-empty" hidden><p><b>Nessun immobile in questo stato, per ora.</b> Se cerchi qualcosa di preciso, scrivici: ti diciamo cosa sta per partire.</p><a class="btn sec2" href="contatti.html">Scrivici</a></div>
 
-    <div class="iv-map" hidden>
+    <div class="iv-map iv-map2" hidden>
+      <aside class="iv-map-s" aria-label="Immobili sulla mappa">
+        <p class="iv-map-k">3 località &middot; 5 immobili in mappa</p>
+        <ul>
+          <li data-loc="mon"><span class="iv-map-d">2</span><b>Montesolaro</b><small>Palazzina Montesolaro &middot; Residenza Solarium</small></li>
+          <li data-loc="len"><span class="iv-map-d">2</span><b>Lentate sul Seveso</b><small>Via Diaz &middot; Residenza Paradiso</small></li>
+          <li data-loc="ser"><span class="iv-map-d">1</span><b>Seregno</b><small>Seregno</small></li>
+        </ul>
+      </aside>
       <div class="iv-map-c">
         <div class="iv-map-bg" aria-hidden="true"><div data-noratio data-ph="Mappa schematica della Brianza (posizioni indicative)|16/9"></div></div>
         <ul class="iv-pins" aria-label="Località degli immobili">
@@ -69,22 +78,33 @@
   </div>
 
   <div class="box" style="margin-top:24px"><span class="tag t-VERIFY">VERIFY</span> Monza: immobile da valutare. Se confermato, diventa una settima scheda. Non inserito nell'elenco.</div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Elenco creativo (chat 2026-10-27): le card degli immobili, sotto filtri e cambio vista, formano uno skyline, un 'edificio' per immobile con il suo render, altezze diverse. All'arrivo gli edifici si alzano dal basso uno dopo l'altro, come un cantiere che sale. Al passaggio l'edificio si allarga, gli altri si stringono, e compaiono nome e stato; clic: scheda dell'immobile. Le altezze sono solo compositive (non indicano piani o prezzi). Se gli immobili sono piu di quanti ne stanno nello schermo, lo skyline scorre in orizzontale e compaiono le frecce avanti/indietro (anche col dito su touch). Il filtro per stato nasconde gli edifici non corrispondenti. Riduci movimento: edifici fermi."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Filtro per stato (Tutti / In costruzione / Disponibili / Venduti) con il numero accanto a ogni voce: il clic filtra senza ricaricare, le card escono e rientrano con dissolvenza e leggera scala (300-400 ms). Se uno stato è vuoto compare un messaggio con invito a scrivere (nessuna pagina morta). Pulsanti con stato premuto, numero di risultati annunciato ai lettori di schermo. Mobile: pillole su una riga che scorre in orizzontale, alte 44 px. Riduci movimento: cambio istantaneo. Sostituisce la nota 'con 6-7 immobili non servono filtri': qui il filtro separa ciò che si può comprare da ciò che è venduto, se i venduti restano online."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Vista Mappa rivista (chat 2026-10-27): mappa grande arrotondata a sinistra, a destra l'elenco delle localita con il numero di immobili; passando su una localita si accende il suo segnaposto e viceversa. Il pulsante di vista e ora 'Skyline / Mappa'. Mobile: elenco sotto la mappa."></i>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Vista Mappa: mappa schematica con un segnaposto per località (numero di immobili nel pin); clic, tocco o Invio aprono l'elenco degli immobili di quella località (un pin aperto alla volta, Esc chiude e riporta il focus). Il filtro per stato vale anche in mappa (pin senza risultati attenuati). Mobile: mappa più alta, pin da 44 px, nome della località nascosto e letto nel riquadro aperto. Riduci movimento: nessuna animazione. Posizioni del wireframe indicative."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Allineata a Cantieri (chat 2026-10-27): la barra dei filtri e sempre una pillola in vetro arrotondata e centrata, ferma o fissa scorrendo (stessa forma, nessun salto: feedback 2026-10-27); al passaggio sulle card sale dal basso un pannello scuro con nome, stato e localita e il render segue appena il cursore. Touch: resta il pannello in vetro."></i>
   <i data-note="INFERENZA|Località di 'Palazzina Montesolaro' e 'Seregno' dedotte dal nome dell'immobile, non da un dato: VERIFY. Domus 54 senza località: esclusa dalla mappa finché non arriva il dato."></i>
   <i data-note="PROPOSTA|Immobili venduti: tenere o togliere? Da chiedere (SEO/credibilità vs confusione). Il filtro 'Venduti' compare solo se il cliente sceglie di tenerli. Ordine di default: in costruzione, disponibile, venduto (se il cliente conferma gli stati)."></i>
   <i data-note="RICERCA|Il sito attuale ha già le pagine 'In vendita' con Residenza Solarium e Residenza Paradiso: URL da mappare con redirect 301 (vedi SEO)."></i>
   <i data-note="DEV|Da ristimare (vincolo 83 h tolto). MEDIUM: Loop Grid sul CPT Immobili con Card immobile condivisa; filtro per stato lato client (Taxonomy Filter di Elementor se disponibile nella versione installata, altrimenti JS ~30 righe su attributi data della card; VERIFY). Mappa: immagine schematica + pin HTML posizionati da campi ACF (x/y) = LOW-MEDIUM; mappa reale (Leaflet/Google Maps) = nuova dipendenza e consenso cookie, non prevista. Ordine manuale da campo ACF."></i>
 </div></section>
 
-<section class="sec alt" aria-labelledby="h-why"><div class="in pg-side">
-  <h2 id="h-why">Comprare da chi costruisce cambia il modo di comprare</h2>
-  <ul class="pg-rows">
-    <li data-rv><h3>Nessun intermediario</h3><p>Parli con chi segue il cantiere ogni giorno, senza agenzie in mezzo e senza passaggi di informazioni da una parte all'altra.</p></li>
-    <li data-rv style="--d:1"><h3>Dalla trattativa al rogito</h3><p>Lo stesso interlocutore ti accompagna dalla scelta dell'unità fino alla consegna e alla firma dal notaio.</p></li>
-    <li data-rv style="--d:2"><h3>Un'impresa certificata</h3><p>Conti e Conti lavora con un sistema qualità certificato UNI EN ISO 9001:2015 e con attestazione SOA.</p></li>
-  </ul>
-  <i data-note="PROPOSTA|Blocco opzionale di argomenti commerciali, ricavati dal servizio Vendita e dalle certificazioni del sito attuale (RICERCA, da verificare con il cliente). Nessun vantaggio economico o garanzia aggiunti. Titolo a sinistra e tre argomenti come righe a filetti su fondo nero, che compaiono in sequenza all'ingresso (riduci movimento: statiche)."></i>
+<section class="sec iv-why" aria-labelledby="h-why" data-why><div class="in">
+  <h2 id="h-why" class="dx-h">Comprare da chi costruisce cambia il modo di comprare</h2>
+  <div class="iv-ch" aria-hidden="true">
+    <span class="iv-ch-n a">Impresa</span>
+    <span class="iv-ch-l l1"></span>
+    <span class="iv-ch-n b">Agenzia</span>
+    <span class="iv-ch-l l2"></span>
+    <span class="iv-ch-n c">Tu</span>
+  </div>
+  <ol class="iv-why-l">
+    <li><span class="iv-why-k">01</span><h3>Nessun intermediario</h3><p>Parli con chi segue il cantiere ogni giorno, senza agenzie in mezzo e senza passaggi di informazioni da una parte all'altra.</p></li>
+    <li><span class="iv-why-k">02</span><h3>Dalla trattativa al rogito</h3><p>Lo stesso interlocutore ti accompagna dalla scelta dell'unità fino alla consegna e alla firma dal notaio.</p></li>
+    <li><span class="iv-why-k">03</span><h3>Un'impresa certificata</h3><p>Conti e Conti lavora con un sistema qualità certificato UNI EN ISO 9001:2015 e con attestazione SOA.</p></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Sezione ripensata (chat 2026-10-27): il concetto 'nessun intermediario' diventa un piccolo schema animato. All'ingresso si vede la catena Impresa - Agenzia - Tu; poi l'Agenzia viene barrata e si ritira, le linee si uniscono e Impresa e Tu restano collegati direttamente. Sotto, i tre argomenti in tre colonne numerate (testi invariati). Schema decorativo (aria-hidden): il significato e nei testi. Riduci movimento: stato finale subito. Mobile: schema piu piccolo, argomenti in colonna."></i>
+  <i data-note="RICERCA|Argomenti ricavati dal servizio Vendita e dalle certificazioni del sito attuale, da verificare con il cliente. Nessun vantaggio economico o garanzia aggiunti."></i>
 </div></section>
 <section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
 </main>
@@ -92,7 +112,14 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (In vendita)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261020f"></script>
-<script src="wf-dyn.js?v=13"></script>
+<script src="wireframe.js?v=20f"></script>
+<script src="wf-dyn.js?v=14"></script>
 <script src="wf-vendita.js?v=1"></script>
+<script>/* In vendita: barra filtri come pillola in vetro quando resta fissa; card con pannello che sale e foto che segue il mouse, come Cantieri (chat 2026-10-27) */(function(){var b=document.querySelector('.iv-bar');if(b){var t=0;function u(){t=0;var top=parseFloat(getComputedStyle(b).top)||0;b.classList.toggle('is-stuck',b.getBoundingClientRect().top<=top+1&&scrollY>50)}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()}
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)');[].slice.call(document.querySelectorAll('.iv-grid .card-imm')).forEach(function(c){var t=c.querySelector('h3'),s=c.querySelector('.badge'),m=c.querySelector('.meta');var hv=document.createElement('span');hv.className='cn-hv';hv.setAttribute('aria-hidden','true');hv.innerHTML='<b>'+t.textContent+'</b><small>'+(s?s.textContent:'')+(m?' &middot; '+m.textContent.split('·')[0]:'')+'</small>';c.appendChild(hv);if(rm)return;c.addEventListener('mousemove',function(e){if(!fine.matches)return;var r=c.getBoundingClientRect();c.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));c.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))});c.addEventListener('mouseleave',function(){c.style.setProperty('--mx',0);c.style.setProperty('--my',0)})})})();</script>
+<script>(function(){var s=document.querySelector('.iv-skyg');if(!s)return;var nav=document.querySelector('.iv-sk-nav'),P=nav.querySelector('[data-sk="-1"]'),N=nav.querySelector('[data-sk="1"]');function chk(){var o=s.scrollWidth>s.clientWidth+4;nav.hidden=!o;var V=[].slice.call(s.children).filter(function(x){return !x.hidden}),mx=Math.max(1,s.scrollWidth-s.clientWidth),p=Math.min(1,s.scrollLeft/mx),first=0;V.forEach(function(x,i){if(x.offsetLeft-s.offsetLeft<=s.scrollLeft+8)first=i});var c=nav.querySelector('[data-sk-c]'),t=nav.querySelector('[data-sk-t]'),bi=nav.querySelector('.iv-sk-bar i');if(c)c.textContent=first+1;if(t)t.textContent=V.length;if(bi){var vis=s.clientWidth/s.scrollWidth;bi.style.width=(vis*100).toFixed(1)+'%';bi.style.left=(p*(1-vis)*100).toFixed(1)+'%'}P.disabled=s.scrollLeft<4;N.disabled=s.scrollLeft>s.scrollWidth-s.clientWidth-4}[P,N].forEach(function(b){b.addEventListener('click',function(){s.scrollBy({left:+b.dataset.sk*s.clientWidth*.8,behavior:'smooth'})})});s.addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);new MutationObserver(function(){setTimeout(chk,450)}).observe(s,{subtree:true,attributes:true,attributeFilter:['hidden']});chk();
+if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){s.classList.add('up');return}s.classList.add('sky-on');var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add('up');setTimeout(function(){s.classList.add('done')},1700);io.disconnect()}},{threshold:.2});io.observe(s)})();</script>
+<script>(function(){var s=document.querySelector('[data-why]');if(!s)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){s.classList.add('go');return}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){setTimeout(function(){s.classList.add('go')},500);io.disconnect()}},{threshold:.45});io.observe(s)})();</script>
+<script>/* altezza dello skyline: tutto visibile nella prima schermata */(function(){var s=document.querySelector('.iv-skyg');if(!s)return;function f(){var y=s.getBoundingClientRect().top+scrollY;var h=Math.max(540,Math.min(780,innerHeight-y-24));s.style.setProperty('--skh',h+'px')}addEventListener('resize',f);addEventListener('load',f);f()})();</script>
+<script>(function(){var s=document.querySelector('.iv-map-s');if(!s)return;var pins=[].slice.call(document.querySelectorAll('.iv-pin'));[].slice.call(s.querySelectorAll('li')).forEach(function(li){function on(x){pins.forEach(function(p){p.classList.toggle('is-hot',x&&p.dataset.loc===li.dataset.loc)});li.classList.toggle('is-hot',x)}li.addEventListener('mouseenter',function(){on(true)});li.addEventListener('mouseleave',function(){on(false)});li.addEventListener('click',function(){var b=pins.filter(function(p){return p.dataset.loc===li.dataset.loc})[0];if(b)b.querySelector('button').click()})});pins.forEach(function(p){p.addEventListener('mouseenter',function(){s.querySelectorAll('li').forEach(function(li){li.classList.toggle('is-hot',li.dataset.loc===p.dataset.loc)})});p.addEventListener('mouseleave',function(){s.querySelectorAll('li').forEach(function(li){li.classList.remove('is-hot')})})})})();</script>
 </body></html>

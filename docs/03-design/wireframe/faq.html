@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe FAQ | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<title>Wireframe FAQ | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
 <body data-active="faq" data-sticky="preventivo">
 <div id="tb"></div>
 <p class="legend"><strong>FAQ.</strong> Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -21,8 +21,9 @@
 </div></section>
 
 <!-- 2. INDICE + DOMANDE -->
-<section class="sec alt" aria-label="Domande per argomento"><div class="in">
-  <nav class="sv-sticky fq-nav" aria-label="Argomenti" style="background:var(--alt)">
+<section class="sec alt fq-lay" aria-label="Domande per argomento"><div class="in">
+  <div class="fq-q"><label for="fq-q" class="sr">Cerca tra le domande</label><input id="fq-q" type="search" placeholder="Cerca una domanda, per esempio: preventivo, tempi, Lago di Como" autocomplete="off"><button type="button" class="fq-x" hidden aria-label="Cancella la ricerca">&times;</button><p class="fq-live fq-q-n" role="status" aria-live="polite"></p></div>
+  <nav class="sv-sticky fq-nav" aria-label="Argomenti">
     <div class="sv-pills">
       <a class="sv-pill fq-jump" href="#g-f1">Preventivi e tempi <small>3</small></a>
       <a class="sv-pill fq-jump" href="#g-f2">Come lavoriamo <small>4</small></a>
@@ -30,6 +31,7 @@
       <a class="sv-pill fq-jump" href="#g-f4">Acquistare dal costruttore <small>4</small></a>
     </div>
   </nav>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. FAQ piu contemporanea (chat 2026-10-27): campo di ricerca grande in testa che filtra subito domande e risposte; su desktop gli argomenti diventano un indice verticale fisso a sinistra (argomento corrente evidenziato), le domande a destra. Mobile: indice in una pillola orizzontale."></i>
   <div class="fq-row"><button type="button" class="fq-all" aria-expanded="false" aria-controls="fq-wrap">Apri tutte</button></div>
   <div class="fq-wrap" id="fq-wrap">
     <div class="fq-g" id="g-f1"><div class="fq-g-h"><h2 id="h-f1">Preventivi e tempi</h2><span>3 domande</span></div><div class="acc fq-acc">
@@ -74,7 +76,9 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (FAQ)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261020f"></script>
-<script src="wf-dyn.js?v=13"></script>
+<script src="wireframe.js?v=20f"></script>
+<script src="wf-dyn.js?v=14"></script>
 <script src="wf-servizio.js?v=3"></script>
+<script>/* FAQ: pillola degli argomenti con ombra quando resta fissa e argomento corrente evidenziato (chat 2026-10-27) */(function(){var n=document.querySelector('.fq-nav');if(!n)return;var L=[].slice.call(n.querySelectorAll('a[href^="#"]')),G=L.map(function(a){return document.querySelector(a.getAttribute('href'))}),t=0;function u(){t=0;var top=parseFloat(getComputedStyle(n).top)||0;n.classList.toggle('is-stuck',n.getBoundingClientRect().top<=top+1&&scrollY>50);var cur=0;G.forEach(function(g,i){if(g&&g.getBoundingClientRect().top<innerHeight*.35)cur=i});L.forEach(function(a,i){a.classList.toggle('is-cur',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
+
 </body></html>

@@ -12,7 +12,7 @@
 
   /* altezza delle barre fisse (toolbar wireframe + header): serve alle sezioni sticky */
   function stick() {
-    var tb = $('.tb'), hd = $('.hd'), h = 0;
+    var tb = $('.tb'), hd = $('.ha-hdw'), h = 0;
     if (tb && getComputedStyle(tb).position === 'sticky') h += tb.offsetHeight;
     if (hd && /sticky|fixed/.test(getComputedStyle(hd).position)) h += hd.offsetHeight;
     frame.style.setProperty('--stick', h + 'px');

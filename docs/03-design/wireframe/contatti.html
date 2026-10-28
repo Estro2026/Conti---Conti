@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=10"><script src="wf-zoom.js"></script></head>
+<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
 <body data-active="contatti">
 <div id="tb"></div>
 <p class="legend"><strong>Contatti e richiesta preventivo.</strong> Pagina di conversione principale. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -9,23 +9,15 @@
 <main id="main">
 <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Contatti</li></ol></nav>
 
-<!-- 1. APERTURA -->
-<section class="sec" style="border-top:0" aria-labelledby="h1"><div class="in">
-  <div class="sv-top">
-    <h1 id="h1" class="sv-h1" data-rv>Richiedi un preventivo</h1>
-    <div data-rv style="--d:1">
-      <p class="lead">Raccontaci cosa vuoi costruire o ristrutturare: ti rispondiamo entro 24 ore. <i data-note="RICERCA|'Risposta entro 24 ore' è la promessa scritta nella pagina Contatti del sito attuale: da confermare col cliente prima di riproporla."></i></p>
-      <p style="margin:12px 0 0;color:var(--mut);max-width:46ch">Più dettagli ci dai, più il primo confronto sarà concreto: dove si trova l'immobile, che intervento hai in mente, se c'è già un progetto o un architetto.</p>
-    </div>
-  </div>
-  <i data-note="PROPOSTA|Copy provvisorio: introduzione, microcopy e testi di supporto sono bozze realistiche per mostrare gerarchia e ingombri, costruite solo su fatti noti. Da validare con il cliente."></i>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Apertura tipografica come le altre pagine dinamiche (titolo grande a sinistra, frase a destra), ingresso a cascata. Il modulo parte subito sotto, su grigio chiaro, accanto al riquadro nero dei contatti diretti. Poi zone (bianco) e Lavora con noi (bordeaux). Riduci movimento: tutto subito visibile."></i>
-</div></section>
-
-<!-- 2. MODULO A PASSI + CONTATTI DIRETTI -->
-<section class="sec alt" aria-label="Modulo e contatti diretti"><div class="in pg-ct">
-  <div class="pg-form">
-    <h2 class="co-fh" id="h-form">Scrivici</h2>
+<!-- 1. APERTURA + MODULO: fondo scuro a tutta larghezza, modulo centrato a campi sottolineati (reference del cliente 2026-10-26) -->
+<section class="ct-dark" aria-labelledby="h1">
+<div class="ct-bg" data-ph="Foto di cantiere o di un interno finito, scurita|16/9" aria-hidden="true"></div>
+<div class="ct-in" style="text-align:center!important;margin-left:auto;margin-right:auto">
+  <p class="ct-k" data-rv>Parla con il team</p>
+  <h1 id="h1" class="ct-h1" data-rv style="--d:1;text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%">Richiedi un preventivo</h1>
+  <p class="ct-lead" data-rv style="--d:2">Raccontaci cosa vuoi costruire o ristrutturare: ti rispondiamo entro 24 ore.</p>
+  <div class="ct-form">
+    <h2 class="sr co-fh" id="h-form">Scrivici</h2>
     <div class="demo-state co-err" role="alert" tabindex="-1" hidden><strong>Controlla i campi:</strong><ul></ul></div>
     <form class="co-form" action="grazie.html" novalidate aria-labelledby="h-form">
       <p class="hint top">I campi con * sono obbligatori.</p>
@@ -44,6 +36,17 @@
     <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Menu 'Oggetto' facoltativo con 3 voci (Richiesta di preventivo, Informazioni su un immobile in vendita, Altro): serve a smistare la richiesta. Voci da confermare. Un solo passo: errori sotto ogni campo e riepilogo in alto con link ai campi; invio simulato verso la pagina di conferma."></i>
     <i data-note="DEV|Da ristimare. LOW: Contact Form 7 / Elementor Form con gli stessi campi del sito attuale (verificare quale plugin usa il sito: il markup è Contact Form 7). Oggetto = campo select inserito nell'email di notifica; Iubenda per il consenso (VERIFY)."></i>
   </div>
+  <p class="ct-alt">Preferisci parlare ora?<br><a href="tel:+390362557972">0362 557972</a> &middot; <a href="mailto:info@contieconti.it">info@contieconti.it</a></p>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Reference del cliente (chat 2026-10-26, immagine 'Register your interest'): modulo a tutta pagina su foto scura, titolo grande centrato, campi con sola linea inferiore, pulsante a pillola chiaro e, sotto, 'Preferisci parlare ora?' con i recapiti diretti. Non adottato lo stepper in 3 passi del reference perche il cliente aveva chiesto 'niente modulo a passi' (chat 2026-10-20): resta un unico passo con gli stessi campi. Se ora lo vuole, e una variante da stimare a parte."></i>
+  <i data-note="PROPOSTA|La foto di sfondo e un segnaposto: serve uno scatto reale del cantiere o di un interno finito, scurito con un velo per mantenere il contrasto del testo bianco (AA)."></i>
+  <i data-note="RICERCA|'Risposta entro 24 ore' è la promessa scritta nella pagina Contatti del sito attuale: da confermare col cliente prima di riproporla."></i>
+  <i data-note="PROPOSTA|Copy provvisorio: introduzione, microcopy e testi di supporto sono bozze realistiche per mostrare gerarchia e ingombri, costruite solo su fatti noti. Da validare con il cliente."></i>
+</div></section>
+
+
+<!-- 2. CONTATTI DIRETTI, ORARI E MAPPA -->
+<section class="sec alt co-bento" aria-label="Contatti diretti e mappa"><div class="in pg-ct2">
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Contatti come griglia a tessere (chat 2026-10-27): telefono grande, email con copia, sede, orari con indicatore aperto/chiuso e mappa in una sola composizione di riquadri arrotondati di misure diverse. Mobile: tessere in colonna."></i>
   <aside class="pg-ca" aria-labelledby="h-cd">
     <div class="pg-cd co-cd">
       <h2 id="h-cd">Contatti diretti</h2>
@@ -124,7 +127,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Contatti)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20261020f"></script>
-<script src="wf-dyn.js?v=13"></script>
+<script src="wireframe.js?v=20f"></script>
+<script src="wf-dyn.js?v=14"></script>
 <script src="wf-servizio.js?v=3"></script>
 </body></html>
