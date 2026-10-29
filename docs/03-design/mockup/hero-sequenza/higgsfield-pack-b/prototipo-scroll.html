@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prototipo hero B</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Hanken+Grotesk:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--plaster:#ebe8e2;--sand:#ddd2c1;--graph:#1d1d1c;--slate:#2f3538;--mono:"IBM Plex Mono",ui-monospace,monospace;--ease:cubic-bezier(.22,.7,.2,1)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--plaster);color:var(--graph);font:16px/1.5 "Hanken Grotesk",system-ui,sans-serif}
+
+/* La hero dura 6 fasi di scroll; lo stage resta fisso */
+.hero{position:relative;height:calc(var(--steps) * 100vh)}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;
+  background-color:var(--plaster);
+  background-image:linear-gradient(rgba(47,53,56,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(47,53,56,.06) 1px,transparent 1px);
+  background-size:32px 32px}
+/* Le immagini sono più grandi dello schermo: lo scroll le muove in prospettiva (camera che gira e si avvicina) */
+.frames{position:absolute;inset:0;perspective:1600px;perspective-origin:50% 40%}
+.frames img{position:absolute;left:-10%;top:-8%;width:120%;height:116%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease);will-change:transform,opacity;transform-origin:50% 60%}
+.frames img.on{opacity:1}
+/* velo chiaro dal lato del testo; segue il lato della fase attiva */
+.veil{position:absolute;inset:0;pointer-events:none;transition:opacity .8s var(--ease)}
+.veil-l{background:linear-gradient(90deg,rgba(235,232,226,.94) 0%,rgba(235,232,226,.72) 30%,rgba(235,232,226,0) 50%)}
+.veil-r{background:linear-gradient(270deg,rgba(235,232,226,.96) 0%,rgba(235,232,226,.82) 34%,rgba(235,232,226,0) 54%);opacity:0}
+.stage[data-side="r"] .veil-l{opacity:0}
+.stage[data-side="r"] .veil-r{opacity:1}
+
+/* Il testo compare alternato a sinistra e a destra, entra dal proprio bordo e deriva piano con lo scroll */
+.copy{position:absolute;inset:0;pointer-events:none}
+.step{position:absolute;top:50%;width:min(36vw,520px);transform:translate(var(--dx,0px),-50%);pointer-events:auto}
+.step.l{left:clamp(16px,5vw,72px)}
+.step.r{right:clamp(16px,5vw,72px)}
+.step > *{opacity:0;transition:opacity .6s var(--ease),transform .9s var(--ease)}
+.step.l > *{transform:translateX(-90px)}
+.step.r > *{transform:translateX(90px)}
+.step.l.out > *{transform:translateX(70px)}
+.step.r.out > *{transform:translateX(-70px)}
+.step.out > *{opacity:0;transition-duration:.4s,.5s}
+.step.in > *{opacity:1;transform:none}
+.step.in > :nth-child(2){transition-delay:.08s}
+.step.in > :nth-child(3){transition-delay:.16s}
+.step.in > :nth-child(4){transition-delay:.24s}
+
+.kicker{margin:0 0 18px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.title{margin:0;font:800 clamp(30px,3.6vw,56px)/1.02 Archivo,sans-serif;letter-spacing:-.025em;text-wrap:balance}
+.text{margin:18px 0 0;max-width:38ch;font-size:clamp(15px,1.15vw,18px);color:var(--slate)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:2px;font:600 15px Archivo,sans-serif;text-decoration:none}
+.btn-dark{background:var(--graph);color:var(--plaster)}
+.btn-line{border:1px solid var(--graph);color:var(--graph)}
+.btn:focus-visible{outline:2px solid var(--slate);outline-offset:3px}
+
+/* indicatore di fase in basso al centro, libero da entrambi i lati del testo */
+.rail{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;gap:14px;margin:0;padding:0;list-style:none}
+.rail li{display:flex;flex-direction:column-reverse;align-items:center;gap:8px;font:12px var(--mono);color:rgba(47,53,56,.45);transition:color .4s}
+.rail li i{width:18px;height:1px;background:currentColor;transition:width .4s var(--ease)}
+.rail li.on{color:var(--graph)}
+.rail li.on i{width:36px}
+.rail span{opacity:0;transition:opacity .3s}
+.rail li.on span{opacity:1}
+
+.scroll-hint{position:absolute;left:clamp(16px,5vw,72px);bottom:28px;font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--slate);transition:opacity .4s}
+.next{min-height:60vh;display:grid;place-items:center;padding:48px 16px;font:600 20px Archivo,sans-serif;background:var(--graph);color:var(--plaster)}
+
+/* tablet e mobile: l'immagine resta piena, il testo si appoggia in basso */
+@media (max-width:900px){
+  .frames img{object-position:68% 50%}
+  .veil-l,.stage[data-side="r"] .veil-l{opacity:1;background:linear-gradient(0deg,rgba(235,232,226,.96) 0%,rgba(235,232,226,.85) 38%,rgba(235,232,226,0) 62%)}
+  .veil-r,.stage[data-side="r"] .veil-r{opacity:0}
+  .step,.step.l,.step.r{left:16px;right:16px;width:auto;top:auto;bottom:72px;transform:translateX(var(--dx,0px))}
+  .step.r{text-align:right}.step.r .text{margin-left:auto}.step.r .cta{justify-content:flex-end}
+  .rail{top:24px;bottom:auto;left:auto;right:16px;transform:none;gap:6px}
+  .rail span{display:none}
+  .rail li i{width:14px}.rail li.on i{width:28px}
+  .scroll-hint{bottom:20px;left:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .step > *,.step.out > *{transform:none!important;transition:opacity .2s linear!important}
+  .frames img{transition:opacity .2s linear;transform:none!important}
+  .step{--dx:0px!important}
+}
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero" style="--steps:6" aria-labelledby="h-hero">
+  <div class="stage">
+    <div class="frames" aria-hidden="true">
+      <img src="frame/B1.png" alt="" class="on" fetchpriority="high">
+      <img src="frame/B2.png" alt="" loading="lazy">
+      <img src="frame/B3.png" alt="" loading="lazy">
+      <img src="frame/B4.png" alt="" loading="lazy">
+      <img src="frame/B5.png" alt="" loading="lazy">
+      <img src="frame/B6.png" alt="" loading="lazy">
+    </div>
+    <div class="veil veil-l" aria-hidden="true"></div>
+    <div class="veil veil-r" aria-hidden="true"></div>
+
+    <div class="copy">
+      <div class="step l in">
+        <p class="kicker">Costruzione ex novo</p>
+        <h1 class="title" id="h-hero">Ogni edificio comincia da una linea.</h1>
+        <p class="text">Immobili residenziali, commerciali e industriali, costruiti da zero.</p>
+      </div>
+      <div class="step r">
+        <p class="kicker">01 · Progetto</p>
+        <p class="title">Le scelte progettuali, rispettate in cantiere.</p>
+      </div>
+      <div class="step l">
+        <p class="kicker">02 · Struttura</p>
+        <p class="title">Uno spirito forte e costruttivo.</p>
+        <p class="text">Fondazioni, pilastri e solai: la parte che non si vede, fatta per prima.</p>
+      </div>
+      <div class="step r">
+        <p class="kicker">03 · Cantiere</p>
+        <p class="title">Una struttura operativa, agile e competente.</p>
+        <p class="text">I responsabili di cantiere coordinano ogni opera e verificano la perfetta esecuzione dei lavori.</p>
+      </div>
+      <div class="step l">
+        <p class="kicker">04 · Finiture</p>
+        <p class="title">Curando il dettaglio, la tempistica e il rapporto con il cliente.</p>
+      </div>
+      <div class="step r">
+        <p class="kicker">05 · Consegna</p>
+        <p class="title">Dalla pianta alle chiavi.</p>
+        <p class="text">Nel rispetto dei tempi e dei costi preventivati.</p>
+        <div class="cta">
+          <a class="btn btn-dark" href="../../../wireframe/contatti.html">Richiedi un preventivo</a>
+          <a class="btn btn-line" href="../../../wireframe/cantieri.html">Scopri i cantieri</a>
+        </div>
+      </div>
+    </div>
+
+    <ol class="rail" aria-hidden="true">
+      <li class="on"><span>Pianta</span><i></i></li>
+      <li><span>Progetto</span><i></i></li>
+      <li><span>Struttura</span><i></i></li>
+      <li><span>Cantiere</span><i></i></li>
+      <li><span>Finiture</span><i></i></li>
+      <li><span>Consegna</span><i></i></li>
+    </ol>
+    <p class="scroll-hint" aria-hidden="true">Scorri per costruire</p>
+  </div>
+</section>
+
+<section class="next">Sezione successiva della home</section>
+
+<script>
+(() => {
+  const hero = document.getElementById('hero');
+  const stage = hero.querySelector('.stage');
+  const frames = hero.querySelectorAll('.frames img');
+  const steps = hero.querySelectorAll('.step');
+  const dots = hero.querySelectorAll('.rail li');
+  const hint = hero.querySelector('.scroll-hint');
+  const n = steps.length;
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  let cur = 0;
+
+  // Camera per fase: da (inizio) → a (fine). ry/rx in gradi, x in % dell'immagine, s = scala.
+  // Le immagini si spostano dal lato opposto al testo, così l'edificio resta libero.
+  const cam = [
+    { ry:[-4, 3],  rx:[10, 6], x:[ 4,  2], s:[1.00, 1.06] }, // B1 pianta: si inclina, testo a sinistra
+    { ry:[ 5,-3],  rx:[ 8, 4], x:[-7, -8], s:[1.04, 1.10] }, // B2 estrusione: gira, testo a destra
+    { ry:[-6, 2],  rx:[ 4, 1], x:[ 5,  3], s:[1.02, 1.09] }, // B3 struttura: orbita, testo a sinistra
+    { ry:[ 6,-2],  rx:[ 3, 1], x:[-7, -8], s:[1.03, 1.10] }, // B4 cantiere: orbita inversa, testo a destra
+    { ry:[-5, 1],  rx:[ 2, 0], x:[ 5,  3], s:[1.02, 1.08] }, // B5 finiture, testo a sinistra
+    { ry:[ 4, 0],  rx:[ 1, 0], x:[-7, -8], s:[1.00, 1.05] }, // B6 palazzo, testo a destra
+  ];
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const ease = (t) => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+  const sync = () => steps.forEach((s, i) => {
+    s.toggleAttribute('inert', i !== cur);
+    s.setAttribute('aria-hidden', i !== cur);
+  });
+
+  const go = (i) => {
+    if (i === cur) return;
+    const prev = steps[cur];
+    prev.classList.remove('in');
+    prev.classList.add('out');
+    setTimeout(() => prev.classList.remove('out'), 500);
+    frames[cur].classList.remove('on');
+    dots[cur].classList.remove('on');
+    cur = i;
+    steps[cur].classList.remove('out');
+    requestAnimationFrame(() => steps[cur].classList.add('in'));
+    frames[cur].classList.add('on');
+    dots[cur].classList.add('on');
+    stage.dataset.side = steps[cur].classList.contains('r') ? 'r' : 'l';
+    sync();
+  };
+
+  let ticking = false;
+  const render = () => {
+    ticking = false;
+    const span = hero.offsetHeight - innerHeight;
+    const p = span > 0 ? Math.min(Math.max(-hero.getBoundingClientRect().top / span, 0), 1) : 0;
+    const i = Math.min(n - 1, Math.floor(p * n));
+    go(i);
+    hint.style.opacity = p > .02 ? 0 : 1;
+    if (still.matches) return;
+
+    // posizione dentro la fase (0-1): muove la camera dell'immagine attiva e di quelle vicine
+    const t = Math.min(p * n - i, 1);
+    frames.forEach((img, k) => {
+      if (Math.abs(k - i) > 1) return;
+      const c = cam[k];
+      const tt = k < i ? 1 : k > i ? 0 : ease(t);
+      img.style.transform =
+        `translate3d(${lerp(c.x[0], c.x[1], tt)}%,0,0) rotateX(${lerp(c.rx[0], c.rx[1], tt)}deg) rotateY(${lerp(c.ry[0], c.ry[1], tt)}deg) scale(${lerp(c.s[0], c.s[1], tt)})`;
+    });
+    // il testo attivo deriva verso il centro mentre si scorre, come nella reference
+    const dir = steps[i].classList.contains('r') ? -1 : 1;
+    steps[i].style.setProperty('--dx', `${dir * lerp(0, 36, t)}px`);
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(render); } };
+
+  stage.dataset.side = 'l';
+  sync();
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  render();
+})();
+</script>
+</body>
+</html>
