@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
-<body data-active="cantieri" data-sticky="preventivo">
+<title>Wireframe Cantieri (portfolio) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><link rel="stylesheet" href="wf-mk.css?v=1"><script src="wf-zoom.js"></script></head>
+<body data-active="cantieri" data-sticky="preventivo" data-overlay>
 <div id="tb"></div>
 <p class="legend"><strong>Cantieri / portfolio.</strong> Indice di tutti i progetti, filtrabili per categoria. Template collegati: <a href="categoria.html">categoria</a>, <a href="progetto.html">scheda progetto</a>. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
@@ -127,20 +127,22 @@
   <i data-note="DEV|Da ristimare (vincolo 83 h tolto). Complessità MEDIUM-HIGH: filtro lato client sul Loop Grid (in Elementor: widget Taxonomy Filter se presente nella versione installata, altrimenti JS su attributi data della card; VERIFY), sincronizzazione con l'hash, fascia categoria da campi del termine (descrizione breve, link), barra sticky, vista elenco con anteprima al puntatore (JS ~40 righe), 'Mostra altri' (load more nativo del Loop Grid, da verificare insieme al filtro). Rischio: filtro client + paginazione = il filtro agisce solo sui progetti già caricati; soluzione da decidere in sviluppo."></i>
 </div></section>
 
-<!-- 4. IN EVIDENZA: carosello trascinabile -->
-<section class="sec dk cn-feat" aria-labelledby="h-feat" data-car><div class="in">
-  <div class="cn-fh">
-    <div><p class="dx-k">In evidenza</p><h2 id="h-feat" class="dx-h" style="color:#fff">Tre cantieri da cui partire</h2></div>
-    <div class="cn-ctrl"><span class="dx-prog" aria-hidden="true"><i></i></span><button type="button" class="dx-arr l" data-prev aria-label="Progetto precedente"></button><button type="button" class="dx-arr" data-next aria-label="Progetto successivo"></button></div>
+<!-- 4. IN EVIDENZA: uguale ai progetti della Home A del mockup (scorrimento orizzontale legato allo scroll; chat 2026-10-28) -->
+<div class="mk mk-pf"><section class="pf" id="progetti" aria-labelledby="h-works">
+  <div class="pf-sticky">
+    <div class="wrap pf-head">
+      <div><p class="kicker light">In evidenza</p><h2 id="h-works">Tre cantieri da cui partire</h2></div>
+      <div class="pf-ctl"><span class="pf-n"><b>01</b> / 03</span><span class="pf-bar"><i></i></span></div>
+    </div>
+    <ul class="pf-track">
+      <li><a class="pf-card" href="progetto.html"><span class="pf-img"><span data-noratio data-ph="Ceresio 7, piscina e palestra|4/5"></span></span><span class="pf-meta"><small>Palestre · Milano</small><h3>Ceresio 7</h3><span>Piscina, palestra e aree relax: la tecnica resta invisibile a chi usa gli spazi.</span></span><span class="pf-data"><span><small>Luogo</small>Milano</span><span><small>Anno</small>[anno]</span><span><small>Superficie</small>[mq]</span><span><small>Intervento</small>Piscina, palestra, spa</span></span><i class="pf-go" aria-hidden="true"></i></a></li>
+      <li><a class="pf-card" href="progetto.html"><span class="pf-img"><span data-noratio data-ph="Casa MJO|4/5"></span></span><span class="pf-meta"><small>Case · Milano</small><h3>Casa MJO</h3><span>[Testo da fornire]</span></span><span class="pf-data"><span><small>Luogo</small>Milano</span><span><small>Anno</small>[anno]</span><span><small>Superficie</small>[mq]</span><span><small>Intervento</small>[tipo di intervento]</span></span><i class="pf-go" aria-hidden="true"></i></a></li>
+      <li><a class="pf-card" href="progetto.html"><span class="pf-img"><span data-noratio data-ph="Villa Lodovic|4/5"></span></span><span class="pf-meta"><small>Ville · [località]</small><h3>Villa Lodovic</h3><span>[Testo da fornire]</span></span><span class="pf-data"><span><small>Luogo</small>[località]</span><span><small>Anno</small>[anno]</span><span><small>Superficie</small>[mq]</span><span><small>Intervento</small>[tipo di intervento]</span></span><i class="pf-go" aria-hidden="true"></i></a></li>
+    </ul>
   </div>
-  <div class="dx-track" tabindex="0" aria-label="Progetti in evidenza, usa le frecce per scorrere">
-    <a class="cn-fc" href="progetto.html"><div data-ph="Ceresio 7, piscina e palestra|16/10"></div><span class="cn-fc-n" aria-hidden="true">01</span><span class="cn-fc-t"><div><span>Palestre &middot; Milano</span><h3>Ceresio 7</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
-    <a class="cn-fc" href="progetto.html"><div data-ph="Casa MJO|16/10"></div><span class="cn-fc-n" aria-hidden="true">02</span><span class="cn-fc-t"><div><span>Case &middot; Milano</span><h3>Casa MJO</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
-    <a class="cn-fc" href="progetto.html"><div data-ph="Villa Lodovic|16/10"></div><span class="cn-fc-n" aria-hidden="true">03</span><span class="cn-fc-t"><div><span>Ville &middot; [Località]</span><h3>Villa Lodovic</h3></div><i class="dx-arr" aria-hidden="true"></i></span></a>
-  </div>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. I tre progetti in evidenza tornano, dopo la griglia, su fondo nero: carosello che si trascina col mouse e scorre a dito, con frecce, barra di avanzamento e numero grande. Card larghe che escono dal bordo destro per suggerire che c'è altro. Tastiera: frecce sinistra/destra sul carosello. Nessuno scorrimento automatico."></i>
-  <i data-note="CLIENTE|3 progetti in evidenza: Casa MJO (Milano), Ceresio 7 (piscina + palestra, 10-12 preventivi), Villa Lodovic. VERIFY NDA sui nomi."></i>
-</div></section>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. 'In evidenza' presentata come i progetti della Home A del mockup (chat 2026-10-28): fondo scuro, la sezione resta ferma e scorrendo le card passano in orizzontale, con contatore e barra di avanzamento; ogni card ha foto, categoria e luogo, nome, una riga di testo e una scheda dati (luogo, anno, superficie, intervento). Mobile: card in colonna, nessuno scorrimento orizzontale. Titolo e progetti restano quelli di questa pagina."></i>
+  <i data-note="CLIENTE|3 progetti in evidenza: Casa MJO (Milano), Ceresio 7 (piscina + palestra), Villa Lodovic. VERIFY NDA sui nomi. Testi e dati di Casa MJO e Villa Lodovic da fornire."></i>
+</section></div>
 
 
 <section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
@@ -149,8 +151,8 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Cantieri)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20f"></script>
-<script src="wf-dyn.js?v=14"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
 <script>(function(){var s=document.getElementById('cnh');if(!s)return;var pin=s.querySelector('.cnh-pin'),L=[].slice.call(s.querySelectorAll('.cnh-l .cnh-s')),R=[].slice.call(s.querySelectorAll('.cnh-r .cnh-s')),pl=document.getElementById('cnh-plate'),nm=pl.querySelector('.cnh-name'),nu=pl.querySelector('.cnh-num'),links=[].slice.call(s.querySelectorAll('ol a')),N=L.length,cur=0,tick=0,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}function cl(n){return Math.max(0,Math.min(1,n))}function place(P,els,lag){els.forEach(function(e,k){if(k===0){e.style.transform='none';return}var y=cl(k-(P-lag));e.style.transform='translateY('+(ease(y)*100).toFixed(2)+'%)'})}function setPlate(i){if(i===cur)return;cur=i;nm.innerHTML=links[i].innerHTML;nu.textContent='0'+(i+1)+' / 0'+N;pl.href=links[i].getAttribute('href');pl.setAttribute('aria-label','Vai alla categoria '+links[i].textContent);pl.style.setProperty('--tone',['#d9d9d9','#c4c4c4','#e2e2e2','#b8b8b8'][i%4]);pl.classList.remove('sw');void pl.offsetWidth;pl.classList.add('sw')}function upd(){tick=0;if(rm){return}var r=s.getBoundingClientRect(),top=parseFloat(getComputedStyle(pin).top)||0,span=s.offsetHeight-pin.offsetHeight,p=span>1?cl((top-r.top)/span):0,P=p*(N-1);place(P,L,0);place(P,R,.22);setPlate(Math.min(N-1,Math.max(0,Math.round(P))))}function req(){if(!tick)tick=requestAnimationFrame(upd)}if(!rm){addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd()}})();</script>
 <script>(function(){var u=document.querySelector('[data-cn-dk]');if(!u)return;var C=[].slice.call(u.querySelectorAll('.cn-dk-c')),mq=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)'),x=null,raf=0;function draw(){raf=0;var best=null,bs=0;C.forEach(function(c){var s=1;if(x!==null&&mq.matches){var r=c.parentNode.getBoundingClientRect(),d=Math.abs(x-(r.left+r.width/2));s=1+.42*Math.max(0,1-d/(r.width*2.6))}c.style.setProperty('--s',s.toFixed(3));if(s>bs){bs=s;best=c}});C.forEach(function(c){c.classList.toggle('top',x!==null&&c===best&&bs>1.2)})}u.addEventListener('mousemove',function(e){x=e.clientX;if(!raf)raf=requestAnimationFrame(draw)});u.addEventListener('mouseleave',function(){x=null;if(!raf)raf=requestAnimationFrame(draw)});C.forEach(function(c){c.addEventListener('focus',function(){var r=c.getBoundingClientRect();x=r.left+r.width/2;draw()})})})();</script>
 <script>/* Cantieri: griglia alla mersi-architecture.com/projets (chat 2026-10-27). Le copertine piccole della fila volano al loro posto nella griglia, legate allo scorrimento; righe da 3 e 4; pannello che sale al passaggio */
@@ -172,5 +174,6 @@ if(!rm){addEventListener('scroll',req,{passive:true});var rt;addEventListener('r
 new MutationObserver(function(){rows();clearTimeout(rt);rt=setTimeout(measure,420)}).observe(g,{subtree:true,attributes:true,attributeFilter:['hidden']});
 document.querySelectorAll('.cn-view button').forEach(function(b){b.addEventListener('click',function(){setTimeout(measure,60)})});measure()}else{new MutationObserver(rows).observe(g,{subtree:true,attributes:true,attributeFilter:['hidden']})}})();</script>
 <script>(function(){var b=document.querySelector('.cn-bar');if(!b)return;var t=0;function u(){t=0;var top=parseFloat(getComputedStyle(b).top)||0;b.classList.toggle('is-stuck',b.getBoundingClientRect().top<=top+1&&scrollY>50)}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
-<script>/* Cantieri: card senza testo quando il filtro e su Tutti */(function(){var g=document.querySelector('.cn-grid'),t=document.querySelector('.cn-f[data-f=tutti]');if(!g||!t)return;function u(){var a=t.getAttribute('aria-pressed')==='true';g.classList.toggle('cn-all',a);document.body.classList.toggle('cn-all-on',a)}u();new MutationObserver(u).observe(t,{attributes:true,attributeFilter:['aria-pressed']})})();</script>
+<script>/* Cantieri: card senza testo quando il filtro e su Tutti */(function(){var g=document.querySelector('.cn-grid'),t=document.querySelector('.cn-f[data-f=tutti]');if(!g||!t)return;var was=null;function u(){var a=t.getAttribute('aria-pressed')==='true',y=was!==null&&was!==a?g.getBoundingClientRect().top:null;g.classList.toggle('cn-all',a);document.body.classList.toggle('cn-all-on',a);if(y!==null&&y<innerHeight){var dy=g.getBoundingClientRect().top-y;if(dy)scrollBy(0,dy)}was=a}u();/* entrando o uscendo da Tutti la fila di copertine sopra la griglia compare o sparisce: si compensa lo scroll cosi la griglia resta ferma (chat 2026-10-28/29) */new MutationObserver(u).observe(t,{attributes:true,attributeFilter:['aria-pressed']})})();</script>
+<script src="wf-mk.js?v=1"></script>
 </body></html>

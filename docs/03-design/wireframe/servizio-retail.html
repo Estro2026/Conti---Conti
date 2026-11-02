@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Wireframe Servizio Retail | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><link rel="stylesheet" href="wf-mk.css?v=1"><link rel="stylesheet" href="wf-sv-retail.css?v=19"><script src="wf-zoom.js"></script></head>
+<body data-active="impresa" data-sticky="preventivo" data-overlay>
+<div id="tb"></div>
+<p class="legend"><strong>Servizio: Retail</strong> (una delle tre pagine servizio: Retail, Ristrutturazioni, Retail). Brief: <code>servizi-tre-pagine.md</code>. <span class="tag t-PROPOSTA">PROPOSTA</span></p>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li>Servizi</li><li aria-current="page">Retail</li></ol></nav>
+
+<!-- 1. APERTURA -->
+<section class="ct-hero" aria-labelledby="h1">
+  <div class="ct-hero-t">
+    <div class="ct-hero-h">
+      <p class="dx-k" data-rv>Servizi</p>
+      <h1 id="h1" data-rv style="--d:1">Retail</h1>
+    </div>
+    <div class="ct-hero-s" data-rv style="--d:2">
+      <p class="lead">Costruzione e manutenzione ordinaria e straordinaria di capannoni industriali e spazi commerciali.</p>
+      <p class="ct-cta svt-hero-btn"><a class="btn" href="cantieri.html">Vedi i cantieri</a></p>
+    </div>
+  </div>
+  <div class="ct-hero-m"><div data-noratio data-ph="Foto a tutto schermo: negozio o capannone, progetto reale|16/9"></div></div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Stessa apertura di Residenze (copia): foto al 100% della viewport, parallasse lenta, velo che scurisce e titolo che sale scrollando; riduci movimento: statica. Occhiello 'Servizi', H1 con il nome del servizio, una frase, un solo pulsante che porta ai cantieri (cantieri.html), come ha chiesto Sara. Pulsante e testi nella stessa posizione di Residenze."></i>
+  <i data-note="RICERCA|La frase d'apertura è quella della scheda Retail della home del sito vecchio (contieconti.it): «costruzione e manutenzione ordinaria e straordinaria di capannoni industriali e spazi commerciali». Qui è solo resa con maiuscola iniziale."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Il titolo è &quot;Retail&quot; come ha chiesto Sara (CLIENTE, chat 2026-11-02). Le categorie portfolio collegate sono Attività commerciali, Palestre, Allestimenti, Industriale: la rinomina di &quot;Attività commerciali&quot; in &quot;Retail&quot; è una decisione aperta (VERIFY): se la categoria si chiamasse Retail, avrebbe lo stesso nome della pagina servizio ma contenuti più stretti (negozi) rispetto all'ombrello che include anche palestre e capannoni."></i>
+  <i data-note="INFERENZA|Breadcrumb Home / Servizi / Retail: 'Servizi' non è un link perché non esiste una pagina indice dei servizi (brief servizi-tre-pagine.md)."></i>
+</section>
+
+<!-- 2. COSA COMPRENDE: registro a righe a tutta larghezza (copia di Residenze) -->
+<section class="sec" aria-labelledby="h-cp"><div class="in">
+  <p class="dx-k" data-rv>Cosa comprende</p>
+  <h2 id="h-cp" class="dx-h svt-h2-w" data-rv style="--d:1">Costruire e mantenere spazi che lavorano ogni giorno</h2>
+  <div class="svt-led">
+    <article data-rv style="--d:0"><span class="svt-lno" aria-hidden="true">01</span><h3>Costruzione</h3><p>Capannoni industriali e spazi commerciali, dal cantiere alla consegna delle chiavi. [Nuove costruzioni: da confermare con il cliente] [Allestimento e finiture degli spazi interni: da confermare]</p></article>
+    <article data-rv style="--d:1"><span class="svt-lno" aria-hidden="true">02</span><h3>Manutenzione ordinaria e straordinaria</h3><p>Interventi su spazi già in uso, programmati in modo da disturbare il meno possibile l'attività. [Manutenzione ordinaria: tipi di intervento da confermare] [Manutenzione straordinaria: tipi di intervento da confermare]</p></article>
+  </div>
+  <i data-note="RICERCA|Le due voci (costruzione, manutenzione ordinaria e straordinaria) vengono dalla frase del sito vecchio. Le voci tra parentesi quadre sono volutamente segnaposto: il sito vecchio non dettaglia le lavorazioni e non le inventiamo."></i>
+  <i data-note="VERIFY|Chiedere al cliente quali interventi rientrano davvero in ciascuna voce e se la manutenzione è anche a contratto o solo a chiamata. Il testo sotto i titoli è INFERENZA, da validare."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Stessa struttura di Residenze (copia): righe a tutta larghezza con numero, nome in grande e testo; il filetto di ogni riga si disegna all'ingresso, in sequenza. Hover (solo mouse): il nome scorre di poco. Tablet e mobile: numero stretto a sinistra, nome e testo impilati. Riduci movimento: righe già disegnate."></i>
+  <i data-note="DEV|Da ristimare. LOW: due container a riga con Heading + Text; il filetto animato è CSS."></i>
+</div></section>
+
+<!-- 3. COME LAVORIAMO QUI: scena a scorrimento, una fase alla volta (copia di Residenze) -->
+<section class="sec alt svt-how" id="svt-how" aria-labelledby="h-hw"><div class="svt-stage"><div class="in svt-grid">
+  <div class="svt-how-t">
+    <p class="dx-k" data-rv>Come lavoriamo qui</p>
+    <h2 id="h-hw" class="dx-h svt-h2-s" data-rv style="--d:1">Tempi stretti: si lavora a ritroso dalla data di apertura</h2>
+    <p class="lead" data-rv style="--d:2">Un negozio o un capannone fermo costa ogni giorno. Per questo il calendario parte dalla data in cui devi aprire o riprendere la produzione, e le tre figure che ti seguono hanno un posto preciso lungo il percorso. Durate e sovrapposizioni delle fasi: [dato da confermare, dipendono dal singolo cantiere].</p>
+  </div>
+  <ol class="svt-steps">
+    <li><span class="svt-n" aria-hidden="true">01</span><div class="svt-b"><p class="svt-q">Fase 1</p><h3>Progetto</h3><p>Progetto e computo con te e i tuoi progettisti</p></div><p class="svt-d"><b>Chi interviene:</b><br><b>General Contractor:</b> Un solo interlocutore dal progetto alla consegna.<br><b>Acquisti:</b> Materiali e fornitori scelti prima che servano.</p></li>
+    <li><span class="svt-n" aria-hidden="true">02</span><div class="svt-b"><p class="svt-q">Fase 2</p><h3>Permessi e cantiere</h3><p>Autorizzazioni [da verificare] e organizzazione del cantiere</p></div><p class="svt-d"><b>Chi interviene:</b><br><b>General Contractor:</b> Un solo interlocutore dal progetto alla consegna.<br><b>Acquisti:</b> Materiali e fornitori scelti prima che servano.<br><b>Logistica:</b> Mezzi e consegne in orari compatibili con l'attività.</p></li>
+    <li><span class="svt-n" aria-hidden="true">03</span><div class="svt-b"><p class="svt-q">Fase 3</p><h3>Lavori</h3><p>Anche a negozio o stabilimento aperti, dove possibile</p></div><p class="svt-d"><b>Chi interviene:</b><br><b>General Contractor:</b> Un solo interlocutore dal progetto alla consegna.<br><b>Acquisti:</b> Materiali e fornitori scelti prima che servano.<br><b>Logistica:</b> Mezzi e consegne in orari compatibili con l'attività.</p></li>
+    <li><span class="svt-n" aria-hidden="true">04</span><div class="svt-b"><p class="svt-q">Fase 4</p><h3>Consegna</h3><p>Collaudi, pulizie e consegna nella data concordata</p></div><p class="svt-d"><b>Chi interviene:</b><br><b>General Contractor:</b> Un solo interlocutore dal progetto alla consegna.<br><b>Logistica:</b> Mezzi e consegne in orari compatibili con l'attività.<br><i>Il calendario si chiude qui:</i> <b>[Data di apertura o ripresa dell'attività]</b></p></li>
+  </ol>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Stessa scena a scorrimento di Residenze (copia, JS compreso): la sezione si ferma sotto l'header e ogni scorrimento fa avanzare una fase (numero grande, titolo, testo, riquadro). A sinistra titolo e indice delle 4 fasi, cliccabile. Nessuna animazione automatica. Dove la scena non sta nello schermo (tablet, mobile, schermi bassi, zoom alto) e con riduci movimento: elenco normale con filo che si riempie scorrendo. Il cronoprogramma a barre che c'era prima è stato tolto: i suoi testi sono passati nei riquadri 'Chi interviene' di ogni fase (ufficio e frase della barra, parola per parola) e nel traguardo della quarta fase."></i>
+  <i data-note="INFERENZA|Quali fasi coprono Acquisti e Logistica (da 1 a 3 e da 2 a 4) è una ricostruzione dalle descrizioni degli uffici, non un dato del cliente. Da validare con l'ufficio tecnico prima del mockup. Il riferimento a lavorare a negozio o stabilimento aperti vale solo dove è possibile: da confermare."></i>
+  <i data-note="VERIFY|Chiedere al cliente casi reali di consegna vincolata a un'apertura (inaugurazione, ripresa produzione, fermo impianto) e di manutenzione senza fermare l'attività. Se esistono, sostituire i [segnaposto] con un caso vero; finché non ci sono, nessun numero di giorni o settimane."></i>
+  <i data-note="DEV|Da ristimare. MEDIUM-HIGH: stessa scena sticky di Residenze (circa 60 righe JS, nessuna libreria; in Elementor container sticky + Custom CSS e JS), con fallback elenco."></i>
+</div></div></section>
+
+<!-- 4. CHI TI SEGUE: fascia scura (copia di Residenze) -->
+<section class="sec svt-dk" aria-labelledby="h-wh"><div class="in">
+  <p class="dx-k" data-rv>Chi ti segue</p>
+  <h2 id="h-wh" class="dx-h svt-h2-w" data-rv style="--d:1">Tre uffici, un cantiere</h2>
+  <div class="svt-who">
+    <article data-rv style="--d:0"><span class="svt-no" aria-hidden="true">01</span><h3>General Contractor</h3><p>Traduce il progetto di architetti e designer in un'opera finita, nei tempi e nei costi concordati.</p></article>
+    <article data-rv style="--d:1"><span class="svt-no" aria-hidden="true">02</span><h3>Acquisti</h3><p>Sceglie materiali e servizi per ogni cantiere e gestisce il rapporto con i fornitori.</p></article>
+    <article data-rv style="--d:2"><span class="svt-no" aria-hidden="true">03</span><h3>Logistica</h3><p>Gestisce mezzi e attrezzature e porta i materiali in cantiere quando servono.</p></article>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Stessa fascia scura di Residenze (copia): schede con numero a contorno, nome e testo, bordo sottile semitrasparente, raggio --card-rad, si schiariscono al passaggio del mouse. Tre schede perché gli uffici assegnati a Retail sono tre. Testi identici a quelli degli uffici di Impresa (&quot;Gli uffici dietro ogni cantiere&quot;), da cui vengono tolti: nessun contenuto in due posti. Gli altri cinque uffici stanno nelle pagine Residenze e Ristrutturazioni o restano in Impresa (Qualità e sicurezza, dentro la scheda ISO 9001 di Garanzie). Mobile: una sotto l'altra."></i>
+  <i data-note="RICERCA|Testi dalla pagina Servizi del sito vecchio (contieconti.it/servizi/), già riformulati in una riga nel wireframe di Impresa."></i>
+</div></section>
+
+<!-- 5. PROVE: indice categorie + card grande (struttura di riferimento, copiata anche in Residenze) -->
+<section class="sec alt svt-works" aria-labelledby="h-pr"><div class="in">
+  <div class="svt-head">
+    <div><p class="dx-k" data-rv>Dove lo abbiamo fatto</p>
+    <h2 id="h-pr" class="dx-h svt-h2-w" data-rv style="--d:1">Quattro tipi di spazio, quattro categorie del portfolio</h2></div>
+    <a class="ha-btn ha-btn-nav svt-all" href="cantieri.html" data-rv style="--d:2">Vedi tutti i cantieri</a>
+  </div>
+  <div class="svt-proof" data-svt-cats>
+    <ul class="svt-tiles">
+      <li><a class="card card-imm svt-tile" href="categoria.html#attivita-commerciali"><div data-ph="Negozio o locale|4/3"></div><span class="ci-b"><h3>Attività commerciali</h3><span class="meta">Negozi, showroom e locali aperti al pubblico.</span><u>Vedi la categoria</u></span></a></li>
+      <li><a class="card card-imm svt-tile" href="categoria.html#palestre"><div data-ph="Palestra|4/3"></div><span class="ci-b"><h3>Palestre</h3><span class="meta">Spazi per lo sport, dove la struttura lavora sotto carico.</span><u>Vedi la categoria</u></span></a></li>
+      <li><a class="card card-imm svt-tile" href="categoria.html#allestimenti"><div data-ph="Allestimento|4/3"></div><span class="ci-b"><h3>Allestimenti</h3><span class="meta">Spazi temporanei o di rappresentanza, con date di apertura che non si spostano.</span><u>Vedi la categoria</u></span></a></li>
+      <li><a class="card card-imm svt-tile" href="categoria.html#industriale"><div data-ph="Capannone|4/3"></div><span class="ci-b"><h3>Industriale</h3><span class="meta">Capannoni e stabilimenti, nuovi o da mantenere in funzione.</span><u>Vedi la categoria</u></span></a></li>
+    </ul>
+  </div>
+  <div class="svt-buy" data-rv>
+    <div><h3>Vuoi comprare invece di costruire?</h3><p>Le residenze che costruiamo noi si comprano direttamente da noi. Ora è in costruzione Residenza Solarium.</p></div>
+    <a class="btn" href="in-vendita.html">Vedi gli immobili in vendita</a>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Struttura di riferimento per Lavori (la copiano anche Residenze e Ristrutturazioni): indice delle quattro categorie a sinistra con riga attiva e tasti precedente e successiva (frecce nello stile di Home A, 56 px), card grande a destra (card-imm: foto al vivo nel raggio, velo semitrasparente, riga descrittiva); senza JavaScript o con riduci movimento le quattro card in griglia 2 x 2. A destra del titolo il pulsante a pillola Vedi tutti i cantieri (stessa pillola del menu), allineato al bordo destro delle card. Sotto, la fascia scura Vuoi comprare invece di costruire?, identica a quella di Residenze (testo e link). Il riquadro Ceresio 7 che c'era prima è stato tolto per non duplicare il rimando."></i>
+  <i data-note="PROPOSTA|VERIFY. Decisione aperta: rinominare la categoria &quot;Attività commerciali&quot; in &quot;Retail&quot;. Sara ha chiesto la parola Retail sulla pagina dedicata (CLIENTE) e questa pagina si chiama Retail; la categoria resta con il nome attuale finché non c'è approvazione. Se la rinomina passasse, cambierebbero etichetta nelle home, in Cantieri, nei filtri e nell'indice delle categorie."></i>
+  <i data-note="INFERENZA|Le righe sotto ogni categoria sono descrizioni generiche del tipo di spazio, non dati di cliente. Quella di Allestimenti sulle date di apertura è da verificare con il cliente."></i>
+  <i data-note="VERIFY|Residenza Solarium risulta 'In costruzione' nei dati attuali di In vendita; stato da riconfermare al momento della pubblicazione. Se cambia, il testo della fascia va aggiornato (o reso generico)."></i>
+  <i data-note="DEV|Da ristimare. LOW-MEDIUM: quattro card con link a categoria.html + hash e un piccolo selettore (circa 30 righe JS, nessuna libreria); con il CMS, le categorie e le righe descrittive possono arrivare dalla tassonomia."></i>
+</div></section>
+
+<!-- 6. ALTRI SERVIZI: due metà a filo (copia di Residenze) -->
+<section class="sec" aria-labelledby="h-os"><div class="in">
+  <p class="dx-k" data-rv>Altri servizi</p>
+  <h2 id="h-os" class="dx-h svt-h2-w" data-rv style="--d:1">Cerchi altro?</h2>
+  <div class="svt-more">
+    <a href="servizio-residenze.html" data-rv style="--d:0"><b>Residenze</b><span>Costruzione di aree residenziali, dalla progettazione alla gestione e manutenzione di edifici e case singole.</span><u>Scopri il servizio</u></a>
+    <a href="servizio-ristrutturazioni.html" data-rv style="--d:1"><b>Ristrutturazioni</b><span>Lavori che fanno leva sull'esperienza dell'impresa, con cura per il dettaglio, i tempi e il rapporto con il cliente e la Direzione Lavori.</span><u>Scopri il servizio</u></a>
+  </div>
+  <i data-note="RICERCA|Le due righe sono le schede Residenze e Ristrutturazioni della home del sito vecchio, adattate (nel caso di Ristrutturazioni, senza il giro di frase iniziale). Da tenere uguali alle card &quot;I nostri servizi&quot; delle home."></i>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Stessa struttura di Residenze (copia): due metà affiancate a filo, con filetto in mezzo; al mouse o al focus la metà si inverte (su touch resta leggibile). Mobile: una sopra l'altra."></i>
+</div></section>
+
+<section class="sec" style="background:#e2e2e2"><div data-c="cta"></div></section>
+<i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Nessuna FAQ locale su questa pagina: la domanda sul general contractor sta solo in faq.html (richiesta di Sara). Pre-footer standard."></i>
+<i data-note="DEV|Da ristimare. Pagina intera: stesso template Servizio di Residenze e Ristrutturazioni (apertura, ambito, passi, uffici, lavori, altri servizi); la sezione Come lavoriamo qui usa i passi di Retail."></i>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Servizio Retail)</h2><ol id="notes"></ol></div>
+<script src="mode.js"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
+<script src="wf-sv-retail.js?v=11"></script>
+<script src="wf-mk.js?v=1"></script>
+</body></html>

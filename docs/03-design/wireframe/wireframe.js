@@ -43,7 +43,7 @@
       '<li class="ha-has-sub" data-p="cantieri"><a href="cantieri.html"' + cur('cantieri') + '><small>02</small>Cantieri</a><button class="ha-menu-tg" type="button" aria-expanded="false" aria-label="Mostra le categorie di cantiere"><i></i><i></i></button><ul class="ha-menu-sub">' + subs + '</ul></li>' +
       '<li data-p="vendita"><a href="in-vendita.html"' + cur('vendita') + '><small>03</small>In vendita</a></li>' +
       '<li data-p="blog"><a href="blog.html"' + cur('blog') + '><small>04</small>Blog</a></li></ul>' +
-      '<ul class="ha-mx-sec"><li data-p="faq"><a href="faq.html"' + cur('faq') + '>FAQ</a></li><li data-p="contatti"><a href="contatti.html"' + cur('contatti') + '>Contatti</a></li></ul></nav>' +
+      '<ul class="ha-mx-sec"><li class="mx-svl">Servizi</li><li data-p="servizio-residenze"><a href="servizio-residenze.html">Residenze</a></li><li data-p="servizio-ristrutturazioni"><a href="servizio-ristrutturazioni.html">Ristrutturazioni</a></li><li data-p="servizio-retail"><a href="servizio-retail.html">Retail</a></li><li data-p="faq"><a href="faq.html"' + cur('faq') + '>FAQ</a></li><li data-p="contatti"><a href="contatti.html"' + cur('contatti') + '>Contatti</a></li></ul></nav>' +
       '<div class="ha-mx-cats"><p class="ha-mx-lbl">Cantieri per categoria</p><ul class="ha-mx-chips" aria-label="Categorie di cantiere">' + chips + '</ul>' +
       '<div class="ha-mx-prev">' + prevs + '<a class="ha-mx-all" href="cantieri.html"><span>Tutti i cantieri</span><i aria-hidden="true"></i></a></div></div>' +
       '<dl class="ha-mx-side"><div><dt>Telefono</dt><dd><a href="tel:+390362557972">0362 557972</a></dd></div><div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div><div><dt>Sede</dt><dd class="sm">Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>' +
@@ -57,7 +57,7 @@
       m.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
       d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !m.hidden) { setMenu(false); burger.focus(); } });
       /* voci: la voce sotto il cursore (o col focus) diventa bianca; su Cantieri si accendono le categorie */
-      var lis = [].slice.call(m.querySelectorAll('.ha-mx-main>ul>li'));
+      var lis = [].slice.call(m.querySelectorAll('.ha-mx-main>ul>li')).filter(function (li) { return li.firstElementChild; });
       lis.forEach(function (li) { var f = function () { m.classList.add('is-hover'); m.classList.toggle('sub-hot', li.dataset.p === 'cantieri'); lis.forEach(function (x) { x.classList.toggle('cur', x === li); }); }; li.addEventListener('mouseenter', f); li.firstElementChild.addEventListener('focus', f); });
       m.querySelector('.ha-mx-main').addEventListener('mouseleave', function () { m.classList.remove('is-hover'); });
       var tg = m.querySelector('.ha-menu-tg'); if (tg) tg.addEventListener('click', function () { var o = tg.getAttribute('aria-expanded') !== 'true'; tg.setAttribute('aria-expanded', o); tg.parentNode.classList.toggle('open', o); });
@@ -82,7 +82,7 @@
       '<div><h2>Sede</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
       '<div><h2>Contatti</h2><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>' +
       '<ul class="ha-ft-soc"><li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener">LinkedIn' + NW + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener">Facebook' + NW + '</a></li></ul></div>' +
-      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="blog.html">Blog</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
+      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li class="ft-sv"><span>Servizi</span><ul><li><a href="servizio-residenze.html">Residenze</a></li><li><a href="servizio-ristrutturazioni.html">Ristrutturazioni</a></li><li><a href="servizio-retail.html">Retail</a></li></ul></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="blog.html">Blog</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
       '</div>' +
       (CL ? '' : N('PROPOSTA', 'Navbar, menu a tutta pagina e footer: copia della Home A del mockup (struttura, misure, stati, animazioni e comportamento), in sola scala di grigi (il bordeaux diventa grigio scuro) e con segnaposto grigi al posto delle foto delle categorie. Font Inter Tight/Inter solo in questi componenti. Qui cambia solo la veste: voci e contenuti come nella Home A.') + N('RICERCA', 'Indirizzo, telefono, email, orari, P.IVA e profili social dal sito attuale: da verificare con il cliente.')) +
       '<p class="ha-ft-word" aria-hidden="true">Conti &amp; Conti</p>' +
@@ -200,6 +200,23 @@
         (n ?N('CLIENTE', 'Zona operativa dichiarata: Milano, Como, Varese, Monza Brianza. Aree SEO citate nel brief: Lago di Como, Milano, Monza/Seregno/Brianza. Varese non ha area SEO nel brief: VERIFY. Le pagine per zona sono state eliminate (decisione utente).') + N('DEV', 'LOW. Chip = Button widget o Icon List in flex wrap (4 link): 0.5-1 h, incluso nelle card/home. Se le pagine area non sono approvate i link puntano a Cantieri filtrato o vengono rimossi: nessun costo aggiuntivo.') : '');
     },
     cta: function (n) {
+      /* Pagine interne: chiusura uguale alla Home A mockup (foto, titolo, telefono e modulo in vetro; chat 2026-10-28) */
+      if (!/^(home-[ab]).html$/.test(location.pathname.split('/').pop())) {
+        var sec = document.querySelector('[data-c="cta"]');
+        if (sec && sec.parentElement && sec.parentElement.tagName === 'SECTION') sec.parentElement.classList.add('mk-host');
+        var ttl = (sec && sec.dataset.t) || 'Parliamo del tuo progetto.', lead = (sec && sec.dataset.l) || 'Raccontaci cosa vuoi costruire o ristrutturare: ti risponde chi segue il cantiere.';
+        return '<div class="mk mk-close"><div class="close" id="contatto" role="region" aria-labelledby="h-close">' +
+          '<div class="close-bg" data-noratio data-ph="Foto di una casa finita a tutta larghezza|16/9"></div>' +
+          '<div class="wrap close-in"><div class="close-t"><p class="kicker light">Richiedi un preventivo</p><h2 id="h-close">' + esc(ttl) + '</h2><p>' + esc(lead) + '</p><a class="close-tel" href="tel:+390362557972">0362 557972</a></div>' +
+          '<form class="cf" action="grazie.html">' +
+          '<label><span>Nome e cognome<b class="req" aria-hidden="true"> *</b></span><input type="text" name="nome" autocomplete="name" required></label>' +
+          '<label><span>Email o telefono<b class="req" aria-hidden="true"> *</b></span><input type="text" name="contatto" autocomplete="email" required></label>' +
+          '<label><span>Tipo di intervento<b class="req" aria-hidden="true"> *</b></span><select name="tipo" required><option value="" selected disabled>Scegli il tipo di intervento</option><option>Nuova costruzione</option><option>Ristrutturazione</option><option>Retail</option><option>Altro</option></select></label>' +
+          '<label><span>Messaggio <small>(facoltativo)</small></span><textarea name="msg" rows="3"></textarea></label>' +
+          '<label class="cf-ck"><input type="checkbox" name="privacy" required><span>Ho letto l&rsquo;<a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">informativa privacy</a><b class="req" aria-hidden="true"> *</b></span></label>' +
+          '<button class="btn" type="submit">Invia la richiesta</button></form></div></div></div>' +
+          (n ? N('PROPOSTA', 'WAITING_FOR_APPROVAL. Chiusura delle pagine interne uguale alla Home A del mockup (chat 2026-10-28): foto a tutta larghezza velata, a sinistra titolo, testo e telefono, a destra il modulo breve in vetro. Sostituisce la fascia con i due pulsanti. In scala di grigi come il resto del wireframe.') : '');
+      }
       return '<div class="in grid split"><div><h2>Parliamo del tuo progetto.</h2><p class="lead">Raccontaci cosa vuoi costruire o ristrutturare: ti risponde chi segue il cantiere.</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama 0362 557972</a></div></div>' + (n ? N('PROPOSTA', 'Pre-footer allineato alla chiusura delle homepage (richiesta in chat 2026-10-20): stesso titolo, testo e pulsanti; fascia scura con riquadro interno, titolo a sinistra e pulsanti a destra. In media fedeltà in scala di grigi. Tolta la promessa [24 ore] non confermata dal cliente.') : '') + +
         (n ? N('PROPOSTA', 'WAITING_FOR_APPROVAL. Fascia CTA in bordeaux pieno (colore brand già in palette, nessun colore nuovo) per staccarla dal footer nero. Contrasti: testo bianco su #7d1d2c ~10:1, sottotitolo #f3e4e7 ~8:1; pulsante primario invertito (fondo bianco, testo bordeaux), secondario con bordo bianco. Applicata ovunque compare la fascia (template condiviso). DEV: nessuna ora in più, solo colori del template.') : '') +
         (n ? N('PROPOSTA', 'CTA primaria unica e ripetuta (obiettivo: contatti qualificati). Il numero telefonico è quello del sito attuale (RICERCA, da verificare). Il tempo di risposta non è fornito dal cliente: non inventarlo.') + N('DEV', 'LOW. Template salvato "Fascia CTA" inserito con widget Template (Pro) in tutte le pagine: testo e pulsanti modificabili in un solo posto. Link tel: sul numero; tracciamento click su telefono/CTA solo se il tracking è definito (VERIFY GA4/GTM). Stima 1-1.5 h una tantum.') : '');

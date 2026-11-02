@@ -81,7 +81,7 @@
   function frame() {
     ticking = false;
     var y = window.scrollY, vh = window.innerHeight;
-    if (nav) { var hh = document.getElementById('hero'); nav.classList.toggle('is-solid', hh ? (hh.getBoundingClientRect().bottom <= 72 || (parseFloat(hh.style.getPropertyValue('--he')) || 0) > .85) : y > 40); }
+    if (nav && !nav.hasAttribute('data-cch-nav')) { var hh = document.getElementById('hero'); nav.classList.toggle('is-solid', hh ? (hh.getBoundingClientRect().bottom <= 72 || (parseFloat(hh.style.getPropertyValue('--he')) || 0) > .85) : y > 40); }
     if (!reduce && pat) root.style.setProperty('--py', (-y * .07).toFixed(1) + 'px');
     if (words.length) {
       var r = statement.getBoundingClientRect();

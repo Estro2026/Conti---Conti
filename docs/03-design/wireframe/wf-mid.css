@@ -28,3 +28,6 @@
 
 /* pulsanti: rettangolari con angoli appena smussati, come nei mockup (prima border-radius:20% li deformava) */
 .btn,.hcta,.frame .btn,.frame .hcta{border-radius:2px}
+
+/* card con immagine: il bordo di 1px del segnaposto sporgeva dagli angoli arrotondati della card */
+.frame .card-imm .ph,.frame .cn-ph,.frame .cn-ph .ph,.frame .ct-pc-ph,.frame .ct-pc-ph .ph{border:0!important;border-radius:0!important}

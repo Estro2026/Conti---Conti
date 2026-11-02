@@ -57,9 +57,7 @@
       items.forEach(function (it) {
         var on = k === 'tutti' || it.dataset.cat === k;
         if (on) n++;
-        if (reduce) { it.hidden = !on; return; }
-        if (on && it.hidden) { it.hidden = false; it.classList.add('is-out'); requestAnimationFrame(function () { requestAnimationFrame(function () { it.classList.remove('is-out'); }); }); }
-        else if (!on && !it.hidden) { it.classList.add('is-out'); setTimeout(function () { if (it.classList.contains('is-out')) it.hidden = true; }, 350); }
+        it.classList.remove('is-out'); it.hidden = !on; /* filtro immediato, senza dissolvenza (chat 2026-10-28) */
       });
       var b = fs.filter(function (x) { return x.dataset.f === k; })[0];
       if (cat) {
@@ -192,8 +190,9 @@
   if (ph && !reduce) jobs.push(function (vh) {
     var s = $('.pj-hero-s', ph);
     if (getComputedStyle(s).position !== 'sticky') { ph.style.setProperty('--k', 0); return; }
-    var r = ph.getBoundingClientRect(), span = ph.offsetHeight - (vh - S);
-    ph.style.setProperty('--k', clamp((S - r.top) / (span * .9), 0, 1).toFixed(3));
+    /* avanzamento misurato dal punto in cui la foto si ferma (sotto la nav o, con la hero al vivo, dal bordo alto) */
+    var t0 = parseFloat(getComputedStyle(s).top) || 0, r = ph.getBoundingClientRect(), span = ph.offsetHeight - s.offsetHeight;
+    ph.style.setProperty('--k', clamp((t0 - r.top) / (span * .9), 0, 1).toFixed(3));
   });
 
   $$('.pj-ba').forEach(function (ba) {

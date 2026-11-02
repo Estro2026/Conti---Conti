@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-vendita.css?v=3"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
+<title>Wireframe Scheda residenza con form | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-vendita.css?v=3"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><script src="wf-zoom.js"></script></head>
 <body data-active="vendita" data-sticky="info">
 <div id="tb"></div>
 <p class="legend"><strong>Scheda residenza in vendita</strong> (template per Domus 54, via Diaz, Montesolaro, Seregno, Solarium, Paradiso). Ogni scheda ha il proprio modulo di contatto. Alta fedeltà: <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
@@ -176,8 +176,8 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda residenza)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20f"></script>
-<script src="wf-dyn.js?v=14"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
 <script src="wf-vendita.js?v=1"></script>
 <script>/* Galleria: le foto si aprono entrando nello schermo e si richiudono uscendo; scorrendo verso l'alto si aprono dall'alto, quindi in ordine inverso (chat 2026-10-27) */(function(){var g=document.querySelector('.pj-gc .pj-gal');if(!g)return;var B=[].slice.call(g.querySelectorAll('button')),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm){B.forEach(function(b){b.classList.add('in')});return}g.classList.add('gc-on');var io=new IntersectionObserver(function(es){es.forEach(function(e){var b=e.target;if(e.isIntersecting){b.classList.toggle('from-top',e.boundingClientRect.top<0);b.classList.add('in')}else{b.classList.toggle('from-top',e.boundingClientRect.top<0);b.classList.remove('in')}})},{rootMargin:'0px 0px 8% 0px',threshold:0});B.forEach(function(b){io.observe(b)});var t=0;function u(){t=0;var vh=innerHeight;B.forEach(function(b,i){var r=b.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var d=(r.top+r.height/2-vh/2)/vh;b.style.setProperty('--py',(d*(i%2?-46:28)).toFixed(1)+'px')})}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
 

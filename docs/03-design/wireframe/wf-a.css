@@ -1576,3 +1576,123 @@ body.ha-menu-open .ha-nav .ha-nm-c b{background:#fff}
 body.cn-all-on .frame .cn-dk-t{display:none!important}
 /* Cantieri: con un filtro attivo niente striscia di miniature */
 body:not(.cn-all-on) .frame .cn-dk{display:none!important}
+
+/* ===== Impresa: i quattro dati di "Costruiamo con persone nostre" sulla stessa riga (chat 2026-10-28) ===== */
+.frame .ixi .ixi-d div:nth-child(n){transform:none!important}
+.frame .ixi .ixi-d{align-items:end}
+
+/* ===== Hero al vivo, anche dietro la nav (chat 2026-10-28) ===== */
+/* Impresa: foto della hero senza angoli arrotondati */
+.frame .ixs .ph,.frame .ixs [data-ph]{border-radius:0!important}
+/* Cantieri: la hero fissa parte dal bordo alto, sotto nav e breadcrumb trasparenti */
+body[data-overlay] .frame .cnh-pin{top:var(--tbh,0px);height:calc(100vh - var(--tbh,0px))}
+/* Blog: hero a tutta altezza dietro nav e breadcrumb, testo sotto la nav */
+body[data-overlay] .frame .bl-evh .bl-ev{height:calc(100vh - var(--tbh,0px))!important}
+body[data-overlay] .frame .bl-top{top:calc(var(--ovl,136px) + clamp(16px,4vh,48px))!important}
+@container (max-width:760px){body[data-overlay] .frame .bl-top{top:auto!important;padding-top:calc(var(--ovl,136px) + 16px)}}
+/* Contatti: hero dietro nav e breadcrumb, tutto il contenuto entra nel 100% della finestra */
+body[data-overlay] .frame .ct-dark{height:calc(100vh - var(--tbh,0px));min-height:0!important;padding-top:calc(var(--ovl,136px) + 8px)!important;padding-bottom:clamp(16px,3vh,32px)!important;box-sizing:border-box;overflow:hidden}
+body[data-overlay] .frame .ct-dark .ct-bg{inset:0!important;height:auto!important}
+body[data-overlay] .frame #main .ct-dark .ct-h1{font-size:clamp(34px,min(5cqi,7.5vh),76px)!important;max-width:none!important;line-height:1!important;margin-bottom:8px}
+body[data-overlay] .frame .ct-dark .ct-lead{margin-bottom:clamp(8px,1.6vh,16px)}
+body[data-overlay] .frame .ct-dark .pg-fg{gap:clamp(10px,2vh,24px) 24px!important}
+body[data-overlay] .frame .ct-dark .ct-alt{margin-top:clamp(8px,1.6vh,18px)}
+@media (max-height:700px){body[data-overlay] .frame .ct-dark{height:auto;min-height:calc(100vh - var(--tbh,0px))!important}}
+@container (max-width:700px){body[data-overlay] .frame .ct-dark{height:auto;min-height:calc(100vh - var(--tbh,0px))!important}}
+body[data-overlay] .frame .ct-dark .ct-in{width:min(820px,100%)!important;max-width:none!important}
+body[data-overlay] .frame .ct-dark .pg-fg{gap:clamp(8px,1.4vh,16px) 24px!important;margin:12px 0 14px!important}
+body[data-overlay] .frame .ct-dark .pg-fg textarea{min-height:0;height:clamp(44px,7vh,88px)}
+
+/* ===== Cantieri (chat 2026-10-28) ===== */
+/* Con un filtro attivo le card della categoria compaiono subito, senza ingresso animato */
+body:not(.cn-all-on) .frame .cn-grid .cn-it{opacity:1!important;transform:none!important;transition:none!important}
+
+/* Vista Elenco: la regola "Tutti senza testo" nascondeva le righe; nell'elenco il testo resta sempre */
+.frame .cn-grid.is-list .cn-t{display:grid!important;opacity:1!important}
+.frame .cn-grid.is-list .cn-tag{display:inline-block!important}
+.frame .in:has(> .cn-grid.is-list) .cn-dk{display:none!important}
+
+/* ===== Scheda progetto: "Progetto successivo" con titolo alla scala dei titoli di sezione (chat 2026-10-28) ===== */
+.frame #main .pj-next-in b{font-size:var(--t-h2)!important;font-weight:600!important;line-height:1!important;letter-spacing:-.035em}
+body[data-overlay] .frame #main .ct-dark .ct-h1{font-size:clamp(32px,min(5cqi,6.6vh),76px)!important}
+body[data-overlay] .frame .ct-dark{padding-top:var(--ovl,136px)!important}
+body[data-overlay] .frame .ct-dark .pg-fg{gap:clamp(6px,1vh,16px) 24px!important;margin:8px 0 10px!important}
+body[data-overlay] .frame .ct-dark .pg-fg textarea{height:clamp(40px,5vh,80px)}
+body[data-overlay] .frame .ct-dark .ct-k{margin-bottom:clamp(6px,1.2vh,14px)}
+body[data-overlay] .frame .ct-dark .co-status{margin:0!important}
+body[data-overlay] .frame .ct-dark .ct-lead{max-width:60ch!important}
+
+/* ===== Scheda progetto: foto della hero al vivo, anche dietro nav e breadcrumb (chat 2026-10-28) ===== */
+body[data-overlay] .frame .pj-hero-s{top:var(--tbh,0px)!important;height:calc(100vh - var(--tbh,0px))!important}
+
+/* ===== Categoria: titolo della hero mai tagliato (chat 2026-10-28) ===== */
+/* lettere raggruppate per parola: il titolo va a capo solo tra le parole */
+.frame #main .ct-hx h1{overflow:visible;height:auto!important;width:auto!important;max-width:min(100%,14ch)!important;white-space:normal!important}
+.frame #main .ct-hx h1 .ct-w{display:inline-block;white-space:nowrap;overflow:hidden;padding-bottom:.08em;vertical-align:top}
+.frame #main .ct-hx h1 .ct-w span{display:inline-block}
+.frame #main .ct-hx h1.ct-long{font-size:clamp(44px,min(6.4cqi,11vh),104px)!important}
+.frame .ct-hx .ct-hero-h{width:auto!important;max-width:min(100%,900px)}
+/* la parola resta ferma, solo le lettere salgono al suo interno */
+.frame #main .ct-hx h1 span.ct-w{transform:none!important;opacity:1!important;transition:none!important}
+.frame .ct-hx .ct-hero-h,.frame .ct-hx .ct-hero-t{position:relative;z-index:6}
+
+/* ===== Card progetto = standard delle card "In vendita" della Home A (chat 2026-10-29) =====
+   Cantieri (griglia, con ogni filtro) e Categoria (I lavori): foto a tutta card, targhetta in vetro in alto,
+   pannello in vetro scuro in basso con nome sempre visibile, descrizione che si apre al passaggio, CTA con linea che si allunga.
+   Tolto il pannello pieno che saliva al passaggio. */
+.frame .cn-grid:not(.is-list) .cn-hv,.frame .ct-pin2 .ct-pc .cn-hv,.frame .ct-rail .ct-pc .cn-hv{display:none!important}
+.frame .cn-grid:not(.is-list) .cn-t,.frame .cn-grid.cn-all:not(.is-list) .cn-t{display:flex!important;opacity:1!important;position:static!important;margin:0!important}
+.frame .cn-grid:not(.is-list) .cn-tag,.frame .cn-grid.cn-all:not(.is-list) .cn-tag{display:inline-block!important}
+.frame .cn-grid:not(.is-list) .cn-go{display:inline-flex!important;opacity:1!important;transform:none!important}
+.frame .ct-pc:not(.end) .ct-pc-b,.frame .ct-pin2 .ct-pc:not(.end) .ct-pc-b{display:flex!important;opacity:1!important}
+.frame .ct-pc .ct-pc-b u{display:inline-flex;align-items:center;gap:10px;padding-top:6px;color:#fff;font:500 13px/1 var(--fb);text-decoration:none}
+.frame .ct-pc .ct-pc-b u::after{content:"";width:16px;height:1px;background:currentColor;transition:width .3s var(--ease)}
+.frame .ct-pc:hover .ct-pc-b u::after{width:32px}
+.frame .cn-grid:not(.is-list) .cn-c:hover .cn-t,.frame .cn-grid:not(.is-list) .cn-c:focus-visible .cn-t{opacity:1!important}
+/* Categoria: margine interno a destra e in basso della parola, cosi l'ultima lettera (es. la "e" di Case) non viene tagliata dalla spaziatura negativa */
+.frame #main .ct-hx h1 .ct-w{padding:0 .12em .12em 0;margin-right:-.12em;margin-bottom:-.12em}
+
+/* ===== Contatti: composizione di "Contatti diretti" (chat 2026-10-29) =====
+   riga 1: telefono (largo, scuro) · email · orari — riga 2: sede · mappa. Tessere della stessa riga alte uguali,
+   etichetta in alto e dato in basso; orari senza a capo. */
+.frame .co-bento .pg-ca{grid-template-columns:repeat(12,minmax(0,1fr))!important;grid-template-areas:"h h h h h h h h h h h h" "p p p p p p p p p p p p" "o o o o o o o o o o o o" "tel tel tel tel tel mail mail mail mail hrs hrs hrs" "sede sede sede sede map map map map map map map map";gap:12px!important;align-items:stretch}
+.frame .co-bento .co-cd > h2{grid-area:h}
+.frame .co-bento .co-cd > p:not(.co-open){grid-area:p}
+.frame .co-bento .co-open{grid-area:o}
+.frame .co-bento .co-cd dl > div{min-height:200px;justify-content:space-between}
+.frame .co-bento .co-cd dl > div:nth-child(1){grid-area:tel}
+.frame .co-bento .co-cd dl > div:nth-child(2){grid-area:mail}
+.frame .co-bento .co-cd dl > div:nth-child(3){grid-area:sede}
+.frame .co-bento .co-cd dl > div:nth-child(4){grid-area:hrs}
+.frame .co-bento .co-mp{grid-area:map}
+.frame .co-bento .co-mp .co-map{min-height:clamp(240px,30vh,340px)}
+.frame .co-bento .co-hrs td,.frame .co-bento .co-hrs th{white-space:nowrap;vertical-align:top}
+.frame .co-bento .co-hrs td{font-size:13px}
+.frame .co-bento .co-cd dl > div:nth-child(3) dd{font-size:clamp(18px,1.6cqi,24px);line-height:1.3;letter-spacing:-.01em}
+@container (max-width:1100px){.frame .co-bento .pg-ca{grid-template-areas:"h h h h h h h h h h h h" "p p p p p p p p p p p p" "o o o o o o o o o o o o" "tel tel tel tel tel tel tel mail mail mail mail mail" "sede sede sede sede sede hrs hrs hrs hrs hrs hrs hrs" "map map map map map map map map map map map map"!important}}
+@container (max-width:700px){.frame .co-bento .pg-ca{grid-template-columns:1fr!important;grid-template-areas:"h" "p" "o" "tel" "mail" "hrs" "sede" "map"!important}.frame .co-bento .co-cd dl > div{min-height:0}}
+.frame .co-bento .co-cd dl > div:nth-child(1){grid-area:tel!important}
+.frame .co-bento .co-cd dl > div:nth-child(2){grid-area:mail!important}
+.frame .co-bento .co-cd dl > div:nth-child(3){grid-area:sede!important}
+.frame .co-bento .co-cd dl > div:nth-child(4){grid-area:hrs!important}
+.frame .co-bento .co-mp{grid-area:map!important}
+.frame .co-bento .co-mp .co-map{aspect-ratio:auto!important;height:clamp(240px,34vh,340px)!important;flex:none}
+.frame .co-bento .co-hrs th{padding-left:0!important;text-align:left!important;width:1%}
+
+/* Cantieri (chat 2026-10-29): miniature della fila sempre senza testo; con un filtro attivo le card perdono ogni resto dell'animazione di volo (ritaglio e livello) */
+.frame .cn-dk-t{display:none!important}
+body:not(.cn-all-on) .frame .cn-grid .cn-it{clip-path:none!important;z-index:auto!important}
+/* Contatti, orari: giorni e fasce allineati in colonna; il pallino di "oggi" sta nel margine e non sposta il testo (chat 2026-10-29) */
+.frame .co-bento .co-hrs th{position:relative;padding:4px 16px 4px 14px!important}
+.frame .co-bento .co-hrs td{padding:4px 0!important}
+.frame .co-bento .co-hrs tr.is-today th::before{position:absolute;left:0;top:50%;margin:-3px 0 0;background:#1f1f1f;border-radius:50%}
+.frame .co-bento .co-hrs tr.is-today th,.frame .co-bento .co-hrs tr.is-today td{color:#1f1f1f!important;font-weight:600}
+/* Cantieri, "Tutti": mentre le foto sono ancora piccole (in volo dalla fila alla griglia) nessun testo; box, targhetta e CTA compaiono solo a card aperta (--fp dal JS del volo, chat 2026-10-29) */
+.frame .cn-grid.fl-on:not(.is-list) .cn-it .cn-t,.frame .cn-grid.fl-on:not(.is-list) .cn-it .cn-tag{opacity:clamp(0,calc((var(--fp,1) - .85) * 6.67),1)!important;visibility:visible}
+
+/* Servizi: etichetta del gruppo nel menu e sottolista nel footer */
+.ha-mx-sec .mx-svl{align-self:center;font:600 11px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-right:-8px}
+.ha-mx-sec .mx-svl~li[data-p=faq]{margin-left:20px;padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
+.ha-foot nav li.ft-sv>span{display:block}
+.ha-foot nav li.ft-sv>ul{margin:8px 0 2px 14px;padding-left:12px;border-left:1px solid rgba(255,255,255,.2)}
+.ha-foot nav li.ft-sv>ul li{margin:0 0 6px}

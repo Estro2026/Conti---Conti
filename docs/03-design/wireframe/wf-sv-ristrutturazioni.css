@@ -1,0 +1,207 @@
+/* Servizio Ristrutturazioni (prefisso svk-). Mid-fi, scala di grigi.
+   COPIA di wf-sv-residenze.css (apertura, Cosa comprende, scena a scorrimento, fascia scura, fascia 'Vuoi comprare', Altri servizi)
+   e di wf-sv-retail.css (indice delle categorie + card grande), con prefisso svk-. Solo le aggiunte in fondo sono specifiche di questa pagina. */
+.svk-hero-btn{margin:0}
+/* apertura: a schermi molto larghi il titolo (fino a 180 px) non deve mai superare la sua colonna e finire sotto la frase */
+@container (min-width:1041px){.frame .ct-hero-t{grid-template-columns:minmax(max-content,1.1fr) minmax(0,.9fr)}}
+.svk-h2-w{max-width:22ch;text-wrap:balance}
+.svk-h2-s{font-size:calc(clamp(28px,3.4cqi,46px) * var(--sk,1))!important}
+html[data-zoom] .svk-h2-s{font-size:calc(clamp(28px,3.4cqi,46px) * var(--sk,1))!important}
+
+/* focus coerente su tutti i link della pagina */
+.frame main :is(.svk-idx a,.svk-ph,.svk-more a,.svk-who a,.svk-rail button):focus-visible{outline:3px solid #151517;outline-offset:3px}
+.svk-dk :is(.svk-who a):focus-visible{outline-color:#fff}
+
+/* ---------- 2. registro a righe ---------- */
+.svk-led{margin-top:var(--sh,40px);border-bottom:1px solid var(--ink)}
+.svk-led article{position:relative;display:grid;grid-template-columns:minmax(56px,.16fr) minmax(0,.9fr) minmax(0,1.3fr);column-gap:clamp(16px,3cqi,48px);align-items:baseline;padding:clamp(22px,3cqi,40px) 0}
+.svk-led article::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--ink);transform-origin:left;transition:transform .9s cubic-bezier(.2,.6,.2,1) calc(var(--d,0) * 140ms + .1s)}
+.js-dx .svk-led article:not(.is-in)::before{transform:scaleX(0)}
+.svk-lno{font:600 13px/1 var(--fh);letter-spacing:.14em;color:#5e5f63}
+.svk-led h3{font:700 clamp(28px,3.6cqi,52px)/1 var(--fh);letter-spacing:-.025em;margin:0;transition:transform .35s cubic-bezier(.2,.6,.2,1)}
+.svk-led p{margin:0;max-width:46ch}
+
+/* ---------- 3. scena a scorrimento (impianto base = elenco) ---------- */
+.svk-how .svk-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sh,40px)}
+.svk-how-t .lead{margin-top:18px;max-width:44ch}
+.svk-steps{list-style:none;margin:0;padding:0}
+.svk-steps li{position:relative;display:grid;grid-template-columns:clamp(52px,9cqi,96px) minmax(0,1fr);column-gap:clamp(12px,2.4cqi,32px);padding:0 0 clamp(28px,4cqi,48px)}
+.svk-n{font:800 clamp(34px,5.4cqi,64px)/.9 var(--fh);letter-spacing:-.04em;color:#a8a8a8;transition:color .4s;grid-row:1 / span 2}
+/* filo che collega i passi, si riempie con lo scroll */
+.svk-steps li::before,.svk-steps li::after{content:"";position:absolute;left:calc(clamp(52px,9cqi,96px) / 2 - 1px);top:calc(clamp(34px,5.4cqi,64px) + 10px);bottom:6px;width:2px}
+.svk-steps li::before{background:#c4c4c4}
+.svk-steps li::after{background:var(--ink);transform-origin:top;transform:scaleY(var(--f,0))}
+.svk-steps li:last-child::before,.svk-steps li:last-child::after{display:none}
+.svk-steps li.on .svk-n{color:var(--ink)}
+.svk-q{font:600 12px/1.3 var(--fh);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:#5e5f63}
+.svk-steps h3{font:700 clamp(24px,2.8cqi,38px)/1.08 var(--fh);letter-spacing:-.02em;margin:0 0 12px}
+.svk-steps .svk-b p:not(.svk-q){margin:0;max-width:56ch}
+.svk-steps .svk-d{grid-column:2;margin:16px 0 0;padding:12px 14px;border:1px solid rgba(21,21,23,.45);border-radius:var(--card-rad,20px);background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:15px;max-width:56ch}
+.svk-rail{display:none}
+@media (min-width:700px) and (max-width:900px){
+  .svk-steps li{grid-template-columns:clamp(52px,9cqi,96px) minmax(0,1.4fr) minmax(0,1fr);align-items:start}
+  .svk-n{grid-row:auto}
+  .svk-steps .svk-d{grid-column:3;margin:30px 0 0}
+}
+/* modalità scena: attivata da JS solo se tutto sta nello schermo */
+.svk-how.is-pin{padding-block:0;height:calc(100vh - var(--stick,144px) + 4 * clamp(240px,52vh,480px))}
+.svk-how.is-pin .svk-stage{position:sticky;top:var(--stick,144px);height:calc(100vh - var(--stick,144px));display:flex;align-items:center}
+.svk-how.is-pin .svk-grid{width:100%;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:clamp(32px,6cqi,96px);align-items:center}
+.is-pin .svk-how-t .lead{max-width:36ch}
+.is-pin .svk-rail{display:block;list-style:none;margin:clamp(18px,2.4cqi,30px) 0 0;padding:0}
+.svk-rail li{margin:0}
+.svk-rail button{all:unset;box-sizing:border-box;position:relative;display:flex;gap:14px;align-items:baseline;width:100%;min-height:40px;padding:9px 0;border-top:1px solid #c4c4c4;cursor:pointer;font:600 15px/1.25 var(--fh);color:#5e5f63;transition:color .3s}
+.svk-rail button::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--ink);transform-origin:left;transform:scaleX(var(--f,0))}
+.svk-rail li:last-child button{border-bottom:1px solid #c4c4c4}
+.svk-rail b{font:700 12px/1 var(--fh);letter-spacing:.12em;min-width:22px}
+.svk-rail button[aria-current="step"]{color:var(--ink)}
+.is-pin .svk-steps{display:grid;position:relative;padding-left:clamp(24px,3.6cqi,56px)}
+.is-pin .svk-steps::before,.is-pin .svk-steps::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px}
+.is-pin .svk-steps::before{background:#c4c4c4}
+.is-pin .svk-steps::after{background:var(--ink);transform-origin:top;transform:scaleY(var(--p,0))}
+.is-pin .svk-steps li{grid-area:1 / 1;display:flex;flex-direction:column;justify-content:center;padding:0;opacity:0;transform:translateY(34px);pointer-events:none;transition:opacity .16s ease,transform .3s ease}
+.is-pin .svk-steps li::before,.is-pin .svk-steps li::after{display:none}
+.is-pin .svk-steps li.past{transform:translateY(-34px)}
+/* il passo che esce sparisce prima che entri il successivo: mai due testi sovrapposti */
+.is-pin .svk-steps li.on{opacity:1;transform:none;pointer-events:auto;transition:opacity .4s ease .18s,transform .5s cubic-bezier(.2,.6,.2,1) .18s}
+.is-pin .svk-n{font-size:calc(clamp(72px,11cqi,168px) * var(--sk,1));color:var(--ink);margin-bottom:clamp(8px,1.6cqi,22px)}
+.is-pin .svk-steps h3{font-size:calc(clamp(26px,3.2cqi,46px) * var(--sk,1))}
+.is-pin .svk-steps .svk-d{max-width:50ch}
+
+/* ---------- 4. fascia scura, schede sfalsate ---------- */
+.svk-dk{background:var(--ink);color:#fff;border-top:0}
+.svk-dk .dx-k{color:#bdbdbd}
+.svk-dk .dx-h{color:#fff}
+.svk-who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4cqi,36px);margin-top:var(--sh,40px);align-items:start}
+.svk-who article{position:relative;border:1px solid rgba(255,255,255,.22);border-radius:var(--card-rad,20px);overflow:clip;background:rgba(255,255,255,.05);padding:clamp(22px,2.8cqi,40px);display:flex;flex-direction:column;gap:14px;min-width:0;min-height:clamp(240px,26cqi,360px);transition:background-color .3s,border-color .3s}
+.svk-who article:nth-child(2){margin-top:clamp(32px,6cqi,88px)}
+.svk-no{font:800 clamp(64px,8cqi,128px)/.85 var(--fh);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px #a8a8a8;margin-bottom:auto;padding-bottom:clamp(16px,2cqi,32px)}
+.svk-who h3{font:700 clamp(26px,3cqi,42px)/1.05 var(--fh);letter-spacing:-.02em;margin:0;color:#fff}
+.svk-who p{margin:0;max-width:44ch;color:#e6e6e6}
+.svk-who p a{color:#fff;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px;display:inline-block;min-height:24px}
+
+/* ---------- 5. indice + card sfalsate ---------- */
+.svk-pb u,.svk-more u{font-weight:600;text-decoration:none;align-self:flex-start;background:linear-gradient(currentColor,currentColor) left bottom/0 1.5px no-repeat;padding-bottom:2px;transition:background-size .3s;min-height:24px;display:inline-flex;align-items:center}
+.svk-buy{border-radius:var(--card-rad,20px);display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;margin-top:clamp(36px,5cqi,72px);padding:clamp(22px,2.8cqi,40px);background:rgba(21,21,23,.94);color:#fff}
+.svk-buy>div{flex:1 1 320px;min-width:0}
+.svk-buy h3{font:700 clamp(22px,2.4cqi,32px)/1.1 var(--fh);margin:0 0 6px}
+.svk-buy p{margin:0;max-width:52ch;color:#e6e6e6}
+.svk-buy .btn{background:#fff;border-color:#fff;color:var(--ink);flex:none}
+.svk-buy .btn:hover{background:#d9d9d9;border-color:#d9d9d9;color:var(--ink)}
+.svk-buy .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* ---------- 6. due metà a filo ---------- */
+.svk-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:var(--sh,40px);border:1px solid var(--ink);border-radius:var(--card-rad,20px);overflow:clip}
+.svk-more a{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:clamp(200px,22cqi,300px);padding:clamp(22px,3cqi,44px);color:var(--ink);text-decoration:none;min-width:0;transition:background-color .3s,color .3s}
+.svk-more a+a{border-left:1px solid var(--ink)}
+.svk-more b{font:800 clamp(30px,4cqi,60px)/1 var(--fh);letter-spacing:-.03em}
+.svk-more span{font-size:16px;max-width:38ch;margin-top:12px;display:block}
+
+/* ---------- hover (solo mouse) e focus: stessa regola ovunque ---------- */
+@media (hover:hover) and (pointer:fine){
+  .svk-led article:hover h3{transform:translateX(10px)}
+  .svk-who article:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.5)}
+  .svk-idx a:hover,.svk-more a:hover{background:var(--ink);color:#fff}
+  .svk-idx a:hover{padding-left:clamp(12px,1.4cqi,20px)}
+  .svk-ph:hover .svk-pb{background:rgba(255,255,255,.95)}
+  .svk-idx a:hover u,.svk-ph:hover u,.svk-more a:hover u{background-size:100% 1.5px}
+  .svk-rail button:hover{color:var(--ink)}
+}
+.svk-idx a:focus-visible,.svk-more a:focus-visible{background:var(--ink);color:#fff;outline-offset:-3px;outline-color:#fff}
+.svk-idx a:focus-visible u,.svk-ph:focus-visible u,.svk-more a:focus-visible u{background-size:100% 1.5px}
+.svk-ph:focus-visible .svk-pb{background:rgba(255,255,255,.95)}
+
+/* ---------- tablet ---------- */
+@media (max-width:900px){
+  .svk-led article{grid-template-columns:44px minmax(0,1fr)}
+  .svk-led article p{grid-column:2;margin-top:10px}
+  .svk-who{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svk-who article{min-height:0}
+  .svk-no{font-size:clamp(56px,10cqi,88px)}
+}
+/* ---------- mobile ---------- */
+@media (max-width:640px){
+  .svk-h2-w{max-width:none}
+  .svk-who{grid-template-columns:1fr}
+  .svk-who article:nth-child(2){margin-top:0}
+  .svk-who article{flex-direction:column;gap:10px}
+  .svk-no{margin-bottom:0;padding-bottom:6px;font-size:56px}
+  .svk-more{grid-template-columns:1fr}
+  .svk-more a+a{border-left:0;border-top:1px solid var(--ink)}
+  .svk-more a{min-height:0}
+  .svk-buy .btn{width:100%}
+  .svk-steps li{grid-template-columns:44px minmax(0,1fr)}
+  .svk-steps li::before,.svk-steps li::after{left:21px}
+}
+@media (max-width:400px){
+  .svk-led article{grid-template-columns:34px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  .svk-led article::before{transform:none!important;transition:none}
+  .svk-led h3,.svk-n,.svk-idx a,.svk-idx u,.svk-ph,.svk-pb u,.svk-more a,.svk-more u,.svk-who article{transition:none}
+  .svk-led article:hover h3{transform:none}
+  .is-pin .svk-steps li,.is-pin .svk-steps li.on{transition:none}
+}
+
+/* ---------- apertura a tutta viewport ----------
+   Foto al vivo = 100% dell'altezza visibile sotto la barra del wireframe (breadcrumb e header trasparenti sopra, nessuna fascia).
+   Stessi ganci di Categoria: parallasse --py (wf-dyn.js), --k = avanzamento dello scroll (titolo che sale, foto che si chiude a riquadro). */
+.frame #main .ct-hero{min-height:calc(100vh - var(--tbh,0px))!important;min-height:calc(100svh - var(--tbh,0px))!important}
+.ct-hero-m::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(0,0,0,calc(var(--k,0) * .38));pointer-events:none}
+.js-dx .ct-hero-m{animation:svkHeroIn 1.4s cubic-bezier(.2,.6,.2,1) both}
+@keyframes svkHeroIn{from{transform:scale(1.07)}to{transform:none}}
+
+/* ---------- Lavori: copia di Retail (Prove), prefisso svk- ---------- */
+.svk-proof{display:grid;grid-template-columns:minmax(0,1fr);margin-top:clamp(24px,3cqi,40px)}
+.svk-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6cqi,24px);margin:0;padding:0;list-style:none}
+.frame .svk-tiles .card-imm{aspect-ratio:4/3!important}
+.frame .svk-tiles .card-imm>div:first-child,.frame .svk-tiles .card-imm .ph{border:0!important;border-radius:0!important}
+.svk-proof.is-cat{grid-template-columns:minmax(210px,1fr) minmax(0,3.1fr);gap:clamp(24px,3.4cqi,56px);align-items:start}
+.svk-proof.is-cat .svk-tiles{display:block;grid-column:2;grid-row:1}
+.svk-proof.is-cat .svk-tiles>li{display:none}
+.svk-proof.is-cat .svk-tiles>li.is-on{display:block;animation:svrCat .35s ease both}
+@keyframes svrCat{from{opacity:0}to{opacity:1}}
+.svk-side{grid-column:1;grid-row:1}
+.svk-idx{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--ink)}
+.svk-idx li{border-top:1px solid var(--ink)}
+.svk-idx button{all:unset;box-sizing:border-box;position:relative;display:block;width:100%;min-height:44px;padding:clamp(14px,1.8cqi,24px) clamp(8px,1cqi,16px);border-radius:0;color:var(--mut);cursor:pointer;font:700 clamp(24px,2.8cqi,40px)/1.05 var(--fh);letter-spacing:-.025em;transition:background-color .25s,color .25s;overflow-wrap:anywhere}
+.svk-idx button[aria-current="true"]{color:var(--ink);box-shadow:inset 2px 0 0 var(--ink)}
+.svk-nav{display:flex;gap:8px;margin-top:14px}
+.svk-nav button{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid var(--ink);border-radius:2px;background:#fff;color:var(--ink);cursor:pointer;font:600 18px/1 var(--fh)}
+.svk-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.svk-head>div{min-width:0}
+.svk-all{flex:none}
+@media (hover:hover) and (pointer:fine){.svk-idx button:hover{background:var(--ink);color:#fff}}
+@container (max-width:720px){.svk-tiles{grid-template-columns:1fr}.svk-proof.is-cat{grid-template-columns:1fr}.svk-proof.is-cat .svk-tiles,.svk-side{grid-column:1;grid-row:auto}.svk-idx button{font-size:26px}}
+.frame main :is(.svk-idx button,.svk-tile,.svk-nav button):focus-visible{outline:3px solid #151517;outline-offset:3px}
+/* frecce: copia di .sale-btn di Home A (#h-sale): 56px, cerchio, bordo 1px rgba(21,21,23,.2), vetro, icona 20px */
+.svk-nav{gap:10px}
+.svk-nav button.svk-arr{position:relative;width:56px;height:56px;min-width:56px;min-height:56px;padding:0;border-radius:999px;border:1px solid rgba(21,21,23,.2);background:#fff;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#151517;cursor:pointer;transition:background-color .35s,color .35s,border-color .35s}
+.svk-nav button.svk-arr i{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E") center/20px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 12H5M11 6l-6 6 6 6'/%3E%3C/svg%3E") center/20px no-repeat}
+.svk-nav button.svk-arr.next i{transform:scaleX(-1)}
+@media (hover:hover) and (pointer:fine){.svk-nav button.svk-arr:hover{background:#3a3a3a;border-color:#3a3a3a;color:#fff}}
+.svk-all.ha-btn{min-height:44px;padding:0 20px;font-size:14px}
+.svk-all{margin-left:auto}
+
+
+/* ---------- aggiunte specifiche (non presenti in Residenze/Retail) ---------- */
+/* H1 lungo: 'Ristrutturazioni' è più lungo di 'Residenze'. Sotto 1041 px sta su una riga a tutta larghezza; da 1041 px sta nella colonna sinistra (1.1fr) */
+.frame #main .ct-hero h1{font-size:clamp(28px,min(11cqi,17vh),180px)!important;line-height:1!important;max-width:100%;overflow-wrap:normal;word-break:normal}
+@container (min-width:1041px){.frame #main .ct-hero h1{font-size:clamp(40px,min(6.6cqi,17vh),96px)!important}}
+@media (max-height:700px) and (min-width:540px){.frame #main .ct-hero h1{font-size:clamp(28px,min(6.2cqi,17vh),96px)!important}}
+@container (min-width:1041px){.frame #main .ct-hero h1{font-size:clamp(40px,min(6.6cqi,17vh),96px)!important}}
+.svk-lead{margin:18px 0 0;max-width:62ch}
+/* passi: documenti, controlli, documenti in uscita */
+@media (prefers-reduced-motion:reduce){.svk-it,.svk-nav button{transition:none}}
+
+/* frecce precedente/successiva a destra del titolo, come in Home A (#h-sale): frecce, poi CTA; sotto i 720 px il gruppo va a capo */
+.svk-ctrl{display:flex;align-items:center;gap:16px;flex:none;margin-left:auto}
+.svk-ctrl .svk-nav{margin-top:0;gap:10px}
+.svk-ctrl .svk-all{margin-left:0}
+@container (max-width:720px){.svk-ctrl{margin-left:auto;flex-wrap:wrap}}
+
+/* Lavori: sezione intera nella viewport; la card prende l'altezza residua (--ch, calcolata in JS), con tetto sul rapporto 4/3 */
+.svk-fit .svk-proof.is-cat .svk-tiles .card-imm{aspect-ratio:auto!important;height:min(var(--ch,100vh),56cqi)}
+@container (max-width:720px){.svk-fit .svk-proof.is-cat .svk-tiles .card-imm{height:min(var(--ch,100vh),78cqi)}}
+.svk-ctrl{flex-wrap:wrap}
+.svk-ctrl{flex:0 1 auto;max-width:100%}

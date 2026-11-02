@@ -437,3 +437,15 @@ html:not(.js-dx) .ix-team-p article+article{margin-top:40px}
 .ix-stk::after{content:"";display:block;height:max(34vh,200px)}
 @container (max-width:720px){.ix-stk::after{display:none}}
 @media (max-height:560px){.ix-stk::after{display:none}}
+
+
+/* Impresa: tre tessere che portano alle pagine servizio (al posto degli otto uffici) */
+.ix-flow-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ix-flow-3 li{aspect-ratio:4/3;padding:0}
+.ix-fl{display:flex;flex-direction:column;height:100%;padding:clamp(20px,2.2cqi,32px);color:inherit;text-decoration:none}
+.ix-fl .ix-flow-n{margin:0 0 auto}
+.ix-fl h3{margin:24px 0 10px}
+.ix-fl-go{font:600 14px/1 var(--fh)}
+.ix-flow-3 li:hover .ix-fl-go{text-decoration:underline;text-underline-offset:4px}
+@container (max-width:1040px){.ix-flow-3{grid-template-columns:repeat(3,minmax(0,1fr))}.ix-flow-3 li{aspect-ratio:auto;min-height:220px}}
+@container (max-width:720px){.ix-flow-3{grid-template-columns:1fr}.ix-flow-3 li{min-height:0}.ix-fl{padding:22px}}

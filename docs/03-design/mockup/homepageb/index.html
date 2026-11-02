@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mockup Home D | Conti &amp; Conti</title>
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="preload" as="image" href="img/hero-poster.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="nav" id="nav">
+  <a class="nav-logo" href="home-d.html" aria-label="Conti &amp; Conti, home"><img src="img/logo.png" width="190" height="49" alt=""></a>
+  <div class="nav-r">
+    <a class="btn btn-sm" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span class="nb-x" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="nb-t">Menu</span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="mx">
+    <nav class="mx-main" aria-label="Menu">
+      <ul>
+        <li><a href="../wireframe/chi-siamo.html"><small>01</small>Impresa</a></li>
+        <li><a href="../wireframe/cantieri.html"><small>02</small>Cantieri</a></li>
+        <li><a href="../wireframe/in-vendita.html"><small>03</small>In vendita</a></li>
+        <li><a href="../wireframe/blog.html"><small>04</small>Blog</a></li>
+      </ul>
+      <ul class="mx-sec">
+        <li><a href="../wireframe/faq.html">FAQ</a></li>
+        <li><a href="../wireframe/contatti.html">Contatti</a></li>
+        <li><a href="../wireframe/lavora-con-noi.html">Lavora con noi</a></li>
+      </ul>
+    </nav>
+    <div class="mx-cats">
+      <p class="mx-lbl">Cantieri per categoria</p>
+      <ul class="mx-list" aria-label="Categorie di cantiere"><li><a href="../wireframe/categoria.html">Case</a></li><li><a href="../wireframe/categoria.html">Residenze</a></li><li><a href="../wireframe/categoria.html">Lusso</a></li><li><a href="../wireframe/categoria.html">Palestre</a></li><li><a href="../wireframe/categoria.html">Allestimenti</a></li><li><a href="../wireframe/categoria.html">Ville</a></li><li><a href="../wireframe/categoria.html">Attivit&agrave; commerciali</a></li><li><a href="../wireframe/categoria.html">Industriale</a></li></ul>
+      <a class="link mx-all" href="../wireframe/cantieri.html">Tutti i cantieri &rarr;</a>
+    </div>
+    <div class="mx-side">
+      <dl><div><dt>Telefono</dt><dd><a href="tel:+390362557972">0362 557972</a></dd></div><div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div></dl>
+      <dl><div><dt>Sede</dt><dd>Via Nazionale dei Giovi 169<br>Lentate sul Seveso (MB)</dd></div></dl>
+      <dl><div><dt>Social</dt><dd class="mx-soc"><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.040 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/></svg></a><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.930v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/></svg></a></dd></div></dl>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- 1. HERO: foto incorniciata, titolo con accento in corsivo, tre accessi rapidi sotto -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="hero-card">
+    <img src="img/hero-poster.jpg" width="2200" height="1244" alt="" fetchpriority="high">
+    <div class="hero-top"><p>Nuove costruzioni, ristrutturazioni e interni di pregio tra Milano, Como, Varese e la Brianza.</p><p>Strutture, murature e casseri eseguiti in proprio, dal primo getto alla consegna.</p></div>
+    <div class="hero-bot">
+      <h1 id="h-hero">Costruiamo case <span class="i">fatte per durare.</span></h1>
+      <div class="hero-cta">
+        <a class="btn" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+        <a class="btn btn-glass" href="../wireframe/cantieri.html">Scopri i cantieri</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <a href="../wireframe/cantieri.html"><div><span>Cantieri</span><strong>Case, ville, residenze e spazi commerciali</strong></div><i aria-hidden="true"></i></a>
+    <a href="../wireframe/in-vendita.html"><div><span>In vendita</span><strong>Acquista direttamente da chi costruisce</strong></div><i aria-hidden="true"></i></a>
+    <a class="dark" href="tel:+390362557972"><div><span>Parla con noi</span><strong>Ti risponde chi segue il cantiere</strong></div><i aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- 2. DICHIARAZIONE -->
+<section class="statement" id="statement" aria-labelledby="h-statement">
+  <div class="wrap">
+    <div class="st-grid">
+      <div class="st-mark"><p class="kicker">Costruiamo in proprio</p></div>
+      <div>
+        <h2 id="h-statement" class="scrub" data-scrub>Dalle fondazioni alle finiture, ogni fase del cantiere &egrave; eseguita e controllata dall'impresa. Per questo rispondiamo di ogni progetto, dal preventivo alle chiavi.</h2>
+        <div class="st-sub" data-reveal><a class="link" href="../wireframe/chi-siamo.html">Conosci l'impresa &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2b. NUMERI + SERVIZI (da Home A): scheda bordeaux con i numeri, tre servizi sotto (dati da verificare) -->
+<section class="nums" id="numeri" aria-labelledby="h-stats">
+  <div class="n-card">
+    <img src="img/villa.jpg" alt="" loading="lazy">
+    <div class="n-head"><div><p class="kicker">In numeri</p><h2 id="h-stats" data-reveal>Dal 1988, <span class="i">un cantiere dopo l&rsquo;altro.</span></h2></div><p class="n-note">Dati da verificare con il cliente.</p></div>
+    <ul class="n-grid">
+      <li data-reveal><span class="n-v" aria-label="40 anni"><b data-count="40">0</b><sup>anni</sup></span><span>Nell&rsquo;edilizia tra Brianza, Milano e lago.</span></li>
+      <li data-reveal><span class="n-v" aria-label="oltre 500 cantieri"><b data-count="500">0</b><sup>+</sup></span><span>Cantieri, dalla casa singola al retail.</span></li>
+      <li data-reveal><span class="n-v" aria-label="40 persone"><b data-count="40">0</b><sup>persone</sup></span><span>Tutte dipendenti dell&rsquo;impresa.</span></li>
+    </ul>
+  </div>
+</section>
+<section class="svc" id="servizi" aria-labelledby="h-services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">I nostri servizi</p><h2 id="h-services" data-reveal>Tre modi di costruire, <span class="i">un solo modo di rispondere.</span></h2></div>
+      <p data-reveal>Dalla casa singola allo spazio commerciale: stessa impresa, stesse squadre, stesso interlocutore.</p>
+    </div>
+    <ul class="sv">
+      <li data-reveal><a href="../wireframe/cantieri.html"><span class="sv-img"><img src="img/villa.jpg" alt="" loading="lazy"></span><span class="sv-n">01</span><span class="sv-b"><h3>Residenze</h3><span>Dalla progettazione alla costruzione, fino alla manutenzione di interi edifici e case singole.</span></span><i aria-hidden="true"></i></a></li>
+      <li data-reveal><a href="../wireframe/cantieri.html"><span class="sv-img"><img src="img/ceresio-spa.jpg" alt="" loading="lazy"></span><span class="sv-n">02</span><span class="sv-b"><h3>Ristrutturazioni</h3><span>Lavorazioni particolari e cura del dettaglio, in dialogo costante con cliente e Direzione Lavori.</span></span><i aria-hidden="true"></i></a></li>
+      <li data-reveal><a href="../wireframe/cantieri.html"><span class="sv-img"><img src="img/therise.jpg" alt="" loading="lazy"></span><span class="sv-n">03</span><span class="sv-b"><h3>Retail</h3><span>Negozi, showroom, palestre e spazi commerciali: costruzione e manutenzione ordinaria e straordinaria.</span></span><i aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. VALORI: testuale, lo scorrimento cambia impegno -->
+<section class="values" id="valori" aria-labelledby="h-values">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Come lavoriamo</p><h2 id="h-values" data-reveal>Quattro impegni, <span class="i">messi per iscritto.</span></h2></div>
+      <p data-reveal>Prima di aprire il cantiere fissiamo per iscritto data di consegna, prezzo voce per voce e chi lo segue. Poi li rispettiamo.</p>
+    </div>
+  </div>
+  <div class="vx" id="vx">
+    <div class="vx-pin wrap">
+      <ol class="vx-idx"><li><button type="button" data-i="0" aria-current="true"><small>01</small>Rispetto dei tempi</button></li><li><button type="button" data-i="1"><small>02</small>Certezza dei prezzi</button></li><li><button type="button" data-i="2"><small>03</small>Un solo interlocutore</button></li><li><button type="button" data-i="3"><small>04</small>Lavorazioni specialistiche</button></li></ol>
+      <div class="vx-txt" aria-live="polite"><article class="on"><span class="vx-n">01</span><h3>Rispetto dei tempi</h3><p>La data di fine lavori si fissa prima di iniziare e si aggiorna solo con varianti concordate.</p></article><article><span class="vx-n">02</span><h3>Certezza dei prezzi</h3><p>Il preventivo si legge voce per voce: sai cosa paghi e quando.</p></article><article><span class="vx-n">03</span><h3>Un solo interlocutore</h3><p>Dal progetto alla consegna, un tecnico di riferimento per tutto il cantiere. <span class="todo">[da concordare]</span></p></article><article><span class="vx-n">04</span><h3>Lavorazioni specialistiche</h3><p>Squadre formate per finiture fuori standard e interni di pregio. <span class="todo">[da concordare]</span></p></article></div>
+      <div class="vx-bar" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROGETTI: schede che si impilano scorrendo in verticale, foto in parallasse -->
+<section class="works" id="progetti" aria-labelledby="h-works">
+  <div class="wrap works-head">
+    <div><p class="kicker">Cosa costruiamo</p><h2 id="h-works" data-reveal>Progetti che raccontano <span class="i">come lavoriamo.</span></h2></div>
+    <a class="btn" href="../wireframe/cantieri.html">Tutti i cantieri</a>
+  </div>
+  <ol class="wstack">
+    <li class="ws" style="--n:0"><a class="ws-card" href="../wireframe/progetto.html">
+      <img src="img/ceresio-spa.jpg" alt="Area relax con colonne in pietra, progetto Ceresio 7 a Milano." loading="lazy">
+      <div class="ws-t"><span class="ws-n">01 / 04</span><div><span class="ws-k">Palestre &middot; Milano</span><h3>Ceresio 7</h3><p>Piscina, palestra e aree relax: la tecnica resta invisibile a chi usa gli spazi.</p></div><i aria-hidden="true"></i></div>
+      <dl class="ws-data"><div><dt>Luogo</dt><dd>Milano</dd></div><div><dt>Anno</dt><dd>[anno]</dd></div><div><dt>Superficie</dt><dd>[mq]</dd></div><div><dt>Intervento</dt><dd>Piscina, palestra, spa</dd></div></dl>
+    </a></li>
+    <li class="ws" style="--n:1"><a class="ws-card" href="../wireframe/progetto.html">
+      <img src="img/villa.jpg" alt="Villa contemporanea bianca con giardino a Meda." loading="lazy">
+      <div class="ws-t"><span class="ws-n">02 / 04</span><div><span class="ws-k">Residenze &middot; <span class="todo">[localit&agrave;]</span></span><h3>Villa a Meda</h3><p>Una villa realizzata dal progetto alla consegna.</p></div><i aria-hidden="true"></i></div>
+      <dl class="ws-data"><div><dt>Luogo</dt><dd>Meda <span class="todo">[da verificare]</span></dd></div><div><dt>Anno</dt><dd>[anno]</dd></div><div><dt>Superficie</dt><dd>[mq]</dd></div><div><dt>Intervento</dt><dd>Villa, dal progetto alla consegna</dd></div></dl>
+    </a></li>
+    <li class="ws" style="--n:2"><a class="ws-card" href="../wireframe/progetto.html">
+      <img src="img/ceresio-piscina.jpg" alt="Terrazza con piscina a sfioro e vetrata, vista sulla citt&agrave;." loading="lazy">
+      <div class="ws-t"><span class="ws-n">03 / 04</span><div><span class="ws-k">Ceresio 7 &middot; Milano</span><h3>La piscina sul tetto</h3><p>Vasca a sfioro e vetrate sopra la citt&agrave;.</p></div><i aria-hidden="true"></i></div>
+      <dl class="ws-data"><div><dt>Luogo</dt><dd>Milano</dd></div><div><dt>Anno</dt><dd>[anno]</dd></div><div><dt>Superficie</dt><dd>[mq]</dd></div><div><dt>Intervento</dt><dd>Piscina sul tetto</dd></div></dl>
+    </a></li>
+    <li class="ws" style="--n:3"><a class="ws-card" href="../wireframe/progetto.html">
+      <img src="img/therise.jpg" alt="Palestra con luci al neon e attrezzature, The Rise." loading="lazy">
+      <div class="ws-t"><span class="ws-n">04 / 04</span><div><span class="ws-k">Palestre &middot; <span class="todo">[localit&agrave;]</span></span><h3>The Rise</h3><p>Impianti, finiture e luci per una palestra di nuova generazione.</p></div><i aria-hidden="true"></i></div>
+      <dl class="ws-data"><div><dt>Luogo</dt><dd>[luogo]</dd></div><div><dt>Anno</dt><dd>[anno]</dd></div><div><dt>Superficie</dt><dd>[mq]</dd></div><div><dt>Intervento</dt><dd>Palestra, impianti e finiture</dd></div></dl>
+    </a></li>
+  </ol>
+</section>
+
+<!-- 4b. LOGHI (da Home A): fascia bordeaux scorrevole, loghi da fornire -->
+<section class="logos" id="clienti" aria-labelledby="h-logos">
+  <div class="lg-card">
+    <div class="lg-head"><p class="kicker">Hanno lavorato con noi</p><h2 id="h-logos" data-reveal>Clienti, studi e marchi <span class="i">che ci affidano i loro spazi.</span></h2></div>
+    <div class="lg-mq" aria-label="Loghi dei clienti, da fornire"><ul><li>Ceresio 7</li><li>Dolce &amp; Gabbana</li><li>The Rise</li><li>[Cliente]</li><li>[Studio di architettura]</li><li>[Cliente]</li><li>[General contractor]</li><li>[Cliente]</li></ul><ul aria-hidden="true"><li>Ceresio 7</li><li>Dolce &amp; Gabbana</li><li>The Rise</li><li>[Cliente]</li><li>[Studio di architettura]</li><li>[Cliente]</li><li>[General contractor]</li><li>[Cliente]</li></ul></div>
+  </div>
+</section>
+
+<!-- 5. IN VENDITA -->
+<section class="sale" id="vendita" aria-labelledby="h-sale">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">In vendita</p><h2 id="h-sale" data-reveal>Acquista direttamente <span class="i">da chi costruisce.</span></h2></div>
+      <div>
+        <p data-reveal style="margin-bottom:24px">Tratti con l'impresa, senza agenzie di mezzo, e hai lo stesso interlocutore dalla trattativa fino al rogito.</p>
+        <div class="sale-ctrl" style="justify-content:flex-start"><button class="arr" type="button" id="sale-prev" aria-label="Immobili precedenti"></button><button class="arr next" type="button" id="sale-next" aria-label="Immobili successivi"></button><a class="btn btn-line" href="../wireframe/in-vendita.html">Tutti gli immobili</a></div>
+      </div>
+    </div>
+  </div>
+  <ul class="track" id="track" tabindex="0" aria-label="Immobili in vendita, scorri di lato">
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm1.jpg" alt="" loading="lazy"><span class="badge">In costruzione</span></span><span class="imm-b"><strong>Residenza Solarium</strong><span>Montesolaro, Carimate (MB) &middot; 4 unit&agrave; &middot; consegna entro dicembre 2026 <span class="todo">[da verificare]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm2.jpg" alt="" loading="lazy"><span class="badge">[Stato]</span></span><span class="imm-b"><strong>Residenza Paradiso</strong><span>Lentate sul Seveso (MB) &middot; <span class="todo">[dati da definire]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm3.jpg" alt="" loading="lazy"><span class="badge">In costruzione</span></span><span class="imm-b"><strong>Via Diaz</strong><span>Lentate sul Seveso (MB) &middot; <span class="todo">[tipologia] &middot; [mq]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm4.jpg" alt="" loading="lazy"><span class="badge">[Stato]</span></span><span class="imm-b"><strong>Domus 54</strong><span><span class="todo">[localit&agrave; e dati da definire]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm5.jpg" alt="" loading="lazy"><span class="badge">[Stato]</span></span><span class="imm-b"><strong>Palazzina Montesolaro</strong><span><span class="todo">[da verificare: potrebbe coincidere con Residenza Solarium]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+    <li><a class="imm" href="../wireframe/residenza.html"><span class="ph"><img src="img/imm6.jpg" alt="" loading="lazy"><span class="badge">[Stato]</span></span><span class="imm-b"><strong>Seregno</strong><span>Seregno (MB) &middot; <span class="todo">[indirizzo e dati da definire]</span></span><u>Vedi la scheda<i aria-hidden="true"></i></u></span></a></li>
+  </ul>
+  <p class="note wrap">Immagini illustrative: gli scatti reali degli immobili saranno forniti dal cliente.</p>
+</section>
+
+<!-- 6. DOVE OPERIAMO -->
+<section class="map" id="dove" aria-labelledby="h-map">
+  <div class="wrap map-grid">
+    <div>
+      <p class="kicker">Dove operiamo</p>
+      <h2 id="h-map" data-reveal>Dalla Brianza a Milano, <span class="i">fino al lago.</span></h2>
+      <p class="map-lead">Lavoriamo tra Milano, Como, Varese e Monza e Brianza. La sede operativa &egrave; a Lentate sul Seveso.</p>
+      <ul class="pins">
+        <li><button class="pl" type="button" data-q="Via Nazionale dei Giovi 169, 20823 Lentate sul Seveso" data-z="15" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Sede operativa</strong><em>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</em></button></li>
+        <li><button class="pl" type="button" data-q="Milano" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Milano</strong><em>Interventi di pregio in citt&agrave;</em></button></li>
+        <li><button class="pl" type="button" data-q="Lago di Como" data-z="10" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Lago di Como</strong><em>Ville di pregio sul lago, spesso al fianco di architetti con clientela internazionale</em></button></li>
+        <li><button class="pl" type="button" data-q="Varese" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Varese</strong><em>Zona operativa</em></button></li>
+        <li><button class="pl" type="button" data-q="Seregno" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Monza, Seregno e Brianza</strong><em>Nuove costruzioni e residenze in vendita</em></button></li>
+      </ul>
+      <a class="btn" href="../wireframe/contatti.html">Vai ai contatti</a>
+    </div>
+    <div class="map-frame">
+      <iframe id="gmap" title="Mappa Google delle zone operative di Conti e Conti" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?output=embed&amp;hl=it&amp;z=9&amp;ll=45.75,9.10"></iframe>
+      <p class="map-note">Mappa Google. In produzione si carica dopo il consenso ai cookie di terze parti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BLOG: tre articoli su schede scure -->
+<section class="blog" id="blog" aria-labelledby="h-blog">
+  <div class="b-in">
+    <div class="b-head">
+      <div><p class="kicker">Dal blog</p><h2 id="h-blog" data-reveal>Guide e racconti dal cantiere.</h2></div>
+      <a class="btn btn-line" href="../wireframe/blog.html">Tutti gli articoli</a>
+    </div>
+    <div class="b-grid">
+      <a class="bc bc-lead" href="../wireframe/articolo.html" data-reveal><img src="img/tecnici.jpg" alt="" loading="lazy"><span class="b-meta">[Data] &middot; [x] min</span><div><h3>Ristrutturare casa: da dove cominciare e a chi affidarsi</h3><p>[Anteprima da scrivere con il cliente]</p></div></a>
+      <div class="b-stack"><a class="bc" href="../wireframe/articolo.html" data-reveal><img src="img/villa.jpg" alt="" loading="lazy"><span class="b-meta">[Data] &middot; [x] min</span><h3>Costruire casa in Brianza: dal terreno alla consegna</h3></a>
+      <a class="bc" href="../wireframe/articolo.html" data-reveal><img src="img/ceresio-piscina.jpg" alt="" loading="lazy"><span class="b-meta">[Data] &middot; [x] min</span><h3>Ville sul Lago di Como: cosa cambia in un contesto di pregio</h3></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GARANZIE -->
+<section class="trust" id="garanzie" aria-labelledby="h-trust">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker">Garanzie messe per iscritto</p><h2 id="h-trust" data-reveal>Verificate da enti esterni, <span class="i">non dichiarazioni nostre.</span></h2></div>
+    </div>
+    <ul class="tgrid">
+      <li data-reveal><span class="t-tag">Certificazione</span><span class="tlogos"><img src="img/logo-iso.png" width="600" height="601" alt="ISO 9001:2015"><img src="img/logo-tuv.png" width="495" height="496" alt="T&Uuml;V S&Uuml;D ISO 9001"></span><strong>UNI EN ISO 9001:2015</strong><span>Sistema qualit&agrave; certificato da T&Uuml;V Italia</span></li>
+      <li data-reveal><span class="t-tag">Attestazione</span><span class="tlogos"><img class="wide" src="img/logo-soa.png" width="1417" height="453" alt="SOA Laghi, organismo di attestazione"></span><strong>Attestazione SOA</strong><span>Classifica IV bis <span class="todo">[da verificare]</span></span></li>
+      <li data-reveal><span class="t-tag">Riconoscimento</span><span class="tlogos"><img src="img/logo-cassaedile.jpg" width="600" height="592" alt="Cassa Edile Awards 2024"></span><strong>Cassa Edile Awards</strong><span>Riconoscimento 2024</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. LA SQUADRA (spostata in basso): elenco competenze, foto e testo -->
+<section class="team dark on-dark" id="team" aria-labelledby="h-team">
+  <div class="wrap">
+    <p class="kicker">Le persone di Conti &amp; Conti</p>
+    <h2 id="h-team" data-reveal>Una squadra, <span class="i">tante competenze.</span></h2>
+    <div class="tm">
+      <div class="tm-tabs" role="group" aria-label="Scegli una competenza">
+        <button type="button" data-i="0" aria-pressed="true"><small>01</small>Squadra</button>
+        <button type="button" data-i="1" aria-pressed="false"><small>02</small>Tecnici e mezzi</button>
+        <button type="button" data-i="2" aria-pressed="false"><small>03</small>Squadra di cantiere</button>
+        <button type="button" data-i="3" aria-pressed="false"><small>04</small>Ufficio e direzione</button>
+      </div>
+      <div class="tm-fig">
+        <img class="on" src="img/team.jpg" alt="La squadra di Conti e Conti davanti alla sede." loading="lazy">
+        <img src="img/tecnici.jpg" alt="Tecnici di cantiere leggono una pianta." loading="lazy">
+        <img src="img/cantiere.jpg" alt="Dettaglio di lavoro in cantiere." loading="lazy">
+        <img class="contain" src="img/ritrattoprofessionalesupoltronamoderna.webp" alt="Massimo Conti, amministratore unico, seduto su una poltrona moderna." loading="lazy">
+        <span class="cnt" aria-hidden="true"><span id="tm-n">01</span> / 04</span>
+      </div>
+      <div class="tm-txt" aria-live="polite">
+        <article class="on"><h3>Una squadra, tante competenze</h3><p>Tecnici, muratori, carpentieri e ufficio sono dipendenti dell'impresa. Sappiamo chi lavora su ogni cantiere e rispondiamo di quello che fa.</p><div class="chips"><span>43 persone</span><span class="todo">[da verificare]</span></div><a class="link" href="../wireframe/chi-siamo.html">Conosci l'impresa &rarr;</a></article>
+        <article><h3>Tecnici e mezzi</h3><p>I tecnici seguono ogni cantiere ogni giorno e parlano con architetti e designer, anche quando la finitura &egrave; fuori standard. Pianificano uomini e mezzi, e fanno arrivare attrezzature e materiali quando servono.</p><div class="chips"><span>Coordinamento</span><span>Controllo</span><span>Mezzi</span><span>Logistica</span></div><a class="link" href="../wireframe/chi-siamo.html#h-sv">I servizi interni &rarr;</a></article>
+        <article><h3>Squadra di cantiere</h3><p>La parte pi&ugrave; grande dell'impresa: strutture, murature e casseri fatti da mani nostre, non affidati a ditte esterne.</p><div class="chips"><span>Esecuzione</span><span>Qualit&agrave; costruttiva</span><span>Sicurezza</span></div><a class="link" href="../wireframe/cantieri.html">Guarda i cantieri &rarr;</a></article>
+        <article><h3>Ufficio e direzione</h3><p>Preventivi, acquisti, sicurezza e amministrazione, nella sede di Lentate sul Seveso. Chi ti risponde conosce il tuo cantiere. Massimo Conti, amministratore unico.</p><div class="chips"><span>Preventivi</span><span>Acquisti</span><span>Amministrazione</span></div><a class="link" href="../wireframe/contatti.html">Parla con noi &rarr;</a></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CHIUSURA -->
+<section class="close" id="contatto" aria-labelledby="h-close">
+  <div class="close-card">
+    <div><h2 id="h-close" data-reveal>Parliamo del <span class="i">tuo progetto.</span></h2><p>Raccontaci cosa vuoi costruire o ristrutturare: ti risponde chi segue il cantiere.</p></div>
+    <div class="close-cta">
+      <a class="btn btn-light" href="../wireframe/contatti.html">Richiedi un preventivo</a>
+      <a class="btn btn-glass" href="tel:+390362557972">Chiama 0362 557972</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><img src="img/logo.png" width="190" height="49" alt="Conti e Conti, il valore dell'edilizia"><p>Conti e Conti Srl &middot; P.IVA 00934370966</p>
+      <ul class="social" aria-label="Seguici sui social">
+        <li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener" aria-label="LinkedIn di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.44 0h4.37v1.92h.06c.61-1.150 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.37 1.61-2.37 3.27V22H7.66V8z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener" aria-label="Facebook di Conti e Conti (si apre in nuova scheda)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.910 1.09 0 2.24.2 2.24.2v2.470h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.75 8.44-4.91 8.44-9.93z"/></svg></a></li>
+      </ul></div>
+    <div>
+      <h2>Contatti</h2>
+      <p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p>
+      <p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>
+      <p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2>Sito</h2>
+      <ul>
+        <li><a href="../wireframe/chi-siamo.html">Impresa</a></li>
+        <li><a href="../wireframe/cantieri.html">Cantieri</a></li>
+        <li><a href="../wireframe/in-vendita.html">In vendita</a></li>
+        <li><a href="../wireframe/lavora-con-noi.html">Lavora con noi</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>Copyright 2026 &copy; Conti e Conti Srl | P.IVA 00934370966</p>
+    <ul aria-label="Informazioni legali"><li><a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://www.iubenda.com/privacy-policy/57429672/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a></li></ul>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  try{localStorage.setItem("cc-home","d")}catch(e){}
+  var nav=$('#nav');function ns(){nav.classList.toggle('is-solid',scrollY>20)}addEventListener('scroll',ns,{passive:true});ns();
+  // menu
+  var b=$('.nav-burger'),m=$('#menu');
+  function setMenu(o){b.setAttribute('aria-expanded',o);m.hidden=!o;document.body.style.overflow=o?'hidden':'';$('.nb-t',b).textContent=o?'Chiudi':'Menu'}
+  b.addEventListener('click',function(){setMenu(m.hidden)});m.addEventListener('click',function(e){if(e.target===m)setMenu(false)});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)setMenu(false)});
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  $$('[data-reveal]').forEach(function(el){io.observe(el)});
+  // parole che si accendono
+  $$('[data-scrub]').forEach(function(h){
+    var ws=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());
+    h.innerHTML=ws.map(function(w){return '<span class="w" aria-hidden="true">'+w+'</span>'}).join(' ');
+    var sp=$$('.w',h);
+    function up(){var r=h.getBoundingClientRect(),vh=innerHeight,p=(vh*.85-r.top)/(r.height+vh*.35);p=Math.max(0,Math.min(1,p));var n=Math.round(p*sp.length);sp.forEach(function(s,i){s.classList.toggle('on',i<n)})}
+    addEventListener('scroll',up,{passive:true});up();
+  });
+  // contatori
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);var el=e.target,t=+el.dataset.count,t0=performance.now();
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=t;return}
+    (function f(n){var p=Math.min(1,(n-t0)/1600);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.5});
+  $$('[data-count]').forEach(function(el){cio.observe(el)});
+  // squadra
+  var tb=$$('.tm-tabs button'),ti=$$('.tm-fig img'),ta=$$('.tm-txt article');
+  tb.forEach(function(x){x.addEventListener('click',function(){var k=+x.dataset.i;tb.forEach(function(y,n){y.setAttribute('aria-pressed',n===k)});ti.forEach(function(y,n){y.classList.toggle('on',n===k)});ta.forEach(function(y,n){y.classList.toggle('on',n===k)});$('#tm-n').textContent='0'+(k+1)})});
+  // valori: lo scorrimento cambia impegno
+  var vx=$('#vx'),vb=$$('.vx-idx button'),va=$$('.vx-txt article'),vbar=$('.vx-bar i'),vk=-1;
+  function vu(){var r=vx.getBoundingClientRect(),run=r.height-innerHeight,p=Math.max(0,Math.min(1,-r.top/run));vbar.style.transform='scaleY('+p+')';
+    var k=Math.min(va.length-1,Math.floor(p*va.length));if(k===vk)return;vk=k;
+    va.forEach(function(x,n){x.classList.toggle('on',n===k);x.classList.toggle('past',n<k)});vb.forEach(function(x,n){if(n===k)x.setAttribute('aria-current','true');else x.removeAttribute('aria-current')})}
+  vb.forEach(function(x){x.addEventListener('click',function(){var r=vx.getBoundingClientRect(),run=r.height-innerHeight;scrollTo({top:scrollY+r.top+run*((+x.dataset.i+.5)/va.length),behavior:'smooth'})})});
+  addEventListener('scroll',vu,{passive:true});addEventListener('resize',vu);vu();
+  // progetti: parallasse e schede che arretrano
+  var ws=$$('.ws');function wp(){var vh=innerHeight;ws.forEach(function(li,i){var c=li.querySelector('.ws-card'),im=c.querySelector('img'),r=li.getBoundingClientRect(),nx=ws[i+1];
+    var p=(vh-r.top)/(vh+r.height);p=Math.max(0,Math.min(1,p));im.style.transform='translate3d(0,'+((p-.5)*-14)+'%,0) scale(1.18)';
+    var s=1;if(nx){var q=1-Math.max(0,Math.min(1,nx.getBoundingClientRect().top/vh));s=1-q*.06;c.style.filter='brightness('+(1-q*.45)+')'}c.style.transform='scale('+s+')'})}
+  if(!matchMedia('(prefers-reduced-motion:reduce)').matches){addEventListener('scroll',wp,{passive:true});addEventListener('resize',wp);wp()}
+  // vendita
+  var tr=$('#track');function step(d){var c=tr.querySelector('li');tr.scrollBy({left:d*(c?c.offsetWidth+12:400),behavior:'smooth'})}
+  $('#sale-prev').addEventListener('click',function(){step(-1)});$('#sale-next').addEventListener('click',function(){step(1)});
+  // mappa
+  var g=$('#gmap'),pl=$$('.pl');
+  pl.forEach(function(x){x.addEventListener('click',function(){var on=x.getAttribute('aria-pressed')!=='true';pl.forEach(function(y){y.setAttribute('aria-pressed','false')});
+    if(on){x.setAttribute('aria-pressed','true');g.src='https://www.google.com/maps?output=embed&hl=it&q='+encodeURIComponent(x.dataset.q)+'&z='+x.dataset.z}else{g.src='https://www.google.com/maps?output=embed&hl=it&z=9&ll=45.75,9.10'}})});
+})();
+</script>
+</body>
+</html>

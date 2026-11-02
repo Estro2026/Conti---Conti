@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=1"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
-<body data-active="blog" data-sticky="preventivo">
+<title>Wireframe Blog (elenco) | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=1"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><link rel="stylesheet" href="wf-mk.css?v=1"><script src="wf-zoom.js"></script></head>
+<body data-active="blog" data-sticky="preventivo" data-overlay>
 <div id="tb"></div>
 <p class="legend"><strong>Blog (elenco).</strong> Articolo singolo: <a href="articolo.html">articolo.html</a>. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
@@ -60,10 +60,11 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Blog)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20f"></script>
-<script src="wf-dyn.js?v=14"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
 <script src="wf-servizio.js?v=1"></script>
 <script>(function(){var b=document.querySelector('.bl-bar');if(b){var t=0;function u(){t=0;var top=parseFloat(getComputedStyle(b).top)||0;b.classList.toggle('is-stuck',b.getBoundingClientRect().top<=top+1&&scrollY>50)}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()}
 var g=document.querySelector('.bl-grid');if(!g||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;g.classList.add('bl-on');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});[].slice.call(g.children).forEach(function(li,i){li.style.setProperty('--j',i%3);io.observe(li)})})();</script>
 <script>/* hero del blog: alta esattamente quanto lo spazio visibile, cosi la card in evidenza resta nella prima schermata */(function(){var e=document.querySelector('.bl-evh .bl-ev');if(!e)return;function f(){if(innerWidth<761){e.style.removeProperty('height');return}var y=e.getBoundingClientRect().top+scrollY;e.style.setProperty('height',Math.max(560,innerHeight-y)+'px','important')}addEventListener('resize',f);addEventListener('load',f);f()})();</script>
+<script src="wf-mk.js?v=1"></script>
 </body></html>

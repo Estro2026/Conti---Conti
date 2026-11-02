@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
-<body data-active="cantieri" data-sticky="preventivo">
+<title>Wireframe Scheda progetto | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><link rel="stylesheet" href="wf-mk.css?v=1"><script src="wf-zoom.js"></script></head>
+<body data-active="cantieri" data-sticky="preventivo" data-overlay>
 <div id="tb"></div>
 <p class="legend"><strong>Scheda progetto</strong> (template, esempio: un progetto in evidenza). <span class="tag t-PROPOSTA">PROPOSTA</span></p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
@@ -109,14 +109,14 @@
   <span class="pj-next-in"><span><small>Progetto successivo &middot; Palestre</small><b>[Nome progetto]</b></span><i class="dx-arr" aria-hidden="true"></i></span>
 </a>
 
-<section class="sec" style="background:#e2e2e2"><div class="in grid split"><div><h2>Hai un progetto simile?</h2><p class="lead">Raccontaci di cosa si tratta: ti diciamo come lo affronteremmo e cosa serve per partire con un preventivo.</p></div><div class="btns"><a class="btn" href="contatti.html">Richiedi un preventivo</a><a class="btn sec2" href="tel:+390362557972">Chiama</a></div></div></section>
+<section class="sec"><div data-c="cta" data-notes data-t="Hai un progetto simile?" data-l="Raccontaci di cosa si tratta: ti diciamo come lo affronteremmo e cosa serve per partire con un preventivo."></div></section>
 </main>
 <div id="ftr"></div>
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Scheda progetto)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20f"></script>
-<script src="wf-dyn.js?v=14"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
 
 <script>/* Galleria: le foto si aprono entrando nello schermo e si richiudono uscendo; scorrendo verso l'alto si aprono dall'alto, quindi in ordine inverso (chat 2026-10-27) */(function(){var g=document.querySelector('.pj-gc .pj-gal');if(!g)return;var B=[].slice.call(g.querySelectorAll('button')),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;if(rm){B.forEach(function(b){b.classList.add('in')});return}g.classList.add('gc-on');var io=new IntersectionObserver(function(es){es.forEach(function(e){var b=e.target;if(e.isIntersecting){b.classList.toggle('from-top',e.boundingClientRect.top<0);b.classList.add('in')}else{b.classList.toggle('from-top',e.boundingClientRect.top<0);b.classList.remove('in')}})},{rootMargin:'0px 0px 8% 0px',threshold:0});B.forEach(function(b){io.observe(b)});var t=0;function u(){t=0;var vh=innerHeight;B.forEach(function(b,i){var r=b.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var d=(r.top+r.height/2-vh/2)/vh;b.style.setProperty('--py',(d*(i%2?-46:28)).toFixed(1)+'px')})}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
 </body></html>

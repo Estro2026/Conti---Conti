@@ -382,3 +382,21 @@
 #h-team,#h-stats,#h-values,#h-works,#h-logos,#h-sale,#h-map,#h-blog,#h-trust,#h-close{font-size:var(--h-sec)!important;line-height:1.02!important;letter-spacing:-.03em;font-weight:600}
 #h-team span,#h-values span{font-size:inherit!important}
 .vals.wl-s .wl-grid .wl .wl-i h3{font-size:clamp(24px,min(2.6vw,4.6vh),40px)!important;line-height:1.1!important}
+
+/* Hanno lavorato con noi: loghi dei clienti (assets/images) ritagliati sul loro ingombro reale e resi allo stesso peso visivo:
+   area uguale per tutti (larghezza max 190, altezza max 72), un solo colore. Le misure di ritaglio sono scritte nel markup (chat 2026-10-29). */
+.lg-mq li .lg-l{background:#fff!important;border:1px solid rgba(21,21,23,.08)!important;padding:0}
+.lg-i{display:block;width:calc(var(--w) * 1px);height:calc(var(--h) * 1px);background-repeat:no-repeat;filter:url(#lg-mono);opacity:.82;transition:filter .3s var(--ease),opacity .3s var(--ease)}
+.lg-mq li .lg-l:hover .lg-i{filter:none;opacity:1}
+@media (max-width:720px){.lg-i{width:calc(var(--w) * .8px);height:calc(var(--h) * .8px)}}
+
+/* indirizzo della sede: link a Google Maps (menu e footer) */
+.addr{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:text-decoration-color .25s,color .25s}
+.addr:hover,.addr:focus-visible{text-decoration-color:currentColor}
+
+/* Servizi: etichetta del gruppo nel menu e sottolista nel footer */
+.menu .mx-main .mx-sec .mx-svl{align-self:center;font:600 11px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-right:-8px}
+.menu .mx-main .mx-sec .mx-svl~li[data-p=faq]{margin-left:20px;padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
+footer nav li.ft-sv>span{display:block}
+footer nav li.ft-sv>ul{margin:8px 0 2px 14px;padding-left:12px;border-left:1px solid rgba(255,255,255,.2)}
+footer nav li.ft-sv>ul li{margin:0 0 6px}

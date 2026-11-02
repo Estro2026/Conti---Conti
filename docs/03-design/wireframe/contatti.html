@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=3"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=20"><script src="wf-zoom.js"></script></head>
-<body data-active="contatti">
+<title>Wireframe Contatti e preventivo | Conti &amp; Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="wireframe.css?v=20261020h"><link rel="stylesheet" href="wf-dyn.css?v=21"><link rel="stylesheet" href="wf-servizio.css?v=8"><link rel="stylesheet" href="wf-mid.css?v=4"><link rel="stylesheet" href="wf-scale.css?v=13"><link rel="stylesheet" href="wf-a.css?v=29"><link rel="stylesheet" href="wf-mk.css?v=1"><script src="wf-zoom.js"></script></head>
+<body data-active="contatti" data-overlay>
 <div id="tb"></div>
 <p class="legend"><strong>Contatti e richiesta preventivo.</strong> Pagina di conversione principale. Versione dinamica (senza vincolo 83 h): <span class="tag t-PROPOSTA">PROPOSTA</span>.</p>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
@@ -84,33 +84,32 @@
   </aside>
 </div></section>
 
-<!-- 3. ZONE -->
-<section class="sec" aria-labelledby="h-zone"><div class="in">
-  <div class="co-zh">
-    <p class="dx-k" data-rv>Zone</p>
-    <h2 id="h-zone" class="dx-h" data-rv style="--d:1">Dove operiamo</h2>
-    <p data-rv style="--d:2">Lavoriamo a Milano, Como, Varese e in Monza Brianza. Se il tuo progetto è in una di queste zone, scrivici dal modulo: ti rispondiamo noi.</p>
-  </div>
-  <div class="co-zn" data-co-zn>
-    <ul class="co-zl">
-      <li><button type="button" data-z="mi" aria-pressed="true"><span class="co-zi" aria-hidden="true">01</span><span class="co-zt"><b>Milano</b><span>Interventi di pregio in città</span></span></button></li>
-      <li><button type="button" data-z="co" aria-pressed="false"><span class="co-zi" aria-hidden="true">02</span><span class="co-zt"><b>Lago di Como</b><span>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</span></span></button></li>
-      <li><button type="button" data-z="mb" aria-pressed="false"><span class="co-zi" aria-hidden="true">03</span><span class="co-zt"><b>Monza, Seregno e Brianza</b><span>Nuove costruzioni e residenze in vendita</span></span></button></li>
-      <li><button type="button" data-z="va" aria-pressed="false"><span class="co-zi" aria-hidden="true">04</span><span class="co-zt"><b>Varese</b><span>Zona operativa</span></span></button></li>
-    </ul>
-    <div class="co-zmap" role="img" aria-label="Mappa schematica delle zone operative attorno alla sede di Lentate sul Seveso">
-      <div data-noratio data-ph="Mappa schematica Lombardia nord-ovest (posizioni indicative)|4/3"></div>
-      <span class="co-zp" data-z="va" style="--x:22;--y:22"><i></i><b>Varese</b></span>
-      <span class="co-zp" data-z="co" style="--x:56;--y:12"><i></i><b>Lago di Como</b></span>
-      <span class="co-zp" data-z="mb" style="--x:78;--y:34"><i></i><b>Monza e Brianza</b></span>
-      <span class="co-zp" data-z="mi" style="--x:50;--y:82"><i></i><b>Milano</b></span>
-      <span class="co-zs" style="--x:46;--y:48"><i></i><b><span class="lg">Sede, Lentate sul Seveso</span><span class="sh">Sede</span></b></span>
+<!-- 3. DOVE OPERIAMO: uguale alla Home A del mockup (mappa Google con sede e zone, pin interattivi; chat 2026-10-28) -->
+<div class="mk mk-map"><section class="map" id="dove" aria-labelledby="h-map">
+  <div class="wrap map-grid">
+    <div class="map-side">
+      <p class="kicker">Dove operiamo</p>
+      <h2 id="h-map">Dalla Brianza a Milano, fino al lago.</h2>
+      <p class="map-lead">Lavoriamo tra Milano, Como, Varese e Monza e Brianza. La sede operativa è a Lentate sul Seveso.</p>
+      <ul class="pins">
+        <li><button class="pl" type="button" data-key="sede" data-lat="45.6578" data-lon="9.1307" data-q="Via Nazionale dei Giovi 169, 20823 Lentate sul Seveso" data-z="15" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Sede operativa</strong><em>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</em></button></li>
+        <li><button class="pl" type="button" data-key="mi" data-lat="45.4642" data-lon="9.19" data-q="Milano" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Milano</strong><em>Interventi di pregio in città</em></button></li>
+        <li><button class="pl" type="button" data-key="co" data-lat="45.95" data-lon="9.26" data-q="Lago di Como" data-z="10" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Lago di Como</strong><em>Ville di pregio sul lago, spesso al fianco di architetti che seguono una clientela internazionale</em></button></li>
+        <li><button class="pl" type="button" data-key="va" data-lat="45.8206" data-lon="8.8251" data-q="Varese" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Varese</strong><em>Zona operativa</em></button></li>
+        <li><button class="pl" type="button" data-key="mb" data-lat="45.62" data-lon="9.24" data-q="Seregno" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Monza, Seregno e Brianza</strong><em>Nuove costruzioni e residenze in vendita</em></button></li>
+      </ul>
+    </div>
+    <div class="map-frame" id="map-frame">
+      <iframe id="gmap" title="Mappa Google delle zone operative di Conti e Conti" tabindex="-1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        data-src="https://www.google.com/maps?output=embed&amp;hl=it&amp;z=9&amp;ll=45.75,9.10"></iframe>
+      <div class="map-pins" id="map-pins" aria-label="Pin delle zone operative"></div>
+      <button class="map-reset" id="map-reset" type="button" hidden>Torna alla vista completa</button>
+      <p class="map-note">Mappa Google. In produzione si carica dopo il consenso ai cookie di terze parti.</p>
     </div>
   </div>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. 'Dove operiamo' ripensata (testi invariati): a sinistra le quattro zone come righe numerate, a destra una mappa schematica con un punto per zona e la sede. Passando o selezionando una zona si accende il suo punto sulla mappa (e viceversa); una zona è sempre attiva. Le zone non sono pagine né link (decisione: nessuna pagina per zona). Mobile: elenco sopra, mappa sotto. Riduci movimento: nessuna transizione."></i>
-  <i data-note="INFERENZA|Posizioni dei punti sulla mappa indicative (geografia approssimata); nella versione finale mappa disegnata dal grafico. L'etichetta 'Sede, Lentate sul Seveso' riprende l'indirizzo già in pagina."></i>
-  <i data-note="DEV|Da ristimare. LOW-MEDIUM: elenco a pulsanti con aria-pressed sincronizzato ai punti (JS ~20 righe), mappa come SVG o immagine con punti posizionati in percentuale."></i>
-</div></section>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. 'Dove operiamo' uguale alla Home A del mockup (chat 2026-10-28): mappa Google a tutta larghezza in toni scuri, pannello in vetro con le zone numerate e la sede; passando su una zona si evidenzia il suo pin, cliccando la mappa si avvicina alla zona ('Torna alla vista completa' per uscire). Tolto il pulsante 'Vai ai contatti' perché siamo già nella pagina Contatti. Sostituisce la mappa schematica."></i>
+  <i data-note="DEV|La mappa Google si carica solo dopo il consenso ai cookie di terze parti (in produzione). Pin posizionati da coordinate reali sulla vista iniziale; JS condiviso in wf-mk.js."></i>
+</section></div>
 
 <!-- 4. LAVORA CON NOI -->
 <section class="sec dk pg-job" aria-labelledby="h-job"><div class="in">
@@ -127,7 +126,8 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Contatti)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20f"></script>
-<script src="wf-dyn.js?v=14"></script>
+<script src="wireframe.js?v=20h"></script>
+<script src="wf-dyn.js?v=16"></script>
 <script src="wf-servizio.js?v=3"></script>
+<script src="wf-mk.js?v=1"></script>
 </body></html>
