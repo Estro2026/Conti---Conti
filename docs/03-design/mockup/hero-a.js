@@ -6,7 +6,7 @@
     scrollLength: 9,     // schermate totali del percorso (desktop; mobile ×0.85)
     holdLength: 0.9,     // schermate di sosta su ogni frase
     smoothing: 260,      // ms di inseguimento video→scroll (più alto = più morbido)
-    snap: 'mandatory',   // 'mandatory' = si ferma sempre su ogni frase; 'proximity' = più leggero
+    snap: 'none',        // 'none' = scroll libero (default: lo snap obbligatorio blocca la rotella su alcuni browser); 'proximity' / 'mandatory' = si ferma sulle frasi
     fade: 0.45,          // secondi di video per dissolvenza frasi
     mobileMax: 1024
   };
@@ -77,7 +77,7 @@
     var s = cl(-r.top / vh, 0, S), tgt = D;
     for (var i = 1; i < pts.length; i++) if (s <= pts[i][0]) { var a = pts[i - 1], b = pts[i]; tgt = b[0] > a[0] ? a[1] + (b[1] - a[1]) * (s - a[0]) / (b[0] - a[0]) : b[1]; break; }
 
-    var lock = -r.top > -2 && -r.top < (S + 1) * vh - 2, snap = lock ? 'y ' + CFG.snap : 'none';
+    var lock = -r.top > -2 && -r.top < (S + 1) * vh - 2, snap = lock && CFG.snap !== 'none' ? 'y ' + CFG.snap : 'none';
     if (snap !== snapState) { snapState = snap; document.documentElement.style.scrollSnapType = snap; }
 
     var dt = Math.min(200, now - (t0 || now)); t0 = now;

@@ -439,7 +439,7 @@ function lay(){if(!mq.matches){P.forEach(function(p){['left','top','width'].forE
 P.forEach(function(p){var r=p.dataset.r,w=Math.round(base*(.72+rnd()*.5)),best=null,bo=1e18;for(var t=0;t<600;t++){if(t&&t%150===0)w=Math.round(w*.9);var h=w,x=rnd()*Math.max(0,W-w),y=rnd()*Math.max(0,H-h),o=0;boxes.forEach(function(b){var s=b.r===r?pad:0,ix=Math.max(0,Math.min(x+w,b.x+b.w+s)-Math.max(x,b.x-s)),iy=Math.max(0,Math.min(y+h,b.y+b.h+s)-Math.max(y,b.y-s));o+=ix*iy*(s?1e6:1)});if(o<bo){bo=o;best={x:x,y:y,w:w,h:h,r:r}}if(o===0)break}boxes.push(best);p.style.setProperty('left',best.x.toFixed(0)+'px','important');p.style.setProperty('top',best.y.toFixed(0)+'px','important');p.style.setProperty('width',best.w+'px','important')});seed=s0}
 var rt=0;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(lay,150)});lay()})();</script>
 <script src="mockup-a3.js"></script>
-<script src="hero-a.js?v=5"></script>
+<script src="hero-a.js?v=6"></script>
 <nav class="ab-switch" aria-label="Versione homepage"><span>Home</span><a href="home-a.html" aria-current="page">A</a><a href="home-b.html">B</a></nav>
 <script>try{localStorage.setItem("cc-home","a")}catch(e){}</script>
 </body>
