@@ -83,3 +83,5 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - Per image-curator: foto Servizi Home A/B sostituite (img/servizio-*.webp, homepageb/img/servizio-*.webp); verificare crop e alt text, origine/licenza da confermare con Sara.
 
 - Per image-curator: ritratti in img/persone e homepageb/img/persone; verificare crop in quadrati 96-132px (Home A), alt text, origine e consenso a pubblicare.
+
+- Per ux-architect: categorie per servizio in "Dove lo abbiamo fatto" (Residenze 3, Ristrutturazioni 4, Retail 4); da confermare con il cliente quali categorie del portfolio appartengono a ogni servizio.

@@ -84,3 +84,6 @@
 @media (hover:hover){.cch-skip:hover{background:rgba(14,14,14,.55);border-color:rgba(255,255,255,.55)}}
 @media (max-width:640px){.cch-skip{padding:0;border-color:transparent;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}.cch-skip__t{display:none}}
 @media (max-width:1024px){.cch-skip{bottom:10px}}
+
+/* Se il video non parte (codec, risparmio energetico, rete) resta il primo fotogramma al posto del vuoto */
+.cch-hero__stage{background:#1a1a1a url(img/hero-a-poster.jpg) 50% 50%/cover no-repeat}

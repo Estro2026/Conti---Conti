@@ -138,3 +138,5 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - (27) 2026-11-03 · mockup · Sara: nelle sezioni Servizi di Home A e Home B usare le tre foto fornite (giardino = Residenze, corridoio = Ristrutturazioni, negozio = Retail). Fonte: CLIENTE (foto fornite da Sara). Agenti: ui-art-direction, image-curator. Da verificare: crop in card 4:3 da foto verticali.
 
 - (28) 2026-11-03 · mockup · Sara: inserire i ritratti di assets/images/ritratti_contieconti in Home A ("40 persone, una sola impresa.") e Home B ("Le persone di Conti & Conti"). Fonte: CLIENTE. Agenti: image-curator, ui-art-direction.
+
+- (29) 2026-11-03 · wireframe · Sara: nella sezione "Dove lo abbiamo fatto" delle tre pagine servizio le categorie devono essere pertinenti al servizio; in Residenze non ripetere "Residenze". Fatto: Residenze = Case, Ville, Lusso; Ristrutturazioni = Case, Ville, Attivita commerciali, Lusso (INFERENZA dai progetti del sito vecchio: boutique in Rinascente); Retail invariato. Kicker uguale nelle tre. PROPOSTA, in attesa di conferma.
