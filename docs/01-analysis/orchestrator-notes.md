@@ -79,3 +79,7 @@ Testo di Sara: nella homepage A, quando si fa scroll verso l'alto la hero deve p
 ## 2026-11-02 (26): Home A, risalita da "Maestri del proprio mestiere" alla hero — CLIENTE (Sara), mockup
 Testo di Sara: c'è un problema con lo scroll up dalla sezione "Maestri del proprio mestiere" alla hero: salendo, il video deve partire dall'inizio (hero nel suo stato iniziale).
 Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorrimento fluido della pagina (scroll-behavior:smooth), quindi la hero veniva attraversata invece di ripartire; ora è istantaneo; (2) il video inseguiva la posizione con un ritardo di smorzamento e partiva dal fotogramma finale; ora si azzera subito (tempo 0 e stato iniziale della sequenza).
+
+- Per image-curator: foto Servizi Home A/B sostituite (img/servizio-*.webp, homepageb/img/servizio-*.webp); verificare crop e alt text, origine/licenza da confermare con Sara.
+
+- Per image-curator: ritratti in img/persone e homepageb/img/persone; verificare crop in quadrati 96-132px (Home A), alt text, origine e consenso a pubblicare.
