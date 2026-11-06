@@ -85,3 +85,7 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - Per image-curator: ritratti in img/persone e homepageb/img/persone; verificare crop in quadrati 96-132px (Home A), alt text, origine e consenso a pubblicare.
 
 - Per ux-architect: categorie per servizio in "Dove lo abbiamo fatto" (Residenze 3, Ristrutturazioni 4, Retail 4); da confermare con il cliente quali categorie del portfolio appartengono a ogni servizio.
+
+- Per seo: (30) la pagina e il menu "Cantieri" ora si chiamano "Realizzazioni" (2026-11-06); l'URL cantieri.html e gli anchor non sono cambiati: decidere slug /realizzazioni/ e redirect 301 dal vecchio /portfolio/.
+- Per content-language: (30) "cantieri" resta come parola comune nei testi (es. "180 cantieri l'anno"); cambiato solo dove indica la sezione. Frase "Certificazioni e riconoscimenti verificati da enti esterni" in Impresa lasciata com'è: da confermare.
+- Per ux-architect: (31) le pagine servizio non sono più raggiungibili da menu e footer; decidere se restano (link dalla Home B e interni) o vanno tolte dalla sitemap.

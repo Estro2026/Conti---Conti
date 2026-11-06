@@ -34,18 +34,18 @@
     var prevs = CATS.map(function (c, i) { return '<div class="ph-i' + (i ? '' : ' on') + '" aria-hidden="true"><span>Foto: ' + c + '</span></div>'; }).join('');
     hdr.outerHTML = '<a class="skip" href="#main">Vai al contenuto</a>' +
       '<div class="ha-hdw"><header class="ha-nav" id="nav">' +
-      '<a class="ha-nav-logo" href="home-a.html" aria-label="Conti &amp; Conti, home"><img class="ha-logo-w" src="../mockup/img/logo-bianco.png" width="190" height="49" alt=""><img class="ha-logo-c" src="../mockup/img/logo.png" width="190" height="49" alt=""></a>' +
+      '<a class="ha-nav-logo" href="home-a.html" aria-label="Conti e Conti, home"><img class="ha-logo-w" src="../mockup/img/logo-bianco.png" width="190" height="49" alt=""><img class="ha-logo-c" src="../mockup/img/logo.png" width="190" height="49" alt=""></a>' +
       '<div class="ha-nav-r"><a class="ha-btn ha-btn-nav" href="contatti.html">Richiedi un preventivo</a>' +
       '<button class="ha-nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span class="ha-nm-label"><span class="ha-nm-o">Menu</span><span class="ha-nm-c" aria-hidden="true"><b></b><b></b></span></span></button></div></header>' +
       '<div class="ha-menu" id="menu" hidden><div class="ha-mx-card">' +
       '<nav class="ha-mx-main" aria-label="Principale"><ul>' +
       '<li data-p="impresa"><a href="chi-siamo.html"' + cur('impresa') + '><small>01</small>Impresa</a></li>' +
-      '<li class="ha-has-sub" data-p="cantieri"><a href="cantieri.html"' + cur('cantieri') + '><small>02</small>Cantieri</a><button class="ha-menu-tg" type="button" aria-expanded="false" aria-label="Mostra le categorie di cantiere"><i></i><i></i></button><ul class="ha-menu-sub">' + subs + '</ul></li>' +
+      '<li class="ha-has-sub" data-p="cantieri"><a href="cantieri.html"' + cur('cantieri') + '><small>02</small>Realizzazioni</a><button class="ha-menu-tg" type="button" aria-expanded="false" aria-label="Mostra le categorie di cantiere"><i></i><i></i></button><ul class="ha-menu-sub">' + subs + '</ul></li>' +
       '<li data-p="vendita"><a href="in-vendita.html"' + cur('vendita') + '><small>03</small>In vendita</a></li>' +
       '<li data-p="blog"><a href="blog.html"' + cur('blog') + '><small>04</small>Blog</a></li></ul>' +
-      '<ul class="ha-mx-sec"><li class="mx-svl">Servizi</li><li data-p="servizio-residenze"><a href="servizio-residenze.html">Residenze</a></li><li data-p="servizio-ristrutturazioni"><a href="servizio-ristrutturazioni.html">Ristrutturazioni</a></li><li data-p="servizio-retail"><a href="servizio-retail.html">Retail</a></li><li data-p="faq"><a href="faq.html"' + cur('faq') + '>FAQ</a></li><li data-p="contatti"><a href="contatti.html"' + cur('contatti') + '>Contatti</a></li></ul></nav>' +
-      '<div class="ha-mx-cats"><p class="ha-mx-lbl">Cantieri per categoria</p><ul class="ha-mx-chips" aria-label="Categorie di cantiere">' + chips + '</ul>' +
-      '<div class="ha-mx-prev">' + prevs + '<a class="ha-mx-all" href="cantieri.html"><span>Tutti i cantieri</span><i aria-hidden="true"></i></a></div></div>' +
+      '<ul class="ha-mx-sec"><li data-p="faq"><a href="faq.html"' + cur('faq') + '>FAQ</a></li><li data-p="contatti"><a href="contatti.html"' + cur('contatti') + '>Contatti</a></li></ul></nav>' +
+      '<div class="ha-mx-cats"><p class="ha-mx-lbl">Realizzazioni per categoria</p><ul class="ha-mx-chips" aria-label="Categorie di cantiere">' + chips + '</ul>' +
+      '<div class="ha-mx-prev">' + prevs + '<a class="ha-mx-all" href="cantieri.html"><span>Tutte le realizzazioni</span><i aria-hidden="true"></i></a></div></div>' +
       '<dl class="ha-mx-side"><div><dt>Telefono</dt><dd><a href="tel:+390362557972">0362 557972</a></dd></div><div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a></dd></div><div><dt>Sede</dt><dd class="sm">Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>' +
       '<div><dt>Social</dt><dd><ul class="ha-menu-social"><li><a href="https://www.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener" aria-label="LinkedIn (si apre in nuova scheda)">' + LIN + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener" aria-label="Facebook (si apre in nuova scheda)">' + FB + '</a></li></ul></dd></div></dl>' +
       '</div></div></div>';
@@ -82,10 +82,10 @@
       '<div><h2>Sede</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
       '<div><h2>Contatti</h2><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>' +
       '<ul class="ha-ft-soc"><li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener">LinkedIn' + NW + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener">Facebook' + NW + '</a></li></ul></div>' +
-      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Cantieri</a></li><li class="ft-sv"><span>Servizi</span><ul><li><a href="servizio-residenze.html">Residenze</a></li><li><a href="servizio-ristrutturazioni.html">Ristrutturazioni</a></li><li><a href="servizio-retail.html">Retail</a></li></ul></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="blog.html">Blog</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
+      '<nav aria-label="Footer"><h2>Sito</h2><ul><li><a href="chi-siamo.html">Impresa</a></li><li><a href="cantieri.html">Realizzazioni</a></li><li><a href="in-vendita.html">In vendita</a></li><li><a href="blog.html">Blog</a></li><li><a href="lavora-con-noi.html">Lavora con noi</a></li></ul></nav>' +
       '</div>' +
       (CL ? '' : N('PROPOSTA', 'Navbar, menu a tutta pagina e footer: copia della Home A del mockup (struttura, misure, stati, animazioni e comportamento), in sola scala di grigi (il bordeaux diventa grigio scuro) e con segnaposto grigi al posto delle foto delle categorie. Font Inter Tight/Inter solo in questi componenti. Qui cambia solo la veste: voci e contenuti come nella Home A.') + N('RICERCA', 'Indirizzo, telefono, email, orari, P.IVA e profili social dal sito attuale: da verificare con il cliente.')) +
-      '<p class="ha-ft-word" aria-hidden="true">Conti &amp; Conti</p>' +
+      '<p class="ha-ft-word" aria-hidden="true">Conti e Conti</p>' +
       '<div class="ha-ft-legal"><p>Copyright 2026 &copy; Conti e Conti Srl | P.IVA 00934370966</p><ul aria-label="Informazioni legali">' +
       '<li><a href="' + IUB + '" target="_blank" rel="noopener">Privacy Policy' + NW + '</a></li>' +
       '<li><a href="' + IUB + '/cookie-policy" target="_blank" rel="noopener">Cookie Policy' + NW + '</a></li>' +
@@ -534,7 +534,7 @@
     if (!c || c === 'Palestre') { if (c === undefined && location.hash) return; return; }
     var h1 = document.getElementById('h1'); if (h1) h1.textContent = c;
     var cur = document.querySelector('.crumb [aria-current]'); if (cur) cur.textContent = c;
-    document.title = 'Wireframe Pagina categoria (' + c + ') | Conti & Conti';
+    document.title = 'Wireframe Pagina categoria (' + c + ') | Conti e Conti';
     var sec = h1 && h1.closest('section');
     var kk = sec && sec.querySelector('.dx-k'); if (kk) kk.textContent = 'Categoria 0' + (CATS.indexOf(c) + 1) + ' / 0' + CATS.length;
     var fact = sec && sec.querySelector('.ct-fact'); if (fact) fact.hidden = true;
