@@ -1,3 +1,6 @@
 
 # Credenziali: mai su GitHub
 docs/00-input/sito-web/Credenziali*
+
+# Pacchetto per lo sviluppo: copia generata, non versionata
+pacchetto-sviluppo/
