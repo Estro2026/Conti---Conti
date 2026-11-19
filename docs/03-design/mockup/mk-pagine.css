@@ -501,3 +501,22 @@ body[data-mk] .frame .bl-evh .bl-ev{overflow:visible!important}
 
 /* Progetto successivo: testo a sinistra e freccia a destra come prima, ma centrati in verticale nella sezione */
 body[data-mk] .frame .pj-next .pj-next-in{bottom:auto!important;top:50%;transform:translateY(-50%);align-items:center!important}
+
+/* Contrasto nelle aperture (istruzione 81): testi chiari sulle hero scure, header e breadcrumb scuri sulle hero chiare */
+body[data-mk] .frame .ct-hero .dx-k,body[data-mk] .frame .ct-hero .ct-hero-h .dx-k{color:#f2c9cf!important}
+body[data-mk] .frame .ct-hero .lead,body[data-mk] .frame .ct-hero .ct-hero-s .lead{color:rgba(255,255,255,.9)!important}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid){color:#151515}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-logo-w{opacity:0}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-logo-c{opacity:1}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) a:not(.ha-btn){text-shadow:none}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-btn-nav{background:rgba(22,22,22,.9);border-color:rgba(22,22,22,.9);color:#fff}
+body[data-mk][data-hero="light"] .crumb,body[data-mk][data-hero="light"] .crumb a,body[data-mk][data-hero="light"] .crumb li,body[data-mk][data-hero="light"] .crumb [aria-current]{color:#2b2b2e!important}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-btn.ha-btn-nav{background:#161616!important;border-color:#161616!important;color:#fff!important}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-nm-label{background:#161616!important;border-color:#161616!important;color:#fff!important}
+body[data-mk] .frame .ct-nav2 .ct-ix a{color:rgba(255,255,255,.78)!important}
+body[data-mk] .frame .ct-nav2 .ct-ix li.on a,body[data-mk] .frame .ct-nav2 .ct-ix a:hover{color:#fff!important}
+body[data-mk] .frame .ct-dark .mk-ct-bg::after{background:linear-gradient(180deg,rgba(14,12,13,.88) 0%,rgba(14,12,13,.8) 45%,rgba(14,12,13,.9) 100%)}
+body[data-mk] .frame .ct-dark label,body[data-mk] .frame .ct-dark .pg-fg label,body[data-mk] .frame .ct-dark .ct-lead,body[data-mk] .frame .ct-dark small{color:rgba(255,255,255,.88)!important}
+body[data-mk] .frame .ct-dark input::placeholder,body[data-mk] .frame .ct-dark textarea::placeholder{color:rgba(255,255,255,.62)!important}
+body[data-mk] .frame .bl-evh::after{background:linear-gradient(180deg,rgba(14,12,13,.72) 0%,rgba(14,12,13,.34) 24%,rgba(14,12,13,0) 44%),linear-gradient(90deg,rgba(14,12,13,.76) 0%,rgba(14,12,13,.42) 45%,rgba(14,12,13,0) 72%)}
+body[data-mk] .frame .ixs-s figcaption,body[data-mk] .frame .ixs-credit{color:rgba(255,255,255,.88)!important}

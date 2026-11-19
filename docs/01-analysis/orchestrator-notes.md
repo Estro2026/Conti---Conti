@@ -108,3 +108,5 @@ Per content-language: dati immobili e team in assets/cliente-basecamp/08-testi-e
 - Per precision-layout-qa: (79) .bl-evh .in static e .bl-ev overflow visible (foto al vivo); .ar-body e .ar-hd .in tornano a max-width var(--wrap) centrati, non più margin 0.
 
 - Per precision-layout-qa: (80) .pj-next-in: bottom auto, top 50% e translateY(-50%) (centrato in verticale, layout invariato).
+
+- Per accessibility: (81) controllo contrasto hero: servizio .dx-k/.lead (era 1.6:1 e 1.9:1 su #151517) ora #f2c9cf e bianco .9; Realizzazioni data-hero="light" per header scuro; da rimisurare con strumento dedicato prima della consegna.
