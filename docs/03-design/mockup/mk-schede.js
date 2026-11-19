@@ -127,8 +127,8 @@
       var on = [].findIndex.call(bgs, function (b) { return b.classList.contains('on'); }); if (on < 0) on = 0;
       var nf = bgs[(on + 1) % bgs.length].dataset.mk || null;
       var want = nf ? F + nf + '.webp' : '';
-      var cur2 = peek.querySelector('img'); if (cur2 && cur2.getAttribute('src') === want) return;
-      peek.innerHTML = '<div class="ph' + (nf ? ' mk-has' : '') + '">' + tag(nf) + '</div>';
+      if (peek.dataset.mkShow === want && peek.querySelector('.mk-pk')) return; peek.dataset.mkShow = want;
+      peek.innerHTML = '<div class="ph mk-pk' + (nf ? ' mk-has' : '') + '">' + tag(nf) + '</div>';
     };
     if (peek) { new MutationObserver(fixPeek).observe(peek, { childList: true }); bgs.forEach(function (b) { new MutationObserver(fixPeek).observe(b, { attributes: true, attributeFilter: ['class'] }); }); fixPeek(); }
     if (!CN[slug]) { /* pagina Palestre di default: slide coerenti con il primo progetto */ }
@@ -166,6 +166,8 @@
       img(document.querySelector('.rs-up-pl'), (im.piante && im.piante[0]) || null);
     }
     document.querySelectorAll('.pj-gal button').forEach(function (b, i) { img(b, im.render[i + 1] || null); });
+    var dl = document.querySelector('[data-mk-doc]'), dsec = dl && dl.closest('section');
+    if (dsec) { if (im.brochure) { dl.innerHTML = '<li><a href="' + im.brochure[1] + '" target="_blank" rel="noopener"><span>' + im.brochure[0] + '</span><small>PDF &middot; ' + im.brochure[2] + '</small></a></li>'; } else dsec.style.display = 'none'; }
     var fh = document.getElementById('h-form'); if (fh) fh.textContent = 'Richiedi informazioni su ' + im.nome;
   }
 })();

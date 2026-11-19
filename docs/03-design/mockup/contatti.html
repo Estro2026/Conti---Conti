@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<title>Mockup Contatti e preventivo | Conti e Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="../wireframe/wireframe.css?v=20261020h"><link rel="stylesheet" href="../wireframe/wf-dyn.css?v=21"><link rel="stylesheet" href="../wireframe/wf-servizio.css?v=8"><link rel="stylesheet" href="../wireframe/wf-mid.css?v=4"><link rel="stylesheet" href="../wireframe/wf-scale.css?v=13"><link rel="stylesheet" href="../wireframe/wf-a.css?v=29"><link rel="stylesheet" href="../wireframe/wf-mk.css?v=1"><script src="../wireframe/wf-zoom.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="mk-pagine.css?v=2"><script>window.WF_MODE="cliente"</script></head>
+<title>Mockup Contatti e preventivo | Conti e Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="../wireframe/wireframe.css?v=20261020h"><link rel="stylesheet" href="../wireframe/wf-dyn.css?v=21"><link rel="stylesheet" href="../wireframe/wf-servizio.css?v=8"><link rel="stylesheet" href="../wireframe/wf-mid.css?v=4"><link rel="stylesheet" href="../wireframe/wf-scale.css?v=13"><link rel="stylesheet" href="../wireframe/wf-a.css?v=30"><link rel="stylesheet" href="../wireframe/wf-mk.css?v=1"><script src="../wireframe/wf-zoom.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="mk-pagine.css?v=4"><script>window.WF_MODE="cliente"</script></head>
 <body data-active="contatti" data-overlay data-mk>
 <div class="stage"><div class="vp" data-vw="auto"><div class="frame">
 <div id="hdr"></div>
@@ -9,7 +9,7 @@
 
 <!-- 1. APERTURA + MODULO: fondo scuro a tutta larghezza, modulo centrato a campi sottolineati (reference del cliente 2026-10-26) -->
 <section class="ct-dark" aria-labelledby="h1">
-<div class="ct-bg" data-ph="Foto di cantiere o di un interno finito, scurita|16/9" aria-hidden="true"></div>
+<div class="ct-bg mk-ct-bg" aria-hidden="true"><img src="img/foto/sede-matita-conti-e-conti.webp" alt=""></div>
 <div class="ct-in" style="text-align:center!important;margin-left:auto;margin-right:auto">
   <p class="ct-k" data-rv>Parla con il team</p>
   <h1 id="h1" class="ct-h1" data-rv style="--d:1;text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%">Richiedi un preventivo</h1>
@@ -54,7 +54,7 @@
         <div><dt>Telefono</dt><dd class="big"><a href="tel:+390362557972">0362 557972</a></dd></div>
         <div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a>
           <div class="co-act"><button type="button" data-copy="info@contieconti.it" data-out="#co-cst" data-ok="Email copiata negli appunti">Copia email</button></div></dd></div>
-        <div><dt>Sede</dt><dd>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>
+        <div class="mk-sede"><dt>Sede</dt><dd><img class="mk-sede-img" src="img/foto/sede-insegna-lentate.webp" alt="L'insegna Conti e Conti nella sede di Lentate sul Seveso" loading="lazy">Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>
         <div><dt>Orari</dt><dd>
           <table class="co-hrs"><caption class="sr">Orari di apertura</caption><tbody>
             <tr data-days="1,2,3,4,5" data-slots="8:30-12:00 14:00-18:30"><th scope="row">Lun-Ven</th><td>8:30-12:00 / 14:00-18:30</td></tr>
@@ -70,7 +70,7 @@
     </div>
     <figure class="co-mp">
       <div class="co-map">
-        <div data-ph="Mappa della sede (immagine statica)|16/10"></div>
+        <iframe class="mk-gmap" title="Mappa: sede Conti e Conti, via Nazionale dei Giovi 169, Lentate sul Seveso" src="https://www.google.com/maps?q=Conti+e+Conti+srl,+Via+Nazionale+dei+Giovi+169,+20823+Lentate+sul+Seveso+MB&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="co-pin" aria-hidden="true"><b>Conti e Conti</b><i></i></div>
         <div class="co-zm" role="group" aria-label="Zoom mappa"><button type="button" data-zoom="in" aria-label="Avvicina">+</button><button type="button" data-zoom="out" aria-label="Allontana">&minus;</button></div>
       </div>
@@ -128,5 +128,5 @@
 <script src="../wireframe/wf-dyn.js?v=16"></script>
 <script src="../wireframe/wf-servizio.js?v=3"></script>
 <script src="../wireframe/wf-mk.js?v=1"></script>
-<script src="mk-pagine.js?v=19"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
+<script src="mk-pagine.js?v=19"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=5"></script>
 </body></html>

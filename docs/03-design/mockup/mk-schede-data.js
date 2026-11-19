@@ -820,6 +820,11 @@ window.MK_SCHEDE = {
      "Soggiorno con cucina, tre camere, doppi servizi",
      "[da chiedere al cliente]"
     ]
+   ],
+   "brochure": [
+    "Brochure Domus 54",
+    "docs/brochure-domus-54.pdf",
+    "42 MB"
    ]
   },
   "via-diaz": {

@@ -52,12 +52,12 @@
 
   /* ---------- mappa Leaflet ---------- */
   var gm = d.getElementById('gmap'), mf = d.getElementById('map-frame');
-  if (gm && mf) {
+  if (false && gm && mf) { /* istruzione 77: Dove operiamo identica alla Home A (mappa Google scura), niente Leaflet */
     gm.dataset.src = 'about:blank'; gm.removeAttribute('src'); gm.hidden = true;
     var pins = d.getElementById('map-pins'); if (pins) pins.hidden = true;
     css('leaflet.css');
     js('leaflet.js').then(function () {
-      var L = window.L, el = d.createElement('div'); el.className = 'mk-map'; mf.appendChild(el);
+      var L = window.L, el = d.createElement('div'); el.className = 'mk-leaflet'; mf.appendChild(el);
       var map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView([45.75, 9.1], 9);
       /* mockup: tessere OpenStreetMap (uso leggero, con attribuzione). In produzione serve un fornitore di tessere con chiave (WAITING_FOR_APPROVAL). */
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -104,7 +104,7 @@
   }
 
   /* ---------- scorrimento morbido + parallasse ---------- */
-  if (!RM) {
+  if (!RM && !/nolenis/.test(location.search)) {
     css('lenis.css');
     Promise.all([js('lenis.min.js'), js('gsap.min.js')]).then(function () { return js('ScrollTrigger.min.js'); }).then(function () {
       var gsap = window.gsap; gsap.registerPlugin(window.ScrollTrigger);

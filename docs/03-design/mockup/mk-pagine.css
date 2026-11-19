@@ -130,20 +130,18 @@ body[data-mk] .ixs{position:relative}
 .mk-ba-l{position:absolute;top:18px;padding:6px 12px;border-radius:999px;background:rgba(21,21,23,.6);color:#fff;font:600 12px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
 .mk-ba-l.a{left:18px}.mk-ba-l.b{right:18px}
 /* mappa */
-.mk-map{position:absolute;inset:0;z-index:1;background:#ebe6de}
+.mk-leaflet{position:absolute;inset:0;z-index:1;background:#ebe6de}
 .mk-pin i{display:block;width:22px;height:22px;border-radius:50%;background:var(--acc);border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:transform .25s}
 .mk-pin.on i{transform:scale(1.35);background:var(--acc-d)}
-.mk-map .leaflet-tooltip{font:600 13px/1.2 var(--fb);color:var(--ink);border:0;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
-.mk-map .leaflet-control-zoom a{color:var(--ink)}
+.mk-leaflet .leaflet-tooltip{font:600 13px/1.2 var(--fb);color:var(--ink);border:0;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.mk-leaflet .leaflet-control-zoom a{color:var(--ink)}
 body[data-mk] .frame .mk .map-frame #map-reset{z-index:500}
 /* galleria */
 .pswp{--pswp-bg:#0e0e0f}
 /* progetti in evidenza su mobile */
 @media (max-width:860px){body[data-mk] .mk-embla{overflow:hidden}body[data-mk] .mk-embla .pf-track{overflow:visible!important;display:flex;scroll-snap-type:none}body[data-mk] .mk-embla .pf-track li{flex:0 0 auto}}
-.mk-map,.mk-map *{filter:none}
-.mk-map .leaflet-tile-pane{filter:grayscale(1) sepia(.12) contrast(.92) brightness(1.04)}
-body[data-mk] .frame .mk .map-frame{filter:none!important}
-body[data-mk] .map-note{display:none}
+.mk-leaflet,.mk-leaflet *{filter:none}
+.mk-leaflet .leaflet-tile-pane{filter:grayscale(1) sepia(.12) contrast(.92) brightness(1.04)}
 
 /* Impresa, "Costruiamo con persone nostre" (istruzione 39): sezione chiara tra apertura scura e Persone (bianco).
    Niente foto di fondo, niente trattini o filetti decorativi. Titolo a due toni, testo a destra,
@@ -352,13 +350,7 @@ body[data-mk] .frame .pj-next .dx-arr{filter:invert(1)}
 
 /* Contatti (istruzione 60): breadcrumb sopra l'apertura scura senza toccarne il contenuto, testi leggibili */
 body[data-mk] .frame .crumb{position:relative;z-index:5}
-body[data-mk] .frame .crumb + .ct-dark{padding-top:calc(136px + clamp(48px,8vh,96px))!important}
-body[data-mk] .frame .crumb + .ct-dark ~ * .crumb{display:none}
 body[data-mk] .frame .crumb a,body[data-mk] .frame .crumb li{color:inherit}
-body[data-mk] .frame .co-cd,body[data-mk] .frame .co-cd h2,body[data-mk] .frame .co-cd h3,body[data-mk] .frame .co-cd strong,body[data-mk] .frame .co-cd dt{color:#fff!important}
-body[data-mk] .frame .co-cd p,body[data-mk] .frame .co-cd dd,body[data-mk] .frame .co-cd small,body[data-mk] .frame .co-cd span{color:rgba(255,255,255,.78)!important}
-body[data-mk] .frame .co-cd a{color:#fff!important;text-decoration-color:rgba(255,255,255,.5)}
-body[data-mk] .frame #main .co-cd p,body[data-mk] .frame .pg-cd.co-cd p{color:rgba(255,255,255,.82)!important}
 
 /* Scheda immobile, apertura a scorrimento orizzontale (istruzione 60): pannelli tutti quadrati, niente grigi */
 body[data-mk] .frame .rs-hx-tr{gap:16px!important;align-items:stretch}
@@ -397,7 +389,7 @@ body[data-mk] .mk-noimg{position:absolute;inset:0;display:grid;place-items:cente
 
 /* Scheda immobile (istruzione 61): breadcrumb + apertura entrano insieme nel 100% della finestra */
 body[data-mk] .frame .rs-hx.hx-on .rs-hx-pin{height:calc(100svh - var(--stick,84px) - 64px)!important;padding-block:8px 20px;box-sizing:border-box}
-body[data-mk] .frame .crumb:has(+ .rs-hx){height:52px;margin:0!important;display:flex;align-items:center}
+body[data-mk] .frame .crumb:has(+ .rs-hx){margin:0!important}
 
 /* Sezioni scure (.sec.dk), es. "Articoli correlati" (istruzione 61): fondo scuro e testo chiaro sempre insieme */
 body[data-mk] .frame .sec.dk{background:#151517!important;color:#fff!important}
@@ -412,3 +404,93 @@ body[data-mk] .frame .ar-rel .ar-rc .meta,body[data-mk] .frame .ar-rel .ar-rc .m
 body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo{gap:6px}
 body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img[src*="cassa-edile-award"]{height:64px!important}
 body[data-mk] .frame .ix-gar .ix-tlist{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+body[data-mk] .frame .rs-hx-tr > .rs-p{scrollbar-width:none}
+body[data-mk] .frame .rs-hx-tr > .rs-p::-webkit-scrollbar{display:none}
+body[data-mk] .frame .rs-p1 .rs-p1-th{max-height:38%}
+
+/* Categoria (istruzione 76): i pulsanti categoria precedente/successiva stanno sopra il blocco di testo dell apertura */
+body[data-mk] .frame .ct-nav2{z-index:6}
+body[data-mk] .frame .ct-nav2 a{position:relative;z-index:6;pointer-events:auto}
+
+/* Blog (istruzione 76): apertura leggibile sopra la foto, card sempre visibili */
+body[data-mk] .frame #main h1.bl-top-t,body[data-mk] .frame .bl-top-l,body[data-mk] .frame .bl-top p{color:#fff!important;text-shadow:0 1px 18px rgba(0,0,0,.35)}
+body[data-mk] .frame .bl-it{opacity:1!important;transform:none!important}
+body[data-mk] .frame .mk-art-src{margin-top:32px;font-size:14px;color:var(--mut)}
+body[data-mk] .frame .ar-txt ul{margin:0 0 20px 20px}
+body[data-mk] .frame .bl-evh .bl-top{position:relative;z-index:3}
+body[data-mk] .frame .bl-evh{position:relative;isolation:isolate}
+body[data-mk] .frame .bl-evh::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(14,12,13,.6) 0%,rgba(14,12,13,.25) 22%,rgba(14,12,13,0) 40%),linear-gradient(90deg,rgba(14,12,13,.7) 0%,rgba(14,12,13,.35) 45%,rgba(14,12,13,0) 70%)}
+body[data-mk] .frame .bl-evh .bl-ev-t{z-index:2}
+body[data-mk] .frame .bl-top-k{color:var(--acc)!important;text-shadow:none!important}
+
+/* Lavora con noi, "Cosa succede quando ti candidi" (istruzione 77): card bianche con ombra su fondo carta */
+body[data-mk] .frame .lv-st2 li{background:#fff!important;border:0!important;border-radius:22px!important;box-shadow:0 22px 44px -30px rgba(21,21,23,.35)!important}
+body[data-mk] .frame .lv-st2 li p{color:#4a4b4f!important}
+
+/* Progetto successivo (istruzione 77): solo colore, niente foto; bordeaux tra "Se ne è parlato" (bianco) e la chiusura scura */
+body[data-mk] .frame .pj-next{background:var(--acc)!important;min-height:clamp(220px,32vh,320px)!important}
+body[data-mk] .frame .pj-next .ph,body[data-mk] .frame .pj-next [data-ph]{display:none!important}
+body[data-mk] .frame .pj-next .pj-next-in small{color:#f3d5da!important}
+body[data-mk] .frame .pj-next:hover{background:#6a1826!important}
+
+/* Blog (istruzione 77): foto dell'apertura a tutta altezza (niente fascia vuota in alto), niente filtri, card uguali */
+body[data-mk] .frame .bl-evh .bl-ev{position:static!important}
+body[data-mk] .frame .bl-evh .bl-ev-m{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;z-index:0}
+body[data-mk] .frame .bl-evh .bl-ev-m .ph,body[data-mk] .frame .bl-evh .bl-ev-m [data-ph]{position:absolute!important;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important}
+body[data-mk] .frame .bl-evh .bl-ev-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body[data-mk] .frame .bl-f,body[data-mk] .frame .bl-fs,body[data-mk] .frame [class*="bl-bar"]{display:none!important}
+body[data-mk] .frame .bl-it{width:auto!important;flex:none!important;grid-column:auto!important}
+body[data-mk] .frame .bl-it .bl-ph,body[data-mk] .frame .bl-it .bl-ph .ph{aspect-ratio:4/3!important;width:100%!important;height:auto!important}
+body[data-mk] .frame .bl-it .bl-ph img{width:100%;height:100%;object-fit:cover}
+body[data-mk] .frame .bl-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(20px,2.4cqi,36px)!important}
+@container (max-width:900px){body[data-mk] .frame .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@container (max-width:560px){body[data-mk] .frame .bl-grid{grid-template-columns:1fr!important}}
+body[data-mk] .frame *:has(> .bl-f){display:none!important}
+body[data-mk] .frame .bl-it[hidden]{display:block!important}
+body[data-mk] .frame .bl-more{display:none!important}
+body[data-mk] .frame .bl-grid > .bl-it,body[data-mk] .frame .bl-grid > .bl-it > *{width:100%!important;max-width:none!important;margin:0!important;transform:none!important;justify-self:stretch!important;align-self:start!important}
+body[data-mk] .frame .bl-grid > .bl-it .bl-ph{width:100%!important}
+body[data-mk] .frame #main .bl-top .bl-top-k,body[data-mk] .frame .bl-evh .bl-top-k{color:var(--acc)!important;background:#fff!important}
+
+/* Pagine articolo (istruzione 77): colonna di testo centrata e leggibile, anche senza sommario */
+body[data-mk] .frame .ar-body:not(:has(.ar-toc)){display:block!important;max-width:760px;margin-inline:auto!important}
+body[data-mk] .frame .ar-body:not(:has(.ar-toc)) .ar-txt{max-width:none!important;margin:0!important}
+body[data-mk] .frame .ar-txt p,body[data-mk] .frame .ar-txt li{font-size:18px!important;line-height:1.7!important;color:#2f3034}
+body[data-mk] .frame .ar-txt h2{font:700 clamp(24px,2.2cqi,32px)/1.15 var(--fh)!important;letter-spacing:-.025em;margin:44px 0 14px!important;color:var(--ink)}
+body[data-mk] .frame .ar-txt ul{padding-left:22px;margin:0 0 22px!important}
+body[data-mk] .frame .ar-txt li{margin:6px 0}
+body[data-mk] .frame .ar-hd .in{max-width:900px;margin-inline:auto}
+body[data-mk] .frame .ar-body:has(.ar-toc){max-width:1100px;margin-inline:auto}
+body[data-mk] .frame .ar-toc{max-width:760px;margin:0 auto 32px!important}
+body[data-mk] .frame .ar-body:has(.ar-toc) .ar-txt{max-width:760px;margin-inline:auto!important}
+body[data-mk] .frame .ar-toc{width:100%;text-align:left}
+body[data-mk] .frame .ar-toc summary{justify-content:space-between}
+
+/* Contatti (istruzione 78): apertura con foto al vivo e testo leggibile; sede con foto; mappa Google; Lavora con noi su colore diverso */
+body[data-mk] .frame .ct-dark{border-radius:0!important;width:100%!important;max-width:none!important;position:relative;isolation:isolate}
+body[data-mk] .frame .ct-dark .mk-ct-bg{position:absolute!important;inset:0!important;z-index:-1;margin:0!important;border-radius:0!important}
+body[data-mk] .frame .ct-dark .mk-ct-bg img{width:100%;height:100%;object-fit:cover;display:block}
+body[data-mk] .frame .ct-dark .mk-ct-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,13,.8) 0%,rgba(14,12,13,.74) 45%,rgba(14,12,13,.86) 100%)}
+body[data-mk] .frame .ct-dark .ct-in{position:relative;z-index:1}
+body[data-mk] .frame .mk-sede dd{display:flex;flex-direction:column;gap:12px}
+body[data-mk] .frame .mk-sede-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;display:block}
+body[data-mk] .frame .co-map{position:relative;overflow:hidden}
+body[data-mk] .frame .co-map .mk-gmap{display:block;width:100%;aspect-ratio:16/10;border:0;filter:saturate(.85)}
+body[data-mk] .frame .co-map .co-pin,body[data-mk] .frame .co-map .co-zm{display:none!important}
+body[data-mk] .frame .sec.dk.pg-job{background:var(--acc)!important}
+body[data-mk] .frame .sec.dk.pg-job .dx-k{color:#f3d5da!important}
+body[data-mk] .frame .ct-dark .mk-ct-bg{opacity:1!important;z-index:0!important}
+body[data-mk] .frame .ct-dark{background:#151517!important}
+body[data-mk] .frame .ct-dark > *:not(.mk-ct-bg){position:relative;z-index:1}
+body[data-mk] .frame .bl-evh .bl-top{padding-inline:clamp(16px,4cqi,56px)!important;left:0!important;margin-left:0!important}
+body[data-mk] .frame .bl-evh .bl-ev-t{right:clamp(16px,4cqi,56px)!important}
+
+/* Articoli (istruzione 78): testo allineato a sinistra con titolo, immagine e sezioni della pagina */
+body[data-mk] .frame .ar-body,body[data-mk] .frame .ar-body:not(:has(.ar-toc)),body[data-mk] .frame .ar-body:has(.ar-toc){display:block!important;max-width:none!important;margin-inline:0!important}
+body[data-mk] .frame .ar-txt,body[data-mk] .frame .ar-body:has(.ar-toc) .ar-txt,body[data-mk] .frame .ar-body:not(:has(.ar-toc)) .ar-txt{max-width:760px!important;margin:0!important}
+body[data-mk] .frame .ar-toc{max-width:760px!important;margin:0 0 32px!important}
+body[data-mk] .frame .ar-hd .in{max-width:none!important;margin-inline:0!important}
+body[data-mk] .frame .ar-hd .in > *{max-width:900px}
+
+/* Articolo: testo e sommario in una sola colonna, il sommario non resta fisso sopra il testo mentre si legge */
+body[data-mk] .frame .ar-toc{position:static!important}

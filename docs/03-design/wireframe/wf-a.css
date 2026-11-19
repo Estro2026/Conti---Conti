@@ -1479,7 +1479,7 @@ body.ha-menu-open .ha-nav .ha-nm-c b{background:#fff}
 .frame .ct-hx.ct-hx-in .ct-dk-c:nth-child(2){transition-delay:.12s}.frame .ct-hx.ct-hx-in .ct-dk-c:nth-child(3){transition-delay:.24s}
 /* indice categorie */
 .frame .ct-hx .ct-nav2{align-items:center;z-index:3}
-.frame .ct-ix{display:flex;flex:1;justify-content:center;gap:clamp(10px,1.6cqi,26px);list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.frame .ct-ix{display:flex;flex:1;min-width:0;justify-content:safe center;gap:clamp(10px,1.6cqi,26px);list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
 .frame .ct-nav2 .ct-ix a{background:none!important;padding:6px 0!important;border-radius:0;color:rgba(255,255,255,.45);white-space:nowrap;-webkit-backdrop-filter:none;backdrop-filter:none;transition:color .25s}
 .frame .ct-nav2 .ct-ix a:hover{color:#fff}
 .frame .ct-ix small{font-size:10px;margin-right:6px;opacity:.7;vertical-align:top}

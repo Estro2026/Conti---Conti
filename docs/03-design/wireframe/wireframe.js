@@ -78,7 +78,7 @@
     ftr.outerHTML = '<footer class="ha-foot"><div class="ha-wrap ha-ft">' +
       '<a class="ha-ft-cta" href="mailto:info@contieconti.it"><small>Scrivici</small><span>info@contieconti.it</span><i aria-hidden="true"></i></a>' +
       '<div class="ha-ft-top">' +
-      '<div class="ha-ft-brand"><img src="../mockup/img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell\'edilizia"><p>Impresa di costruzioni dal 1988.<br>Brianza, Milano e lago.</p></div>' +
+      '<div class="ha-ft-brand"><img src="../mockup/img/logo-bianco.png" width="190" height="49" alt="Conti e Conti, il valore dell\'edilizia"><p>Impresa di costruzioni dal 1987.<br>Brianza, Milano e lago.</p></div>' +
       '<div><h2>Sede</h2><p>Via Nazionale dei Giovi 169<br>20823 Lentate sul Seveso (MB)</p><p>Lun-Ven 8:30-12:00 / 14:00-18:30<br>Sab 8:30-12:00</p></div>' +
       '<div><h2>Contatti</h2><p><a href="tel:+390362557972">0362 557972</a><br><a href="mailto:info@contieconti.it">info@contieconti.it</a></p>' +
       '<ul class="ha-ft-soc"><li><a href="https://it.linkedin.com/company/conti-e-conti-s.r.l." target="_blank" rel="noopener">LinkedIn' + NW + '</a></li><li><a href="https://www.facebook.com/ContieContiSrl/" target="_blank" rel="noopener">Facebook' + NW + '</a></li></ul></div>' +
