@@ -1,0 +1,414 @@
+/* Mockup pagine interne (2026-11-18, istruzione Sara n. 32).
+   Struttura e comportamenti = wireframe (../wireframe/*.css|js, nessuna copia).
+   Questo file applica sopra la veste della Home A: bordeaux del marchio, fondo carta con pattern CC,
+   Inter Tight / Inter, logo a colori, nessun filtro grigio. Foto e video restano segnaposto. */
+
+:root,.frame,.ha-hdw,.ha-foot,.frame .mk{
+  --acc:#7d1d2c;--acc-d:#5c1420;--acc-l:#f3e7e9;--focus:#7d1d2c;--note:#7d1d2c;
+  --ink:#151517;--mut:#5e5f63;--line:#d9d5ce;--paper:#f4f1ec;--alt:#ebe6de;--bg:#f4f1ec;
+  --ph:#e2dcd2;--ph2:#d6cfc3;
+  --fh:"Inter Tight","Helvetica Neue",Arial,sans-serif;--fb:"Inter","Segoe UI",system-ui,sans-serif;
+}
+:root{--tbh:0px}
+
+/* pagina a tutto schermo come la Home A: niente cornice del wireframe */
+body[data-mk]{background:var(--paper);color:var(--ink);font-family:var(--fb)}
+body[data-mk] .stage{padding:0;display:block}
+body[data-mk] .vp{max-width:none!important}
+body[data-mk] .frame{border:0;background:transparent}
+body[data-mk] .sec.alt{background:rgba(235,230,222,.72)}
+
+/* nessun pattern CC (istruzione 33): né sul fondo né nelle sezioni */
+body[data-mk] .frame .mk .close::before,body[data-mk] .imp-ink::before,body[data-mk] .sec.dk.pg-job::before,
+body[data-mk] .sec[style*="e2e2e2"]::before,body[data-mk] .pt-cc::before{display:none!important;background:none!important}
+body[data-mk] .pt-sep{background:none!important;height:0}
+body[data-mk] .cnh-wm{background-image:url(../wireframe/cc-mark.png)!important;opacity:.85}
+
+/* scala tipografica più ampia, vicina alla Home A */
+body[data-mk] .frame{--t-h1:clamp(48px,7.4cqi,118px);--t-h2:clamp(36px,4.8cqi,72px);--t-h3:clamp(20px,1.8cqi,26px);--t-lead:clamp(18px,1.4cqi,21px)}
+body[data-mk] .frame h1,body[data-mk] .frame h2{line-height:1.02}
+body[data-mk] .frame .dx-k,body[data-mk] .frame .eyebrow{color:var(--acc);letter-spacing:.16em;font-weight:600}
+body[data-mk] .frame .lead{color:#45464a}
+
+/* foto prese dalla Home A dentro i segnaposto */
+body[data-mk] .ph.mk-has{background:#2a2426!important;border:0!important;overflow:hidden;position:relative}
+body[data-mk] .ph.mk-has .mk-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Impresa: ritmo chiaro / scuro, contrasto e profondità ---------- */
+/* apertura: segnaposto in toni caldi scuri con vignettatura, didascalie in bianco */
+body[data-mk] .ixs{background:#151517}
+body[data-mk] .ixs .ph.ph[data-ph]{background:radial-gradient(120% 90% at 30% 20%,#4a3337 0%,#24191b 55%,#121012 100%)!important;border:0!important}
+body[data-mk] .ixs .ph>span{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.18);backdrop-filter:blur(6px)}
+body[data-mk] .ixs-y button[aria-pressed=true] b{color:#fff}
+body[data-mk] .ixs-y b{color:rgba(255,255,255,.55)}
+/* chi siamo: fondo carta, titolo grande, filetto bordeaux */
+/* persone: numeri in bordeaux, foto a tutta altezza con angoli come le card della Home A */
+body[data-mk] .ix-per{background:#fbf9f6}
+body[data-mk] .ix-per .ph,body[data-mk] .ix-team-ph,body[data-mk] .ix-team-ph .ph{border-radius:18px!important;overflow:hidden}
+body[data-mk] .ix-stk-n,body[data-mk] .ix-tab-n{color:var(--acc)!important}
+/* titolare: fascia scura, ritratto, nome grande */
+body[data-mk] .ix-boss-s{background:#151517;color:#fff;padding-block:clamp(80px,11vh,140px)!important}
+body[data-mk] .ix-boss-s h2,body[data-mk] .ix-boss-s .ix-boss-n{color:#fff}
+body[data-mk] .ix-boss-s p,body[data-mk] .ix-boss-s .ix-boss-r{color:#c9c6c1}
+body[data-mk] .ix-boss-s .dx-k{color:#e9b8c0}
+/* metodo: bordeaux profondo al posto del nero, card in vetro scuro */
+body[data-mk] .ix-met{background:linear-gradient(180deg,#5c1420 0%,#3a0d15 100%)}
+body[data-mk] .ix-met .dx-k{color:#f0c9cf}
+body[data-mk] .ix-met .ix-stk-p{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.14)!important;backdrop-filter:blur(10px)}
+body[data-mk] .ix-met .ix-stk-n{color:#fff!important}
+/* servizi: carta, numeri grandi bordeaux */
+body[data-mk] .ix-sv-s{background:var(--paper)}
+body[data-mk] .ix-sv-s .ix-flow-n{color:var(--acc);opacity:1}
+/* certificazioni: foto squadra velata scura dietro, testo bianco */
+body[data-mk] .ix-gar{background:#151517;color:#fff;position:relative}
+body[data-mk] .ix-gar h2,body[data-mk] .ix-gar h3{color:#fff}
+body[data-mk] .ix-gar p{color:#cfccc7}
+body[data-mk] .ix-gar .dx-k{color:#e9b8c0}
+body[data-mk] .ix-gar-bg .mk-img{opacity:.28}
+
+/* via la scala di grigi del wireframe */
+body[data-mk] .frame main>*,body[data-mk] .frame .hd,body[data-mk] .frame .mnav,body[data-mk] .frame .crumb,
+body[data-mk] .frame .ft,body[data-mk] .frame .sticky-m,body[data-mk] .cn-peek,body[data-mk] .pj-lb,
+body[data-mk] .ha-nav .ha-logo-c,body[data-mk] .frame .lv-faces li [data-ph],body[data-mk] .frame .lv-faces li .ph{filter:none!important}
+body[data-mk] .frame .cnh-wm{filter:none;opacity:.9}
+body[data-mk] .frame .cn-hv i{filter:brightness(0) invert(1);opacity:.75}
+
+/* titoli e testo con i font della Home A */
+body[data-mk] .frame h1,body[data-mk] .frame h2,body[data-mk] .frame h3,body[data-mk] .frame h4,
+body[data-mk] .frame .btn,body[data-mk] .frame summary,body[data-mk] .frame .stat b{font-family:var(--fh)}
+body[data-mk] .frame h1,body[data-mk] .frame h2{letter-spacing:-.025em;font-weight:700}
+
+/* segnaposto immagini e video: tono carta, etichetta leggibile, nessuna foto */
+body[data-mk] .ph,body[data-mk] .ph[data-tone]{background:#e2dcd2!important;border-color:#d3cbbf}
+body[data-mk] .ph[data-tone="1"]{background:#d9d2c6!important}
+body[data-mk] .ph[data-tone="2"]{background:#ded7cc!important}
+body[data-mk] .ph[data-tone="3"]{background:#d2cabd!important}
+body[data-mk] .sec.dk .ph,body[data-mk] .pj-hero .ph,body[data-mk] .pj-next .ph,body[data-mk] .ct-hero .ph,
+body[data-mk] .ix-hero .ph,body[data-mk] .hero-p>.ph{background:#3b3335!important;border-color:#4a4043}
+body[data-mk] .ph>span{background:#fff;color:var(--ink);border-color:#d3cbbf}
+body[data-mk] .ct-ly.l2,body[data-mk] .ct-ly.l4{background:#ebe6de}
+body[data-mk] .btn,body[data-mk] .hcta{border-radius:10px}
+body[data-mk] .cnh-pin,body[data-mk] .frame .iv-sky-b{background:#e2dcd2}
+/* segnaposto delle categorie nell'apertura di Realizzazioni: toni carta al posto dei grigi */
+body[data-mk] .cnh-s{background:#ddd6ca!important}
+body[data-mk] .cnh-s:nth-child(even){background:#d3cbbe!important}
+body[data-mk] .cnh-s:nth-child(3n){background:#c9c0b2!important}
+/* pulsante fisso mobile in bordeaux come il "Richiedi un preventivo" della Home A */
+body[data-mk] .sticky-m .btn:not(.sec2){background:var(--acc);border-color:var(--acc);color:#fff}
+body[data-mk] .ix-met .lead,body[data-mk] .ix-met p{color:#ecd7da}
+body[data-mk] .ix-t-logo.mk-logo{background:#fff;padding:6px;display:grid;place-items:center}
+body[data-mk] .ix-t-logo.mk-logo img{max-width:100%;max-height:100%;object-fit:contain}
+
+/* Impresa, apertura: didascalia e indice degli anni in stile editoriale (istruzione 34) */
+body[data-mk] .frame .ixs-s figcaption{background:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;border-radius:0;
+  display:grid;grid-template-columns:auto;gap:10px;color:#fff;bottom:calc(clamp(16px,3cqi,40px) + 120px);max-width:min(720px,80cqi)}
+body[data-mk] .frame .ixs-s figcaption b{font:700 clamp(72px,10cqi,150px)/.86 var(--fh);letter-spacing:-.05em;color:#fff}
+body[data-mk] .frame .ixs-s figcaption span{font:500 clamp(20px,2cqi,30px)/1.2 var(--fh);letter-spacing:-.015em;color:#fff;max-width:22ch}
+body[data-mk] .frame .ixs-s figcaption em{order:-1;font:600 12px/1 var(--fb);letter-spacing:.18em;text-transform:uppercase;color:#e9b8c0}
+body[data-mk] .ixs .ph>span{left:auto!important;right:clamp(16px,4cqi,56px);top:calc(var(--nav-h,84px) + 24px)!important;bottom:auto!important;font-size:11px;opacity:.7}
+body[data-mk] .frame .ixs-y{gap:clamp(12px,2cqi,32px)}
+body[data-mk] .frame .ixs-y button{padding-top:16px;color:rgba(255,255,255,.5)}
+body[data-mk] .frame .ixs-y button::before{height:1px;background:rgba(255,255,255,.22)}
+body[data-mk] .frame .ixs-y button::after{height:2px;background:#e9b8c0}
+body[data-mk] .frame .ixs-y b{font:600 clamp(15px,1.3cqi,19px)/1 var(--fh);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+body[data-mk] .frame .ixs-y span{font:400 12.5px/1.4 var(--fb);margin-top:8px;color:inherit;opacity:.9}
+body[data-mk] .frame .ixs-y button[aria-pressed=true] b,body[data-mk] .frame .ixs-y button:hover b{color:#fff}
+body[data-mk] .ixs-s::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(0deg,rgba(10,8,9,.7),transparent);pointer-events:none;z-index:1}
+body[data-mk] .ixs{position:relative}
+@container (max-width:600px){body[data-mk] .frame .ixs-s figcaption{bottom:120px;right:16px}body[data-mk] .frame .ixs-s figcaption b{font-size:64px}}
+
+
+/* ---------- librerie (istruzione 38) ---------- */
+/* prima / dopo */
+.mk-ba{position:relative;margin-top:32px;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(21,21,23,.45)}
+.mk-ba-s{display:block;width:100%;aspect-ratio:16/9;--divider-width:2px;--divider-color:#fff;--default-handle-opacity:0}
+.mk-ba-s img{width:100%;height:100%;object-fit:cover;display:block}
+.mk-ba-s:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.mk-ba-h{display:flex;gap:6px;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.mk-ba-h i{width:0;height:0;border:6px solid transparent}
+.mk-ba-h i:first-child{border-right-color:var(--acc)}.mk-ba-h i:last-child{border-left-color:var(--acc)}
+.mk-ba-l{position:absolute;top:18px;padding:6px 12px;border-radius:999px;background:rgba(21,21,23,.6);color:#fff;font:600 12px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+.mk-ba-l.a{left:18px}.mk-ba-l.b{right:18px}
+/* mappa */
+.mk-map{position:absolute;inset:0;z-index:1;background:#ebe6de}
+.mk-pin i{display:block;width:22px;height:22px;border-radius:50%;background:var(--acc);border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:transform .25s}
+.mk-pin.on i{transform:scale(1.35);background:var(--acc-d)}
+.mk-map .leaflet-tooltip{font:600 13px/1.2 var(--fb);color:var(--ink);border:0;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.mk-map .leaflet-control-zoom a{color:var(--ink)}
+body[data-mk] .frame .mk .map-frame #map-reset{z-index:500}
+/* galleria */
+.pswp{--pswp-bg:#0e0e0f}
+/* progetti in evidenza su mobile */
+@media (max-width:860px){body[data-mk] .mk-embla{overflow:hidden}body[data-mk] .mk-embla .pf-track{overflow:visible!important;display:flex;scroll-snap-type:none}body[data-mk] .mk-embla .pf-track li{flex:0 0 auto}}
+.mk-map,.mk-map *{filter:none}
+.mk-map .leaflet-tile-pane{filter:grayscale(1) sepia(.12) contrast(.92) brightness(1.04)}
+body[data-mk] .frame .mk .map-frame{filter:none!important}
+body[data-mk] .map-note{display:none}
+
+/* Impresa, "Costruiamo con persone nostre" (istruzione 39): sezione chiara tra apertura scura e Persone (bianco).
+   Niente foto di fondo, niente trattini o filetti decorativi. Titolo a due toni, testo a destra,
+   indicatori raccolti in un pannello scuro arrotondato che riprende l'apertura e prepara il titolare. */
+body[data-mk] .frame .ixi{background:var(--paper);color:var(--ink);min-height:0;padding-block:clamp(110px,15vh,180px) clamp(90px,12vh,150px)!important}
+body[data-mk] .frame .ix-per{background:#fff}
+body[data-mk] .frame .ixi > .in{grid-template-columns:minmax(0,7fr) minmax(0,4fr)!important;grid-template-areas:"k k" "t b" "d d"!important;column-gap:clamp(40px,6cqi,110px)!important;align-items:end!important}
+body[data-mk] .frame .ixi .dx-k{margin:0 0 24px;color:var(--acc)}
+body[data-mk] .frame .ixi .tbc{color:inherit!important}
+body[data-mk] .frame #main h1.ixi-t{font-size:clamp(42px,6cqi,112px)!important;line-height:.95!important;letter-spacing:-.048em;max-width:13ch!important;margin:0!important;color:var(--ink);text-wrap:balance}
+body[data-mk] .frame .ixi-t .mk-t2{color:var(--acc)}
+body[data-mk] .frame .ixi-b{gap:0;padding-bottom:.5em}
+body[data-mk] .frame .ixi-b p{font-size:16px;line-height:1.7;color:#4a4b4f;max-width:44ch;border:0!important;padding:0!important}
+body[data-mk] .frame .ixi-b p + p{margin-top:18px!important}
+body[data-mk] .frame .ixi-b p:first-child{font:500 clamp(18px,1.4cqi,21px)/1.5 var(--fh);color:var(--ink);letter-spacing:-.01em}
+body[data-mk] .frame .ixi-b a{color:var(--acc);text-decoration-color:rgba(125,29,44,.35)}
+/* pannello indicatori */
+body[data-mk] .frame .ixi .ixi-d{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;margin:clamp(72px,11vh,128px) 0 0!important;
+  padding:clamp(36px,4.4cqi,64px) clamp(28px,4cqi,64px)!important;border:0!important;border-radius:28px;align-items:start!important;
+  background:radial-gradient(120% 140% at 0% 0%,#3a1a20 0%,#1b1416 45%,#121113 100%);box-shadow:0 40px 80px -40px rgba(21,21,23,.55)}
+body[data-mk] .frame .ixi .ixi-d div,body[data-mk] .frame .ixi .ixi-d div + div{display:flex!important;flex-direction:column-reverse!important;justify-content:flex-end!important;gap:14px;padding:0 clamp(12px,2cqi,32px)!important;border:0!important;transform:none!important}
+body[data-mk] .frame .ixi .ixi-d div:first-child{padding-left:0!important}
+body[data-mk] .frame .ixi .ixi-d div::before,body[data-mk] .frame .ixi .ixi-d dt::before{display:none!important}
+body[data-mk] .frame .ixi .ixi-d dd,body[data-mk] .frame .ixi .ixi-d dd *{margin:0;font:600 clamp(54px,6.4cqi,118px)/.88 var(--fh)!important;letter-spacing:-.06em;color:#fff!important;-webkit-text-stroke:0!important;opacity:1!important;font-variant-numeric:tabular-nums}
+body[data-mk] .frame .ixi .ixi-d dt{padding:0!important;font:500 14px/1.4 var(--fb)!important;color:#c9bfc0!important;max-width:18ch}
+@container (max-width:900px){body[data-mk] .frame .ixi > .in{grid-template-columns:1fr!important;grid-template-areas:"k" "t" "b" "d"!important}body[data-mk] .frame .ixi-b{margin-top:32px}
+  body[data-mk] .frame .ixi .ixi-d{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:40px!important}
+  body[data-mk] .frame .ixi .ixi-d div:nth-child(odd){padding-left:0!important}}
+
+/* ---------- Impresa, istruzione 40 ---------- */
+/* Massimo Conti: ritratto scontornato, senza riquadro, con un alone caldo sul fondo nero */
+body[data-mk] .frame .ix-boss-m.mk-cut,body[data-mk] .frame .ix-boss-m.mk-cut .ph,body[data-mk] .frame .ix-boss-m.mk-cut>div{border-radius:0!important;overflow:visible!important;background:none!important;box-shadow:none!important;clip-path:none!important;aspect-ratio:auto!important}
+body[data-mk] .frame .ix-boss-m.mk-cut{position:relative}
+body[data-mk] .frame .ix-boss-m.mk-cut::before{content:"";position:absolute;left:6%;right:6%;top:10%;bottom:2%;border-radius:50%;background:radial-gradient(closest-side,rgba(125,29,44,.55),rgba(125,29,44,0));filter:blur(10px)}
+body[data-mk] .frame .ix-boss-m.mk-cut .ph.mk-has{transform:none!important;border:0!important}
+body[data-mk] .frame .ix-boss-m.mk-cut .mk-img{position:relative;inset:auto;width:100%;height:auto;max-height:78vh;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+
+/* Metodo: card chiare impilate sul bordeaux, numero grande in bordeaux, nessun filetto */
+body[data-mk] .frame .ix-met .ix-stk li{background:#f4f1ec!important;color:var(--ink);border:0!important;border-radius:28px!important;box-shadow:0 40px 80px -30px rgba(20,4,8,.6)}
+body[data-mk] .frame .ix-met .ix-stk-k{color:var(--acc)!important;letter-spacing:.18em}
+body[data-mk] .frame .ix-met .ix-stk-a{color:var(--ink)!important;letter-spacing:-.03em}
+body[data-mk] .frame .ix-met .ix-stk-p{border-left:0!important;padding-left:0!important;background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important}
+body[data-mk] .frame .ix-met .ix-stk-n,body[data-mk] .frame .ix-met .ix-stk-n span{color:var(--acc)!important}
+body[data-mk] .frame .ix-met .ix-stk-n span{font:600 clamp(64px,7cqi,120px)/.85 var(--fh)!important;letter-spacing:-.06em}
+body[data-mk] .frame .ix-met .ix-stk-n small{font:500 14px/1.3 var(--fb)!important;color:var(--mut)!important}
+body[data-mk] .frame .ix-met .ix-stk-p p,body[data-mk] .frame .ix-met .ix-stk-p b,body[data-mk] .frame .ix-met .ix-stk-p a{color:#45464a!important}
+body[data-mk] .frame .ix-met .ix-stk-p b a{color:var(--ink)!important}
+body[data-mk] .frame .ix-met .ix-met-x,body[data-mk] .frame .ix-met .ix-met-x div{border:0!important;background:none!important}
+body[data-mk] .frame .ix-met .ix-met-x dt{color:#f0c9cf!important;font:600 12px/1.3 var(--fb)!important;letter-spacing:.16em;text-transform:uppercase}
+body[data-mk] .frame .ix-met .ix-met-x dd,body[data-mk] .frame .ix-met .ix-met-x a{color:#fff!important}
+
+/* Cosa costruiamo: tre card fotografiche alte, titolo e numero in bianco */
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(380px,58vh,560px);padding:clamp(24px,2.6cqi,40px)!important;border:0!important;border-radius:24px!important;background:#151517!important;color:#fff!important;text-decoration:none}
+body[data-mk] .frame .ix-sv-s .mk-sv-i{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.65,.15,1)}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,14,15,0) 35%,rgba(14,14,15,.82) 100%)}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv:hover .mk-sv-i{transform:scale(1.05)}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv .ix-flow-n{position:absolute;top:clamp(20px,2.4cqi,32px);left:clamp(24px,2.6cqi,40px);font:600 13px/1 var(--fb)!important;letter-spacing:.18em;color:#fff!important;opacity:.85}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv h3{color:#fff!important;font:700 clamp(28px,2.8cqi,44px)/1 var(--fh)!important;letter-spacing:-.035em;margin:0 0 10px}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv .ix-fl-go{color:rgba(255,255,255,.85)!important;font:500 15px/1.2 var(--fb)}
+
+/* Certificazioni: card scure in vetro sul fondo nero, loghi su tessera bianca */
+body[data-mk] .frame .ix-gar .ix-tlist li{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:22px!important;padding:clamp(22px,2.2cqi,32px)!important;color:#fff;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:none!important}
+body[data-mk] .frame .ix-gar .ix-tlist li *{border-color:rgba(255,255,255,.14)!important}
+body[data-mk] .frame .ix-gar .ix-t-tag{color:#e9b8c0!important;font:600 11px/1 var(--fb)!important;letter-spacing:.18em;text-transform:uppercase;background:none!important;padding:0!important}
+body[data-mk] .frame .ix-gar .ix-t-logo{width:64px!important;height:64px!important;border-radius:14px!important;background:#fff!important;color:var(--ink)!important;font:700 11px/1.1 var(--fh)!important;display:grid!important;place-items:center;text-align:center;padding:8px!important}
+body[data-mk] .frame .ix-gar .ix-tlist strong{color:#fff!important;font:700 clamp(19px,1.6cqi,23px)/1.15 var(--fh)!important;letter-spacing:-.02em}
+body[data-mk] .frame .ix-gar .ix-t-sub{color:#e9b8c0!important}
+body[data-mk] .frame .ix-gar .ix-tlist p,body[data-mk] .frame .ix-gar .ix-tlist dd,body[data-mk] .frame .ix-gar .ix-tlist dt{color:rgba(255,255,255,.72)!important}
+body[data-mk] .frame .ix-gar .ix-tlist .tbc{color:inherit!important}
+body[data-mk] .frame .ix-gar-bg .mk-img{opacity:.22;filter:grayscale(.3)}
+body[data-mk] .frame .ix-gar .lead{color:rgba(255,255,255,.75)!important}
+body[data-mk] .frame .ix-boss-m.mk-cut::before{display:none!important}
+body[data-mk] .frame .ix-sv-s .mk-sv-d{margin:0 0 16px;max-width:34ch;font:400 15px/1.5 var(--fb);color:rgba(255,255,255,.82)}
+body[data-mk] .frame .ix-sv-s .mk-sv-i{z-index:0!important}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv::after{z-index:1!important}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv>*:not(.mk-sv-i){position:relative;z-index:2}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv>.ix-flow-n{position:absolute}
+
+/* Cosa costruiamo, istruzione 42: foto in alto, testo sotto su fondo chiaro (leggibile, come le card servizi della Home B) */
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv{min-height:0!important;justify-content:flex-start;padding:0!important;background:#fff!important;color:var(--ink)!important;border-radius:24px!important;box-shadow:0 24px 50px -30px rgba(21,21,23,.35);transition:transform .4s cubic-bezier(.2,.65,.15,1),box-shadow .4s}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv::after{display:none!important}
+body[data-mk] .frame .ix-sv-s .mk-sv-m{position:relative!important;z-index:0!important;display:block;aspect-ratio:4/3;overflow:hidden;background:#e2dcd2}
+body[data-mk] .frame .ix-sv-s .mk-sv-m .mk-sv-i{position:absolute;inset:0;z-index:0!important;width:100%;height:100%;object-fit:cover}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv:hover{transform:translateY(-4px);box-shadow:0 34px 60px -30px rgba(21,21,23,.45)}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv>.ix-flow-n{top:16px;left:16px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.88);color:var(--acc)!important;opacity:1;font:600 12px/1 var(--fb)!important;z-index:3}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv h3{color:var(--ink)!important;margin:24px clamp(22px,2.2cqi,32px) 10px!important;font-size:clamp(24px,2.2cqi,34px)!important}
+body[data-mk] .frame .ix-sv-s .mk-sv-d{color:#4a4b4f!important;margin:0 clamp(22px,2.2cqi,32px) 18px!important}
+body[data-mk] .frame .ix-sv-s .ix-fl.mk-sv .ix-fl-go{color:var(--acc)!important;font-weight:600!important;margin:auto clamp(22px,2.2cqi,32px) 26px}
+/* istruzione 43: card più grandi, foto verticali visibili per intero o quasi */
+body[data-mk] .frame .ix-sv-s .ix-flow{gap:clamp(16px,1.8cqi,28px)!important}
+body[data-mk] .frame .ix-sv-s .mk-sv-m{aspect-ratio:4/5}
+body[data-mk] .frame .ix-sv-s>.in{width:min(1480px,100% - 2 * clamp(16px,3cqi,48px))!important;max-width:none!important}
+@container (max-width:760px){body[data-mk] .frame .ix-sv-s .ix-flow{grid-template-columns:1fr!important}body[data-mk] .frame .ix-sv-s .mk-sv-m{aspect-ratio:4/4.4}}
+
+/* Realizzazioni, apertura (istruzione 44): tono per categoria e quadrante a contrasto */
+body[data-mk] .mk-cnh .cnh-pin{background:var(--mk-bg,#d9cfc1)!important;transition:background-color .6s ease}
+body[data-mk] .mk-cnh .cnh-s{background:radial-gradient(120% 90% at 30% 25%,rgba(255,255,255,.14),rgba(0,0,0,.12)),var(--mk-bg)!important}
+body[data-mk] .mk-cnh .cnh-s::before{display:none!important}
+body[data-mk] .mk-cnh .cnh-s::after{color:var(--mk-fg)!important;opacity:.7}
+body[data-mk] .mk-cnh .cnh-plate{background:var(--mk-pb)!important;color:var(--mk-pf)!important;border:0!important;border-radius:22px!important;box-shadow:0 30px 70px -30px rgba(10,6,8,.55)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;transition:background-color .5s ease,color .5s ease,transform .3s}
+body[data-mk] .mk-cnh .cnh-plate *{color:inherit!important}
+body[data-mk] .mk-cnh .cnh-count,body[data-mk] .mk-cnh .cnh-num{opacity:.78}
+body[data-mk] .mk-cnh .cnh-wm{opacity:.9}
+body[data-mk] .mk-cnh .cnh-hint{background:var(--mk-pb)!important;color:var(--mk-pf)!important}
+
+/* Pulsanti come la Home A (istruzione 44): a pillola ovunque */
+body[data-mk] .btn,body[data-mk] .hcta,body[data-mk] .ha-btn,body[data-mk] .frame .btn,body[data-mk] .frame .hcta,
+body[data-mk] .frame button.btn,body[data-mk] .frame [type=submit],body[data-mk] .frame .sticky-m a,
+body[data-mk] .frame [class*="-btn"]:not([class*="card"]),body[data-mk] .frame .chip,body[data-mk] .frame [class*="chip"],
+body[data-mk] .frame [class*="filt"] button,body[data-mk] .frame [role=tab],body[data-mk] .frame .pill{border-radius:999px!important}
+
+/* Immobili in vendita, card skyline (istruzione 46): testo leggibile sopra le foto */
+body[data-mk] .iv-it .card-imm{position:relative;isolation:isolate}
+body[data-mk] .iv-it .card-imm::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(14,12,13,.35) 0%,rgba(14,12,13,0) 22%,rgba(14,12,13,0) 40%,rgba(14,12,13,.62) 66%,rgba(14,12,13,.9) 100%)}
+body[data-mk] .iv-it .card-imm .ci-b{z-index:2;justify-content:flex-end;color:#fff!important}
+body[data-mk] .iv-it .card-imm .ci-b h3{color:#fff!important;font:700 clamp(22px,2cqi,30px)/1.05 var(--fh)!important;letter-spacing:-.03em;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+body[data-mk] .iv-it .card-imm .ci-b .meta,body[data-mk] .iv-it .card-imm .ci-b .meta .tbc{color:rgba(255,255,255,.9)!important;font-size:14px}
+body[data-mk] .iv-it .card-imm .ci-b u{color:#fff!important;font-weight:600;text-decoration-color:rgba(255,255,255,.6)}
+body[data-mk] .iv-it .card-imm .ci-b .badge{position:absolute;top:clamp(14px,1.6cqi,20px);left:clamp(14px,1.6cqi,20px);background:#fff!important;color:var(--acc)!important;border:0!important;border-radius:999px;padding:6px 12px;font:600 12px/1 var(--fb)}
+body[data-mk] .iv-it .card-imm .ci-b .badge .tbc{color:inherit!important}
+body[data-mk] .frame .iv-it a.card-imm::after{content:""!important;display:block!important;position:absolute!important;inset:0!important;z-index:1!important;opacity:1!important;background:linear-gradient(180deg,rgba(14,12,13,.35) 0%,rgba(14,12,13,0) 22%,rgba(14,12,13,0) 40%,rgba(14,12,13,.62) 66%,rgba(14,12,13,.9) 100%)!important}
+
+/* ---------- Scheda immobile in vendita (istruzione 47) ---------- */
+/* apertura: fondo carta caldo invece del grigio, titolo grande, dati in griglia pulita */
+body[data-mk] .frame .rs-hx,body[data-mk] .frame .rs-hx-pin{background:var(--paper)!important}
+body[data-mk] .frame .rs-p1-t{font:700 clamp(48px,7cqi,128px)/.92 var(--fh)!important;letter-spacing:-.05em;color:var(--ink)!important}
+body[data-mk] .frame .rs-p1-top span{font:600 12px/1 var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+body[data-mk] .frame .rs-p1-th,body[data-mk] .frame .rs-p2>div,body[data-mk] .frame .rs-p1-th .ph,body[data-mk] .frame .rs-p2 .ph{border-radius:24px!important;overflow:hidden;border:0!important}
+body[data-mk] .frame .rs-p1-cap{color:#45464a}
+body[data-mk] .frame .rs-p .badge{background:var(--acc)!important;color:#fff!important;border:0!important;border-radius:999px;padding:7px 13px;font:600 12px/1 var(--fb)}
+body[data-mk] .frame .rs-p3{background:#151517!important;color:#fff!important;border-radius:28px}
+body[data-mk] .frame .rs-p3 *{border-color:rgba(255,255,255,.14)!important}
+body[data-mk] .frame .rs-p3-l{color:#fff!important;font:500 clamp(20px,1.8cqi,28px)/1.35 var(--fh)!important;letter-spacing:-.015em}
+body[data-mk] .frame .rs-p3-d dt{color:#e9b8c0!important;font:600 11px/1.2 var(--fb)!important;letter-spacing:.16em;text-transform:uppercase}
+body[data-mk] .frame .rs-p3-d dd{color:#fff!important;font:600 clamp(20px,1.8cqi,28px)/1.1 var(--fh)!important}
+body[data-mk] .frame .rs-p3-n{color:#fff!important}
+body[data-mk] .frame .rs-p3 .btn{background:#fff!important;color:var(--acc)!important;border:0!important}
+/* contenuti: titoli e occhielli come il resto del mockup */
+body[data-mk] .frame .rs-pc-in .dx-k,body[data-mk] .frame .rs-prog .dx-k{color:var(--acc)}
+body[data-mk] .frame #h-un,body[data-mk] .frame #h-fact,body[data-mk] .frame #h-doc{font:700 clamp(32px,3.6cqi,56px)/1 var(--fh)!important;letter-spacing:-.04em}
+/* unità: card chiare arrotondate */
+body[data-mk] .frame .rs-u{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:999px!important}
+body[data-mk] .frame .rs-u[aria-pressed=true],body[data-mk] .frame .rs-u.on,body[data-mk] .frame .rs-u.is-on{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+body[data-mk] .frame .rs-ut button,body[data-mk] .frame .rs-ut [role=tab],body[data-mk] .frame .rs-chip{border-radius:999px!important}
+body[data-mk] .frame .rs-ut [aria-selected=true],body[data-mk] .frame .rs-ut .on{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important}
+body[data-mk] .frame .rs-up-pl,body[data-mk] .frame .rs-up-pl .ph{border-radius:16px!important;background:#f4f1ec!important}
+/* in sintesi e documenti: righe ariose, valori scuri, etichette grigie */
+body[data-mk] .frame .pg-ds{border:0!important}
+body[data-mk] .frame .pg-ds>div{border:0!important;border-bottom:1px solid var(--line)!important;padding:16px 0!important}
+body[data-mk] .frame .pg-ds dt{color:var(--mut)!important;font-size:14px}
+body[data-mk] .frame .pg-ds dd{color:var(--ink)!important;font-weight:600}
+body[data-mk] .frame .pg-dl a,body[data-mk] .frame .pg-dl li{border-radius:16px!important}
+body[data-mk] .frame .pg-dl a{background:#fff!important;border:0!important;box-shadow:0 12px 30px -24px rgba(21,21,23,.4)}
+/* modulo laterale: card scura come la chiusura della Home A */
+body[data-mk] .frame .sticky-form,body[data-mk] .frame .pg-form{border-radius:28px!important}
+body[data-mk] .frame .pg-form input,body[data-mk] .frame .pg-form select,body[data-mk] .frame .pg-form textarea{border-radius:14px!important}
+body[data-mk] .frame .pg-form [type=submit],body[data-mk] .frame .pg-form .btn{border-radius:999px!important;background:var(--acc)!important;color:#fff!important;border:0!important}
+/* avanzamento cantiere: tappa attuale in bordeaux */
+body[data-mk] .frame .rs-prog{background:#fff!important}
+body[data-mk] .frame .pj-tl li{border-color:var(--line)!important}
+body[data-mk] .frame .pj-tl .on,body[data-mk] .frame .pj-tl .rs-now{color:var(--acc)!important;border-color:var(--acc)!important}
+body[data-mk] .frame .pj-tl .on::before,body[data-mk] .frame .pj-tl .rs-now::before{background:var(--acc)!important;border-color:var(--acc)!important}
+/* galleria render: angoli arrotondati, fondo nero caldo */
+body[data-mk] .frame .pg-gal{background:#151517!important}
+body[data-mk] .frame .pj-gal button,body[data-mk] .frame .pj-gal .ph{border-radius:18px!important;overflow:hidden;border:0!important}
+
+/* Impresa senza "Cosa costruiamo" (istruzione 56): ritmo scuro / carta / bianco / nero / bordeaux / carta / chiusura scura */
+body[data-mk] .frame .ix-gar{background:var(--paper)!important;color:var(--ink)!important}
+body[data-mk] .frame .ix-gar-bg{display:none!important}
+body[data-mk] .frame .ix-gar h2,body[data-mk] .frame .ix-gar h3{color:var(--ink)!important}
+body[data-mk] .frame .ix-gar .dx-k,body[data-mk] .frame .ix-gar .ix-t-tag,body[data-mk] .frame .ix-gar .ix-t-sub{color:var(--acc)!important}
+body[data-mk] .frame .ix-gar .lead{color:#4a4b4f!important}
+body[data-mk] .frame .ix-gar .ix-tlist li{background:#fff!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:0 24px 50px -32px rgba(21,21,23,.35)!important;color:var(--ink)}
+body[data-mk] .frame .ix-gar .ix-tlist li *{border-color:var(--line)!important}
+body[data-mk] .frame .ix-gar .ix-tlist strong{color:var(--ink)!important}
+body[data-mk] .frame .ix-gar .ix-tlist p,body[data-mk] .frame .ix-gar .ix-tlist dd,body[data-mk] .frame .ix-gar .ix-tlist dt{color:#4a4b4f!important}
+body[data-mk] .frame .ix-gar .ix-t-logo{background:#f4f1ec!important}
+
+/* Realizzazioni (istruzione 57): foto dei progetti in evidenza visibili dentro .pf-img */
+body[data-mk] .pf-img .ph.mk-has{display:block!important;position:absolute!important;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important}
+/* apertura: copertine con le foto reali di ogni categoria */
+body[data-mk] .mk-cnh .cnh-s .mk-cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body[data-mk] .mk-cnh .cnh-s.mk-cov-on::after{display:none!important}
+
+/* Impresa, loghi certificazioni (istruzione 59): stesso riquadro e proporzioni originali */
+body[data-mk] .frame .ix-gar .ix-t-logo{width:88px!important;height:64px!important;padding:6px!important}
+body[data-mk] .ix-t-logo.mk-logo img{width:100%;height:100%;object-fit:contain}
+body[data-mk] .frame .ix-gar .ix-t-logo{position:relative!important;overflow:hidden!important;display:block!important}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img{position:absolute;inset:8px;width:calc(100% - 16px)!important;height:calc(100% - 16px)!important;max-width:none!important;max-height:none!important;object-fit:contain}
+body[data-mk] .frame .ix-gar .ix-t-logo:not(.mk-logo){display:grid!important;place-items:center}
+/* Realizzazioni, apertura: color grading della categoria sopra le foto (istruzione 60) */
+body[data-mk] .mk-cnh .cnh-s .mk-grade{position:absolute;inset:0;z-index:1;background:var(--mk-bg);mix-blend-mode:color;opacity:.55;pointer-events:none}
+body[data-mk] .mk-cnh .cnh-s .mk-grade::after{content:"";position:absolute;inset:0;background:var(--mk-bg);mix-blend-mode:multiply;opacity:.35}
+
+/* Scheda progetto (istruzione 60): "Se ne è parlato" e "Progetto successivo" sono due blocchi distinti, nessun terzo fondo tra loro */
+body[data-mk] .frame section[aria-labelledby="h-press"]{background:#fff!important;margin:0!important;padding-block:clamp(72px,10vh,120px)!important}
+body[data-mk] .frame .pj-next{display:block;position:relative;isolation:isolate;margin:0!important;background:#151517!important;color:#fff!important;min-height:clamp(320px,52vh,520px);overflow:hidden;text-decoration:none}
+body[data-mk] .frame .pj-next .ph{position:absolute!important;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important;border:0!important}
+body[data-mk] .frame .pj-next .ph .mk-img{opacity:.55;transition:opacity .5s,transform .9s}
+body[data-mk] .frame .pj-next:hover .ph .mk-img{opacity:.7;transform:scale(1.03)}
+body[data-mk] .frame .pj-next .pj-next-in{position:absolute;left:clamp(16px,4cqi,56px);right:clamp(16px,4cqi,56px);bottom:clamp(28px,5vh,56px);z-index:2;display:flex;align-items:flex-end;justify-content:space-between;background:none!important;color:#fff!important}
+body[data-mk] .frame .pj-next .pj-next-in small{display:block;color:#e9b8c0!important;font:600 12px/1 var(--fb);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+body[data-mk] .frame .pj-next .pj-next-in b{color:#fff!important;font:700 clamp(36px,5cqi,80px)/.95 var(--fh);letter-spacing:-.045em}
+body[data-mk] .frame .pj-next .dx-arr{filter:invert(1)}
+
+/* Contatti (istruzione 60): breadcrumb sopra l'apertura scura senza toccarne il contenuto, testi leggibili */
+body[data-mk] .frame .crumb{position:relative;z-index:5}
+body[data-mk] .frame .crumb + .ct-dark{padding-top:calc(136px + clamp(48px,8vh,96px))!important}
+body[data-mk] .frame .crumb + .ct-dark ~ * .crumb{display:none}
+body[data-mk] .frame .crumb a,body[data-mk] .frame .crumb li{color:inherit}
+body[data-mk] .frame .co-cd,body[data-mk] .frame .co-cd h2,body[data-mk] .frame .co-cd h3,body[data-mk] .frame .co-cd strong,body[data-mk] .frame .co-cd dt{color:#fff!important}
+body[data-mk] .frame .co-cd p,body[data-mk] .frame .co-cd dd,body[data-mk] .frame .co-cd small,body[data-mk] .frame .co-cd span{color:rgba(255,255,255,.78)!important}
+body[data-mk] .frame .co-cd a{color:#fff!important;text-decoration-color:rgba(255,255,255,.5)}
+body[data-mk] .frame #main .co-cd p,body[data-mk] .frame .pg-cd.co-cd p{color:rgba(255,255,255,.82)!important}
+
+/* Scheda immobile, apertura a scorrimento orizzontale (istruzione 60): pannelli tutti quadrati, niente grigi */
+body[data-mk] .frame .rs-hx-tr{gap:16px!important;align-items:stretch}
+body[data-mk] .frame .rs-hx-tr > .rs-p{flex:0 0 auto!important;width:auto!important;aspect-ratio:1/1!important;border-radius:28px!important;overflow:auto!important;overscroll-behavior:contain}
+body[data-mk] .frame .rs-p1{background:#e8dfd2!important;color:var(--ink)!important}
+body[data-mk] .frame .rs-p1 *{color:inherit}
+body[data-mk] .frame .rs-p1 .rs-p1-top span{color:var(--acc)!important}
+body[data-mk] .frame .rs-p1 .rs-p1-cap{color:#4a4b4f!important}
+body[data-mk] .frame .rs-p1 .badge{color:#fff!important}
+body[data-mk] .frame .rs-p2{overflow:hidden!important}
+body[data-mk] .frame .rs-pd{background:#fff!important}
+body[data-mk] .frame .rs-pu{background:#fff!important}
+body[data-mk] .frame .rs-pf{background:#f4ede3!important}
+body[data-mk] .frame .rs-p1{padding-bottom:28px!important}
+body[data-mk] .frame .rs-pu .rs-up{gap:16px!important}
+body[data-mk] .frame .rs-pu .rs-up-pl{max-height:300px}
+body[data-mk] .frame .rs-pu .pg-ds > div{padding:10px 0!important}
+body[data-mk] .frame .rs-pu .rs-ut{gap:8px!important;flex-wrap:wrap}
+body[data-mk] .frame .rs-pu{padding-block:20px!important}
+body[data-mk] .frame .rs-pu .rs-up-pl{max-height:260px}
+body[data-mk] .frame .rs-pu > section > p{margin:6px 0 12px!important}
+body[data-mk] .frame .rs-pu .rs-up-pl{max-height:220px!important}
+body[data-mk] .frame .rs-pu .rs-up-pl .ph{aspect-ratio:auto!important;height:220px!important}
+
+/* Impresa, loghi certificazioni (istruzione 61): senza riquadro, più grandi, stessa dimensione ottica */
+body[data-mk] .frame .ix-gar .ix-t-logo{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;width:auto!important;height:80px!important;overflow:visible!important;display:flex!important;align-items:center;justify-content:flex-start}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img{position:static!important;inset:auto;width:auto!important;height:72px!important;max-width:none!important;object-fit:contain}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img[src*="attestazione-soa"]{height:auto!important;width:160px!important}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img[src*="cassa-edile-award"]{height:78px!important}
+body[data-mk] .frame .ix-gar .ix-t-logo:not(.mk-logo){font:700 18px/1.05 var(--fh)!important;color:var(--ink)!important;letter-spacing:-.02em;max-width:9ch}
+
+/* Categoria, apertura: slide e anteprima senza foto (istruzione 61) */
+body[data-mk] .ct-bg .ph,body[data-mk] .ct-pk .ph{position:absolute;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important;border:0!important}
+body[data-mk] .ct-bg .mk-img,body[data-mk] .ct-pk .mk-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body[data-mk] .mk-noimg{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,#3a3335,#1b1416);color:rgba(255,255,255,.7);font:600 12px/1.3 var(--fb);letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:16px}
+
+/* Scheda immobile (istruzione 61): breadcrumb + apertura entrano insieme nel 100% della finestra */
+body[data-mk] .frame .rs-hx.hx-on .rs-hx-pin{height:calc(100svh - var(--stick,84px) - 64px)!important;padding-block:8px 20px;box-sizing:border-box}
+body[data-mk] .frame .crumb:has(+ .rs-hx){height:52px;margin:0!important;display:flex;align-items:center}
+
+/* Sezioni scure (.sec.dk), es. "Articoli correlati" (istruzione 61): fondo scuro e testo chiaro sempre insieme */
+body[data-mk] .frame .sec.dk{background:#151517!important;color:#fff!important}
+body[data-mk] .frame .sec.dk h2,body[data-mk] .frame .sec.dk .dx-h,body[data-mk] .frame .sec.dk > .in > div h2{color:#fff!important}
+body[data-mk] .frame .sec.dk .dx-k{color:#e9b8c0!important}
+body[data-mk] .frame .sec.dk .lead,body[data-mk] .frame .sec.dk > .in > p{color:rgba(255,255,255,.78)!important}
+body[data-mk] .frame .sec.dk .dx-arr{filter:invert(1)}
+body[data-mk] .frame .ar-rel .card,body[data-mk] .frame .ar-rel .card h3{color:#fff}
+body[data-mk] .frame .ar-rel .ar-rc a{color:#fff!important}
+body[data-mk] .frame .ar-rel .ar-rc h3{color:#fff!important}
+body[data-mk] .frame .ar-rel .ar-rc .meta,body[data-mk] .frame .ar-rel .ar-rc .meta *{color:rgba(255,255,255,.7)!important}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo{gap:6px}
+body[data-mk] .frame .ix-gar .ix-t-logo.mk-logo img[src*="cassa-edile-award"]{height:64px!important}
+body[data-mk] .frame .ix-gar .ix-tlist{grid-template-columns:repeat(3,minmax(0,1fr))!important}

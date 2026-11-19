@@ -115,7 +115,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Lavora con noi)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20h"></script>
+<script src="wireframe.js?v=22h"></script>
 <script src="wf-dyn.js?v=16"></script>
 <script src="wf-impresa.js?v=3"></script>
 <script>/* Lavora con noi: ritratti sparsi senza sovrapposizioni, composizione diversa a ogni caricamento */(function(){var u=document.querySelector('.lv-faces');if(!u)return;var P=[].slice.call(u.children),mq=matchMedia('(min-width:901px)');function lay(){if(!mq.matches){P.forEach(function(p){p.style.cssText=''});return}var W=u.clientWidth,H=u.clientHeight,base=Math.min(W*.2,H*.26,200),B=[];P.forEach(function(p,i){var w=Math.round(base*(.7+Math.random()*.55)),best=null,bo=1e18;for(var t=0;t<400;t++){var x=Math.random()*(W-w),y=Math.random()*(H-w-24),o=0;B.forEach(function(b){var ix=Math.max(0,Math.min(x+w,b.x+b.w+12)-Math.max(x,b.x-12)),iy=Math.max(0,Math.min(y+w,b.y+b.w+12)-Math.max(y,b.y-12));o+=ix*iy});if(o<bo){bo=o;best={x:x,y:y,w:w}}if(o===0)break}B.push(best);p.style.left=best.x.toFixed(0)+'px';p.style.top=best.y.toFixed(0)+'px';p.style.width=best.w+'px';p.style.setProperty('--d',(i*70)+'ms')});u.classList.add('on')}var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(lay,150)});lay()})();</script>

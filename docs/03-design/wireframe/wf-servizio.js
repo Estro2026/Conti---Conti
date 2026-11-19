@@ -220,7 +220,7 @@
       err.focus();
       return false;
     }
-    err.addEventListener('click', function (e) { var a = e.target.closest('a'); if (!a) return; e.preventDefault(); var f = d.getElementById(a.getAttribute('href').slice(1)); if (f) f.focus(); });
+    if (err) err.addEventListener('click', function (e) { var a = e.target.closest('a'); if (!a) return; e.preventDefault(); var f = d.getElementById(a.getAttribute('href').slice(1)); if (f) f.focus(); });
     $$('[required]', form).forEach(function (f) { f.addEventListener(f.type === 'checkbox' ? 'change' : 'blur', function () { if (f.hasAttribute('aria-invalid')) check(f); }); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();

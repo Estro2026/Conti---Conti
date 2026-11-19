@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Mockup FAQ | Conti e Conti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="../wireframe/wireframe.css?v=20261020h"><link rel="stylesheet" href="../wireframe/wf-dyn.css?v=21"><link rel="stylesheet" href="../wireframe/wf-servizio.css?v=8"><link rel="stylesheet" href="../wireframe/wf-mid.css?v=4"><link rel="stylesheet" href="../wireframe/wf-scale.css?v=13"><link rel="stylesheet" href="../wireframe/wf-a.css?v=29"><link rel="stylesheet" href="../wireframe/wf-mk.css?v=1"><script src="../wireframe/wf-zoom.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="mk-pagine.css?v=2"><script>window.WF_MODE="cliente"</script></head>
+<body data-active="faq" data-sticky="preventivo" data-mk>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">FAQ</li></ol></nav>
+
+<!-- 1. APERTURA -->
+<section class="sec" style="border-top:0" aria-labelledby="h1"><div class="in">
+  <div class="sv-top">
+    <h1 id="h1" class="sv-h1" data-rv>Domande frequenti</h1>
+    <p class="lead" data-rv style="--d:1">Preventivi, tempi, zone, vendita diretta: le domande che ci fanno più spesso, con risposte brevi e dirette.</p>
+  </div>
+  <i data-note="CLIENTE|Pagina FAQ richiesta nel brief, anche per la ricerca con AI. Domande e risposte NON fornite: sono da costruire con SEO e cliente (domande reali dei clienti: preventivi, tempi, zone, ristrutturazioni, acquisto dal costruttore)."></i>
+  <i data-note="PROPOSTA|Copy provvisorio: domande realistiche e risposte costruite SOLO su fatti noti (sito attuale, brief, call). Dove il dato manca la risposta è breve e porta il segno [dato da confermare]. Nessun prezzo, tempo o garanzia inventati."></i>
+    <i data-note="DEV|Da ristimare. Ricerca = JS custom (~60 righe) sul contenuto già nel DOM; nessun plugin, nessuna chiamata al server. LOW-MEDIUM."></i>
+</div></section>
+
+<!-- 2. INDICE + DOMANDE -->
+<section class="sec alt fq-lay" aria-label="Domande per argomento"><div class="in">
+  <div class="fq-q"><label for="fq-q" class="sr">Cerca tra le domande</label><input id="fq-q" type="search" placeholder="Cerca una domanda, per esempio: preventivo, tempi, Lago di Como" autocomplete="off"><button type="button" class="fq-x" hidden aria-label="Cancella la ricerca">&times;</button><p class="fq-live fq-q-n" role="status" aria-live="polite"></p></div>
+  <nav class="sv-sticky fq-nav" aria-label="Argomenti">
+    <div class="sv-pills">
+      <a class="sv-pill fq-jump" href="#g-f1">Preventivi e tempi <small>3</small></a>
+      <a class="sv-pill fq-jump" href="#g-f2">Come lavoriamo <small>5</small></a>
+      <a class="sv-pill fq-jump" href="#g-f3">Zone servite <small>2</small></a>
+      <a class="sv-pill fq-jump" href="#g-f4">Acquistare dal costruttore <small>4</small></a>
+    </div>
+  </nav>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. FAQ piu contemporanea (chat 2026-10-27): campo di ricerca grande in testa che filtra subito domande e risposte; su desktop gli argomenti diventano un indice verticale fisso a sinistra (argomento corrente evidenziato), le domande a destra. Mobile: indice in una pillola orizzontale."></i>
+  <div class="fq-row"><button type="button" class="fq-all" aria-expanded="false" aria-controls="fq-wrap">Apri tutte</button></div>
+  <div class="fq-wrap" id="fq-wrap">
+    <div class="fq-g" id="g-f1"><div class="fq-g-h"><h2 id="h-f1">Preventivi e tempi</h2><span>3 domande</span></div><div class="acc fq-acc">
+      <details open><summary>Come posso richiedere un preventivo?</summary><div class="fq-a"><p>Compili il modulo nella pagina <a href="contatti.html">Contatti</a> raccontando il progetto, oppure chiami lo 0362 557972 (lun-ven 8:30-12:00 e 14:00-18:30, sab 8:30-12:00). Ti ricontattiamo entro [tempo da confermare].</p></div></details>
+      <details><summary>Quanto costa ristrutturare o costruire?</summary><div class="fq-a"><p>Dipende dal progetto, dalle superfici e dal livello di finitura, quindi non pubblichiamo cifre generiche: il preventivo si costruisce sul tuo caso. [dato da confermare: come viene impostato il preventivo]</p></div></details>
+      <details><summary>Quanto durano i lavori?</summary><div class="fq-a"><p>Il rispetto dei tempi è uno dei valori su cui lavoriamo. La durata dipende dal tipo di intervento e viene indicata nel preventivo. [dato da confermare: indicazioni di massima per tipologia]</p></div></details>
+    </div></div>
+
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL (richiesta di Sara, 2026-11-02). Le domande sulle ristrutturazioni (detrazioni fiscali, referente durante i lavori) tornano qui dalla pagina servizio Ristrutturazioni: le domande stanno solo nella FAQ. Il gruppo Come lavoriamo passa a 4 domande. Anche la domanda sul general contractor torna qui dalla pagina Retail (5 domande)."></i>
+    <div class="fq-g" id="g-f2"><div class="fq-g-h"><h2 id="h-f2">Come lavoriamo</h2><span>5 domande</span></div><div class="acc fq-acc">
+      <details><summary>Che tipo di lavori realizzate?</summary><div class="fq-a"><p>Case, residenze, interventi di lusso, ville, palestre, allestimenti, attività commerciali e industriale. Le categorie sono quelle che trovi nella sezione <a href="cantieri.html">Realizzazioni</a>.</p></div></details>
+      <details><summary>Lavorate con architetti e studi di progettazione?</summary><div class="fq-a"><p>Sì. Realizziamo progetti per studi di architettura e designer, anche per clientela straniera che arriva tramite i propri architetti. Puoi anche rivolgerti a noi direttamente, con o senza un progetto già definito.</p></div></details>
+      <details><summary>Ci sono detrazioni fiscali sui lavori?</summary><div class="fq-a"><p>Le agevolazioni dipendono dal tipo di intervento e dalla normativa in vigore. [dato da confermare: se l'impresa offre supporto sulle pratiche]</p></div></details>
+      <details><summary>Chi dialoga con il mio progettista durante i lavori?</summary><div class="fq-a"><p>Il confronto con la Direzione Lavori è parte del servizio. [dato da confermare: chi fa da referente e con quale frequenza]</p></div></details>
+      <details><summary>Cosa significa che lavorate come general contractor?</summary><div class="fq-a"><p>Significa che puoi affidare a un solo referente il coordinamento dell'intero cantiere, invece di gestire in prima persona imprese e fornitori diversi. Conti e Conti opera direttamente oppure come General Contractor, a seconda del progetto. [dato da confermare: cosa è incluso]</p></div></details>
+    </div></div>
+
+    <div class="fq-g" id="g-f3"><div class="fq-g-h"><h2 id="h-f3">Zone servite</h2><span>2 domande</span></div><div class="acc fq-acc">
+      <details><summary>In quali zone lavorate?</summary><div class="fq-a"><p>Operiamo a Milano, Como, Varese e in Monza Brianza. La sede operativa è a Lentate sul Seveso (MB), in via Nazionale dei Giovi 169.</p></div></details>
+      <details><summary>Costruite anche sul Lago di Como?</summary><div class="fq-a"><p>Sì, realizziamo ville di lusso sul Lago di Como. Se hai un progetto in quella zona, scrivici dal modulo indicando il comune.</p></div></details>
+    </div></div>
+
+    <div class="fq-g" id="g-f4"><div class="fq-g-h"><h2 id="h-f4">Acquistare dal costruttore</h2><span>4 domande</span></div><div class="acc fq-acc">
+      <details><summary>Cosa significa comprare direttamente dal costruttore?</summary><div class="fq-a"><p>Tratti con l'impresa che costruisce, senza agenzie di mezzo, e hai lo stesso interlocutore dalla trattativa fino alla consegna e al rogito.</p></div></details>
+      <details><summary>Quali immobili sono in vendita?</summary><div class="fq-a"><p>Domus 54, via Diaz, Seregno, Residenza Solarium a Montesolaro e Residenza Paradiso a Lentate sul Seveso. Per ognuno trovi una scheda nella pagina <a href="in-vendita.html">In vendita</a>, con un modulo per chiedere informazioni.</p></div></details>
+      <details><summary>Quando verrà consegnata Residenza Solarium?</summary><div class="fq-a"><p>La consegna è prevista entro fine dicembre 2026. La residenza è una nuova costruzione di quattro unità a Montesolaro.</p></div></details>
+      <details><summary>Posso conoscere prezzi e visitare un immobile?</summary><div class="fq-a"><p>Per prezzi e visite scrivi dalla scheda dell'immobile: ti risponde direttamente l'impresa. [dato da confermare: prezzi pubblici o su richiesta]</p></div></details>
+    </div></div>
+  </div>
+  <div class="sv-empty fq-empty" hidden><h3>Nessuna domanda corrisponde alla ricerca</h3><p>Prova con un'altra parola, oppure chiedilo direttamente a noi: ti rispondiamo dall'impresa.</p><div class="btns"><a class="btn" href="contatti.html">Scrivici</a><a class="btn sec2" href="tel:+390362557972">Chiama lo 0362 557972</a></div></div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Indice degli argomenti come pillole con numero di domande, in una barra che resta sotto l'header (scorre in orizzontale su mobile): il clic porta al gruppo e sposta il focus sul titolo; i numeri si aggiornano con la ricerca. Accordion con details/summary: funziona da tastiera e screen reader anche senza JS, risposte nel DOM (leggibili da motori e AI). Apertura morbida: la risposta scende in 350 ms, si richiude in 280 ms; segno + che diventa −. 'Apri tutte / Chiudi tutte' con stato aria-expanded. Prima voce aperta. Mobile: summary alte almeno 56px. Riduci movimento: apertura istantanea, contenuto identico."></i>
+  <i data-note="RICERCA|VERIFY: i rich result FAQ di Google risultano limitati a pochi siti da fine 2023: il markup FAQPage non va considerato garanzia di visibilità; il valore è nei contenuti chiari. Controllare aggiornamento (Freshness agent) prima di promettere risultati."></i>
+  <i data-note="DEV|Da ristimare. PAGINA FAQ = Pagina Elementor con 4 widget Accordion annidato (uno per gruppo H2), 13 voci inserite a mano. Indice sticky con ancore (Icon List + Custom CSS), conteggi e 'Apri tutte' in JS custom; apertura morbida con Web Animations API. Schema FAQPage: una sola fonte (widget o plugin SEO, VERIFY) per non duplicarlo. Se le FAQ crescono molto: CPT FAQ + Loop. MEDIUM."></i>
+</div></section>
+
+<!-- 3. CTA -->
+<section class="sec"><div data-c="cta" data-notes data-t="Non trovi la risposta?" data-l="Raccontaci il tuo caso: ti rispondiamo noi, senza passaggi intermedi."></div></section>
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (FAQ)</h2><ol id="notes"></ol></div>
+
+<script src="../wireframe/wireframe.js?v=22h"></script>
+<script src="../wireframe/wf-dyn.js?v=16"></script>
+<script src="../wireframe/wf-servizio.js?v=3"></script>
+<script>/* FAQ: pillola degli argomenti con ombra quando resta fissa e argomento corrente evidenziato (chat 2026-10-27) */(function(){var n=document.querySelector('.fq-nav');if(!n)return;var L=[].slice.call(n.querySelectorAll('a[href^="#"]')),G=L.map(function(a){return document.querySelector(a.getAttribute('href'))}),t=0;function u(){t=0;var top=parseFloat(getComputedStyle(n).top)||0;n.classList.toggle('is-stuck',n.getBoundingClientRect().top<=top+1&&scrollY>50);var cur=0;G.forEach(function(g,i){if(g&&g.getBoundingClientRect().top<innerHeight*.35)cur=i});L.forEach(function(a,i){a.classList.toggle('is-cur',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
+
+<script src="mk-pagine.js?v=18"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
+</body></html>

@@ -89,9 +89,10 @@
     ub.forEach(function (b) {
       b.addEventListener('click', function () {
         ub.forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        var name = 'Unità ' + b.dataset.u;
+        var name = b.dataset.name || ('Unità ' + b.dataset.u);
         function swap() {
           uname.textContent = name;
+          ['piano', 'tipo', 'mq', 'est', 'disp'].forEach(function (k, i) { var dd = $$('.pg-ds dd', up)[i]; if (dd && b.dataset[k]) dd.textContent = b.dataset[k]; });
           if (uph) { var sp = $('span', uph); if (sp) sp.textContent = 'Planimetria ' + name + ' (immagine zoomabile + descrizione testuale)'; }
           up.classList.remove('is-swap');
         }

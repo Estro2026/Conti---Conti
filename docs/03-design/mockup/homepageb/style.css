@@ -571,3 +571,24 @@ footer nav li.ft-sv>ul li{margin:0 0 6px}
 .ws-card:focus-visible{outline:3px solid #fff;outline-offset:-6px}
 @media (prefers-reduced-motion:reduce){.ws-t,.ws-data,.ws-card::before{transition:none}}
 @media (max-width:700px){.works{--ws-step:clamp(28px,5svh,44px)}.ws{height:calc(100svh - var(--nav-h) - 3 * var(--ws-step))}}
+.tlogo-txt{font:700 13px/1.1 var(--fh,inherit);color:inherit}
+/* Loghi certificazioni (istruzione 59): stesso riquadro, proporzioni originali */
+.tlogos img,.tlogos img.wide{flex:0 0 auto;width:88px!important;height:64px!important;object-fit:contain!important;object-position:left center}
+.tlogo-txt{display:grid;place-items:center;width:88px;height:64px;border:1px solid currentColor;border-radius:10px;opacity:.7;font-size:11px;text-align:center}
+/* Certificazioni (istruzione 60): una riga, stessa altezza, stessa distanza */
+.tgrid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+@media (max-width:900px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.tlogos{gap:12px!important;height:56px!important}
+.tlogos img,.tlogos img.wide{width:auto!important;height:48px!important;max-width:120px!important;object-fit:contain!important}
+.tlogo-txt{width:96px!important;height:48px!important}
+/* Articoli (istruzione 60): nessuna foto di case a caso; segnaposto finché non c è l immagine dell articolo */
+.mk-ph-art{display:grid;place-items:center;width:100%;height:100%;min-height:180px;background:linear-gradient(160deg,#e9e3da,#d8d0c4)}
+.mk-ph-art span{font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6b645b}
+/* Loghi certificazioni (istruzione 61): dimensione ottica uguale (stessa area apparente), coppie vicine */
+.gc-logo,.tlogos{gap:6px!important;height:72px!important;align-items:center}
+.gc-logo img,.tlogos img{width:auto!important;max-width:none!important;object-fit:contain!important;filter:none!important;opacity:1!important;mix-blend-mode:multiply}
+.gc-logo img[src*="logo-iso"],.tlogos img[src*="logo-iso"],.gc-logo img[src*="logo-tuv"],.tlogos img[src*="logo-tuv"]{height:60px!important}
+.gc-logo img[src*="cassa-edile-award"],.tlogos img[src*="cassa-edile-award"]{height:68px!important}
+.gc-logo img[src*="attestazione-soa"],.tlogos img[src*="attestazione-soa"]{height:auto!important;width:150px!important}
+.mk-art-img{display:block;width:100%;height:100%;object-fit:cover}
+.tgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important}

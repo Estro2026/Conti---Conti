@@ -89,3 +89,16 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - Per seo: (30) la pagina e il menu "Cantieri" ora si chiamano "Realizzazioni" (2026-11-06); l'URL cantieri.html e gli anchor non sono cambiati: decidere slug /realizzazioni/ e redirect 301 dal vecchio /portfolio/.
 - Per content-language: (30) "cantieri" resta come parola comune nei testi (es. "180 cantieri l'anno"); cambiato solo dove indica la sezione. Frase "Certificazioni e riconoscimenti verificati da enti esterni" in Impresa lasciata com'è: da confermare.
 - Per ux-architect: (31) le pagine servizio non sono più raggiungibili da menu e footer; decidere se restano (link dalla Home B e interni) o vanno tolte dalla sitemap.
+
+Per ui-art-direction (2026-11-18, istruzione 32): verificare la coerenza delle 15 pagine mockup con la Home A (colori, tipografia, card, CTA); mk-pagine.css è lo strato di veste.
+Per precision-layout-qa / responsive-device: controllo cross-page e mobile delle pagine mockup generate dal wireframe.
+
+Per image-curator (2026-11-18, istruzione 33): verificare gli abbinamenti foto/segnaposto in mockup/mk-pagine.js (es. Casa MJO = therise.jpg come nella card della Home A).
+
+Per development-estimation (2026-11-18, istruzione 38): librerie approvate nel mockup (vendor/VERSIONI.md); ristimare integrazione in Elementor (script globali, Leaflet con fornitore tessere, PhotoSwipe, prima/dopo).
+Per accessibility / motion: verificare Lenis (scorrimento morbido) e parallasse GSAP con tastiera e riduci movimento.
+
+Per ux-architect / development-estimation (2026-11-18, istruzione 45): tolto "Mostra altri progetti" da Realizzazioni; decidere se tutti i progetti stanno in pagina o serve paginazione.
+
+Per image-curator (2026-11-18, istruzione 48): foto reali dei 12 progetti in assets/cliente-basecamp/02-foto-progetti (70 HEIC da convertire); selezionare per mockup.
+Per content-language: dati immobili e team in assets/cliente-basecamp/08-testi-e-documenti/informazioni-estratte.md; correggere residenza.html (Solarium) dopo verifica.

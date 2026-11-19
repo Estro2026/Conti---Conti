@@ -610,7 +610,7 @@ body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-c{opacity:0}
 .deep{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .deep i{position:absolute;display:block}
 .values{background:var(--ink)}
-.values .d-photo{inset:-14% 0;background:url(img/cantiere.jpg) 50% 50%/cover;opacity:.32;filter:saturate(.7);transform:translate3d(0,calc(var(--sp,0) * 90px),0) scale(1.08)}
+.values .d-photo{inset:-14% 0;background:url(img/foto/squadra-quattro-casseri.webp) 50% 50%/cover;opacity:.32;filter:saturate(.7);transform:translate3d(0,calc(var(--sp,0) * 90px),0) scale(1.08)}
 .values .d-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--ink) 0%,rgba(21,21,23,.5) 28%,rgba(21,21,23,.7) 70%,var(--ink) 100%)}
 .d-cc{right:-6%;top:6%;width:min(62vw,880px);aspect-ratio:1;background:url(img/pattern-cc-w.png) 0 0/520px auto repeat;opacity:.09;-webkit-mask-image:radial-gradient(closest-side,#000 25%,transparent 100%);mask-image:radial-gradient(closest-side,#000 25%,transparent 100%);transform:translate3d(0,calc(var(--sp,0) * -140px),0)}
 .d-glow{left:-12%;bottom:-22%;width:62vw;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(125,29,44,.55),transparent);transform:translate3d(0,calc(var(--sp,0) * -60px),0)}
@@ -625,7 +625,7 @@ body.menu-open .nav .logo-w{opacity:1}body.menu-open .nav .logo-c{opacity:0}
 
 .trust{background:var(--acc-d)}
 .trust::before{display:none}
-.trust .d-photo{inset:-16% 0;background:url(img/team.jpg) 50% 40%/cover;opacity:.2;mix-blend-mode:luminosity;transform:translate3d(0,calc(var(--sp,0) * 80px),0) scale(1.08)}
+.trust .d-photo{inset:-16% 0;background:url(img/foto/squadra-tre-gilet-sottotetto.webp) 50% 40%/cover;opacity:.2;mix-blend-mode:luminosity;transform:translate3d(0,calc(var(--sp,0) * 80px),0) scale(1.08)}
 .trust .d-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--acc-d) 0%,rgba(92,20,32,.55) 40%,var(--acc-d) 100%)}
 .trust .d-cc{right:auto;left:-8%;top:auto;bottom:-14%;width:min(70vw,980px);opacity:.12}
 .trust .d-glow{left:auto;right:-14%;top:-24%;bottom:auto;background:radial-gradient(closest-side,rgba(255,255,255,.18),transparent)}

@@ -336,7 +336,7 @@
 
 /* ======== quattro impegni: foto del cantiere + tabella da capitolato (impegno a sinistra, prova a destra) ======== */
 .vals.wl-s .wl-grid{display:grid!important;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,4.4vw,72px);align-items:stretch}
-.vals.wl-s .wl-grid::before{content:"";display:block;min-height:min(56vh,520px);border-radius:20px;background:url(img/cantiere.jpg) 42% 40%/cover;box-shadow:0 36px 70px -46px rgba(21,21,23,.5)}
+.vals.wl-s .wl-grid::before{content:"";display:block;min-height:min(56vh,520px);border-radius:20px;background:url(img/foto/squadra-quattro-casseri.webp) 42% 40%/cover;box-shadow:0 36px 70px -46px rgba(21,21,23,.5)}
 .vals.wl-s .wl-grid .wl{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:repeat(4,1fr);height:min(56vh,520px);margin:0;padding:0!important;border-top:2px solid #151517}
 .vals.wl-s .wl-grid .wl-i{display:grid!important;grid-template-columns:clamp(40px,3.6vw,60px) minmax(0,1fr) minmax(0,1.05fr);align-items:center;column-gap:clamp(16px,2.4vw,40px);min-height:0!important;padding:0 clamp(6px,1vw,16px)!important;border:0!important;border-bottom:1px solid rgba(21,21,23,.16)!important;border-left:0!important}
 .vals.wl-s .wl-grid .wl-i:last-child{border-bottom:0!important}
@@ -400,3 +400,35 @@
 footer nav li.ft-sv>span{display:block}
 footer nav li.ft-sv>ul{margin:8px 0 2px 14px;padding-left:12px;border-left:1px solid rgba(255,255,255,.2)}
 footer nav li.ft-sv>ul li{margin:0 0 6px}
+/* In vendita: copertina senza render (istruzione 55) */
+.imm-cover-ph{display:grid;place-items:center;background:linear-gradient(160deg,#e9e3da,#d8d0c4)}
+.imm-cover-ph span{font:600 12px/1 var(--fb,Inter,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:#7a7268}
+/* In numeri a tutta larghezza: la colonna destra era per "I nostri servizi", tolta il 2026-11-06 (istruzione 57) */
+.sx-merge{grid-template-columns:1fr!important}
+.sx-merge .stats.sg-full{width:100%}
+@media (min-width:900px){.sx-merge .sg{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(24px,4vw,64px)!important}.sx-merge .sg-i{flex-direction:column!important;align-items:flex-start!important;border-top:1px solid rgba(255,255,255,.4)!important;padding-top:22px!important}.sx-merge .sg-in{width:min(1280px,100% - 2 * var(--gut,48px))!important;margin-inline:auto!important}.sx-merge .sg-head h2{max-width:16ch}}
+/* Certificazioni Home A allineate alla pagina Impresa (istruzione 58) */
+.gc-logo-txt{display:grid;place-items:center;font:700 12px/1.1 var(--fh,Inter Tight,sans-serif);text-align:center;color:var(--ink,#151517)}
+.gc-l{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}
+/* Loghi certificazioni (istruzione 59): stesso riquadro per tutti, proporzioni originali, niente deformazioni */
+.gc-logo{display:flex!important;align-items:center;gap:12px;height:72px!important;padding:0!important;background:none!important}
+.gc-logo img,.gc-logo img.wide{flex:0 0 auto;width:88px!important;height:64px!important;max-height:none!important;object-fit:contain!important;object-position:left center}
+.gc-logo-txt{width:88px;height:64px;border:1px solid rgba(21,21,23,.15);border-radius:10px;font-size:11px}
+.gc-logo.gc-logo-txt{height:64px!important;flex:0 0 auto}
+/* Certificazioni (istruzione 60): una riga, loghi alla stessa altezza visiva, stessa distanza nelle coppie */
+.gc-l{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(16px,2.4vw,40px)!important}
+@media (max-width:900px){.gc-l{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.gc-logo{gap:12px!important;height:56px!important}
+.gc-logo img,.gc-logo img.wide{width:auto!important;height:48px!important;max-width:120px!important;object-fit:contain!important}
+.gc-logo.gc-logo-txt{height:48px!important;width:96px!important}
+/* Articoli (istruzione 60): nessuna foto di case a caso; segnaposto finché non c è l immagine dell articolo */
+.mk-ph-art{display:grid;place-items:center;width:100%;height:100%;min-height:180px;background:linear-gradient(160deg,#e9e3da,#d8d0c4)}
+.mk-ph-art span{font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6b645b}
+/* Loghi certificazioni (istruzione 61): dimensione ottica uguale (stessa area apparente), coppie vicine */
+.gc-logo,.tlogos{gap:6px!important;height:72px!important;align-items:center}
+.gc-logo img,.tlogos img{width:auto!important;max-width:none!important;object-fit:contain!important;filter:none!important;opacity:1!important;mix-blend-mode:multiply}
+.gc-logo img[src*="logo-iso"],.tlogos img[src*="logo-iso"],.gc-logo img[src*="logo-tuv"],.tlogos img[src*="logo-tuv"]{height:60px!important}
+.gc-logo img[src*="cassa-edile-award"],.tlogos img[src*="cassa-edile-award"]{height:68px!important}
+.gc-logo img[src*="attestazione-soa"],.tlogos img[src*="attestazione-soa"]{height:auto!important;width:150px!important}
+.mk-art-img{display:block;width:100%;height:100%;object-fit:cover}
+.gc-l{grid-template-columns:repeat(3,minmax(0,1fr))!important}

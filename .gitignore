@@ -6,3 +6,13 @@ docs/00-input/sito-web/Credenziali*
 pacchetto-sviluppo/
 pacchettosviluppocontieconti/
 pacchettosviluppocontieconti.zip
+
+# Materiale originale del cliente da Basecamp (1,5 GB): resta in locale; nel repo vanno le versioni WebP in assets/immagini-sito
+assets/cliente-basecamp/
+# Copie e archivi locali
+docs/03-design/mockup - Copia/
+docs/03-design/mockup - Copia.zip
+docs/03-design/mockup/*.zip
+docs/03-design/mockup/hero-sequenza/*.zip
+.workflow-cache/
+.claude/_backup-template/

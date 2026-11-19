@@ -114,20 +114,6 @@
 </div></section>
 
 <!-- 7. UFFICI: indice interattivo, numero grande e descrizione dell'ufficio scelto -->
-<section class="sec ix-sv-s ix-vh" id="servizi" aria-labelledby="h-sv"><div class="in">
-  <div class="ix-sv-h">
-    <h2 id="h-sv" class="dx-h">Cosa costruiamo</h2>
-    <p class="lead">Tre aree di lavoro. Gli uffici che seguono ogni cantiere sono raccontati dentro ciascuna.</p>
-  </div>
-  <ol class="ix-flow ix-flow-3">
-    <li data-rv><a class="ix-fl" href="servizio-residenze.html"><span class="ix-flow-n" aria-hidden="true">01</span><h3>Residenze</h3><span class="ix-fl-go">Scopri il servizio &rarr;</span></a></li>
-    <li data-rv style="--d:1"><a class="ix-fl" href="servizio-ristrutturazioni.html"><span class="ix-flow-n" aria-hidden="true">02</span><h3>Ristrutturazioni</h3><span class="ix-fl-go">Scopri il servizio &rarr;</span></a></li>
-    <li data-rv style="--d:2"><a class="ix-fl" href="servizio-retail.html"><span class="ix-flow-n" aria-hidden="true">03</span><h3>Retail</h3><span class="ix-fl-go">Scopri il servizio &rarr;</span></a></li>
-  </ol>
-  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL (richiesta di Sara, 2026-11-02). Gli 8 uffici (Qualità e sicurezza, General Contractor, Preventivazione, Tecnico, Acquisti, Logistica, Amministrazione, Vendita) sono stati TOLTI da questa pagina e SPOSTATI nelle tre pagine servizio: Residenze = Tecnico e Vendita; Ristrutturazioni = Preventivazione e Amministrazione; Retail = General Contractor, Acquisti e Logistica. Qualità e sicurezza non è più un blocco: la frase 'personale formato sulla sicurezza in cantiere' è nella scheda ISO 9001 di Garanzie. Qui resta solo l'accesso alle tre aree. L'ancora #servizi resta per il redirect 301 da /servizi/ (sito vecchio) verso questo blocco."></i>
-  <i data-note="RICERCA|Le tre aree vengono dalle tre schede della home del sito vecchio (Residenze, Ristrutturazioni, Retail); gli 8 uffici dalla pagina Servizi vecchia (contieconti.it/servizi/)."></i>
-  <i data-note="DEV|Da ristimare. Complessità LOW: tre tessere con link (container grid), ingresso a cascata con Motion Effects."></i>
-</div></section>
 
 <!-- 8. GARANZIE: quattro schede grandi, si aprono sul posto -->
 <section class="sec ix-gar ix-vh" id="garanzie" aria-labelledby="h-gar"><div class="ix-gar-bg" aria-hidden="true"><div data-noratio data-ph="Foto reale velata: squadra in cantiere|16/9"></div></div><div class="in">
@@ -138,8 +124,7 @@
   <ul class="ix-tlist">
     <li data-rv style="--d:0"><span class="ix-t-tag">Certificazione</span><span class="ix-t-logo" aria-hidden="true">ISO 9001</span><strong>UNI EN ISO 9001:2015</strong><span class="ix-t-sub">Sistema qualità</span><p>Sistema qualità certificato da ente indipendente (gruppo TÜV SÜD) e personale formato sulla sicurezza in cantiere.</p><dl><div><dt>Ente</dt><dd>TÜV Italia</dd></div><div><dt>Dal</dt><dd>2008 (versione 2015 dal 2020)</dd></div></dl></li>
     <li data-rv style="--d:1"><span class="ix-t-tag">Attestazione</span><span class="ix-t-logo" aria-hidden="true">SOA</span><strong>Attestazione SOA</strong><span class="ix-t-sub">Classifica [IV bis]</span><p>Qualifica per partecipare ad appalti pubblici. [Categorie e scadenza da confermare.]</p><dl><div><dt>Dal</dt><dd>2023</dd></div><div><dt>Classifica</dt><dd>[IV bis]</dd></div></dl></li>
-    <li data-rv style="--d:2"><span class="ix-t-tag">Riconoscimento</span><span class="ix-t-logo" aria-hidden="true">Cassa Edile</span><strong>Cassa Edile Awards</strong><span class="ix-t-sub">2024 e 2025-2026</span><p>[Motivazione del riconoscimento da recuperare.]</p><dl><div><dt>Edizioni</dt><dd>2024 e 2025-2026</dd></div></dl></li>
-    <li data-rv style="--d:3"><span class="ix-t-tag">Iscrizione</span><span class="ix-t-logo" aria-hidden="true">Cassa dei Laghi</span><strong>Cassa dei Laghi</strong><span class="ix-t-sub">Impresa iscritta</span><p>[Cosa comporta l'iscrizione, in una riga, da confermare.]</p></li>
+    <li data-rv style="--d:2"><span class="ix-t-tag">Riconoscimento</span><span class="ix-t-logo" aria-hidden="true">Cassa Edile</span><strong>Cassa Edile Awards</strong><span class="ix-t-sub">2024, 2025 e 2026</span><p>[Motivazione del riconoscimento da recuperare.]</p><dl><div><dt>Edizioni</dt><dd>2024 e 2025-2026</dd></div></dl></li>
   </ul>
   <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Revisione dopo feedback: stesso impianto della sezione Garanzie delle homepage. Fondo scuro con foto della squadra velata che scorre più lenta (parallasse), titolo e testo, poi 4 colonne senza filetti (feedback 2026-10-20): etichetta (Certificazione / Attestazione / Riconoscimento / Iscrizione), marchio, nome grande, riga di dettaglio, ente e anno sempre visibili (nessuna scheda da aprire). Le colonne entrano in sequenza. Tablet 2x2, mobile 1 colonna. Nel mockup: loghi ufficiali, grigi a riposo e a colori al passaggio, come in home. Etichette delle colonne: PROPOSTA (Iscrizione per Cassa dei Laghi)."></i>
   <i data-note="DEV|Da ristimare. Complessità LOW: stesso blocco della sezione Garanzie in home (template riusabile), 4 colonne invece di 3, foto di sfondo con Motion Effects."></i>
@@ -153,7 +138,7 @@
 </div></div></div>
 <div class="notes"><h2>Annotazioni (Impresa)</h2><ol id="notes"></ol></div>
 <script src="mode.js"></script>
-<script src="wireframe.js?v=20h"></script>
+<script src="wireframe.js?v=22h"></script>
 <script src="wf-dyn.js?v=16"></script>
 <script src="wf-impresa-x.js?v=5"></script>
 <script>(function(){var r=document.querySelector('[data-ixs]');if(!r)return;var S=[].slice.call(r.querySelectorAll('.ixs-s')),B=[].slice.call(r.querySelectorAll('.ixs-y button')),c=0,t=0,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;function go(i){c=(i+S.length)%S.length;S.forEach(function(s,k){s.classList.toggle('on',k===c)});B.forEach(function(b,k){b.setAttribute('aria-pressed',k===c?'true':'false');b.classList.remove('run');if(k===c&&!rm){void b.offsetWidth;b.classList.add('run')}})}function play(){stop();if(!rm)t=setInterval(function(){go(c+1)},5000)}function stop(){clearInterval(t)}B.forEach(function(b,k){b.addEventListener('click',function(){go(k);play()})});r.addEventListener('mouseenter',stop);r.addEventListener('mouseleave',play);r.addEventListener('focusin',stop);go(0);play()})();</script>
