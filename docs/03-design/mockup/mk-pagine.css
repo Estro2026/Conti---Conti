@@ -543,3 +543,7 @@ body[data-mk] .frame .ar-hd .ar-hd-f{border-color:rgba(255,255,255,.3)!important
 /* Progetto successivo: testo e freccia allineati ai bordi del contenuto delle altre sezioni (es. "Se ne è parlato") */
 body[data-mk] .frame .pj-next .pj-next-in{left:max(clamp(16px,4cqi,56px),calc((100cqi - var(--wrap,1280px)) / 2))!important;right:max(clamp(16px,4cqi,56px),calc((100cqi - var(--wrap,1280px)) / 2))!important}
 body[data-mk] .frame .pj-next .pj-next-in{padding-inline:0!important}
+/* Responsive (istruzione 89): in Contatti la mappa e la sua didascalia vanno a capo invece di allargare la pagina sotto i 320 px */
+body[data-mk] .frame .co-bento .pg-ca>*,body[data-mk] .frame .co-bento .co-mp,body[data-mk] .frame .co-bento .co-mp .co-map{min-width:0;max-width:100%}
+body[data-mk] .frame .co-bento .co-mp figcaption{flex-wrap:wrap;gap:4px 12px}
+@container (max-width:700px){body[data-mk] .frame .co-bento .pg-ca{grid-template-columns:minmax(0,1fr)!important}}

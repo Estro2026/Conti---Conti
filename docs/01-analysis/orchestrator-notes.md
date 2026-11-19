@@ -110,3 +110,7 @@ Per content-language: dati immobili e team in assets/cliente-basecamp/08-testi-e
 - Per precision-layout-qa: (80) .pj-next-in: bottom auto, top 50% e translateY(-50%) (centrato in verticale, layout invariato).
 
 - Per accessibility: (81) controllo contrasto hero: servizio .dx-k/.lead (era 1.6:1 e 1.9:1 su #151517) ora #f2c9cf e bianco .9; Realizzazioni data-hero="light" per header scuro; da rimisurare con strumento dedicato prima della consegna.
+
+- Per content-language: (88) PDF nomi: pagina 1 Ufficio (Conti, Cavallaro, Munari, Spini, Ciceri, Susanna Conti Cavallaro), pagina 2 Amministrazione e acquisti (Prataviera, Centurelli, Barbuzza, Benzi), pagina 3 Cantiere (Contri, Meroni senza foto, Mariani, Cagnazzo). Abbinamento foto-nome: verificare con il cliente le due foto di cantiere senza nome.
+
+- Per responsive-device: (89) regole a breakpoint scavalcate da regole successive con !important (3-4 colonne in Home A/B e Categoria) e griglie con track 1fr (min-content) sono la causa ricorrente degli overflow: usare minmax(0,1fr) e container query dopo le regole generali. Da provare su Safari iOS, Firefox e Android reali.

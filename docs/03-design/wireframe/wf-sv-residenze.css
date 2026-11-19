@@ -199,3 +199,6 @@ html[data-zoom] .svr-h2-s{font-size:calc(clamp(28px,3.4cqi,46px) * var(--sk,1))!
   .svr-fit{--svr-rest:calc(2 * var(--svr-pad,clamp(44px,7cqi,92px)) + 440px)}
   .svr-fit .svr-idx button{min-height:40px;padding:8px 10px;font-size:22px}
 }
+
+/* Responsive (istruzione 89): frecce e pulsante "Vedi le realizzazioni" vanno a capo invece di uscire dallo schermo sotto i 400 px */
+[class$="-ctrl"]{flex:0 1 auto;flex-wrap:wrap;max-width:100%;min-width:0}

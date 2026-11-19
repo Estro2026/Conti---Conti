@@ -8,7 +8,7 @@
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="homepageb/style.css?v=17">
+<link rel="stylesheet" href="homepageb/style.css?v=21">
 <link rel="stylesheet" href="ab-switch.css">
 </head>
 <body>
@@ -187,10 +187,11 @@
         <button type="button" data-i="3" aria-pressed="false"><small>04</small>Ufficio e direzione</button>
       </div>
       <div class="tm-fig">
-        <img class="on" src="img/foto/squadra-quattro-casseri.webp" alt="La squadra di cantiere di Conti e Conti in posa davanti a un edificio in costruzione." loading="lazy">
-        <img src="img/foto/team-irene-ciceri-ufficio.webp" alt="Irene Ciceri, Sicurezza e qualità, alla sua scrivania nella sede di Lentate sul Seveso." loading="lazy">
-        <img src="img/foto/team-capocantiere-casco-bianco.webp" alt="Un capocantiere con casco bianco in un edificio in costruzione." loading="lazy">
-        <img class="contain" src="homepageb/img/ritrattoprofessionalesupoltronamoderna.webp" alt="Massimo Conti, amministratore unico, seduto su una poltrona moderna." loading="lazy">
+        <img class="on" data-n="Squadra di cantiere" data-r="" src="img/foto/squadra-quattro-casseri.webp" alt="La squadra di cantiere di Conti e Conti in posa davanti a un edificio in costruzione." loading="lazy">
+        <img data-n="Irene Ciceri" data-r="Sicurezza e qualit&agrave;" src="img/foto/team-irene-ciceri-ufficio.webp" alt="Irene Ciceri, Sicurezza e qualità, alla sua scrivania nella sede di Lentate sul Seveso." loading="lazy">
+        <img data-n="Massimo Mariani" data-r="Tecnico di cantiere" src="img/foto/team-capocantiere-casco-bianco.webp" alt="Massimo Mariani, tecnico di cantiere, con casco bianco in un edificio in costruzione." loading="lazy">
+        <img class="contain" data-n="Massimo Conti" data-r="Titolare" src="homepageb/img/ritrattoprofessionalesupoltronamoderna.webp" alt="Massimo Conti, titolare, seduto su una poltrona moderna." loading="lazy">
+        <p class="tm-cap" aria-live="polite"><strong></strong><small></small></p>
         <span class="cnt" aria-hidden="true"><span id="tm-n">01</span> / 04</span>
       </div>
       <div class="tm-txt" aria-live="polite">
@@ -326,8 +327,8 @@
     (function f(n){var p=Math.min(1,(n-t0)/1600);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.5});
   $$('[data-count]').forEach(function(el){cio.observe(el)});
   // squadra
-  var tb=$$('.tm-tabs button'),ti=$$('.tm-fig img'),ta=$$('.tm-txt article');
-  tb.forEach(function(x){x.addEventListener('click',function(){var k=+x.dataset.i;tb.forEach(function(y,n){y.setAttribute('aria-pressed',n===k)});ti.forEach(function(y,n){y.classList.toggle('on',n===k)});ta.forEach(function(y,n){y.classList.toggle('on',n===k)});$('#tm-n').textContent='0'+(k+1)})});
+  var tb=$$('.tm-tabs button'),ti=$$('.tm-fig img'),ta=$$('.tm-txt article'),tc=$('.tm-cap');function setCap(k){var im=ti[k];tc.querySelector('strong').textContent=im.dataset.n||'';tc.querySelector('small').textContent=im.dataset.r||'';tc.hidden=!im.dataset.n}setCap(0);
+  tb.forEach(function(x){x.addEventListener('click',function(){var k=+x.dataset.i;tb.forEach(function(y,n){y.setAttribute('aria-pressed',n===k)});ti.forEach(function(y,n){y.classList.toggle('on',n===k)});setCap(k);ta.forEach(function(y,n){y.classList.toggle('on',n===k)});$('#tm-n').textContent='0'+(k+1)})});
   // progetti: pila di schede. Le schede superate restano in vista come fascia di foto, senza testo; un clic riporta a quella scheda.
   var ws=$$('.ws'),rmo=matchMedia('(prefers-reduced-motion:reduce)').matches;
   function stickTop(li){return parseFloat(getComputedStyle(li).top)||0}

@@ -432,3 +432,23 @@ footer nav li.ft-sv>ul li{margin:0 0 6px}
 .gc-logo img[src*="attestazione-soa"],.tlogos img[src*="attestazione-soa"]{height:auto!important;width:150px!important}
 .mk-art-img{display:block;width:100%;height:100%;object-fit:cover}
 .gc-l{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+/* Squadra: nomi e ruoli lunghi (es. "Maria Antonietta Centurelli", "Responsabile ufficio acquisti") restano dentro le foto piccole */
+.tw-cap{padding:26px 7px 7px}
+.tw-cap strong{font-size:11.5px;line-height:1.15}
+.tw-cap small{font-size:8.5px;letter-spacing:.04em;line-height:1.2}
+/* Responsive: le certificazioni tornano a 2 colonne sotto i 900 px e a 1 colonna sotto i 560 px (la regola a 3 colonne le allargava oltre lo schermo) */
+@media (max-width:900px){.gc-l{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:560px){.gc-l{grid-template-columns:minmax(0,1fr)!important}.gc-l li{min-width:0}.gc-logo{flex-wrap:wrap;max-width:100%}.gc-logo img,.gc-logo img.wide{max-width:min(120px,30vw)!important}}
+
+/* Responsive (istruzione 89): sotto i 900 px la squadra e una griglia ordinata di foto con nome e ruolo sotto, non le posizioni sfalsate da desktop */
+@media (max-width:900px){
+.tw-in{grid-template-columns:minmax(0,1fr)!important;height:auto!important;gap:28px!important}
+.tw-f{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(112px,1fr))!important;gap:26px 14px!important;height:auto!important;min-height:0!important;padding-bottom:0!important}
+.tw-f .tw-p,.tw-f .tw-p:nth-child(n){position:relative!important;left:auto!important;top:auto!important;width:auto!important;aspect-ratio:1;transform:none!important}
+.tw-f .tw-cap{position:static!important;opacity:1!important;transform:none!important;background:none!important;padding:8px 0 0!important}
+.tw-f .tw-cap strong{color:#151517!important;font-size:13px}
+.tw-f .tw-cap small{color:var(--acc,#7d1d2c)!important;font-size:9.5px}
+.tw-f .tw-p img{filter:none}
+}
+/* Touch: senza hover i nomi restano visibili sulle foto */
+@media (hover:none){.tw-cap{opacity:1;transform:none}}

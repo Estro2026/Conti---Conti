@@ -205,3 +205,6 @@ html[data-zoom] .svk-h2-s{font-size:calc(clamp(28px,3.4cqi,46px) * var(--sk,1))!
 @container (max-width:720px){.svk-fit .svk-proof.is-cat .svk-tiles .card-imm{height:min(var(--ch,100vh),78cqi)}}
 .svk-ctrl{flex-wrap:wrap}
 .svk-ctrl{flex:0 1 auto;max-width:100%}
+
+/* Responsive (istruzione 89): frecce e pulsante "Vedi le realizzazioni" vanno a capo invece di uscire dallo schermo sotto i 400 px */
+[class$="-ctrl"]{flex:0 1 auto;flex-wrap:wrap;max-width:100%;min-width:0}

@@ -202,3 +202,6 @@ html[data-zoom] .svt-h2-s{font-size:calc(clamp(28px,3.4cqi,46px) * var(--sk,1))!
 .frame .svt-proof.is-cat .svt-tiles .card-imm{aspect-ratio:auto!important;height:var(--svt-ch,auto)!important}
 /* indice compatto in funzione dell'altezza (il padding della sezione resta quello standard) */
 .svt-works .svt-idx button{padding-block:clamp(8px,1.6svh,24px);font-size:clamp(20px,min(2.8cqi,4.4svh),40px)}
+
+/* Responsive (istruzione 89): frecce e pulsante "Vedi le realizzazioni" vanno a capo invece di uscire dallo schermo sotto i 400 px */
+[class$="-ctrl"]{flex:0 1 auto;flex-wrap:wrap;max-width:100%;min-width:0}

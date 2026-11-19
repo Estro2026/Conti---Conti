@@ -1696,3 +1696,17 @@ body:not(.cn-all-on) .frame .cn-grid .cn-it{clip-path:none!important;z-index:aut
 .ha-foot nav li.ft-sv>span{display:block}
 .ha-foot nav li.ft-sv>ul{margin:8px 0 2px 14px;padding-left:12px;border-left:1px solid rgba(255,255,255,.2)}
 .ha-foot nav li.ft-sv>ul li{margin:0 0 6px}
+
+/* Responsive (istruzione 89): la griglia a 4 colonne delle card di Categoria non deve vincere sulle regole per schermi piccoli */
+@container (max-width:1100px){.frame .ct-pin2 .ct-rail{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@container (max-width:820px){.frame .ct-pin2 .ct-rail{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container (max-width:520px){.frame .ct-pin2 .ct-rail{grid-template-columns:minmax(0,1fr)}}
+
+/* Responsive (istruzione 89): le card di Realizzazioni che volano al loro posto non allargano la pagina sui tablet */
+.frame .sec:has(.cn-grid){overflow-x:clip}
+
+/* Responsive (istruzione 89): su telefono la foto successiva che spunta dal bordo e il contatore non coprono il testo dell apertura di Categoria */
+@container (max-width:600px){.frame .ct-pk{display:none}.frame .ct-pk-l{position:static;order:4;margin:0 var(--gut,16px) 14px;justify-content:flex-start}}
+/* Responsive: su telefono precedente e successiva restano sulla stessa riga, l indice delle categorie scorre sotto */
+@container (max-width:700px){.frame .ct-hx .ct-nav2{flex-wrap:wrap;gap:10px 12px}.frame .ct-hx .ct-nav2 .ct-ix{order:3;flex:1 1 100%;justify-content:flex-start;padding-bottom:4px}.frame .ct-hx .ct-nav2-p{order:1;margin-right:auto}.frame .ct-hx .ct-nav2-n{order:2}}
+@container (max-width:900px){.frame .ct-hx .ct-nav2{align-self:stretch;min-width:0}}
