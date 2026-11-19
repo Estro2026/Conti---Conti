@@ -486,11 +486,18 @@ body[data-mk] .frame .bl-evh .bl-top{padding-inline:clamp(16px,4cqi,56px)!import
 body[data-mk] .frame .bl-evh .bl-ev-t{right:clamp(16px,4cqi,56px)!important}
 
 /* Articoli (istruzione 78): testo allineato a sinistra con titolo, immagine e sezioni della pagina */
-body[data-mk] .frame .ar-body,body[data-mk] .frame .ar-body:not(:has(.ar-toc)),body[data-mk] .frame .ar-body:has(.ar-toc){display:block!important;max-width:none!important;margin-inline:0!important}
+body[data-mk] .frame .ar-body,body[data-mk] .frame .ar-body:not(:has(.ar-toc)),body[data-mk] .frame .ar-body:has(.ar-toc){display:block!important;max-width:var(--wrap)!important;margin-inline:auto!important}
 body[data-mk] .frame .ar-txt,body[data-mk] .frame .ar-body:has(.ar-toc) .ar-txt,body[data-mk] .frame .ar-body:not(:has(.ar-toc)) .ar-txt{max-width:760px!important;margin:0!important}
 body[data-mk] .frame .ar-toc{max-width:760px!important;margin:0 0 32px!important}
-body[data-mk] .frame .ar-hd .in{max-width:none!important;margin-inline:0!important}
+body[data-mk] .frame .ar-hd .in{max-width:var(--wrap)!important;margin-inline:auto!important}
 body[data-mk] .frame .ar-hd .in > *{max-width:900px}
 
 /* Articolo: testo e sommario in una sola colonna, il sommario non resta fisso sopra il testo mentre si legge */
 body[data-mk] .frame .ar-toc{position:static!important}
+
+/* Blog: la foto dell apertura arriva ai bordi della pagina anche sugli schermi larghi (.in e il riquadro non la limitano a 1280 px) */
+body[data-mk] .frame .bl-evh .in{position:static!important}
+body[data-mk] .frame .bl-evh .bl-ev{overflow:visible!important}
+
+/* Progetto successivo: testo a sinistra e freccia a destra come prima, ma centrati in verticale nella sezione */
+body[data-mk] .frame .pj-next .pj-next-in{bottom:auto!important;top:50%;transform:translateY(-50%);align-items:center!important}

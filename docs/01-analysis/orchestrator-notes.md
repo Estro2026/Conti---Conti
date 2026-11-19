@@ -104,3 +104,7 @@ Per image-curator (2026-11-18, istruzione 48): foto reali dei 12 progetti in ass
 Per content-language: dati immobili e team in assets/cliente-basecamp/08-testi-e-documenti/informazioni-estratte.md; correggere residenza.html (Solarium) dopo verifica.
 
 - Per frontend-reviewer: (78) .ct-nav2 era relative nel mockup e prendeva la larghezza del contenuto (1100 px su 1009): il pulsante "successiva" usciva dallo schermo. Ripristinato position assoluto, .ct-ix con min-width:0 e justify-content:safe center; sommario articolo static.
+
+- Per precision-layout-qa: (79) .bl-evh .in static e .bl-ev overflow visible (foto al vivo); .ar-body e .ar-hd .in tornano a max-width var(--wrap) centrati, non più margin 0.
+
+- Per precision-layout-qa: (80) .pj-next-in: bottom auto, top 50% e translateY(-50%) (centrato in verticale, layout invariato).
