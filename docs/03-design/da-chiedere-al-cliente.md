@@ -20,3 +20,8 @@ Aggiornato 2026-11-18. Verificato prima nei file del cliente (`assets/cliente-ba
 - Un progetto industriale con foto (nessuno ha foto caricate: Macplastic senza indicazione, gli altri "No" o "Sni").
 - **Industriale**: almeno un progetto con foto per la categoria (apertura e griglia di Realizzazioni restano senza immagine).
 - **Attestazione SOA**: conferma classifica IV bis.
+
+## Realizzazioni senza testo (verifica 2026-11-19)
+Nessuna realizzazione ha anno; superficie solo Casa MJO (155 m²) e Casa Porta Romana (65 m²).
+- **Senza descrizione (solo nome e luogo, o neanche il luogo)**: Appartamento via Spadolini, Appartamento Milano, Piazza Oberdan, Casa Galimberti · La8, Residenza Bellini, Residenza Al Passo, Residenza Lentate · Lois Jeans, Dsquared2 Rinascente · Rossini Art Site · Villa Lugarna, Villa Meda, Villa Mariano · La Molgora Hotel, Eurospin, Fisioterapia 2000, Federlegno, Intesa Sanpaolo/BPM, LaTarma via Pietrasanta, RSA Menotti, Ippo Sushi · tutte le 9 industriali.
+- **Descrizione solo di una riga (da completare)**: Appartamento Brera, Appartamento via Statuto, Appartamento Milano (Living), Casa Redduo, Atrium Studio, Piquadro, Davide Diodovich Salon, Cotton Club, Antonioli, Dolce & Gabbana (corner e boutique), Ceresio 7 Piscina, The Rise, Milanimal, Prima Caffè, SDM, Villa Erba, Villa Barbara, UBI Banca.
