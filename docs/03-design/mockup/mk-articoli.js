@@ -57,6 +57,13 @@
     if (cnt) cnt.textContent = (A.length - 1) + ' articoli';
     var emp = document.querySelector('.bl-empty'); if (emp) emp.hidden = true;
   }
+  /* Pagina articolo: la foto diventa lo sfondo dell'apertura (istruzione 86) */
+  var heroBg = function (a) {
+    var hd = document.querySelector('.ar-hd'); if (!hd) return;
+    var bg = document.createElement('div'); bg.className = 'ar-hd-bg'; bg.innerHTML = pic(a, 'mk-img').replace('loading="lazy"', 'fetchpriority="high"');
+    hd.insertBefore(bg, hd.firstChild);
+    var im = document.querySelector('.ar-img'); if (im) im.remove();
+  };
   /* Pagina articolo */
   var slug = decodeURIComponent(location.hash.slice(1)), cur = A.filter(function (a) { return a.k === slug; })[0];
   if (cur && document.querySelector('.ar-hd')) {
@@ -68,7 +75,7 @@
     var lead = document.querySelector('.ar-hd .lead'); var fp = body.filter(function (b) { return b[0] === 'p'; })[0];
     if (lead) lead.textContent = fp ? fp[1] : '';
     var au = document.querySelector('.ar-hd-f'); if (au) au.innerHTML = '<span class="meta">Conti e Conti · articolo dal sito attuale</span>';
-    put(document.querySelector('.ar-img'), cur);
+    heroBg(cur);
     var tx = document.querySelector('.ar-txt'), n = 0, toc = [];
     if (tx) {
       var html = '', inList = false;
@@ -91,6 +98,7 @@
     window.addEventListener('hashchange', function () { location.reload(); });
   } else {
     /* guida in bozza: correlati con gli articoli reali */
+    heroBg(A[0]);
     [].forEach.call(document.querySelectorAll('.ar-rc'), function (c, i) { var a = A[i]; if (!a) return; put(c, a); txt(c.querySelector('h3'), a.t); txt(c.querySelector('.meta'), a.d + ' · Notizie'); var an = c.querySelector('a'); if (an) an.setAttribute('href', link(a)); });
   }
 })();

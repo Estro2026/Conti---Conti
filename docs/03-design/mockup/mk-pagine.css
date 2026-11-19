@@ -509,10 +509,7 @@ body[data-mk][data-hero="light"] .ha-nav:not(.is-solid){color:#151515}
 body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-logo-w{opacity:0}
 body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-logo-c{opacity:1}
 body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) a:not(.ha-btn){text-shadow:none}
-body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-btn-nav{background:rgba(22,22,22,.9);border-color:rgba(22,22,22,.9);color:#fff}
 body[data-mk][data-hero="light"] .crumb,body[data-mk][data-hero="light"] .crumb a,body[data-mk][data-hero="light"] .crumb li,body[data-mk][data-hero="light"] .crumb [aria-current]{color:#2b2b2e!important}
-body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-btn.ha-btn-nav{background:#161616!important;border-color:#161616!important;color:#fff!important}
-body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-nm-label{background:#161616!important;border-color:#161616!important;color:#fff!important}
 body[data-mk] .frame .ct-nav2 .ct-ix a{color:rgba(255,255,255,.78)!important}
 body[data-mk] .frame .ct-nav2 .ct-ix li.on a,body[data-mk] .frame .ct-nav2 .ct-ix a:hover{color:#fff!important}
 body[data-mk] .frame .ct-dark .mk-ct-bg::after{background:linear-gradient(180deg,rgba(14,12,13,.88) 0%,rgba(14,12,13,.8) 45%,rgba(14,12,13,.9) 100%)}
@@ -520,3 +517,29 @@ body[data-mk] .frame .ct-dark label,body[data-mk] .frame .ct-dark .pg-fg label,b
 body[data-mk] .frame .ct-dark input::placeholder,body[data-mk] .frame .ct-dark textarea::placeholder{color:rgba(255,255,255,.62)!important}
 body[data-mk] .frame .bl-evh::after{background:linear-gradient(180deg,rgba(14,12,13,.72) 0%,rgba(14,12,13,.34) 24%,rgba(14,12,13,0) 44%),linear-gradient(90deg,rgba(14,12,13,.76) 0%,rgba(14,12,13,.42) 45%,rgba(14,12,13,0) 72%)}
 body[data-mk] .frame .ixs-s figcaption,body[data-mk] .frame .ixs-credit{color:rgba(255,255,255,.88)!important}
+/* Hero chiare: i due pulsanti dell header restano distinti come nella Home A (Richiedi un preventivo bordeaux, Menu chiaro con bordo scuro) */
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-btn.ha-btn-nav{background:#7d1d2c!important;border-color:#7d1d2c!important;color:#fff!important}
+body[data-mk][data-hero="light"] .ha-nav:not(.is-solid) .ha-nm-label{background:rgba(255,255,255,.78)!important;border-color:rgba(21,21,21,.55)!important;color:#151515!important}
+/* Categoria: la foto dell apertura resta più alta del riquadro, così il parallasse non lascia una fascia nera in alto */
+body[data-mk] .frame .ct-hero-m .ct-bg .ph,body[data-mk] .frame .ct-hero-m .ct-bg [data-ph]{inset:-8% 0!important;height:116%!important}
+/* Articolo: titolo dell apertura più piccolo e più largo, così va a capo meno volte */
+html[data-zoom] body[data-mk] .frame main .ar-hd h1:not(.ix-h1):not(.cn-h1):not(.iv-h1),body[data-mk] .frame main .ar-hd h1{font-size:calc(clamp(30px,3.7cqi,56px) * var(--sk,1))!important;line-height:1.08!important;max-width:min(100%,1120px)!important;letter-spacing:-.03em;text-wrap:balance}
+body[data-mk] .frame .ar-hd .in > h1{max-width:min(100%,1120px)}
+body[data-mk] .frame #main .ar-hd h1:not(.sr){font-size:calc(clamp(30px,3.7cqi,56px) * var(--sk,1))!important;line-height:1.08!important;max-width:min(100%,1120px)!important}
+/* Progetto: velatura sulla foto dell apertura, così logo, menu e breadcrumb si leggono anche con foto chiare (istruzione 85) */
+body[data-mk] .frame .pj-hero-m::after{background:linear-gradient(180deg,rgba(14,12,13,.78) 0%,rgba(14,12,13,.5) 16%,rgba(14,12,13,.14) 36%,rgba(14,12,13,.1) 55%,rgba(14,12,13,.72) 100%)!important}
+body[data-mk] .frame .pj-hero-t .meta,body[data-mk] .frame .pj-hero-t .meta *{color:rgba(255,255,255,.92)!important}
+body[data-mk] .frame .pj-hero-t .meta .tbc{color:rgba(255,255,255,.7)!important}
+/* Articolo: apertura con la foto a tutta larghezza come sfondo, testo chiaro su velatura scura (istruzione 86) */
+body[data-mk] .frame .ar-hd{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:clamp(480px,78vh,760px);padding-top:calc(var(--ovl,136px) + 24px)!important;padding-bottom:clamp(32px,6vh,72px)!important;background:#151517;color:#fff}
+body[data-mk] .frame .ar-hd>.in{position:relative;z-index:2;width:100%}
+body[data-mk] .frame .ar-hd-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+body[data-mk] .frame .ar-hd-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body[data-mk] .frame .ar-hd-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,13,.76) 0%,rgba(14,12,13,.46) 18%,rgba(14,12,13,.3) 42%,rgba(14,12,13,.78) 100%),linear-gradient(90deg,rgba(14,12,13,.55) 0%,rgba(14,12,13,0) 70%)}
+body[data-mk] .frame #main .ar-hd h1:not(.sr),body[data-mk] .frame .ar-hd h1{color:#fff!important;text-shadow:0 2px 24px rgba(14,12,13,.45)}
+body[data-mk] .frame .ar-hd .meta,body[data-mk] .frame .ar-hd .meta *{color:rgba(255,255,255,.92)!important}
+body[data-mk] .frame .ar-hd .lead{color:rgba(255,255,255,.95)!important;max-width:68ch;text-shadow:0 1px 16px rgba(14,12,13,.5)}
+body[data-mk] .frame .ar-hd .ar-hd-f{border-color:rgba(255,255,255,.3)!important}
+/* Progetto successivo: testo e freccia allineati ai bordi del contenuto delle altre sezioni (es. "Se ne è parlato") */
+body[data-mk] .frame .pj-next .pj-next-in{left:max(clamp(16px,4cqi,56px),calc((100cqi - var(--wrap,1280px)) / 2))!important;right:max(clamp(16px,4cqi,56px),calc((100cqi - var(--wrap,1280px)) / 2))!important}
+body[data-mk] .frame .pj-next .pj-next-in{padding-inline:0!important}
