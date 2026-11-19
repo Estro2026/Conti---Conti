@@ -9,7 +9,7 @@
   Object.keys(D.immobili).forEach(function (k) { if (D.immobili[k]) byName[D.immobili[k].nome.toLowerCase()] = 'residenza.html#' + k; });
   /* Realizzazioni: griglia completa con tutti i progetti dell'elenco del cliente, per categoria (istruzione 67) */
   var cg = document.querySelector('.cn-grid');
-  if (cg && cg.querySelector('.cn-it')) {
+  if (cg && cg.querySelector('.cn-it') && !window.MK_GRID_DONE) {
     var tpl = cg.querySelector('.cn-it').cloneNode(true);
     var CATN = { case: 'Case', residenze: 'Residenze', lusso: 'Lusso', palestre: 'Palestre', allestimenti: 'Allestimenti', ville: 'Ville', commerciali: 'Attività commerciali', industriale: 'Industriale' };
     var ordc = Object.keys(CATN), keysP = Object.keys(D.progetti).sort(function (a, b) { var pa = D.progetti[a], pb2 = D.progetti[b]; return (ordc.indexOf(pa.cs) - ordc.indexOf(pb2.cs)) || ((pb2.hero ? 1 : 0) - (pa.hero ? 1 : 0)); });
