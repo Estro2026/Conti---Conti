@@ -63,7 +63,7 @@
     allestimenti: [['LaTarma', 'Milano', 'allestimento-mm-palco-dall-alto']],
     ville: [['Villa Lugarna', '', 'villa-lugarna-loggia-colonna-vista-lago']]
   };
-  var NAMED = { 'Ceresio 7': 'ceresio-7-piscina-piscina-skyline-tramonto', 'Casa MJO': 'casa-mjo-soggiorno-scala-ottone-cucina', 'Villa Lugarna': 'villa-lugarna-loggia-colonna-vista-lago' };
+  var NAMED = { 'Ceresio 7': 'ceresio-7-gym-spa-02', 'Casa MJO': 'casa-mjo-soggiorno-scala-ottone-cucina', 'Villa Lugarna': 'villa-lugarna-loggia-colonna-vista-lago' };
   var setImg = function (box, file) {
     var ph = box && box.querySelector('[data-ph]'); if (!ph) return;
     ph.classList.add('ph', 'mk-has'); ph.removeAttribute('role'); ph.removeAttribute('aria-label');

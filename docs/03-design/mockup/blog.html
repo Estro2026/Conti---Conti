@@ -65,6 +65,6 @@
 var g=document.querySelector('.bl-grid');if(!g||matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;g.classList.add('bl-on');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});[].slice.call(g.children).forEach(function(li,i){li.style.setProperty('--j',i%3);io.observe(li)})})();</script>
 <script>/* hero del blog: alta esattamente quanto lo spazio visibile, cosi la card in evidenza resta nella prima schermata */(function(){var e=document.querySelector('.bl-evh .bl-ev');if(!e)return;function f(){if(innerWidth<761){e.style.removeProperty('height');return}var y=e.getBoundingClientRect().top+scrollY;e.style.setProperty('height',Math.max(560,innerHeight-y)+'px','important')}addEventListener('resize',f);addEventListener('load',f);f()})();</script>
 <script src="../wireframe/wf-mk.js?v=1"></script>
-<script src="mk-pagine.js?v=18"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
+<script src="mk-pagine.js?v=19"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
 <script src="mk-articoli-data.js?v=1"></script><script src="mk-articoli.js?v=1"></script>
 </body></html>

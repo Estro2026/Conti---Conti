@@ -7,14 +7,14 @@ window.MK_SCHEDE = {
    "cs": "palestre",
    "luogo": "Milano",
    "nota": "Palestra e spa nel basement del palazzo di fronte al Monumentale (sito attuale).",
-   "hero": "ceresio-7-piscina-piscina-skyline-tramonto",
+   "hero": "ceresio-7-gym-spa-02",
    "gal": [
-    "ceresio-7-piscina-cabanas-lettini",
     "ceresio-7-palestra-palestra-attrezzi",
-    "ceresio-7-piscina-piscina-skyline-notte-luci",
-    "ceresio-7-palestra-piscina-interna",
-    "ceresio-7-piscina-vasca-idromassaggio",
-    "ceresio-7-piscina-lettini-skyline-porta-nuova"
+    "ceresio-7-gym-spa-01",
+    "ceresio-7-gym-spa-03",
+    "ceresio-7-gym-spa-04",
+    "ceresio-7-gym-spa-07",
+    "ceresio-7-gym-spa-08"
    ]
   },
   "casa-mjo": {
@@ -221,7 +221,7 @@ window.MK_SCHEDE = {
    "press": []
   },
   "appartamento-living": {
-   "nome": "Appartamento Milano",
+   "nome": "Appartamento Milano (Living)",
    "cat": "Case",
    "cs": "case",
    "luogo": "Milano",
@@ -291,7 +291,7 @@ window.MK_SCHEDE = {
    "press": []
   },
   "dolce-gabbana-rinascente": {
-   "nome": "Dolce & Gabbana – Rinascente",
+   "nome": "Dolce & Gabbana – corner Rinascente",
    "cat": "Lusso",
    "cs": "lusso",
    "luogo": "Milano, Rinascente",
@@ -626,6 +626,111 @@ window.MK_SCHEDE = {
    "cs": "industriale",
    "luogo": "[da chiedere al cliente]",
    "nota": "",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "appartamento-milano": {
+   "nome": "Appartamento Milano",
+   "cat": "Case",
+   "cs": "case",
+   "luogo": "Milano",
+   "nota": "Foto e descrizione da chiedere al cliente (nell’elenco: “MANCA”).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "piazza-oberdan": {
+   "nome": "Piazza Oberdan",
+   "cat": "Case",
+   "cs": "case",
+   "luogo": "Milano",
+   "nota": "Foto e descrizione da chiedere al cliente (nell’elenco: “MANCA”).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "casa-galimberti": {
+   "nome": "Casa Galimberti",
+   "cat": "Case",
+   "cs": "case",
+   "luogo": "[da chiedere al cliente]",
+   "nota": "Foto e descrizione da chiedere al cliente (nell’elenco: “MANCA”).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "residenza-lentate": {
+   "nome": "Residenza Lentate",
+   "cs": "residenze",
+   "cat": "Residenze",
+   "luogo": "Lentate sul Seveso (MB)",
+   "nota": "Nell’elenco con un punto interrogativo: dati e foto [da chiedere al cliente].",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "ceresio-7-piscina": {
+   "nome": "Ceresio 7 Piscina",
+   "cs": "lusso",
+   "cat": "Lusso",
+   "luogo": "Milano",
+   "nota": "Piscina sul tetto con vista sullo skyline di Porta Nuova.",
+   "hero": "ceresio-7-piscina-piscina-skyline-tramonto",
+   "gal": [
+    "ceresio-7-piscina-cabanas-lettini",
+    "ceresio-7-piscina-piscina-skyline-notte-luci",
+    "ceresio-7-piscina-vasca-idromassaggio",
+    "ceresio-7-piscina-lettini-skyline-porta-nuova"
+   ],
+   "press": []
+  },
+  "dolce-gabbana-boutique": {
+   "nome": "Dolce & Gabbana – boutique Rinascente",
+   "cs": "lusso",
+   "cat": "Lusso",
+   "luogo": "Milano, Rinascente",
+   "nota": "Boutique Dolce & Gabbana in Rinascente (sito attuale).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "antonioli": {
+   "nome": "Antonioli",
+   "cs": "lusso",
+   "cat": "Lusso",
+   "luogo": "Milano",
+   "nota": "Nell’elenco: foto “da fare”.",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "villa-erba": {
+   "nome": "Villa Erba",
+   "cs": "ville",
+   "cat": "Ville",
+   "luogo": "Menaggio (CO)",
+   "nota": "Cantiere non ancora concluso (elenco del cliente).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "villa-barbara": {
+   "nome": "Villa Barbara",
+   "cs": "ville",
+   "cat": "Ville",
+   "luogo": "Lentate sul Seveso (MB)",
+   "nota": "Cantiere non ancora concluso (elenco del cliente).",
+   "hero": null,
+   "gal": [],
+   "press": []
+  },
+  "ubi-banca": {
+   "nome": "UBI Banca – filiali",
+   "cs": "commerciali",
+   "cat": "Attività commerciali",
+   "luogo": "[da chiedere al cliente]",
+   "nota": "Nell’elenco: “non esiste più” (marchio confluito in Intesa Sanpaolo). Da confermare se pubblicarla.",
    "hero": null,
    "gal": [],
    "press": []

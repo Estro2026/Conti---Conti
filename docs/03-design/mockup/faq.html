@@ -77,5 +77,5 @@
 <script src="../wireframe/wf-servizio.js?v=3"></script>
 <script>/* FAQ: pillola degli argomenti con ombra quando resta fissa e argomento corrente evidenziato (chat 2026-10-27) */(function(){var n=document.querySelector('.fq-nav');if(!n)return;var L=[].slice.call(n.querySelectorAll('a[href^="#"]')),G=L.map(function(a){return document.querySelector(a.getAttribute('href'))}),t=0;function u(){t=0;var top=parseFloat(getComputedStyle(n).top)||0;n.classList.toggle('is-stuck',n.getBoundingClientRect().top<=top+1&&scrollY>50);var cur=0;G.forEach(function(g,i){if(g&&g.getBoundingClientRect().top<innerHeight*.35)cur=i});L.forEach(function(a,i){a.classList.toggle('is-cur',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
 
-<script src="mk-pagine.js?v=18"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
+<script src="mk-pagine.js?v=19"></script><script src="mk-schede-data.js?v=5"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=3"></script>
 </body></html>
