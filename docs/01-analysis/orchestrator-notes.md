@@ -114,3 +114,11 @@ Per content-language: dati immobili e team in assets/cliente-basecamp/08-testi-e
 - Per content-language: (88) PDF nomi: pagina 1 Ufficio (Conti, Cavallaro, Munari, Spini, Ciceri, Susanna Conti Cavallaro), pagina 2 Amministrazione e acquisti (Prataviera, Centurelli, Barbuzza, Benzi), pagina 3 Cantiere (Contri, Meroni senza foto, Mariani, Cagnazzo). Abbinamento foto-nome: verificare con il cliente le due foto di cantiere senza nome.
 
 - Per responsive-device: (89) regole a breakpoint scavalcate da regole successive con !important (3-4 colonne in Home A/B e Categoria) e griglie con track 1fr (min-content) sono la causa ricorrente degli overflow: usare minmax(0,1fr) e container query dopo le regole generali. Da provare su Safari iOS, Firefox e Android reali.
+
+- Per responsive-device: (90) heroes a tutta altezza: usare min-height:100svh con padding-top sotto header+breadcrumb (var(--ovl)) invece di altezza fissa con contenuto in fondo; scheda immobile in modalita orizzontale solo con innerHeight>=760.
+
+- Per responsive-device: (91) con mouse e schermi zoomati si mantiene la composizione desktop (hover:hover + pointer:fine) e il contenuto si riduce con vh/zoom; la versione a colonna resta per telefoni touch (hover:none, <=600 px).
+
+- Per precision-layout-qa: (92) bordi delle aperture: usare max(var(--gut), (100cqi - var(--wrap)) / 2) come per breadcrumb e sezioni, non valori fissi.
+
+- Per responsive-device: (93) causa ricorrente delle sovrapposizioni su telefono: regola a colonne per desktop scritta dopo il blocco mobile, con la stessa specificità o !important: nei media query mobile ripetere il selettore completo e !important. Barra sticky inferiore nascosta in cima alla pagina (body.bar-on in mk-lib.js).

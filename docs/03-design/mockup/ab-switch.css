@@ -6,3 +6,6 @@
 .ab-switch a[aria-current="page"]{background:#fff;color:#151517}
 .ab-switch a:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media (max-width:600px){.ab-switch{left:10px;bottom:10px}}
+/* Mobile (istruzione 93): l interruttore A/B passa sotto l intestazione, a destra, cosi non copre titoli e pulsanti in basso */
+@media (max-width:600px){.ab-switch{left:auto;right:10px;top:78px;bottom:auto;transform:scale(.9);transform-origin:right top}.ab-switch span{display:none}}
+body.ha-menu-open .ab-switch,body.menu-open .ab-switch{display:none}

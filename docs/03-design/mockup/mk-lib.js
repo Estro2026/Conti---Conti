@@ -118,3 +118,14 @@
     });
   }
 })();
+
+/* Mobile (istruzione 93): la barra "Chiama / Preventivo" compare dopo i primi scorrimenti, cosi non copre il fondo delle aperture (titolo, pulsanti, indicazioni) */
+(function () {
+  var bar = document.querySelector('.sticky-m');
+  if (!bar) return;
+  var tk = 0;
+  function u() { tk = 0; document.body.classList.toggle('bar-on', (window.pageYOffset || 0) > window.innerHeight * 0.35); }
+  window.addEventListener('scroll', function () { if (!tk) tk = requestAnimationFrame(u); }, { passive: true });
+  window.addEventListener('resize', u);
+  u();
+})();

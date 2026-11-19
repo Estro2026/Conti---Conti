@@ -604,3 +604,5 @@ footer nav li.ft-sv>ul li{margin:0 0 6px}
 @media (max-width:480px){.ws-data{left:16px;right:16px;top:16px;grid-template-columns:repeat(2,minmax(0,1fr))}.ws-data>div{padding:12px 14px 14px;min-width:0}.ws-data dd{max-width:none;overflow-wrap:anywhere}}
 /* Responsive: le certificazioni tornano in colonna sotto gli 800 px (la regola a 3 colonne piu in basso le comprimeva) */
 @media (max-width:800px){.tgrid{grid-template-columns:minmax(0,1fr)!important}.tgrid li{border-right:0!important;border-bottom:1px solid var(--line);padding:22px 0!important}.tgrid li:last-child{border-bottom:0}}
+/* Mobile (istruzione 93): il contatore "01 / 04" delle realizzazioni non finisce sotto la scheda dati */
+@media (max-width:700px){.ws-data{top:46px!important}}

@@ -547,3 +547,149 @@ body[data-mk] .frame .pj-next .pj-next-in{padding-inline:0!important}
 body[data-mk] .frame .co-bento .pg-ca>*,body[data-mk] .frame .co-bento .co-mp,body[data-mk] .frame .co-bento .co-mp .co-map{min-width:0;max-width:100%}
 body[data-mk] .frame .co-bento .co-mp figcaption{flex-wrap:wrap;gap:4px 12px}
 @container (max-width:700px){body[data-mk] .frame .co-bento .pg-ca{grid-template-columns:minmax(0,1fr)!important}}
+
+/* Aperture a tutta altezza anche con lo zoom (istruzione 90): l apertura di Categoria occupa almeno il 100% dello schermo, parte sotto header e breadcrumb e cresce se il testo non ci sta, invece di sovrapporsi al logo */
+
+/* Scheda immobile, schede dell apertura senza testi tagliati (istruzione 90) */
+/* in colonna (schermi stretti, bassi o con zoom): niente quadrati, ogni scheda alta quanto il suo contenuto */
+body[data-mk] .frame .rs-hx:not(.hx-on) .rs-hx-tr>.rs-p{aspect-ratio:auto!important;width:100%!important;overflow:visible!important;height:auto!important;min-height:0}
+body[data-mk] .frame .rs-hx:not(.hx-on) .rs-p1{padding-block:clamp(20px,5vw,32px)!important;min-height:min(78svh,560px)}
+body[data-mk] .frame .rs-p1-cap .badge{display:inline-block;margin-bottom:8px;vertical-align:top}
+/* Aperture a tutta altezza (istruzione 90): articolo e scheda immobile in colonna occupano il 100% dello schermo anche con lo zoom */
+body[data-mk] .frame .ar-hd{min-height:100svh!important}
+body[data-mk] .frame .rs-hx:not(.hx-on) .rs-p1{min-height:calc(100svh - 150px)}
+/* Articolo: gerarchia dei titoli (istruzione 90). Il titolo dell apertura e il piu grande della pagina, i titoli delle altre sezioni (Hai una ristrutturazione in mente?, Articoli correlati) restano subordinati */
+html[data-zoom] body[data-mk] .frame #main .ar-hd h1:not(.sr),body[data-mk] .frame #main .ar-hd h1:not(.sr){font-size:clamp(38px,min(5.2cqi,9vh),80px)!important;line-height:1.04!important}
+body[data-mk][data-art] .frame,body[data-mk][data-art] .frame #main{--t-h2:clamp(26px,3.1cqi,42px)}
+/* Scheda immobile a scorrimento orizzontale anche con lo zoom (istruzione 91): ogni scheda con testo si riduce in proporzione (--rk, calcolato da residenza.html) cosi tutto sta nell apertura e nello schermo */
+body[data-mk] .frame .rs-hx.hx-on .rs-p1>*,body[data-mk] .frame .rs-hx.hx-on .rs-p3>*,body[data-mk] .frame .rs-hx.hx-on .rs-pc>*{zoom:var(--rk,1)}
+
+/* Categoria, apertura (istruzione 91): occupa esattamente il 100% dello schermo anche con lo zoom e dentro ci stanno sempre i pulsanti per la categoria precedente e successiva. Parte sotto header e breadcrumb; il testo si riduce in proporzione all altezza. */
+@media (min-width:601px),(hover:hover) and (pointer:fine){
+body[data-mk] .frame .ct-hx{height:100svh!important;min-height:0!important;overflow:hidden;box-sizing:border-box;padding-top:calc(var(--ovl,136px) + 8px)!important}
+}
+@media (max-width:600px) and (hover:none){body[data-mk] .frame .ct-hx{min-height:100svh!important;box-sizing:border-box;padding-top:calc(var(--ovl,136px) + 16px)!important}}
+body[data-mk] .frame #main .ct-hx h1:not(.sr){font-size:clamp(30px,min(10cqi,13vh),180px)!important}
+@media ((min-width:601px) or ((hover:hover) and (pointer:fine))) and (max-height:780px){
+body[data-mk] .frame .ct-hx .ct-hero-t{gap:clamp(4px,1.4vh,14px)!important}
+body[data-mk] .frame .ct-hx .ct-fact{font-size:clamp(11px,2vh,15px)}
+body[data-mk] .frame .ct-hx .ct-fact b{font-size:clamp(20px,4vh,34px)}
+body[data-mk] .frame .ct-hx .lead{font-size:clamp(12px,2.2vh,17px)!important;line-height:1.35!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body[data-mk] .frame .ct-hx .ct-cta .btn{padding-block:clamp(7px,1.6vh,14px);font-size:clamp(12px,2vh,15px)}
+}
+@media ((min-width:601px) or ((hover:hover) and (pointer:fine))) and (max-height:560px){body[data-mk] .frame .ct-hx .ct-fact,body[data-mk] .frame .ct-hx .lead{display:none}}
+/* schermi molto bassi (zoom 250-300%): restano titolo, categoria e pulsanti precedente/successiva; indice e invito vanno via */
+@media ((min-width:601px) or ((hover:hover) and (pointer:fine))) and (max-height:420px){
+body[data-mk] .frame .ct-hx .ct-ix,body[data-mk] .frame .ct-hx .ct-cta,body[data-mk] .frame .ct-hx .ct-pk-l{display:none}
+body[data-mk] .frame .ct-hx .ct-hero-h .dx-k{font-size:10px}
+}
+
+/* Blog, apertura con il blocco in evidenza (istruzione 91): occupa esattamente il 100% dello schermo, anche con lo zoom, e il blocco sta sempre dentro */
+@media all{
+body[data-mk] .frame .bl-evh{overflow:hidden}
+body[data-mk] .frame .bl-evh .bl-ev{height:100svh!important;min-height:0!important;position:static!important}
+body[data-mk] .frame .bl-evh .bl-ev-m{position:absolute!important;inset:0!important;height:100%!important}
+body[data-mk] .frame .bl-evh .bl-top{position:absolute!important;display:grid!important;top:calc(var(--ovl,136px) + clamp(6px,2vh,24px))!important;left:max(16px,calc(50% - 640px))!important;right:16px!important;width:auto!important;padding:0!important;gap:clamp(4px,1.4vh,14px)}
+body[data-mk] .frame #main .bl-evh h1.bl-top-t{font-size:clamp(26px,min(5.4cqi,8.5vh),92px)!important;max-width:min(14ch,100%)!important}
+body[data-mk] .frame .bl-evh .bl-ev-t{position:absolute!important;left:auto!important;right:max(16px,calc(50% - 640px))!important;bottom:clamp(10px,3vh,40px)!important;margin:0!important;width:min(440px,calc(100% - 32px))!important;padding:clamp(10px,2.6vh,24px) clamp(14px,2.6vh,26px)!important;box-sizing:border-box}
+body[data-mk] .frame #main .sec.bl-evs .bl-evh .bl-ev-t h2#h-ev,body[data-mk] .frame #main .bl-evh .bl-ev-t h2#h-ev{font-size:clamp(15px,min(1.9cqi,3.4vh),30px)!important}
+}
+@media (max-height:680px){
+body[data-mk] .frame .bl-evh .bl-top-l,body[data-mk] .frame .bl-evh .bl-ev-t p:not(.bl-ev-k){display:none!important}
+}
+@media (max-height:430px){
+body[data-mk] .frame .bl-evh .bl-ev-t .sv-link,body[data-mk] .frame .bl-evh .bl-top-k{display:none}
+}
+@media (max-width:760px){
+body[data-mk] .frame .bl-evh .bl-ev-t{left:16px!important;right:16px!important;width:auto!important}
+}
+@media (max-height:430px){body[data-mk] .frame .bl-evh .bl-ev-k{display:none}}
+@media (max-height:340px){body[data-mk] .frame .bl-evh .bl-ev-t .meta{display:none}}
+
+/* Scheda immobile con zoom (istruzione 92): sugli schermi bassi le schede diventano orizzontali (piu larghe che alte) cosi foto, testi e schede degli appartamenti restano grandi e leggibili invece di rimpicciolirsi dentro un quadrato */
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-hx-tr>.rs-p1{aspect-ratio:1.8/1!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:auto minmax(0,1fr);column-gap:clamp(14px,3.6vh,32px);align-items:stretch}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-top{grid-column:1/-1;grid-row:1}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-t{grid-column:1;grid-row:2;align-self:end}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-mid{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:clamp(8px,2vh,16px);min-height:0}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-th{flex:1 1 auto;height:auto;min-height:0;overflow:hidden}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-th .ph{aspect-ratio:auto!important;height:100%!important}
+body[data-mk] .frame .rs-hx.hx-on .rs-hx-tr>.rs-pu{aspect-ratio:2/1!important}
+body[data-mk] .frame .rs-hx.hx-on .rs-hx-tr>.rs-p3{aspect-ratio:1.35/1!important}
+body[data-mk] .frame .rs-hx.hx-on .rs-hx-tr>.rs-pd,body[data-mk] .frame .rs-hx.hx-on .rs-hx-tr>.rs-pf{aspect-ratio:1.2/1!important}
+}
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-mid{align-items:stretch;text-align:left}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1 .rs-p1-th{width:100%!important;aspect-ratio:auto!important;max-height:none!important;flex:1 1 0}
+body[data-mk] .frame .rs-hx.hx-on .rs-p1-cap{max-width:none;font-size:clamp(12px,2.3vh,15px)}
+}
+/* scheda "appartamenti" orizzontale: titolo, scelta dell unita e pianta a sinistra, dati a destra, cosi i caratteri restano grandi */
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-units{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"h d" "p d" "t d" "l d";column-gap:clamp(14px,3vh,28px);align-content:start;grid-template-rows:auto auto auto minmax(0,1fr)}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>h2{grid-area:h}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>p{grid-area:p}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>.rs-ut{grid-area:t;flex-wrap:wrap}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>.rs-up{display:contents}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-pl{grid-area:l;max-height:none!important;height:auto;min-height:0}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-d{grid-area:d}
+}
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-u{flex-direction:row!important;align-items:baseline;gap:6px;padding:6px 12px!important;min-height:0!important;height:auto!important}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-ut{gap:6px;margin-block:clamp(6px,1.4vh,12px)}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-pl .ph,body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-pl [data-ph]{height:100%!important;aspect-ratio:auto!important;min-height:0}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>h2{margin-bottom:4px}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>p{margin-block:2px 4px}
+}
+/* v2 scheda appartamenti: titolo e testo in alto, scelta dell unita su una sola riga che scorre, sotto pianta e dati affiancati */
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-units{grid-template-areas:"h p" "t t" "l d";grid-template-rows:auto auto minmax(0,1fr);align-items:end}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>.rs-ut{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+body[data-mk] .frame .rs-hx.hx-on .rs-units>.rs-ut::-webkit-scrollbar{display:none}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-u{flex:0 0 auto;white-space:nowrap}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-pl{align-self:stretch}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-d{align-self:stretch}
+}
+/* v3: piu spazio ai dati, tab piu leggibili */
+@media (max-height:780px){
+body[data-mk] .frame .rs-hx.hx-on .rs-units>p{display:none}
+body[data-mk] .frame .rs-hx.hx-on .rs-units{grid-template-areas:"h h" "t t" "l d"}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-u{font-size:17px;padding:8px 16px!important}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-u small,body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-u span{font-size:13px}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-d dl>div,body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-d dl>*{padding-block:6px!important;margin:0}
+body[data-mk] .frame .rs-hx.hx-on .rs-units .rs-up-d h3{margin-bottom:4px}
+}
+
+/* Blog, apertura (istruzione 92): testo e blocco in evidenza allineati ai bordi del contenuto della pagina ("Tutti gli articoli", breadcrumb) e sottolineatura che non tocca il testo */
+@media all{
+body[data-mk] .frame .bl-evh .bl-top{left:max(var(--gut,16px),calc((100cqi - var(--wrap,1280px)) / 2))!important;right:max(var(--gut,16px),calc((100cqi - var(--wrap,1280px)) / 2))!important}
+body[data-mk] .frame .bl-evh .bl-ev-t{right:max(var(--gut,16px),calc((100cqi - var(--wrap,1280px)) / 2))!important}
+}
+@media (max-width:760px){
+body[data-mk] .frame .bl-evh .bl-ev-t{left:var(--gut,16px)!important;right:var(--gut,16px)!important}
+}
+body[data-mk] .frame #main .bl-evh .bl-ev-t h2#h-ev{line-height:1.22!important;padding-bottom:.08em}
+body[data-mk] .frame .bl-evh .bl-ev:hover h2#h-ev{text-underline-offset:.2em!important;text-decoration-thickness:max(1px,.055em)!important;text-decoration-skip-ink:auto}
+
+/* Mobile (istruzione 93): barra Chiama / Preventivo nascosta finche non si scorre; al focus da tastiera resta visibile */
+.sticky-m{transition:transform .35s cubic-bezier(.2,.65,.15,1)}
+body:not(.bar-on) .sticky-m:not(:focus-within){transform:translateY(115%)}
+@media (prefers-reduced-motion:reduce){.sticky-m{transition:none}}
+
+/* Mobile e touch (istruzione 93): bersagli da almeno 44 px per breadcrumb, footer, telefono e caselle */
+@media (pointer:coarse),(max-width:760px){
+body[data-mk] .frame .crumb a{display:inline-flex;align-items:center;min-height:44px}
+body[data-mk] .frame .ha-foot a:not(.ha-btn),body[data-mk] .frame .ft a{display:inline-flex;align-items:center;min-height:44px}
+body[data-mk] .frame .close-tel,body[data-mk] .frame a[href^="tel:"]:not(.btn):not(.ha-btn){display:inline-flex;align-items:center;min-height:44px}
+body[data-mk] .frame input[type=checkbox],body[data-mk] .frame input[type=radio]{width:24px;height:24px;flex:none}
+body[data-mk] .frame label:has(input[type=checkbox]){min-height:44px;display:flex;align-items:center;gap:12px}
+}
+/* Mobile: breadcrumb allineato (link e testo sulla stessa riga) e titolo del blog piu grande */
+@media (pointer:coarse),(max-width:760px){body[data-mk] .frame .crumb li{display:inline-flex;align-items:center;min-height:44px}}
+@media (max-width:760px){body[data-mk] .frame #main .bl-evh h1.bl-top-t{font-size:clamp(34px,min(11.5cqi,8.5vh),60px)!important}}
+/* Mobile: breadcrumb su una riga con la pagina corrente troncata, e scheda immobile in colonna con la foto sempre visibile */
+@media (pointer:coarse),(max-width:760px){
+body[data-mk] .frame .crumb ol{flex-wrap:nowrap;overflow:hidden}
+body[data-mk] .frame .crumb li{flex:0 0 auto}
+body[data-mk] .frame .crumb li[aria-current]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:44px}
+}
+body[data-mk] .frame .rs-hx:not(.hx-on) .rs-hx-tr>.rs-p2{aspect-ratio:4/3!important;min-height:220px!important}

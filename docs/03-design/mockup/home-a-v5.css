@@ -452,3 +452,16 @@ footer nav li.ft-sv>ul li{margin:0 0 6px}
 }
 /* Touch: senza hover i nomi restano visibili sulle foto */
 @media (hover:none){.tw-cap{opacity:1;transform:none}}
+
+/* Mobile (istruzione 93): i quattro impegni: numero a sinistra, titolo e testo uno sotto l altro (la regola a tre colonne piu in alto li affiancava e il titolo copriva il testo) */
+@media (max-width:900px){
+.vals.wl-s .wl-grid .wl-i{grid-template-columns:34px minmax(0,1fr)!important;grid-template-areas:"n h" ". p"!important;gap:6px 14px!important}
+.vals.wl-s .wl-grid .wl-i .wl-n{grid-area:n}
+.vals.wl-s .wl-grid .wl-i h3{grid-area:h;font-size:clamp(26px,7.4vw,36px)!important;line-height:1.05!important}
+.vals.wl-s .wl-grid .wl-i p{grid-area:p;max-width:none!important}
+}
+@media (max-width:900px){
+.vals.wl-s .wl-grid .wl-i .wl-n{grid-area:n!important}
+.vals.wl-s .wl-grid .wl-i h3{grid-area:h!important}
+.vals.wl-s .wl-grid .wl-i p{grid-area:p!important}
+}
