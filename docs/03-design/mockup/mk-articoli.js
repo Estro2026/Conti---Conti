@@ -65,7 +65,7 @@
     var im = document.querySelector('.ar-img'); if (im) im.remove();
   };
   /* Pagina articolo */
-  var slug = decodeURIComponent(location.hash.slice(1)), cur = A.filter(function (a) { return a.k === slug; })[0];
+  var slug = window.MK_SLUG !== undefined ? window.MK_SLUG : decodeURIComponent(location.hash.slice(1)), cur = A.filter(function (a) { return a.k === slug; })[0];
   if (cur && document.querySelector('.ar-hd')) {
     document.title = 'Mockup ' + cur.t + ' | Conti e Conti';
     var cr = document.querySelectorAll('.crumb li'); if (cr.length) cr[cr.length - 1].textContent = cur.t;

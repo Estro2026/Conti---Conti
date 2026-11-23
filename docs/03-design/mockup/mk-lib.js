@@ -30,7 +30,7 @@
   });
 
   /* ---------- galleria a tutto schermo ---------- */
-  var gal = d.querySelectorAll('.g1,.g2,.g3,.g4,.g5,.g6');
+  var gal = d.querySelectorAll('button.g1,button.g2,button.g3,button.g4,button.g5,button.g6');
   if (gal.length) {
     css('photoswipe.css');
     Promise.all([js('photoswipe.umd.min.js'), js('photoswipe-lightbox.umd.min.js')]).then(function () {

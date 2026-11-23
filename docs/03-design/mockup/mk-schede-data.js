@@ -7,7 +7,7 @@ window.MK_SCHEDE = {
    "cs": "palestre",
    "luogo": "Milano",
    "nota": "Palestra e spa nel basement del palazzo di fronte al Monumentale (sito attuale).",
-   "hero": "ceresio-7-gym-spa-02",
+   "hero": "ceresio7-piscina3",
    "gal": [
     "ceresio-7-palestra-palestra-attrezzi",
     "ceresio-7-gym-spa-01",
@@ -47,7 +47,7 @@ window.MK_SCHEDE = {
    "cs": "ville",
    "luogo": "Menaggio (CO)",
    "nota": "",
-   "hero": "villa-lugarna-facciata-loggia-balaustre",
+   "hero": "villa-lugarna-home",
    "gal": [
     "villa-lugarna-loggia-colonna-vista-lago",
     "villa-lugarna-terrazza-balaustra-vista-lago",

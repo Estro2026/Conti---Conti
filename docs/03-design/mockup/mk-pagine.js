@@ -5,7 +5,7 @@
   var MAP = [
     [/^Ritratto di Massimo Conti/i, 'img/massimo-conti-scontornato.webp'],
     /* foto reali del cliente (Basecamp, istruzione 50): img/foto/ */
-    [/casa finita a tutta larghezza|villa finita/i, F + 'villa-lugarna-facciata-loggia-balaustre.webp'],
+    [/casa finita a tutta larghezza|villa finita/i, F + 'residenza-la8-seregno-esterno5.webp'],
     [/Villa Lugarna/i, F + 'villa-lugarna-loggia-colonna-vista-lago.webp'],
     [/Ceresio 7, piscina|vasca della piscina/i, F + 'ceresio-7-piscina-piscina-skyline-tramonto.webp'],
     [/Foto Ceresio 7|sala fitness/i, F + 'ceresio-7-palestra-palestra-attrezzi.webp'],
@@ -17,7 +17,7 @@
     [/^Palestra$/i, F + 'the-rise-sala-neon-we-rise.webp'],
     [/^Allestimento$/i, F + 'allestimento-mm-palco-dall-alto.webp'],
     [/interno finito, scurita/i, F + 'casa-mjo-corridoio-volta-ottone.webp'],
-    [/Immagine principale del progetto/i, F + 'ceresio-7-piscina-piscina-skyline-tramonto.webp'], /* la scheda progetto è Ceresio 7 */
+    [/Immagine principale del progetto/i, F + 'ceresio7-piscina3.webp'], /* la scheda progetto è Ceresio 7 */
     [/^Foto 1, vasca/i, F + 'ceresio-7-piscina-piscina-skyline-tramonto.webp'], [/^Foto 2, sala/i, F + 'ceresio-7-palestra-palestra-attrezzi.webp'],
     [/^Foto 3/i, F + 'ceresio-7-piscina-cabanas-lettini.webp'], [/^Foto 4/i, F + 'ceresio-7-piscina-piscina-skyline-notte-luci.webp'],
     [/^Foto 5/i, F + 'ceresio-7-palestra-piscina-interna.webp'], [/^Foto 6/i, F + 'ceresio-7-piscina-vasca-idromassaggio.webp'],
@@ -63,7 +63,7 @@
     allestimenti: [['LaTarma', 'Milano', 'allestimento-mm-palco-dall-alto']],
     ville: [['Villa Lugarna', '', 'villa-lugarna-loggia-colonna-vista-lago']]
   };
-  var NAMED = { 'Ceresio 7': 'ceresio-7-gym-spa-02', 'Casa MJO': 'casa-mjo-soggiorno-scala-ottone-cucina', 'Villa Lugarna': 'villa-lugarna-loggia-colonna-vista-lago' };
+  var NAMED = { 'Ceresio 7': 'ceresio7-piscina3', 'Casa MJO': 'casa-mjo-soggiorno-scala-ottone-cucina', 'Villa Lugarna': 'villa-lugarna-home' };
   var setImg = function (box, file) {
     var ph = box && box.querySelector('[data-ph]'); if (!ph) return;
     ph.classList.add('ph', 'mk-has'); ph.removeAttribute('role'); ph.removeAttribute('aria-label');
@@ -152,4 +152,60 @@
     var DS = { 'servizio-residenze.html': 'Dalla progettazione alla costruzione, fino alla manutenzione di interi edifici e case singole.', 'servizio-ristrutturazioni.html': 'Lavorazioni particolari e cura del dettaglio, in dialogo costante con cliente e Direzione Lavori.', 'servizio-retail.html': 'Negozi, showroom, palestre e spazi commerciali: costruzione e manutenzione ordinaria e straordinaria.' };
     var h = a.querySelector('h3'); if (h && DS[a.getAttribute('href')]) h.insertAdjacentHTML('afterend', '<p class="mk-sv-d">' + DS[a.getAttribute('href')] + '</p>');
   });
+})();
+
+/* istruzione 103: H1 delle categorie piu lunghi (PDF copywriter): carattere piu piccolo, cosi stanno nell'apertura */
+(function () {
+  function f() { var h = document.querySelector('.ct-hx #h1, .ct-hero #h1'); if (!h) return; var t = (h.textContent || '').trim(); h.classList.toggle('ct-long', t.length > 22); }
+  f(); setTimeout(f, 400); setTimeout(f, 1500);
+})();
+
+/* istruzione 105: menu (pagine interne): foto per categoria e collegamenti alla categoria giusta */
+(function () {
+  var SL = ['case', 'residenze', 'lusso', 'palestre', 'allestimenti', 'ville', 'attivita-commerciali', 'industriale'];
+  var IMG = ['menu-case', 'menu-residenze', 'menu-lusso', 'menu-palestre', 'menu-allestimenti', 'villa-lugarna-home', 'menu-attivita-commerciali', 'menu-industriale'];
+  function fix() {
+    var m = document.getElementById('menu'); if (!m || m.dataset.mkImg) return;
+    var chips = m.querySelectorAll('.ha-mx-chip'); if (!chips.length) return;
+    m.dataset.mkImg = '1';
+    [].forEach.call(chips, function (a, i) { a.setAttribute('href', 'categoria.html#' + SL[i]); });
+    [].forEach.call(m.querySelectorAll('.ha-menu-sub a'), function (a, i) { a.setAttribute('href', 'categoria.html#' + SL[i]); });
+    [].forEach.call(m.querySelectorAll('.ha-mx-prev .ph-i'), function (b, i) {
+      b.innerHTML = '<img src="img/foto/' + IMG[i] + '.webp" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">'; b.firstChild.style.setProperty('opacity', '1', 'important');
+    });
+  }
+  fix(); document.addEventListener('DOMContentLoaded', fix); window.addEventListener('load', fix);
+  setTimeout(fix, 600); setTimeout(fix, 1800);
+})();
+
+/* istruzione 106: card delle categorie nelle pagine di servizio con le stesse foto del menu della Home A */
+(function () {
+  var IMG = { case: 'menu-case', residenze: 'menu-residenze', lusso: 'menu-lusso', palestre: 'menu-palestre', allestimenti: 'menu-allestimenti', ville: 'villa-lugarna-home', 'attivita-commerciali': 'menu-attivita-commerciali', industriale: 'menu-industriale' };
+  function run() {
+    [].forEach.call(document.querySelectorAll('a.svr-tile, a.svk-tile, a.svt-tile'), function (a) {
+      var m = /categoria\.html#([a-z-]+)|progetti-realizzati\/([a-z-]+)\//.exec(a.getAttribute('href') || ''), s = m && (m[1] || m[2]); if (!s || !IMG[s]) return;
+      var box = a.querySelector('[data-ph], .ph'); if (!box) return;
+      box.classList.add('ph', 'mk-has'); box.innerHTML = '<img class="mk-img" src="img/foto/' + IMG[s] + '.webp" alt="" loading="lazy" decoding="async">';
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(run, 50); });
+  window.addEventListener('load', function () { setTimeout(run, 300); });
+})();
+
+
+/* istruzione 107: Impresa, apertura (storia): solo segnaposto al posto delle foto */
+(function () {
+  function f() {
+    [].forEach.call(document.querySelectorAll('.ixs-s [data-ph]'), function (b) {
+      if (!b.querySelector('img') && !b.classList.contains('mk-has')) return;
+      b.classList.remove('mk-has'); b.innerHTML = '<span>' + (b.getAttribute('data-ph') || '').split('|')[0] + '</span>';
+    });
+  }
+  f(); document.addEventListener('DOMContentLoaded', f); window.addEventListener('load', f); setTimeout(f, 500); setTimeout(f, 1500); setTimeout(f, 3000);
+})();
+
+/* istruzione 115: titolo di Palestre senza l'effetto a lettere (come le altre categorie) */
+(function () {
+  function f() { var h = document.querySelector('.ct-hero h1'); if (h && h.querySelector('.ct-w')) h.textContent = h.getAttribute('aria-label') && h.textContent.replace(/\s+/g, '') === h.getAttribute('aria-label').replace(/\s+/g, '') ? h.getAttribute('aria-label') : h.textContent; }
+  f(); document.addEventListener('DOMContentLoaded', f); window.addEventListener('load', f); setTimeout(f, 300); setTimeout(f, 1200);
 })();

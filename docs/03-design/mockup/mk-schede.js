@@ -44,7 +44,7 @@
     var t = a.querySelector('h3, strong, b'); if (!t) return;
     var u = byName[t.textContent.trim().toLowerCase()]; if (u) a.setAttribute('href', u);
   });
-  var slug = decodeURIComponent(location.hash.slice(1));
+  var slug = window.MK_SLUG !== undefined ? window.MK_SLUG : decodeURIComponent(location.hash.slice(1));
   var img = function (box, f) {
     var ph = box && (box.matches && box.matches('[data-ph]') ? box : box.querySelector('[data-ph], .ph')); if (!ph) return;
     ph.classList.add('ph');
@@ -54,6 +54,8 @@
   var setT = function (sel, html) { var e = document.querySelector(sel); if (e) e.innerHTML = html; };
 
   /* scheda progetto */
+  /* istruzione 103: Ceresio 7 (PDF 4.2a) non ha il secondo paragrafo */
+  if (document.querySelector('.pj-hero') && (!slug || slug === 'ceresio-7')) { var lp0 = document.querySelectorAll('.pj-story-t > p'); if (lp0[2] && /^\[Contesto/.test(lp0[2].textContent.trim())) lp0[2].remove(); }
   if (document.querySelector('.pj-hero') && D.progetti[slug] && slug !== 'ceresio-7') {
     var p = D.progetti[slug];
     document.title = 'Mockup ' + p.nome + ' | Conti e Conti';
@@ -84,7 +86,9 @@
   if (document.querySelector('.ct-hero') && CN[slug] && slug !== 'palestre') {
     var cs = slug === 'attivita-commerciali' ? 'commerciali' : slug; var list = Object.keys(D.progetti).filter(function (k) { return D.progetti[k].cs === cs; });
     document.title = 'Mockup ' + CN[slug] + ' | Conti e Conti';
-    setT('#h1', CN[slug]);
+    /* H1 delle categorie dal PDF del copywriter (istruzione 103) */
+    var H1C = { case: 'Case ristrutturate e costruite a Milano e in Brianza', residenze: 'Palazzine e residenze costruite in Brianza', lusso: 'Ristrutturazioni di lusso a Milano', allestimenti: 'Allestimenti per negozi, showroom ed eventi', ville: 'Costruzione ville, dal Lago di Como alla Brianza', 'attivita-commerciali': 'Negozi, ristoranti e uffici realizzati', industriale: 'Capannoni ed edifici industriali' };
+    setT('#h1', H1C[slug] || CN[slug]);
     var cc = document.querySelectorAll('.crumb li'); if (cc.length) cc[cc.length - 1].textContent = CN[slug];
     var fact = document.querySelector('.ct-fact'); if (fact) fact.style.display = 'none';
     setT('.ct-hero-s .lead', 'Testo della categoria: ' + Q + '.');

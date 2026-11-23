@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Home B | Conti &amp; Conti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#f4f3f0;color:#0e0e0f;font:400 16px/1.6 Inter,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#8a1531;text-decoration:none}a:hover{color:#6b0f25}
+*{box-sizing:border-box}
+h1,h2,h3{font-family:"Inter Tight","Helvetica Neue",Arial,sans-serif;font-weight:600;margin:0;letter-spacing:-.02em;line-height:1;text-wrap:balance}
+p{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+</style>
+</helmet>
+
+<header data-screen-label="Header" style="position:fixed;inset:0 0 auto 0;z-index:100;height:{{ navH }};display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(16px,3vw,40px);background:{{ navBg }};box-shadow:{{ navShadow }};backdrop-filter:{{ navBlur }};-webkit-backdrop-filter:{{ navBlur }};transition:background-color .35s ease,box-shadow .35s ease">
+  <a href="#hero" aria-label="Conti &amp; Conti, home" style="display:block;width:{{ logoW }};flex:none">
+    <sc-if value="{{ navLight }}" hint-placeholder-val="{{ true }}"><img src="img/logo-bianco.png" alt="" style="display:block;width:100%;height:auto"></sc-if>
+    <sc-if value="{{ navDark }}"><img src="img/logo.png" alt="" style="display:block;width:100%;height:auto"></sc-if>
+  </a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <sc-if value="{{ showNavCta }}" hint-placeholder-val="{{ true }}"><a href="../wireframe/contatti.html" style="display:inline-flex;align-items:center;gap:12px;min-height:44px;padding:0 16px;border-radius:8px;background:#8a1531;color:#fff;font:600 13px/1 Inter,sans-serif;white-space:nowrap" style-hover="background:#6b0f25;color:#fff">Richiedi un preventivo</a></sc-if>
+    <button type="button" onClick="{{ openMenu }}" aria-expanded="{{ menu }}" style="display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:1px solid {{ burgerLine }};border-radius:8px;background:transparent;color:{{ navInk }};cursor:pointer;white-space:nowrap;font:600 14px/1 'Inter Tight',sans-serif" style-hover="background:#fff;border-color:#8a1531;color:#8a1531">
+      <span aria-hidden="true" style="display:grid;grid-template-columns:repeat(2,4px);gap:3px"><i style="width:4px;height:4px;background:currentColor;border-radius:1px"></i><i style="width:4px;height:4px;background:currentColor;border-radius:1px"></i><i style="width:4px;height:4px;background:currentColor;border-radius:1px"></i><i style="width:4px;height:4px;background:currentColor;border-radius:1px"></i></span>Menu
+    </button>
+  </div>
+</header>
+
+<sc-if value="{{ menu }}">
+  <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:110;background:rgba(14,14,15,.4)"></div>
+  <div role="dialog" aria-label="Menu" style="position:fixed;inset:0 0 auto 0;z-index:111;max-height:100svh;overflow:auto;background:#f4f3f0;border-radius:0 0 22px 22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.4);padding:20px clamp(16px,3vw,40px) clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <img src="img/logo.png" alt="Conti &amp; Conti" style="width:150px;height:auto">
+      <button type="button" onClick="{{ closeMenu }}" aria-label="Chiudi il menu" style="height:44px;padding:0 16px;border:1px solid #8a1531;border-radius:8px;background:#fff;color:#8a1531;cursor:pointer;font:600 14px/1 'Inter Tight',sans-serif">Chiudi</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px 64px">
+      <nav aria-label="Menu" style="display:flex;flex-direction:column;gap:20px">
+        <ul style="display:flex;flex-direction:column">
+          <sc-for list="{{ mainLinks }}" as="l" hint-placeholder-count="4">
+            <li><a href="{{ l.href }}" style="display:flex;align-items:flex-start;gap:16px;padding:4px 0;font:600 clamp(40px,5vw,80px)/1.02 'Inter Tight',sans-serif;letter-spacing:-.03em;color:#0e0e0f" style-hover="color:#8a1531"><small style="font:500 12px/1 Inter,sans-serif;color:#8a1531;padding-top:.8em">{{ l.n }}</small>{{ l.label }}</a></li>
+          </sc-for>
+        </ul>
+        <ul style="display:flex;flex-wrap:wrap;gap:8px 24px">
+          <sc-for list="{{ secLinks }}" as="l" hint-placeholder-count="3"><li><a href="{{ l.href }}" style="font:500 15px/1.4 Inter,sans-serif;color:#3a3a3d" style-hover="color:#8a1531">{{ l.label }}</a></li></sc-for>
+        </ul>
+      </nav>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p style="font:600 11px/1.2 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a1531">Cantieri per categoria</p>
+        <ul style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ cats }}" as="c" hint-placeholder-count="8"><li><a href="../wireframe/categoria.html" style="display:inline-flex;padding:8px 14px;border:1px solid rgba(14,14,15,.12);border-radius:8px;color:#0e0e0f;font:500 14px/1 Inter,sans-serif" style-hover="background:#8a1531;border-color:#8a1531;color:#fff">{{ c }}</a></li></sc-for>
+        </ul>
+        <a href="../wireframe/cantieri.html" style="align-self:flex-start;font:500 14px/1 Inter,sans-serif;border-bottom:1px solid currentColor;padding-bottom:4px">Tutti i cantieri →</a>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-top:12px;font-size:15px;color:#3a3a3d">
+          <a href="tel:+390362557972" style="color:#0e0e0f">0362 557972</a>
+          <a href="mailto:info@contieconti.it" style="color:#0e0e0f">info@contieconti.it</a>
+          <span>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<main>
+<section id="hero" data-screen-label="01 Hero" ref="{{ heroRef }}" style="position:relative;height:100svh;min-height:560px;overflow:hidden;background:#222;color:#fff">
+  <div style="position:absolute;inset:0">
+    <video ref="{{ videoRef }}" src="video/hero-b.mp4" autoplay="" muted="" loop="" playsinline="" preload="auto" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%"></video>
+  </div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(10,10,11,.45) 0%,rgba(10,10,11,.12) 22%,rgba(10,10,11,.12) 52%,rgba(10,10,11,.62) 100%)"></div>
+  <div style="position:absolute;z-index:2;left:clamp(20px,3vw,40px);right:clamp(20px,3vw,40px);bottom:clamp(24px,4vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px 48px;pointer-events:none">
+    <h1 style="font-size:clamp(44px,7vw,124px);line-height:.94;letter-spacing:-.035em;max-width:13ch;text-shadow:0 2px 24px rgba(0,0,0,.25)">Costruiamo case <span style="display:block;letter-spacing:-.01em;color:rgba(255,255,255,.72)">fatte per durare.</span></h1>
+    <div style="flex:none;display:flex;gap:8px;flex-wrap:wrap;pointer-events:auto">
+      <a href="../wireframe/contatti.html" style="display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid #8a1531;border-radius:8px;background:#8a1531;color:#fff;font:600 15px/1 Inter,sans-serif;white-space:nowrap" style-hover="background:#6b0f25;border-color:#6b0f25;color:#fff">Richiedi un preventivo</a>
+      <a href="../wireframe/cantieri.html" style="display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font:600 15px/1 Inter,sans-serif;white-space:nowrap" style-hover="background:#8a1531;border-color:#8a1531;color:#fff">Scopri i cantieri</a>
+    </div>
+  </div>
+</section>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px;padding:10px;background:{{ stripBg }}">
+  <sc-for list="{{ strip }}" as="s" hint-placeholder-count="3">
+    <a href="{{ s.href }}" style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;min-height:{{ stripH }};padding:20px 22px;border-radius:14px;background:{{ s.bg }};color:{{ s.ink }};transition:background-color .3s ease" style-hover="background:#6b0f25;color:#fff">
+      <span style="display:flex;flex-direction:column;gap:10px"><small style="font:500 11px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.65">{{ s.k }}</small><strong style="font:500 clamp(19px,1.6vw,24px)/1.1 Inter,sans-serif;letter-spacing:-.01em;max-width:20ch">{{ s.t }}</strong></span>
+      <span aria-hidden="true" style="flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid currentColor;font-size:15px">→</span>
+    </a>
+  </sc-for>
+</div>
+
+<section id="costruzione" data-screen-label="02 Sequenza costruzione" ref="{{ sectionRef }}" style="position:relative;height:{{ sectionH }}">
+  <div style="position:sticky;top:0;height:100svh;overflow:hidden;background:{{ stageBg }};display:grid;grid-template-columns:{{ gridCols }};grid-template-rows:{{ gridRows }};gap:{{ gridGap }};padding:{{ stagePad }};align-items:stretch">
+
+    <div style="order:{{ imgOrder }};position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+      <div style="position:relative;width:{{ frameW }};aspect-ratio:2688/1520">
+        <sc-for list="{{ phases }}" as="ph" hint-placeholder-count="5">
+          <div style="position:absolute;inset:0;display:flex;align-items:{{ ph.align }};-webkit-mask-image:{{ ph.edge }};mask-image:{{ ph.edge }};-webkit-mask-composite:source-in;mask-composite:intersect">
+            <img src="{{ ph.src }}" alt="{{ ph.alt }}" style="display:block;width:100%;height:auto;opacity:{{ ph.op }};-webkit-mask-image:{{ ph.mask }};mask-image:{{ ph.mask }}">
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <ol aria-label="Fasi della costruzione" style="position:absolute;left:{{ progX }};right:{{ progX }};bottom:{{ progBottom }};display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:{{ progGap }}">
+      <sc-for list="{{ phases }}" as="ph" hint-placeholder-count="5">
+        <li style="position:relative;display:block;height:4px;border-radius:999px;background:rgba(14,14,15,.1);overflow:hidden"><span style="position:absolute;left:0;top:0;bottom:0;width:{{ ph.fill }};border-radius:999px;background:#8a1531"></span></li>
+      </sc-for>
+    </ol>
+
+    <div style="order:{{ textOrder }};position:relative;min-width:0;min-height:0">
+
+      <article aria-hidden="{{ s0.hidden }}" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:{{ textJustify }};overflow:hidden;gap:24px;opacity:{{ s0.op }};visibility:{{ s0.vis }};pointer-events:{{ s0.pe }}">
+        <h2 aria-label="{{ statement }}" style="font-size:clamp(22px,2.4vw,40px);line-height:1.12;letter-spacing:-.025em;max-width:24ch;text-wrap:pretty">
+          <sc-for list="{{ words }}" as="w" hint-placeholder-count="0"><span aria-hidden="true" style="color:{{ w.c }};transition:color .2s ease">{{ w.t }} </span></sc-for>
+        </h2>
+        <a href="../wireframe/chi-siamo.html" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:500 14px/1 Inter,sans-serif;border-bottom:1px solid currentColor;padding-bottom:4px">Conosci l'impresa →</a>
+      </article>
+
+      <article aria-hidden="{{ s1.hidden }}" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:{{ textJustify }};overflow:hidden;gap:{{ blockGap }};opacity:{{ s1.op }};visibility:{{ s1.vis }};pointer-events:{{ s1.pe }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <h2 style="font-size:clamp(26px,2.6vw,44px);letter-spacing:-.025em;max-width:16ch">Dal 1988, <span style="color:#8a1531">un cantiere dopo l’altro.</span></h2>
+        </div>
+        <ul style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(14,14,15,.12)">
+          <sc-for list="{{ stats }}" as="st" hint-placeholder-count="3">
+            <li style="display:flex;flex-direction:column;gap:12px;padding:{{ statPad }};border-right:{{ st.br }}">
+              <span aria-label="{{ st.aria }}" style="display:flex;align-items:flex-start;gap:6px;font:600 {{ statSize }}/.86 'Inter Tight',sans-serif;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#0e0e0f">{{ st.v }}<sup style="font:500 11px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8a1531;margin-top:.5em">{{ st.u }}</sup></span>
+              <span style="font-size:{{ statDescSize }};line-height:1.4;color:#3a3a3d;max-width:22ch">{{ st.d }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </article>
+
+      <article aria-hidden="{{ s2.hidden }}" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:{{ textJustify }};overflow:hidden;gap:{{ blockGap }};opacity:{{ s2.op }};visibility:{{ s2.vis }};pointer-events:{{ s2.pe }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <h2 style="font-size:clamp(26px,2.6vw,44px);letter-spacing:-.025em;max-width:18ch">I nostri servizi</h2>
+          <p style="color:#3a3a3d;max-width:46ch">Tre modi di costruire, un solo modo di rispondere.</p>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ services }}" as="sv" hint-placeholder-count="3">
+            <li style="opacity:{{ sv.op }};transform:translateY({{ sv.ty }})">
+              <a href="../wireframe/cantieri.html" style="display:grid;grid-template-columns:{{ svCols }};align-items:center;gap:16px;padding:10px 14px 10px 10px;border-radius:14px;background:#fff;color:#0e0e0f;transition:background-color .35s ease,color .35s ease" style-hover="background:#8a1531;color:#fff">
+                <span style="position:relative;display:block;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:#e6e5e2"><img src="{{ sv.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></span>
+                <span style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                  <h3 style="font-size:clamp(20px,1.7vw,26px)">{{ sv.t }}</h3>
+                  <span style="font-size:14px;line-height:1.45;opacity:.8;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ svClamp }};overflow:hidden">{{ sv.d }}</span>
+                </span>
+                <span aria-hidden="true" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid currentColor;font-size:14px">→</span>
+              </a>
+            </li>
+          </sc-for>
+        </ul>
+      </article>
+
+      <article aria-hidden="{{ s3.hidden }}" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:{{ textJustify }};overflow:hidden;gap:{{ blockGap }};opacity:{{ s3.op }};visibility:{{ s3.vis }};pointer-events:{{ s3.pe }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <p style="display:flex;align-items:center;gap:10px;font:600 11px/1.2 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a1531"><span style="width:6px;height:6px;background:#8a1531"></span>Come lavoriamo</p>
+          <h2 style="font-size:clamp(26px,2.6vw,44px);letter-spacing:-.025em;max-width:16ch">Quattro impegni, <span style="color:#8a1531">messi per iscritto.</span></h2>
+        </div>
+        <ol style="display:flex;flex-direction:column">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+            <li style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:4px 8px;padding:{{ valPad }};border-top:1px solid rgba(14,14,15,.12);opacity:{{ v.op }};transform:translateY({{ v.ty }})">
+              <small style="font:600 12px/1.9 'Inter Tight',sans-serif;color:#8a1531">{{ v.n }}</small>
+              <span style="display:flex;flex-direction:column;gap:4px"><strong style="font:600 clamp(18px,1.6vw,24px)/1.2 'Inter Tight',sans-serif;letter-spacing:-.015em">{{ v.t }}</strong><span style="font-size:{{ valDescSize }};line-height:1.45;color:#3a3a3d;max-width:44ch;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ valClamp }};overflow:hidden">{{ v.d }}</span></span>
+            </li>
+          </sc-for>
+        </ol>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Sezione successiva" style="min-height:70vh;padding:96px clamp(20px,5vw,72px);background:#f4f3f0;display:flex;flex-direction:column;gap:10px">
+  <p style="font:600 11px/1.2 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a1531">Segnaposto</p>
+  <p style="font:600 clamp(24px,3vw,36px)/1.15 'Inter Tight',sans-serif;letter-spacing:-.02em">Scorrimento normale ripreso: qui proseguono le sezioni successive.</p>
+</section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;scrollSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.6,&quot;max&quot;:1.6,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;×&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ritmo&quot;},&quot;imageTransition&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.6,&quot;min&quot;:0.2,&quot;max&quot;:1.4,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;schermi&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Ritmo&quot;}}">
+const PH = [
+  { label: 'Il progetto', src: 'img/costruzione/01-progetto.webp', alt: 'Pianta assonometrica della casa', bg: [247, 237, 225] },
+  { label: 'Le fondamenta', src: 'img/costruzione/02-fondamenta.webp', alt: 'Platea di fondazione nello scavo', bg: [244, 246, 239] },
+  { label: 'La struttura', src: 'img/costruzione/03-struttura.webp', alt: 'Struttura in cemento armato', bg: [244, 246, 239] },
+  { label: 'Le murature', src: 'img/costruzione/04-murature.webp', alt: 'Casa con murature in blocchi', bg: [244, 246, 239] },
+  { label: 'La casa completa', src: 'img/costruzione/05-casa.webp', alt: 'Casa finita con giardino', bg: [246, 244, 239] }
+];
+const STATEMENT = "Dalle fondazioni alle finiture, ogni fase del cantiere è eseguita e controllata dall'impresa. Per questo rispondiamo di ogni progetto, dal preventivo alle chiavi.";
+const WORDS = STATEMENT.split(' ');
+const STATS = [
+  { to: 40, u: 'anni', d: 'Nell’edilizia tra Brianza, Milano e lago.', aria: '40 anni' },
+  { to: 500, u: '+', d: 'Cantieri, dalla casa singola al retail.', aria: 'oltre 500 cantieri' },
+  { to: 40, u: 'persone', d: 'Tutte dipendenti dell’impresa.', aria: '40 persone' }
+];
+const SERVICES = [
+  { t: 'Residenze', img: 'img/villa.jpg', d: 'Dalla progettazione alla costruzione, fino alla manutenzione di interi edifici e case singole.' },
+  { t: 'Ristrutturazioni', img: 'img/ceresio-spa.jpg', d: 'Lavorazioni particolari e cura del dettaglio, in dialogo costante con cliente e Direzione Lavori.' },
+  { t: 'Retail', img: 'img/therise.jpg', d: 'Negozi, showroom, palestre e spazi commerciali: costruzione e manutenzione ordinaria e straordinaria.' }
+];
+const VALUES = [
+  { t: 'Rispetto dei tempi', d: 'La data di fine lavori si fissa prima di iniziare e si aggiorna solo con varianti concordate.' },
+  { t: 'Certezza dei prezzi', d: 'Il preventivo si legge voce per voce: sai cosa paghi e quando.' },
+  { t: 'Un solo interlocutore', d: 'Dal progetto alla consegna, un tecnico di riferimento per tutto il cantiere.', todo: true },
+  { t: 'Lavorazioni specialistiche', d: 'Squadre formate per finiture fuori standard e interni di pregio.', todo: true }
+];
+// content timeline, in screens of scroll
+const SEG = [[0, 1.4], [1.8, 3.2], [3.6, 5.2], [5.6, 7.8]];
+const U = 7.8, F = 0.2;
+const ss = t => t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t);
+const cl = t => Math.max(0, Math.min(1, t));
+const pad = n => String(n + 1).padStart(2, '0');
+
+class Component extends DCLogic {
+  state = { uRaw: -1, vh: typeof window !== 'undefined' ? window.innerHeight : 900, vw: typeof window !== 'undefined' ? window.innerWidth : 1280, solid: false, menu: false };
+  sectionRef = React.createRef();
+  heroRef = React.createRef();
+  videoRef = React.createRef();
+  componentDidMount() {
+    const v = this.videoRef.current;
+    if (v) { v.muted = true; v.defaultMuted = true; const pl = v.play(); if (pl && pl.catch) pl.catch(() => {}); }
+    this.onScroll = () => {
+      if (this.raf) return;
+      const run = () => {
+        clearTimeout(this.rafT); this.raf = 0;
+        const el = this.sectionRef.current, hero = this.heroRef.current;
+        if (!el) return;
+        const vh = window.innerHeight, k = this.props.scrollSpeed ?? 1;
+        const uRaw = -el.getBoundingClientRect().top / (vh * k);
+        const solid = hero ? hero.getBoundingClientRect().bottom < 80 : true;
+        const vw = window.innerWidth;
+        if (uRaw !== this.state.uRaw || vw !== this.state.vw || vh !== this.state.vh || solid !== this.state.solid) this.setState({ uRaw, vw, vh, solid });
+      };
+      this.raf = requestAnimationFrame(run);
+      this.rafT = setTimeout(() => { cancelAnimationFrame(this.raf); run(); }, 100);
+    };
+    this.onKey = e => { if (e.key === 'Escape') this.setState({ menu: false }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    window.addEventListener('keydown', this.onKey);
+    this.onScroll();
+  }
+  componentDidUpdate() {
+    const u = Math.max(0, Math.min(U, this.state.uRaw));
+    const vis = u >= SEG[1][0] - F * 0.4 && u <= SEG[1][1] + F * 0.6;
+    if (vis && !this.cStart) {
+      this.cStart = performance.now();
+      const tick = () => { this.forceUpdate(); if (this.cStart && performance.now() - this.cStart < 2050) this.cRaf = requestAnimationFrame(tick); };
+      this.cRaf = requestAnimationFrame(tick);
+    } else if (!vis && this.cStart) { this.cStart = null; cancelAnimationFrame(this.cRaf); }
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.cRaf);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('keydown', this.onKey);
+  }
+  renderVals() {
+    const s = this.state, mobile = s.vw < 900, short = s.vh < 760, compact = mobile || short;
+    const k = this.props.scrollSpeed ?? 1;
+    const T = this.props.imageTransition ?? 0.6;
+    const uRaw = s.uRaw, u = Math.max(0, Math.min(U, uRaw));
+
+    // images: 5 phases spread evenly over the whole path
+    const c0 = i => U * i / 5 - T / 2;
+    // blueprint -> foundations: sequential wipe instead of crossfade (drawing doesn't match the 3D views)
+    const tOut = ss(cl((u - (c0(1) - T * 0.2)) / (T * 0.8)));
+    const tIn = ss(cl((u - (c0(1) + T * 0.5)) / (T * 0.8)));
+    const imgOp = PH.map((_, i) => {
+      if (i === 0) return 1 - tOut * 0.6;
+      if (i === 1) { const out = 1 - ss(cl((u - c0(2) - T * 0.4) / (T * 0.6))); return Math.min(tIn > 0 ? 1 : 0, out); }
+      const inn = i === 0 ? 1 : ss(cl((u - c0(i)) / (T * 0.6)));
+      const out = i === PH.length - 1 ? 1 : 1 - ss(cl((u - c0(i + 1) - T * 0.4) / (T * 0.6)));
+      return Math.min(inn, out);
+    });
+
+    const seg = i => {
+      const [a, b] = SEG[i];
+      const fin = i === 0 ? 1 : ss((u - (a - F)) / F);
+      const fout = i === SEG.length - 1 ? 1 : 1 - ss((u - b) / F);
+      const op = Math.min(fin, fout);
+      return { op, vis: op > 0.001 ? 'visible' : 'hidden', pe: op > 0.5 ? 'auto' : 'none', hidden: op < 0.5, lp: cl((u - a) / (b - a)) };
+    };
+    const s0 = seg(0), s1 = seg(1), s2 = seg(2), s3 = seg(3);
+
+    // editorial scrub: lights up from section entry to ~70% of its segment
+    const wp = cl((uRaw + 0.6) / (SEG[0][1] * 0.75 + 0.6));
+    const words = WORDS.map((t, j) => {
+      const on = wp * WORDS.length >= j + 1;
+      const acc = j >= WORDS.length - 7;
+      return { t, c: on ? (acc ? '#8a1531' : '#0e0e0f') : 'rgba(14,14,15,.16)' };
+    });
+
+    const cnt = this.cStart ? 1 - Math.pow(1 - cl((performance.now() - this.cStart) / 2000), 3) : 0;
+    const stats = STATS.map((x, i) => ({ ...x, v: Math.round(x.to * cnt), br: i < 2 ? '1px solid rgba(14,14,15,.12)' : '0' }));
+
+    const services = SERVICES.map((x, i) => {
+      const o = ss(cl((s2.lp - 0.04 - 0.14 * i) / 0.16));
+      return { ...x, n: pad(i), op: o, ty: ((1 - o) * 14).toFixed(1) + 'px' };
+    });
+
+    const values = VALUES.map((x, j) => {
+      const o = ss(cl((s3.lp - 0.04 - 0.16 * j) / 0.16));
+      return { ...x, n: pad(j), op: o, ty: ((1 - o) * 12).toFixed(1) + 'px' };
+    });
+
+    const solid = s.solid || s.menu;
+    return {
+      heroRef: this.heroRef, sectionRef: this.sectionRef, videoRef: this.videoRef,
+      valDescSize: compact ? '14px' : '15px', valClamp: compact ? 1 : 3,
+      menu: s.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }),
+      navH: mobile ? '64px' : '76px', logoW: mobile ? '124px' : '150px',
+      navBg: solid ? 'rgba(244,243,240,.88)' : 'transparent',
+      navShadow: solid ? '0 1px 0 rgba(14,14,15,.12)' : 'none',
+      navBlur: solid ? 'blur(16px)' : 'none',
+      navInk: solid ? '#0e0e0f' : '#fff', burgerLine: solid ? 'rgba(14,14,15,.12)' : 'rgba(255,255,255,.5)',
+      navLight: !solid, navDark: solid, showNavCta: s.vw >= 560, notMobile: !mobile,
+      mainLinks: [['Impresa', '../wireframe/chi-siamo.html'], ['Cantieri', '../wireframe/cantieri.html'], ['In vendita', '../wireframe/in-vendita.html'], ['Blog', '../wireframe/blog.html']].map(([label, href], i) => ({ label, href, n: pad(i) })),
+      secLinks: [['FAQ', '../wireframe/faq.html'], ['Contatti', '../wireframe/contatti.html'], ['Lavora con noi', '../wireframe/lavora-con-noi.html']].map(([label, href]) => ({ label, href })),
+      cats: ['Case', 'Residenze', 'Lusso', 'Palestre', 'Allestimenti', 'Ville', 'Attività commerciali', 'Industriale'],
+      strip: [
+        { k: 'Cantieri', t: 'Case, ville, residenze e spazi commerciali', href: '../wireframe/cantieri.html', bg: '#fff', ink: '#0e0e0f' },
+        { k: 'In vendita', t: 'Acquista direttamente da chi costruisce', href: '../wireframe/in-vendita.html', bg: '#fff', ink: '#0e0e0f' },
+        { k: 'Parla con noi', t: 'Ti risponde chi segue il cantiere', href: 'tel:+390362557972', bg: '#8a1531', ink: '#fff' }
+      ],
+      stripH: mobile ? '84px' : '116px',
+
+      sectionH: `calc(${(U * k * 100).toFixed(1)}vh + 100svh)`,
+      stripBg: '#f4f3f0',
+      stageBg: '#f4f3f0',
+      phases: PH.map((p, i) => {
+        const f = cl((u - U * i / 5) / (U / 5)), cur = u >= U * i / 5 && (u < U * (i + 1) / 5 || i === 4), done = f >= 1 && !cur;
+        const a = -30 + tOut * 130, b = -30 + tIn * 130;
+        const mask = i === 0 ? (tOut > 0 ? `linear-gradient(to top, transparent ${a.toFixed(1)}%, #000 ${(a + 30).toFixed(1)}%)` : 'none')
+          : i === 1 ? (tIn < 1 ? `linear-gradient(to top, #000 ${b.toFixed(1)}%, transparent ${(b + 30).toFixed(1)}%)` : 'none') : 'none';
+        return { ...p, mask, align: i === 0 ? 'center' : 'flex-start', edge: i === 0 ? 'linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent)' : 'none', n: pad(i), op: imgOp[i], fill: (f * 100).toFixed(1) + '%', lc: cur ? '#0e0e0f' : done ? '#6b6b70' : 'rgba(14,14,15,.38)', nc: cur || done ? '#8a1531' : 'rgba(14,14,15,.38)' };
+      }),
+      gridCols: mobile ? 'minmax(0,1fr)' : 'minmax(380px,1fr) minmax(0,1.5fr)',
+      gridRows: mobile ? 'auto minmax(0,1fr)' : 'minmax(0,1fr)',
+      gridGap: mobile ? '18px' : 'clamp(32px,4vw,72px)',
+      stagePad: mobile ? '76px 20px 56px' : short ? '88px clamp(24px,3.5vw,56px) 64px' : '100px clamp(24px,3.5vw,56px) 88px',
+      progX: mobile ? '20px' : 'clamp(24px,3.5vw,56px)', progBottom: mobile ? '18px' : short ? '20px' : '28px', progGap: mobile ? '6px' : 'clamp(12px,1.6vw,28px)', showProgLabels: !mobile,
+      imgOrder: mobile ? 0 : 1, textOrder: mobile ? 1 : 0,
+      textJustify: mobile ? 'flex-start' : 'safe center', roomy: !compact,
+      frameW: mobile ? 'min(100%, calc(34svh * 1.79))' : 'min(100%, calc((100svh - 220px) * 1.79))',
+      blockGap: compact ? '16px' : '28px',
+
+      s0, s1, s2, s3, statement: STATEMENT, words,
+      stats, statSize: mobile ? '40px' : short ? 'clamp(44px,4vw,64px)' : 'clamp(48px,5vw,88px)', statDescSize: mobile ? '13px' : '15px',
+      statPad: mobile ? '18px 10px 0' : '28px 16px 0',
+      services, svClamp: compact ? 2 : 3, svCols: compact ? '72px minmax(0,1fr) 36px' : '112px minmax(0,1fr) 36px',
+      values, valPad: compact ? '8px 0' : '16px 0'
+    };
+  }
+}
+</script>
+</body>
+</html>

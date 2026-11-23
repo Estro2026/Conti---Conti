@@ -30,3 +30,13 @@
     }, { passive: true });
   }
 })();
+
+/* istruzione 107: barra fissa Chiama / Preventivo anche in Home (compare dopo lo scorrimento, sparisce sulla chiusura "Richiedi un preventivo") */
+(function () {
+  var bar = document.querySelector('.sticky-m.hm-bar'), cl = document.getElementById('contatto');
+
+  var tk = 0;
+  function u() { tk = 0; var y = window.pageYOffset || 0, past = cl && cl.getBoundingClientRect().top < window.innerHeight - 70; var hero = document.querySelector('[data-cch-hero]'), afterHero = hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.5 : y > window.innerHeight * 0.9; document.body.classList.toggle('bar-on', afterHero && !past); }
+  window.addEventListener('scroll', function () { if (!tk) tk = setTimeout(u, 40); }, { passive: true });
+  window.addEventListener('resize', u); u();
+})();

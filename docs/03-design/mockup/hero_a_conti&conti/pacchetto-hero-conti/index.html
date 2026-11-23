@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conti e Conti · Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="hero.css">
+<style>html,body{margin:0;background:#f4f1ec;-webkit-text-size-adjust:100%}*,*::before,*::after{box-sizing:border-box}body{font:400 17px/1.6 'Hanken Grotesk',system-ui,sans-serif;color:#151517;overflow-x:clip}</style>
+</head>
+<body>
+
+<!-- HEADER (demo) -->
+<header class="cch-nav" data-cch-nav>
+  <nav class="cch-nav__links"><a href="#">Impresa</a><a href="#">Cantieri</a><a href="#">In vendita</a><a href="#">Blog</a></nav>
+  <a class="cch-logo" href="#" aria-label="Conti e Conti, home"><img src="assets/img/logo-bianco.png" alt=""><img src="assets/img/logo.png" alt=""></a>
+  <div class="cch-nav__links cch-nav__right"><a href="#">FAQ</a><a href="#">Contatti</a><a class="cch-btn-nav" href="#">Richiedi un preventivo</a></div>
+  <button class="cch-burger" type="button" aria-label="Menu" data-cch-burger><i></i><i></i></button>
+</header>
+<div class="cch-menu" data-cch-menu>
+  <nav><a href="#">Impresa</a><a href="#">Cantieri</a><a href="#">In vendita</a><a href="#">Blog</a><a href="#">FAQ</a><a href="#">Contatti</a></nav>
+  <a class="cch-menu__cta" href="#">Richiedi un preventivo</a>
+</div>
+
+<!-- HERO: da copiare nella home -->
+<section class="cch-hero" data-cch-hero data-video="assets/hero-video.mp4">
+  <div class="cch-hero__stage">
+    <video class="cch-hero__video" muted playsinline preload="auto" tabindex="-1" aria-hidden="true"></video>
+    <div class="cch-hero__scrim" aria-hidden="true"></div>
+
+    <div class="cch-hero__intro">
+      <p class="cch-eyebrow">Impresa di costruzioni a Lentate sul Seveso</p>
+      <h1 class="cch-hero__title">Ogni casa porta la firma di chi la costruisce.</h1>
+      <p class="cch-hero__lead">Dal 1987 costruzioni e ristrutturazioni per privati, aziende e architetti. 40 professionisti diretti, anche per i progetti più complessi.</p>
+      <div class="cch-hero__ctas">
+        <a class="cch-btn cch-btn--light" href="#">Richiedi un preventivo</a>
+        <a class="cch-btn cch-btn--ghost" href="#">Scopri i cantieri</a>
+      </div>
+    </div>
+
+    <div class="cch-scrim cch-scrim--l" aria-hidden="true"></div>
+    <div class="cch-scrim cch-scrim--r" aria-hidden="true"></div>
+
+    <!-- Frasi: data-in / data-out = secondi del video; data-side = l | r; data-hold="end" = sosta sull'ultimo fotogramma -->
+    <div class="cch-cards">
+      <div class="cch-card" data-in="0.55" data-out="1.75" data-side="l">
+        <p class="cch-card__quote">«Ogni luogo che costruiamo entra nella vita di qualcuno. La nostra responsabilità comincia da qui.»</p>
+        <p class="cch-card__note">26 muratori e carpentieri interni: le stesse mani dalle fondazioni alla consegna.</p>
+      </div>
+      <div class="cch-card" data-in="2.0" data-out="3.3" data-side="r">
+        <p class="cch-card__quote">«La qualità di un’opera si riconosce nell’insieme. E si costruisce un dettaglio alla volta.»</p>
+        <p class="cch-card__note">8 tecnici di cantiere controllano ogni giorno tracciamenti, quote e sicurezza.</p>
+      </div>
+      <div class="cch-card" data-in="3.7" data-out="5.2" data-side="l">
+        <p class="cch-card__quote">«Ciò che resta nascosto sostiene ciò che vediamo. È lì che la cura fa la differenza.»</p>
+        <p class="cch-card__note">I responsabili di cantiere coordinano le opere e verificano qualità, tempi e costi.</p>
+      </div>
+      <div class="cch-card" data-in="5.7" data-out="7.6" data-side="r">
+        <p class="cch-card__quote">«Un progetto diventa un luogo quando accoglie la vita delle persone.»</p>
+        <p class="cch-card__note">Dal 1987 un’impresa che risponde direttamente di tempi, prezzi e risultato.</p>
+      </div>
+      <div class="cch-card" data-in="8.2" data-out="9.75" data-side="l">
+        <p class="cch-card__quote">«Tra un’idea e la sua realizzazione ci sono persone capaci di darle forma.»</p>
+        <p class="cch-card__note">9 persone in ufficio seguono progetto, preventivi, pratiche e rapporto con il cliente.</p>
+      </div>
+      <div class="cch-card cch-card--final" data-in="10.15" data-out="99" data-hold="end" data-side="l">
+        <p class="cch-card__pre">Ogni progetto è un nuovo inizio.</p>
+        <p class="cch-card__quote">Benvenuti in Conti e Conti.</p>
+      </div>
+    </div>
+
+    <div class="cch-hud" aria-hidden="true"><span>Entra in casa</span><i><b></b></i></div>
+    <div class="cch-veil" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- SEZIONE SUCCESSIVA (demo) -->
+<section class="cch-next">
+  <div class="cch-next__in">
+    <p class="cch-eyebrow">Maestri del proprio mestiere</p>
+    <h2 data-cch-words>Dietro ogni progetto ci sono persone, competenze e responsabilità. Ognuno risponde di quello che fa, dal primo preventivo alla consegna delle chiavi.</h2>
+  </div>
+</section>
+
+<script src="hero.js"></script>
+</body>
+</html>

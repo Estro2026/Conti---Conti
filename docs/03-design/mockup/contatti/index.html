@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it"><head><base href="../"><script>window.MK_NESTED=1;window.MK_PAGE="contatti.html";</script><script src="mk-routes.js?v=6"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Preventivo impresa edile in Brianza | Conti e Conti</title><meta name="description" content="Richiedi un preventivo per costruire o ristrutturare: ti rispondiamo entro 24 ore. Sede a Lentate sul Seveso, Via Nazionale dei Giovi 169. Tel 0362 557972."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap"><link rel="stylesheet" href="../wireframe/wireframe.css?v=20261020h"><link rel="stylesheet" href="../wireframe/wf-dyn.css?v=21"><link rel="stylesheet" href="../wireframe/wf-servizio.css?v=8"><link rel="stylesheet" href="../wireframe/wf-mid.css?v=4"><link rel="stylesheet" href="../wireframe/wf-scale.css?v=13"><link rel="stylesheet" href="../wireframe/wf-a.css?v=35"><link rel="stylesheet" href="../wireframe/wf-mk.css?v=1"><script src="../wireframe/wf-zoom.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="mk-pagine.css?v=68"><script>window.WF_MODE="cliente"</script><link rel="stylesheet" href="co-mobile.css?v=2"><link rel="stylesheet" href="mk-fixes.css?v=23"></head>
+<body data-active="contatti" data-overlay data-mk>
+<div class="stage"><div class="vp" data-vw="auto"><div class="frame">
+<div id="hdr"></div>
+<main id="main">
+<nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="home-a.html">Home</a></li><li aria-current="page">Contatti</li></ol></nav>
+
+<!-- 1. APERTURA + MODULO: fondo scuro a tutta larghezza, modulo centrato a campi sottolineati (reference del cliente 2026-10-26) -->
+<section class="ct-dark" aria-labelledby="h1">
+<div class="ct-bg mk-ct-bg" aria-hidden="true"><img src="img/foto/sede-matita-conti-e-conti.webp" alt=""></div>
+<div class="ct-in" style="text-align:center!important;margin-left:auto;margin-right:auto">
+  <p class="ct-k" data-rv>Parla con il team</p>
+  <h1 id="h1" class="ct-h1" data-rv style="--d:1;text-align:center!important;margin-left:auto!important;margin-right:auto!important;width:100%">Richiedi un preventivo alla nostra impresa edile</h1>
+  <p class="ct-lead" data-rv style="--d:2">Raccontaci cosa vuoi costruire o ristrutturare: ti rispondiamo entro 24 ore.</p>
+  <div class="ct-form">
+    <h2 class="sr co-fh" id="h-form">Scrivici</h2>
+    <div class="demo-state co-err" role="alert" tabindex="-1" hidden><strong>Controlla i campi:</strong><ul></ul></div>
+    <form class="co-form" action="grazie.html" novalidate aria-labelledby="h-form">
+      <p class="hint top">I campi con * sono obbligatori.</p>
+      <div class="pg-fg">
+        <div class="f"><label for="c-n">Nome *</label><input id="c-n" name="nome" autocomplete="name" required></div>
+        <div class="f"><label for="c-e">Email *</label><input id="c-e" name="email" type="email" autocomplete="email" required></div>
+        <div class="f"><label for="c-t">Telefono *</label><input id="c-t" name="telefono" type="tel" autocomplete="tel" required></div>
+        <div class="f"><label for="c-k">Oggetto</label><select id="c-k" name="oggetto"><option value="">Seleziona</option><option>Richiesta di preventivo</option><option>Informazioni su un immobile in vendita</option><option>Altro</option></select></div>
+        <div class="f full"><label for="c-m">Messaggio</label><textarea id="c-m" name="messaggio" placeholder="Che lavoro hai in mente, dove, e se hai già un progetto o un architetto."></textarea></div>
+        <div class="f chk full"><input type="checkbox" id="c-c" name="privacy" required><label for="c-c">Ho letto e accetto la <a href="https://www.iubenda.com/privacy-policy/57429672" target="_blank" rel="noopener">privacy policy<span class="sr"> (si apre in nuova scheda)</span></a> *</label></div>
+      </div>
+      <button class="btn" type="submit">Invia</button>
+      <p class="sr co-status" role="status" aria-live="polite"></p>
+    </form>
+    <i data-note="CLIENTE|Modulo come quello del sito attuale (RICERCA, contieconti.it/contatti): Nome*, Email*, Telefono*, Messaggio, consenso privacy, pulsante 'Invia'. Richiesta del cliente (chat 2026-10-20): niente modulo a passi. Unica aggiunta: menu a tendina 'Oggetto'."></i>
+    <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Menu 'Oggetto' facoltativo con 3 voci (Richiesta di preventivo, Informazioni su un immobile in vendita, Altro): serve a smistare la richiesta. Voci da confermare. Un solo passo: errori sotto ogni campo e riepilogo in alto con link ai campi; invio simulato verso la pagina di conferma."></i>
+    <i data-note="DEV|Da ristimare. LOW: Contact Form 7 / Elementor Form con gli stessi campi del sito attuale (verificare quale plugin usa il sito: il markup è Contact Form 7). Oggetto = campo select inserito nell'email di notifica; Iubenda per il consenso (VERIFY)."></i>
+  </div>
+  <p class="ct-alt">Preferisci parlare ora?<br><a href="tel:+390362557972">0362 557972</a> &middot; <a href="mailto:info@contieconti.it">info@contieconti.it</a></p>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Reference del cliente (chat 2026-10-26, immagine 'Register your interest'): modulo a tutta pagina su foto scura, titolo grande centrato, campi con sola linea inferiore, pulsante a pillola chiaro e, sotto, 'Preferisci parlare ora?' con i recapiti diretti. Non adottato lo stepper in 3 passi del reference perche il cliente aveva chiesto 'niente modulo a passi' (chat 2026-10-20): resta un unico passo con gli stessi campi. Se ora lo vuole, e una variante da stimare a parte."></i>
+  <i data-note="PROPOSTA|La foto di sfondo e un segnaposto: serve uno scatto reale del cantiere o di un interno finito, scurito con un velo per mantenere il contrasto del testo bianco (AA)."></i>
+  <i data-note="RICERCA|'Risposta entro 24 ore' è la promessa scritta nella pagina Contatti del sito attuale: da confermare col cliente prima di riproporla."></i>
+  <i data-note="PROPOSTA|Copy provvisorio: introduzione, microcopy e testi di supporto sono bozze realistiche per mostrare gerarchia e ingombri, costruite solo su fatti noti. Da validare con il cliente."></i>
+</div></section>
+
+
+<!-- 2. CONTATTI DIRETTI, ORARI E MAPPA -->
+<section class="sec alt co-bento" aria-label="Contatti diretti e mappa"><div class="in pg-ct2">
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Contatti come griglia a tessere (chat 2026-10-27): telefono grande, email con copia, sede, orari con indicatore aperto/chiuso e mappa in una sola composizione di riquadri arrotondati di misure diverse. Mobile: tessere in colonna."></i>
+  <aside class="pg-ca" aria-labelledby="h-cd">
+    <div class="pg-cd co-cd">
+      <h2 id="h-cd">Contatti diretti</h2>
+      <p>Preferisci parlarne a voce? Chiamaci o passa in sede.</p>
+      <p class="co-open" hidden><i aria-hidden="true"></i><span></span></p>
+      <dl>
+        <div><dt>Telefono</dt><dd class="big"><a href="tel:+390362557972">0362 557972</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@contieconti.it">info@contieconti.it</a>
+          <div class="co-act"><button type="button" data-copy="info@contieconti.it" data-out="#co-cst" data-ok="Email copiata negli appunti">Copia email</button></div></dd></div>
+        <div class="mk-sede"><dt>Sede</dt><dd><img class="mk-sede-img" src="img/foto/sede-insegna-lentate.webp" alt="L'insegna Conti e Conti nella sede di Lentate sul Seveso" loading="lazy">Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</dd></div>
+        <div><dt>Orari</dt><dd>
+          <table class="co-hrs"><caption class="sr">Orari di apertura</caption><tbody>
+            <tr data-days="1,2,3,4,5" data-slots="8:30-12:00 14:00-18:30"><th scope="row">Lun-Ven</th><td>8:30-12:00 / 14:00-18:30</td></tr>
+            <tr data-days="6" data-slots="8:30-12:00"><th scope="row">Sab</th><td>8:30-12:00</td></tr>
+            <tr data-days="0" data-slots=""><th scope="row">Dom</th><td>Chiuso</td></tr>
+          </tbody></table></dd></div>
+      </dl>
+      <span class="co-cst" id="co-cst" role="status" aria-live="polite"></span>
+      <i data-note="RICERCA|Dati dal sito attuale, da verificare: telefono, email, indirizzo, orari. VERIFY anche festività e chiusure estive (non note): l'indicatore non le conosce."></i>
+      <i data-note="INFERENZA|Domenica 'Chiuso': dedotto dall'assenza della domenica negli orari del sito attuale."></i>
+      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Telefono grande cliccabile (chiama da mobile), email cliccabile con 'Copia email' (conferma annunciata). Indicatore 'Aperto ora / Chiuso ora' con orario di chiusura o riapertura, calcolato all'apertura della pagina dagli orari della tabella, sempre sull'ora italiana; evidenziata la riga di oggi. Senza JS l'indicatore non compare e restano gli orari. Riduci movimento: il punto non pulsa."></i>
+      <i data-note="DEV|Da ristimare. Container statico + JS custom per l'indicatore (orari da campi ACF o Opzioni del tema, non scritti nel codice). LOW-MEDIUM."></i>
+    </div>
+    <figure class="co-mp">
+      <div class="co-map">
+        <iframe class="mk-gmap" title="Mappa: sede Conti e Conti, via Nazionale dei Giovi 169, Lentate sul Seveso" src="https://www.google.com/maps?q=Conti+e+Conti+srl,+Via+Nazionale+dei+Giovi+169,+20823+Lentate+sul+Seveso+MB&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="co-pin" aria-hidden="true"><b>Conti e Conti</b><i></i></div>
+        <div class="co-zm" role="group" aria-label="Zoom mappa"><button type="button" data-zoom="in" aria-label="Avvicina">+</button><button type="button" data-zoom="out" aria-label="Allontana">&minus;</button></div>
+      </div>
+      <figcaption><span>Sede di Lentate sul Seveso</span><span><a href="#" target="_blank" rel="noopener">Apri in Google Maps<span class="sr"> (si apre in nuova scheda)</span></a> &middot; <button type="button" data-copy="Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)" data-out="#co-mst" data-ok="Indirizzo copiato negli appunti">Copia indirizzo</button></span></figcaption>
+      <span class="sr" id="co-mst" role="status" aria-live="polite"></span>
+      <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Resta una sola mappa, quella della sede, perché qui serve a trovare l'ufficio: immagine statica con il punto della sede, pulsanti + e − per avvicinare l'immagine, 'Apri in Google Maps' e 'Copia indirizzo'. Nessun embed (peso, cookie di terze parti e consenso); alternativa mappa interattiva con consenso: da decidere. Mobile: stessa mappa a tutta larghezza, pulsanti 44px. Riduci movimento: zoom senza transizione. Indirizzo della sede operativa: VERIFY."></i>
+      <i data-note="DEV|Da ristimare. Immagine statica + link esterno + piccolo JS per zoom e copia. LOW. Embed con consenso cookie: MEDIUM, non incluso."></i>
+    </figure>
+  </aside>
+</div></section>
+
+<!-- 3. DOVE OPERIAMO: uguale alla Home A del mockup (mappa Google con sede e zone, pin interattivi; chat 2026-10-28) -->
+<div class="mk mk-map"><section class="map" id="dove" aria-labelledby="h-map">
+  <div class="wrap map-grid">
+    <div class="map-side">
+      <p class="kicker">Dove operiamo</p>
+      <h2 id="h-map">Dalla Brianza a Milano, fino al lago.</h2>
+      <p class="map-lead">Lavoriamo tra Milano, Como, Varese e Monza e Brianza. La sede operativa è a Lentate sul Seveso.</p>
+      <ul class="pins">
+        <li><button class="pl" type="button" data-key="sede" data-lat="45.6578" data-lon="9.1307" data-q="Via Nazionale dei Giovi 169, 20823 Lentate sul Seveso" data-z="15" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Sede operativa</strong><em>Via Nazionale dei Giovi 169, Lentate sul Seveso (MB)</em></button></li>
+        <li><button class="pl" type="button" data-key="mi" data-lat="45.4642" data-lon="9.19" data-q="Milano" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Milano</strong><em>Interventi in città, dal residenziale al retail</em></button></li>
+        <li><button class="pl" type="button" data-key="co" data-lat="45.95" data-lon="9.26" data-q="Lago di Como" data-z="10" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Lago di Como</strong><em>Ville sul lago, spesso con architetti che seguono clienti internazionali</em></button></li>
+        <li><button class="pl" type="button" data-key="va" data-lat="45.8206" data-lon="8.8251" data-q="Varese" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Varese</strong><em>Cantieri nel Varesotto</em></button></li>
+        <li><button class="pl" type="button" data-key="mb" data-lat="45.62" data-lon="9.24" data-q="Seregno" data-z="11" aria-pressed="false"><span class="pl-dot" aria-hidden="true"></span><strong>Monza, Seregno e Brianza</strong><em>Nuove costruzioni e residenze in vendita</em></button></li>
+      </ul>
+    </div>
+    <div class="map-frame" id="map-frame">
+      <iframe id="gmap" title="Mappa Google delle zone operative di Conti e Conti" tabindex="-1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        data-src="https://www.google.com/maps?output=embed&amp;hl=it&amp;z=9&amp;ll=45.75,9.10"></iframe>
+      <div class="map-pins" id="map-pins" aria-label="Pin delle zone operative"></div>
+      <button class="map-reset" id="map-reset" type="button" hidden>Torna alla vista completa</button>
+      <p class="map-note">Mappa Google. In produzione si carica dopo il consenso ai cookie di terze parti.</p>
+    </div>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. 'Dove operiamo' uguale alla Home A del mockup (chat 2026-10-28): mappa Google a tutta larghezza in toni scuri, pannello in vetro con le zone numerate e la sede; passando su una zona si evidenzia il suo pin, cliccando la mappa si avvicina alla zona ('Torna alla vista completa' per uscire). Tolto il pulsante 'Vai ai contatti' perché siamo già nella pagina Contatti. Sostituisce la mappa schematica."></i>
+  <i data-note="DEV|La mappa Google si carica solo dopo il consenso ai cookie di terze parti (in produzione). Pin posizionati da coordinate reali sulla vista iniziale; JS condiviso in wf-mk.js."></i>
+</section></div>
+
+<!-- 4. LAVORA CON NOI -->
+<section class="sec dk pg-job" aria-labelledby="h-job"><div class="in">
+  <div class="hrow">
+    <h2 id="h-job">Lavora con noi</h2>
+    <p>Cerchi un'impresa in cui crescere? Candidati, anche se non hai esperienza: formiamo le persone. <a href="lavora-con-noi.html">Invia la tua candidatura</a></p>
+  </div>
+  <i data-note="PROPOSTA|WAITING_FOR_APPROVAL. Feedback 'non mi piace che ci siano due form': il modulo candidatura è spostato nella pagina dedicata Lavora con noi (lavora-con-noi.html). Qui resta solo l'invito breve con il link alla pagina; l'unico modulo di Contatti è quello del preventivo."></i>
+  <i data-note="RICERCA|La pagina Contatti del sito attuale ha un blocco 'Lavora con noi' (invito a candidarsi per figure da formare o con esperienza, con modulo separato) e una voce di menu dedicata. Non è nel brief: VERIFY se mantenerlo. Testo qui riformulato e provvisorio."></i>
+</div></section>
+
+</main>
+<div id="ftr"></div>
+</div></div></div>
+<div class="notes"><h2>Annotazioni (Contatti)</h2><ol id="notes"></ol></div>
+
+<script src="../wireframe/wireframe.js?v=22h"></script>
+<script src="../wireframe/wf-dyn.js?v=16"></script>
+<script src="../wireframe/wf-servizio.js?v=3"></script>
+<script src="../wireframe/wf-mk.js?v=1"></script>
+<script src="mk-pagine.js?v=26"></script><script src="mk-schede-data.js?v=9"></script><script src="mk-schede.js?v=6"></script><script src="mk-lib.js?v=9"></script>
+<script src="co-mobile.js?v=2"></script>
+</body></html>

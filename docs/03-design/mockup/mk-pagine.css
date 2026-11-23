@@ -753,3 +753,43 @@ body[data-mk] .frame .rs-hx:not(.hx-on) .rs-hx-tr>.rs-p2{aspect-ratio:4/3!import
   html body .ha-mx-side dd{min-height:0!important;line-height:1.35}
   html body .ha-mx-side dd a{display:block!important;min-height:0!important;padding:0!important;line-height:1.35}
 }
+
+/* istruzione 103: H1 lungo nelle aperture delle categorie */
+html body .ct-hx #h1.ct-long,html body .ct-hero #h1.ct-long{font-size:clamp(30px,3.9vw,68px)!important;line-height:1.02!important;max-width:18ch;letter-spacing:-.035em}
+body[data-mk] .frame #main .ct-hx h1.ct-long:not(.sr){font-size:clamp(28px,min(5.2cqi,8.5vh),92px)!important;line-height:1.02!important;max-width:18ch;letter-spacing:-.035em}
+body[data-mk] .frame #main .ct-hx h1.ct-long:not(.sr){font-size:clamp(26px,min(4.3cqi,7vh),78px)!important}
+@media (min-width:901px){body[data-mk] .frame #main .ct-hx:has(h1.ct-long) .ct-hero-s .lead{font-size:clamp(13px,min(1.15vw,2.1vh),17px)!important;line-height:1.42!important;max-width:60ch}}
+
+/* istruzione 105: Impresa, Persone: inquadratura che mette a fuoco i volti */
+#persone .ph img[src*="squadra-quattro-casseri"]{object-position:50% 42%!important}
+#persone .ph img[src*="team-capocantiere"],#persone .ph img[src*="team-impiegata"]{object-position:50% 28%!important}
+
+/* istruzione 106: Impresa, occhiello H1 e titolo con i font del resto della pagina; Realizzazioni, [180] come gli altri numeri */
+body[data-mk] .frame #main #storia h1.dx-k{font:600 12px/1.2 "Inter Tight","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:var(--acc,#7d1d2c)!important;margin:0 0 14px!important;max-width:none!important}
+body[data-mk] .frame #main #storia p.ixi-t{font-family:"Inter Tight","Helvetica Neue",Arial,sans-serif!important;font-weight:700!important;letter-spacing:-.035em!important}
+.cn-sum b .tbc,.cn-sum b .tbc *{font-size:inherit!important;font-weight:inherit!important;letter-spacing:inherit!important;line-height:inherit!important;color:inherit!important}
+
+/* istruzione 106: solo desktop. Lavora con noi (H1 lungo), scheda immobile (prima scheda dell'apertura) */
+@media (min-width:901px){
+  body[data-mk] .frame #main .lv-h1{font-size:clamp(34px,min(4.3vw,7.4vh),74px)!important;line-height:1.02!important;max-width:16ch}
+  html body .rs-hx .rs-p1-mid{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+  html body .rs-hx .rs-p1-th{width:min(100%,400px)!important;height:auto!important;aspect-ratio:3/2!important;border-radius:18px;overflow:hidden;position:relative}
+  html body .rs-hx .rs-p1-th .ph,html body .rs-hx .rs-p1-th img{position:absolute!important;inset:0;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover}
+  html body .rs-hx .rs-p1-cap{font-size:clamp(15px,1.1vw,18px)!important;line-height:1.5!important;max-width:44ch!important;width:auto!important;text-align:center}
+  html body .rs-hx .rs-p1-t{font-size:clamp(44px,min(4.6vw,7.4vh),80px)!important;line-height:.98!important}
+}
+@media (min-width:901px){
+  html body .rs-hx .rs-p1-th{flex:0 0 auto!important;width:420px!important;max-width:100%!important;height:auto!important;aspect-ratio:3/2!important;min-height:0!important}
+  html body .rs-hx .rs-p1-cap{flex:0 0 auto;width:440px!important;max-width:100%!important}
+  html body .rs-hx .rs-p1-t{font-size:clamp(38px,min(3.9vw,6.4vh),64px)!important}
+}
+@media (min-width:901px){
+  html body .rs-hx .rs-p1-th{width:min(560px,100%)!important}
+  html body .rs-hx .rs-p1-cap{width:min(540px,100%)!important;font-size:clamp(16px,1.2vw,19px)!important}
+  html body .rs-hx .rs-p1-t{font-size:clamp(36px,min(3.5vw,5.8vh),58px)!important}
+}
+@media (min-width:901px){
+  html body .rs-hx .rs-p1-mid{width:100%!important}
+  html body .rs-hx .rs-p1-th{width:84%!important;aspect-ratio:16/10!important}
+  html body .rs-hx .rs-p1-cap{width:80%!important;font-size:clamp(16px,1.25vw,20px)!important}
+}

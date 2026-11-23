@@ -6,7 +6,7 @@
   if (H1 && H1.querySelector('.ct-w')) H1.textContent = H1.getAttribute('aria-label') || H1.textContent;
   var c = document.createElement('button'); c.type = 'button'; c.className = 'ct-mc'; c.setAttribute('aria-label', 'Progetto successivo'); c.innerHTML = '01 / 0' + (h.querySelectorAll('.ct-dk-c').length || 1) + ' <i></i>'; h.appendChild(c);
   setTimeout(function () {
-    var D = window.MK_SCHEDE, slug = (location.hash || '').replace('#', '') || 'palestre', cs = slug === 'attivita-commerciali' ? 'commerciali' : slug;
+    var D = window.MK_SCHEDE, slug = window.MK_SLUG || (location.hash || '').replace('#', '') || 'palestre', cs = slug === 'attivita-commerciali' ? 'commerciali' : slug;
     var m = h.querySelector('.ct-hero-m'); if (!m) return;
     var list = D && D.progetti ? Object.keys(D.progetti).filter(function (k) { return D.progetti[k].cs === cs; }) : [];
     list.sort(function (a, b) { return (D.progetti[b].hero ? 1 : 0) - (D.progetti[a].hero ? 1 : 0); });

@@ -314,3 +314,49 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - (100) 2026-11-23 · mockup · Sara: mobile Lavora con noi ottimizzata: margini hero, volti in griglia dentro i margini, titoli ruolo allineati a sinistra, ruolo di interesse a pillole. Fatto in lv-mobile.css/js.
 
 - (101) 2026-11-23 · mockup · Sara: mobile. Contatti: scegliendo Altro compare un campo per scrivere l oggetto. Lavora con noi: nuova composizione hero, foto del team in due file che scorrono in direzioni opposte con formati diversi. Fatto in co-mobile e lv-mobile.
+
+- (102) 2026-11-23 · mockup · Sara: copy del copywriter (PDF "Testi da inserire nel wireframe"). IN ATTESA (stand by): sezioni/elementi che il PDF da per presenti e il mockup non ha piu (In evidenza in Realizzazioni, toggle Griglia/Elenco, articolo in evidenza e numero articoli del Blog). Dove il PDF e superato dal mockup (Cassa Edile 2025-26, terza card Palestre, categoria Ceresio 7) resta il mockup; In vendita: resta il mockup. Si segue il PDF per: anno di fondazione, unita Solarium, Blog, titoli/H1, Quattro impegni Impresa, struttura indirizzi. Persone: da chiarire con Sara. Fonte: CLIENTE (copywriter). Stato: WAITING_FOR_APPROVAL sull applicazione.
+
+- (103) 2026-11-23 · mockup · Sara: APPLICATO il copy del copywriter (PDF "Testi da inserire nel wireframe") sulle pagine del mockup, eccetto le parti in stand by (In evidenza in Realizzazioni, toggle Griglia/Elenco, articolo in evidenza e numero articoli del Blog) e dove il mockup è più aggiornato (Cassa Edile 2025-26, terza card Palestre, Ceresio 7 in Palestre, In vendita come mockup). Persone: come PDF (40 / 21 / 26+8+9), le incongruenze restano "da chiedere al cliente". Anno 1987 e "entro 24 ore" come PDF. Home: [40] anni lasciato. H1: Home (l'occhiello diventa H1), Impresa (l'occhiello diventa H1), Realizzazioni (H1 nuovo, H2 ripetuto eliminato), categorie (H1 lunghi, carattere ridotto). Meta title e description dalla sezione 14 in tutte le pagine. Home B e home-a-persone: non aggiornate. Fonte: CLIENTE (copywriter).
+- (104) 2026-11-23 · mockup · Sara: struttura degli indirizzi come PDF sezione 14, "rifare i file". Cartelle con index.html: progetti-realizzati/[categoria]/[progetto]/, appartamenti-in-vendita-monza-e-brianza/[immobile]/ (residenza-solarium-carimate), servizi/{residenze,ristrutturazioni,retail}/, impresa-di-costruzioni/, blog/[articolo]/, domande-frequenti/, contatti/, grazie/, lavora-con-noi/. 98 pagine generate da build-routes.js a partire dai file modello. I vecchi indirizzi (progetto.html#slug...) portano ai nuovi. Fatto in build-routes.js, mk-routes.tpl.js, mk-routes.js.
+
+- (105) 2026-11-23 · mockup · Sara: immagini da `assets/immaginihomeemenu` + indicazioni del file Conti_Conti_indicazioni_immagini_mockup. APPLICATO: menu "Realizzazioni per categoria" (8 foto, Home A e pagine interne), ciascuna voce del menu porta alla propria categoria; Home: In numeri, Realizzazioni in evidenza (2ª Ceresio 7 piscina, 3ª Villa Lugarna), Richiedi un preventivo (La8 Seregno); Impresa, Persone: inquadratura corretta sui volti. Non usate: ceresio7.webp, residenza_la8_seregno_esterno3.webp. Blog Home: l'articolo "Ultimi mesi per sfruttare il bonus ristrutturazione del 50%" non è tra le tre card della Home A (che sono segnaposto), quindi la foto notizie-bonus50 è pronta in img/foto ma non applicata: serve decidere dove. Schede progetto con formula "[Nome], [tipo] a [località]": in attesa dei dati dal cliente. Fonte: CLIENTE.
+
+- (106) 2026-11-23 · mockup · Sara (solo desktop, mobile invariato a livello visual): stesse immagini della Home A anche nelle sezioni analoghe (chiusura "Richiedi un preventivo" delle pagine interne con La8 Seregno; card categorie delle pagine di servizio con le foto del menu). Impresa: occhiello H1 e titolo con i font del resto della pagina. Realizzazioni: "[180]" della stessa grandezza degli altri numeri. Pagine categoria: H1 lunghi con carattere proporzionato, senza sovrapposizioni. In vendita: il contatore delle card segue lo scorrimento (intervallo, es. 1-4 / 5). Scheda immobile: prima scheda dell'apertura con immagine e descrizione più grandi. Lavora con noi: H1 hero ridotto per rispettare gli ingombri. Fatto in mk-pagine.css/js, in-vendita.html.
+
+- (107) 2026-11-23 · mockup · Sara. Mobile: barra fissa Chiama/Preventivo anche in Home; scheda immobile, unità (tab) due per riga; Contatti, casella messaggio più alta. Tutti i dispositivi: Impresa hero (storia) solo segnaposto; foto articolo "Ultimi mesi per sfruttare il bonus…" (notizie_bonus50); velatura nera più leggera in "Dal 1987, un cantiere dopo l'altro"; Persone, soggetti centrati; Realizzazioni, logo bianco nelle targhette bordeaux; menu, "g" di Blog non tagliata; spaziatura lettere +5% in voci di menu e scritta del footer; In vendita, solo frecce e secondo paragrafo sotto la descrizione, più piccolo; scheda immobile, foto della prima card meno tagliata; articolo, tolta la riga bordeaux (avanzamento) sotto la nav; FAQ, descrizione sotto il titolo; categorie, titolo già alla grandezza finale; Ceresio 7 e Villa Lugarna con le immagini aggiornate in tutte le pagine. Corretto anche un errore in mk-routes.js (da istruzione 104) che disattivava reindirizzamenti e riscrittura dei collegamenti. Fatto in mk-fixes.css (nuovo), mk-pagine.js, home-a-mobile.js, mk-schede-data.js, faq.html.
+
+- (108) 2026-11-23 · mockup · Sara, tutti i dispositivi: titolo "Non subappaltiamo: in cantiere lavorano persone fidate e assunte dell'impresa" (Impresa, Persone) ridotto di corpo (testo del PDF invariato). Verifica spazi: padding verticale tra le sezioni uniformato a un solo valore, clamp(56px, 6.4vw, 96px) (92 px a 1440), per tutte le pagine interne; la gabbia laterale era già uguale (73 px desktop). Esclusi: aperture (hero) e sezioni a schermo intero; la Home A usa un proprio sistema di spazi. Fatto in mk-fixes.css.
+
+- (109) 2026-11-23 · mockup · Sara: Realizzazioni, apertura: logo bianco in tutte le targhette a fondo colorato (anche Allestimenti); schede progetto: tolta la sezione "Prima e dopo" e ripristinata l alternanza dei colori tra le sezioni (carta, alt, scuro). Home: tolto un segnaposto foto in "Squadre di cantiere". Fatto in mk-fixes.css, progetto.html, home-a.html.
+
+- (110) 2026-11-23 · mockup · Sara: In vendita, frecce del carosello sotto il titolo centrate. Fatto in mk-fixes.css.
+
+- (111) 2026-11-23 · mockup · Sara: scheda immobile, hero, prima slide: foto piu quadrata e piu grande (desktop). Fatto in mk-fixes.css.
+
+- (112) 2026-11-23 · mockup · Sara: schede immobile, "Altri immobili": card con collegamento effettivo all immobile e senza quello della pagina (4 card). Fatto in rs-mobile.js.
+
+- (113) 2026-11-23 · mockup · Sara: scheda immobile, "Altri immobili" in carosello anche su desktop, frecce centrate come In vendita. Fatto in rs-mobile.css/js.
+
+- (114) 2026-11-23 · mockup · Sara: la scritta "Conti e Conti" del footer non va mai a capo: una riga sola, corpo calcolato per riempire il 98,5% della larghezza disponibile, uguale in tutte le pagine. Fatto in mk-routes.tpl.js.
+
+- (115) 2026-11-23 · mockup · Sara: tolto l effetto a lettere dal titolo della pagina Palestre (come le altre categorie). Fatto in mk-pagine.js e mk-fixes.css.
+
+- (116) 2026-11-23 · mockup · Sara, mobile Home: barra fissa Chiama/Preventivo compare dopo la hero, non compare sulla sezione del modulo e nel footer. Fatto in home-a-mobile.js.
+
+- (117) 2026-11-23 · mockup · Sara, tutti i dispositivi: Impresa, sezione "Conti e Conti, impresa edile": spazio sopra, sotto e tra testo e riquadro numeri uguale a quello delle altre sezioni (clamp(56px, 6.4vw, 96px)). Fatto in mk-fixes.css.
+
+- (118) 2026-11-23 · mockup · Sara, mobile pagine categoria: titolo hero piu grande, con gerarchia rispetto a kicker e testo. Fatto in mk-fixes.css.
+
+- (119) 2026-11-23 · mockup · Sara, mobile In vendita, hero: ridotti spazi tra testo, barra Skyline/Mappa e card (padding sezione 20 px, card allineate in alto). Fatto in mk-fixes.css.
+
+- (120) 2026-11-23 · mockup · Sara, mobile In vendita: card dell Skyline allineate dal basso (altezze 390-470 px), 16 px tra card e frecce. Fatto in mk-fixes.css.
+
+- (121) 2026-11-23 · mockup · Sara: In vendita, barra Skyline/Mappa (e filtri di stato) non fissa: scorre con la pagina, nessuna sovrapposizione con le card. Fatto in mk-fixes.css.
+
+- (122) 2026-11-23 · mockup · Sara: In vendita, Skyline: margine sinistro delle card a inizio scorrimento uguale a quello a fine (12 px). Fatto in mk-fixes.css.
+
+- (123) 2026-11-23 · mockup · Sara, mobile Blog, hero, riquadro In evidenza: gerarchia dei testi (kicker 11 px, meta 12 px, titolo 22-26 px, anteprima 14 px). Fatto in mk-fixes.css.
+
+### 124 - Menu aperto nelle pagine interne
+Il menu aperto in Contatti (e nelle pagine interne) sembrava wireframe: card grigia piatta. Ora stessa resa della Home A (card nero caldo con blur, chip scuri). Regola in mk-fixes.css.

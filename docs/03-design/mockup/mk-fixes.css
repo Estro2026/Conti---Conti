@@ -1,0 +1,142 @@
+/* istruzione 107: correzioni condivise (tutti i dispositivi, salvo dove indicato). Caricato per ultimo in tutte le pagine. */
+
+/* Menu: la "g" di "Blog" non viene piu tagliata; lettere meno ravvicinate (+5% del corpo) nelle voci e nella scritta del footer */
+.ha-mx-main > ul > li, .mx-main > ul > li, .menu .mx-main > ul > li { overflow: visible !important; }
+.ha-mx-main > ul > li > a, .mx-main > ul > li > a, .menu .mx-main > ul > li > a { letter-spacing: 0 !important; padding-bottom: .08em; }
+.ha-ft-word, .ft-word { letter-spacing: -.015em !important; }
+
+/* Articolo: via la riga bordeaux (avanzamento di lettura) sotto la barra di navigazione */
+.ar-prog { display: none !important; }
+
+/* Home, "Dal 1987, un cantiere dopo l'altro": velatura nera piu leggera */
+.sx-merge .stats.sg-full::before { background: linear-gradient(180deg, rgba(14,14,15,.22) 0%, rgba(14,14,15,.42) 55%, #0e0e0f 100%) !important; }
+.sx-merge .sg-bg { opacity: .85 !important; }
+
+/* Realizzazioni, apertura: logo bianco nelle targhette bordeaux */
+html body .cnh-plate[style*="--mk-pf: #fff"] .cnh-wm { filter: brightness(0) invert(1) !important; opacity: 1 !important; }
+
+/* Impresa, Persone: soggetti centrati nelle foto */
+#persone .ph img[src*="squadra-quattro-casseri"] { object-position: 50% 42% !important; }
+#persone .ph img[src*="team-capocantiere"] { object-position: 50% 27% !important; }
+#persone .ph img[src*="team-impiegata"] { object-position: 50% 41% !important; }
+
+/* In vendita, apertura: solo frecce (via contatore, barra e indicazione); secondo paragrafo sotto la descrizione, piu piccolo */
+.iv-sk-c, .iv-sk-bar, .iv-sk-h { display: none !important; }
+.iv-sk-nav { justify-content: center !important; gap: 12px; }
+html body .iv-hero .iv-intro { display: block !important; }
+html body .iv-hero .iv-intro p:not(.lead) { font-size: .82em !important; line-height: 1.5; margin-top: 10px !important; color: #5e5f63; max-width: 62ch; }
+
+/* FAQ, apertura: descrizione sotto il titolo, titolo su piu larghezza */
+html body .sv-top.fq-top { display: block !important; }
+html body .sv-top.fq-top .sv-h1 { max-width: none !important; }
+html body .sv-top.fq-top .lead { margin-top: 18px !important; max-width: 62ch; }
+
+/* Pagine categoria: il titolo parte gia alla grandezza finale (niente passaggio da grande a piccolo al caricamento) */
+body[data-mk] .frame #main .ct-hx h1:not(.sr) { font-size: clamp(26px, min(4.3cqi, 7vh), 78px) !important; line-height: 1.02 !important; max-width: 18ch; letter-spacing: -.035em; }
+
+/* Scheda immobile, apertura: la foto della prima scheda non taglia l'immobile */
+html body .rs-hx .rs-p1-th { aspect-ratio: 4 / 3 !important; }
+html body .rs-hx .rs-p1-th .ph, html body .rs-hx .rs-p1-th img { object-fit: cover; object-position: 50% 62% !important; }
+
+/* Mobile */
+@media (max-width: 900px) {
+  /* scheda immobile: le unita (tab) due per riga */
+  html body .rs-ut { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px; }
+  html body .rs-ut > * { width: 100% !important; min-width: 0; }
+  /* contatti: casella messaggio piu alta */
+  html body .co-form textarea, html body #c-m { min-height: 140px !important; height: 140px; }
+  /* Home: barra fissa Chiama / Preventivo (come nelle altre pagine) */
+  .sticky-m.hm-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: flex; gap: 8px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: transparent; pointer-events: none; transform: translateY(115%); transition: transform .35s cubic-bezier(.2,.65,.15,1); }
+  body.bar-on .sticky-m.hm-bar { transform: none; }
+  .sticky-m.hm-bar .btn { pointer-events: auto; flex: 1; min-height: 48px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; font: 600 15px/1 "Inter Tight", Inter, system-ui, sans-serif; text-decoration: none; }
+  .sticky-m.hm-bar .btn.sec2 { background: rgba(255,255,255,.62); -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5); border: 1px solid rgba(22,22,22,.15); color: #161616; box-shadow: 0 4px 18px rgba(0,0,0,.12); }
+  .sticky-m.hm-bar .btn:not(.sec2) { background: #7d1d2c; border: 1px solid #7d1d2c; color: #fff; box-shadow: 0 4px 18px rgba(0,0,0,.18); }
+}
+@media (min-width: 901px) { .sticky-m.hm-bar { display: none !important; } }
+
+/* istruzione 108: Impresa, Persone: titolo piu contenuto */
+#persone .ix-per-h .dx-h, #persone h2.dx-h { font-size: clamp(30px, 3.6vw, 52px) !important; line-height: 1.06 !important; max-width: 24ch; }
+@media (max-width: 900px) { #persone .ix-per-h .dx-h, #persone h2.dx-h { font-size: clamp(26px, 7.4vw, 34px) !important; max-width: none; } }
+
+/* istruzione 108: spazio verticale uniforme tra le sezioni (un solo valore per tutte le pagine, tutti i dispositivi) */
+html body[data-mk] .frame main > .sec:not(.cn-hero):not(.iv-hero):not(.ix-vh):not(.mk-host):not(.pj-hero):not(.pg-op):not(.lv-op):not(.ixi):not(.gz-hero):not(.bl-evs) { padding-top: clamp(56px, 6.4vw, 96px) !important; padding-bottom: clamp(56px, 6.4vw, 96px) !important; }
+@media (min-width: 901px) { html body[data-mk] .frame #dove.map { padding-top: clamp(56px, 6.4vw, 96px) !important; padding-bottom: clamp(56px, 6.4vw, 96px) !important; } }
+html body[data-mk] .frame #main #persone .ix-per-h h2.dx-h { font-size: clamp(30px, 3.3vw, 48px) !important; line-height: 1.06 !important; letter-spacing: -.03em; max-width: 24ch; }
+@media (max-width: 900px) { html body[data-mk] .frame #main #persone .ix-per-h h2.dx-h { font-size: clamp(26px, 7.4vw, 34px) !important; max-width: none; } }
+
+/* istruzione 109: Home, "Una squadra, tante competenze": dove nome e cognome sono segnaposto, anche la foto e un segnaposto */
+.tw-p .tw-ph { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 3 / 4; background: #d9d4cb; color: #5e5f63; font: 500 13px/1.2 "Inter", system-ui, sans-serif; letter-spacing: .02em; border-radius: inherit; }
+@media (max-width: 900px) { #team .tw-f .tw-p .tw-ph { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; } }
+html body .frame .iv-list .iv-sk-nav, html body .iv-sk-nav { display: flex !important; justify-content: center !important; align-items: center; gap: 12px; margin-inline: auto; }
+
+/* istruzione 111: scheda immobile, prima slide dell'apertura (desktop): foto piu quadrata e piu grande, meno tagliata */
+@media (min-width: 901px) {
+  html body .rs-hx .rs-p1-th { width: 56% !important; max-height: none !important; aspect-ratio: 1 / 1 !important; }
+  html body .rs-hx .rs-p1-th .ph, html body .rs-hx .rs-p1-th img { object-position: 50% 55% !important; }
+  html body .rs-hx .rs-p1-mid { gap: 14px; }
+  html body .rs-hx .rs-p1-t { font-size: clamp(34px, min(3.2vw, 5.2vh), 54px) !important; }
+}
+
+/* istruzione 115: nessun effetto a lettere sul titolo delle categorie */
+.ct-hero h1 .ct-w, .ct-hero h1 .ct-w > span { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; filter: none !important; }
+
+/* istruzione 117: Impresa, sezione "Conti e Conti, impresa edile": stesso spazio sopra, sotto e tra testo e riquadro numeri delle altre sezioni (tutti i dispositivi) */
+html body[data-mk] .frame #main #storia.ixi { padding-top: clamp(56px, 6.4vw, 96px) !important; padding-bottom: clamp(56px, 6.4vw, 96px) !important; }
+html body[data-mk] .frame #main #storia .ixi-d { margin-top: clamp(56px, 6.4vw, 96px) !important; }
+
+/* istruzione 118: pagine categoria, telefono: titolo con gerarchia (piu grande del testo e del kicker) */
+@media (max-width: 900px) {
+  body[data-mk] .frame #main .ct-hx h1:not(.sr) { font-size: clamp(34px, 9.6vw, 44px) !important; line-height: 1.03 !important; letter-spacing: -.03em; max-width: none !important; }
+  body[data-mk] .frame #main .ct-hx .ct-hero-s .lead { font-size: 16px !important; line-height: 1.45 !important; }
+}
+@media (max-width: 900px) {
+  html body[data-mk] .frame #main .ct-hx h1.ct-long:not(.sr), html body[data-mk] .frame #main .ct-hx h1:not(.sr) { font-size: clamp(34px, 9.6vw, 44px) !important; line-height: 1.03 !important; letter-spacing: -.03em; max-width: none !important; }
+}
+
+/* istruzione 119: In vendita, telefono: spazi ridotti tra testo dell'apertura, barra Skyline/Mappa e card */
+@media (max-width: 900px) {
+  html body[data-mk] .frame main > .sec.iv-hero { padding-bottom: 0 !important; }
+  html body[data-mk] .frame main > .sec.iv-list { padding-top: 20px !important; padding-bottom: 36px !important; }
+  html body .iv-list .iv-bar { margin-top: 0 !important; margin-bottom: 12px !important; }
+  html body .iv-hero .iv-intro { margin-top: 10px !important; }
+  html body .iv-hero .iv-top { margin-bottom: 0 !important; }
+  html body .iv-list .iv-skyg { align-items: flex-start !important; height: auto !important; }
+  html body .iv-list .iv-sk-nav { margin-top: 12px !important; }
+}
+
+/* istruzione 120: In vendita, telefono: card allineate dal basso con dislivello contenuto; spazio card-frecce uniforme */
+@media (max-width: 900px) {
+  html body .iv-list .iv-skyg { align-items: flex-end !important; height: 470px !important; }
+  html body .iv-list .iv-skyg > li:nth-child(5n+1) { height: 430px !important; }
+  html body .iv-list .iv-skyg > li:nth-child(5n+2) { height: 390px !important; }
+  html body .iv-list .iv-skyg > li:nth-child(5n+3) { height: 460px !important; }
+  html body .iv-list .iv-skyg > li:nth-child(5n+4) { height: 410px !important; }
+  html body .iv-list .iv-skyg > li:nth-child(5n+5) { height: 470px !important; }
+  html body .iv-list .iv-sk-nav { margin-top: 16px !important; }
+}
+
+/* istruzione 121: In vendita, barra filtri/vista (Skyline, Mappa): non resta fissa, scorre con la pagina e non si sovrappone alle card */
+html body .iv-list .iv-bar, html body .iv-list .iv-bar.is-stuck { position: static !important; top: auto !important; z-index: auto !important; }
+
+/* istruzione 122: In vendita, Skyline: a inizio scorrimento le card hanno lo stesso margine sinistro che hanno a fine scorrimento (a destra) */
+html body .iv-list .iv-skyg { scroll-padding-left: 12px !important; scroll-padding-right: 12px !important; }
+html body .iv-list .iv-skyg > li { scroll-snap-align: start; }
+
+/* istruzione 123: Blog, telefono, riquadro "In evidenza": gerarchia dei testi (kicker piccolo, titolo in primo piano, anteprima e meta secondari) */
+@media (max-width: 900px) {
+  html body .bl-ev .bl-ev-t { display: flex; flex-direction: column; gap: 0; }
+  html body .bl-ev .bl-ev-k { order: 1; font-size: 11px !important; line-height: 1.2 !important; font-weight: 700 !important; letter-spacing: .14em !important; text-transform: uppercase; color: #7d1d2c !important; margin: 0 0 10px !important; }
+  html body .bl-ev .bl-ev-t .meta { order: 2; font-size: 12px !important; line-height: 1.3 !important; color: #5e5f63 !important; margin: 0 0 10px !important; }
+  html body .bl-ev .bl-ev-t h2 { order: 3; font-size: clamp(22px, 6.2vw, 26px) !important; line-height: 1.12 !important; font-weight: 700 !important; letter-spacing: -.02em !important; color: #151517 !important; margin: 0 0 12px !important; }
+  html body .bl-ev .bl-ev-t p:not(.bl-ev-k) { order: 4; font-size: 14px !important; line-height: 1.5 !important; font-weight: 400 !important; color: #4a4b4f !important; margin: 0 0 16px !important; }
+  html body .bl-ev .bl-ev-t > :last-child:not(h2):not(p):not(.meta) { order: 5; }
+}
+@media (max-width: 900px) {
+  body[data-mk] .frame #main .sec.bl-evs .bl-evh .bl-ev-t h2#h-ev, body[data-mk] .frame #main .sec.bl-evs .bl-ev-t h2#h-ev { font-size: clamp(22px, 6.2vw, 26px) !important; line-height: 1.12 !important; }
+}
+
+/* istruzione 124: menu aperto nelle pagine interne = stesso trattamento della Home A (card nero caldo con blur, non il grigio wireframe) */
+html body[data-mk] .ha-menu .ha-mx-card{background:rgba(14,14,15,.72)!important;-webkit-backdrop-filter:blur(40px) saturate(1.4)!important;backdrop-filter:blur(40px) saturate(1.4)!important;border-color:rgba(255,255,255,.14)!important}
+html body[data-mk] .ha-menu .ha-mx-chip{background:rgba(14,14,15,.45)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+html body[data-mk] .ha-menu .ha-mx-chip:hover,html body[data-mk] .ha-menu .ha-mx-chip:focus-visible{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff!important}
+html body[data-mk] .ha-menu .ha-mx-all{background:rgba(14,14,15,.45)!important;border:1px solid rgba(255,255,255,.3)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}

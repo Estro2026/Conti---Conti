@@ -521,17 +521,17 @@
     var t = (a.querySelector('h3,.cx-name') || a).textContent.replace(/\[[^\]]*\]|\d+/g, '').trim();
     CATS.forEach(function (c) { if (t.toLowerCase().indexOf(c.toLowerCase()) === 0) a.setAttribute('href', 'categoria.html#' + slug(c)); });
   });
-  if (!/categoria\.html$/.test(location.pathname)) return;
+  if (!/categoria\.html$/.test(window.MK_PAGE || location.pathname)) return;
   /* "Altre categorie": esclude la categoria corrente; c1/c2 = prima cella di riga (4 colonne / 2 colonne) */
-  var curS = bySlug[location.hash.slice(1)] ? location.hash.slice(1) : 'palestre', vis = [];
+  var hs0 = window.MK_SLUG || location.hash.slice(1), curS = bySlug[hs0] ? hs0 : 'palestre', vis = [];
   document.querySelectorAll('.pg-oc li').forEach(function (li) {
     var a = li.querySelector('a');
     if (a && a.getAttribute('href') === 'categoria.html#' + curS) li.hidden = true; else vis.push(li);
   });
   vis.forEach(function (li, i) { if (i % 4 === 0) li.classList.add('c1'); if (i % 2 === 0) li.classList.add('c2'); if (i % 4 === 3) li.classList.add('e4'); if (i % 2 === 1) li.classList.add('e2'); });
   function apply() {
-    var c = bySlug[location.hash.slice(1)];
-    if (!c || c === 'Palestre') { if (c === undefined && location.hash) return; return; }
+    var c = bySlug[window.MK_SLUG || location.hash.slice(1)];
+    if (!c || c === 'Palestre') { if (c === undefined && (window.MK_SLUG || location.hash)) return; return; }
     var h1 = document.getElementById('h1'); if (h1) h1.textContent = c;
     var cur = document.querySelector('.crumb [aria-current]'); if (cur) cur.textContent = c;
     document.title = 'Wireframe Pagina categoria (' + c + ') | Conti e Conti';

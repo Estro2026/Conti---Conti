@@ -21,3 +21,12 @@
   html body .rs-hx .rs-p1-th{width:100%!important;height:auto!important;aspect-ratio:4/3!important;max-width:none!important;border-radius:18px!important;overflow:hidden}
   html body .rs-hx .rs-p1-th .ph,html body .rs-hx .rs-p1-th img{width:100%!important;height:100%!important;aspect-ratio:auto!important;border-radius:0!important}
 }
+@media (min-width:901px){
+  html body .sec.imm .grid.g3{display:flex!important;gap:20px!important;overflow-x:auto;scroll-snap-type:x mandatory;grid-template-columns:none!important;scrollbar-width:none;padding-bottom:4px}
+  html body .sec.imm .grid.g3::-webkit-scrollbar{display:none}
+  html body .sec.imm .grid.g3 > li{flex:0 0 calc((100% - 40px) / 3)!important;width:calc((100% - 40px) / 3)!important;scroll-snap-align:start;margin:0!important}
+  .rs-car-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:28px}
+  .rs-car-nav[hidden]{display:none}
+  .rs-ctl{display:none!important}
+}
+@media (max-width:900px){.rs-car-nav{display:none!important}}
