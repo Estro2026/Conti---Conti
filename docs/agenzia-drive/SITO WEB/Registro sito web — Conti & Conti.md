@@ -1,6 +1,6 @@
 # Registro sito web — Conti & Conti
 
-**Ultimo aggiornamento: 16/11/2026, 09:24** · fonte: Basecamp, solo la parte sito web del progetto · 00, 03, 04, 05 si rigenerano da Basecamp; 01, 02 e 99 sono la sintesi (da verificare dal PM).
+**Ultimo aggiornamento: 23/11/2026, 16:48** · fonte: Basecamp, solo la parte sito web del progetto · 00, 03, 04, 05 si rigenerano da Basecamp; 01, 02 e 99 sono la sintesi (da verificare dal PM).
 Consegne e nuove informazioni vanno sempre su Basecamp, da cui si aggiorna questo file. Mai password in questo file.
 
 ## 00_Panoramica
@@ -11,35 +11,71 @@ Consegne e nuove informazioni vanno sempre su Basecamp, da cui si aggiorna quest
 - To-do aperti: 9 · prossime scadenze: 23/11 Realizzazione Mockup; 25/11 Approvazione Mockup Completo; 11/01 Sviluppo & Realizzazione sito Web; 11/01 On Line; 11/01 Privacy Policy e Cookie Policy
 
 ## 01_Scheda_sito
-- Piattaforma/CMS: WordPress + Elementor Pro (sviluppo previsto; sito attuale WordPress su template preconfezionato del 2021)
-- Dominio: contieconti.it (esistente; gestore da verificare)
-- Hosting/server: sito attuale ospitato su register.it (da verificare); sviluppo previsto sul server Estro, poi migrazione. Attuale PHP 8.0: da aggiornare prima della migrazione
-- Stato: sviluppo in corso — wireframe consegnato il 03/11 (in approvazione); mockup homepage in lavorazione (A e B); mockup sito in corso (12/11). Messa online prevista fine dicembre/inizio gennaio
-- Pagine e sezioni principali: home (due proposte grafiche A/B), azienda (chi siamo, team con ritratti), servizi (da valutare rimozione per ripetizione), portfolio/realizzazioni con categorie cantieri (8), 3 progetti in evidenza, loghi clienti (13 consigliati), certificazioni (incluse Cassa Edile, tutti i bollini storici), residenze in vendita (scheda dedicata con modulo contatto; nuovi cantieri Domus 54 e via Diaz; rimozione residenze non attuali), news, immobili in vendita, footer
-- Integrazioni: modulo di contatto (nome, email, telefono, messaggio) su ogni scheda residenza; cookie e privacy tramite Iubenda (accesso ripristinato 15/10); Google Analytics e Search Console (accesso Bardo; da verificare)
-- Lingue: IT/EN (bilingue)
-- Accessi (solo dove sono e chi li ha): pannello hosting Aruba cPanel e WordPress, file credenziali condiviso su Basecamp (da verificare: chi li ha); Iubenda (account info@contieconti.it, recupero password ricevuto); Analytics e Search Console (accesso ricevuto da Bardo il 30/09)
-- Referenti (cliente e team): cliente — Susanna Conti Cavallaro (comunicazione), amministrazione@contieconti.it; titolare da coinvolgere per approvazioni. Team Estro — Emma Dal Porto (PM e referente commerciale), Alessia Pala (UX/UI), Sara Emara (Web/mockup), Bardo (Web Developer), Andrea (copywriter), azzurra (team)
+**Progetto:** Conti & Conti (solo sito web)
+- **Piattaforma/CMS:** WordPress. Sito attuale su template preconfezionato del 2021. Nuovo sito: WordPress + Elementor Pro, con plugin base (SEO, GDPR, sicurezza, performance).
+- **Dominio:** contieconti.it. Gestore del dominio: da verificare.
+- **Hosting/server:** attuale: da verificare (Bardo indica register.it; sul Basecamp compare un pannello Aruba cPanel, da verificare). PHP attuale 8.0, da aggiornare prima della migrazione. Nuovo sito: sviluppo sul server Estro, poi migrazione (il piano attuale non regge spazio e numero di database, 29/09).
+- **Stato:** sviluppo in fase di mockup. Wireframe consegnato 19/10, feedback ricevuti 05/11. Mockup homepage (versione A) in consegna 23/11 (19/11). Go-live previsto a fine dicembre / inizio gennaio (30/09).
+- **Pagine e sezioni principali:**
+  - Home: hero con video (storyboard in valutazione, 23/11), sezione "Una squadra, tante competenze", realizzazioni, certificazioni, loghi clienti (13), tre progetti in evidenza.
+  - Impresa: hero con timeline a 6 immagini, sede aziendale al posto della casa (richiesta titolare, 05/11).
+  - Realizzazioni: 8 categorie di cantieri.
+  - Residenze in vendita: cantieri Solarium, Paradiso, Domus 54, via Diaz; immobili Casa MJO, Ceresio 7, Villa Lugarna, BDC Monza. Ogni scheda ha un modulo di contatto dedicato.
+  - Certificazioni: incluse le certificazioni aggiornate e i bollini Cassa Edile storici (30/10).
+  - Portfolio: loghi clienti (13) e progetti in evidenza.
+  - Contatti e footer (logo "Conti e Conti", senza &).
+  - Servizi: proposta di rimozione, da confermare.
+  - Post type esistenti: News, Certificati, Portfolio, Immobili in vendita.
+  - Immagini: placeholder da sostituire con materiale definitivo (19/11).
+- **Integrazioni:**
+  - Modulo contatto: nome, email, telefono, messaggio (confermato 30/09).
+  - Google Analytics e Search Console: accesso di Bardo aggiunto (30/09).
+  - Iubenda (cookie/privacy): accesso ripristinato (15/10).
+  - Pagamenti online, newsletter, pixel: da verificare.
+- **Lingue:** IT, EN.
+- **Accessi** (solo dove si trovano e chi li ha):
+  - Pannello WordPress del sito attuale: ricevuto. Credenziali nel file Basecamp "Credenziali Sito Web".
+  - Pannello hosting: ricevuto (Aruba cPanel, da verificare).
+  - Gestore dominio: da verificare.
+  - Iubenda: ripristinato (15/10).
+  - Analytics e Search Console: Bardo abilitato (30/09).
+  - Nota: le credenziali sono state condivise in chiaro su Basecamp il 29/09. Da cambiare e spostare in un gestore password.
+- **Referenti:**
+  - Cliente: Susanna Conti Cavallaro (referente comunicazione). Titolare: da verificare.
+  - Team Estro: Emma Dal Porto (PM e referente commerciale); Bardo (sviluppo e tecnico); Sara Emara e Alessia Pala (wireframe e mockup); Andrea (testi SEO). Ruoli UX/UI e art direction: da verificare.
 
 ## 02_Decisioni_e_richieste_sito
-- 30/09 — Obiettivo: online tra fine dicembre e inizio gennaio; valorizzare 40 anni di attività (quarantennale 2027). Processo: wireframe con testi segnaposto, poi mockup grafico con testi SEO definitivi (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
-- 30/09 — Moduli di contatto: confermati nome, email, telefono e messaggio; modulo dedicato per ogni scheda residenza (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
-- 30/09 — Residenze in vendita: rimozione residenze non più attuali; aggiunta cantieri Domus 54 e via Diaz (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
-- 30/09 — Portfolio: mantenere struttura funzionale attuale, aggiornare testi; aggiungere sezione loghi "chi ha lavorato con noi" anche in homepage, previa verifica NDA con il cliente (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329439174)
-- 14/10 — Materiali: caricamento su Drive con link condiviso (Emma). Cliente ha caricato categorie cantieri (8), link articoli e progetti in evidenza nel file Numbers e loghi in cartella dedicata (Susanna, 14/10). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
-- 14/10 — Numero loghi in portfolio: 13 (ottimale). Due proposte grafiche di homepage da presentare, basate sul wireframe (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
-- 14/10 — Immagini: selezione e posizionamento solo dopo definizione del wireframe; possibile allungamento tempistiche (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
-- 30/10 — Loghi Cassa Edile: il titolare vuole tutti i bollini storici sul sito, non solo l'ultimo (azzurra). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091847)
-- 03/11 — Wireframe consegnato e in approvazione; presentate due proposte homepage A/B (Emma, Sara). [link](https://app.basecamp.com/4965236/messages/10471847787)
-- 05/11 — Feedback cliente: scelta grafica A; nella homepage al posto della casa inserire l'azienda del titolare (materiale in arrivo); frase dell'opzione B per sezione team mantenendo grafica A ("una squadra, tante competenze"); "cantieri" → "realizzazioni"; "garanzie messe per iscritto" e "verificati da enti esterni" → "certificazioni"; proposta di eliminare la sezione servizi (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
-- 05/11 — Footer: il logo va sempre scritto "Conti e Conti" (senza &) (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
-- 12/11 — Pacchetto mockup condiviso al team per realizzazione (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091874)
+- 22/09 — Contratto: firmato, nuovo sito per Conti e Conti S.r.l. (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10329392591)
+- 30/09 — Obiettivo: online tra fine dicembre e inizio gennaio, valorizzando i 40 anni (fondazione 1987) (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
+- 30/09 — Processo: wireframe con testi segnaposto, poi mockup grafico con testi definitivi in ottica SEO (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
+- 30/09 — Moduli di contatto: confermati nome, email, telefono, messaggio; un modulo dedicato per ogni residenza (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
+- 30/09 — Residenze: rimuovere quelle non più attuali; aggiungere Domus 54 e via Diaz (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356172722)
+- 30/09 — Accessi: email di Bardo aggiunta ad Analytics e Search Console (Emma, Bardo). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356968451)
+- 14/10 — Materiali: da caricare in Drive con link condiviso (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
+- 14/10 — Contenuti portfolio: 8 categorie di cantieri, 3 progetti in evidenza, link agli articoli, 13 loghi clienti in cartella (cliente, Susanna Conti Cavallaro). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10356968451)
+- 14/10 — Immagini: selezione e posizionamento solo dopo il wireframe, con allungamento dei tempi di sviluppo (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
+- 14/10 — Homepage: due proposte grafiche da presentare insieme al wireframe (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10403162433)
+- 19/10 — Consegna wireframe desktop e due proposte homepage A/B (Sara Emara). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
+- 28/10 — Presentazione wireframe e mockup spostata a martedì 03/11, sostituisce la decisione del 27/10 (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
+- 30/10 — Cassa Edile: vanno caricati tutti i bollini storici, non solo l'ultimo (titolare, via Susanna). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091847)
+- 03/11 — Presentazione wireframe e proposte homepage al cliente; wireframe in approvazione (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Scelta: grafica homepage A (titolare, Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Feedback footer: logo "Conti e Conti", senza & (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Feedback homepage: "cantieri" diventa "realizzazioni"; "garanzie messe per iscritto" e "verificati da enti esterni" diventano "certificazioni" (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Feedback Team: frase della proposta B ("una squadra, tante competenze") con grafica A (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Feedback Impresa: sede aziendale al posto della casa nell'hero, su richiesta del titolare (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 05/11 — Proposta: rimuovere la sezione Servizi, da confermare (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/messages/10471847787)
+- 12/11 — Consegna pacchetto mockup al team (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091874)
+- 19/11 — Materiali mancanti: foto di Susanna Conti Cavallaro, Silvana Cavallaro e Cesare Meroni; info sugli immobili in evidenza e in vendita; 6 immagini per la timeline (Sara Emara). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10521651804)
+- 19/11 — Consegna testi SEO in Google Doc (Andrea). [link](https://docs.google.com/document/d/1FzEnooKOl6wo3_oejnTk4chIUrMPPXdn9A1uvdYb-qk/edit?usp=sharing)
+- 23/11 — Consegna mockup homepage A e richiesta materiali mancanti inviati insieme al mockup al cliente (Emma). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10521651804)
+- 23/11 — Video hero: storyboard con sede principale e video di Susanna come filo conduttore, in attesa di approvazione prima della realizzazione (Alessia Pala). [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091874)
 
 ## 03_To-do_sito
 ### Aperti (9)
 - [ ] Approvazione Wireframe · Sito Web AI › Wireframe · scade 05/11/2026 · Emma Dal Porto · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
-- [ ] Check feedback + idea video ai · Sito Web AI › Mockup · scade 09/11/2026 · Alessia Pala, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10480670866)
-- [ ] Stesura Testi in ottica SEO · Sito Web AI › Mockup · scade 09/11/2026 · Andrea · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10347357854)
+- [ ] Check info mancanti · Sito Web AI › Mockup · scade 19/11/2026 · Alessia Pala, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10521651804)
+- [ ] Stesura Testi in ottica SEO · Sito Web AI › Mockup · scade 19/11/2026 · Andrea · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10347357854)
 - [ ] Realizzazione Mockup · Sito Web AI › Mockup · scade 23/11/2026 · Alessia Pala, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091874)
 - [ ] Approvazione Mockup Completo · Sito Web AI › Mockup · scade 25/11/2026 · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091867)
 - [ ] Sviluppo & Realizzazione sito Web · Sito Web AI › Sviluppo · scade 11/01/2027 · Bardo · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091906)
@@ -47,7 +83,8 @@ Consegne e nuove informazioni vanno sempre su Basecamp, da cui si aggiorna quest
 - [ ] Privacy Policy e Cookie Policy · Sito Web AI › Sviluppo · scade 11/01/2027 · Bardo · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091935)
 - [ ] Ottimizzazione Tecnica SEO Finale · Sito Web AI › Sviluppo · scade 11/01/2027 · Bardo · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091896)
 
-### Completati negli ultimi 90 giorni (8)
+### Completati negli ultimi 90 giorni (9)
+- [x] Check feedback + idea video ai · Sito Web AI › Mockup · scade 09/11/2026 · Alessia Pala, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10480670866)
 - [x] Check tecnico infrastruttura: Hosting \ Database \ Staging \ email · Sito Web AI › Organizzazione Preliminare · scade 03/11/2026 · Bardo · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091766)
 - [x] Prompt + Wireframe · Sito Web AI › Wireframe · scade 19/10/2026 · Alessia Pala, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091847)
 - [x] Brief Call Team Web + Cliente · Sito Web AI › Raccolta Materiali · scade 09/10/2026 · Alessia Pala, Bardo, Sara Emara · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091821)
@@ -68,8 +105,8 @@ Consegne e nuove informazioni vanno sempre su Basecamp, da cui si aggiorna quest
 
 ### Scadenze dei to-do aperti
 - 05/11/2026 ⚠️ scaduto — Approvazione Wireframe (Emma Dal Porto) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091853)
-- 09/11/2026 ⚠️ scaduto — Check feedback + idea video ai (Alessia Pala, Sara Emara) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10480670866)
-- 09/11/2026 ⚠️ scaduto — Stesura Testi in ottica SEO (Andrea) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10347357854)
+- 19/11/2026 ⚠️ scaduto — Check info mancanti (Alessia Pala, Sara Emara) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10521651804)
+- 19/11/2026 ⚠️ scaduto — Stesura Testi in ottica SEO (Andrea) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10347357854)
 - 23/11/2026 — Realizzazione Mockup (Alessia Pala, Sara Emara) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091874)
 - 25/11/2026 — Approvazione Mockup Completo · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091867)
 - 11/01/2027 — Sviluppo & Realizzazione sito Web (Bardo) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091906)
@@ -78,4 +115,4 @@ Consegne e nuove informazioni vanno sempre su Basecamp, da cui si aggiorna quest
 - 11/01/2027 — Ottimizzazione Tecnica SEO Finale (Bardo) · [link](https://app.basecamp.com/4965236/buckets/48991218/todos/10329091896)
 
 ## 99_Storico
-—
+- ~~27/10 — Presentazione wireframe e mockup al cliente: lunedì 02/11 (Emma)~~ SUPERATA il 28/10

@@ -53,7 +53,7 @@ fs.writeFileSync(R + 'mk-routes.js', tpl.replace('/*DATA*/', 'var D = ' + JSON.s
 fs.writeFileSync(R + 'index.html', '<!doctype html><meta charset="utf-8"><title>Conti e Conti</title><meta http-equiv="refresh" content="0;url=home-a.html"><script>location.replace("home-a.html"+location.search+location.hash)</script><a href="home-a.html">Home</a>');
 
 /* script mk-routes nei modelli (una sola volta) */
-['home-a.html', 'home-b.html', 'cantieri.html', 'categoria.html', 'progetto.html', 'in-vendita.html', 'residenza.html', 'servizio-residenze.html', 'servizio-ristrutturazioni.html', 'servizio-retail.html', 'chi-siamo.html', 'blog.html', 'articolo.html', 'faq.html', 'contatti.html', 'grazie.html', 'lavora-con-noi.html'].forEach(f => {
+['home-a.html', 'cantieri.html', 'categoria.html', 'progetto.html', 'in-vendita.html', 'residenza.html', 'servizio-residenze.html', 'servizio-ristrutturazioni.html', 'servizio-retail.html', 'chi-siamo.html', 'blog.html', 'articolo.html', 'faq.html', 'contatti.html', 'grazie.html', 'lavora-con-noi.html'].forEach(f => {
   let h = fs.readFileSync(R + f, 'utf8');
   if (!/mk-routes\.js/.test(h)) { h = h.replace(/<head>/i, m => m + '<script src="mk-routes.js?v=6"></script>'); fs.writeFileSync(R + f, h); }
 });

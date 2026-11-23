@@ -360,3 +360,6 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 
 ### 124 - Menu aperto nelle pagine interne
 Il menu aperto in Contatti (e nelle pagine interne) sembrava wireframe: card grigia piatta. Ora stessa resa della Home A (card nero caldo con blur, chip scuri). Regola in mk-fixes.css.
+
+### 125 - Home B rimossa
+Tolta la versione B dal mockup: home-b.html, mockup-b*.css/js, ab-switch.css, video hero B e selettore A/B nella Home A. Resta homepageb/img (immagini dei servizi). Recuperabile da git.

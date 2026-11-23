@@ -93,7 +93,7 @@ Non ho usato fotografie stock di persone: il sito ufficiale ha già foto autenti
 - Hero: video guidato dallo scroll (6 clip Seedance 2.0 Mini uniti con ffmpeg in `video/hero-scrub.mp4` / `-m.mp4`; i primi clip sono accelerati per avere velocita uniforme), si riparte sempre dall'inizio al refresh, scroll verso l'alto riporta all'inizio, il video si ferma sull'ultimo frame luminoso prima del velo di transizione.
 - Effetto vetro esteso (nav piena, schede, immobili, blog, sedi, progetti, chiusura); sezioni Valori e Garanzie con livelli di profondita (Garanzie ferma).
 - Footer: aggiunti Privacy policy, Cookie policy, Gestisci i cookie, Note legali, Accessibilita, Mappa del sito (link segnaposto `#`: pagine da creare).
-- **Home B** (`home-b.html` + `mockup-b.css` + `mockup-b.js`): stesso contenuto della A, concept architettonico: parete di cemento generata via SVG (nessuna immagine), linee guida da disegno tecnico, hero con "finestra" che si apre nel cemento con lo scroll, disegno di prospetto che si traccia nella dichiarazione, foto che emergono dalla parete (tratteggio e bianco e nero che si risolvono nella foto), schede come tavole in rilievo, targhette "Tav. 0X". Riusa `mockup.css` e `mockup.js`.
+- Home B rimossa (istruzione 125); resta solo la Home A. La cartella `homepageb/img` serve ancora alle immagini dei servizi.
 
 
 ## Indirizzi (istruzione 104)
@@ -102,4 +102,4 @@ Le pagine hanno gli indirizzi del PDF del copywriter (sezione 14), in cartelle c
 
 **Come si modifica.** I file modello restano nella cartella `mockup/` (`home-a.html`, `cantieri.html`, `categoria.html`, `progetto.html`, `in-vendita.html`, `residenza.html`, `servizio-*.html`, `chi-siamo.html`, `blog.html`, `articolo.html`, `faq.html`, `contatti.html`, `grazie.html`, `lavora-con-noi.html`). Si modifica il modello e poi si lancia `node build-routes.js` (dalla cartella `mockup/`): rigenera le 98 pagine annidate e `mk-routes.js`. Non modificare a mano le pagine nelle cartelle generate.
 
-**Vecchi indirizzi.** Aprendo un modello (per esempio `progetto.html#villa-lugarna`) `mk-routes.js` porta all'indirizzo nuovo. `home-a.html`, `home-b.html` e `index.html` restano alla radice.
+**Vecchi indirizzi.** Aprendo un modello (per esempio `progetto.html#villa-lugarna`) `mk-routes.js` porta all'indirizzo nuovo. `home-a.html` e `index.html` restano alla radice.
