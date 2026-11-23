@@ -124,7 +124,9 @@
   var bar = document.querySelector('.sticky-m');
   if (!bar) return;
   var tk = 0;
-  function u() { tk = 0; document.body.classList.toggle('bar-on', (window.pageYOffset || 0) > window.innerHeight * 0.35); }
+  /* istruzione 82: la barra sparisce quando arriva la sezione "Richiedi un preventivo" (e il footer sotto) */
+  var cta, findCta = function () { return [].filter.call(document.querySelectorAll('main section, section'), function (s) { return /richiedi un preventivo/i.test((s.querySelector('.kicker,.dx-k,p,h2') || {}).textContent || '') || /richiedi un preventivo/i.test(s.textContent.slice(0, 400)); }).pop(); };
+  function u() { tk = 0; if (!cta || !cta.isConnected) cta = findCta(); var y = window.pageYOffset || 0, past = cta && cta.getBoundingClientRect().top < window.innerHeight - 70; document.body.classList.toggle('bar-on', y > window.innerHeight * 0.35 && !past); }
   window.addEventListener('scroll', function () { if (!tk) tk = requestAnimationFrame(u); }, { passive: true });
   window.addEventListener('resize', u);
   u();

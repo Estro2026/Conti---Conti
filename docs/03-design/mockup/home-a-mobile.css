@@ -1,0 +1,124 @@
+/* Home A, telefono (istruzione 79): ogni sezione interattiva sta in una schermata. Caricato per ultimo. */
+@media (max-width:900px){
+  /* 1. Una squadra, tante competenze: titolo, ruoli in fila scorrevole, foto del ruolo scelto a fuoco */
+  #team.tw{height:100svh!important;min-height:560px!important;padding:calc(var(--nav-h,68px) + 20px) 0 16px!important;overflow:hidden}
+  #team .tw-in{display:flex!important;flex-direction:column;height:100%;gap:12px;grid-template-columns:none!important}
+  #team .tw-l{flex:0 0 auto;min-height:0;display:block!important}
+  #team .tw-l h2{font-size:clamp(28px,8.4vw,38px)!important;line-height:1!important;margin:0 0 12px!important}
+  #team .tw-roles{display:flex!important;flex-wrap:nowrap!important;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--gut,16px))!important;padding:2px var(--gut,16px) 4px!important;scrollbar-width:none;list-style:none}
+  #team .tw-roles::-webkit-scrollbar{display:none}
+  #team .tw-roles li{flex:0 0 auto;scroll-snap-align:start;border:0!important;padding:0!important;margin:0!important}
+  #team .tw-roles button{display:block;min-height:44px;padding:10px 16px!important;border:1px solid rgba(21,21,23,.18)!important;border-radius:999px!important;background:#fff!important;white-space:nowrap}
+  #team .tw-roles button span{font-size:15px!important}
+  #team .tw-roles button small{display:none!important}
+  #team .tw-roles button.on{background:var(--ink,#151517)!important;border-color:var(--ink,#151517)!important;color:#fff!important}
+  #team .tw-roles button.on span{color:#fff!important}
+  #team .tw-names{margin:2px 0 0;font-size:14px;line-height:1.4;color:#5e5f63;min-height:1.4em}
+  #team .tw-note{display:none!important}
+  #team .tw-f{flex:1 1 auto;min-height:0;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:8px;height:auto!important;padding:0!important;margin:0!important;overflow:hidden}
+  #team .tw-f .tw-p{display:none!important;position:relative!important;inset:auto!important;left:auto!important;top:auto!important;width:auto!important;height:auto!important;aspect-ratio:auto!important;min-height:0;margin:0!important;transform:none!important;opacity:1!important;filter:none!important;border-radius:16px;overflow:hidden}
+  #team .tw-f .tw-p.hit{display:block!important}
+  #team .tw-f .tw-p img{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover}
+  #team .tw-f .tw-cap{position:absolute!important;left:8px;right:8px;bottom:8px;padding:8px 10px!important;border-radius:10px;background:rgba(255,255,255,.92)!important;opacity:1!important;transform:none!important}
+  #team .tw-f .tw-cap strong{font-size:13px}
+  #team .tw-f .tw-cap small{font-size:11px}
+  #team .tw-f[data-n="1"] .tw-p.hit{grid-column:1/-1}
+  #team .tw-f[data-n="3"] .tw-p.hit:first-of-type{grid-row:span 2}
+
+  /* 2. Realizzazioni in evidenza: carosello orizzontale, card uguali, contatore che segue lo scorrimento */
+  #progetti.pf{height:auto!important;padding:calc(var(--nav-h,68px) + 16px) 0 32px!important}
+  #progetti .pf-sticky{position:static!important;height:auto!important;padding:0!important}
+  #progetti .pf-head{margin-bottom:16px!important}
+  #progetti .pf-head h2{font-size:clamp(28px,8vw,36px)!important}
+  #progetti .pf-track{display:flex!important;gap:12px;overflow-x:auto!important;scroll-snap-type:x mandatory;transform:none!important;padding:0 var(--gut,16px)!important;margin:0!important;height:auto!important;scrollbar-width:none;list-style:none}
+  #progetti .pf-track::-webkit-scrollbar{display:none}
+  #progetti .pf-track > li{flex:0 0 86%!important;width:86%!important;height:min(64svh,520px)!important;scroll-snap-align:center;margin:0!important}
+  #progetti .pf-card{position:relative;display:block;width:100%!important;height:100%!important;border-radius:18px;overflow:hidden}
+  #progetti .pf-img,#progetti .pf-img img{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;transform:none!important}
+  #progetti .pf-meta{position:absolute!important;left:16px;right:16px;bottom:16px;z-index:2}
+  #progetti .pf-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(14,12,13,.85),rgba(14,12,13,0) 55%)}
+  #progetti .pf-data{display:none!important}
+  #progetti .pf-ctl{display:flex!important;align-items:center;gap:12px;margin-top:12px}
+
+  /* 3. Dove operiamo: titolo, mappa e zone come etichette, tutto in una schermata */
+  #dove.map{height:100svh!important;min-height:600px;padding:calc(var(--nav-h,68px) + 12px) 0 16px!important;overflow:hidden}
+  #dove .map-grid{display:flex!important;flex-direction:column;height:100%;gap:12px;padding:0 var(--gut,16px)!important}
+  #dove .map-side{display:contents!important}
+  #dove .map-side > .kicker{order:1;margin:0!important}
+  #dove .map-side > h2{order:2;font-size:clamp(26px,7.6vw,34px)!important;line-height:1.02!important;margin:0!important}
+  #dove .map-lead,#dove .pl em,#dove .map-note,#dove .pl-n{display:none!important}
+  #dove .map-frame{order:3;flex:1 1 auto;min-height:0!important;height:auto!important;border-radius:16px!important}
+  #dove .pins{order:4;display:flex!important;flex-wrap:wrap;gap:6px;margin:0!important;padding:0!important;list-style:none;border:0!important}
+  #dove .pins li{border:0!important;padding:0!important;margin:0!important}
+  #dove .pl{display:flex!important;align-items:center;gap:6px;min-height:40px;padding:8px 12px!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:999px!important;background:rgba(255,255,255,.06)!important}
+  #dove .pl strong{font-size:13px!important;font-weight:600}
+  #dove .pl[aria-pressed="true"]{background:#fff!important}
+  #dove .pl[aria-pressed="true"] strong{color:#151517!important}
+  #dove .map-side > .btn{order:5;align-self:flex-start;margin:0!important}
+
+  /* 4. Certificazioni: loghi di ogni certificazione affiancati, niente sovrapposizioni */
+  #garanzie .gc-l{grid-template-columns:1fr!important;gap:22px!important}
+  #garanzie .gc-l li{display:grid!important;grid-template-columns:auto 1fr;align-items:center;gap:14px}
+  #garanzie .gc-logo{display:flex!important;flex-wrap:nowrap!important;flex-direction:row!important;gap:6px!important;height:auto!important}
+  #garanzie .gc-logo img{height:44px!important;width:auto!important;max-width:none!important}
+  #garanzie .gc-logo img[src*="cassa-edile-award"]{height:48px!important}
+  #garanzie .gc-logo img[src*="attestazione-soa"]{height:auto!important;width:116px!important}
+
+  #team .tw-in{align-items:stretch!important;justify-content:flex-start!important}
+  #team .tw-l,#team .tw-f{width:100%!important;max-width:none!important;align-self:stretch!important}
+  #team .tw-roles{flex-direction:row!important;width:auto!important}
+  #team .tw-roles li{display:block!important;width:auto!important}
+  #team .tw-f{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #team .tw-f[data-n="1"]{grid-template-columns:1fr!important}
+
+  #team .tw-f:not([data-n="1"]):not([data-n="2"]) .tw-cap small{display:none}
+  #team .tw-f:not([data-n="1"]) .tw-cap{left:6px;right:6px;bottom:6px;padding:6px 8px!important}
+
+  #progetti .pf-sticky{display:block!important}
+  #progetti .pf-head{position:static!important;inset:auto!important;transform:none!important;z-index:auto!important;padding:0 var(--gut,16px)!important;margin:0 0 16px!important;width:auto!important}
+  #progetti .pf-head *{color:#151517}
+  #progetti .pf-head .kicker{color:#7d1d2c!important}
+  #progetti .pf-ctl .btn{background:#151517!important;color:#fff!important}
+  #progetti .pf-n,#progetti .pf-n b{color:#151517!important}
+  #progetti .pf-bar{background:rgba(21,21,23,.15)!important}
+  #progetti .pf-bar i{background:#7d1d2c!important}
+  #progetti .pf-track{position:static!important}
+
+  #progetti.pf .pf-head h2,#progetti.pf .pf-head h2 *{color:#151517!important;text-shadow:none!important}
+  #progetti.pf .pf-ctl .btn.btn-light{background:#151517!important;color:#fff!important;border-color:#151517!important}
+  #progetti.pf .pf-ctl{flex-wrap:wrap}
+  #progetti.pf .pf-n{display:inline-block!important;font-weight:600}
+  #progetti.pf .pf-bar{display:block!important;flex:1 1 60px;height:2px}
+  #progetti .pf-track > li{height:min(58svh,480px)!important}
+
+  /* istruzione 80: ruoli dentro i margini, nomi leggibili, due persone in orizzontale */
+  #team .tw-roles{margin:0!important;padding:2px 0 4px!important;scroll-padding-left:0}
+  #team .tw-names{display:none!important}
+  #team .tw-f{grid-auto-rows:minmax(0,1fr)!important}
+  #team .tw-f[data-n="2"]{grid-template-columns:1fr!important}
+  #team .tw-f[data-n="3"]{grid-template-columns:1fr 1fr!important}
+  #team .tw-f[data-n="3"] .tw-p.hit:first-of-type{grid-row:auto!important;grid-column:1/-1}
+  #team .tw-f .tw-p img{object-position:50% 25%}
+  #team .tw-f .tw-cap,#team .tw-f:not([data-n="1"]) .tw-cap{left:10px!important;right:auto!important;bottom:10px!important;max-width:calc(100% - 20px);padding:8px 12px!important;border-radius:10px;background:#fff!important;box-shadow:0 2px 10px rgba(0,0,0,.18);display:flex!important;flex-direction:column;gap:2px}
+  #team .tw-f .tw-cap strong{font-size:15px!important;line-height:1.15;font-weight:650;color:#151517!important}
+  #team .tw-f .tw-cap small{display:block!important;font-size:11px!important;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;color:#7d1d2c!important}
+  #team .tw-f[data-n="4"] .tw-cap strong,#team .tw-f[data-n="3"] .tw-p.hit:not(:first-of-type) .tw-cap strong{font-size:13px!important}
+
+  /* istruzione 80: loghi certificazioni piu grandi, testi allineati su una colonna */
+  #garanzie .gc-l li{grid-template-columns:150px 1fr!important;gap:16px!important}
+  #garanzie .gc-logo{justify-content:flex-start;align-items:center}
+  #garanzie .gc-logo img{height:54px!important}
+  #garanzie .gc-logo img[src*="cassa-edile-award"]{height:58px!important}
+  #garanzie .gc-logo img[src*="attestazione-soa"]{height:auto!important;width:150px!important}
+
+  #garanzie .gc-l li{grid-template-columns:136px minmax(0,1fr)!important;width:100%!important;max-width:100%!important}
+  #garanzie .gc-l li > *:not(.gc-logo){min-width:0}
+  #garanzie .gc-logo img{height:52px!important}
+  #garanzie .gc-logo img[src*="cassa-edile-award"]{height:52px!important}
+  #garanzie .gc-logo img[src*="attestazione-soa"]{width:136px!important;height:auto!important}
+  #garanzie .gc-logo img[src*="tuv"],#garanzie .gc-logo img[src*="iso"]{height:52px!important}
+
+  html body .ha-mx-side dd{min-height:0!important}
+  html body .ha-mx-side dd a{display:block!important;min-height:0!important;padding:0!important;line-height:1.35}
+  html body .ha-mx-side dd{line-height:1.35}
+}

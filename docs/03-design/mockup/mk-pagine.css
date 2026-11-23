@@ -693,3 +693,63 @@ body[data-mk] .frame .crumb li{flex:0 0 auto}
 body[data-mk] .frame .crumb li[aria-current]{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:44px}
 }
 body[data-mk] .frame .rs-hx:not(.hx-on) .rs-hx-tr>.rs-p2{aspect-ratio:4/3!important;min-height:220px!important}
+
+/* istruzione 81: barra Chiama / Preventivo su telefono senza fondo bianco, pulsanti in vetro come la nav */
+@media (max-width:900px){
+  .sticky-m{background:transparent!important;box-shadow:none!important;border:0!important;padding:10px 16px calc(10px + env(safe-area-inset-bottom))!important;gap:8px!important;pointer-events:none}
+  .sticky-m .btn{pointer-events:auto;border-radius:999px!important;min-height:48px}
+  .sticky-m .btn.sec2{background:rgba(255,255,255,.62)!important;-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border:1px solid rgba(22,22,22,.15)!important;color:#161616!important;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+  .sticky-m .btn:not(.sec2){box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 18px rgba(0,0,0,.18)}
+}
+
+/* istruzione 81: Impresa, Certificazioni su telefono in schede una sotto l'altra, senza tagli */
+@media (max-width:900px){
+  #garanzie.ix-gar{height:auto!important;min-height:0!important}
+  #garanzie .ix-tlist{display:flex!important;flex-direction:column!important;gap:14px!important;grid-template-columns:none!important;width:100%!important;overflow:visible!important}
+  #garanzie .ix-tlist > li{width:100%!important;max-width:none!important;min-width:0;box-sizing:border-box;padding:20px!important;border-radius:18px;display:flex!important;flex-direction:column;align-items:flex-start;gap:6px;transform:none!important}
+  #garanzie .ix-t-logo{display:flex!important;flex-wrap:nowrap;gap:8px;align-items:center;height:56px!important;width:auto!important;max-width:100%;margin:0 0 10px!important;position:static!important}
+  #garanzie .ix-t-logo img{height:56px!important;width:auto!important;max-width:100%;object-fit:contain;position:static!important}
+  #garanzie .ix-t-logo img[src*="attestazione-soa"]{height:auto!important;width:180px!important}
+  #garanzie .ix-t-tag{white-space:normal!important;overflow:visible!important}
+  #garanzie .ix-tlist strong{font-size:22px!important;line-height:1.15!important;word-break:normal;hyphens:none}
+  #garanzie .ix-tlist p{font-size:15px!important;line-height:1.5!important;margin:4px 0 0!important}
+  #garanzie .ix-tlist dl{display:flex!important;flex-wrap:wrap;gap:6px 20px;margin:10px 0 0!important;width:100%}
+}
+
+/* istruzione 83: la barra resta trasparente (81) e sparisce sul preventivo (82); sotto il footer niente fondo chiaro, solo nero */
+@media (max-width:900px){
+  body{background:linear-gradient(#f4f1ec,#f4f1ec) top/100% calc(100% - 240px) no-repeat,#0e0e0e!important}
+}
+
+/* istruzione 91: scheda progetto su telefono, meno vuoto sotto la hero e galleria dentro i margini */
+@media (max-width:900px){
+  html body .frame .pj-hero,html body .pj-hero{height:calc(100svh + 8svh)!important}
+  html body .frame .pj-gal,html body .pj-gal{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0!important;padding:0 var(--gut,20px)!important;box-sizing:border-box;width:100%!important;transform:none!important}
+  html body .pj-gal > button{grid-column:auto!important;grid-row:auto!important;width:100%!important;max-width:100%!important;height:auto!important;aspect-ratio:4/3!important;margin:0!important;transform:none!important;border-radius:14px!important;overflow:hidden}
+  html body .pj-gal > button:nth-child(3n+1){grid-column:1/-1!important}
+  html body .pj-gal > button > div{height:100%!important}
+}
+@media (max-width:900px){
+  html body .pj-gc .pj-gal{grid-auto-rows:auto!important;grid-template-rows:none!important;align-items:stretch!important}
+  html body .pj-gc .pj-gal > button,html body .pj-gc .pj-gal.gc-on > button{height:auto!important;min-height:0!important;aspect-ratio:4/3!important}
+    html body .pj-gc .pj-gal > button > div,html body .pj-gc .pj-gal > button img{position:absolute!important;inset:0;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover}
+  html body .pj-gc .pj-gal > button{position:relative!important}
+  html body .pj-hero{height:calc(100svh + 2svh)!important}
+}
+@media (max-width:900px){
+  html body .pj-gc .pj-gal{padding-inline:20px!important;width:100%!important;box-sizing:border-box!important}
+}
+@media (max-width:900px){
+  html body .pj-gc .pj-gal{padding-inline:0!important}
+}
+@media (max-width:900px){
+  html body .pj-gc .pj-gal{gap:12px!important;row-gap:12px!important}
+  html body .pj-gc .pj-gal > button{margin:0!important}
+}
+@media (max-width:900px){
+  html body .frame .pj-hero,html body .pj-hero{height:auto!important}
+}
+@media (max-width:900px){
+  html body .ha-mx-side dd{min-height:0!important;line-height:1.35}
+  html body .ha-mx-side dd a{display:block!important;min-height:0!important;padding:0!important;line-height:1.35}
+}

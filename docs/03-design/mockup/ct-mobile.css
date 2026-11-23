@@ -1,0 +1,68 @@
+/* istruzione 85: pagine categoria su telefono. Nav categorie a etichette con la categoria attiva evidenziata, niente divisori, contatore foto funzionante */
+@media (max-width:900px){
+  .ct-hero .ct-nav2{border:0!important;box-shadow:none!important;padding:0!important;margin:20px calc(-1 * var(--gut,20px)) 0!important;display:block!important;background:none!important}
+  .ct-hero .ct-nav2::before,.ct-hero .ct-nav2::after,.ct-hero .ct-hero-s::before,.ct-hero .ct-hero-s::after,.ct-hero .ct-cta::before,.ct-hero .ct-cta::after{display:none!important}
+  .ct-hero .ct-nav2-p,.ct-hero .ct-nav2-n{display:none!important}
+  .ct-hero .ct-ix{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;overflow-x:auto!important;scroll-snap-type:x proximity;scroll-padding-inline:20px;padding:2px 0!important;margin:0!important;border:0!important;list-style:none;scrollbar-width:none;mask-image:none!important;-webkit-mask-image:none!important}
+  .ct-hero .ct-ix::-webkit-scrollbar{display:none}
+  .ct-hero .ct-ix::before,.ct-hero .ct-ix::after{content:"";flex:0 0 14px}
+  .ct-hero .ct-ix li{flex:0 0 auto;scroll-snap-align:start;border:0!important;margin:0!important;padding:0!important}
+  .ct-hero .ct-ix a{display:flex!important;align-items:center;gap:6px;min-height:40px;padding:8px 14px!important;border:1px solid rgba(255,255,255,.3)!important;border-radius:999px!important;background:rgba(20,18,19,.35)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff!important;font-size:14px!important;white-space:nowrap;box-shadow:none!important;text-decoration:none!important}
+  .ct-hero .ct-ix a::after,.ct-hero .ct-ix a::before{display:none!important}
+  .ct-hero .ct-ix small{font-size:11px!important;opacity:.6;color:inherit!important}
+  .ct-hero .ct-ix li.on a{background:#fff!important;border-color:#fff!important;color:#151517!important}
+  .ct-hero .ct-ix li.on small{opacity:.5}
+  /* contatore foto */
+  .ct-hero.ct-m .ct-pk-l{display:none!important}
+  .ct-hero.ct-m .ct-bg{opacity:0!important;transition:opacity .7s ease!important}
+  .ct-hero.ct-m .ct-bg.m-on{opacity:1!important}
+  .ct-mc{position:absolute;left:var(--gut,20px);bottom:18px;z-index:5;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 0;border:0;background:none;color:#fff;font:600 13px/1 inherit;letter-spacing:.04em;cursor:pointer}
+  .ct-mc[hidden]{display:none}
+  .ct-mc i{position:relative;display:block;width:64px;height:2px;background:rgba(255,255,255,.3);overflow:hidden}
+  .ct-mc i::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(var(--p,0))}
+
+  .ct-mc{left:auto;right:var(--gut,20px);bottom:auto;top:calc(var(--nav-h,68px) + 18px);text-shadow:0 1px 6px rgba(0,0,0,.4)}
+  .ct-hero .ct-nav2{margin-bottom:8px!important}
+
+  html body .ct-hero .ct-nav2 .ct-ix li.on a,html body .ct-hero .ct-nav2 .ct-ix li.on a *{color:#151517!important;-webkit-text-fill-color:#151517!important}
+  html body .ct-hero .ct-nav2 .ct-ix small{position:static!important;transform:none!important;margin:0!important}
+  .ct-hero{overflow-x:clip}
+
+  html body .ct-hero .ct-nav2 .ct-ix small{display:none!important}
+
+  html body .ct-hero .ct-nav2 .ct-ix a{padding:8px 14px!important;min-height:40px!important;border:1px solid rgba(255,255,255,.3)!important;border-radius:999px!important;background:rgba(20,18,19,.35)!important;font-size:14px!important}
+  html body .ct-hero .ct-nav2 .ct-ix li.on a{background:#fff!important;border-color:#fff!important}
+  html body .ct-hero .ct-nav2 .ct-ix{gap:8px!important}
+  .ct-mc{top:calc(var(--nav-h,68px) + 56px)!important}
+
+  /* istruzione 86: al posto delle etichette, frecce categoria precedente / successiva */
+  html body .ct-hero .ct-nav2{display:flex!important;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 8px!important}
+  html body .ct-hero .ct-nav2 .ct-ix{display:none!important}
+  html body .ct-hero .ct-nav2 .ct-nav2-p,html body .ct-hero .ct-nav2 .ct-nav2-n{display:inline-flex!important;align-items:center;gap:8px;min-height:44px;max-width:48%;padding:10px 16px!important;border:1px solid rgba(255,255,255,.3)!important;border-radius:999px!important;background:rgba(20,18,19,.35)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff!important;font-size:14px!important;text-decoration:none!important;box-shadow:none!important}
+  html body .ct-hero .ct-nav2 .ct-nav2-n{margin-left:auto}
+  html body .ct-hero .ct-nav2 b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  html body .ct-hero .ct-nav2 span{flex:0 0 auto}
+
+  html body .ct-hero .ct-nav2{padding:0 var(--gut,20px)!important;box-sizing:border-box;width:100%!important}
+
+  /* istruzione 87: nomi interi (vanno a capo), contatore sempre visibile su fondo scuro */
+  html body .ct-hero .ct-nav2 .ct-nav2-p,html body .ct-hero .ct-nav2 .ct-nav2-n{max-width:none!important;flex:1 1 0;min-width:0;border-radius:22px!important;padding:10px 14px!important;line-height:1.2}
+  html body .ct-hero .ct-nav2 .ct-nav2-n{justify-content:flex-end;text-align:right}
+  html body .ct-hero .ct-nav2 b{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+  .ct-mc,.ct-mc[hidden]{display:flex!important;padding:0 14px!important;min-height:36px;border-radius:999px;background:rgba(20,18,19,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);text-shadow:none}
+
+  .ct-hero{isolation:isolate}
+  html body .ct-hero .ct-mc{z-index:60!important;position:absolute!important}
+  html body .ct-hero .ct-pk-l{display:none!important}
+
+  /* istruzione 90: strati foto dei progetti della categoria; titolo uguale a tutte le categorie */
+  .ct-hero.ct-m .ct-hero-m > .ct-bg,.ct-hero.ct-m .ct-hero-m > .ph,.ct-hero.ct-m .ct-pk{display:none!important}
+  .ct-ms{position:absolute;inset:0;z-index:0}
+  .ct-ms-s{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;background:#1b1819}
+  .ct-ms-s.on{opacity:1}
+  .ct-ms-s img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ct-ms-s.no{display:flex;align-items:flex-start;justify-content:center;padding-top:30%}
+  .ct-ms-s.no span{display:flex;flex-direction:column;gap:6px;text-align:center;color:rgba(255,255,255,.75);font-weight:600;font-size:18px}
+  .ct-ms-s.no small{font-weight:400;font-size:12px;opacity:.7}
+  .ct-hero h1 .ct-w{display:inline}
+}

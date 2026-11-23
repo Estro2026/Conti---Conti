@@ -1,0 +1,27 @@
+/* istruzione 97: FAQ su telefono. Ricerca senza testo sovrapposto; filtri argomento come le altre nav a pillole del sito (fila scorrevole, attivo scuro e portato in vista) */
+@media (max-width:900px){
+  html body .fq-q{position:relative;display:flex;flex-direction:column;gap:8px}
+  html body .fq-q input{width:100%!important;box-sizing:border-box;padding-right:44px!important;text-overflow:ellipsis}
+  html body .fq-q .fq-x{position:absolute;right:6px;top:6px;width:44px;height:44px}
+  html body .fq-q .fq-q-n{position:static!important;inset:auto!important;transform:none!important;opacity:1!important;margin:0!important;padding:0 4px!important;font-size:13px;color:#5e5f63;background:none!important;pointer-events:none}
+  html body .fq-nav{position:sticky!important;top:calc(var(--nav-h,68px) + 14px)!important;z-index:20;margin:0 -20px 14px!important;padding:8px 0!important;background:rgba(244,241,236,.92)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:0!important;box-shadow:none!important;border-radius:0!important}
+  html body .fq-nav .sv-pills{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;overflow-x:auto!important;scroll-snap-type:x proximity;padding:0 20px!important;margin:0!important;background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;scrollbar-width:none;width:auto!important}
+  html body .fq-nav .sv-pills::-webkit-scrollbar{display:none}
+  html body .fq-nav .sv-pill{flex:0 0 auto;scroll-snap-align:start;display:inline-flex!important;align-items:center;gap:6px;min-height:40px;padding:8px 14px!important;border:1px solid rgba(21,21,23,.16)!important;border-radius:999px!important;background:#fff!important;color:#151517!important;font-size:14px!important;white-space:nowrap;box-shadow:none!important;text-decoration:none}
+  html body .fq-nav .sv-pill small{font-size:11px;opacity:.6}
+  html body .fq-nav .sv-pill.is-cur{background:#151517!important;border-color:#151517!important;color:#fff!important}
+
+  html body .fq-nav::before,html body .fq-nav::after,html body .fq-nav .sv-pills::before,html body .fq-nav .sv-pills::after{display:none!important}
+  html body .fq-nav .sv-pill.is-cur small{color:#fff!important;opacity:.7}
+
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky{background:rgba(244,241,236,.92)!important;border-radius:0!important;box-shadow:none!important}
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky > .sv-pills{background:transparent!important;box-shadow:none!important;border-radius:0!important}
+
+  /* istruzione 98: filtri tutti visibili (a capo), pillole con lo stesso raggio delle altre nav */
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky{position:static!important;margin:0 0 16px!important;padding:0!important;background:none!important}
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky > .sv-pills{flex-wrap:wrap!important;overflow:visible!important;padding:0!important;gap:8px!important}
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky .sv-pill,html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky .sv-pill.is-cur,html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky .sv-pill:hover{border-radius:999px!important}
+  html body .fq-q input{font-size:15px!important;padding-left:14px!important;text-overflow:clip!important}
+
+  html body .frame .fq-lay .fq-nav.fq-nav.sv-sticky{border:0!important;outline:0!important}
+}

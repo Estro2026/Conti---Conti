@@ -1,0 +1,31 @@
+/* istruzione 99: Contatti su telefono. Dove operiamo come in Home A, mappa sede a tutto contenitore, oggetto del modulo a pillole */
+@media (max-width:900px){
+  #dove.map{height:100svh!important;min-height:600px;padding:calc(var(--nav-h,68px) + 12px) 0 16px!important;overflow:hidden}
+  #dove .map-grid{display:flex!important;flex-direction:column;height:100%;gap:12px;padding:0 var(--gut,16px)!important}
+  #dove .map-side{display:contents!important}
+  #dove .map-side > .kicker{order:1;margin:0!important}
+  #dove .map-side > h2{order:2;font-size:clamp(26px,7.6vw,34px)!important;line-height:1.02!important;margin:0!important}
+  #dove .map-lead,#dove .pl em,#dove .map-note,#dove .pl-n{display:none!important}
+  #dove .map-frame{order:3;flex:1 1 auto;min-height:0!important;height:auto!important;border-radius:16px!important}
+  #dove .pins{order:4;display:flex!important;flex-wrap:wrap;gap:6px;margin:0!important;padding:0!important;list-style:none;border:0!important}
+  #dove .pins li{border:0!important;padding:0!important;margin:0!important}
+  #dove .pl{display:flex!important;align-items:center;gap:6px;min-height:40px;padding:8px 12px!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:999px!important;background:rgba(255,255,255,.06)!important}
+  #dove .pl strong{font-size:13px!important;font-weight:600}
+  #dove .pl[aria-pressed="true"]{background:#fff!important}
+  #dove .pl[aria-pressed="true"] strong{color:#151517!important}
+  #dove .map-side > .btn{order:5;align-self:flex-start;margin:0!important}
+  html body .co-mp .co-map{position:relative;height:320px!important;aspect-ratio:auto!important;overflow:hidden}
+  html body .co-mp .co-map iframe,html body .co-mp .mk-gmap{position:absolute!important;inset:0;width:100%!important;height:100%!important;border:0}
+  html body .co-mp{overflow:hidden}
+  .co-obj{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .co-obj button{min-height:44px;padding:10px 16px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(20,18,19,.35);color:#fff;font:inherit;font-size:14px;text-align:left}
+  .co-obj button[aria-pressed="true"]{background:#fff;border-color:#fff;color:#151517;font-weight:600}
+  .co-sel-h{display:none!important}
+}
+@media (max-width:900px){
+  .co-altro{margin-top:10px}
+  .co-altro[hidden]{display:none}
+  .co-altro label{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+  .co-altro input{width:100%;box-sizing:border-box;padding:10px 0;border:0;border-bottom:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;font:inherit;font-size:16px}
+  .co-altro input::placeholder{color:rgba(255,255,255,.6)}
+}

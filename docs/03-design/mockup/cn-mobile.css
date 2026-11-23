@@ -1,0 +1,56 @@
+/* istruzione 84: Realizzazioni su telefono. Barra categorie intera e sempre visibile sopra le card, niente miniature, griglia a due colonne, "Vedi altri" dopo 8 card */
+@media (max-width:900px){
+  html body .frame .cn-dk{display:none!important}
+  html body .frame .cn-bar{position:sticky!important;top:calc(var(--nav-h,68px) + 14px)!important;z-index:20;left:auto!important;width:auto!important;margin:0 calc(-1 * var(--gut,20px)) 14px!important;padding:8px 0!important;background:rgba(244,241,236,.9)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:0!important;box-shadow:none!important;transform:none!important}
+  html body .frame .cn-bar .cn-bar-in{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;overflow-x:auto!important;scroll-snap-type:x proximity;padding:0 var(--gut,20px)!important;margin:0!important;max-width:none!important;width:auto!important;scrollbar-width:none;background:none!important;border:0!important;box-shadow:none!important}
+  html body .frame .cn-bar .cn-bar-in::-webkit-scrollbar{display:none}
+  html body .frame .cn-bar .cn-f{flex:0 0 auto;scroll-snap-align:start;min-height:40px;padding:8px 14px!important;border:1px solid rgba(21,21,23,.16)!important;border-radius:999px!important;background:#fff!important;color:#151517!important;font-size:14px!important;white-space:nowrap}
+  html body .frame .cn-bar .cn-f[aria-pressed="true"]{background:#151517!important;border-color:#151517!important;color:#fff!important}
+  html body .frame .cn-bar .cn-f sup{font-size:11px;opacity:.6;margin-left:2px}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-){display:grid!important;grid-template-columns:1fr 1fr!important;gap:18px 12px!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) > li{grid-column:auto!important;grid-row:auto!important;margin:0!important;width:auto!important;transform:none!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) > li.mk-more-off{display:none!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c{display:block!important;height:auto!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph{position:relative;aspect-ratio:4/5!important;height:auto!important;border-radius:14px;overflow:hidden}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph .ph,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph img{position:absolute!important;inset:0;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-tag{position:absolute;left:8px;top:8px;z-index:2;font-size:10px!important;padding:4px 8px!important;background:rgba(255,255,255,.9)!important;color:#151517!important;border:0!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t{display:block!important;padding:8px 2px 0!important;position:static!important;background:none!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t h3{font-size:15px!important;line-height:1.2!important;margin:0!important;color:#151517!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t .meta{display:block;font-size:12px!important;line-height:1.3;margin-top:2px;color:#5e5f63!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-go,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-hv{display:none!important}
+  .mk-more{display:flex;justify-content:center;margin:24px 0 8px}
+  .mk-more[hidden]{display:none}
+  .mk-more button{min-height:48px;padding:12px 24px;border-radius:999px;border:1px solid #151517;background:transparent;color:#151517;font:inherit;font-weight:600}
+
+  html body .frame .cn-bar .cn-bar-in::before,html body .frame .cn-bar .cn-bar-in::after{content:"";flex:0 0 12px}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c{display:flex!important;flex-direction:column!important;position:relative!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph{position:relative!important;inset:auto!important;width:100%!important;flex:0 0 auto}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t{position:static!important;inset:auto!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:none!important;box-shadow:none!important;border:0!important;color:#151517!important}
+
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c{background:none!important;padding:0!important;border:0!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c::before,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c::after,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph::after{display:none!important}
+
+  html body .frame .cn-bar .cn-bar-in{scroll-padding-inline:20px!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-){grid-auto-rows:auto!important;align-items:start!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) > li{height:auto!important;min-height:0!important;max-height:none!important;align-self:start!important;aspect-ratio:auto!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t{height:auto!important;min-height:0!important}
+
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c{aspect-ratio:auto!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph{margin:0!important;top:auto!important;height:auto!important;aspect-ratio:4/5!important}
+
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph{inset:auto!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t{display:block!important}
+
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-){grid-template-rows:none!important;grid-auto-flow:row!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) > li{overflow:visible!important;contain:none!important}
+
+  /* titolo sopra la foto, in basso, su velatura scura */
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-c{border-radius:14px!important;overflow:hidden!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph{border-radius:0!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(14,12,13,.82),rgba(14,12,13,0) 55%)}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t{position:absolute!important;left:0!important;right:0!important;bottom:0!important;top:auto!important;z-index:2;display:block!important;padding:10px 10px 11px!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t h3{color:#fff!important;font-size:14px!important}
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t .meta{color:rgba(255,255,255,.78)!important;font-size:11px!important}
+
+  html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t,html body .frame .cn-grid.cn-grid:not(.is-list):not(.x-) .cn-t *{opacity:1!important;visibility:visible!important;transform:none!important;clip-path:none!important}
+}

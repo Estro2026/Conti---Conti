@@ -1,0 +1,32 @@
+/* istruzione 99: Lavora con noi su telefono. Margini della hero, volti in griglia dentro i margini, ruoli allineati, ruolo di interesse a pillole */
+@media (max-width:900px){
+  html body .lv-faces-s > .in{padding-inline:20px!important;box-sizing:border-box}
+  html body .lv-faces-s .lv-faces{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin:0!important;padding:0!important;list-style:none}
+  html body .lv-faces-s .lv-faces li{width:auto!important;margin:0!important;border-radius:14px;overflow:hidden}
+  html body .lv-faces-s .lv-faces .ph{aspect-ratio:1/1!important}
+  html body li[data-lv] h3 button{width:100%;text-align:left!important;justify-content:space-between!important;gap:12px}
+  html body li[data-lv] h3 .lv-r-t{text-align:left!important;flex:1 1 auto}
+  .lv-obj{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .lv-obj button{min-height:44px;padding:10px 16px;border:1px solid rgba(21,21,23,.2);border-radius:999px;background:#fff;color:#151517;font:inherit;font-size:14px;text-align:left}
+  .lv-obj button[aria-pressed="true"]{background:#151517;border-color:#151517;color:#fff;font-weight:600}
+
+  html body li[data-lv] h3 button{display:flex!important;align-items:center}
+  html body li[data-lv] h3 .lv-r-t{margin-right:auto!important;text-align:left!important;display:block}
+  html body li[data-lv] h3 .lv-r-w{display:none}
+
+  html body li[data-lv].on .lv-r-m,html body li[data-lv].on .lv-r-m *{color:rgba(255,255,255,.72)!important}
+
+@media (max-width:900px){
+  .lv-mq{display:flex;flex-direction:column;gap:10px;margin:8px -20px 0;overflow:hidden}
+  .lv-mq-r{overflow:hidden}
+  .lv-mq-t{display:flex;gap:10px;width:max-content;animation:lvmq 38s linear infinite;padding-left:10px}
+  .lv-mq-r.r1 .lv-mq-t{animation-direction:reverse;animation-duration:46s}
+  .lv-mq-i{flex:0 0 auto;list-style:none;border-radius:18px;overflow:hidden;height:150px}
+  .lv-mq-i.s0{width:112px}.lv-mq-i.s1{width:200px}.lv-mq-i.s2{width:150px}
+  .lv-mq-i .ph,.lv-mq-i img{width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;display:block}
+  .lv-mq.still .lv-mq-r{overflow-x:auto}.lv-mq.still .lv-mq-t{animation:none}
+  @keyframes lvmq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.lv-mq-t{animation:none}.lv-mq-r{overflow-x:auto}}
+
+  html body .lv-faces-s .lv-faces.lv-off{display:none!important}
+}

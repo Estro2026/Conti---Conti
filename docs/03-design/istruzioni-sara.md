@@ -268,3 +268,49 @@ Cause trovate e corrette in hero-a.js (v5): (1) il salto in cima usava lo scorri
 - (92) 2026-11-19 · mockup · Sara: (a) scheda immobile con zoom (residenza.html#domus-54): prima slide con immagine e testo troppo piccoli, slide 5 con testi e tab appartamenti troppo piccoli; (b) blog con zoom: testo della hero allineato a "Tutti gli articoli" e sottolineatura del blocco in evidenza sovrapposta al testo. Fonte: CLIENTE. Fatto: (a) sugli schermi bassi (altezza fino a 780 px) le schede diventano orizzontali invece che quadrate: prima slide 1,8:1 con titolo a sinistra e foto a destra più grande, ora a dimensione piena (scala 1) da 1440x900 a 720x400, prima 0,5; slide appartamenti 2:1 con titolo, scelta dell unità su una riga che scorre (tab da 17 px) e sotto pianta e dati affiancati, scala 0,70 a 960x540 (prima 0,38-0,52), introduzione nascosta per far posto ai dati; nessuna scheda tagliata da 1440x900 a 600x330 (scarto massimo 1 px); schede 3, documenti e modulo più larghe (1,35:1 e 1,2:1). Limite: a 720x400 e 600x330 l unità si riduce ancora (0,44 e 0,30): ingrandita dal zoom del browser corrisponde a circa 0,9x e 0,9x della misura reale. (b) blog: kicker, titolo e blocco in evidenza sugli stessi bordi del contenuto (47 e 898 px a 960 px, come breadcrumb e "Tutti gli articoli"; prima 16 e 929); interlinea del titolo del blocco 1,22 e sottolineatura con distanza 0,2 em e spessore 0,055 em. Agenti: responsive-device, precision-layout-qa.
 
 - (93) 2026-11-19 · mockup · Sara: sistemare il sito per mobile senza rinunciare a estetica e originalità delle sezioni, con soluzioni più adatte alla navigazione da telefono e senza sovrapposizioni di testi. Fonte: CLIENTE. Metodo: ogni pagina caricata a 390x844 con scorrimento completo e rilevatore automatico di testi sovrapposti, bersagli tocco e scorrimento orizzontale, poi controllo visivo con emulazione telefono (touch). Corretto: (1) Home A, "Quattro impegni": titolo e testo si coprivano (regola a tre colonne più in basso scavalcava quella mobile): ora numero a sinistra, titolo sopra e testo sotto; (2) Home B, scheda lavori: il contatore "01 / 04" finiva sotto la scheda dati (ora la scheda parte più in basso); (3) barra "Chiama / Preventivo": copriva il fondo delle aperture (titolo di Casa MJO, pulsanti, indicazioni): ora compare dopo i primi scorrimenti e resta visibile col focus da tastiera; (4) Blog su telefono: il blocco in evidenza copriva l introduzione e usciva dallo schermo; ora stessa composizione della versione desktop (titolo in alto, blocco in basso, entro i margini) con titolo da 34 px; (5) scheda immobile in colonna: la foto aveva altezza zero, ora 4:3; (6) breadcrumb: una sola riga, pagina corrente troncata, link da 44 px; footer, telefono, caselle di spunta e scelta portati a 44 px di area tocco; (7) interruttore A/B: passa sotto l intestazione a destra, più piccolo, nascosto con il menu aperto. Verificati come già corretti: aperture di Categoria, Articolo, Servizi, Impresa (carte a pila volute), Realizzazioni (filtri a scorrimento), menu a tutto schermo. Restano: caselle di spunta dei moduli e link di testo nei paragrafi sotto i 44 px (link nel testo esclusi per scelta), didascalie dei segnaposto foto nel confronto prima/dopo; non provato su telefoni reali. Agenti: responsive-device, accessibility, precision-layout-qa.
+
+- (79) 2026-11-23 · mockup · Sara: mobile Home A. (1) "Una squadra, tante competenze" tutta nella schermata, toccando un ruolo si mettono a fuoco le sue foto, composizione libera; (2) Realizzazioni in evidenza: prima slide che non scorre via, slide uguali, contatore 01/03 funzionante; (3) Dove operiamo tutta nella schermata, togliendo il meno necessario; (4) Certificazioni: loghi affiancati senza sovrapposizioni. Fonte: CLIENTE. Fatto in home-a-mobile.css e home-a-mobile.js. Agenti: responsive-device, motion.
+
+- (80) 2026-11-23 · mockup · Sara: mobile Home A. Squadra: ruoli dentro i margini, nomi leggibili con gerarchia (nome, poi ruolo), due persone non in verticale; Certificazioni: loghi piu grandi e testi allineati. Fonte: CLIENTE. Fatto in home-a-mobile.css. Agenti: responsive-device, copy-layout-typography.
+
+- (81) 2026-11-23 · mockup · Sara: mobile, tutte le pagine: barra Chiama/Preventivo senza fondo bianco, trasparente come la nav (pulsanti in vetro). Impresa: Certificazioni in schede una sotto l altra, senza tagli o sovrapposizioni. Fonte: CLIENTE. Fatto in mk-pagine.css. Agenti: responsive-device.
+
+- (82) 2026-11-23 · mockup · Sara: mobile, barra Chiama/Preventivo su fondo nero; sparisce quando arriva la sezione "Richiedi un preventivo". Fonte: CLIENTE. Fatto in mk-pagine.css e mk-lib.js. Agenti: responsive-device, motion.
+
+- (83) 2026-11-23 · mockup · Sara: correzione della 82. La barra Chiama/Preventivo resta trasparente mentre si scorre (81); il problema era il fondo bianco sotto il footer, che ora e nero. La barra continua a sparire sulla sezione preventivo. Fonte: CLIENTE. Fatto in mk-pagine.css. Agenti: responsive-device.
+
+- (84) 2026-11-23 · mockup · Sara: mobile Realizzazioni. Barra Tutti/Case/... non tagliata e sempre visibile con le card; tolte le miniature; composizione libera (griglia a due colonne); dopo alcune card pulsante "Vedi altri progetti". Fonte: CLIENTE. Fatto in cn-mobile.css e cn-mobile.js. Agenti: responsive-device.
+
+- (85) 2026-11-23 · mockup · Sara: mobile pagine categoria (Ville, Case...). Nav delle categorie con selezione ottimizzata (etichette, attiva evidenziata e portata in vista), tolti i divisori nella hero dopo "Richiedi un preventivo", contatore 01/03 funzionante. Fonte: CLIENTE. Fatto in ct-mobile.css e ct-mobile.js. Agenti: responsive-device, motion.
+
+- (86) 2026-11-23 · mockup · Sara: mobile pagine categoria, nella hero al posto della nav a etichette frecce categoria precedente / successiva. Sostituisce la nav della 85. Fonte: CLIENTE. Fatto in ct-mobile.css. Agenti: responsive-device.
+
+- (87) 2026-11-23 · mockup · Sara: mobile pagine categoria, contatore foto sempre visibile e funzionante; nomi delle categorie nelle frecce interi, senza puntini. Fonte: CLIENTE. Fatto in ct-mobile.css e ct-mobile.js. Agenti: responsive-device.
+
+- (88) 2026-11-23 · mockup · Sara: mobile categoria, i numeri del contatore devono stare sopra la hero (sopra gli strati della foto), non sotto. Fonte: CLIENTE. Fatto in ct-mobile.css.
+
+- (89) 2026-11-23 · mockup · Sara: mobile categoria, bug: i numeri apparivano in basso alla hero cambiando categoria e poi in alto. Ora il contatore e creato subito in alto e quello originale resta nascosto. Fatto in ct-mobile.js e ct-mobile.css.
+
+- (90) 2026-11-23 · mockup · Sara: mobile categoria. Il contatore deve contare tutti i progetti della categoria (non solo 3); titolo Palestre senza animazione a lettere, uguale alle altre categorie. Fonte: CLIENTE. Foto mancanti: segnaposto "Foto da chiedere al cliente". Fatto in ct-mobile.js e ct-mobile.css.
+
+- (91) 2026-11-23 · mockup · Sara: mobile scheda progetto (es. progetto.html#villa-lugarna): troppo spazio sotto la hero; galleria con attenzione ai margini. Fonte: CLIENTE. Fatto in mk-pagine.css.
+
+- (92) 2026-11-23 · mockup · Sara: mobile scheda progetto. Spazi della sezione "Il progetto" uniformati alle altre sezioni (56 px); effetto di apertura delle immagini della galleria ripristinato; distanza uniforme tra le immagini (12 px, come nelle altre griglie). Fatto in mk-pagine.css.
+
+- (93) 2026-11-23 · mockup · Sara: mobile scheda progetto, lo spazio sopra la sezione "Il progetto" uguale a quello delle sezioni prima e dopo (56 px): tolto il vuoto residuo della hero. Fatto in mk-pagine.css.
+
+- (94) 2026-11-23 · mockup · Sara: mobile In vendita, vista Mappa: mappa e testo/localita cliccabili nella stessa viewport. Fatto in iv-mobile.css e iv-mobile.js.
+
+- (95) 2026-11-23 · mockup · Sara: mobile scheda immobile (residenza.html): margini attorno alle card della hero; "Altri immobili" come carosello, stessa logica dei progetti in evidenza della Home A (slide uguali, contatore e barra). Fatto in rs-mobile.css e rs-mobile.js.
+
+- (96) 2026-11-23 · mockup · Sara: mobile scheda immobile. Immagine piu grande nella prima card della hero; tolto l outline ovale attorno al numero del carosello Altri immobili (conflitto di classe .n). Fatto in rs-mobile.css e rs-mobile.js.
+
+- (97) 2026-11-23 · mockup · Sara: mobile FAQ. Barra di ricerca senza testo sovrapposto; filtri argomento pensati per telefono, con filtro evidenziato che segue il comportamento delle altre nav a pillole (attivo scuro, portato in vista). Fatto in fq-mobile.css e fq-mobile.js.
+
+- (98) 2026-11-23 · mockup · Sara: mobile. Menu: telefono ed email allineati. FAQ: testo nella ricerca non tagliato (placeholder breve), filtri tutti visibili senza tagli, pillola selezionata con lo stesso radius delle altre nav. Fatto in mk-pagine.css, home-a-mobile.css, fq-mobile.css/js.
+
+- (99) 2026-11-23 · mockup · Sara: mobile. FAQ: tolto outline rettangolare attorno ai filtri. Contatti: dropdown Oggetto del modulo a pillole (non esce dallo schermo), mappa dei contatti diretti a tutto contenitore, Dove operiamo come Home A. Lavora con noi da ottimizzare per mobile. Fatto in co-mobile.css/js, fq-mobile.css.
+
+- (100) 2026-11-23 · mockup · Sara: mobile Lavora con noi ottimizzata: margini hero, volti in griglia dentro i margini, titoli ruolo allineati a sinistra, ruolo di interesse a pillole. Fatto in lv-mobile.css/js.
+
+- (101) 2026-11-23 · mockup · Sara: mobile. Contatti: scegliendo Altro compare un campo per scrivere l oggetto. Lavora con noi: nuova composizione hero, foto del team in due file che scorrono in direzioni opposte con formati diversi. Fatto in co-mobile e lv-mobile.
