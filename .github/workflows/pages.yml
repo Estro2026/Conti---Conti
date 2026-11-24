@@ -34,13 +34,17 @@ jobs:
           mkdir -p _site
           cp -r docs/03-design/mockup _site/mockup
           cp -r docs/03-design/wireframe _site/wireframe
+          # materiali di lavoro non usati dalle pagine (Home B rimossa, fotogrammi e clip di studio, sorgenti): fuori dal pacchetto, restano nel repository
+          M=_site/mockup
+          rm -rf "$M/hero_b_conti&conti" "$M/hero_b_conti&conti.zip" "$M/video/keyframes" "$M/video/clips" "$M/hero-sequenza" "$M/img/src"
+          find _site -name '*.zip' -delete
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
           cat > _site/index.html <<'HTML'
           <!doctype html>
           <html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex">
           <meta http-equiv="refresh" content="0; url=mockup/home-a.html">
           <title>Conti &amp; Conti | Mockup e wireframe</title></head>
-          <body><p>Mockup e wireframe in revisione: <a href="mockup/home-a.html">Homepage A</a> · <a href="mockup/home-b.html">Homepage B</a> · <a href="wireframe/index.html">Indice wireframe</a></p></body></html>
+          <body><p>Mockup e wireframe in revisione: <a href="mockup/home-a.html">Homepage A</a> · <a href="wireframe/index.html">Indice wireframe</a></p></body></html>
           HTML
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
