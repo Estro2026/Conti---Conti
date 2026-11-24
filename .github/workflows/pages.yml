@@ -52,3 +52,12 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+      # GitHub a volte non trova subito il pacchetto appena caricato: seconda prova dopo una pausa
+      - name: Nuovo tentativo di pubblicazione
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+      - name: Pubblica (secondo tentativo)
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
