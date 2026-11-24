@@ -170,3 +170,9 @@ html body[data-mk] .ha-menu .ha-mx-all{background:rgba(14,14,15,.45)!important;b
   html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+5) { height: 480px !important; }
   html body[data-mk] .frame .iv-list .iv-skyg .ci-b { overflow: visible; }
 }
+
+/* istruzione 128 (mobile): la barra Chiama/Preventivo e davvero nascosta (non solo spostata) quando non deve comparire: a fondo pagina, sul footer, restava visibile */
+@media (max-width: 900px) {
+  html body:not(.bar-on) .sticky-m { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: transform .35s var(--ease, ease), opacity .25s, visibility 0s .35s !important; }
+  html body.bar-on .sticky-m { opacity: 1; visibility: visible; }
+}

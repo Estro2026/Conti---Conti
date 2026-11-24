@@ -369,3 +369,6 @@ Tolta la versione B dal mockup: home-b.html, mockup-b*.css/js, ab-switch.css, vi
 
 ### 127 - Mobile (GitHub Pages): immagini menu e homepage non visibili
 Causa: immagini loading="lazy" dentro menu, sezioni bloccate e caroselli non partivano su telefono. Ora mk-routes.js le rende tutte immediate (v=7). Verificato: Home 39/39 e Contatti 13/13 immagini caricate.
+
+### 128 - Mobile: barra Chiama/Preventivo visibile sul footer nelle pagine interne
+La barra (sticky) a fondo pagina restava visibile perche il solo spostamento non bastava: ora senza bar-on e nascosta (opacity, visibility, pointer-events). Regola in mk-fixes.css v26.
