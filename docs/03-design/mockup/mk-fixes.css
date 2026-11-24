@@ -176,3 +176,9 @@ html body[data-mk] .ha-menu .ha-mx-all{background:rgba(14,14,15,.45)!important;b
   html body:not(.bar-on) .sticky-m { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: transform .35s var(--ease, ease), opacity .25s, visibility 0s .35s !important; }
   html body.bar-on .sticky-m { opacity: 1; visibility: visible; }
 }
+
+/* istruzione 129 (mobile): la barra Chiama/Preventivo e fissa allo schermo (non occupa piu spazio sotto il footer); la scritta "Conti e Conti" del footer non va mai a capo */
+@media (max-width: 900px) {
+  html body[data-mk] .frame .sticky-m { position: fixed !important; left: 0; right: 0; bottom: 0; }
+}
+html body .ha-ft-word, html body .ft-word { white-space: nowrap !important; overflow: hidden; }

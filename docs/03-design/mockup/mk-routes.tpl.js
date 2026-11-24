@@ -66,11 +66,14 @@
       p.textContent = w.textContent; document.body.appendChild(p); var tw = p.getBoundingClientRect().width; p.remove();
       if (!tw) return;
       w.style.setProperty('font-size', (100 * box / tw * 0.985).toFixed(2) + 'px', 'important');
+      /* controllo finale: se per arrotondamenti o font di riserva sfora ancora, restringe finche entra */
+      var fs = 100 * box / tw * 0.985, g = 0; while (w.scrollWidth > w.clientWidth + 0.5 && g++ < 40) { fs *= 0.98; w.style.setProperty('font-size', fs.toFixed(2) + 'px', 'important'); }
     });
   }
   var t; function later() { clearTimeout(t); t = setTimeout(fit, 60); }
   window.addEventListener('load', function () { fit(); setTimeout(fit, 500); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); });
-  window.addEventListener('resize', later);
+  window.addEventListener('resize', later); window.addEventListener('orientationchange', later); window.addEventListener('pageshow', later);
+  if (window.ResizeObserver) { var ro = new ResizeObserver(later); window.addEventListener('load', function () { [].forEach.call(document.querySelectorAll('.ha-ft-word, .ft-word'), function (w) { ro.observe(w.parentElement || w); }); }); }
 })();
 
 /* istruzione 127: su telefono le immagini "lazy" dentro menu, sezioni bloccate e caroselli non partivano mai: tutte le immagini si caricano subito */

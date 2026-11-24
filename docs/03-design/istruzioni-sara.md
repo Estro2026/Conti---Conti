@@ -372,3 +372,6 @@ Causa: immagini loading="lazy" dentro menu, sezioni bloccate e caroselli non par
 
 ### 128 - Mobile: barra Chiama/Preventivo visibile sul footer nelle pagine interne
 La barra (sticky) a fondo pagina restava visibile perche il solo spostamento non bastava: ora senza bar-on e nascosta (opacity, visibility, pointer-events). Regola in mk-fixes.css v26.
+
+### 129 - Mobile: spazio sotto il footer e "Conti e Conti" a capo
+(1) Barra Chiama/Preventivo ora fissa allo schermo (era sticky e lasciava uno spazio vuoto sotto il footer): il footer arriva a filo del fondo. (2) Scritta "Conti e Conti" del footer: misura rifatta a ogni cambio di larghezza, font caricati, rotazione e ritorno alla pagina, con controllo finale che la restringe finche entra su una riga. mk-fixes.css v27, mk-routes.js v8.
