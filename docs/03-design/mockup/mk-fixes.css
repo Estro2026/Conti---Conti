@@ -191,3 +191,9 @@ html body .ha-ft-word, html body .ft-word { white-space: nowrap !important; over
   html body[data-mk] .frame .bl-evh .bl-ev { display: flex !important; flex-direction: column; justify-content: flex-end; flex: 1 1 auto; height: auto !important; min-height: 0 !important; margin-top: 20px; }
   html body[data-mk] .frame .bl-evh .bl-ev-t { position: relative !important; left: auto !important; right: auto !important; bottom: auto !important; width: auto !important; margin: 0 16px !important; }
 }
+
+/* istruzione 131 (mobile): scheda progetto/immobile, hero a tutta altezza visibile (svh): con 100vh il testo in basso finiva sotto la barra del browser del telefono */
+@media (max-width: 900px) {
+  html body[data-overlay] .frame .pj-hero-s, html body .frame .pj-hero-s { height: 100svh !important; max-height: 100svh; }
+  html body .frame .pj-hero-t { bottom: calc(clamp(20px, 4svh, 40px) + env(safe-area-inset-bottom, 0px)) !important; }
+}

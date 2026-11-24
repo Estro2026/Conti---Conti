@@ -378,3 +378,6 @@ La barra (sticky) a fondo pagina restava visibile perche il solo spostamento non
 
 ### 130 - Mobile: Blog, hero, testo sovrapposto al riquadro In evidenza
 Titolo e riquadro erano due blocchi assoluti indipendenti e su alcune altezze/larghezze si toccavano. Ora sono in colonna: il riquadro sta in basso, con almeno 20 px dal titolo; se manca altezza la hero cresce. mk-fixes.css v28.
+
+### 131 - Mobile: schede progetto, hero tutta visibile
+La cornice della hero era alta 100vh: su telefono supera l'area visibile (barra del browser) e il testo in basso restava fuori schermo. Ora 100svh e testo con margine dal fondo (con safe-area). Misurato a 375x667: testo da 411 a 640 px, hero 667 px. mk-fixes.css v29.
