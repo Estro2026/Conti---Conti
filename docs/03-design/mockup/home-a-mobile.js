@@ -36,7 +36,10 @@
   var bar = document.querySelector('.sticky-m.hm-bar'), cl = document.getElementById('contatto');
 
   var tk = 0;
-  function u() { tk = 0; var y = window.pageYOffset || 0, past = cl && cl.getBoundingClientRect().top < window.innerHeight - 70; var hero = document.querySelector('[data-cch-hero]'), afterHero = hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.5 : y > window.innerHeight * 0.9; document.body.classList.toggle('bar-on', afterHero && !past); }
+  function u() { tk = 0; var y = window.pageYOffset || 0, past = cl && cl.getBoundingClientRect().top < window.innerHeight - 70; var hero = document.querySelector('[data-cch-hero]'), afterHero = hero ? hero.getBoundingClientRect().bottom < window.innerHeight * 0.5 : y > window.innerHeight * 0.9; var ft = document.querySelector('footer'), inFt = ft && ft.getBoundingClientRect().top < window.innerHeight; document.body.classList.toggle('bar-on', afterHero && !past && !inFt); }
   window.addEventListener('scroll', function () { if (!tk) tk = setTimeout(u, 40); }, { passive: true });
   window.addEventListener('resize', u); u();
+  /* dopo un aggiornamento il browser ripristina lo scroll quando la pagina e gia piu lunga: ricalcolo a ogni fase del caricamento */
+  window.addEventListener('load', function () { u(); setTimeout(u, 300); setTimeout(u, 1200); }); window.addEventListener('pageshow', u);
+  if (window.ResizeObserver) new ResizeObserver(function () { if (!tk) tk = setTimeout(u, 40); }).observe(document.body);
 })();

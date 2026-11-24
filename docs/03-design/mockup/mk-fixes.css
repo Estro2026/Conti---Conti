@@ -140,3 +140,33 @@ html body[data-mk] .ha-menu .ha-mx-card{background:rgba(14,14,15,.72)!important;
 html body[data-mk] .ha-menu .ha-mx-chip{background:rgba(14,14,15,.45)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 html body[data-mk] .ha-menu .ha-mx-chip:hover,html body[data-mk] .ha-menu .ha-mx-chip:focus-visible{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff!important}
 html body[data-mk] .ha-menu .ha-mx-all{background:rgba(14,14,15,.45)!important;border:1px solid rgba(255,255,255,.3)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+
+/* istruzione 126 (mobile): le hero usano l'altezza visibile reale (svh), non 100vh, che con la barra del browser le taglia in basso */
+@media (max-width: 900px) {
+  html body .frame .ixs { height: 100svh !important; min-height: 520px; }
+  html body .frame .ixi { min-height: 100svh !important; }
+  html body .frame .ct-dark { min-height: 100svh !important; }
+  html body .frame .ixs, html body .frame .ct-hero, html body .frame .bl-ev, html body .frame .pj-hero { max-height: none; }
+}
+@media (max-width: 900px) {
+  /* categoria: titolo, testo e pulsante entrano sempre nell'altezza visibile (anche su telefoni bassi) */
+  html body[data-mk] .frame .ct-hx { height: 100svh !important; min-height: 0 !important; overflow: hidden; padding-top: calc(var(--nav-h, 68px) + 24px) !important; padding-bottom: 20px !important; box-sizing: border-box; }
+  html body[data-mk] .frame #main .ct-hx h1.ct-long:not(.sr), html body[data-mk] .frame #main .ct-hx h1:not(.sr) { font-size: clamp(28px, min(9.6vw, 5.8vh), 44px) !important; }
+  html body[data-mk] .frame #main .ct-hx .ct-hero-s .lead { font-size: clamp(14px, 2.3vh, 16px) !important; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+}
+@media (max-width: 900px) {
+  /* Home, Realizzazioni in evidenza: il testo della card non passa sotto la freccia */
+  html body #progetti .pf-meta { right: 88px !important; }
+}
+
+/* istruzione 126 (mobile): In vendita, Skyline: card piu larghe (testi interi) e altezza del contenitore = card piu alta, senza vuoto tra la barra Skyline/Mappa e le card */
+@media (max-width: 900px) {
+  html body[data-mk] .frame .iv-list .iv-skyg { height: auto !important; min-height: 0 !important; align-items: flex-end !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li { width: min(300px, 82vw) !important; flex-basis: min(300px, 82vw) !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+1) { height: 450px !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+2) { height: 420px !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+3) { height: 480px !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+4) { height: 435px !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg > li:nth-child(5n+5) { height: 480px !important; }
+  html body[data-mk] .frame .iv-list .iv-skyg .ci-b { overflow: visible; }
+}

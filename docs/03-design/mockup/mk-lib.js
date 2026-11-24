@@ -126,8 +126,10 @@
   var tk = 0;
   /* istruzione 82: la barra sparisce quando arriva la sezione "Richiedi un preventivo" (e il footer sotto) */
   var cta, findCta = function () { return [].filter.call(document.querySelectorAll('main section, section'), function (s) { return /richiedi un preventivo/i.test((s.querySelector('.kicker,.dx-k,p,h2') || {}).textContent || '') || /richiedi un preventivo/i.test(s.textContent.slice(0, 400)); }).pop(); };
-  function u() { tk = 0; if (!cta || !cta.isConnected) cta = findCta(); var y = window.pageYOffset || 0, past = cta && cta.getBoundingClientRect().top < window.innerHeight - 70; document.body.classList.toggle('bar-on', y > window.innerHeight * 0.35 && !past); }
+  function u() { tk = 0; if (!cta || !cta.isConnected) cta = findCta(); var y = window.pageYOffset || 0, past = cta && cta.getBoundingClientRect().top < window.innerHeight - 70; var ft = document.querySelector('footer'), inFt = ft && ft.getBoundingClientRect().top < window.innerHeight; document.body.classList.toggle('bar-on', y > window.innerHeight * 0.35 && !past && !inFt); }
   window.addEventListener('scroll', function () { if (!tk) tk = requestAnimationFrame(u); }, { passive: true });
+  window.addEventListener('load', function () { u(); setTimeout(u, 300); setTimeout(u, 1200); }); window.addEventListener('pageshow', u);
+  if (window.ResizeObserver) new ResizeObserver(function () { if (!tk) tk = requestAnimationFrame(u); }).observe(document.body);
   window.addEventListener('resize', u);
   u();
 })();

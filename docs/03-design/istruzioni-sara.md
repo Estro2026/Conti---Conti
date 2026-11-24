@@ -363,3 +363,6 @@ Il menu aperto in Contatti (e nelle pagine interne) sembrava wireframe: card gri
 
 ### 125 - Home B rimossa
 Tolta la versione B dal mockup: home-b.html, mockup-b*.css/js, ab-switch.css, video hero B e selettore A/B nella Home A. Resta homepageb/img (immagini dei servizi). Recuperabile da git.
+
+### 126 - Mobile: hero, card Home, skyline, barra CTA al footer
+(1) Hero sempre visibile: altezze in svh (Impresa, Contatti) e hero categoria che entra tutta nello schermo anche a 667 px. (2) Home "In evidenza": testo card non passa sotto la freccia. (3) In vendita skyline: card da 300 px, testi interi. (4) Barra Chiama/Preventivo mai sul footer anche dopo un aggiornamento (ricalcolo al caricamento, nascosta se il footer e visibile) in Home e pagine interne. (5) In vendita skyline: contenitore alto quanto la card piu alta, niente vuoto sotto la barra Skyline/Mappa. Regole in mk-fixes.css (v25), home-a-mobile.js, mk-lib.js.
