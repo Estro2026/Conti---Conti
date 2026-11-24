@@ -37,7 +37,7 @@ for (const p of pages) {
   const depth = p.out.split('/').length, rel = '../'.repeat(depth);
   const inj = '<base href="' + rel + '"><script>window.MK_NESTED=1;window.MK_PAGE=' + JSON.stringify(p.tpl) + ';' + (p.slug !== undefined ? 'window.MK_SLUG=' + JSON.stringify(p.slug) + ';' : '') + '</script>';
   h = h.replace(/<script src="mk-routes\.js[^"]*"><\/script>/, '');
-  h = h.replace(/<head>/i, m => m + inj + '<script src="mk-routes.js?v=6"></script>');
+  h = h.replace(/<head>/i, m => m + inj + '<script src="mk-routes.js?v=7"></script>');
   fs.mkdirSync(R + p.out, { recursive: true });
   fs.writeFileSync(R + p.out + '/index.html', h);
   n++;
@@ -55,6 +55,6 @@ fs.writeFileSync(R + 'index.html', '<!doctype html><meta charset="utf-8"><title>
 /* script mk-routes nei modelli (una sola volta) */
 ['home-a.html', 'cantieri.html', 'categoria.html', 'progetto.html', 'in-vendita.html', 'residenza.html', 'servizio-residenze.html', 'servizio-ristrutturazioni.html', 'servizio-retail.html', 'chi-siamo.html', 'blog.html', 'articolo.html', 'faq.html', 'contatti.html', 'grazie.html', 'lavora-con-noi.html'].forEach(f => {
   let h = fs.readFileSync(R + f, 'utf8');
-  if (!/mk-routes\.js/.test(h)) { h = h.replace(/<head>/i, m => m + '<script src="mk-routes.js?v=6"></script>'); fs.writeFileSync(R + f, h); }
+  if (!/mk-routes\.js/.test(h)) { h = h.replace(/<head>/i, m => m + '<script src="mk-routes.js?v=7"></script>'); fs.writeFileSync(R + f, h); }
 });
 console.log('pagine generate:', n);

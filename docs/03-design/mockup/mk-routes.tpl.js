@@ -72,3 +72,15 @@
   window.addEventListener('load', function () { fit(); setTimeout(fit, 500); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); });
   window.addEventListener('resize', later);
 })();
+
+/* istruzione 127: su telefono le immagini "lazy" dentro menu, sezioni bloccate e caroselli non partivano mai: tutte le immagini si caricano subito */
+(function () {
+  function eager(root) {
+    [].forEach.call((root.querySelectorAll ? root.querySelectorAll('img[loading="lazy"]') : []), function (i) { i.loading = 'eager'; });
+    if (root.tagName === 'IMG' && root.loading === 'lazy') root.loading = 'eager';
+  }
+  eager(document);
+  new MutationObserver(function (ms) { ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (n) { if (n.nodeType === 1) eager(n); }); }); }).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener('DOMContentLoaded', function () { eager(document); });
+  window.addEventListener('load', function () { eager(document); });
+})();
